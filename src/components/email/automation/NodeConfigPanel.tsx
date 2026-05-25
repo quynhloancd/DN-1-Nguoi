@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Node } from "@xyflow/react";
+import { siteConfig } from "@/lib/site-config";
 import { X, Trash2, Mail, Clock, GitBranch, Tag, Zap, Flag } from "lucide-react";
 
 interface NodeConfigPanelProps {
@@ -138,7 +139,7 @@ function SendEmailConfig({ data, onChange }: { data: any; onChange: (d: any) => 
           value={data.fromName || ""}
           onChange={(e) => onChange({ ...data, fromName: e.target.value })}
           className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-3 py-2 text-sm text-white"
-          placeholder="Lê Đăng Khương Academy"
+          placeholder={siteConfig.name}
         />
       </div>
     </div>

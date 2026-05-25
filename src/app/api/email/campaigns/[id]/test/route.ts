@@ -69,9 +69,9 @@ export async function POST(
       email: testEmailAddr,
       subscriber_id: "00000000-0000-0000-0000-000000000000",
       unsubscribe_url: "#",
-      company_name: campaign.from_name || "Lê Đăng Khương Academy",
+      company_name: campaign.from_name || process.env.EMAIL_FROM_NAME || process.env.NEXT_PUBLIC_SITE_NAME || "KDON Academy",
       current_year: new Date().getFullYear().toString(),
-      company: campaign.from_name || "Lê Đăng Khương Academy",
+      company: campaign.from_name || process.env.EMAIL_FROM_NAME || process.env.NEXT_PUBLIC_SITE_NAME || "KDON Academy",
       date: new Date().toLocaleDateString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" }),
     };
 

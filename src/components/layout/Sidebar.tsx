@@ -173,7 +173,7 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
             />
             <div>
               <div className="text-sm font-bold text-white leading-tight">{siteConfig.owner.name}</div>
-              <div className="text-[10px] text-gray-500 leading-tight">Academy</div>
+              <div className="text-[10px] text-gray-500 leading-tight">{siteConfig.shortName}</div>
             </div>
           </Link>
         )}

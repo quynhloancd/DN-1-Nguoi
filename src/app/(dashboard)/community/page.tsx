@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import NextImage from "next/image";
 import { Heart, MessageCircle, Share2, Image, Link2, Smile, Trophy, Star, Flame, TrendingUp, Loader2, X, Flag, AlertTriangle, Copy, Check } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { siteConfig } from "@/lib/site-config";
 import UserAvatar from "@/components/admin/UserAvatar";
 
 /** Convert URLs in text into clickable links */
@@ -493,12 +494,12 @@ export default function CommunityPage() {
     }
   };
 
-  const getShareUrl = (postId: string) => `https://dangkhuong.com/community?post=${postId}`;
+  const getShareUrl = (postId: string) => `https://${siteConfig.domain}/community?post=${postId}`;
 
   const handleShare = async (postId: string, platform: "copy" | "facebook" | "x" | "zalo") => {
     const url = getShareUrl(postId);
     const post = posts.find(p => p.id === postId);
-    const text = post?.content?.slice(0, 100) || "Xem bài viết trên Lê Đăng Khương Academy";
+    const text = post?.content?.slice(0, 100) || `Xem bài viết trên ${siteConfig.name}`;
 
     switch (platform) {
       case "copy":

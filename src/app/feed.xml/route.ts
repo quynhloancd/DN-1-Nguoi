@@ -26,8 +26,8 @@ function toRfc822(iso: string): string {
 // ---------------------------------------------------------------------------
 
 export async function GET() {
-  const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://dangkhuong.com";
-  const siteName = process.env.EMAIL_FROM_NAME || "Lê Đăng Khương Academy";
+  const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || `https://${process.env.NEXT_PUBLIC_SITE_DOMAIN || "doanhnghiep1nguoi.online"}`;
+  const siteName = process.env.EMAIL_FROM_NAME || process.env.NEXT_PUBLIC_SITE_NAME || "KDON Academy";
   const supabase = await createAdminClient();
 
   const { data: posts } = await supabase

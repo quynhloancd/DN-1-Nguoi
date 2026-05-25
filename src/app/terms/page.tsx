@@ -3,16 +3,14 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Điều Khoản Sử Dụng | Lê Đăng Khương Academy",
-  description:
-    "Điều khoản sử dụng nền tảng học tập trực tuyến Lê Đăng Khương Academy — dangkhuong.com. Tuân thủ Nghị định 52/2013/NĐ-CP về thương mại điện tử.",
+  title: `Điều Khoản Sử Dụng | ${siteConfig.name}`,
+  description: `Điều khoản sử dụng nền tảng học tập trực tuyến ${siteConfig.name} — ${siteConfig.domain}. Tuân thủ Nghị định 52/2013/NĐ-CP về thương mại điện tử.`,
   alternates: {
-    canonical: "https://dangkhuong.com/terms",
+    canonical: `https://${siteConfig.domain}/terms`,
   },
   openGraph: {
-    title: "Điều Khoản Sử Dụng — Lê Đăng Khương Academy",
-    description:
-      "Điều khoản sử dụng nền tảng học tập trực tuyến Lê Đăng Khương Academy",
+    title: `Điều Khoản Sử Dụng — ${siteConfig.name}`,
+    description: `Điều khoản sử dụng nền tảng học tập trực tuyến ${siteConfig.name}`,
   },
 };
 
@@ -77,7 +75,7 @@ const sections = [
       "Chúng tôi có quyền thay đổi giá dịch vụ sau khi thông báo trước 7 ngày. Giá mới không áp dụng cho các đơn hàng đã thanh toán",
     ],
     extra: [
-      "Yêu cầu hoàn tiền được gửi qua email support@ledangkhuong.net và sẽ được xử lý trong vòng 7 ngày làm việc.",
+      `Yêu cầu hoàn tiền được gửi qua email support@${siteConfig.domain} và sẽ được xử lý trong vòng 7 ngày làm việc.`,
     ],
   },
   {
@@ -338,10 +336,10 @@ export default function TermsPage() {
                   <p className="text-gray-300">
                     <span className="text-gray-500">Email hỗ trợ:</span>{" "}
                     <a
-                      href="mailto:support@ledangkhuong.net"
+                      href={`mailto:support@${siteConfig.domain}`}
                       className="text-[#D4A843] hover:underline"
                     >
-                      support@ledangkhuong.net
+                      support@{siteConfig.domain}
                     </a>
                   </p>
                   <p className="text-gray-300">

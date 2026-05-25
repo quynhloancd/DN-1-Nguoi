@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ForgotPasswordForm from "@/components/auth/ForgotPasswordForm";
+import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-  title: "Quên mật khẩu — Lê Đăng Khương Academy",
-  description: "Khôi phục mật khẩu tài khoản Lê Đăng Khương Academy.",
-  robots: { index: false, follow: false },
-};
+export function generateMetadata(): Metadata {
+  return {
+    title: `Quên mật khẩu — ${siteConfig.name}`,
+    description: `Khôi phục mật khẩu tài khoản ${siteConfig.name}.`,
+    robots: { index: false, follow: false },
+  };
+}
 
 export default function ForgotPasswordPage() {
   return (
@@ -18,7 +21,7 @@ export default function ForgotPasswordPage() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <Image src="/images/about/portrait.jpg" alt="Lê Đăng Khương" width={56} height={56} sizes="56px" className="w-14 h-14 rounded-2xl mb-4 object-cover inline-block" />
+          <Image src={siteConfig.owner.avatar} alt={siteConfig.owner.name} width={56} height={56} sizes="56px" className="w-14 h-14 rounded-2xl mb-4 object-cover inline-block" />
           <h1 className="text-2xl font-bold text-white">Quên mật khẩu</h1>
           <p className="text-gray-400 mt-1 text-sm">
             Nhập email để nhận link đặt lại mật khẩu

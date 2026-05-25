@@ -225,9 +225,9 @@ function escapeHtml(str: string): string {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function sendBlogNotificationEmail(admin: any, post: any) {
   const apiKey = process.env.RESEND_API_KEY;
-  const fromEmail = process.env.EMAIL_FROM || "no-reply@dangkhuong.com";
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://dangkhuong.com";
-  const siteDomain = (() => { try { return new URL(baseUrl).hostname; } catch { return "dangkhuong.com"; } })();
+  const siteDomain = process.env.NEXT_PUBLIC_SITE_DOMAIN || "doanhnghiep1nguoi.online";
+  const fromEmail = process.env.EMAIL_FROM || `no-reply@${siteDomain}`;
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || `https://${siteDomain}`;
 
   if (!apiKey || apiKey.startsWith("re_your")) return;
 

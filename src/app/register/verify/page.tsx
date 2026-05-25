@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { siteConfig } from "@/lib/site-config";
 
 export const dynamic = "force-dynamic";
 
@@ -17,7 +18,7 @@ export default async function VerifyPage({
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <img src="/images/about/portrait.jpg" alt="Lê Đăng Khương" className="w-14 h-14 rounded-2xl mb-4 object-cover inline-block" />
+          <img src={siteConfig.owner.avatar} alt={siteConfig.owner.name} className="w-14 h-14 rounded-2xl mb-4 object-cover inline-block" />
           <h1 className="text-2xl font-bold text-white">Kiểm tra email của bạn</h1>
           <p className="text-gray-400 mt-1 text-sm">
             Chỉ còn một bước nữa để kích hoạt tài khoản

@@ -434,7 +434,7 @@ export async function POST(req: NextRequest) {
         orderId: matchedCode,
         contentName: (products?.title as string) || (products?.name as string) || "Product",
         eventId: `purchase_${order.id}`,
-        sourceUrl: products?.slug ? `https://dangkhuong.com/courses/${products.slug as string}` : "https://dangkhuong.com",
+        sourceUrl: products?.slug ? `https://${process.env.NEXT_PUBLIC_SITE_DOMAIN || "doanhnghiep1nguoi.online"}/courses/${products.slug as string}` : `https://${process.env.NEXT_PUBLIC_SITE_DOMAIN || "doanhnghiep1nguoi.online"}`,
       }).catch(() => {});
     } catch {
       // Purchase CAPI failure should never block webhook

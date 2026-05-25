@@ -21,7 +21,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Lỗi hệ thống — Lê Đăng Khương Academy</title>
+        <title>Lỗi hệ thống — {siteConfig.name}</title>
         <style>{`
           *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
           body {
@@ -163,7 +163,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
 
         <div className="container">
           {/* Brand badge */}
-          <div className="badge">⚡ Lê Đăng Khương Academy</div>
+          <div className="badge">⚡ {siteConfig.name}</div>
 
           {/* Icon */}
           <div className="icon">🔧</div>
@@ -221,7 +221,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
             .
           </p>
 
-          <p className="brand">© 2026 Lê Đăng Khương Academy</p>
+          <p className="brand">© {new Date().getFullYear()} {siteConfig.name}</p>
         </div>
       </body>
     </html>

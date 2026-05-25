@@ -1,37 +1,37 @@
 import { Suspense } from "react";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
-import { getBaseUrl } from "@/lib/site-config";
+import { siteConfig, getBaseUrl } from "@/lib/site-config";
 import TopBar from "@/components/layout/TopBar";
 import CoursesClient from "@/components/courses/CoursesClient";
 import CoursesPublicGrid from "@/components/courses/CoursesPublicGrid";
 
 const BASE_URL = getBaseUrl();
 
-export const metadata = {
-  title: "Khoá học — Lê Đăng Khương Academy",
-  description:
-    "Khoá học Video AI, Xây kênh triệu view, Sản phẩm số & AI Agent từ Lê Đăng Khương.",
-  alternates: {
-    canonical: `${BASE_URL}/courses`,
-  },
-  openGraph: {
-    title: "Khoá học — Lê Đăng Khương Academy",
-    description:
-      "Khoá học Video AI, Xây kênh triệu view, Sản phẩm số & AI Agent từ Lê Đăng Khương.",
-    url: "/courses",
-    siteName: "Lê Đăng Khương Academy",
-    locale: "vi_VN",
-    type: "website",
-    images: [
-      {
-        url: "/images/hero/offer-banner.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Khoá học — Lê Đăng Khương Academy",
-      },
-    ],
-  },
-};
+export function generateMetadata() {
+  const title = `Khoá học — ${siteConfig.name}`;
+  const description = `Khoá học từ ${siteConfig.owner.name} — Video AI, xây kênh, sản phẩm số và kinh doanh online.`;
+  return {
+    title,
+    description,
+    alternates: { canonical: `${BASE_URL}/courses` },
+    openGraph: {
+      title,
+      description,
+      url: "/courses",
+      siteName: siteConfig.name,
+      locale: "vi_VN",
+      type: "website",
+      images: [
+        {
+          url: "/images/hero/offer-banner.jpg",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+  };
+}
 
 export default async function CoursesPage() {
   const supabase = await createClient();

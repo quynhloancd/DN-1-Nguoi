@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { siteConfig } from "@/lib/site-config";
 import { Phone, Loader2, CheckCircle2 } from "lucide-react";
 
 export default function CompleteProfilePage() {
@@ -91,7 +92,7 @@ export default function CompleteProfilePage() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <img src="/images/about/portrait.jpg" alt="Lê Đăng Khương" className="w-14 h-14 rounded-2xl mb-4 object-cover inline-block" />
+          <img src={siteConfig.owner.avatar} alt={siteConfig.owner.name} className="w-14 h-14 rounded-2xl mb-4 object-cover inline-block" />
           <h1 className="text-2xl font-bold text-white">Hoàn tất đăng ký</h1>
           <p className="text-gray-400 mt-1 text-sm">
             {userName ? (

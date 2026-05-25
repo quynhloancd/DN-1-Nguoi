@@ -202,9 +202,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-lg flex items-center justify-center font-extrabold text-sm text-black" style={{ background: "linear-gradient(135deg, #FBBF24, #D4A843)" }}>
-              DN1
-            </div>
+            <Image src={siteConfig.owner.avatar} alt={siteConfig.owner.name} width={36} height={36} className="w-9 h-9 rounded-lg object-cover" />
             <div>
               <div className="text-sm font-bold leading-tight">{siteConfig.owner.name}</div>
             </div>
@@ -379,13 +377,10 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
             {/* Visual */}
             <div className="lg:col-span-2">
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden relative border border-white/10 flex items-center justify-center"
+              <div className="lg:aspect-[3/4] rounded-2xl overflow-hidden relative border border-white/10 flex items-center justify-center py-10 lg:py-0"
                 style={{ background: "linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%)" }}>
                 <div className="text-center p-6">
-                  <div className="w-32 h-32 rounded-2xl mx-auto mb-5 flex items-center justify-center font-extrabold text-4xl text-black"
-                    style={{ background: "linear-gradient(135deg, #FBBF24, #D4A843)" }}>
-                    DN1
-                  </div>
+                  <Image src={siteConfig.owner.avatar} alt={siteConfig.owner.name} width={128} height={128} className="block w-32 h-32 rounded-2xl mx-auto mb-5 object-cover" />
                   <div className="text-2xl font-bold mb-1">{siteConfig.owner.name}</div>
                   <div className="text-sm text-[#FBBF24]">Hệ thống đào tạo Solo Business</div>
                   <div className="mt-6 flex flex-wrap justify-center gap-2 text-xs text-gray-400">
@@ -742,9 +737,7 @@ export default function HomePage() {
             {/* Col 1: About */}
             <div>
               <div className="flex items-center gap-2.5 mb-4">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center font-extrabold text-xs text-black" style={{ background: "linear-gradient(135deg, #FBBF24, #D4A843)" }}>
-                  DN1
-                </div>
+                <Image src={siteConfig.owner.avatar} alt={siteConfig.owner.name} width={32} height={32} className="w-8 h-8 rounded-lg object-cover" />
                 <span className="font-bold text-sm">{siteConfig.owner.name}</span>
               </div>
               <ul className="space-y-2 text-sm text-gray-500">
@@ -870,9 +863,7 @@ export default function HomePage() {
                 <>
                   {/* Header */}
                   <div className="text-center mb-6">
-                    <div className="w-14 h-14 rounded-2xl mb-3 flex items-center justify-center font-extrabold text-lg text-black inline-flex" style={{ background: "linear-gradient(135deg, #FBBF24, #D4A843)" }}>
-                      DN1
-                    </div>
+                    <Image src={siteConfig.owner.avatar} alt={siteConfig.owner.name} width={56} height={56} className="w-14 h-14 rounded-2xl mb-3 object-cover inline-block" />
                     <h3 className="text-xl font-bold mb-1">Tạo tài khoản miễn phí</h3>
                     <p className="text-sm text-gray-400">
                       Đăng ký để nhận <span className="text-[#FBBF24] font-semibold">&quot;Bộ Kit Khởi Đầu DN1N&quot;</span>

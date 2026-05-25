@@ -3,16 +3,14 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Chính Sách Hoàn Tiền | Lê Đăng Khương Academy",
-  description:
-    "Chính sách hoàn tiền khi mua khoá học trên nền tảng Lê Đăng Khương Academy — dangkhuong.com",
+  title: `Chính Sách Hoàn Tiền | ${siteConfig.name}`,
+  description: `Chính sách hoàn tiền khi mua khoá học trên nền tảng ${siteConfig.name} — ${siteConfig.domain}`,
   alternates: {
-    canonical: "https://dangkhuong.com/refund-policy",
+    canonical: `https://${siteConfig.domain}/refund-policy`,
   },
   openGraph: {
-    title: "Chính Sách Hoàn Tiền — Lê Đăng Khương Academy",
-    description:
-      "Chính sách hoàn tiền khi mua khoá học trên nền tảng Lê Đăng Khương Academy",
+    title: `Chính Sách Hoàn Tiền — ${siteConfig.name}`,
+    description: `Chính sách hoàn tiền khi mua khoá học trên nền tảng ${siteConfig.name}`,
   },
 };
 
@@ -22,7 +20,7 @@ const sections = [
     title: "1. Chính sách hoàn tiền",
     content: [
       `${siteConfig.name} cam kết mang đến trải nghiệm học tập chất lượng cho tất cả học viên. Chúng tôi hiểu rằng đôi khi khoá học có thể không phù hợp với nhu cầu của bạn, vì vậy chúng tôi cung cấp chính sách hoàn tiền rõ ràng và minh bạch.`,
-      "Chính sách này áp dụng cho tất cả các khoá học được mua trực tiếp trên nền tảng dangkhuong.com.",
+      `Chính sách này áp dụng cho tất cả các khoá học được mua trực tiếp trên nền tảng ${siteConfig.domain}.`,
     ],
   },
   {
@@ -64,7 +62,7 @@ const sections = [
       "Để yêu cầu hoàn tiền, bạn vui lòng thực hiện theo các bước sau:",
     ],
     list: [
-      "Bước 1: Gửi yêu cầu hoàn tiền qua email support@ledangkhuong.net hoặc nhắn tin qua Zalo với tiêu đề \"Yêu cầu hoàn tiền\"",
+      `Bước 1: Gửi yêu cầu hoàn tiền qua email support@${siteConfig.domain} hoặc nhắn tin qua Zalo với tiêu đề "Yêu cầu hoàn tiền"`,
       "Bước 2: Cung cấp đầy đủ thông tin gồm: họ tên, email đăng ký tài khoản, tên khoá học cần hoàn tiền và lý do hoàn tiền",
       "Bước 3: Đội ngũ hỗ trợ sẽ xác minh thông tin và kiểm tra điều kiện hoàn tiền trong vòng 1-2 ngày làm việc",
       "Bước 4: Bạn sẽ nhận được email thông báo kết quả xử lý yêu cầu (chấp nhận hoặc từ chối kèm lý do cụ thể)",
@@ -212,10 +210,10 @@ export default function RefundPolicyPage() {
                   <p className="text-gray-300">
                     <span className="text-gray-500">Email:</span>{" "}
                     <a
-                      href="mailto:support@ledangkhuong.net"
+                      href={`mailto:support@${siteConfig.domain}`}
                       className="text-[#D4A843] hover:underline"
                     >
-                      support@ledangkhuong.net
+                      support@{siteConfig.domain}
                     </a>
                   </p>
                   <p className="text-gray-300">

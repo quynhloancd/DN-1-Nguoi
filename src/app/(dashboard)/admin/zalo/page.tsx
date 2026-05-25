@@ -7,6 +7,7 @@ import { isZaloOAConfigured } from "@/lib/zalo-oa";
 import {
   CheckCircle, XCircle, Users, MessageCircle, Send, Activity,
 } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 import ZaloTestForm from "@/components/admin/ZaloTestForm";
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -128,7 +129,7 @@ export default async function AdminZaloPage() {
                 <span>ZALO_OA_ACCESS_TOKEN da duoc cau hinh</span>
               </div>
               <div className="text-xs text-gray-500 space-y-1">
-                <p>Webhook URL: <code className="text-gray-400">https://dangkhuong.com/api/zalo/webhook</code></p>
+                <p>Webhook URL: <code className="text-gray-400">https://{siteConfig.domain}/api/zalo/webhook</code></p>
                 <p>Cau hinh tai <a href="https://oa.zalo.me" target="_blank" rel="noopener noreferrer" className="text-[#D4A843] hover:underline">Zalo OA Dashboard</a></p>
               </div>
             </div>
@@ -146,7 +147,7 @@ export default async function AdminZaloPage() {
                   <li><code>ZALO_OA_SECRET_KEY</code> - Secret key de xac thuc webhook</li>
                   <li><code>ZALO_OA_REFRESH_TOKEN</code> - Refresh token</li>
                 </ul>
-                <p>Webhook URL: <code className="text-gray-400">https://dangkhuong.com/api/zalo/webhook</code></p>
+                <p>Webhook URL: <code className="text-gray-400">https://{siteConfig.domain}/api/zalo/webhook</code></p>
               </div>
             </div>
           )}

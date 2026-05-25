@@ -9,8 +9,8 @@ import type { Subscriber, TemplateVariables } from "./types";
 // ─── Constants ───────────────────────────────────────────────
 
 const APP_URL =
-  process.env.NEXT_PUBLIC_APP_URL || "https://dangkhuong.com";
-const COMPANY_NAME = process.env.EMAIL_FROM_NAME || "Lê Đăng Khương Academy";
+  process.env.NEXT_PUBLIC_APP_URL || `https://${process.env.NEXT_PUBLIC_SITE_DOMAIN || "doanhnghiep1nguoi.online"}`;
+const COMPANY_NAME = process.env.EMAIL_FROM_NAME || process.env.NEXT_PUBLIC_SITE_NAME || "KDON Academy";
 
 // ─── Render Template ─────────────────────────────────────────
 

@@ -6,6 +6,7 @@ import {
   Megaphone, Send, Mail, Clock, Loader2, CheckCircle,
   Bell, Users, Link2, Globe,
 } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 
 interface Announcement {
   id: string;
@@ -165,7 +166,7 @@ export default function AnnouncementsPage() {
                 type="url"
                 value={link}
                 onChange={(e) => setLink(e.target.value)}
-                placeholder="https://dangkhuong.com/courses/..."
+                placeholder={`https://${siteConfig.domain}/courses/...`}
                 className="input-dark w-full text-sm"
               />
             </div>

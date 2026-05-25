@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
 import { DEFAULT_AUTHOR } from "@/lib/author-config";
+import { siteConfig } from "@/lib/site-config";
 import {
   Eye,
   ArrowLeft,
@@ -54,7 +55,7 @@ type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://dangkhuong.com";
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || `https://${siteConfig.domain}`;
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -99,7 +100,7 @@ export async function generateMetadata({
     .single();
 
   if (!post) {
-    return { title: "Bài viết không tồn tại — Lê Đăng Khương" };
+    return { title: `Bài viết không tồn tại — ${siteConfig.owner.name}` };
   }
 
   const url = `${BASE_URL}/blog/${post.slug}`;
@@ -113,7 +114,7 @@ export async function generateMetadata({
   ];
 
   return {
-    title: `${post.title} — Lê Đăng Khương`,
+    title: `${post.title} — ${siteConfig.owner.name}`,
     description,
     ...(keywords.length > 0 ? { keywords } : {}),
     alternates: {
@@ -123,7 +124,7 @@ export async function generateMetadata({
       title: post.title,
       description: description ?? undefined,
       url,
-      siteName: "Lê Đăng Khương Academy",
+      siteName: siteConfig.name,
       type: "article",
       publishedTime: post.published_at ?? undefined,
       tags: post.tags ?? undefined,
@@ -183,7 +184,7 @@ function ArticleJsonLd({ post }: { post: BlogPost }) {
     },
     publisher: {
       "@type": "Organization",
-      name: "Lê Đăng Khương Academy",
+      name: siteConfig.name,
       url: BASE_URL,
       logo: {
         "@type": "ImageObject",

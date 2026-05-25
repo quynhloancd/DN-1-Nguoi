@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import UserAvatar from "@/components/admin/UserAvatar";
+import { siteConfig } from "@/lib/site-config";
 
 interface PublicHeaderProps {
   user?: {
@@ -38,15 +39,15 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
         {/* Left: Logo */}
         <Link href="/" className="flex items-center gap-2.5">
           <Image
-            src="/images/about/portrait.jpg"
-            alt="Lê Đăng Khương"
+            src={siteConfig.owner.avatar}
+            alt={siteConfig.owner.name}
             width={32}
             height={32}
             sizes="32px"
             className="w-8 h-8 rounded-lg object-cover"
           />
           <span className="text-sm font-bold text-white leading-tight hidden sm:block">
-            Lê Đăng Khương
+            {siteConfig.owner.name}
           </span>
         </Link>
 

@@ -1,17 +1,20 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site-config";
 
-export const metadata = {
-  title: "Điều khoản dịch vụ | Đăng Khương Academy",
-  description:
-    "Điều khoản sử dụng dịch vụ của nền tảng Đăng Khương Academy — dangkhuong.com",
-};
+export function generateMetadata(): Metadata {
+  return {
+    title: `Điều khoản dịch vụ | ${siteConfig.name}`,
+    description: `Điều khoản sử dụng dịch vụ của nền tảng ${siteConfig.name} — ${siteConfig.domain}`,
+  };
+}
 
 const sections = [
   {
     id: "gioi-thieu",
     title: "1. Giới thiệu",
     content: [
-      "Chào mừng bạn đến với dangkhuong.com (\"Nền tảng\") — nền tảng học tập trực tuyến thuộc sở hữu và vận hành bởi Lê Đăng Khương Academy (\"chúng tôi\").",
+      `Chào mừng bạn đến với ${siteConfig.domain} ("Nền tảng") — nền tảng học tập trực tuyến thuộc sở hữu và vận hành bởi ${siteConfig.name} ("chúng tôi").`,
       "Bằng việc truy cập, đăng ký tài khoản hoặc sử dụng bất kỳ dịch vụ nào trên Nền tảng, bạn đồng ý tuân thủ và bị ràng buộc bởi các Điều khoản dịch vụ này.",
       "Nếu bạn không đồng ý với bất kỳ điều khoản nào, vui lòng không sử dụng Nền tảng.",
     ],
@@ -66,7 +69,7 @@ const sections = [
     id: "so-huu-tri-tue",
     title: "5. Sở hữu trí tuệ",
     content: [
-      "Tất cả nội dung trên Nền tảng (bao gồm nhưng không giới hạn: video, văn bản, hình ảnh, template, mã nguồn, thiết kế) là tài sản trí tuệ của Lê Đăng Khương Academy hoặc đối tác được uỷ quyền.",
+      `Tất cả nội dung trên Nền tảng (bao gồm nhưng không giới hạn: video, văn bản, hình ảnh, template, mã nguồn, thiết kế) là tài sản trí tuệ của ${siteConfig.name} hoặc đối tác được uỷ quyền.`,
     ],
     list: [
       "Bạn được cấp quyền sử dụng cá nhân, không chuyển nhượng để truy cập nội dung khoá học đã mua",
@@ -214,25 +217,22 @@ export default function TermsOfServicePage() {
                   <p className="text-gray-300">
                     <span className="text-gray-500">Nền tảng:</span>{" "}
                     <span className="text-white font-medium">
-                      Lê Đăng Khương Academy
+                      {siteConfig.name}
                     </span>
                   </p>
                   <p className="text-gray-300">
                     <span className="text-gray-500">Website:</span>{" "}
-                    <Link
-                      href="/"
-                      className="text-[#D4A843] hover:underline"
-                    >
-                      dangkhuong.com
+                    <Link href="/" className="text-[#D4A843] hover:underline">
+                      {siteConfig.domain}
                     </Link>
                   </p>
                   <p className="text-gray-300">
                     <span className="text-gray-500">Email:</span>{" "}
                     <a
-                      href="mailto:support@ledangkhuong.net"
+                      href={`mailto:${process.env.EMAIL_FROM ?? `support@${siteConfig.domain}`}`}
                       className="text-[#D4A843] hover:underline"
                     >
-                      support@ledangkhuong.net
+                      {process.env.EMAIL_FROM ?? `support@${siteConfig.domain}`}
                     </a>
                   </p>
                 </div>

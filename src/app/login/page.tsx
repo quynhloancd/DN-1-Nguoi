@@ -3,12 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import LoginForm from "@/components/auth/LoginForm";
+import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-  title: "Đăng nhập — Lê Đăng Khương Academy",
-  description: "Đăng nhập vào tài khoản Lê Đăng Khương Academy để học các khoá học Video AI, xây kênh triệu view.",
-  robots: { index: false, follow: false },
-};
+export function generateMetadata(): Metadata {
+  return {
+    title: `Đăng nhập — ${siteConfig.name}`,
+    description: `Đăng nhập vào tài khoản ${siteConfig.name} để học các khoá học online.`,
+    robots: { index: false, follow: false },
+  };
+}
 
 export default function LoginPage() {
   return (
@@ -17,9 +20,9 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <Image src="/images/about/portrait.jpg" alt="Lê Đăng Khương" width={56} height={56} sizes="56px" className="w-14 h-14 rounded-2xl mb-4 object-cover inline-block" />
+          <Image src={siteConfig.owner.avatar} alt={siteConfig.owner.name} width={56} height={56} sizes="56px" className="w-14 h-14 rounded-2xl mb-4 object-cover inline-block" />
           <h1 className="text-2xl font-bold text-white">Đăng nhập</h1>
-          <p className="text-gray-400 mt-1 text-sm">Chào mừng trở lại — <span className="text-[#D4A843]">dangkhuong.com</span></p>
+          <p className="text-gray-400 mt-1 text-sm">Chào mừng trở lại — <span className="text-[#D4A843]">{siteConfig.domain}</span></p>
         </div>
 
         {/* Card */}

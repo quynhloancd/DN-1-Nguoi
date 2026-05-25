@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { siteConfig } from "@/lib/site-config";
 import Link from "next/link";
 import {
   Check,
@@ -104,7 +105,7 @@ const FAQ_DATA = [
   },
   {
     q: "Chứng chỉ hoàn thành có giá trị gì?",
-    a: "Chứng chỉ được cấp bởi Lê Đăng Khương Academy sau khi bạn hoàn thành khoá học và vượt qua bài kiểm tra. Bạn có thể chia sẻ chứng chỉ trên LinkedIn và CV.",
+    a: `Chứng chỉ được cấp bởi ${siteConfig.name} sau khi bạn hoàn thành khoá học và vượt qua bài kiểm tra. Bạn có thể chia sẻ chứng chỉ trên LinkedIn và CV.`,
   },
   {
     q: "Thanh toán bằng phương thức nào?",
@@ -346,7 +347,7 @@ export default function PricingContent() {
               {
                 icon: Award,
                 title: "Chứng chỉ uy tín",
-                desc: "Nhận chứng chỉ hoàn thành từ Lê Đăng Khương Academy.",
+                desc: `Nhận chứng chỉ hoàn thành từ ${siteConfig.name}.`,
               },
               {
                 icon: Headphones,

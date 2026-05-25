@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { siteConfig } from "@/lib/site-config";
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
@@ -49,8 +50,8 @@ export default function NewsletterForm() {
         Nhận bài viết mới mỗi tuần
       </h3>
       <p className="text-sm text-gray-400 mb-4">
-        Tham gia 1,200+ người đang nhận newsletter marketing thực chiến của{" "}
-        Lê Đăng Khương
+        Tham gia newsletter thực chiến của{" "}
+        {siteConfig.owner.name}
       </p>
 
       {status === "success" ? (

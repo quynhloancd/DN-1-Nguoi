@@ -18,15 +18,20 @@ function escapeHtml(str: string): string {
 // ─── Config ─────────────────────────────────────────────────────
 
 function getBaseUrl(): string {
-  return process.env.NEXT_PUBLIC_APP_URL || "https://dangkhuong.com";
+  return process.env.NEXT_PUBLIC_APP_URL || `https://${process.env.NEXT_PUBLIC_SITE_DOMAIN || "doanhnghiep1nguoi.online"}`;
 }
 
 function getSiteDomain(): string {
-  try { return new URL(getBaseUrl()).hostname; } catch { return "dangkhuong.com"; }
+  try { return new URL(getBaseUrl()).hostname; } catch { return process.env.NEXT_PUBLIC_SITE_DOMAIN || "doanhnghiep1nguoi.online"; }
 }
 
 function getSiteName(): string {
-  return process.env.EMAIL_FROM_NAME || "Lê Đăng Khương Academy";
+  return process.env.EMAIL_FROM_NAME || process.env.NEXT_PUBLIC_SITE_NAME || "KDON Academy";
+}
+
+function getLogoShort(): string {
+  const short = process.env.NEXT_PUBLIC_SITE_SHORT_NAME || "KDON";
+  return short.slice(0, 4);
 }
 
 // ─── Templates ───────────────────────────────────────────────────
@@ -58,8 +63,8 @@ function baseTemplate(content: string) {
 <body>
   <div class="wrap">
     <div class="logo">
-      <div class="logo-icon">LĐK</div>
-      <div class="logo-text">Lê Đăng Khương Academy</div>
+      <div class="logo-icon">${getLogoShort()}</div>
+      <div class="logo-text">${getSiteName()}</div>
     </div>
     <div class="card">
       ${content}
@@ -79,10 +84,10 @@ function baseTemplate(content: string) {
 export async function sendWelcomeEmail(to: string, name: string) {
   return sesSendEmail(
     to,
-    `Chào mừng ${escapeHtml(name)} đến với Lê Đăng Khương Academy! 🎉`,
+    `Chào mừng ${escapeHtml(name)} đến với ${getSiteName()}! 🎉`,
     baseTemplate(`
       <h1>Chào mừng bạn, ${escapeHtml(name)}! 🚀</h1>
-      <p>Tôi là <span class="highlight">Lê Đăng Khương</span> — và tôi rất vui khi bạn tham gia cộng đồng.</p>
+      <p>Đội ngũ <span class="highlight">${getSiteName()}</span> rất vui khi bạn tham gia cộng đồng.</p>
       <p>Đây là những gì bạn có thể làm ngay:</p>
       <ul style="color:#9ca3af; font-size:14px; line-height:2; padding-left:20px; margin:0 0 20px;">
         <li>📚 Bắt đầu khoá học miễn phí</li>
@@ -93,7 +98,7 @@ export async function sendWelcomeEmail(to: string, name: string) {
       <a href="${getBaseUrl()}/courses" class="btn">Bắt đầu học ngay →</a>
       <div class="divider"></div>
       <p style="margin:0;">Nếu bạn có bất kỳ câu hỏi nào, chỉ cần reply email này — tôi đọc tất cả.</p>
-      <p style="margin:8px 0 0; color:#6b7280; font-size:13px;">— Lê Đăng Khương</p>
+      <p style="margin:8px 0 0; color:#6b7280; font-size:13px;">— ${getSiteName()}</p>
     `),
   );
 }
@@ -142,7 +147,7 @@ export async function sendWeeklyNewsletter(
       <p>Xin chào <span class="highlight">${escapeHtml(name)}</span>,</p>
       ${body}
       <div class="divider"></div>
-      <p style="margin:0;font-size:13px;color:#6b7280;">— Lê Đăng Khương<br/>
+      <p style="margin:0;font-size:13px;color:#6b7280;">— ${getSiteName()}<br/>
       <a href="${getBaseUrl()}" style="color:#D4A843;">${getSiteDomain()}</a></p>
     `),
   );
@@ -180,7 +185,7 @@ export async function sendPasswordResetEmail(
 ) {
   return sesSendEmail(
     to,
-    `🔑 Đặt lại mật khẩu — Lê Đăng Khương Academy`,
+    `🔑 Đặt lại mật khẩu — ${getSiteName()}`,
     baseTemplate(`
       <h1>Đặt lại mật khẩu</h1>
       <p>Xin chào <span class="highlight">${escapeHtml(name)}</span>,</p>
@@ -230,7 +235,7 @@ export async function sendAffiliateCommissionEmail(
   const formatted = commissionAmount.toLocaleString("vi-VN") + "₫";
   return sesSendEmail(
     to,
-    `Bạn vừa nhận hoa hồng ${escapeHtml(formatted)} — Lê Đăng Khương Academy`,
+    `Bạn vừa nhận hoa hồng ${escapeHtml(formatted)} — ${getSiteName()}`,
     baseTemplate(`
       <h1>Chúc mừng, ${escapeHtml(name)}!</h1>
       <p>Một khách hàng vừa mua <span class="highlight">${escapeHtml(productName)}</span> qua link giới thiệu của bạn.</p>
@@ -307,7 +312,7 @@ export async function sendLoginNotificationEmail(
 export async function sendVerificationEmail(to: string, name: string, confirmUrl: string) {
   const html = baseTemplate(`
     <h1>Xin chào ${escapeHtml(name)}! 👋</h1>
-    <p>Cảm ơn bạn đã đăng ký tài khoản tại <span class="highlight">Lê Đăng Khương Academy</span>.</p>
+    <p>Cảm ơn bạn đã đăng ký tài khoản tại <span class="highlight">${getSiteName()}</span>.</p>
     <p>Vui lòng nhấn nút bên dưới để xác thực địa chỉ email và kích hoạt tài khoản của bạn:</p>
     <p style="text-align:center; margin:24px 0;">
       <a href="${escapeHtml(confirmUrl)}" class="btn">Xác thực tài khoản</a>
@@ -320,7 +325,7 @@ export async function sendVerificationEmail(to: string, name: string, confirmUrl
 
   return sesSendEmail(
     to,
-    "Xác thực tài khoản Lê Đăng Khương Academy",
+    `Xác thực tài khoản ${getSiteName()}`,
     html,
   );
 }
@@ -345,7 +350,7 @@ export async function sendEnrollmentWelcomeEmail(
       </div>
       <div class="divider"></div>
       <p style="margin:0;font-size:13px;color:#6b7280;">Nếu bạn có bất kỳ câu hỏi nào, chỉ cần reply email này — chúng tôi sẽ hỗ trợ bạn.</p>
-      <p style="margin:8px 0 0; color:#6b7280; font-size:13px;">— Lê Đăng Khương</p>
+      <p style="margin:8px 0 0; color:#6b7280; font-size:13px;">— ${getSiteName()}</p>
     `),
   );
 }

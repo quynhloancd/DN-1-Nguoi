@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getBaseUrl } from "@/lib/site-config";
+import { siteConfig, getBaseUrl } from "@/lib/site-config";
 import Link from "next/link";
 import RegisterForm from "@/components/auth/RegisterForm";
 
@@ -7,14 +7,15 @@ export const dynamic = "force-dynamic";
 
 const BASE_URL = getBaseUrl();
 
-export const metadata: Metadata = {
-  title: "Đăng Ký Tài Khoản | Lê Đăng Khương Academy",
-  description:
-    "Tạo tài khoản miễn phí để nhận Bí Mật Video AI Triệu View và truy cập khoá học của Lê Đăng Khương.",
-  alternates: {
-    canonical: `${BASE_URL}/register`,
-  },
-};
+export function generateMetadata(): Metadata {
+  return {
+    title: `Đăng Ký Tài Khoản | ${siteConfig.name}`,
+    description: `Tạo tài khoản miễn phí để truy cập khoá học của ${siteConfig.owner.name}.`,
+    alternates: {
+      canonical: `${BASE_URL}/register`,
+    },
+  };
+}
 
 export default function RegisterPage() {
   return (

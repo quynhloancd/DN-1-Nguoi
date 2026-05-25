@@ -8,7 +8,7 @@ interface ShareButtonsProps {
   slug: string;
 }
 
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://dangkhuong.com";
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || `https://${process.env.NEXT_PUBLIC_SITE_DOMAIN || "doanhnghiep1nguoi.online"}`;
 
 export default function ShareButtons({ title, slug }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);

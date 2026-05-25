@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import { siteConfig } from "@/lib/site-config";
 
 interface ErrorProps {
   error: Error & { digest?: string };
@@ -197,7 +198,7 @@ export default function Error({ error, reset }: ErrorProps) {
             color: "#4b5563",
           }}
         >
-          © 2026 Lê Đăng Khương Academy
+          © {new Date().getFullYear()} {siteConfig.name}
         </p>
       </div>
     </div>

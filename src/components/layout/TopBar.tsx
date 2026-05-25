@@ -10,6 +10,7 @@ import SearchModal, { useSearchShortcut } from "@/components/layout/SearchModal"
 import { useMobileSidebar } from "@/components/layout/MobileSidebarContext";
 import { createClient } from "@/lib/supabase/client";
 import { signOut } from "@/lib/actions/auth";
+import { siteConfig } from "@/lib/site-config";
 
 interface PromotionItem {
   label: string;
@@ -100,7 +101,7 @@ export default function TopBar({ title, subtitle, onMenuClick, notification, pro
           <div className="notification-bar flex flex-wrap items-center justify-center gap-x-2 gap-y-1 py-1.5 sm:py-2 px-3 sm:px-4 text-sm">
             <Bell size={13} className="text-[#D4A843] shrink-0" />
             <span className="text-gray-400 text-xs">
-              Lê Đăng Khương vừa cập nhật:
+              {siteConfig.owner.name} vừa cập nhật:
             </span>
             <span className="badge-green shrink-0">{current.label}</span>
             <span className="text-white text-xs font-medium">{current.text}</span>
@@ -128,7 +129,7 @@ export default function TopBar({ title, subtitle, onMenuClick, notification, pro
         <div className="notification-bar flex flex-wrap items-center justify-center gap-x-2 gap-y-1 py-1.5 sm:py-2 px-3 sm:px-4 text-sm">
           <Bell size={13} className="text-[#D4A843] shrink-0" />
           <span className="text-gray-400 text-xs">
-            Lê Đăng Khương vừa cập nhật:
+            {siteConfig.owner.name} vừa cập nhật:
           </span>
           <span className="badge-green shrink-0">{notification.label}</span>
           <span className="text-white text-xs font-medium">{notification.text}</span>

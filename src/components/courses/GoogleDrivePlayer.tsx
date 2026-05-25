@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { Maximize, Minimize } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 // Re-export utils so existing client imports still work
 export { extractGoogleDriveFileId, isGoogleDriveUrl } from "@/lib/video-utils";
 
@@ -265,7 +266,7 @@ export default function GoogleDrivePlayer({
 
         {/* Watermark */}
         <div className="absolute bottom-14 right-3 text-[10px] text-white/15 select-none pointer-events-none z-20">
-          dangkhuong.com
+          {siteConfig.domain}
         </div>
       </div>
 

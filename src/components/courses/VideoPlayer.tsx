@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import { siteConfig } from "@/lib/site-config";
 import {
   Play,
   Pause,
@@ -494,7 +495,7 @@ export default function VideoPlayer({
 
         {/* Watermark */}
         <div className="absolute bottom-14 right-3 text-[10px] text-white/15 select-none pointer-events-none z-20">
-          dangkhuong.com
+          {siteConfig.domain}
         </div>
 
         {/* Gradient fade for controls */}

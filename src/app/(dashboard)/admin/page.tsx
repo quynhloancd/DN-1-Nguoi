@@ -2,6 +2,7 @@ import TopBar from "@/components/layout/TopBar";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
+import { siteConfig } from "@/lib/site-config";
 import {
   Users, BookOpen, ShoppingCart, FileText, Mail,
   TrendingUp, Plus, Settings, ArrowRight, AlertCircle, DollarSign
@@ -162,7 +163,7 @@ export default async function AdminPage() {
 
   return (
     <div>
-      <TopBar title="Admin Panel" subtitle="Quản lý toàn bộ nền tảng dangkhuong.com" />
+      <TopBar title="Admin Panel" subtitle={`Quản lý toàn bộ nền tảng ${siteConfig.domain}`} />
 
       <div className="p-6 max-w-7xl mx-auto space-y-6">
 

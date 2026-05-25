@@ -26,14 +26,13 @@ function escapeHtml(str: string): string {
 
 // ─── Constants ──────────────────────────────────────────────
 
-const DEFAULT_FROM_EMAIL = process.env.EMAIL_FROM || "support@ledangkhuong.net";
-const DEFAULT_FROM_NAME = process.env.EMAIL_FROM_NAME || "Lê Đăng Khương Academy";
-const COMPANY_NAME = process.env.EMAIL_FROM_NAME || "Lê Đăng Khương Academy";
+const SITE_DOMAIN = process.env.NEXT_PUBLIC_SITE_DOMAIN || "doanhnghiep1nguoi.online";
+const DEFAULT_FROM_EMAIL = process.env.EMAIL_FROM || `noreply@${SITE_DOMAIN}`;
+const DEFAULT_FROM_NAME = process.env.EMAIL_FROM_NAME || process.env.NEXT_PUBLIC_SITE_NAME || "KDON Academy";
+const COMPANY_NAME = process.env.EMAIL_FROM_NAME || process.env.NEXT_PUBLIC_SITE_NAME || "KDON Academy";
 
 function getAppUrl(): string {
-  return (
-    process.env.NEXT_PUBLIC_APP_URL || "https://dangkhuong.com"
-  );
+  return process.env.NEXT_PUBLIC_APP_URL || `https://${SITE_DOMAIN}`;
 }
 
 // ─── Send Single Email ──────────────────────────────────────
