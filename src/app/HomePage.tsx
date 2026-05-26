@@ -187,11 +187,11 @@ export default function HomePage() {
   const pad = (n: number) => n.toString().padStart(2, "0");
 
   const navLinks = [
-    { label: "Khoá học", href: "#courses" },
-    { label: "Lộ trình", href: "#roadmap" },
-    { label: "Học viên", href: "#testimonials" },
+    { label: "Sản phẩm", href: "#courses" },
+    { label: "Khóa Học", href: "#roadmap" },
+    { label: "Công cụ (Tool)", href: "#testimonials" },
     { label: "Blog", href: "/blog" },
-    { label: "Cộng đồng", href: "/community" },
+    { label: "Cộng Đồng", href: "/community" },
   ];
 
   return (
@@ -204,7 +204,7 @@ export default function HomePage() {
           <Link href="/" className="flex items-center gap-2.5">
             <Image src={siteConfig.owner.avatar} alt={siteConfig.owner.name} width={36} height={36} className="w-9 h-9 rounded-lg object-cover" />
             <div>
-              <div className="text-sm font-bold leading-tight">{siteConfig.owner.name}</div>
+              <div className="text-sm font-bold leading-tight">{siteConfig.name}</div>
             </div>
           </Link>
 
