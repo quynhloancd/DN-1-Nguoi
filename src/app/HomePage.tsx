@@ -51,12 +51,12 @@ const steps = [
 ];
 
 const targetAudience = [
-  { icon: User, title: "Freelancer & Solo Entrepreneur", desc: "Muốn scale doanh thu mà không phải thuê thêm người, làm 1 mình hiệu quả gấp 10" },
-  { icon: Briefcase, title: "Chủ shop / Kinh doanh online", desc: "Muốn AI Agent chốt đơn 24/7, không phải ôm điện thoại trả tin nhắn cả ngày" },
-  { icon: Award, title: "Chuyên gia / Coach / Consultant", desc: "Muốn đóng gói chuyên môn thành khóa học, ebook bán tự động không giới hạn" },
-  { icon: GraduationCap, title: "Giáo viên / Người dạy nghề", desc: "Muốn chuyển từ dạy 1-1 sang bán khóa học online — scale doanh thu không scale thời gian" },
-  { icon: Heart, title: "Mẹ bỉm sữa / Người làm tại nhà", desc: "Muốn xây nguồn thu nhập online linh hoạt, làm việc theo giờ riêng" },
-  { icon: Rocket, title: "Nhân viên muốn ra riêng", desc: "Muốn khởi nghiệp solo với chi phí thấp, dùng AI thay vì thuê nhân viên" },
+  { icon: Rocket, title: "Người mới khởi nghiệp", desc: "Muốn bắt đầu kinh doanh online từ con số 0 — không vốn lớn, không kinh nghiệm. AI làm trợ lý đầu tiên." },
+  { icon: User, title: "Freelancer", desc: "Đang làm freelance nhưng muốn thoát kiếp 'bán giờ' — xây sản phẩm, hệ thống để có thu nhập thụ động." },
+  { icon: Briefcase, title: "Nhân viên văn phòng muốn ra riêng", desc: "Đang đi làm 8 tiếng/ngày, muốn xây side income → tiến tới nghỉ việc, làm chủ thời gian." },
+  { icon: Heart, title: "Mẹ bỉm sữa / Người làm tại nhà", desc: "Muốn có thu nhập online linh hoạt — vừa chăm con vừa kinh doanh, không cần ra văn phòng." },
+  { icon: ShoppingBag, title: "Chủ shop online", desc: "Đang ôm hết việc: chốt đơn, đóng hàng, chăm khách. Muốn AI Agent trả tin nhắn 24/7 thay mình." },
+  { icon: Award, title: "Chuyên gia / Coach / Giáo viên", desc: "Đang dạy 1-1 hoặc consultant. Muốn đóng gói chuyên môn thành khóa học bán hàng tự động." },
 ];
 
 /* Fallback courses used while API data loads */
@@ -269,7 +269,7 @@ export default function HomePage() {
 
           {/* Sub-headline */}
           <p className="text-sm sm:text-lg text-gray-400 max-w-2xl mx-auto mb-6 sm:mb-10 leading-relaxed">
-            Học cách dùng <strong className="text-white">AI làm nhân viên</strong> — tự động hóa marketing, bán hàng, chăm sóc khách 24/7. Một mình bạn vẫn xây được doanh nghiệp tinh gọn, scale doanh thu mà không cần thuê người hay mở văn phòng.
+            Lộ trình từ A-Z giúp bạn có <strong className="text-white">thêm thu nhập online</strong> với <strong className="text-[#FBBF24]">5 kỹ năng cốt lõi</strong>: AI Tools • Content Marketing • Personal Branding • Bán hàng online • Automation. Phù hợp người mới khởi nghiệp, freelancer, mẹ bỉm sữa, nhân viên văn phòng muốn ra riêng.
           </p>
 
           {/* CTA */}
@@ -371,7 +371,7 @@ export default function HomePage() {
       <section className="py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-14">
-            Tại Sao Chọn <span className="text-[#FBBF24]">{siteConfig.owner.name}?</span>
+            Tại Sao Chọn <span className="text-[#FBBF24]">{siteConfig.name}?</span>
           </h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
@@ -380,10 +380,14 @@ export default function HomePage() {
               <div className="lg:aspect-[3/4] rounded-2xl overflow-hidden relative border border-white/10 flex items-center justify-center py-10 lg:py-0"
                 style={{ background: "linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%)" }}>
                 <div className="text-center p-6">
-                  <Image src={siteConfig.owner.avatar} alt={siteConfig.owner.name} width={128} height={128} className="block w-32 h-32 rounded-2xl mx-auto mb-5 object-cover" />
-                  <div className="text-2xl font-bold mb-1">{siteConfig.owner.name}</div>
-                  <div className="text-sm text-[#FBBF24]">Hệ thống đào tạo Solo Business</div>
-                  <div className="mt-6 flex flex-wrap justify-center gap-2 text-xs text-gray-400">
+                  <Image src={siteConfig.owner.avatar} alt={siteConfig.name} width={128} height={128} className="block w-32 h-32 rounded-2xl mx-auto mb-5 object-cover" />
+                  <div className="text-2xl font-bold mb-1">{siteConfig.name}</div>
+                  <div className="text-sm text-[#FBBF24] leading-snug px-2">{siteConfig.tagline}</div>
+                  <div className="mt-5 pt-5 border-t border-white/5 text-xs text-gray-400">
+                    <div className="font-semibold text-white">{siteConfig.owner.name}</div>
+                    <div>{siteConfig.owner.bio}</div>
+                  </div>
+                  <div className="mt-4 flex flex-wrap justify-center gap-2 text-xs text-gray-400">
                     <span className="px-3 py-1 rounded-full bg-white/5">🤖 AI-First</span>
                     <span className="px-3 py-1 rounded-full bg-white/5">⚡ Tinh gọn</span>
                     <span className="px-3 py-1 rounded-full bg-white/5">🚀 Tự động</span>
@@ -399,7 +403,7 @@ export default function HomePage() {
               </h3>
 
               <p className="text-gray-400 leading-relaxed">
-                <strong className="text-white">{siteConfig.owner.name}</strong> là cộng đồng & hệ thống đào tạo dành cho những người muốn xây dựng doanh nghiệp tinh gọn — không cần thuê nhân viên, không cần mở văn phòng, tận dụng AI để tự động hóa mọi quy trình.
+                <strong className="text-white">{siteConfig.name}</strong> là cộng đồng & hệ thống đào tạo dành cho những người muốn xây dựng doanh nghiệp tinh gọn — không cần thuê nhân viên, không cần mở văn phòng, tận dụng AI để tự động hóa mọi quy trình.
               </p>
 
               <div className="space-y-3">
@@ -425,7 +429,7 @@ export default function HomePage() {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all hover:scale-[1.02]"
                 style={{ background: "#1877F2", color: "#fff" }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                Theo dõi {siteConfig.owner.name} trên Facebook
+                Theo dõi {siteConfig.name} trên Facebook
               </a>
             </div>
           </div>
@@ -459,7 +463,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-2xl sm:text-4xl font-extrabold mb-3">
-              Khoá Học <span className="text-[#FBBF24]">{siteConfig.owner.name}</span>
+              Khoá Học <span className="text-[#FBBF24]">{siteConfig.name}</span>
             </h2>
             <p className="text-gray-400">Được thiết kế để bạn áp dụng ngay — không lý thuyết suông</p>
           </div>
@@ -707,7 +711,7 @@ export default function HomePage() {
 
         <div className="relative max-w-2xl mx-auto text-center">
           <h2 className="text-2xl sm:text-4xl font-extrabold mb-4">
-            Sẵn Sàng <span className="text-[#FBBF24]">Bứt Phá</span> Cùng {siteConfig.owner.name}?
+            Sẵn Sàng <span className="text-[#FBBF24]">Bứt Phá</span> Cùng {siteConfig.name}?
           </h2>
           <p className="text-gray-400 mb-8 max-w-lg mx-auto">
             Tham gia cộng đồng solo entrepreneur Việt Nam đang xây dựng doanh nghiệp tinh gọn với AI — tự động hóa, tự do thời gian, tự do tài chính.
@@ -737,8 +741,8 @@ export default function HomePage() {
             {/* Col 1: About */}
             <div>
               <div className="flex items-center gap-2.5 mb-4">
-                <Image src={siteConfig.owner.avatar} alt={siteConfig.owner.name} width={32} height={32} className="w-8 h-8 rounded-lg object-cover" />
-                <span className="font-bold text-sm">{siteConfig.owner.name}</span>
+                <Image src={siteConfig.owner.avatar} alt={siteConfig.name} width={32} height={32} className="w-8 h-8 rounded-lg object-cover" />
+                <span className="font-bold text-sm">{siteConfig.name}</span>
               </div>
               <ul className="space-y-2 text-sm text-gray-500">
                 <li><a href="#" className="hover:text-white transition-colors">Giới thiệu</a></li>
@@ -781,7 +785,7 @@ export default function HomePage() {
           </div>
 
           <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-            <p>&copy; {new Date().getFullYear()} {siteConfig.owner.name} | {siteConfig.domain}</p>
+            <p>&copy; {new Date().getFullYear()} {siteConfig.name} | {siteConfig.domain}</p>
             <div className="flex gap-4">
               <a href="/privacy-policy" className="hover:text-white transition-colors">Chính sách bảo mật</a>
               <a href="/terms-of-service" className="hover:text-white transition-colors">Điều khoản dịch vụ</a>

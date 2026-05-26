@@ -13,19 +13,19 @@ export const siteConfig = {
   // Env: NEXT_PUBLIC_SITE_NAME, NEXT_PUBLIC_SITE_SHORT_NAME, NEXT_PUBLIC_SITE_DOMAIN
   //      NEXT_PUBLIC_SITE_TAGLINE, NEXT_PUBLIC_SITE_DESCRIPTION
   name: env("NEXT_PUBLIC_SITE_NAME", "Doanh Nghiệp 1 Người"),
-  shortName: env("NEXT_PUBLIC_SITE_SHORT_NAME", "KDON"),
+  shortName: env("NEXT_PUBLIC_SITE_SHORT_NAME", "DN1N"),
   domain: env("NEXT_PUBLIC_SITE_DOMAIN", "doanhnghiep1nguoi.online"),
-  tagline: env("NEXT_PUBLIC_SITE_TAGLINE", "Xây dựng & phát triển doanh nghiệp 1 người"),
+  tagline: env("NEXT_PUBLIC_SITE_TAGLINE", "Mô Hình Kinh Doanh Tự Động 1 Mình với AI"),
   description: env(
     "NEXT_PUBLIC_SITE_DESCRIPTION",
-    "Học cách xây dựng doanh nghiệp 1 người bền vững với khoá học thực chiến"
+    "Học cách xây Doanh Nghiệp 1 Người - Mô hình kinh doanh tự động 1 mình bằng AI"
   ),
 
   // ─── Owner ───
   // Env: NEXT_PUBLIC_OWNER_NAME, NEXT_PUBLIC_OWNER_BIO, NEXT_PUBLIC_OWNER_AVATAR
   owner: {
-    name: env("NEXT_PUBLIC_OWNER_NAME", "Doanh Nghiệp 1 Người"),
-    bio: env("NEXT_PUBLIC_OWNER_BIO", "Xây dựng & phát triển doanh nghiệp 1 người"),
+    name: env("NEXT_PUBLIC_OWNER_NAME", "Loan Nguyễn"),
+    bio: env("NEXT_PUBLIC_OWNER_BIO", "Founder & CEO"),
     avatar: env("NEXT_PUBLIC_OWNER_AVATAR", "/images/logo.png"),
   },
 

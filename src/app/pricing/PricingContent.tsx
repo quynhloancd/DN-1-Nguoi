@@ -16,7 +16,6 @@ import {
   Headphones,
   Star,
 } from "lucide-react";
-import { siteConfig } from "@/lib/site-config";
 
 /* ─── Types ──────────────────────────────────────────── */
 
