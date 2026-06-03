@@ -117,7 +117,7 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body className="antialiased min-h-screen" style={{ background: "#0a0a0a", color: "#f5f5f5" }} suppressHydrationWarning>
+      <body className="antialiased min-h-screen" style={{ background: "#FFFFFF", color: "#1B2A4A" }} suppressHydrationWarning>
         {/* Skip to main content — accessibility */}
         <a
           href="#main-content"

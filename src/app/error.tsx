@@ -25,8 +25,8 @@ export default function Error({ error, reset }: ErrorProps) {
         alignItems: "center",
         justifyContent: "center",
         padding: "24px",
-        background: "#0a0a0a",
-        color: "#f5f5f5",
+        background: "#FFFFFF",
+        color: "#1B2A4A",
         fontFamily:
           "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
         textAlign: "center",
@@ -60,7 +60,7 @@ export default function Error({ error, reset }: ErrorProps) {
             fontSize: "clamp(22px, 5vw, 30px)",
             fontWeight: 800,
             margin: "0 0 10px",
-            color: "#f5f5f5",
+            color: "#1B2A4A",
           }}
         >
           Đã xảy ra lỗi

@@ -117,7 +117,7 @@ export default function PricingContent() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-white text-[#1B2A4A]">
       {/* ═══ HERO ═══ */}
       <section className="pt-28 sm:pt-36 pb-10 sm:pb-14 px-4">
         <div className="max-w-3xl mx-auto text-center">
@@ -137,7 +137,7 @@ export default function PricingContent() {
             <span className="text-[#E85D04]">tương lai của bạn</span>
           </h1>
 
-          <p className="text-sm sm:text-base text-gray-400 max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto leading-relaxed">
             Bắt đầu miễn phí hoặc chọn gói nâng cao để truy cập toàn bộ khoá
             học, tài liệu và hỗ trợ từ {siteConfig.name}.
           </p>
@@ -155,11 +155,11 @@ export default function PricingContent() {
               }`}
               style={{
                 background: tier.highlighted
-                  ? "linear-gradient(180deg, rgba(232,93,4,0.06) 0%, #111 40%)"
-                  : "#111",
+                  ? "linear-gradient(180deg, rgba(232,93,4,0.06) 0%, #FFFFFF 40%)"
+                  : "#FFFFFF",
                 border: tier.highlighted
                   ? "2px solid rgba(232,93,4,0.5)"
-                  : "1px solid #1f1f1f",
+                  : "1px solid #E5E7EB",
               }}
             >
               {/* Badge */}
@@ -184,8 +184,8 @@ export default function PricingContent() {
                     className="w-11 h-11 rounded-lg flex items-center justify-center shrink-0"
                     style={{
                       background: tier.highlighted
-                        ? "rgba(232,93,4,0.15)"
-                        : "rgba(255,255,255,0.05)",
+                        ? "#FFF3E0"
+                        : "#F8F9FA",
                     }}
                   >
                     <tier.icon
@@ -195,13 +195,13 @@ export default function PricingContent() {
                       }}
                     />
                   </div>
-                  <h3 className="text-lg font-bold text-white">{tier.name}</h3>
+                  <h3 className="text-lg font-bold text-[#1B2A4A]">{tier.name}</h3>
                 </div>
 
                 <div className="flex items-baseline gap-1.5 mb-3">
                   <span
                     className={`text-3xl sm:text-4xl font-extrabold ${
-                      tier.highlighted ? "text-[#E85D04]" : "text-white"
+                      tier.highlighted ? "text-[#E85D04]" : "text-[#1B2A4A]"
                     }`}
                   >
                     {tier.price}
@@ -211,7 +211,7 @@ export default function PricingContent() {
                   </span>
                 </div>
 
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-sm text-gray-600 leading-relaxed">
                   {tier.description}
                 </p>
               </div>
@@ -229,7 +229,7 @@ export default function PricingContent() {
                             : "text-gray-500"
                         }`}
                       />
-                      <span className="text-sm text-gray-300 leading-relaxed">
+                      <span className="text-sm text-gray-700 leading-relaxed">
                         {feature}
                       </span>
                     </div>
@@ -246,7 +246,7 @@ export default function PricingContent() {
                   className={`w-full flex items-center justify-center gap-2 font-bold text-sm py-3.5 rounded-lg transition-all duration-200 ${
                     tier.highlighted
                       ? "btn-green"
-                      : "bg-white/5 text-white hover:bg-white/10 border border-[#2a2a2a]"
+                      : "bg-[#F8F9FA] text-[#1B2A4A] hover:bg-gray-200 border border-gray-200"
                   }`}
                 >
                   <MessageCircle size={16} />
@@ -258,7 +258,7 @@ export default function PricingContent() {
                   className={`w-full flex items-center justify-center gap-2 font-bold text-sm py-3.5 rounded-lg transition-all duration-200 ${
                     tier.highlighted
                       ? "btn-green"
-                      : "bg-white/5 text-white hover:bg-white/10 border border-[#2a2a2a]"
+                      : "bg-[#F8F9FA] text-[#1B2A4A] hover:bg-gray-200 border border-gray-200"
                   }`}
                 >
                   {tier.cta}
@@ -270,7 +270,7 @@ export default function PricingContent() {
       </section>
 
       {/* ═══ FEATURE COMPARISON ═══ */}
-      <section className="pb-14 sm:pb-20 px-4" style={{ background: "#080808" }}>
+      <section className="pb-14 sm:pb-20 px-4" style={{ background: "#F8F9FA" }}>
         <div className="max-w-3xl mx-auto pt-14 sm:pt-20">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10">
             So sánh các gói
@@ -278,15 +278,15 @@ export default function PricingContent() {
 
           <div
             className="rounded-xl overflow-hidden"
-            style={{ border: "1px solid #1f1f1f" }}
+            style={{ border: "1px solid #E5E7EB" }}
           >
             <table className="w-full text-sm">
               <thead>
-                <tr style={{ background: "#151515" }}>
-                  <th className="text-left p-4 sm:p-5 text-gray-400 font-medium">
+                <tr style={{ background: "#F8F9FA" }}>
+                  <th className="text-left p-4 sm:p-5 text-gray-600 font-medium">
                     Tính năng
                   </th>
-                  <th className="p-4 sm:p-5 text-gray-400 font-medium text-center">
+                  <th className="p-4 sm:p-5 text-gray-600 font-medium text-center">
                     Miễn Phí
                   </th>
                   <th
@@ -295,7 +295,7 @@ export default function PricingContent() {
                   >
                     Standard
                   </th>
-                  <th className="p-4 sm:p-5 text-gray-400 font-medium text-center">
+                  <th className="p-4 sm:p-5 text-gray-600 font-medium text-center">
                     Premium
                   </th>
                 </tr>
@@ -315,11 +315,11 @@ export default function PricingContent() {
                   <tr
                     key={i}
                     style={{
-                      background: i % 2 === 0 ? "#111" : "#0d0d0d",
-                      borderTop: "1px solid #1a1a1a",
+                      background: i % 2 === 0 ? "#FFFFFF" : "#F8F9FA",
+                      borderTop: "1px solid #E5E7EB",
                     }}
                   >
-                    <td className="p-4 sm:p-5 text-gray-300">{row.feature}</td>
+                    <td className="p-4 sm:p-5 text-gray-700">{row.feature}</td>
                     <td className="p-4 sm:p-5 text-center">
                       <ComparisonCell value={row.free} />
                     </td>
@@ -361,15 +361,15 @@ export default function PricingContent() {
               <div
                 key={i}
                 className="p-6 sm:p-7 rounded-xl text-center"
-                style={{ background: "#111", border: "1px solid #1f1f1f" }}
+                style={{ background: "#FFFFFF", border: "1px solid #E5E7EB" }}
               >
                 <div
                   className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4"
-                  style={{ background: "rgba(232,93,4,0.1)" }}
+                  style={{ background: "#FFF3E0" }}
                 >
                   <item.icon size={22} className="text-[#E85D04]" />
                 </div>
-                <h3 className="font-semibold text-white text-sm sm:text-base mb-2">
+                <h3 className="font-semibold text-[#1B2A4A] text-sm sm:text-base mb-2">
                   {item.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
@@ -384,7 +384,7 @@ export default function PricingContent() {
       {/* ═══ FAQ ═══ */}
       <section
         className="py-14 sm:py-20 px-4"
-        style={{ background: "#080808" }}
+        style={{ background: "#F8F9FA" }}
       >
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10">
@@ -396,13 +396,13 @@ export default function PricingContent() {
               <div
                 key={i}
                 className="rounded-xl overflow-hidden"
-                style={{ background: "#111", border: "1px solid #1f1f1f" }}
+                style={{ background: "#FFFFFF", border: "1px solid #E5E7EB" }}
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex items-center justify-between p-5 sm:p-6 text-left gap-4"
                 >
-                  <span className="text-sm sm:text-base font-medium text-white">
+                  <span className="text-sm sm:text-base font-medium text-[#1B2A4A]">
                     {faq.q}
                   </span>
                   <ChevronDown
@@ -417,7 +417,7 @@ export default function PricingContent() {
                     openFaq === i ? "max-h-48" : "max-h-0"
                   }`}
                 >
-                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-gray-400 leading-relaxed border-t border-[#1f1f1f] pt-4">
+                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-gray-600 leading-relaxed border-t border-gray-200 pt-4">
                     {faq.a}
                   </div>
                 </div>
@@ -433,7 +433,7 @@ export default function PricingContent() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
             Sẵn sàng bắt đầu?
           </h2>
-          <p className="text-sm sm:text-base text-gray-400 mb-8 max-w-md mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-gray-600 mb-8 max-w-md mx-auto leading-relaxed">
             Tham gia cộng đồng hơn 1,200+ học viên đang làm chủ Video AI và xây
             dựng thương hiệu cá nhân cùng {siteConfig.name}.
           </p>
@@ -447,7 +447,7 @@ export default function PricingContent() {
             </Link>
             <Link
               href="/courses"
-              className="text-sm sm:text-base py-3.5 px-8 font-bold rounded-lg bg-white/5 text-white hover:bg-white/10 border border-[#2a2a2a] transition-all duration-200"
+              className="text-sm sm:text-base py-3.5 px-8 font-bold rounded-lg bg-[#F8F9FA] text-[#1B2A4A] hover:bg-gray-200 border border-gray-200 transition-all duration-200"
             >
               Xem khoá học
             </Link>
@@ -471,7 +471,7 @@ function ComparisonCell({
     return (
       <span
         className={`text-sm font-medium ${
-          highlighted ? "text-[#E85D04]" : "text-gray-300"
+          highlighted ? "text-[#E85D04]" : "text-gray-700"
         }`}
       >
         {value}

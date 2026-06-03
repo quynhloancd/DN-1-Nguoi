@@ -198,48 +198,46 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="bg-[#0a0a0a] min-h-screen text-white overflow-x-hidden">
+    <div className="bg-white min-h-screen text-[#1B2A4A] overflow-x-hidden">
 
       {/* ═══ HEADER ═══ */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/92 backdrop-blur-xl border-b border-white/5">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5">
-            <Image src={siteConfig.owner.avatar} alt={siteConfig.owner.name} width={36} height={36} sizes="36px" className="w-9 h-9 rounded-lg object-cover" />
-            <div>
-              <div className="text-sm font-bold leading-tight">{siteConfig.name}</div>
-            </div>
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/images/logo.png" alt={siteConfig.name} width={44} height={44} sizes="44px" className="w-11 h-11 object-contain" />
+            <span className="text-sm font-bold text-[#1B2A4A] leading-tight hidden sm:block">{siteConfig.name}</span>
           </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-6">
             {navLinks.map((l) => (
-              <a key={l.label} href={l.href} className="text-sm text-gray-400 hover:text-white transition-colors">{l.label}</a>
+              <a key={l.label} href={l.href} className="text-sm text-gray-600 hover:text-[#1B2A4A] transition-colors">{l.label}</a>
             ))}
           </div>
 
           {/* Right */}
           <div className="hidden md:flex items-center gap-3">
-            <Link href="/login" className="text-sm text-gray-400 hover:text-white transition-colors">Đăng nhập</Link>
+            <Link href="/login" className="text-sm text-gray-600 hover:text-[#1B2A4A] transition-colors">Đăng nhập</Link>
             <button onClick={() => setShowLeadModal(true)} className="btn-green text-sm py-2 px-5">
               <Gift size={14} /> Nhận quà miễn phí
             </button>
           </div>
 
           {/* Mobile hamburger */}
-          <button onClick={() => setMobileMenu(!mobileMenu)} className="md:hidden text-gray-400 p-2">
+          <button onClick={() => setMobileMenu(!mobileMenu)} className="md:hidden text-gray-600 p-2">
             {mobileMenu ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
         {/* Mobile menu */}
         {mobileMenu && (
-          <div className="md:hidden bg-[#111] border-t border-white/5 px-4 py-4 space-y-3">
+          <div className="md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3">
             {navLinks.map((l) => (
-              <a key={l.label} href={l.href} onClick={() => setMobileMenu(false)} className="block text-sm text-gray-300 py-2">{l.label}</a>
+              <a key={l.label} href={l.href} onClick={() => setMobileMenu(false)} className="block text-sm text-gray-700 py-2">{l.label}</a>
             ))}
             <div className="flex gap-3 pt-2">
-              <Link href="/login" className="text-sm text-gray-400">Đăng nhập</Link>
+              <Link href="/login" className="text-sm text-gray-600">Đăng nhập</Link>
               <button onClick={() => { setShowLeadModal(true); setMobileMenu(false); }} className="btn-green text-sm py-2 px-4">
                 <Gift size={14} /> Nhận quà miễn phí
               </button>
@@ -257,7 +255,7 @@ export default function HomePage() {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-5 sm:mb-8 text-xs sm:text-sm font-medium"
-            style={{ background: "rgba(232,93,4,0.1)", border: "1px solid rgba(232,93,4,0.25)", color: "#E85D04" }}>
+            style={{ background: "#FFF3E0", border: "1px solid rgba(232,93,4,0.25)", color: "#E85D04" }}>
             <Zap size={14} /> Hơn 200 người 35-50 tuổi đã ứng dụng AI vào công việc cùng Thiên Huệ
           </div>
 
@@ -271,8 +269,8 @@ export default function HomePage() {
           </h1>
 
           {/* Sub-headline */}
-          <p className="text-sm sm:text-lg text-gray-400 max-w-2xl mx-auto mb-6 sm:mb-10 leading-relaxed">
-            <strong className="text-white">Thiên Huệ</strong> giúp người 35–50 tuổi đang kinh doanh hoặc đi làm ứng dụng AI vào công việc thực tế — thông qua các tool và workflow đóng gói sẵn, mà không cần biết code hay mất hàng tháng tự mày mò.
+          <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto mb-6 sm:mb-10 leading-relaxed">
+            <strong className="text-[#1B2A4A]">Thiên Huệ</strong> giúp người 35–50 tuổi đang kinh doanh hoặc đi làm ứng dụng AI vào công việc thực tế — thông qua các tool và workflow đóng gói sẵn, mà không cần biết code hay mất hàng tháng tự mày mò.
           </p>
 
           {/* CTA */}
@@ -297,7 +295,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══ SECTION 2: PAIN POINTS ═══ */}
-      <section className="py-12 sm:py-24 px-4 sm:px-6">
+      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-[#F8F9FA]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-14">
             Bạn có đang mắc kẹt với <span className="text-[#E85D04]">những điều này?</span>
@@ -305,33 +303,33 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {painPoints.map((p, i) => (
-              <div key={i} className="bg-[#111] border border-white/5 rounded-2xl p-6 hover:border-red-500/20 transition-colors">
+              <div key={i} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:border-red-500/20 transition-colors">
                 <div className="text-3xl mb-3">{p.emoji}</div>
                 <h3 className="text-lg font-bold mb-2">{p.title}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">{p.desc}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
 
-          <p className="text-center mt-10 text-gray-400">
+          <p className="text-center mt-10 text-gray-600">
             👇 <em>Tin tốt là: Tất cả những điều này đều có thể giải quyết — bằng AI, đúng phương pháp.</em>
           </p>
         </div>
       </section>
 
       {/* ═══ SECTION 3: SOLUTION — 4 BƯỚC ═══ */}
-      <section id="roadmap" className="py-12 sm:py-24 px-4 sm:px-6 bg-[#0d0d0d]">
+      <section id="roadmap" className="py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-2xl sm:text-4xl font-extrabold mb-3">
               Lộ Trình <span className="text-[#E85D04]">4 Bước</span> Cùng Thiên Huệ
             </h2>
-            <p className="text-gray-400">Từ checklist miễn phí → Workflow tự động → Thu nhập bền vững</p>
+            <p className="text-gray-600">Từ checklist miễn phí → Workflow tự động → Thu nhập bền vững</p>
           </div>
 
           <div className="space-y-5">
             {steps.map((s) => (
-              <div key={s.num} className="bg-[#111] border border-white/5 rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+              <div key={s.num} className="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 relative overflow-hidden">
                 {/* Step number bg */}
                 <div className="absolute top-4 right-6 text-[80px] font-extrabold leading-none opacity-5" style={{ color: s.color }}>
                   {s.num}
@@ -349,11 +347,11 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-300 font-medium mb-4">{s.subtitle}</p>
+                  <p className="text-gray-700 font-medium mb-4">{s.subtitle}</p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
                     {s.points.map((pt, j) => (
-                      <div key={j} className="flex items-start gap-2 text-sm text-gray-400">
+                      <div key={j} className="flex items-start gap-2 text-sm text-gray-600">
                         <CheckCircle size={15} className="text-[#22c55e] shrink-0 mt-0.5" />
                         <span>{pt}</span>
                       </div>
@@ -375,7 +373,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══ SECTION 4: ABOUT LÊ ĐĂNG KHƯƠNG ═══ */}
-      <section className="py-12 sm:py-24 px-4 sm:px-6">
+      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-[#F8F9FA]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-14">
             Thiên Huệ <span className="text-[#E85D04]">Là Ai?</span>
@@ -384,7 +382,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
             {/* Photo */}
             <div className="lg:col-span-2">
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden relative border border-white/10">
+              <div className="aspect-[3/4] rounded-2xl overflow-hidden relative border border-gray-200">
                 <Image
                   src={siteConfig.owner.avatar}
                   alt={siteConfig.owner.name}
@@ -406,8 +404,8 @@ export default function HomePage() {
                 Chuyên gia AI Workflow cho người <span className="text-[#E85D04]">kinh doanh & đi làm 35-50 tuổi</span>
               </h3>
 
-              <p className="text-gray-400 leading-relaxed">
-                Tôi là <strong className="text-white">Thiên Huệ</strong> — không phải dân IT, bắt đầu tìm hiểu AI chưa đến 1 năm, muộn hơn nhiều người xung quanh. Tôi thấy mọi thứ đang thay đổi quá nhanh và nhận ra nếu không bắt đầu ngay, khoảng cách sẽ ngày càng xa — đây cũng chính là nỗi sợ của rất nhiều người 35–50 tuổi đang bận rộn với công việc và gia đình.
+              <p className="text-gray-600 leading-relaxed">
+                Tôi là <strong className="text-[#1B2A4A]">Thiên Huệ</strong> — không phải dân IT, bắt đầu tìm hiểu AI chưa đến 1 năm, muộn hơn nhiều người xung quanh. Tôi thấy mọi thứ đang thay đổi quá nhanh và nhận ra nếu không bắt đầu ngay, khoảng cách sẽ ngày càng xa — đây cũng chính là nỗi sợ của rất nhiều người 35–50 tuổi đang bận rộn với công việc và gia đình.
               </p>
 
               <div className="space-y-3">
@@ -420,12 +418,12 @@ export default function HomePage() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <span className="text-lg shrink-0">{item.icon}</span>
-                    <span className="text-sm text-gray-300">{item.text}</span>
+                    <span className="text-sm text-gray-700">{item.text}</span>
                   </div>
                 ))}
               </div>
 
-              <blockquote className="border-l-2 border-[#E85D04] pl-4 italic text-gray-400 text-sm">
+              <blockquote className="border-l-2 border-[#E85D04] pl-4 italic text-gray-600 text-sm">
                 &quot;Tôi muốn giúp những người bận rộn như bạn — không có thời gian mày mò — có thể ứng dụng AI thực tế vào công việc trong vài giờ, không phải vài tháng. Đó là lý do Doanh Nghiệp 1 Người ra đời.&quot;
               </blockquote>
 
@@ -441,7 +439,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══ SECTION 5: WHO IS THIS FOR ═══ */}
-      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-[#0d0d0d]">
+      <section className="py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-14">
             Dành cho bạn nếu <span className="text-[#E85D04]">bạn đang ở đây...</span>
@@ -449,13 +447,13 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {targetAudience.map((t, i) => (
-              <div key={i} className="bg-[#111] border border-white/5 rounded-2xl p-6 hover:border-[#E85D04]/10 transition-colors">
+              <div key={i} className="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#E85D04]/10 transition-colors">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-                  style={{ background: "rgba(232,93,4,0.08)" }}>
+                  style={{ background: "#FFF3E0" }}>
                   <t.icon size={20} className="text-[#E85D04]" />
                 </div>
                 <h3 className="font-bold mb-2">{t.title}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">{t.desc}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{t.desc}</p>
               </div>
             ))}
           </div>
@@ -463,21 +461,21 @@ export default function HomePage() {
       </section>
 
       {/* ═══ SECTION 6: KHOÁ HỌC (dynamic from DB) ═══ */}
-      <section id="courses" className="py-12 sm:py-24 px-4 sm:px-6">
+      <section id="courses" className="py-12 sm:py-24 px-4 sm:px-6 bg-[#F8F9FA]">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-2xl sm:text-4xl font-extrabold mb-3">
               Sản Phẩm Của <span className="text-[#E85D04]">Doanh Nghiệp 1 Người</span>
             </h2>
-            <p className="text-gray-400">Đóng gói sẵn — cài xong dùng ngay, không lý thuyết suông</p>
+            <p className="text-gray-600">Đóng gói sẵn — cài xong dùng ngay, không lý thuyết suông</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {dynamicCourses.map((c, i) => (
-              <div key={c.slug ?? i} className="bg-[#111] border border-white/5 rounded-2xl overflow-hidden flex flex-col hover:border-[#E85D04]/20 transition-colors">
+              <div key={c.slug ?? i} className="bg-white border border-gray-100 rounded-2xl overflow-hidden flex flex-col hover:shadow-md hover:border-[#E85D04]/30 transition-colors">
                 {/* Thumbnail (from DB) */}
                 {c.thumbnail && !c._static && (
-                  <div className="relative aspect-video bg-[#0d0d0d] overflow-hidden">
+                  <div className="relative aspect-video bg-[#F8F9FA] overflow-hidden">
                     <Image
                       src={c.thumbnail}
                       alt={c.title}
@@ -511,7 +509,7 @@ export default function HomePage() {
                       )}
                     </div>
                   </div>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-4 flex-1">{c.desc}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1">{c.desc}</p>
                   <div className="text-xs text-gray-500 mb-4">{c.stats}</div>
                   {c.slug ? (
                     <Link href={`/courses/${c.slug}`} className="btn-green text-sm py-2.5 justify-center">
@@ -537,7 +535,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══ SECTION 7: TESTIMONIALS ═══ */}
-      <section id="testimonials" className="py-12 sm:py-24 px-4 sm:px-6 bg-[#0d0d0d]">
+      <section id="testimonials" className="py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-center mb-6">
             Người Thật, Kết Quả Thật <span className="text-[#E85D04]">Từ Workflow AI</span>
@@ -546,7 +544,7 @@ export default function HomePage() {
           {/* Stats bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14">
             {statsBar.map((s, i) => (
-              <div key={i} className="text-center bg-[#111] border border-white/5 rounded-xl py-5 px-3">
+              <div key={i} className="text-center bg-white border border-gray-100 rounded-xl py-5 px-3">
                 <div className="text-2xl sm:text-3xl font-extrabold text-[#E85D04]">{s.value}</div>
                 <div className="text-xs text-gray-500 mt-1">{s.label}</div>
               </div>
@@ -556,12 +554,12 @@ export default function HomePage() {
           {/* Testimonial cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {testimonials.map((t, i) => (
-              <div key={i} className="bg-[#111] border border-white/5 rounded-2xl p-5">
+              <div key={i} className="bg-white border border-gray-100 rounded-2xl p-5">
                 <div className="flex gap-1 mb-3">
                   {[1,2,3,4,5].map(j => <Star key={j} size={13} fill="#F59E0B" color="#F59E0B" />)}
                 </div>
-                <p className="text-sm text-gray-300 leading-relaxed mb-4 italic">&quot;{t.text}&quot;</p>
-                <div className="flex items-center gap-3 pt-3 border-t border-white/5">
+                <p className="text-sm text-gray-700 leading-relaxed mb-4 italic">&quot;{t.text}&quot;</p>
+                <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
                   <div className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold"
                     style={{ background: "linear-gradient(135deg, #E85D04, #F97316)", color: "#fff" }}>
                     {t.avatar}
@@ -579,7 +577,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══ SECTION 8: FREE OFFER ═══ */}
-      <section id="free-offer" className="py-12 sm:py-24 px-4 sm:px-6 relative overflow-hidden scroll-mt-20">
+      <section id="free-offer" className="py-12 sm:py-24 px-4 sm:px-6 relative overflow-hidden scroll-mt-20 bg-[#F8F9FA]">
         {/* Background glow */}
         <div className="absolute inset-0 opacity-10"
           style={{ background: "radial-gradient(ellipse at center, #E85D04, transparent 70%)" }} />
@@ -587,13 +585,13 @@ export default function HomePage() {
         <div className="relative max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-sm font-bold"
-              style={{ background: "rgba(232,93,4,0.15)", color: "#E85D04" }}>
+              style={{ background: "#FFF3E0", color: "#E85D04" }}>
               <Gift size={16} /> TẶNG MIỄN PHÍ TỪ THIÊN HUỆ
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold mb-3">
               Checklist: <span className="text-[#E85D04]">5 Việc Giao Cho AI Ngay Hôm Nay</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               5 việc đang làm tay mà bạn có thể giao ngay cho AI — không cần code, dùng được trong ngày đầu tiên
             </p>
           </div>
@@ -614,7 +612,7 @@ export default function HomePage() {
           {/* Value badge + countdown */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
             <span className="text-sm font-bold px-4 py-2 rounded-full"
-              style={{ background: "rgba(232,93,4,0.1)", color: "#E85D04", border: "1px solid rgba(232,93,4,0.2)" }}>
+              style={{ background: "#FFF3E0", color: "#E85D04", border: "1px solid rgba(232,93,4,0.2)" }}>
               🎁 Hoàn toàn miễn phí — Không cần thẻ tín dụng
             </span>
             <span className="text-sm font-mono text-[#F97316]">
@@ -628,30 +626,30 @@ export default function HomePage() {
               <h3 className="text-xl font-bold">📦 Bên trong cẩm nang có gì?</h3>
 
               {freeOfferItems.map((item, i) => (
-                <div key={i} className="flex gap-4 bg-[#111] border border-white/5 rounded-xl p-4">
+                <div key={i} className="flex gap-4 bg-white border border-gray-100 rounded-xl p-4">
                   <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-                    style={{ background: "rgba(232,93,4,0.1)" }}>
+                    style={{ background: "#FFF3E0" }}>
                     <item.icon size={18} className="text-[#E85D04]" />
                   </div>
                   <div>
                     <h4 className="font-bold text-sm mb-1">{item.title}</h4>
-                    <p className="text-xs text-gray-400 leading-relaxed">{item.desc}</p>
+                    <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
 
-              <div className="space-y-2 text-sm text-gray-400">
-                <div className="flex items-center gap-2"><CheckCircle size={14} className="text-[#22c55e]" /> Đã giúp <strong className="text-white">200+ người</strong> tiết kiệm 5-10 giờ/tuần</div>
-                <div className="flex items-center gap-2"><CheckCircle size={14} className="text-[#22c55e]" /> Dành cho người <strong className="text-white">không rành công nghệ</strong> — 35-50 tuổi</div>
-                <div className="flex items-center gap-2"><CheckCircle size={14} className="text-[#22c55e]" /> Đánh giá <strong className="text-white">4.9/5</strong> từ người đã dùng thực tế</div>
+              <div className="space-y-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2"><CheckCircle size={14} className="text-[#22c55e]" /> Đã giúp <strong className="text-[#1B2A4A]">200+ người</strong> tiết kiệm 5-10 giờ/tuần</div>
+                <div className="flex items-center gap-2"><CheckCircle size={14} className="text-[#22c55e]" /> Dành cho người <strong className="text-[#1B2A4A]">không rành công nghệ</strong> — 35-50 tuổi</div>
+                <div className="flex items-center gap-2"><CheckCircle size={14} className="text-[#22c55e]" /> Đánh giá <strong className="text-[#1B2A4A]">4.9/5</strong> từ người đã dùng thực tế</div>
               </div>
             </div>
 
             {/* Right - CTA box */}
-            <div className="bg-[#111] border-2 border-[#E85D04]/30 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center">
+            <div className="bg-white border-2 border-[#E85D04]/30 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center">
               <Gift size={40} className="text-[#E85D04] mb-4" />
               <h3 className="text-xl font-bold mb-3">NHẬN CHECKLIST NGAY HÔM NAY</h3>
-              <p className="text-sm text-gray-400 mb-6 leading-relaxed">
+              <p className="text-sm text-gray-600 mb-6 leading-relaxed">
                 Tạo tài khoản miễn phí để nhận ngay checklist &quot;5 Việc Giao Cho AI Ngay Hôm Nay&quot; — thực tế, dùng được ngay
               </p>
 
@@ -659,7 +657,7 @@ export default function HomePage() {
                 <div className="w-full">
                   <CheckCircle size={48} className="text-[#22c55e] mx-auto mb-4" />
                   <h4 className="text-lg font-bold mb-2">Đăng ký thành công! 🎉</h4>
-                  <p className="text-sm text-gray-400 mb-4">Vui lòng kiểm tra email để xác thực tài khoản, sau đó đăng nhập.</p>
+                  <p className="text-sm text-gray-600 mb-4">Vui lòng kiểm tra email để xác thực tài khoản, sau đó đăng nhập.</p>
                   <Link href="/login" className="btn-green w-full justify-center py-3 text-base">
                     Đăng nhập <ArrowRight size={18} />
                   </Link>
@@ -681,7 +679,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══ SECTION 9: FAQ ═══ */}
-      <section id="faq" className="py-12 sm:py-24 px-4 sm:px-6 bg-[#0d0d0d] scroll-mt-20">
+      <section id="faq" className="py-12 sm:py-24 px-4 sm:px-6 scroll-mt-20">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-14">
             Câu Hỏi <span className="text-[#E85D04]">Thường Gặp</span>
@@ -689,16 +687,16 @@ export default function HomePage() {
 
           <div className="space-y-3">
             {faqs.map((f, i) => (
-              <div key={i} className="bg-[#111] border border-white/5 rounded-xl overflow-hidden">
+              <div key={i} className="bg-white border border-gray-100 rounded-xl overflow-hidden">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex items-center justify-between p-5 text-left hover:bg-white/2 transition-colors"
                 >
                   <span className="font-semibold text-sm sm:text-base pr-4">{f.q}</span>
-                  <ChevronDown size={18} className={`shrink-0 text-gray-400 transition-transform ${openFaq === i ? "rotate-180" : ""}`} />
+                  <ChevronDown size={18} className={`shrink-0 text-gray-600 transition-transform ${openFaq === i ? "rotate-180" : ""}`} />
                 </button>
                 {openFaq === i && (
-                  <div className="px-5 pb-5 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+                  <div className="px-5 pb-5 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
                     {f.a}
                   </div>
                 )}
@@ -709,19 +707,19 @@ export default function HomePage() {
       </section>
 
       {/* ═══ SECTION 10: FINAL CTA ═══ */}
-      <section className="py-12 sm:py-24 px-4 sm:px-6 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5"
+      <section className="py-12 sm:py-24 px-4 sm:px-6 relative overflow-hidden bg-[#1B2A4A]">
+        <div className="absolute inset-0 opacity-10"
           style={{ background: "radial-gradient(circle at center, #E85D04, transparent 60%)" }} />
 
         <div className="relative max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-4xl font-extrabold mb-4">
+          <h2 className="text-2xl sm:text-4xl font-extrabold mb-4 text-white">
             Sẵn Sàng <span className="text-[#E85D04]">Ứng Dụng AI</span> Vào Công Việc?
           </h2>
-          <p className="text-gray-400 mb-8 max-w-lg mx-auto">
+          <p className="text-gray-300 mb-8 max-w-lg mx-auto">
             Tham gia cùng 200+ người 35-50 tuổi đang tiết kiệm 5-10 giờ/tuần nhờ workflow AI đóng gói sẵn của Thiên Huệ.
           </p>
 
-          <div className="flex items-center justify-center gap-2 mb-8 text-sm text-gray-500">
+          <div className="flex items-center justify-center gap-2 mb-8 text-sm text-gray-300">
             {[1,2,3,4,5].map(i => <Star key={i} size={14} fill="#F59E0B" color="#F59E0B" />)}
             <span className="ml-1">4.9/5 từ người dùng thực tế</span>
             <span className="mx-2">|</span>
@@ -734,7 +732,7 @@ export default function HomePage() {
               <Download size={18} /> Nhận Checklist Miễn Phí Ngay
             </button>
             <a href={siteConfig.socials.facebook} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 py-3.5 px-8 rounded-lg text-base font-semibold border border-white/10 hover:border-white/20 transition-colors">
+              className="inline-flex items-center justify-center gap-3 py-3.5 px-8 rounded-lg text-base font-semibold border border-white/20 hover:border-white/40 text-white transition-colors">
               <MessageCircle size={16} className="text-[#E85D04]" /> Tư vấn trực tiếp
             </a>
           </div>
@@ -742,19 +740,19 @@ export default function HomePage() {
       </section>
 
       {/* ═══ FOOTER ═══ */}
-      <footer className="border-t border-white/5 py-12 pb-24 px-4 sm:px-6">
+      <footer className="border-t border-gray-100 py-12 pb-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
             {/* Col 1: About */}
             <div>
               <div className="flex items-center gap-2.5 mb-4">
-                <Image src="/images/about/portrait.jpg" alt={siteConfig.owner.name} width={32} height={32} sizes="32px" className="w-8 h-8 rounded-lg object-cover" />
-                <span className="font-bold text-sm">{siteConfig.owner.name}</span>
+                <Image src="/images/logo.png" alt={siteConfig.name} width={36} height={36} sizes="36px" className="w-9 h-9 object-contain" />
+                <span className="font-bold text-sm text-[#1B2A4A]">{siteConfig.name}</span>
               </div>
               <ul className="space-y-2 text-sm text-gray-500">
-                <li><a href="#roadmap" className="hover:text-white transition-colors">Giới thiệu</a></li>
-                <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-                <li><a href={siteConfig.socials.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Liên hệ</a></li>
+                <li><a href="#roadmap" className="hover:text-[#1B2A4A] transition-colors">Giới thiệu</a></li>
+                <li><Link href="/blog" className="hover:text-[#1B2A4A] transition-colors">Blog</Link></li>
+                <li><a href={siteConfig.socials.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-[#1B2A4A] transition-colors">Liên hệ</a></li>
               </ul>
             </div>
 
@@ -762,11 +760,11 @@ export default function HomePage() {
             <div>
               <h4 className="font-bold text-sm mb-4">Sản phẩm</h4>
               <ul className="space-y-2 text-sm text-gray-500">
-                <li><button onClick={() => setShowLeadModal(true)} className="hover:text-white transition-colors text-left">Checklist Miễn Phí</button></li>
-                <li><Link href="/courses" className="hover:text-white transition-colors">Workflow n8n Cơ Bản</Link></li>
-                <li><Link href="/courses" className="hover:text-white transition-colors">Khóa Học AI Affiliate</Link></li>
-                <li><a href={siteConfig.socials.zalo} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Tư Vấn 1-1</a></li>
-                <li><Link href="/pricing" className="hover:text-white transition-colors">Bảng giá</Link></li>
+                <li><button onClick={() => setShowLeadModal(true)} className="hover:text-[#1B2A4A] transition-colors text-left">Checklist Miễn Phí</button></li>
+                <li><Link href="/courses" className="hover:text-[#1B2A4A] transition-colors">Workflow n8n Cơ Bản</Link></li>
+                <li><Link href="/courses" className="hover:text-[#1B2A4A] transition-colors">Khóa Học AI Affiliate</Link></li>
+                <li><a href={siteConfig.socials.zalo} target="_blank" rel="noopener noreferrer" className="hover:text-[#1B2A4A] transition-colors">Tư Vấn 1-1</a></li>
+                <li><Link href="/pricing" className="hover:text-[#1B2A4A] transition-colors">Bảng giá</Link></li>
               </ul>
             </div>
 
@@ -774,10 +772,10 @@ export default function HomePage() {
             <div>
               <h4 className="font-bold text-sm mb-4">Hỗ trợ</h4>
               <ul className="space-y-2 text-sm text-gray-500">
-                <li><Link href="/community" className="hover:text-white transition-colors">Cộng đồng</Link></li>
-                <li><Link href="/consulting" className="hover:text-white transition-colors">Tư vấn 1-1</Link></li>
-                <li><Link href="/events" className="hover:text-white transition-colors">Sự kiện</Link></li>
-                <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
+                <li><Link href="/community" className="hover:text-[#1B2A4A] transition-colors">Cộng đồng</Link></li>
+                <li><Link href="/consulting" className="hover:text-[#1B2A4A] transition-colors">Tư vấn 1-1</Link></li>
+                <li><Link href="/events" className="hover:text-[#1B2A4A] transition-colors">Sự kiện</Link></li>
+                <li><a href="#faq" className="hover:text-[#1B2A4A] transition-colors">FAQ</a></li>
               </ul>
             </div>
 
@@ -792,11 +790,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+          <div className="border-t border-gray-100 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
             <p>{siteConfig.footer.copyright}</p>
             <div className="flex gap-4">
-              <a href="/privacy" className="hover:text-white transition-colors">Chính sách bảo mật</a>
-              <a href="/terms" className="hover:text-white transition-colors">Điều khoản dịch vụ</a>
+              <a href="/privacy" className="hover:text-[#1B2A4A] transition-colors">Chính sách bảo mật</a>
+              <a href="/terms" className="hover:text-[#1B2A4A] transition-colors">Điều khoản dịch vụ</a>
             </div>
           </div>
         </div>
@@ -838,10 +836,10 @@ export default function HomePage() {
       {showLeadModal && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => formStatus !== "loading" && setShowLeadModal(false)} />
-          <div className="relative w-full max-w-md bg-[#111] border border-[#E85D04]/30 rounded-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
+          <div className="relative w-full max-w-md bg-white border border-[#E85D04]/30 rounded-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
             {/* Close button */}
             <button onClick={() => formStatus !== "loading" && setShowLeadModal(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors z-10 p-1 rounded-lg hover:bg-white/5">
+              className="absolute top-4 right-4 text-gray-500 hover:text-[#1B2A4A] transition-colors z-10 p-1 rounded-lg hover:bg-white/5">
               <X size={18} />
             </button>
 
@@ -858,13 +856,13 @@ export default function HomePage() {
                     <Mail size={32} className="text-[#E85D04]" />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Kiểm tra email của bạn</h3>
-                  <p className="text-sm text-gray-400 mb-2 leading-relaxed">
+                  <p className="text-sm text-gray-600 mb-2 leading-relaxed">
                     Chúng tôi đã gửi email xác thực đến:
                   </p>
                   <p className="text-[#E85D04] font-semibold mb-4">{formData.email}</p>
                   <p className="text-sm text-gray-500 mb-6 leading-relaxed">
-                    Vui lòng mở email và nhấn <span className="text-gray-300 font-medium">&quot;Xác thực tài khoản&quot;</span> để kích hoạt.
-                    Kiểm tra cả thư mục <span className="text-gray-300 font-medium">Spam</span> nếu không thấy.
+                    Vui lòng mở email và nhấn <span className="text-gray-700 font-medium">&quot;Xác thực tài khoản&quot;</span> để kích hoạt.
+                    Kiểm tra cả thư mục <span className="text-gray-700 font-medium">Spam</span> nếu không thấy.
                   </p>
                   <Link href="/login" className="btn-green w-full justify-center py-3 text-base"
                     onClick={() => setShowLeadModal(false)}>
@@ -878,7 +876,7 @@ export default function HomePage() {
                   <div className="text-center mb-6">
                     <Image src={siteConfig.owner.avatar} alt={siteConfig.owner.name} width={56} height={56} sizes="56px" className="w-14 h-14 rounded-2xl mb-3 object-cover inline-block" />
                     <h3 className="text-xl font-bold mb-1">Tạo tài khoản miễn phí</h3>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-gray-600">
                       Đăng ký để nhận <span className="text-[#E85D04] font-semibold">&quot;Checklist: 5 Việc Giao Cho AI Ngay Hôm Nay&quot;</span>
                     </p>
                   </div>
@@ -893,13 +891,13 @@ export default function HomePage() {
 
                   <form onSubmit={handleFormSubmit} className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-1.5">Họ và tên</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1.5">Họ và tên</label>
                       <input type="text" required value={formData.name}
                         onChange={(e) => setFormData(p => ({ ...p, name: e.target.value }))}
                         className="input-dark w-full" placeholder="Nguyễn Văn A" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-1.5">
+                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
                         Số điện thoại <span className="text-red-400">*</span>
                       </label>
                       <input type="tel" required value={formData.phone}
@@ -910,13 +908,13 @@ export default function HomePage() {
                       <p className="text-[10px] text-gray-500 mt-1">Định dạng: 09xx hoặc +84xxx (10 số)</p>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-1.5">Email</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
                       <input type="email" required value={formData.email}
                         onChange={(e) => setFormData(p => ({ ...p, email: e.target.value }))}
                         className="input-dark w-full" placeholder="ban@email.com" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-1.5">Mật khẩu</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1.5">Mật khẩu</label>
                       <PasswordInput name="popup_password"
                         placeholder="Tối thiểu 8 ký tự"
                         minLength={8} />
