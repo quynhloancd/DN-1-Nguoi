@@ -6,7 +6,7 @@
 // ──────────────────────────────────────────────
 
 const env = (key: string, fallback: string): string =>
-  (typeof process !== "undefined" ? process.env?.[key] : undefined) ?? fallback;
+  (typeof process !== "undefined" ? process.env?.[key] : undefined) || fallback;
 
 export const siteConfig = {
   // ─── Brand ───
