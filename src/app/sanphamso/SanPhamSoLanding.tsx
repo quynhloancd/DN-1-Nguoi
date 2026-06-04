@@ -338,8 +338,7 @@ export default function SanPhamSoLanding() {
             </div>
 
             <p className="text-[11px] text-gray-500 text-center leading-relaxed pt-1">
-              Bằng việc đăng ký, bạn đồng ý với điều khoản sử dụng của Lê Đăng
-              Khương Academy.
+              Bằng việc đăng ký, bạn đồng ý với điều khoản sử dụng của Doanh Nghiệp 1 Người.
             </p>
             <p className="text-xs text-center pt-3 text-gray-400">
               Đã có tài khoản?{" "}

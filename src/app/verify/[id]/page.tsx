@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 // ─── Metadata ────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Xác minh chứng chỉ — Đăng Khương Academy",
+  title: "Xác minh chứng chỉ — Doanh Nghiệp 1 Người",
 };
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -176,7 +176,7 @@ export default async function VerifyCertificatePage({
         >
           <CheckCircle size={20} className="text-green-400 shrink-0" />
           <p className="text-sm text-green-300">
-            Chứng chỉ này được cấp bởi Đăng Khương Academy và đã được xác minh
+            Chứng chỉ này được cấp bởi Doanh Nghiệp 1 Người và đã được xác minh
             là hợp lệ.
           </p>
         </div>
@@ -189,7 +189,7 @@ export default async function VerifyCertificatePage({
             style={{ color: "#E85D04" }}
           >
             <ExternalLink size={14} />
-            Về trang chủ Đăng Khương Academy
+            Về trang chủ Doanh Nghiệp 1 Người
           </Link>
         </div>
       </div>
