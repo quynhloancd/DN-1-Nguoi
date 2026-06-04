@@ -10,7 +10,7 @@ import crypto, { timingSafeEqual } from "crypto";
  * Docs: https://developers.zalo.me/docs/official-account/webhook
  *
  * Cau hinh tai Zalo OA Dashboard:
- *   Webhook URL: https://dangkhuong.com/api/zalo/webhook
+ *   Webhook URL: https://doanhnghiep1nguoi.online/api/zalo/webhook
  *   Secret Key: ZALO_OA_SECRET_KEY
  *
  * SQL migration (run once):

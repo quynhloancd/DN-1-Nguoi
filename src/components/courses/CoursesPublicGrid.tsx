@@ -228,7 +228,7 @@ export default function CoursesPublicGrid({ courses }: { courses: PublicCourse[]
         {/* Header */}
         <div className="mb-10">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">
-            Khoá Học Của <span className="text-[#D4A843]">Lê Đăng Khương</span>
+            Khoá Học Của <span className="text-[#D4A843]">Doanh Nghiệp 1 Người</span>
           </h1>
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl">
             Được thiết kế để bạn áp dụng ngay — không lý thuyết suông. Học từ người đã làm được.

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { ArrowRight, Rocket } from "lucide-react";
 
@@ -88,7 +88,7 @@ export default function FinalCTASection({
             className="mt-6 text-sm font-semibold sm:text-base"
             style={{ color: "#FBBF24" }}
           >
-            — Trainer Lê Đăng Khương
+            — THIÊN HUỆ
           </footer>
         </blockquote>
 

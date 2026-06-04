@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
@@ -158,11 +158,11 @@ export default function SanPhamSoLanding() {
         <Link href="/" className="flex items-center gap-2.5">
           <img
             src="/images/about/portrait.jpg"
-            alt="Lê Đăng Khương"
+            alt="Thiên Huệ"
             className="w-8 h-8 rounded-lg object-cover"
           />
           <span className="font-semibold text-sm text-white hidden sm:block">
-            Lê Đăng Khương
+            Thiên Huệ
           </span>
         </Link>
         <button

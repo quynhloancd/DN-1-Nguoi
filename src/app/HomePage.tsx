@@ -256,7 +256,7 @@ export default function HomePage() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-5 sm:mb-8 text-xs sm:text-sm font-medium"
             style={{ background: "#FFF3E0", border: "1px solid rgba(232,93,4,0.25)", color: "#E85D04" }}>
-            <Zap size={14} /> Hơn 200 người 35-50 tuổi đã ứng dụng AI vào công việc cùng Thiên Huệ
+            <Zap size={14} /> Hơn 200 người 35-50 tuổi đã ứng dụng AI vào công việc cùng Thiên Huệ AI
           </div>
 
           {/* Headline */}
@@ -270,7 +270,7 @@ export default function HomePage() {
 
           {/* Sub-headline */}
           <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto mb-6 sm:mb-10 leading-relaxed">
-            <strong className="text-[#1B2A4A]">Thiên Huệ</strong> giúp người 35–50 tuổi đang kinh doanh hoặc đi làm ứng dụng AI vào công việc thực tế — thông qua các tool và workflow đóng gói sẵn, mà không cần biết code hay mất hàng tháng tự mày mò.
+            <strong className="text-[#1B2A4A]">Thiên Huệ AI</strong> giúp người 35–50 tuổi đang kinh doanh hoặc đi làm ứng dụng AI vào công việc thực tế — thông qua các tool và workflow đóng gói sẵn, mà không cần biết code hay mất hàng tháng tự mày mò.
           </p>
 
           {/* CTA */}
@@ -405,7 +405,7 @@ export default function HomePage() {
               </h3>
 
               <p className="text-gray-600 leading-relaxed">
-                Tôi là <strong className="text-[#1B2A4A]">Thiên Huệ</strong> — không phải dân IT, bắt đầu tìm hiểu AI chưa đến 1 năm, muộn hơn nhiều người xung quanh. Tôi thấy mọi thứ đang thay đổi quá nhanh và nhận ra nếu không bắt đầu ngay, khoảng cách sẽ ngày càng xa — đây cũng chính là nỗi sợ của rất nhiều người 35–50 tuổi đang bận rộn với công việc và gia đình.
+                Tôi là <strong className="text-[#1B2A4A]">Thiên Huệ AI</strong> — không phải dân IT, bắt đầu tìm hiểu AI chưa đến 1 năm, muộn hơn nhiều người xung quanh. Tôi thấy mọi thứ đang thay đổi quá nhanh và nhận ra nếu không bắt đầu ngay, khoảng cách sẽ ngày càng xa — đây cũng chính là nỗi sợ của rất nhiều người 35–50 tuổi đang bận rộn với công việc và gia đình.
               </p>
 
               <div className="space-y-3">

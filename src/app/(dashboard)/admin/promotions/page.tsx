@@ -229,7 +229,7 @@ export default function AdminPromotionsPage() {
             <div className="notification-bar flex flex-wrap items-center justify-center gap-x-2 gap-y-1 py-1.5 px-3 text-sm rounded-lg">
               <Megaphone size={13} className="text-[#D4A843] shrink-0" />
               <span className="text-gray-400 text-xs">
-                Lê Đăng Khương vừa cập nhật:
+                Doanh Nghiệp 1 Người vừa cập nhật:
               </span>
               <span className="badge-green shrink-0">
                 {promotions.find((p) => p.is_active)?.label}

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CafeLanding from "./CafeLanding";
 
 export const metadata: Metadata = {
-  title: "Mời Cafe 99K — Nhận 100 Mô Hình Kinh Doanh Triệu Đô | Đăng Khương",
+  title: "Mời Cafe 99K — Nhận 100 Mô Hình Kinh Doanh Triệu Đô | Doanh Nghiệp 1 Người",
   description:
     "Mỗi ly cafe 99K, tôi tặng bạn tài liệu 100 mô hình kinh doanh sản phẩm số doanh thu 1 triệu đô la trên thế giới, ứng dụng cho Việt Nam.",
   alternates: {

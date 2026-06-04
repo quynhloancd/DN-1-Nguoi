@@ -116,8 +116,8 @@ export async function POST(req: NextRequest) {
 
         emailsQueued = recipientEmails.length;
 
-        const siteName = process.env.EMAIL_FROM_NAME || "Le Dang Khuong Academy";
-        const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://dangkhuong.com";
+        const siteName = process.env.EMAIL_FROM_NAME || "Doanh Nghiep 1 Nguoi";
+        const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://doanhnghiep1nguoi.online";
         const htmlBody = announcementEmailHtml(content.trim(), siteName, baseUrl);
         const subject = `${siteName} — Thong bao moi`;
 

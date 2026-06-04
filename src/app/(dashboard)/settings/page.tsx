@@ -334,7 +334,7 @@ function ProfileTab({
             <div className="p-3 rounded-lg text-xs text-gray-400 space-y-2" style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}>
               <p className="font-medium text-gray-300">Cách liên kết:</p>
               <ol className="list-decimal list-inside space-y-1">
-                <li>Mở Zalo và tìm kiếm OA &quot;Lê Đăng Khương Academy&quot;</li>
+                <li>Mở Zalo và tìm kiếm OA &quot;Doanh Nghiệp 1 Người&quot;</li>
                 <li>Nhấn &quot;Theo dõi&quot; OA</li>
                 <li>Hệ thống sẽ tự động liên kết tài khoản của bạn</li>
               </ol>

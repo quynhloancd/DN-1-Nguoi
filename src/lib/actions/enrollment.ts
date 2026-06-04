@@ -22,9 +22,22 @@ export async function grantCourseAccess(formData: FormData) {
 
   const admin = await createAdminClient();
 
-  // Find user by email directly — O(1) lookup, no pagination needed
-  const { data: { user: foundUser }, error: lookupError } = await admin.auth.admin.getUserByEmail(email);
-  const targetUser: { id: string; email?: string } | null = (!lookupError && foundUser) ? foundUser : null;
+  // Look up user by email via the GoTrue admin REST API with a filter.
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+  const lookupRes = await fetch(
+    `${supabaseUrl}/auth/v1/admin/users?filter=${encodeURIComponent(email)}&page=1&per_page=5`,
+    {
+      headers: {
+        Authorization: `Bearer ${serviceRoleKey}`,
+        apikey: serviceRoleKey,
+      },
+    }
+  );
+  const lookupBody = await lookupRes.json();
+  const targetUser: { id: string; email?: string } | null =
+    (lookupBody?.users as Array<{ id: string; email?: string }> | undefined)
+      ?.find((u) => u.email?.toLowerCase() === email) ?? null;
 
   if (!targetUser) {
     redirect("/admin/enrollments?error=user_not_found");

@@ -196,7 +196,7 @@ export async function POST(req: NextRequest) {
         fbc: req.cookies.get("_fbc")?.value,
         fbp: req.cookies.get("_fbp")?.value,
         userId: userId,
-        sourceUrl: "https://dangkhuong.com/slowenglish",
+        sourceUrl: "https://doanhnghiep1nguoi.online/slowenglish",
       };
 
       // Lead event — user submitted the registration form

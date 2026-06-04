@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useEffect } from "react";
 import {
@@ -311,11 +311,11 @@ export default function WebAllInOneLanding() {
         <Link href="/" className="flex items-center gap-2.5">
           <img
             src="/images/about/portrait.jpg"
-            alt="Lê Đăng Khương"
+            alt="Thiên Huệ"
             className="w-8 h-8 rounded-lg object-cover"
           />
           <span className="font-semibold text-sm text-white hidden sm:block">
-            Lê Đăng Khương Academy
+            Doanh Nghiệp 1 Người
           </span>
         </Link>
         <button onClick={scrollToForm} className="btn-green text-xs py-2 px-4">
@@ -351,7 +351,7 @@ export default function WebAllInOneLanding() {
 
           <p className="text-sm sm:text-base text-gray-400 max-w-xl mx-auto mb-8 leading-relaxed">
             10 ngày qua, tôi để AI Agent chạy thử một hệ thống website
-            All-In-One cho dangkhuong.com. Tối nay tôi lên Zoom chia sẻ trực
+            All-In-One cho doanhnghiep1nguoi.online. Tối nay tôi lên Zoom chia sẻ trực
             tiếp tư duy hệ thống và cách tôi đang triển khai &mdash; từ A đến Z.
             Kèm theo: bộ tài liệu & quy trình để bạn mang về làm ngay.
           </p>
@@ -376,7 +376,7 @@ export default function WebAllInOneLanding() {
               <span className="ml-1">4.9/5</span>
             </span>
             <span>1.200+ học viên</span>
-            <span>Lê Đăng Khương Academy</span>
+            <span>Doanh Nghiệp 1 Người</span>
           </div>
 
           {/* Hero Banner */}
@@ -683,11 +683,11 @@ export default function WebAllInOneLanding() {
           >
             <img
               src="/images/about/portrait.jpg"
-              alt="Lê Đăng Khương"
+              alt="Thiên Huệ"
               className="w-24 h-24 rounded-2xl object-cover shrink-0"
             />
             <div>
-              <h3 className="text-lg font-bold text-white">Lê Đăng Khương</h3>
+              <h3 className="text-lg font-bold text-white">Thiên Huệ</h3>
               <p className="text-xs text-gray-500 mt-1">
                 Chuyên gia Marketing & Thương hiệu cá nhân &middot; Founder LDK
                 Academy
@@ -1028,7 +1028,7 @@ export default function WebAllInOneLanding() {
               <Link href="/terms" className="text-gray-500 hover:underline">
                 điều khoản sử dụng
               </Link>{" "}
-              của Đăng Khương Academy. Đã có tài khoản? Nhập đúng email & mật
+              của Doanh Nghiệp 1 Người. Đã có tài khoản? Nhập đúng email & mật
               khẩu &mdash; hệ thống tự tạo đơn hàng.
             </p>
           </div>
@@ -1148,7 +1148,7 @@ export default function WebAllInOneLanding() {
       {/* ═══ FOOTER ═══ */}
       <footer className="py-10 px-4 text-center border-t border-[#0E1730]">
         <p className="text-xs text-gray-500">
-          &copy; {new Date().getFullYear()} Lê Đăng Khương Academy. All rights
+          &copy; {new Date().getFullYear()} Doanh Nghiệp 1 Người. All rights
           reserved.
         </p>
         <div className="flex items-center justify-center gap-5 mt-3">

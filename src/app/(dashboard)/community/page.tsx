@@ -498,7 +498,7 @@ export default function CommunityPage() {
   const handleShare = async (postId: string, platform: "copy" | "facebook" | "x" | "zalo") => {
     const url = getShareUrl(postId);
     const post = posts.find(p => p.id === postId);
-    const text = post?.content?.slice(0, 100) || "Xem bài viết trên Lê Đăng Khương Academy";
+    const text = post?.content?.slice(0, 100) || "Xem bài viết trên Doanh Nghiệp 1 Người";
 
     switch (platform) {
       case "copy":

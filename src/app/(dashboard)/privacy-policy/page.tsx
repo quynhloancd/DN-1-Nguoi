@@ -114,7 +114,7 @@ const sections = [
     title: "8. Bảo vệ trẻ em",
     content: [
       "Nền tảng không dành cho người dưới 16 tuổi. Chúng tôi không cố ý thu thập dữ liệu cá nhân của trẻ em dưới 16 tuổi.",
-      "Nếu phát hiện đã thu thập dữ liệu của trẻ em, chúng tôi sẽ xoá ngay lập tức. Nếu bạn là phụ huynh và phát hiện con mình đã cung cấp thông tin, vui lòng liên hệ chúng tôi qua email support@ledangkhuong.net.",
+      "Nếu phát hiện đã thu thập dữ liệu của trẻ em, chúng tôi sẽ xoá ngay lập tức. Nếu bạn là phụ huynh và phát hiện con mình đã cung cấp thông tin, vui lòng liên hệ chúng tôi qua email support@doanhnghiep1nguoi.online.",
     ],
   },
   {
@@ -257,10 +257,10 @@ export default function PrivacyPolicyPage() {
                   <p className="text-gray-300">
                     <span className="text-gray-500">Email:</span>{" "}
                     <a
-                      href="mailto:support@ledangkhuong.net"
+                      href="mailto:support@doanhnghiep1nguoi.online"
                       className="text-[#D4A843] hover:underline"
                     >
-                      support@ledangkhuong.net
+                      support@doanhnghiep1nguoi.online
                     </a>
                   </p>
                   <p className="text-gray-300">
@@ -268,7 +268,7 @@ export default function PrivacyPolicyPage() {
                       Người chịu trách nhiệm bảo vệ dữ liệu:
                     </span>{" "}
                     <span className="text-white font-medium">
-                      Lê Đăng Khương
+                      Thiên Huệ
                     </span>
                   </p>
                 </div>

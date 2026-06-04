@@ -229,10 +229,10 @@ export default function TermsOfServicePage() {
                   <p className="text-gray-300">
                     <span className="text-gray-500">Email:</span>{" "}
                     <a
-                      href="mailto:support@ledangkhuong.net"
+                      href="mailto:support@doanhnghiep1nguoi.online"
                       className="text-[#D4A843] hover:underline"
                     >
-                      support@ledangkhuong.net
+                      support@doanhnghiep1nguoi.online
                     </a>
                   </p>
                 </div>

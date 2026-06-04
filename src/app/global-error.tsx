@@ -163,7 +163,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
 
         <div className="container">
           {/* Brand badge */}
-          <div className="badge">⚡ Lê Đăng Khương Academy</div>
+          <div className="badge">⚡ Doanh Nghiệp 1 Người</div>
 
           {/* Icon */}
           <div className="icon">🔧</div>
@@ -221,7 +221,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
             .
           </p>
 
-          <p className="brand">© 2026 Lê Đăng Khương Academy</p>
+          <p className="brand">© 2026 Doanh Nghiệp 1 Người</p>
         </div>
       </body>
     </html>

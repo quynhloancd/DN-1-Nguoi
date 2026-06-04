@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { ArrowRight, Check, Zap, Clock } from "lucide-react";
@@ -111,7 +111,7 @@ export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
         <div className="mb-8 w-full sm:mb-10">
           <Image
             src="/images/sanphamso/banner.jpg"
-            alt="Lộ Trình Kiếm Tiền Từ Sản Phẩm Số 2026 — Trainer Lê Đăng Khương"
+            alt="Lộ Trình Kiếm Tiền Từ Sản Phẩm Số 2026 — THIÊN HUỆ"
             width={1200}
             height={675}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 960px"

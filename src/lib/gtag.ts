@@ -8,7 +8,7 @@ export const IS_GA_ENABLED = !!GA_MEASUREMENT_ID;
  */
 export function pageview(url: string) {
   if (!IS_GA_ENABLED || typeof window === "undefined") return;
-  window.gtag("config", GA_MEASUREMENT_ID, { page_path: url });
+  window.gtag("config", GA_MEASUREMENT_ID, { page_location: url });
 }
 
 /**

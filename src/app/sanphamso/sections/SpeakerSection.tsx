@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 /* ─── Data ───────────────────────────────────────────── */
 
@@ -39,7 +39,7 @@ export default function SpeakerSection() {
             className="text-center text-2xl font-extrabold tracking-wide sm:text-3xl"
             style={{ color: "#FBBF24" }}
           >
-            TRAINER LÊ ĐĂNG KHƯƠNG
+            THIÊN HUỆ
           </h3>
 
           {/* ── Subtitle ── */}
@@ -82,7 +82,7 @@ export default function SpeakerSection() {
             className="mt-3 text-right text-sm font-semibold"
             style={{ color: "#FBBF24" }}
           >
-            — Trainer Lê Đăng Khương
+            — THIÊN HUỆ
           </p>
         </div>
       </div>

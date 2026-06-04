@@ -24,7 +24,7 @@ export const siteConfig = {
   // ─── Owner ───
   // Env: NEXT_PUBLIC_OWNER_NAME, NEXT_PUBLIC_OWNER_BIO, NEXT_PUBLIC_OWNER_AVATAR
   owner: {
-    name: env("NEXT_PUBLIC_OWNER_NAME", "Thiên Huệ"),
+    name: env("NEXT_PUBLIC_OWNER_NAME", "Thiên Huệ AI"),
     bio: env("NEXT_PUBLIC_OWNER_BIO", "Chuyên gia AI Workflow cho người kinh doanh & đi làm 35-50 tuổi"),
     avatar: env("NEXT_PUBLIC_OWNER_AVATAR", "/images/about/portrait.jpg"),
   },
@@ -60,7 +60,7 @@ export const siteConfig = {
   footer: {
     copyright: env(
       "NEXT_PUBLIC_FOOTER_COPYRIGHT",
-      `© ${new Date().getFullYear()} Doanh Nghiệp 1 Người | Thiên Huệ`
+      `© ${new Date().getFullYear()} Doanh Nghiệp 1 Người | Thiên Huệ AI`
     ),
   },
 

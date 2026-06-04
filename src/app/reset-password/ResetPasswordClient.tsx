@@ -99,7 +99,7 @@ function ResetPasswordForm() {
     return (
       <div className="w-full max-w-md text-center">
         <img
-          src="/images/about/portrait.jpg" alt="Lê Đăng Khương"
+          src="/images/about/portrait.jpg" alt="Thiên Huệ"
           className="w-14 h-14 rounded-2xl mb-4 object-cover inline-block"
         />
         <h1 className="text-2xl font-bold text-white mb-2">Đang xác thực...</h1>
@@ -168,7 +168,7 @@ function ResetPasswordForm() {
       {/* Logo */}
       <div className="text-center mb-8">
         <img
-          src="/images/about/portrait.jpg" alt="Lê Đăng Khương"
+          src="/images/about/portrait.jpg" alt="Thiên Huệ"
           className="w-14 h-14 rounded-2xl mb-4 object-cover inline-block"
         />
         <h1 className="text-2xl font-bold text-white">Đặt lại mật khẩu</h1>
@@ -232,7 +232,7 @@ export default function ResetPasswordPage() {
         fallback={
           <div className="w-full max-w-md text-center">
             <img
-              src="/images/about/portrait.jpg" alt="Lê Đăng Khương"
+              src="/images/about/portrait.jpg" alt="Thiên Huệ"
               className="w-14 h-14 rounded-2xl mb-4 object-cover inline-block"
             />
             <h1 className="text-2xl font-bold text-white mb-2">Đang tải...</h1>

@@ -39,14 +39,14 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
         <Link href="/" className="flex items-center gap-2.5">
           <Image
             src="/images/about/portrait.jpg"
-            alt="Lê Đăng Khương"
+            alt="Thiên Huệ"
             width={32}
             height={32}
             sizes="32px"
             className="w-8 h-8 rounded-lg object-cover"
           />
           <span className="text-sm font-bold text-white leading-tight hidden sm:block">
-            Lê Đăng Khương
+            Thiên Huệ
           </span>
         </Link>
 

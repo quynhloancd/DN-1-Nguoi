@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
         console.error("[Resend] generateLink error:", linkError.message);
       } else if (linkData) {
         const baseUrl =
-          process.env.NEXT_PUBLIC_APP_URL || "https://dangkhuong.com";
+          process.env.NEXT_PUBLIC_APP_URL || "https://doanhnghiep1nguoi.online";
         const confirmUrl = `${baseUrl}/auth/confirm?token_hash=${linkData.properties.hashed_token}&type=signup&next=/dashboard`;
 
         // Look up user's name for the email
