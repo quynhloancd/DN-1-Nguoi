@@ -13,7 +13,7 @@ const STAGES = [
   { key: "contacted", label: "Đã liên hệ", color: "#f59e0b" },
   { key: "qualified", label: "Tiềm năng", color: "#a855f7" },
   { key: "negotiation", label: "Đàm phán", color: "#f97316" },
-  { key: "customer", label: "Khách hàng", color: "#D4A843" },
+  { key: "customer", label: "Khách hàng", color: "#E85D04" },
   { key: "advocate", label: "Đại sứ", color: "#22c55e" },
 ] as const;
 
@@ -52,11 +52,11 @@ export default function JourneyStageIndicator({
                   <>
                     <div
                       className="absolute inset-0 rounded-full animate-ping opacity-30"
-                      style={{ backgroundColor: "#D4A843" }}
+                      style={{ backgroundColor: "#E85D04" }}
                     />
                     <div
                       className="absolute -inset-1 rounded-full animate-pulse opacity-20 border-2"
-                      style={{ borderColor: "#D4A843" }}
+                      style={{ borderColor: "#E85D04" }}
                     />
                   </>
                 )}

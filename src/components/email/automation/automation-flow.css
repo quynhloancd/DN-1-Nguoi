@@ -6,7 +6,7 @@
 
 /* Connection lines */
 .react-flow__edge-path {
-  stroke: #D4A843 !important;
+  stroke: #E85D04 !important;
   stroke-width: 2px;
 }
 
@@ -23,7 +23,7 @@
 
 /* Connection line while dragging */
 .react-flow__connection-path {
-  stroke: #D4A843 !important;
+  stroke: #E85D04 !important;
   stroke-width: 2px;
   stroke-dasharray: 5;
 }
@@ -46,7 +46,7 @@
 
 /* Selected node */
 .react-flow__node.selected > div {
-  box-shadow: 0 0 0 2px #D4A843 !important;
+  box-shadow: 0 0 0 2px #E85D04 !important;
 }
 
 /* Controls */

@@ -44,7 +44,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
             width: 500px;
             height: 300px;
             border-radius: 50%;
-            background: radial-gradient(circle, #D4A843, transparent 70%);
+            background: radial-gradient(circle, #E85D04, transparent 70%);
             opacity: 0.07;
             filter: blur(60px);
             pointer-events: none;
@@ -99,7 +99,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
             align-items: center;
             justify-content: center;
             gap: 8px;
-            background: #D4A843;
+            background: #E85D04;
             color: #0a0a0a;
             font-weight: 700;
             font-size: 15px;
@@ -151,7 +151,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
             border-radius: 20px;
             background: rgba(212,168,67,0.1);
             border: 1px solid rgba(212,168,67,0.2);
-            color: #D4A843;
+            color: #E85D04;
             font-size: 12px;
             font-weight: 600;
             margin-bottom: 20px;
@@ -214,7 +214,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
               href={siteConfig.socials.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#D4A843", textDecoration: "none" }}
+              style={{ color: "#E85D04", textDecoration: "none" }}
             >
               Facebook
             </a>

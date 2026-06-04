@@ -42,7 +42,7 @@ const EVENT_CONFIG: Record<
   },
   course_complete: {
     icon: Trophy,
-    color: "#D4A843",
+    color: "#E85D04",
     bg: "rgba(212,168,67,0.15)",
   },
   quiz_pass: {
@@ -162,13 +162,13 @@ export default function LearningJourney({ userId }: LearningJourneyProps) {
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-bold text-white flex items-center gap-2">
-          <Flag size={16} className="text-[#D4A843]" />
+          <Flag size={16} className="text-[#E85D04]" />
           Hành trình học tập
         </h3>
         {isOwnProfile && (
           <button
             onClick={() => setShowForm(!showForm)}
-            className="flex items-center gap-1.5 text-xs text-[#D4A843] hover:text-[#e5bf5a] transition-colors"
+            className="flex items-center gap-1.5 text-xs text-[#E85D04] hover:text-[#e5bf5a] transition-colors"
           >
             {showForm ? <X size={14} /> : <Plus size={14} />}
             {showForm ? "Huỷ" : "Thêm cột mốc"}
@@ -188,7 +188,7 @@ export default function LearningJourney({ userId }: LearningJourneyProps) {
               value={newTitle}
               onChange={(e) => setNewTitle(e.target.value)}
               placeholder="VD: Hoàn thành Module 1"
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#D4A843] transition-colors"
+              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
               maxLength={200}
               required
             />
@@ -202,7 +202,7 @@ export default function LearningJourney({ userId }: LearningJourneyProps) {
               onChange={(e) => setNewDescription(e.target.value)}
               placeholder="Mô tả thêm về cột mốc này..."
               rows={2}
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#D4A843] transition-colors"
+              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
               maxLength={1000}
             />
           </div>
@@ -215,7 +215,7 @@ export default function LearningJourney({ userId }: LearningJourneyProps) {
               value={newProductId}
               onChange={(e) => setNewProductId(e.target.value)}
               placeholder="ID khoá học (nếu có)"
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#D4A843] transition-colors"
+              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
             />
           </div>
           <div className="flex items-center justify-between">
@@ -225,7 +225,7 @@ export default function LearningJourney({ userId }: LearningJourneyProps) {
                 checked={newIsPublic}
                 onChange={(e) => setNewIsPublic(e.target.checked)}
                 className="w-3.5 h-3.5 rounded"
-                style={{ accentColor: "#D4A843" }}
+                style={{ accentColor: "#E85D04" }}
               />
               {newIsPublic ? (
                 <span className="flex items-center gap-1">

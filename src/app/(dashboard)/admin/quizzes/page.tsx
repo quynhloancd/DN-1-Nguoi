@@ -178,7 +178,7 @@ export default async function AdminQuizzesPage() {
                 className="w-10 h-10 rounded-xl flex items-center justify-center"
                 style={{ background: "rgba(212,168,67,0.15)" }}
               >
-                <ClipboardCheck size={18} className="text-[#D4A843]" />
+                <ClipboardCheck size={18} className="text-[#E85D04]" />
               </div>
               <div>
                 <p className="text-2xl font-bold text-white">{totalQuizzes}</p>
@@ -229,7 +229,7 @@ export default async function AdminQuizzesPage() {
         <div className="card-dark overflow-hidden">
           <div className="p-4 border-b border-white/[0.06] flex items-center justify-between">
             <h2 className="text-sm font-semibold text-white flex items-center gap-2">
-              <BookOpen size={16} className="text-[#D4A843]" />
+              <BookOpen size={16} className="text-[#E85D04]" />
               Danh sách Quiz ({rows.length})
             </h2>
           </div>

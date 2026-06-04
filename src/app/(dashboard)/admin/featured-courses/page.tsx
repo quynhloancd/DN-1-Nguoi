@@ -387,7 +387,7 @@ export default function AdminFeaturedCoursesPage() {
                       {item.highlight_text}
                     </p>
                   )}
-                  <p className="text-[11px] text-[#D4A843] mt-0.5">
+                  <p className="text-[11px] text-[#E85D04] mt-0.5">
                     {formatPrice(
                       item.products?.sale_price || item.products?.price
                     )}

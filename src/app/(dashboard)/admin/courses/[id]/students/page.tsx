@@ -359,7 +359,7 @@ export default async function CourseStudentsPage({
             label="Active 7 ngày"
           />
           <StatCard
-            icon={<GraduationCap size={20} className="text-[#D4A843]" />}
+            icon={<GraduationCap size={20} className="text-[#E85D04]" />}
             bg="rgba(212,168,67,0.09)"
             value={completedAll}
             label="Hoàn thành 100%"
@@ -382,7 +382,7 @@ export default async function CourseStudentsPage({
                   }
                   className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5 ${
                     isActive
-                      ? "bg-[#D4A843]/15 text-[#D4A843]"
+                      ? "bg-[#E85D04]/15 text-[#E85D04]"
                       : "text-gray-500 hover:text-gray-300 hover:bg-[#1f1f1f]"
                   }`}
                 >
@@ -390,7 +390,7 @@ export default async function CourseStudentsPage({
                   <span
                     className={`text-[10px] px-1.5 py-0.5 rounded-full ${
                       isActive
-                        ? "bg-[#D4A843]/20 text-[#D4A843]"
+                        ? "bg-[#E85D04]/20 text-[#E85D04]"
                         : "bg-[#252525] text-gray-500"
                     }`}
                   >
@@ -419,7 +419,7 @@ export default async function CourseStudentsPage({
             <Filter size={12} />
             <span>
               Đang lọc:{" "}
-              <span className="text-[#D4A843] font-medium">
+              <span className="text-[#E85D04] font-medium">
                 {FILTER_TABS.find((t) => t.key === activeFilter)?.label}
               </span>
               {" "}&middot;{" "}

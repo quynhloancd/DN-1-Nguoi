@@ -360,7 +360,7 @@ export default async function CRMInterestsPage({
                   name="q"
                   defaultValue={q}
                   placeholder="Tên, email, khoá học..."
-                  className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg pl-9 pr-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#D4A843] transition-colors"
+                  className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg pl-9 pr-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
                 />
               </div>
             </div>
@@ -369,7 +369,7 @@ export default async function CRMInterestsPage({
               <select
                 name="status"
                 defaultValue={statusFilter}
-                className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843]"
+                className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04]"
               >
                 <option value="">Tất cả</option>
                 {Object.entries(statusConfig).map(([key, cfg]) => (
@@ -382,7 +382,7 @@ export default async function CRMInterestsPage({
               <select
                 name="product_id"
                 defaultValue={productFilter}
-                className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843]"
+                className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04]"
               >
                 <option value="">Tất cả khoá học</option>
                 {(allProducts ?? []).map((p) => (
@@ -424,7 +424,7 @@ export default async function CRMInterestsPage({
                         size={44}
                         gradient={
                           isVip
-                            ? "linear-gradient(135deg, #D4A843, #059669)"
+                            ? "linear-gradient(135deg, #E85D04, #059669)"
                             : "linear-gradient(135deg, #3b82f6, #1d4ed8)"
                         }
                       />
@@ -438,7 +438,7 @@ export default async function CRMInterestsPage({
                               className="text-[10px] px-1.5 py-0.5 rounded-full font-medium"
                               style={{
                                 background: "rgba(212,168,67,0.15)",
-                                color: "#D4A843",
+                                color: "#E85D04",
                               }}
                             >
                               {customer.tier.toUpperCase()}
@@ -469,7 +469,7 @@ export default async function CRMInterestsPage({
                     {/* Summary chips */}
                     <div className="flex items-center gap-3 text-xs text-gray-400 flex-shrink-0">
                       <div className="flex items-center gap-1" title="Khoá học quan tâm">
-                        <BookOpen size={12} className="text-[#D4A843]" />
+                        <BookOpen size={12} className="text-[#E85D04]" />
                         <span>{customer.interests.length} khoá</span>
                       </div>
                       <div className="flex items-center gap-1" title="Tổng lượt xem">
@@ -534,7 +534,7 @@ export default async function CRMInterestsPage({
                             <div className="min-w-0 flex-1">
                               <Link
                                 href={`/courses/${product?.slug}`}
-                                className="text-sm text-white hover:text-[#D4A843] transition-colors truncate block font-medium"
+                                className="text-sm text-white hover:text-[#E85D04] transition-colors truncate block font-medium"
                               >
                                 {product?.title || "—"}
                               </Link>

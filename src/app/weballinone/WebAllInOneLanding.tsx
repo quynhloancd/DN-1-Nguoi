@@ -47,7 +47,7 @@ interface PaymentInfo {
 /* ---- Data ---- */
 
 const STATS = [
-  { value: "64,4tr", label: "Tổng doanh thu ghi nhận", color: "#D4A843" },
+  { value: "64,4tr", label: "Tổng doanh thu ghi nhận", color: "#E85D04" },
   { value: "381", label: "Tài khoản học viên", color: "#3b82f6" },
   { value: "99", label: "Đơn hàng trong kỳ", color: "#f59e0b" },
   { value: "12.3", label: "Học viên mới mỗi ngày", color: "#a855f7" },
@@ -92,7 +92,7 @@ const FEATURES = [
     icon: BarChart3,
     title: "Dashboard doanh thu & đơn hàng",
     desc: "Xem doanh thu, đơn hàng, học viên theo thời gian thực — không còn mò mẫm Excel.",
-    color: "#D4A843",
+    color: "#E85D04",
   },
   {
     num: "02",
@@ -295,7 +295,7 @@ export default function WebAllInOneLanding() {
 
   /* Brand colors: deep blue-tech */
   const accent = "#3B82F6";
-  const gold = "#D4A843";
+  const gold = "#E85D04";
 
   return (
     <div className="min-h-screen bg-[#050913] text-white">
@@ -369,8 +369,8 @@ export default function WebAllInOneLanding() {
                 <Star
                   key={i}
                   size={12}
-                  fill="#D4A843"
-                  className="text-[#D4A843]"
+                  fill="#E85D04"
+                  className="text-[#E85D04]"
                 />
               ))}
               <span className="ml-1">4.9/5</span>

@@ -212,7 +212,7 @@ export default function CourseStudentList({
             placeholder="Tìm theo tên, email, SĐT..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl text-sm bg-[#151515] text-white placeholder-gray-600 outline-none focus:ring-1 focus:ring-[#D4A843]/40"
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl text-sm bg-[#151515] text-white placeholder-gray-600 outline-none focus:ring-1 focus:ring-[#E85D04]/40"
             style={{ border: "1px solid #2a2a2a" }}
           />
         </div>
@@ -319,7 +319,7 @@ export default function CourseStudentList({
                             style={{
                               width: `${pct}%`,
                               background:
-                                pct === 100 ? "#22c55e" : "#D4A843",
+                                pct === 100 ? "#22c55e" : "#E85D04",
                             }}
                           />
                         </div>
@@ -380,7 +380,7 @@ export default function CourseStudentList({
                         className="h-full rounded-full"
                         style={{
                           width: `${pct}%`,
-                          background: pct === 100 ? "#22c55e" : "#D4A843",
+                          background: pct === 100 ? "#22c55e" : "#E85D04",
                         }}
                       />
                     </div>
@@ -407,7 +407,7 @@ export default function CourseStudentList({
                         }
                         className={`px-4 py-2.5 text-xs font-medium transition-colors flex items-center gap-1.5 ${
                           tab === "progress"
-                            ? "text-[#D4A843] border-b-2 border-[#D4A843]"
+                            ? "text-[#E85D04] border-b-2 border-[#E85D04]"
                             : "text-gray-500 hover:text-gray-300"
                         }`}
                       >
@@ -418,7 +418,7 @@ export default function CourseStudentList({
                         onClick={() => setTab(student.enrollmentId, "qa")}
                         className={`px-4 py-2.5 text-xs font-medium transition-colors flex items-center gap-1.5 ${
                           tab === "qa"
-                            ? "text-[#D4A843] border-b-2 border-[#D4A843]"
+                            ? "text-[#E85D04] border-b-2 border-[#E85D04]"
                             : "text-gray-500 hover:text-gray-300"
                         }`}
                       >
@@ -520,7 +520,7 @@ export default function CourseStudentList({
                               <div className="flex items-start gap-2 mb-2">
                                 <MessageSquare
                                   size={12}
-                                  className="text-[#D4A843] mt-0.5 shrink-0"
+                                  className="text-[#E85D04] mt-0.5 shrink-0"
                                 />
                                 <p className="text-xs text-gray-300 flex-1">
                                   {q.content}

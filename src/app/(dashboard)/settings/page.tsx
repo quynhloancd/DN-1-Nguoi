@@ -165,7 +165,7 @@ function ProfileTab({
     <div className="space-y-6">
       {saved && (
         <div
-          className="p-3 rounded-lg text-sm text-[#D4A843] border border-[#D4A843]/20"
+          className="p-3 rounded-lg text-sm text-[#E85D04] border border-[#E85D04]/20"
           style={{ background: "rgba(212,168,67,0.08)" }}
         >
           ✓ Đã lưu thay đổi thành công!
@@ -189,7 +189,7 @@ function ProfileTab({
           ) : (
             <div
               className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold text-white shrink-0"
-              style={{ background: "linear-gradient(135deg, #D4A843, #059669)" }}
+              style={{ background: "linear-gradient(135deg, #E85D04, #059669)" }}
             >
               {initials}
             </div>
@@ -296,7 +296,7 @@ function ProfileTab({
       {/* Zalo link */}
       <div className="card-dark p-6">
         <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
-          <MessageCircle size={16} className="text-[#D4A843]" /> Liên kết Zalo
+          <MessageCircle size={16} className="text-[#E85D04]" /> Liên kết Zalo
         </h3>
         {zaloLinked ? (
           <div className="space-y-3">
@@ -401,7 +401,7 @@ function NotificationsTab() {
                   aria-checked={prefs[item.key]}
                   aria-label={item.label}
                   className="shrink-0 w-11 h-6 rounded-full transition-all duration-200 relative"
-                  style={{ background: prefs[item.key] ? "#D4A843" : "#333" }}
+                  style={{ background: prefs[item.key] ? "#E85D04" : "#333" }}
                 >
                   <div
                     className="bg-white rounded-full absolute top-[3px] transition-all duration-200"
@@ -520,7 +520,7 @@ function SecurityTab() {
           <p className="text-sm text-gray-400">Đang tải...</p>
         ) : isOAuthOnly ? (
           <div
-            className="flex items-center gap-2 p-3 rounded-lg text-sm text-[#D4A843] border border-[#D4A843]/20"
+            className="flex items-center gap-2 p-3 rounded-lg text-sm text-[#E85D04] border border-[#E85D04]/20"
             style={{ background: "rgba(212,168,67,0.08)" }}
           >
             <Shield size={15} className="shrink-0" />
@@ -532,7 +532,7 @@ function SecurityTab() {
           <>
             {pwSuccess && (
               <div
-                className="flex items-center gap-2 p-3 rounded-lg text-sm text-[#D4A843] border border-[#D4A843]/20 mb-4"
+                className="flex items-center gap-2 p-3 rounded-lg text-sm text-[#E85D04] border border-[#E85D04]/20 mb-4"
                 style={{ background: "rgba(212,168,67,0.08)" }}
               >
                 <Check size={15} />
@@ -763,7 +763,7 @@ export default function SettingsPage({
               className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all shrink-0"
               style={
                 active === tab.id
-                  ? { background: "rgba(212,168,67,0.1)", color: "#D4A843", border: "1px solid rgba(212,168,67,0.25)" }
+                  ? { background: "rgba(212,168,67,0.1)", color: "#E85D04", border: "1px solid rgba(212,168,67,0.25)" }
                   : { color: "#9ca3af", background: "#1a1a1a", border: "1px solid #2a2a2a" }
               }
             >
@@ -784,7 +784,7 @@ export default function SettingsPage({
                   className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-all group"
                   style={
                     active === tab.id
-                      ? { background: "rgba(212,168,67,0.1)", color: "#D4A843" }
+                      ? { background: "rgba(212,168,67,0.1)", color: "#E85D04" }
                       : { color: "#9ca3af" }
                   }
                 >
@@ -794,7 +794,7 @@ export default function SettingsPage({
                   </div>
                   <ChevronRight
                     size={14}
-                    className={active === tab.id ? "text-[#D4A843]" : "text-gray-500 group-hover:text-gray-400"}
+                    className={active === tab.id ? "text-[#E85D04]" : "text-gray-500 group-hover:text-gray-400"}
                   />
                 </button>
               ))}

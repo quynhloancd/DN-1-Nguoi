@@ -45,7 +45,7 @@ export default function SalesRepCard({ rep }: SalesRepCardProps) {
               className="w-10 h-10 rounded-full object-cover"
             />
           ) : (
-            <div className="w-10 h-10 rounded-full bg-[#D4A843] flex items-center justify-center text-white text-sm font-bold">
+            <div className="w-10 h-10 rounded-full bg-[#E85D04] flex items-center justify-center text-white text-sm font-bold">
               {initials}
             </div>
           )}
@@ -84,7 +84,7 @@ export default function SalesRepCard({ rep }: SalesRepCardProps) {
         {/* Revenue */}
         <div className="p-2 rounded bg-[#0f0f0f]">
           <p className="text-[10px] text-gray-500 uppercase tracking-wide">Doanh thu</p>
-          <p className="text-sm font-semibold text-[#D4A843]">
+          <p className="text-sm font-semibold text-[#E85D04]">
             {formatVND(rep.total_revenue)}
           </p>
         </div>

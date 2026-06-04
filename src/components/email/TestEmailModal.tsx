@@ -156,7 +156,7 @@ export default function TestEmailModal({
               {result.ok ? (
                 <Check
                   size={16}
-                  className="text-[#D4A843] shrink-0 mt-0.5"
+                  className="text-[#E85D04] shrink-0 mt-0.5"
                 />
               ) : (
                 <AlertCircle
@@ -166,7 +166,7 @@ export default function TestEmailModal({
               )}
               <p
                 style={{
-                  color: result.ok ? "#D4A843" : "#ef4444",
+                  color: result.ok ? "#E85D04" : "#ef4444",
                 }}
               >
                 {result.msg}

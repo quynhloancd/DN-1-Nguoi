@@ -42,7 +42,7 @@ export default function EditCommissionForm({
       <span className="text-xs text-gray-500">%</span>
       <button
         type="submit"
-        className="text-[#D4A843] hover:text-amber-400 transition-colors p-0.5"
+        className="text-[#E85D04] hover:text-amber-400 transition-colors p-0.5"
         title="Lưu"
       >
         <Check size={14} />

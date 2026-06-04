@@ -193,7 +193,7 @@ function seoScoreColor(checks: SeoCheck[]): { color: string; label: string; pct:
   const total = checks.length;
   const good = checks.filter((c) => c.status === "good").length;
   const pct = Math.round((good / total) * 100);
-  if (pct >= 80) return { color: "#D4A843", label: "Tốt", pct };
+  if (pct >= 80) return { color: "#E85D04", label: "Tốt", pct };
   if (pct >= 50) return { color: "#f59e0b", label: "Trung bình", pct };
   return { color: "#ef4444", label: "Cần cải thiện", pct };
 }
@@ -203,7 +203,7 @@ function seoScoreColor(checks: SeoCheck[]): { color: string; label: string; pct:
 function charBarColor(len: number, min: number, max: number): string {
   if (len === 0) return "#333";
   if (len < min) return "#f59e0b";
-  if (len <= max) return "#D4A843";
+  if (len <= max) return "#E85D04";
   return "#ef4444";
 }
 
@@ -490,7 +490,7 @@ export default function NewBlogPostPage() {
             className="w-full flex items-center justify-between p-4 hover:bg-white/[0.02] transition-colors"
           >
             <div className="flex items-center gap-2">
-              <Search size={15} className="text-[#D4A843]" />
+              <Search size={15} className="text-[#E85D04]" />
               <span className="text-sm font-semibold text-white">SEO & Thông tin bài viết</span>
               <span
                 className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
@@ -646,7 +646,7 @@ export default function NewBlogPostPage() {
                       type="button"
                       onClick={() => thumbInputRef.current?.click()}
                       disabled={uploadingThumb}
-                      className="w-full h-24 rounded-lg border border-dashed border-[#333] hover:border-[#D4A84340] bg-[#141414] hover:bg-[#1a1a1a] transition-colors flex flex-col items-center justify-center gap-1.5 cursor-pointer"
+                      className="w-full h-24 rounded-lg border border-dashed border-[#333] hover:border-[#E85D0440] bg-[#141414] hover:bg-[#1a1a1a] transition-colors flex flex-col items-center justify-center gap-1.5 cursor-pointer"
                     >
                       {uploadingThumb ? (
                         <>
@@ -682,7 +682,7 @@ export default function NewBlogPostPage() {
                       {authorAvatar ? (
                         <img src={authorAvatar} alt="Author" className="w-full h-full object-cover" />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-2xl font-bold text-[#D4A843] bg-[#D4A84310]">
+                        <div className="w-full h-full flex items-center justify-center text-2xl font-bold text-[#E85D04] bg-[#E85D0410]">
                           {authorName.charAt(0)}
                         </div>
                       )}

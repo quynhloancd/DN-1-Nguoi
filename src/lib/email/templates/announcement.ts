@@ -35,14 +35,14 @@ export function announcementEmailHtml(
     .wrap { max-width:560px; margin:0 auto; padding:32px 16px; }
     .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:12px; padding:32px; }
     .logo { display:flex; align-items:center; gap:10px; margin-bottom:28px; }
-    .logo-icon { width:36px; height:36px; border-radius:8px; background:linear-gradient(135deg,#D4A843,#B8922E); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:13px; }
+    .logo-icon { width:36px; height:36px; border-radius:8px; background:linear-gradient(135deg,#E85D04,#B8922E); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:13px; }
     .logo-text { color:#fff; font-weight:700; font-size:16px; }
     h1 { color:#fff; font-size:22px; font-weight:700; margin:0 0 12px; line-height:1.3; }
     p { color:#9ca3af; font-size:14px; line-height:1.7; margin:0 0 16px; }
-    .btn { display:inline-block; padding:12px 28px; background:#D4A843; color:#fff; border-radius:8px; text-decoration:none; font-weight:600; font-size:14px; }
+    .btn { display:inline-block; padding:12px 28px; background:#E85D04; color:#fff; border-radius:8px; text-decoration:none; font-weight:600; font-size:14px; }
     .divider { height:1px; background:#2a2a2a; margin:24px 0; }
     .footer { color:#4b5563; font-size:12px; text-align:center; margin-top:24px; line-height:1.6; }
-    .highlight { color:#D4A843; font-weight:600; }
+    .highlight { color:#E85D04; font-weight:600; }
     .announcement-content { color:#d1d5db; font-size:15px; line-height:1.8; margin:0 0 24px; white-space:pre-wrap; }
   </style>
 </head>

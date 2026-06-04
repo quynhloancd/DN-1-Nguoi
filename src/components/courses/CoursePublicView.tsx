@@ -287,21 +287,21 @@ export default function CoursePublicView({
               {/* Stats */}
               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
                 <span className="flex items-center gap-1.5">
-                  <BookOpen size={16} className="text-[#D4A843]" />
+                  <BookOpen size={16} className="text-[#E85D04]" />
                   {sortedChapters.length} chương
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <PlayCircle size={16} className="text-[#D4A843]" />
+                  <PlayCircle size={16} className="text-[#E85D04]" />
                   {totalLessons} bài học
                 </span>
                 {totalDuration > 0 && (
                   <span className="flex items-center gap-1.5">
-                    <Clock size={16} className="text-[#D4A843]" />
+                    <Clock size={16} className="text-[#E85D04]" />
                     {formatTotalDuration(totalDuration)}
                   </span>
                 )}
                 <span className="flex items-center gap-1.5">
-                  <Award size={16} className="text-[#D4A843]" />
+                  <Award size={16} className="text-[#E85D04]" />
                   Chứng chỉ hoàn thành
                 </span>
               </div>
@@ -334,7 +334,7 @@ export default function CoursePublicView({
                   </div>
                 ) : (
                   <div className="flex items-baseline gap-2">
-                    <span className="text-2xl font-bold text-[#D4A843]">
+                    <span className="text-2xl font-bold text-[#E85D04]">
                       {formatPrice(displayPrice)}
                     </span>
                     {hasSale && (
@@ -400,7 +400,7 @@ export default function CoursePublicView({
                   Đã có tài khoản?{" "}
                   <Link
                     href="/login"
-                    className="text-[#D4A843] hover:underline"
+                    className="text-[#E85D04] hover:underline"
                   >
                     Đăng nhập
                   </Link>
@@ -430,7 +430,7 @@ export default function CoursePublicView({
                     className="rounded-full object-cover shrink-0"
                   />
                 ) : (
-                  <div className="w-16 h-16 rounded-full bg-[#D4A843]/20 flex items-center justify-center text-[#D4A843] text-xl font-bold shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-[#E85D04]/20 flex items-center justify-center text-[#E85D04] text-xl font-bold shrink-0">
                     {(instructor.full_name || "?")[0]}
                   </div>
                 )}
@@ -489,7 +489,7 @@ export default function CoursePublicView({
                         className="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold shrink-0"
                         style={{
                           background: "rgba(212,168,67,0.12)",
-                          color: "#D4A843",
+                          color: "#E85D04",
                         }}
                       >
                         {chIdx + 1}
@@ -552,7 +552,7 @@ export default function CoursePublicView({
                                 : isFreeLesson
                                   ? "hover:bg-white/[0.04]"
                                   : "hover:bg-white/[0.02]"
-                            } ${isPlaying ? "bg-[#D4A843]/10" : ""}`}
+                            } ${isPlaying ? "bg-[#E85D04]/10" : ""}`}
                           >
                             {/* Icon */}
                             {dripLocked ? (
@@ -565,7 +565,7 @@ export default function CoursePublicView({
                                 size={16}
                                 className={
                                   isPlaying
-                                    ? "text-[#D4A843] shrink-0"
+                                    ? "text-[#E85D04] shrink-0"
                                     : "text-[#22c55e] shrink-0"
                                 }
                               />
@@ -584,7 +584,7 @@ export default function CoursePublicView({
                                   : lesson.is_free
                                     ? "text-gray-200"
                                     : "text-gray-500"
-                              } ${isPlaying ? "text-[#D4A843] font-medium" : ""}`}
+                              } ${isPlaying ? "text-[#E85D04] font-medium" : ""}`}
                             >
                               {lesson.title}
                             </span>
@@ -618,7 +618,7 @@ export default function CoursePublicView({
                                 className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
                                 style={{
                                   background: "rgba(212,168,67,0.12)",
-                                  color: "#D4A843",
+                                  color: "#E85D04",
                                   border: "1px solid rgba(212,168,67,0.25)",
                                 }}
                               >
@@ -675,7 +675,7 @@ export default function CoursePublicView({
               </span>
             ) : (
               <div className="flex items-baseline gap-2">
-                <span className="text-base font-bold text-[#D4A843]">
+                <span className="text-base font-bold text-[#E85D04]">
                   {formatPrice(displayPrice)}
                 </span>
                 {hasSale && (

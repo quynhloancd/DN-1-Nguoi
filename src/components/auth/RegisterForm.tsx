@@ -119,9 +119,9 @@ export default function RegisterForm() {
 
       <p className="text-xs text-gray-500 pt-1">
         Bằng cách đăng ký, bạn đồng ý với{" "}
-        <a href="#" className="text-[#D4A843] hover:underline">Điều khoản dịch vụ</a>{" "}
+        <a href="#" className="text-[#E85D04] hover:underline">Điều khoản dịch vụ</a>{" "}
         và{" "}
-        <a href="#" className="text-[#D4A843] hover:underline">Chính sách bảo mật</a>
+        <a href="#" className="text-[#E85D04] hover:underline">Chính sách bảo mật</a>
       </p>
 
       <button

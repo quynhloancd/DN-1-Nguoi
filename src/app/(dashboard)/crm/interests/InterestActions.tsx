@@ -182,7 +182,7 @@ export default function InterestActions({
       <button
         onClick={() => setShowNoteForm(!showNoteForm)}
         className={`inline-flex items-center px-1.5 py-1 rounded-lg text-[11px] transition-colors ${
-          currentNotes ? "text-[#D4A843]" : "text-gray-500 hover:text-gray-300"
+          currentNotes ? "text-[#E85D04]" : "text-gray-500 hover:text-gray-300"
         }`}
         style={{
           background: currentNotes
@@ -212,7 +212,7 @@ export default function InterestActions({
               onChange={(e) => setNotes(e.target.value)}
               placeholder="Nhập ghi chú về khách hàng này..."
               rows={4}
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#D4A843] transition-colors"
+              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
               maxLength={2000}
             />
             <div className="flex justify-end gap-2 mt-3">

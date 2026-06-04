@@ -75,7 +75,7 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
                 src={user.avatar_url}
                 initials={initials}
                 size={32}
-                gradient="linear-gradient(135deg, #D4A843, #059669)"
+                gradient="linear-gradient(135deg, #E85D04, #059669)"
               />
               <Link
                 href="/dashboard"

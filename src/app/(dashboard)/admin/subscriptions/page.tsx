@@ -191,7 +191,7 @@ export default async function AdminSubscriptionsPage() {
                 className="w-9 h-9 rounded-xl flex items-center justify-center"
                 style={{ background: "rgba(212,168,67,0.12)" }}
               >
-                <Users size={17} className="text-[#D4A843]" />
+                <Users size={17} className="text-[#E85D04]" />
               </div>
             </div>
             <div className="text-2xl font-bold text-white">

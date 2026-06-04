@@ -92,7 +92,7 @@ function Toggle({
       className={`
         relative inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full
         transition-colors duration-200
-        ${checked ? "bg-[#D4A843]" : "bg-[#444]"}
+        ${checked ? "bg-[#E85D04]" : "bg-[#444]"}
         ${disabled ? "opacity-60 cursor-not-allowed" : ""}
       `}
     >
@@ -177,7 +177,7 @@ export default function CookieConsent() {
             Xem{" "}
             <a
               href="/privacy-policy"
-              className="text-[#D4A843] hover:underline"
+              className="text-[#E85D04] hover:underline"
             >
               Chính sách bảo mật
             </a>{" "}
@@ -186,7 +186,7 @@ export default function CookieConsent() {
           <div className="flex gap-3 shrink-0">
             <button
               onClick={() => setShowCustomize((v) => !v)}
-              className="px-4 py-2 text-sm text-[#D4A843] hover:text-white border border-[#D4A843] rounded-lg transition-colors"
+              className="px-4 py-2 text-sm text-[#E85D04] hover:text-white border border-[#E85D04] rounded-lg transition-colors"
             >
               Tùy chỉnh
             </button>
@@ -198,7 +198,7 @@ export default function CookieConsent() {
             </button>
             <button
               onClick={acceptAll}
-              className="px-4 py-2 text-sm bg-[#D4A843] text-black font-medium rounded-lg hover:bg-[#c49a3a] transition-colors"
+              className="px-4 py-2 text-sm bg-[#E85D04] text-black font-medium rounded-lg hover:bg-[#c49a3a] transition-colors"
             >
               Chấp nhận
             </button>
@@ -250,7 +250,7 @@ export default function CookieConsent() {
             <div className="flex justify-end">
               <button
                 onClick={saveCustom}
-                className="px-4 py-2 text-sm bg-[#D4A843] text-black font-medium rounded-lg hover:bg-[#c49a3a] transition-colors"
+                className="px-4 py-2 text-sm bg-[#E85D04] text-black font-medium rounded-lg hover:bg-[#c49a3a] transition-colors"
               >
                 Lưu tùy chọn
               </button>

@@ -274,7 +274,7 @@ export default function CreateQuizForm({ lessons }: CreateQuizFormProps) {
         className="w-full flex items-center justify-between p-4 hover:bg-white/[0.02] transition-colors"
       >
         <div className="flex items-center gap-2">
-          <Plus size={16} className="text-[#D4A843]" />
+          <Plus size={16} className="text-[#E85D04]" />
           <h2 className="text-sm font-semibold text-white">Tạo Quiz mới</h2>
         </div>
         {expanded ? (
@@ -358,7 +358,7 @@ export default function CreateQuizForm({ lessons }: CreateQuizFormProps) {
                   <div className="flex-1 space-y-3">
                     {/* Question header */}
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold text-[#D4A843]">
+                      <span className="text-xs font-bold text-[#E85D04]">
                         Câu {qIndex + 1}
                       </span>
                       <select
@@ -505,7 +505,7 @@ export default function CreateQuizForm({ lessons }: CreateQuizFormProps) {
               disabled={submitting}
               className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40"
               style={{
-                background: "linear-gradient(135deg, #D4A843, #b8912e)",
+                background: "linear-gradient(135deg, #E85D04, #b8912e)",
                 color: "#0a0a0a",
               }}
             >

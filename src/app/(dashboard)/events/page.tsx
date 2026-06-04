@@ -144,7 +144,7 @@ function MonthCalendar({
             className="w-10 h-10 rounded-xl flex items-center justify-center"
             style={{ background: "rgba(212,168,67,0.12)" }}
           >
-            <Calendar size={20} className="text-[#D4A843]" />
+            <Calendar size={20} className="text-[#E85D04]" />
           </div>
           <div>
             <h2 className="text-lg font-bold text-white">
@@ -195,9 +195,9 @@ function MonthCalendar({
               onClick={() => onSelectDay(day)}
               className={`relative h-10 rounded-xl flex flex-col items-center justify-center text-sm font-medium transition-all ${
                 isSelected
-                  ? "bg-[#D4A843] text-white"
+                  ? "bg-[#E85D04] text-white"
                   : isToday
-                  ? "bg-[#D4A843]/20 text-[#D4A843] ring-1 ring-[#D4A843]/40"
+                  ? "bg-[#E85D04]/20 text-[#E85D04] ring-1 ring-[#E85D04]/40"
                   : "text-gray-400 hover:bg-white/5"
               }`}
             >
@@ -205,7 +205,7 @@ function MonthCalendar({
               {hasEvent && (
                 <span
                   className={`absolute bottom-1 w-1.5 h-1.5 rounded-full ${
-                    isSelected ? "bg-white" : "bg-[#D4A843]"
+                    isSelected ? "bg-white" : "bg-[#E85D04]"
                   }`}
                 />
               )}
@@ -282,12 +282,12 @@ function EventCard({ event }: { event: EventRow }) {
           {/* Meta */}
           <div className="flex items-center gap-4 text-xs text-gray-500 flex-wrap">
             <span className="flex items-center gap-1.5">
-              <Calendar size={12} className="text-[#D4A843]" />
+              <Calendar size={12} className="text-[#E85D04]" />
               {formatDate(event.event_date)}
             </span>
             {event.start_time && (
               <span className="flex items-center gap-1.5">
-                <Clock size={12} className="text-[#D4A843]" />
+                <Clock size={12} className="text-[#E85D04]" />
                 {formatTimeRange(event.start_time, event.end_time)}
               </span>
             )}
@@ -386,10 +386,10 @@ function CreateEventForm({
   }
 
   return (
-    <div className="card-dark p-6 border border-[#D4A843]/30">
+    <div className="card-dark p-6 border border-[#E85D04]/30">
       <div className="flex items-center justify-between mb-5">
         <h3 className="text-lg font-bold text-white flex items-center gap-2">
-          <Plus size={18} className="text-[#D4A843]" />
+          <Plus size={18} className="text-[#E85D04]" />
           Tạo sự kiện mới
         </h3>
         <button
@@ -718,7 +718,7 @@ export default function EventsPage() {
         {selectedDay !== null && (
           <div>
             <h2 className="font-bold text-white text-lg mb-4 flex items-center gap-2">
-              <Calendar size={18} className="text-[#D4A843]" />
+              <Calendar size={18} className="text-[#E85D04]" />
               Sự kiện ngày {selectedDay}/{viewMonth + 1}/{viewYear}
             </h2>
 
@@ -742,13 +742,13 @@ export default function EventsPage() {
         {/* Upcoming events list */}
         <div>
           <h2 className="font-bold text-white text-lg mb-4 flex items-center gap-2">
-            <Clock size={18} className="text-[#D4A843]" />
+            <Clock size={18} className="text-[#E85D04]" />
             Sự kiện sắp tới
           </h2>
 
           {loading ? (
             <div className="card-dark p-8 text-center">
-              <div className="w-6 h-6 border-2 border-[#D4A843]/30 border-t-[#D4A843] rounded-full animate-spin mx-auto mb-3" />
+              <div className="w-6 h-6 border-2 border-[#E85D04]/30 border-t-[#E85D04] rounded-full animate-spin mx-auto mb-3" />
               <p className="text-gray-500 text-sm">Đang tải sự kiện...</p>
             </div>
           ) : upcomingEvents.length === 0 ? (

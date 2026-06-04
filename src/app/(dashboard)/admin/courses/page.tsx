@@ -156,7 +156,7 @@ export default async function AdminCoursesPage() {
               className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
               style={{ background: "rgba(212,168,67,0.09)" }}
             >
-              <BookOpen size={20} className="text-[#D4A843]" />
+              <BookOpen size={20} className="text-[#E85D04]" />
             </div>
             <div>
               <div className="text-2xl font-bold text-white leading-none mb-1">
@@ -289,14 +289,14 @@ export default async function AdminCoursesPage() {
                       href={`/admin/courses/${course.id}/students`}
                       className="text-center group"
                     >
-                      <div className="text-gray-400 mb-0.5 group-hover:text-[#D4A843] transition-colors">Học viên</div>
-                      <div className="font-semibold text-white group-hover:text-[#D4A843] transition-colors">
+                      <div className="text-gray-400 mb-0.5 group-hover:text-[#E85D04] transition-colors">Học viên</div>
+                      <div className="font-semibold text-white group-hover:text-[#E85D04] transition-colors">
                         {enrolled.toLocaleString("vi-VN")}
                       </div>
                     </Link>
                     <div className="text-center min-w-[80px]">
                       <div className="text-gray-400 mb-0.5">Giá</div>
-                      <div className="font-semibold text-[#D4A843]">
+                      <div className="font-semibold text-[#E85D04]">
                         {formatPrice(course.sale_price ?? course.price ?? 0)}
                       </div>
                     </div>
@@ -329,7 +329,7 @@ export default async function AdminCoursesPage() {
                       className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors"
                       style={{
                         background: "rgba(212,168,67,0.1)",
-                        color: "#D4A843",
+                        color: "#E85D04",
                         border: "1px solid rgba(212,168,67,0.2)",
                       }}
                     >

@@ -103,7 +103,7 @@ function StatusBadge({ status }: { status: OrderStatus }) {
 function StatusIcon({ status }: { status: OrderStatus }) {
   switch (status) {
     case "paid":
-      return <CheckCircle size={17} className="text-[#D4A843]" />;
+      return <CheckCircle size={17} className="text-[#E85D04]" />;
     case "pending":
       return <Clock size={17} className="text-[#f59e0b]" />;
     case "cancelled":
@@ -244,7 +244,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                 className="w-9 h-9 rounded-xl flex items-center justify-center"
                 style={{ background: "rgba(212,168,67,0.12)" }}
               >
-                <CheckCircle size={17} className="text-[#D4A843]" />
+                <CheckCircle size={17} className="text-[#E85D04]" />
               </div>
             </div>
             <div className="text-2xl font-bold text-white">{paidOrders}</div>
@@ -272,7 +272,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                 className="w-9 h-9 rounded-xl flex items-center justify-center"
                 style={{ background: "rgba(212,168,67,0.12)" }}
               >
-                <TrendingUp size={17} className="text-[#D4A843]" />
+                <TrendingUp size={17} className="text-[#E85D04]" />
               </div>
             </div>
             <div className="text-2xl font-bold text-white">
@@ -313,7 +313,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                   Tìm thấy{" "}
                   <span className="text-white font-medium">{totalFilteredOrders}</span>{" "}
                   kết quả cho &ldquo;
-                  <span className="text-[#D4A843]">{query}</span>&rdquo;
+                  <span className="text-[#E85D04]">{query}</span>&rdquo;
                 </>
               ) : (
                 <>

@@ -77,7 +77,7 @@ export default function RevenueComparison({ currentData, previousData, loading }
             type="monotone"
             dataKey="current"
             name="Kỳ hiện tại"
-            stroke="#D4A843"
+            stroke="#E85D04"
             strokeWidth={2}
             dot={false}
             connectNulls

@@ -96,7 +96,7 @@ export default function UserRoleEditor({
           setError(null);
           setSaved(false);
         }}
-        className="bg-[#1a1a1a] border border-[#2a2a2a] text-white text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-[#D4A843]/50 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        className="bg-[#1a1a1a] border border-[#2a2a2a] text-white text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-[#E85D04]/50 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {availableRoles.map((r) => (
           <option key={r.value} value={r.value}>
@@ -114,7 +114,7 @@ export default function UserRoleEditor({
           setError(null);
           setSaved(false);
         }}
-        className="bg-[#1a1a1a] border border-[#2a2a2a] text-white text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-[#D4A843]/50 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        className="bg-[#1a1a1a] border border-[#2a2a2a] text-white text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-[#E85D04]/50 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {tierOptions.map((t) => (
           <option key={t.value} value={t.value}>
@@ -128,7 +128,7 @@ export default function UserRoleEditor({
         <button
           onClick={handleSave}
           disabled={saving}
-          className="flex items-center gap-1 bg-[#D4A843]/15 text-[#D4A843] border border-[#D4A843]/30 text-xs px-2 py-1 rounded-lg hover:bg-[#D4A843]/25 transition-colors disabled:opacity-50"
+          className="flex items-center gap-1 bg-[#E85D04]/15 text-[#E85D04] border border-[#E85D04]/30 text-xs px-2 py-1 rounded-lg hover:bg-[#E85D04]/25 transition-colors disabled:opacity-50"
         >
           {saving ? (
             <Loader2 size={12} className="animate-spin" />
@@ -141,7 +141,7 @@ export default function UserRoleEditor({
 
       {/* Success indicator */}
       {saved && !hasChanges && (
-        <span className="text-[10px] text-[#D4A843] flex items-center gap-1">
+        <span className="text-[10px] text-[#E85D04] flex items-center gap-1">
           <Check size={10} /> Đã lưu
         </span>
       )}

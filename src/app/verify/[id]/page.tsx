@@ -104,7 +104,7 @@ export default async function VerifyCertificatePage({
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:opacity-80"
-            style={{ color: "#D4A843" }}
+            style={{ color: "#E85D04" }}
           >
             <ExternalLink size={14} />
             Về trang chủ
@@ -136,7 +136,7 @@ export default async function VerifyCertificatePage({
               border: "2px solid rgba(212,168,67,0.3)",
             }}
           >
-            <Award size={32} style={{ color: "#D4A843" }} />
+            <Award size={32} style={{ color: "#E85D04" }} />
           </div>
 
           <div className="space-y-1">
@@ -186,7 +186,7 @@ export default async function VerifyCertificatePage({
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:opacity-80"
-            style={{ color: "#D4A843" }}
+            style={{ color: "#E85D04" }}
           >
             <ExternalLink size={14} />
             Về trang chủ Đăng Khương Academy

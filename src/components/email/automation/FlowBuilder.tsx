@@ -65,7 +65,7 @@ function FlowBuilderInner({ initialFlow, onChange, onSave }: FlowBuilderProps) {
       source: connection.source,
       target: connection.target,
       animated: true,
-      style: { stroke: "#D4A843", strokeWidth: 2 },
+      style: { stroke: "#E85D04", strokeWidth: 2 },
     };
     setEdges((eds) => addEdge(newEdge, eds));
     setTimeout(notifyChange, 0);
@@ -143,7 +143,7 @@ function FlowBuilderInner({ initialFlow, onChange, onSave }: FlowBuilderProps) {
           fitView
           defaultEdgeOptions={{
             animated: true,
-            style: { stroke: "#D4A843", strokeWidth: 2 },
+            style: { stroke: "#E85D04", strokeWidth: 2 },
           }}
           style={{ background: "#0a0a0a" }}
         >

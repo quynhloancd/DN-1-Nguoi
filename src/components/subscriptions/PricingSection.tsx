@@ -102,7 +102,7 @@ export default function PricingSection({ onSubscribe }: PricingSectionProps) {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-16">
-        <Loader2 size={24} className="animate-spin text-[#D4A843]" />
+        <Loader2 size={24} className="animate-spin text-[#E85D04]" />
       </div>
     );
   }
@@ -176,7 +176,7 @@ export default function PricingSection({ onSubscribe }: PricingSectionProps) {
                   className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold"
                   style={{
                     background:
-                      "linear-gradient(135deg, #D4A843, #b8922e)",
+                      "linear-gradient(135deg, #E85D04, #b8922e)",
                     color: "#0a0a0a",
                   }}
                 >
@@ -243,7 +243,7 @@ export default function PricingSection({ onSubscribe }: PricingSectionProps) {
                       size={14}
                       className="shrink-0 mt-0.5"
                       style={{
-                        color: isPopular ? "#D4A843" : "#22c55e",
+                        color: isPopular ? "#E85D04" : "#22c55e",
                       }}
                     />
                     <span>{feature}</span>
@@ -281,9 +281,9 @@ export default function PricingSection({ onSubscribe }: PricingSectionProps) {
                 className="w-full py-2.5 rounded-xl text-sm font-semibold transition-all disabled:opacity-50"
                 style={{
                   background: isPopular
-                    ? "linear-gradient(135deg, #D4A843, #b8922e)"
+                    ? "linear-gradient(135deg, #E85D04, #b8922e)"
                     : "rgba(212,168,67,0.1)",
-                  color: isPopular ? "#0a0a0a" : "#D4A843",
+                  color: isPopular ? "#0a0a0a" : "#E85D04",
                   border: isPopular
                     ? "none"
                     : "1px solid rgba(212,168,67,0.3)",

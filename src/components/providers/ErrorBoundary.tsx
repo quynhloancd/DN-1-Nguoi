@@ -115,7 +115,7 @@ export class ErrorBoundary extends Component<
                 fontSize: "0.95rem",
                 fontWeight: 600,
                 color: "#0a0a0a",
-                backgroundColor: "#D4A843",
+                backgroundColor: "#E85D04",
                 border: "none",
                 borderRadius: "0.5rem",
                 cursor: "pointer",
@@ -125,7 +125,7 @@ export class ErrorBoundary extends Component<
                 (e.currentTarget.style.backgroundColor = "#FBBF24")
               }
               onMouseOut={(e) =>
-                (e.currentTarget.style.backgroundColor = "#D4A843")
+                (e.currentTarget.style.backgroundColor = "#E85D04")
               }
             >
               {"Thử lại"}

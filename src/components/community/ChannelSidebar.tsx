@@ -90,18 +90,18 @@ export default function ChannelSidebar({
               title={channel.description || channel.name}
               className={`group w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-left transition-all duration-150 ${
                 isActive
-                  ? "bg-[#D4A843]/15 text-[#D4A843]"
+                  ? "bg-[#E85D04]/15 text-[#E85D04]"
                   : "text-gray-400 hover:bg-white/5 hover:text-white"
               }`}
             >
               <span className="text-base leading-none">{channel.icon}</span>
               <div className="flex-1 min-w-0">
-                <span className={`text-sm font-medium truncate block ${isActive ? "text-[#D4A843]" : ""}`}>
+                <span className={`text-sm font-medium truncate block ${isActive ? "text-[#E85D04]" : ""}`}>
                   {channel.name}
                 </span>
               </div>
               {isActive && (
-                <div className="w-1.5 h-1.5 rounded-full bg-[#D4A843] shrink-0" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#E85D04] shrink-0" />
               )}
             </button>
           );
@@ -131,7 +131,7 @@ export default function ChannelSidebar({
               title={channel.description || channel.name}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm whitespace-nowrap shrink-0 transition-all duration-150 ${
                 isActive
-                  ? "bg-[#D4A843]/15 text-[#D4A843] border border-[#D4A843]/30"
+                  ? "bg-[#E85D04]/15 text-[#E85D04] border border-[#E85D04]/30"
                   : "bg-[#111] text-gray-400 border border-[#2a2a2a] hover:bg-white/5 hover:text-white"
               }`}
             >

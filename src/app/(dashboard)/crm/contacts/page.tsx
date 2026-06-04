@@ -70,7 +70,7 @@ const statusConfig: Record<string, { label: string; color: string; bg: string; b
   contacted:    { label: "Đã liên hệ",  color: "#f59e0b", bg: "rgba(245,158,11,0.1)", border: "rgba(245,158,11,0.25)" },
   qualified:    { label: "Tiềm năng",   color: "#a855f7", bg: "rgba(168,85,247,0.1)", border: "rgba(168,85,247,0.25)" },
   negotiation:  { label: "Đàm phán",    color: "#f97316", bg: "rgba(249,115,22,0.1)", border: "rgba(249,115,22,0.25)" },
-  won:          { label: "Thành công",   color: "#D4A843", bg: "rgba(212,168,67,0.1)",  border: "rgba(212,168,67,0.25)" },
+  won:          { label: "Thành công",   color: "#E85D04", bg: "rgba(212,168,67,0.1)",  border: "rgba(212,168,67,0.25)" },
   lost:         { label: "Mất",         color: "#ef4444", bg: "rgba(239,68,68,0.1)",  border: "rgba(239,68,68,0.25)" },
   churned:      { label: "Rời bỏ",      color: "#6b7280", bg: "rgba(107,114,128,0.1)", border: "rgba(107,114,128,0.25)" },
 };
@@ -79,7 +79,7 @@ const sourceConfig: Record<string, { label: string; color: string; bg: string }>
   manual:   { label: "Thủ công",   color: "#6b7280", bg: "rgba(107,114,128,0.1)" },
   import:   { label: "Import",    color: "#8b5cf6", bg: "rgba(139,92,246,0.1)" },
   website:  { label: "Website",   color: "#3b82f6", bg: "rgba(59,130,246,0.1)" },
-  referral: { label: "Giới thiệu", color: "#D4A843", bg: "rgba(212,168,67,0.1)" },
+  referral: { label: "Giới thiệu", color: "#E85D04", bg: "rgba(212,168,67,0.1)" },
   ads:      { label: "Quảng cáo", color: "#f59e0b", bg: "rgba(245,158,11,0.1)" },
   social:   { label: "MXH",       color: "#ec4899", bg: "rgba(236,72,153,0.1)" },
 };
@@ -90,7 +90,7 @@ const journeyStageConfig: Record<string, { label: string; color: string }> = {
   contacted:    { label: "Đã liên hệ",  color: "#f59e0b" },
   qualified:    { label: "Tiềm năng",   color: "#a855f7" },
   negotiation:  { label: "Đàm phán",    color: "#f97316" },
-  customer:     { label: "Khách hàng",  color: "#D4A843" },
+  customer:     { label: "Khách hàng",  color: "#E85D04" },
   advocate:     { label: "Đại sứ",      color: "#22c55e" },
 };
 
@@ -154,7 +154,7 @@ export default async function CRMContactsPage({
     { label: "Mới", value: newCount ?? 0, icon: UserPlus, color: "#60a5fa" },
     { label: "Đã liên hệ", value: contactedCount ?? 0, icon: Phone, color: "#f59e0b" },
     { label: "Tiềm năng", value: qualifiedCount ?? 0, icon: CheckCircle, color: "#a855f7" },
-    { label: "Thành công", value: wonCount ?? 0, icon: CheckCircle, color: "#D4A843" },
+    { label: "Thành công", value: wonCount ?? 0, icon: CheckCircle, color: "#E85D04" },
   ];
 
   // Fetch order data for contacts (match by email)
@@ -239,7 +239,7 @@ export default async function CRMContactsPage({
             }}
           >
             {n.type === "success" ? (
-              <CheckCircle size={16} className="text-[#D4A843] shrink-0" />
+              <CheckCircle size={16} className="text-[#E85D04] shrink-0" />
             ) : (
               <XCircle size={16} className="text-[#ef4444] shrink-0" />
             )}
@@ -320,7 +320,7 @@ export default async function CRMContactsPage({
             <form action={syncContactsFromOrders}>
               <button
                 type="submit"
-                className="px-4 py-2 text-sm font-medium rounded-lg flex items-center gap-2 border border-[#2a2a2a] text-gray-300 hover:text-white hover:border-[#D4A843] transition-colors"
+                className="px-4 py-2 text-sm font-medium rounded-lg flex items-center gap-2 border border-[#2a2a2a] text-gray-300 hover:text-white hover:border-[#E85D04] transition-colors"
               >
                 <RefreshCw size={14} />
                 Đồng bộ
@@ -332,7 +332,7 @@ export default async function CRMContactsPage({
         {/* Add Contact Form */}
         <div className="card-dark p-5">
           <div className="flex items-center gap-2 mb-4">
-            <UserPlus size={16} className="text-[#D4A843]" />
+            <UserPlus size={16} className="text-[#E85D04]" />
             <h3 className="font-semibold text-white text-sm">Thêm khách hàng mới</h3>
           </div>
           <form action={createContact}>
@@ -673,7 +673,7 @@ export default async function CRMContactsPage({
               {(q || statusFilter || journeyStageFilter) && (
                 <Link
                   href="/crm/contacts"
-                  className="text-xs text-[#D4A843] hover:underline"
+                  className="text-xs text-[#E85D04] hover:underline"
                 >
                   Xoá bộ lọc
                 </Link>

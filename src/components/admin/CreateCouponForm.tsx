@@ -85,7 +85,7 @@ export default function CreateCouponForm() {
         onClick={() => setOpen(true)}
         className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white transition-all"
         style={{
-          background: "linear-gradient(135deg, #D4A843, #b8922e)",
+          background: "linear-gradient(135deg, #E85D04, #b8922e)",
           boxShadow: "0 2px 8px rgba(212,168,67,0.3)",
         }}
       >
@@ -281,7 +281,7 @@ export default function CreateCouponForm() {
             disabled={loading}
             className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all disabled:opacity-50"
             style={{
-              background: "linear-gradient(135deg, #D4A843, #b8922e)",
+              background: "linear-gradient(135deg, #E85D04, #b8922e)",
               boxShadow: "0 2px 8px rgba(212,168,67,0.3)",
             }}
           >

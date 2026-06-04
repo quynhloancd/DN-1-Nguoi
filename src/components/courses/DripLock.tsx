@@ -33,8 +33,8 @@ export default function DripLock({
         {/* Lock content */}
         <div className="relative z-10 flex flex-col items-center gap-4 px-6 py-10 text-center max-w-md">
           {/* Animated lock icon */}
-          <div className="w-16 h-16 rounded-full bg-[#D4A843]/10 border border-[#D4A843]/20 flex items-center justify-center animate-pulse">
-            <Lock size={28} className="text-[#D4A843]" />
+          <div className="w-16 h-16 rounded-full bg-[#E85D04]/10 border border-[#E85D04]/20 flex items-center justify-center animate-pulse">
+            <Lock size={28} className="text-[#E85D04]" />
           </div>
 
           {/* Lesson title */}
@@ -50,7 +50,7 @@ export default function DripLock({
           {/* Exact date */}
           <p className="text-sm text-gray-400">
             Mở khoá vào ngày{" "}
-            <span className="text-[#D4A843] font-medium">{formattedDate}</span>
+            <span className="text-[#E85D04] font-medium">{formattedDate}</span>
           </p>
 
           {/* Subtle tip */}

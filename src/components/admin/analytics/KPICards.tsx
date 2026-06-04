@@ -49,7 +49,7 @@ function KPICard({ label, value, percentChange, icon, color }: CardConfig) {
           <div style={{ color }}>{icon}</div>
         </div>
         {isNew ? (
-          <span className="text-xs font-medium flex items-center gap-1 text-[#D4A843]">
+          <span className="text-xs font-medium flex items-center gap-1 text-[#E85D04]">
             ★ Mới
           </span>
         ) : (
@@ -69,7 +69,7 @@ function KPICard({ label, value, percentChange, icon, color }: CardConfig) {
           className="h-full rounded-full transition-all duration-500"
           style={{
             width: isNew ? "100%" : `${Math.min(Math.abs(parseFloat(percentChange)), 100)}%`,
-            backgroundColor: isNew ? "#D4A843" : isPositive ? "#22c55e" : "#ef4444",
+            backgroundColor: isNew ? "#E85D04" : isPositive ? "#22c55e" : "#ef4444",
           }}
         />
       </div>
@@ -118,7 +118,7 @@ export default function KPICards({
       value: formatCurrency(totalRevenue),
       percentChange: calcPercentChange(totalRevenue, prevRevenue),
       icon: <DollarSign size={20} />,
-      color: "#D4A843",
+      color: "#E85D04",
     },
     {
       label: "Đơn hàng",

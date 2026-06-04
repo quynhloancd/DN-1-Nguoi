@@ -146,7 +146,7 @@ export default async function CertificatePage({
         {/* Back link */}
         <Link
           href={`/courses/${slug}`}
-          className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#D4A843] transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#E85D04] transition-colors"
         >
           <ArrowLeft size={14} />
           Quay lại khoá học
@@ -161,7 +161,7 @@ export default async function CertificatePage({
               border: "2px solid rgba(212,168,67,0.3)",
             }}
           >
-            <Award size={28} className="text-[#D4A843]" />
+            <Award size={28} className="text-[#E85D04]" />
           </div>
           <h1 className="text-2xl font-bold text-white">
             Chúc mừng bạn đã hoàn thành khoá học!

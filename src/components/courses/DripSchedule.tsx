@@ -80,7 +80,7 @@ export default function DripSchedule({
                           Ngày {lesson.unlock_after_days} &mdash;{" "}
                           {formatDripDate(drip.unlockDate)}
                         </span>
-                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#D4A843]/10 text-[#D4A843] font-medium">
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#E85D04]/10 text-[#E85D04] font-medium">
                           {drip.daysRemaining} ngày nữa
                         </span>
                       </>

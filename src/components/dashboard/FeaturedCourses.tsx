@@ -41,7 +41,7 @@ export default async function FeaturedCourses() {
     <div>
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider flex items-center gap-1.5">
-          <Sparkles size={14} className="text-[#D4A843]" />
+          <Sparkles size={14} className="text-[#E85D04]" />
           Khoá học mới nhất
         </h3>
       </div>
@@ -56,7 +56,7 @@ export default async function FeaturedCourses() {
             <Link
               key={course.id}
               href={`/courses/${product.slug}`}
-              className="card-dark group hover:bg-[#1a1a1a] transition-all duration-200 overflow-hidden border border-transparent hover:border-[#D4A843]/20"
+              className="card-dark group hover:bg-[#1a1a1a] transition-all duration-200 overflow-hidden border border-transparent hover:border-[#E85D04]/20"
             >
               {/* Thumbnail */}
               <div className="relative aspect-video bg-[#222] overflow-hidden">
@@ -75,7 +75,7 @@ export default async function FeaturedCourses() {
 
                 {/* Badge */}
                 <div className="absolute top-2 left-2">
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wide bg-[#D4A843] text-black">
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wide bg-[#E85D04] text-black">
                     {course.badge_text}
                   </span>
                 </div>
@@ -83,7 +83,7 @@ export default async function FeaturedCourses() {
 
               {/* Content */}
               <div className="p-3.5">
-                <h4 className="text-sm font-semibold text-white group-hover:text-[#D4A843] transition-colors line-clamp-2 leading-snug">
+                <h4 className="text-sm font-semibold text-white group-hover:text-[#E85D04] transition-colors line-clamp-2 leading-snug">
                   {product.title}
                 </h4>
 
@@ -95,7 +95,7 @@ export default async function FeaturedCourses() {
 
                 <div className="flex items-center justify-between mt-3">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-bold text-[#D4A843]">
+                    <span className="text-sm font-bold text-[#E85D04]">
                       {formatPrice(price)}
                     </span>
                     {originalPrice && (
@@ -104,7 +104,7 @@ export default async function FeaturedCourses() {
                       </span>
                     )}
                   </div>
-                  <span className="text-[11px] text-[#D4A843] flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-[11px] text-[#E85D04] flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
                     Xem chi tiết <ArrowRight size={10} />
                   </span>
                 </div>

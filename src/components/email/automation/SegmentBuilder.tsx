@@ -75,11 +75,11 @@ export default function SegmentBuilder({ onSegmentChange, onPreview, compact }: 
       {!compact && (
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-semibold text-white flex items-center gap-2">
-            <Filter size={14} className="text-[#D4A843]" />
+            <Filter size={14} className="text-[#E85D04]" />
             Segment Builder
           </h3>
           {previewCount !== null && (
-            <span className="text-xs text-[#D4A843] font-medium">
+            <span className="text-xs text-[#E85D04] font-medium">
               {previewCount} subscribers khớp
             </span>
           )}
@@ -184,7 +184,7 @@ export default function SegmentBuilder({ onSegmentChange, onPreview, compact }: 
         <button
           onClick={previewSegment}
           disabled={loadingPreview}
-          className="flex items-center gap-1 text-xs text-[#D4A843] hover:text-[#e5ba54] transition-colors ml-auto"
+          className="flex items-center gap-1 text-xs text-[#E85D04] hover:text-[#e5ba54] transition-colors ml-auto"
         >
           <Users size={12} />
           {loadingPreview ? "Đang tính..." : "Xem trước"}

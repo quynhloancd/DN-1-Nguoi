@@ -252,7 +252,7 @@ export default function InstructorStudentsPage() {
             <select
               value={filterCourse}
               onChange={(e) => setFilterCourse(e.target.value)}
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843] transition-colors"
+              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04] transition-colors"
             >
               <option value="">Tất cả khoá học</option>
               {courses.map((c) => (
@@ -277,7 +277,7 @@ export default function InstructorStudentsPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Tìm theo tên hoặc email..."
-                className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg pl-9 pr-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#D4A843] transition-colors"
+                className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg pl-9 pr-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
               />
             </div>
           </div>
@@ -344,7 +344,7 @@ export default function InstructorStudentsPage() {
                           {student.full_name ?? "Học viên"}
                         </span>
                         {!filterCourse && student.course_title && (
-                          <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-[#D4A843]/10 text-[#D4A843] truncate max-w-[200px]">
+                          <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-[#E85D04]/10 text-[#E85D04] truncate max-w-[200px]">
                             {student.course_title}
                           </span>
                         )}
@@ -377,7 +377,7 @@ export default function InstructorStudentsPage() {
 
                       {/* Mobile: course title */}
                       {!filterCourse && student.course_title && (
-                        <p className="sm:hidden text-[10px] text-[#D4A843] mt-1 truncate">
+                        <p className="sm:hidden text-[10px] text-[#E85D04] mt-1 truncate">
                           {student.course_title}
                         </p>
                       )}
@@ -490,7 +490,7 @@ export default function InstructorStudentsPage() {
                             <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#1a1a1a]">
                               <BookOpen
                                 size={14}
-                                className="text-[#D4A843] shrink-0"
+                                className="text-[#E85D04] shrink-0"
                               />
                               <div>
                                 <p className="text-xs text-gray-400">

@@ -202,7 +202,7 @@ export default function InstructorSubmissionsPage() {
             <select
               value={filterCourse}
               onChange={(e) => setFilterCourse(e.target.value)}
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843] transition-colors"
+              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04] transition-colors"
             >
               <option value="">Tất cả khoá học</option>
               {courses.map((c) => (
@@ -220,7 +220,7 @@ export default function InstructorSubmissionsPage() {
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843] transition-colors"
+              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04] transition-colors"
             >
               <option value="">Tất cả</option>
               <option value="pending">Chờ duyệt</option>
@@ -286,7 +286,7 @@ export default function InstructorSubmissionsPage() {
                     </div>
 
                     {sub.score !== null && (
-                      <div className="text-sm font-bold text-[#D4A843] shrink-0">
+                      <div className="text-sm font-bold text-[#E85D04] shrink-0">
                         {sub.score}/100
                       </div>
                     )}
@@ -335,7 +335,7 @@ export default function InstructorSubmissionsPage() {
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#111] border border-[#2a2a2a] rounded-lg text-xs text-[#D4A843] hover:bg-[#1a1a1a] transition-colors"
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#111] border border-[#2a2a2a] rounded-lg text-xs text-[#E85D04] hover:bg-[#1a1a1a] transition-colors"
                               >
                                 <ExternalLink size={12} />
                                 {link.label || link.url}
@@ -373,7 +373,7 @@ export default function InstructorSubmissionsPage() {
                             }
                             placeholder="Nhập nhận xét cho học viên..."
                             rows={3}
-                            className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#D4A843] transition-colors"
+                            className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
                           />
                           <div className="flex flex-wrap gap-3 items-end">
                             <div>
@@ -394,7 +394,7 @@ export default function InstructorSubmissionsPage() {
                                     [sub.id]: e.target.value,
                                   }))
                                 }
-                                className="w-24 bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843] transition-colors"
+                                className="w-24 bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04] transition-colors"
                               />
                             </div>
                             <div>
@@ -409,7 +409,7 @@ export default function InstructorSubmissionsPage() {
                                     [sub.id]: e.target.value,
                                   }))
                                 }
-                                className="bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843] transition-colors"
+                                className="bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04] transition-colors"
                               >
                                 <option value="pending">Chờ duyệt</option>
                                 <option value="reviewed">Đã xem</option>

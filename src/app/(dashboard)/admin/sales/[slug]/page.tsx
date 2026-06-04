@@ -304,7 +304,7 @@ export default function AdminSalesConfigPage() {
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors"
             style={{
               background: "rgba(212,168,67,0.1)",
-              color: "#D4A843",
+              color: "#E85D04",
               border: "1px solid rgba(212,168,67,0.2)",
             }}
           >
@@ -365,7 +365,7 @@ export default function AdminSalesConfigPage() {
             <button
               type="button"
               onClick={addPainPoint}
-              className="flex items-center gap-1 text-xs text-[#D4A843] hover:text-[#FBBF24] transition-colors"
+              className="flex items-center gap-1 text-xs text-[#E85D04] hover:text-[#FBBF24] transition-colors"
             >
               <Plus size={12} />
               Thêm
@@ -430,7 +430,7 @@ export default function AdminSalesConfigPage() {
             <button
               type="button"
               onClick={addBenefit}
-              className="flex items-center gap-1 text-xs text-[#D4A843] hover:text-[#FBBF24] transition-colors"
+              className="flex items-center gap-1 text-xs text-[#E85D04] hover:text-[#FBBF24] transition-colors"
             >
               <Plus size={12} />
               Thêm
@@ -495,7 +495,7 @@ export default function AdminSalesConfigPage() {
             <button
               type="button"
               onClick={addTestimonial}
-              className="flex items-center gap-1 text-xs text-[#D4A843] hover:text-[#FBBF24] transition-colors"
+              className="flex items-center gap-1 text-xs text-[#E85D04] hover:text-[#FBBF24] transition-colors"
             >
               <Plus size={12} />
               Thêm
@@ -577,7 +577,7 @@ export default function AdminSalesConfigPage() {
             <button
               type="button"
               onClick={addFaq}
-              className="flex items-center gap-1 text-xs text-[#D4A843] hover:text-[#FBBF24] transition-colors"
+              className="flex items-center gap-1 text-xs text-[#E85D04] hover:text-[#FBBF24] transition-colors"
             >
               <Plus size={12} />
               Thêm
@@ -649,7 +649,7 @@ export default function AdminSalesConfigPage() {
             href={`/sales/${slug}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-[#D4A843] hover:text-[#FBBF24] transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-[#E85D04] hover:text-[#FBBF24] transition-colors"
           >
             /sales/{slug}
             <ExternalLink size={12} />

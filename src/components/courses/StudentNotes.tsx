@@ -213,12 +213,12 @@ export default function StudentNotes({
         className="w-full flex items-center justify-between p-4 hover:bg-white/[0.02] transition-colors"
       >
         <div className="flex items-center gap-2">
-          <BookMarked size={16} className="text-[#D4A843]" />
+          <BookMarked size={16} className="text-[#E85D04]" />
           <h3 className="font-semibold text-white text-sm">
             Ghi chú & Bookmark
           </h3>
           {notes.length > 0 && (
-            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-[#D4A843]/15 text-[#D4A843] font-medium">
+            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-[#E85D04]/15 text-[#E85D04] font-medium">
               {notes.length}
             </span>
           )}
@@ -249,7 +249,7 @@ export default function StudentNotes({
           {!showForm ? (
             <button
               onClick={() => setShowForm(true)}
-              className="w-full flex items-center justify-center gap-1.5 py-2 rounded-lg text-xs font-medium text-[#D4A843] border border-[#D4A843]/20 hover:bg-[#D4A843]/5 transition-colors"
+              className="w-full flex items-center justify-center gap-1.5 py-2 rounded-lg text-xs font-medium text-[#E85D04] border border-[#E85D04]/20 hover:bg-[#E85D04]/5 transition-colors"
             >
               <Plus size={14} />
               Thêm ghi chú
@@ -307,7 +307,7 @@ export default function StudentNotes({
                   <button
                     type="submit"
                     disabled={submitting || !content.trim()}
-                    className="flex items-center gap-1 text-xs py-1.5 px-3 rounded-lg font-medium bg-[#D4A843]/15 text-[#D4A843] border border-[#D4A843]/30 hover:bg-[#D4A843]/25 disabled:opacity-40 transition-colors"
+                    className="flex items-center gap-1 text-xs py-1.5 px-3 rounded-lg font-medium bg-[#E85D04]/15 text-[#E85D04] border border-[#E85D04]/30 hover:bg-[#E85D04]/25 disabled:opacity-40 transition-colors"
                   >
                     {submitting ? (
                       <Loader2 size={12} className="animate-spin" />
@@ -368,7 +368,7 @@ export default function StudentNotes({
                         <button
                           onClick={() => handleUpdate(note.id)}
                           disabled={saving || !editContent.trim()}
-                          className="flex items-center gap-1 text-xs py-1 px-2.5 rounded-lg font-medium bg-[#D4A843]/15 text-[#D4A843] border border-[#D4A843]/30 hover:bg-[#D4A843]/25 disabled:opacity-40 transition-colors"
+                          className="flex items-center gap-1 text-xs py-1 px-2.5 rounded-lg font-medium bg-[#E85D04]/15 text-[#E85D04] border border-[#E85D04]/30 hover:bg-[#E85D04]/25 disabled:opacity-40 transition-colors"
                         >
                           {saving ? (
                             <Loader2 size={12} className="animate-spin" />
@@ -385,7 +385,7 @@ export default function StudentNotes({
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex-1 min-w-0">
                           {note.timestamp_sec > 0 && (
-                            <span className="inline-block text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/5 text-[#D4A843] mb-1">
+                            <span className="inline-block text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/5 text-[#E85D04] mb-1">
                               {formatTimestamp(note.timestamp_sec)}
                             </span>
                           )}

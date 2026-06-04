@@ -45,7 +45,7 @@ export default function QRCodeButton({
     <>
       <button
         onClick={() => setOpen(true)}
-        className="p-1.5 rounded-lg transition-all hover:bg-[#D4A843]/10 text-gray-500 hover:text-[#D4A843]"
+        className="p-1.5 rounded-lg transition-all hover:bg-[#E85D04]/10 text-gray-500 hover:text-[#E85D04]"
         title="Xem mã QR thanh toán"
       >
         <QrCode size={16} />
@@ -80,7 +80,7 @@ export default function QRCodeButton({
               </h3>
               <p className="text-sm text-gray-400 mt-1">
                 Đơn hàng{" "}
-                <span className="font-mono text-[#D4A843]">{orderCode}</span>
+                <span className="font-mono text-[#E85D04]">{orderCode}</span>
               </p>
             </div>
 
@@ -175,7 +175,7 @@ export default function QRCodeButton({
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all"
                 style={{
                   background: "rgba(212,168,67,0.1)",
-                  color: "#D4A843",
+                  color: "#E85D04",
                   border: "1px solid rgba(212,168,67,0.2)",
                 }}
               >
@@ -228,7 +228,7 @@ function DetailRow({
       <div className="flex items-center gap-2">
         <span
           className={`text-sm font-medium ${
-            highlight ? "text-[#D4A843]" : "text-white"
+            highlight ? "text-[#E85D04]" : "text-white"
           }`}
         >
           {value}

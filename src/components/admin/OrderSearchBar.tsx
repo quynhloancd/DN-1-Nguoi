@@ -71,7 +71,7 @@ export default function OrderSearchBar() {
         className="px-4 py-2 rounded-xl text-sm font-medium transition-colors whitespace-nowrap"
         style={{
           background: "rgba(212,168,67,0.12)",
-          color: "#D4A843",
+          color: "#E85D04",
           border: "1px solid rgba(212,168,67,0.25)",
         }}
       >

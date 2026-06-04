@@ -86,7 +86,7 @@ export default function AvgStats({
       value: formatCurrency(totalRevenue / days),
       subtitle: `Trong ${days} ngày`,
       icon: <DollarSign size={18} />,
-      color: "#D4A843",
+      color: "#E85D04",
     },
     {
       label: "Đơn hàng TB/ngày",

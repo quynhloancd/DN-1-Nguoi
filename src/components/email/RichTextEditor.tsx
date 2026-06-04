@@ -134,35 +134,35 @@ export default function RichTextEditor({
         /* Toolbar button hover */
         .rich-text-editor-wrapper .ql-snow button:hover .ql-stroke,
         .rich-text-editor-wrapper .ql-snow .ql-picker-label:hover .ql-stroke {
-          stroke: #D4A843;
+          stroke: #E85D04;
         }
         .rich-text-editor-wrapper .ql-snow button:hover .ql-fill,
         .rich-text-editor-wrapper .ql-snow .ql-picker-label:hover .ql-fill {
-          fill: #D4A843;
+          fill: #E85D04;
         }
         .rich-text-editor-wrapper .ql-snow button:hover,
         .rich-text-editor-wrapper .ql-snow .ql-picker-label:hover {
-          color: #D4A843;
+          color: #E85D04;
         }
         .rich-text-editor-wrapper .ql-snow .ql-picker-label:hover::before {
-          color: #D4A843;
+          color: #E85D04;
         }
 
         /* Active toolbar buttons */
         .rich-text-editor-wrapper .ql-snow button.ql-active .ql-stroke {
-          stroke: #D4A843;
+          stroke: #E85D04;
         }
         .rich-text-editor-wrapper .ql-snow button.ql-active .ql-fill {
-          fill: #D4A843;
+          fill: #E85D04;
         }
         .rich-text-editor-wrapper .ql-snow .ql-picker-item.ql-selected,
         .rich-text-editor-wrapper .ql-snow .ql-picker-label.ql-active {
-          color: #D4A843;
+          color: #E85D04;
         }
         .rich-text-editor-wrapper
           .ql-snow
           .ql-picker-label.ql-active::before {
-          color: #D4A843;
+          color: #E85D04;
         }
 
         /* Dropdown menus */
@@ -179,11 +179,11 @@ export default function RichTextEditor({
           border-radius: 4px;
         }
         .rich-text-editor-wrapper .ql-snow .ql-picker-item:hover {
-          color: #D4A843;
+          color: #E85D04;
           background: rgba(212, 168, 67, 0.08);
         }
         .rich-text-editor-wrapper .ql-snow .ql-picker-item.ql-selected {
-          color: #D4A843;
+          color: #E85D04;
         }
 
         /* Color picker */
@@ -194,13 +194,13 @@ export default function RichTextEditor({
 
         /* Links */
         .rich-text-editor-wrapper .ql-editor a {
-          color: #D4A843;
+          color: #E85D04;
           text-decoration: underline;
         }
 
         /* Blockquote */
         .rich-text-editor-wrapper .ql-editor blockquote {
-          border-left: 3px solid #D4A843;
+          border-left: 3px solid #E85D04;
           padding-left: 12px;
           color: #9ca3af;
         }
@@ -240,10 +240,10 @@ export default function RichTextEditor({
           outline: none;
         }
         .rich-text-editor-wrapper .ql-snow .ql-tooltip input[type="text"]:focus {
-          border-color: #D4A843;
+          border-color: #E85D04;
         }
         .rich-text-editor-wrapper .ql-snow .ql-tooltip a {
-          color: #D4A843;
+          color: #E85D04;
         }
         .rich-text-editor-wrapper .ql-snow .ql-tooltip a:hover {
           color: #B8922E;

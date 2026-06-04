@@ -25,7 +25,7 @@ interface Subscriber {
 // ─── Preset Colors ──────────────────────────────────────────────────────────
 
 const PRESET_COLORS = [
-  "#D4A843",
+  "#E85D04",
   "#ef4444",
   "#f59e0b",
   "#22c55e",
@@ -240,7 +240,7 @@ export default function TagsPage() {
           <h1 className="text-xl font-semibold text-white">Quản lý Tags</h1>
           <button
             onClick={openCreateModal}
-            className="bg-[#D4A843] text-black font-medium rounded-lg px-4 py-2 flex items-center gap-2 hover:opacity-90 transition-opacity"
+            className="bg-[#E85D04] text-black font-medium rounded-lg px-4 py-2 flex items-center gap-2 hover:opacity-90 transition-opacity"
           >
             <Plus size={16} />
             Thêm tag mới
@@ -264,8 +264,8 @@ export default function TagsPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-[#151515] border border-[#2a2a2a] rounded-xl p-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-[#D4A843]/20">
-                <Tag size={18} className="text-[#D4A843]" />
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-[#E85D04]/20">
+                <Tag size={18} className="text-[#E85D04]" />
               </div>
               <div>
                 <p className="text-sm text-gray-400">Tổng tags</p>
@@ -439,7 +439,7 @@ export default function TagsPage() {
                       type="checkbox"
                       checked={selectedSubscribers.includes(sub.id)}
                       onChange={() => toggleSubscriber(sub.id)}
-                      className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] accent-[#D4A843]"
+                      className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] accent-[#E85D04]"
                     />
                     <div className="flex-1 min-w-0">
                       <p className="text-sm text-white truncate">
@@ -474,7 +474,7 @@ export default function TagsPage() {
             <button
               onClick={handleAssignTag}
               disabled={!assignTagId || selectedSubscribers.length === 0}
-              className="bg-[#D4A843] text-black font-medium rounded-lg px-4 py-2 hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
+              className="bg-[#E85D04] text-black font-medium rounded-lg px-4 py-2 hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
             >
               Gán tag ({selectedSubscribers.length})
             </button>
@@ -567,7 +567,7 @@ export default function TagsPage() {
               <button
                 onClick={handleSaveTag}
                 disabled={!formName.trim() || saving}
-                className="bg-[#D4A843] text-black font-medium rounded-lg px-4 py-2 hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
+                className="bg-[#E85D04] text-black font-medium rounded-lg px-4 py-2 hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 {saving
                   ? "Đang lưu..."

@@ -446,7 +446,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center text-3xl font-bold text-[#D4A843] bg-[#D4A84310]">
+                <div className="w-full h-full flex items-center justify-center text-3xl font-bold text-[#E85D04] bg-[#E85D0410]">
                   {DEFAULT_AUTHOR.name.charAt(0)}
                 </div>
               )}

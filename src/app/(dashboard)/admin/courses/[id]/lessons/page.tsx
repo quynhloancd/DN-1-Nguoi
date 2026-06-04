@@ -786,7 +786,7 @@ export default function LessonsPage() {
 
           <DragOverlay>
             {activeChapterId ? (
-              <div className="card-dark rounded-xl px-5 py-4 opacity-90 shadow-2xl border border-[#D4A843]/40">
+              <div className="card-dark rounded-xl px-5 py-4 opacity-90 shadow-2xl border border-[#E85D04]/40">
                 <span className="text-white font-medium">
                   {chapters.find((c) => c.id === activeChapterId)?.title}
                 </span>
@@ -1605,7 +1605,7 @@ function LessonAttachmentsSection({
               type="button"
               onClick={handleAdd}
               disabled={!linkUrl.trim()}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#D4A843] text-black hover:bg-[#c49a3a] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#E85D04] text-black hover:bg-[#c49a3a] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             >
               <Plus size={12} />
               Thêm
@@ -1635,7 +1635,7 @@ function LessonAttachmentsSection({
                   href={att.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-[#D4A843] p-1 transition-colors"
+                  className="text-gray-500 hover:text-[#E85D04] p-1 transition-colors"
                   title="Mở link"
                 >
                   <ExternalLink size={13} />

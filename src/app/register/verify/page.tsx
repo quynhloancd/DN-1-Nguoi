@@ -28,7 +28,7 @@ export default async function VerifyPage({
           {/* Email icon */}
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-5"
             style={{ background: "rgba(212,168,67,0.1)", border: "1px solid rgba(212,168,67,0.2)" }}>
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4A843" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E85D04" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <rect x="2" y="4" width="20" height="16" rx="2" />
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
             </svg>
@@ -39,7 +39,7 @@ export default async function VerifyPage({
           </p>
 
           {email && (
-            <p className="text-[#D4A843] font-semibold text-base mb-4 break-all">
+            <p className="text-[#E85D04] font-semibold text-base mb-4 break-all">
               {email}
             </p>
           )}

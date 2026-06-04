@@ -80,7 +80,7 @@ export default function CompleteProfilePage() {
     return (
       <div className="min-h-screen flex items-center justify-center"
         style={{ background: "radial-gradient(ellipse at top, #0d1a12 0%, #0a0a0a 60%)" }}>
-        <Loader2 size={32} className="text-[#D4A843] animate-spin" />
+        <Loader2 size={32} className="text-[#E85D04] animate-spin" />
       </div>
     );
   }
@@ -95,7 +95,7 @@ export default function CompleteProfilePage() {
           <h1 className="text-2xl font-bold text-white">Hoàn tất đăng ký</h1>
           <p className="text-gray-400 mt-1 text-sm">
             {userName ? (
-              <>Xin chào <span className="text-[#D4A843] font-medium">{userName}</span>! </>
+              <>Xin chào <span className="text-[#E85D04] font-medium">{userName}</span>! </>
             ) : null}
             Vui lòng cung cấp số điện thoại để hoàn tất.
           </p>
@@ -103,7 +103,7 @@ export default function CompleteProfilePage() {
 
         {/* Success icon */}
         <div className="flex items-center gap-2 mb-4 p-3 rounded-lg text-sm border"
-          style={{ background: "rgba(212,168,67,0.06)", borderColor: "rgba(212,168,67,0.2)", color: "#D4A843" }}>
+          style={{ background: "rgba(212,168,67,0.06)", borderColor: "rgba(212,168,67,0.2)", color: "#E85D04" }}>
           <CheckCircle2 size={16} />
           <span>Đăng nhập thành công! Chỉ cần thêm 1 bước nữa.</span>
         </div>

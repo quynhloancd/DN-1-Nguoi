@@ -119,7 +119,7 @@ export default function AnnouncementsPage() {
         {/* Create form */}
         <div className="card-dark p-5">
           <div className="flex items-center gap-2 mb-4">
-            <Megaphone size={18} className="text-[#D4A843]" />
+            <Megaphone size={18} className="text-[#E85D04]" />
             <h3 className="text-sm font-bold text-white">Tạo thông báo chung</h3>
           </div>
 
@@ -178,7 +178,7 @@ export default function AnnouncementsPage() {
                   checked={postToCommunity}
                   onChange={(e) => setPostToCommunity(e.target.checked)}
                   className="w-4 h-4 rounded"
-                  style={{ accentColor: "#D4A843" }}
+                  style={{ accentColor: "#E85D04" }}
                 />
                 <span className="text-sm text-gray-400 flex items-center gap-1.5">
                   <Globe size={14} />
@@ -193,7 +193,7 @@ export default function AnnouncementsPage() {
                   onChange={(e) => setSendEmail(e.target.checked)}
                   disabled={!postToCommunity}
                   className="w-4 h-4 rounded disabled:opacity-40"
-                  style={{ accentColor: "#D4A843" }}
+                  style={{ accentColor: "#E85D04" }}
                 />
                 <span className={`text-sm flex items-center gap-1.5 ${postToCommunity ? "text-gray-400" : "text-gray-600"}`}>
                   <Mail size={14} />
@@ -286,7 +286,7 @@ export default function AnnouncementsPage() {
                           href={ann.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-xs text-[#D4A843] mt-1 inline-flex items-center gap-1 hover:underline"
+                          className="text-xs text-[#E85D04] mt-1 inline-flex items-center gap-1 hover:underline"
                         >
                           <Link2 size={10} /> {ann.link}
                         </a>

@@ -214,7 +214,7 @@ export default function CertificateView({
                 fontSize: 36,
                 fontWeight: "bold",
                 letterSpacing: 8,
-                color: "#D4A843",
+                color: "#E85D04",
                 textTransform: "uppercase",
                 marginBottom: 4,
               }}
@@ -296,7 +296,7 @@ export default function CertificateView({
               style={{
                 fontSize: 22,
                 fontWeight: "bold",
-                color: "#D4A843",
+                color: "#E85D04",
                 marginBottom: 8,
                 lineHeight: 1.3,
                 maxWidth: 700,
@@ -365,7 +365,7 @@ export default function CertificateView({
                 <div
                   style={{
                     fontSize: 18,
-                    color: "#D4A843",
+                    color: "#E85D04",
                     marginBottom: 6,
                     fontStyle: "italic",
                   }}
@@ -460,7 +460,7 @@ export default function CertificateView({
           className="flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all disabled:opacity-50"
           style={{
             background: "rgba(212,168,67,0.15)",
-            color: "#D4A843",
+            color: "#E85D04",
             border: "1px solid rgba(212,168,67,0.4)",
           }}
         >

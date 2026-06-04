@@ -170,10 +170,10 @@ export default function LessonSubmission({
         className="w-full flex items-center justify-between p-4 hover:bg-white/[0.02] transition-colors"
       >
         <div className="flex items-center gap-2">
-          <Upload size={16} className="text-[#D4A843]" />
+          <Upload size={16} className="text-[#E85D04]" />
           <h3 className="font-semibold text-white text-sm">Nộp bài</h3>
           {submissions.length > 0 && (
-            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-[#D4A843]/15 text-[#D4A843] font-medium">
+            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-[#E85D04]/15 text-[#E85D04] font-medium">
               {submissions.length}
             </span>
           )}
@@ -211,7 +211,7 @@ export default function LessonSubmission({
                   >
                     <ExternalLink
                       size={14}
-                      className="text-[#D4A843] shrink-0"
+                      className="text-[#E85D04] shrink-0"
                     />
                     <span className="flex-1 min-w-0 text-gray-300 truncate">
                       {link.label}
@@ -259,7 +259,7 @@ export default function LessonSubmission({
                     className="text-xs px-3 py-1.5 rounded-lg font-medium transition-colors"
                     style={{
                       background: "rgba(212,168,67,0.15)",
-                      color: "#D4A843",
+                      color: "#E85D04",
                     }}
                   >
                     Thêm
@@ -281,7 +281,7 @@ export default function LessonSubmission({
               <button
                 type="button"
                 onClick={() => setShowLinkInput(true)}
-                className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-[#D4A843] transition-colors"
+                className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-[#E85D04] transition-colors"
               >
                 <Plus size={14} />
                 Thêm liên kết (Google Drive, Notion, v.v.)
@@ -312,7 +312,7 @@ export default function LessonSubmission({
                 }
                 className="flex items-center gap-1.5 text-xs py-1.5 px-3 rounded-lg font-medium transition-all disabled:opacity-40"
                 style={{
-                  background: "linear-gradient(135deg, #D4A843, #B8922E)",
+                  background: "linear-gradient(135deg, #E85D04, #B8922E)",
                   color: "#000",
                 }}
               >
@@ -379,7 +379,7 @@ export default function LessonSubmission({
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-xs text-[#D4A843] hover:text-[#B8922E] transition-colors"
+                            className="flex items-center gap-2 text-xs text-[#E85D04] hover:text-[#B8922E] transition-colors"
                           >
                             <ExternalLink size={12} className="shrink-0" />
                             <span className="truncate">
@@ -402,9 +402,9 @@ export default function LessonSubmission({
                         <div className="flex items-center gap-1.5 mb-1">
                           <CheckCircle2
                             size={12}
-                            className="text-[#D4A843]"
+                            className="text-[#E85D04]"
                           />
-                          <span className="text-[10px] font-medium text-[#D4A843]">
+                          <span className="text-[10px] font-medium text-[#E85D04]">
                             Phản hồi từ giảng viên
                           </span>
                         </div>

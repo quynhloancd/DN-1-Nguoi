@@ -297,7 +297,7 @@ export default function SalesPageTemplate({
         </span>
       ) : (
         <>
-          <span className="text-3xl sm:text-4xl font-bold text-[#D4A843]">
+          <span className="text-3xl sm:text-4xl font-bold text-[#E85D04]">
             {formatPrice(displayPrice)}
           </span>
           {hasSale && (
@@ -365,21 +365,21 @@ export default function SalesPageTemplate({
             {/* Stats */}
             <div className="flex flex-wrap items-center justify-center gap-6 mb-8 text-sm sm:text-base text-gray-400">
               <span className="flex items-center gap-2">
-                <BookOpen size={18} className="text-[#D4A843]" />
+                <BookOpen size={18} className="text-[#E85D04]" />
                 {sortedChapters.length} chương
               </span>
               <span className="flex items-center gap-2">
-                <PlayCircle size={18} className="text-[#D4A843]" />
+                <PlayCircle size={18} className="text-[#E85D04]" />
                 {totalLessons} bài học
               </span>
               {totalDuration > 0 && (
                 <span className="flex items-center gap-2">
-                  <Clock size={18} className="text-[#D4A843]" />
+                  <Clock size={18} className="text-[#E85D04]" />
                   {formatTotalDuration(totalDuration)}
                 </span>
               )}
               <span className="flex items-center gap-2">
-                <Award size={18} className="text-[#D4A843]" />
+                <Award size={18} className="text-[#E85D04]" />
                 Chứng chỉ hoàn thành
               </span>
             </div>
@@ -531,7 +531,7 @@ export default function SalesPageTemplate({
                           className="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold shrink-0"
                           style={{
                             background: "rgba(212,168,67,0.12)",
-                            color: "#D4A843",
+                            color: "#E85D04",
                           }}
                         >
                           {chIdx + 1}
@@ -605,7 +605,7 @@ export default function SalesPageTemplate({
                                 className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
                                 style={{
                                   background: "rgba(212,168,67,0.12)",
-                                  color: "#D4A843",
+                                  color: "#E85D04",
                                   border: "1px solid rgba(212,168,67,0.25)",
                                 }}
                               >
@@ -662,7 +662,7 @@ export default function SalesPageTemplate({
                 src={usedInstructor.avatar}
                 alt={usedInstructor.name}
                 className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover"
-                style={{ border: "3px solid #D4A843" }}
+                style={{ border: "3px solid #E85D04" }}
               />
             </div>
 
@@ -704,7 +704,7 @@ export default function SalesPageTemplate({
                     }}
                   >
                     {/* Stars */}
-                    <div className="flex gap-0.5 mb-3 text-[#D4A843]">
+                    <div className="flex gap-0.5 mb-3 text-[#E85D04]">
                       {Array.from({ length: 5 }).map((_, s) => (
                         <svg
                           key={s}
@@ -735,7 +735,7 @@ export default function SalesPageTemplate({
                           className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold"
                           style={{
                             background: "rgba(212,168,67,0.15)",
-                            color: "#D4A843",
+                            color: "#E85D04",
                           }}
                         >
                           {t.name.charAt(0)}
@@ -762,7 +762,7 @@ export default function SalesPageTemplate({
                   border: "1px solid rgba(212,168,67,0.2)",
                 }}
               >
-                <Users size={20} className="text-[#D4A843]" />
+                <Users size={20} className="text-[#E85D04]" />
                 <span className="text-base font-semibold text-white">
                   1,300+ học viên đã tham gia
                 </span>
@@ -895,7 +895,7 @@ export default function SalesPageTemplate({
               </span>
             ) : (
               <div className="flex items-baseline gap-2">
-                <span className="text-base font-bold text-[#D4A843]">
+                <span className="text-base font-bold text-[#E85D04]">
                   {formatPrice(displayPrice)}
                 </span>
                 {hasSale && (

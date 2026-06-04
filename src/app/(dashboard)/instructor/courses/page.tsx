@@ -85,7 +85,7 @@ export default function InstructorCoursesPage() {
                   </h3>
 
                   <div className="flex items-center gap-1.5 text-xs text-gray-400 mb-3">
-                    <Users size={12} className="text-[#D4A843]" />
+                    <Users size={12} className="text-[#E85D04]" />
                     <span>{course.enrollment_count} học viên</span>
                   </div>
 

@@ -185,7 +185,7 @@ export default function PrivacyPolicyPage() {
                 <li key={section.id}>
                   <a
                     href={`#${section.id}`}
-                    className="text-sm text-[#D4A843] hover:text-[#e6be5a] transition-colors"
+                    className="text-sm text-[#E85D04] hover:text-[#e6be5a] transition-colors"
                   >
                     {section.title}
                   </a>
@@ -214,7 +214,7 @@ export default function PrivacyPolicyPage() {
                 <ul className="space-y-2 my-4 ml-1">
                   {section.list.map((item, i) => (
                     <li key={i} className="flex gap-3 text-gray-300 leading-relaxed">
-                      <span className="text-[#D4A843] mt-1.5 shrink-0">
+                      <span className="text-[#E85D04] mt-1.5 shrink-0">
                         <svg
                           width="6"
                           height="6"
@@ -250,7 +250,7 @@ export default function PrivacyPolicyPage() {
                   </p>
                   <p className="text-gray-300">
                     <span className="text-gray-500">Website:</span>{" "}
-                    <Link href="/" className="text-[#D4A843] hover:underline">
+                    <Link href="/" className="text-[#E85D04] hover:underline">
                       doanhnghiep1nguoi.online
                     </Link>
                   </p>
@@ -258,7 +258,7 @@ export default function PrivacyPolicyPage() {
                     <span className="text-gray-500">Email:</span>{" "}
                     <a
                       href="mailto:support@doanhnghiep1nguoi.online"
-                      className="text-[#D4A843] hover:underline"
+                      className="text-[#E85D04] hover:underline"
                     >
                       support@doanhnghiep1nguoi.online
                     </a>
@@ -280,13 +280,13 @@ export default function PrivacyPolicyPage() {
           <div className="pt-6 border-t border-[#1a1a1a] flex flex-col sm:flex-row gap-3">
             <Link
               href="/terms-of-service"
-              className="text-sm text-[#D4A843] hover:underline"
+              className="text-sm text-[#E85D04] hover:underline"
             >
               Điều khoản dịch vụ &rarr;
             </Link>
             <Link
               href="/"
-              className="text-sm text-[#D4A843] hover:underline"
+              className="text-sm text-[#E85D04] hover:underline"
             >
               &larr; Quay về trang chủ
             </Link>

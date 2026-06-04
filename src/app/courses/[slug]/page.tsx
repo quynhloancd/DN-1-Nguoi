@@ -221,7 +221,7 @@ export default async function CourseDetailPage({
           </p>
           <a
             href="/courses"
-            className="inline-flex items-center gap-2 mt-6 text-sm font-medium text-[#D4A843] hover:underline"
+            className="inline-flex items-center gap-2 mt-6 text-sm font-medium text-[#E85D04] hover:underline"
           >
             ← Quay lại danh sách khoá học
           </a>
@@ -454,13 +454,13 @@ export default async function CourseDetailPage({
                 border: "1px solid rgba(212,168,67,0.25)",
               }}
             >
-              <Lock size={28} className="text-[#D4A843] mx-auto mb-3" />
+              <Lock size={28} className="text-[#E85D04] mx-auto mb-3" />
               <h3 className="text-lg font-bold text-white mb-2">
                 Khoá học dành cho {tierLabels[productTierRequired!] ?? productTierRequired}
               </h3>
               <p className="text-sm text-gray-400 mb-4">
                 Khoá học này yêu cầu gói{" "}
-                <span className="font-semibold text-[#D4A843]">
+                <span className="font-semibold text-[#E85D04]">
                   {tierLabels[productTierRequired!] ?? productTierRequired}
                 </span>{" "}
                 trở lên. Gói hiện tại của bạn là{" "}
@@ -473,7 +473,7 @@ export default async function CourseDetailPage({
                 href="/pricing"
                 className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium text-black transition-all hover:scale-[1.02]"
                 style={{
-                  background: "linear-gradient(135deg, #D4A843, #B8922E)",
+                  background: "linear-gradient(135deg, #E85D04, #B8922E)",
                 }}
               >
                 Nâng cấp ngay
@@ -672,7 +672,7 @@ export default async function CourseDetailPage({
                   }
                   className={`flex items-center gap-3 px-4 py-2.5 transition-colors
                     ${isAccessible ? "cursor-pointer" : "cursor-not-allowed opacity-60"}
-                    ${isActive && !locked ? "bg-[#D4A843]/10" : isAccessible ? "hover:bg-white/3" : ""}`}
+                    ${isActive && !locked ? "bg-[#E85D04]/10" : isAccessible ? "hover:bg-white/3" : ""}`}
                 >
                   {locked ? (
                     <Lock size={14} className="text-gray-500 shrink-0" />
@@ -684,7 +684,7 @@ export default async function CourseDetailPage({
                   ) : (
                     <PlayCircle
                       size={14}
-                      className={`shrink-0 ${isActive ? "text-[#D4A843]" : "text-gray-500"}`}
+                      className={`shrink-0 ${isActive ? "text-[#E85D04]" : "text-gray-500"}`}
                     />
                   )}
                   <div className="flex-1 min-w-0">
@@ -693,7 +693,7 @@ export default async function CourseDetailPage({
                         locked
                           ? "text-gray-500"
                           : isActive
-                            ? "text-[#D4A843] font-medium"
+                            ? "text-[#E85D04] font-medium"
                             : isDone
                               ? "text-gray-500 line-through"
                               : "text-gray-300"
@@ -736,8 +736,8 @@ export default async function CourseDetailPage({
                 border: "1px solid rgba(212,168,67,0.3)",
               }}
             >
-              <Award size={22} className="text-[#D4A843] mx-auto mb-1.5" />
-              <p className="text-xs font-bold text-[#D4A843] mb-0.5">
+              <Award size={22} className="text-[#E85D04] mx-auto mb-1.5" />
+              <p className="text-xs font-bold text-[#E85D04] mb-0.5">
                 Xem chứng chỉ hoàn thành
               </p>
               <p className="text-[10px] text-gray-500">
@@ -797,7 +797,7 @@ export default async function CourseDetailPage({
                 href={`/courses/${slug}?lesson=${nextUncompletedLesson.id}`}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium text-black transition-all hover:scale-[1.02]"
                 style={{
-                  background: "linear-gradient(135deg, #D4A843, #B8922E)",
+                  background: "linear-gradient(135deg, #E85D04, #B8922E)",
                 }}
               >
                 <PlayCircle size={16} />
@@ -902,7 +902,7 @@ export default async function CourseDetailPage({
                           href={part}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[#D4A843] underline underline-offset-2 hover:text-[#B8922E] break-all transition-colors"
+                          className="text-[#E85D04] underline underline-offset-2 hover:text-[#B8922E] break-all transition-colors"
                         >
                           {part}
                         </a>
@@ -919,7 +919,7 @@ export default async function CourseDetailPage({
           {currentLesson.attachments && currentLesson.attachments.length > 0 && (
             <div className="card-dark p-4 sm:p-5 mb-4 sm:mb-5">
               <h3 className="flex items-center gap-2 text-sm font-semibold text-white mb-3">
-                <Paperclip size={16} className="text-[#D4A843]" />
+                <Paperclip size={16} className="text-[#E85D04]" />
                 Tài liệu đính kèm
               </h3>
               <div className="space-y-2">
@@ -936,12 +936,12 @@ export default async function CourseDetailPage({
                       style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid #2a2a2a' }}
                     >
                       {isLink ? (
-                        <LinkIcon size={16} className="text-[#D4A843] shrink-0" />
+                        <LinkIcon size={16} className="text-[#E85D04] shrink-0" />
                       ) : (
                         <AttachmentFileIcon type={att.type} />
                       )}
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm text-gray-300 truncate group-hover:text-[#D4A843] transition-colors">
+                        <p className="text-sm text-gray-300 truncate group-hover:text-[#E85D04] transition-colors">
                           {isLink ? friendlyAttachmentName(att.name, att.url) : att.name}
                         </p>
                         {isLink && att.name !== friendlyAttachmentName(att.name, att.url) && (
@@ -952,9 +952,9 @@ export default async function CourseDetailPage({
                         )}
                       </div>
                       {isLink ? (
-                        <ExternalLink size={14} className="text-gray-500 group-hover:text-[#D4A843] shrink-0 transition-colors" />
+                        <ExternalLink size={14} className="text-gray-500 group-hover:text-[#E85D04] shrink-0 transition-colors" />
                       ) : (
-                        <Download size={14} className="text-gray-500 group-hover:text-[#D4A843] shrink-0 transition-colors" />
+                        <Download size={14} className="text-gray-500 group-hover:text-[#E85D04] shrink-0 transition-colors" />
                       )}
                     </a>
                   );
@@ -977,7 +977,7 @@ export default async function CourseDetailPage({
                     className="rounded-full object-cover"
                   />
                 ) : (
-                  <div className="w-16 h-16 rounded-full bg-[#D4A843]/20 flex items-center justify-center text-[#D4A843] text-xl font-bold shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-[#E85D04]/20 flex items-center justify-center text-[#E85D04] text-xl font-bold shrink-0">
                     {(instructor.full_name || "?")[0]}
                   </div>
                 )}
@@ -1017,7 +1017,7 @@ export default async function CourseDetailPage({
           {/* Quiz */}
           <div className="mb-4 sm:mb-5">
             <h3 className="flex items-center gap-2 text-sm font-semibold text-white mb-3">
-              <ClipboardCheck size={16} className="text-[#D4A843]" />
+              <ClipboardCheck size={16} className="text-[#E85D04]" />
               Bài kiểm tra
             </h3>
             <LessonQuiz lessonId={currentLesson.id} />

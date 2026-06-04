@@ -147,7 +147,7 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
     editor: "Biên tập viên",
   };
   const tierLabel = isStaff || isInstructor ? (roleLabels[userRole] ?? "Staff") : profile?.tier === "vip" ? "VIP" : profile?.tier === "member" ? "Member" : "Free";
-  const tierColor = isAdmin ? "#ef4444" : isStaff ? "#3b82f6" : isInstructor ? "#8b5cf6" : profile?.tier === "vip" ? "#f59e0b" : profile?.tier === "member" ? "#a855f7" : "#D4A843";
+  const tierColor = isAdmin ? "#ef4444" : isStaff ? "#3b82f6" : isInstructor ? "#8b5cf6" : profile?.tier === "vip" ? "#f59e0b" : profile?.tier === "member" ? "#a855f7" : "#E85D04";
 
   // isCompact: on mobile drawer we always show expanded; on desktop respect collapsed
   const renderSidebar = (isCompact: boolean, isMobile: boolean) => (
@@ -174,7 +174,7 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
             />
             <div>
               <div className="text-sm font-bold text-white leading-tight">{siteConfig.owner.name}</div>
-              <div className="text-[10px] text-gray-500 leading-tight">Academy</div>
+              <div className="text-[10px] text-gray-500 leading-tight">Doanh Nghiệp 1 Người</div>
             </div>
           </Link>
         )}
@@ -356,12 +356,12 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
           href={siteConfig.socials.zalo}
           target="_blank"
           rel="noopener noreferrer"
-          className="block mx-3 mb-3 p-3 rounded-xl border border-[#D4A843]/20 hover:bg-[#1a1a1a] transition-colors"
+          className="block mx-3 mb-3 p-3 rounded-xl border border-[#E85D04]/20 hover:bg-[#1a1a1a] transition-colors"
           style={{ background: "rgba(212,168,67,0.06)" }}
         >
           <div className="flex items-center gap-2 mb-1.5">
-            <Star size={14} className="text-[#D4A843]" />
-            <span className="text-xs font-semibold text-[#D4A843]">Cần tư vấn?</span>
+            <Star size={14} className="text-[#E85D04]" />
+            <span className="text-xs font-semibold text-[#E85D04]">Cần tư vấn?</span>
           </div>
           <p className="text-[11px] text-gray-400 mb-2">Tư vấn khoá học phù hợp nhu cầu của bạn</p>
           <span className="btn-green w-full text-xs py-1.5 justify-center inline-flex items-center">Liên hệ tư vấn</span>
@@ -412,7 +412,7 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
                 src={profile?.avatar_url}
                 initials={initials}
                 size={32}
-                gradient="linear-gradient(135deg, #D4A843, #059669)"
+                gradient="linear-gradient(135deg, #E85D04, #059669)"
               />
               <div className="flex-1 min-w-0">
                 <div className="text-sm font-medium text-white truncate">{displayName}</div>

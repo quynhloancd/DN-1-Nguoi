@@ -21,7 +21,7 @@ function linkifyContent(text: string): React.ReactNode[] {
           href={part}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#D4A843] hover:underline break-all"
+          className="text-[#E85D04] hover:underline break-all"
         >
           {part}
         </a>
@@ -557,14 +557,14 @@ export default function CommunityPage() {
                 src={myProfile?.avatar_url}
                 initials={myProfile ? getAvatarInitials(myProfile.full_name) : "??"}
                 size={36}
-                gradient="linear-gradient(135deg, #D4A843, #059669)"
+                gradient="linear-gradient(135deg, #E85D04, #059669)"
               />
               <textarea
                 ref={textareaRef}
                 value={postText}
                 onChange={e => setPostText(e.target.value)}
                 placeholder="Chia sẻ học hỏi, thắc mắc hay thành tích của bạn..."
-                className="flex-1 bg-[#111] border border-[#2a2a2a] rounded-xl p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#D4A843] transition-colors"
+                className="flex-1 bg-[#111] border border-[#2a2a2a] rounded-xl p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
                 rows={3}
               />
             </div>
@@ -582,7 +582,7 @@ export default function CommunityPage() {
                 <button
                   onClick={() => { fileInputRef.current?.click(); setShowEmojiPicker(false); }}
                   disabled={uploading || !!imageUrl}
-                  className={`p-2 rounded-lg transition-colors ${imageUrl ? "text-[#D4A843] bg-white/5" : "text-gray-500 hover:text-white hover:bg-white/5"} ${uploading ? "opacity-50 cursor-not-allowed" : ""}`}
+                  className={`p-2 rounded-lg transition-colors ${imageUrl ? "text-[#E85D04] bg-white/5" : "text-gray-500 hover:text-white hover:bg-white/5"} ${uploading ? "opacity-50 cursor-not-allowed" : ""}`}
                   title="Hình ảnh">
                   {uploading ? <Loader2 size={16} className="animate-spin" /> : <Image size={16} />}
                 </button>
@@ -599,7 +599,7 @@ export default function CommunityPage() {
                 <div className="relative">
                   <button
                     onClick={() => setShowEmojiPicker(v => !v)}
-                    className={`p-2 rounded-lg transition-colors ${showEmojiPicker ? "text-[#D4A843] bg-white/5" : "text-gray-500 hover:text-white hover:bg-white/5"}`}
+                    className={`p-2 rounded-lg transition-colors ${showEmojiPicker ? "text-[#E85D04] bg-white/5" : "text-gray-500 hover:text-white hover:bg-white/5"}`}
                     title="Emoji">
                     <Smile size={16} />
                   </button>
@@ -700,9 +700,9 @@ export default function CommunityPage() {
             const isLiked = likedPosts.has(post.id);
 
             return (
-              <div key={post.id} className={`card-dark p-5 ${post.pinned ? "border-l-2 border-[#D4A843]" : ""}`}>
+              <div key={post.id} className={`card-dark p-5 ${post.pinned ? "border-l-2 border-[#E85D04]" : ""}`}>
                 {post.pinned && (
-                  <div className="flex items-center gap-1.5 mb-3 text-xs text-[#D4A843]">
+                  <div className="flex items-center gap-1.5 mb-3 text-xs text-[#E85D04]">
                     <Star size={12} /> <span>Bài ghim</span>
                   </div>
                 )}
@@ -712,7 +712,7 @@ export default function CommunityPage() {
                     src={post.profiles?.avatar_url}
                     initials={initials}
                     size={36}
-                    gradient={isVip ? "linear-gradient(135deg, #D4A843, #059669)" : "linear-gradient(135deg, #3b82f6, #1d4ed8)"}
+                    gradient={isVip ? "linear-gradient(135deg, #E85D04, #059669)" : "linear-gradient(135deg, #3b82f6, #1d4ed8)"}
                   />
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
@@ -744,7 +744,7 @@ export default function CommunityPage() {
                 {post.tags && post.tags.length > 0 && (
                   <div className="flex gap-1.5 mb-3 flex-wrap">
                     {post.tags.map(tag => (
-                      <span key={tag} className="text-xs px-2 py-0.5 rounded-full text-[#D4A843] cursor-pointer"
+                      <span key={tag} className="text-xs px-2 py-0.5 rounded-full text-[#E85D04] cursor-pointer"
                         style={{ background: "rgba(212,168,67,0.1)" }}>
                         #{tag}
                       </span>
@@ -762,7 +762,7 @@ export default function CommunityPage() {
                   </button>
                   <button
                     onClick={() => toggleComments(post.id)}
-                    className={`flex items-center gap-1.5 text-sm transition-colors ${openComments === post.id ? "text-[#D4A843]" : "text-gray-500 hover:text-[#D4A843]"}`}>
+                    className={`flex items-center gap-1.5 text-sm transition-colors ${openComments === post.id ? "text-[#E85D04]" : "text-gray-500 hover:text-[#E85D04]"}`}>
                     <MessageCircle size={15} /> <span>{post.comments_count}</span>
                   </button>
                   {/* Share dropdown */}
@@ -832,7 +832,7 @@ export default function CommunityPage() {
                             value={r.value}
                             checked={reportReason === r.value}
                             onChange={() => setReportReason(r.value)}
-                            className="accent-[#D4A843]"
+                            className="accent-[#E85D04]"
                           />
                           <span className="text-xs text-gray-300">{r.label}</span>
                         </label>
@@ -842,7 +842,7 @@ export default function CommunityPage() {
                       value={reportDetails}
                       onChange={e => setReportDetails(e.target.value)}
                       placeholder="Chi tiết thêm (tuỳ chọn)..."
-                      className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-2 text-xs text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#D4A843] mb-3"
+                      className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-2 text-xs text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] mb-3"
                       rows={2}
                     />
                     {reportError && <p className="text-xs text-red-400 mb-2">{reportError}</p>}
@@ -880,7 +880,7 @@ export default function CommunityPage() {
                     {/* Loading */}
                     {commentsLoading[post.id] && (
                       <div className="flex items-center gap-2 py-4 justify-center">
-                        <div className="w-4 h-4 border-2 border-[#D4A843] border-t-transparent rounded-full animate-spin" />
+                        <div className="w-4 h-4 border-2 border-[#E85D04] border-t-transparent rounded-full animate-spin" />
                         <span className="text-xs text-gray-500">Đang tải bình luận...</span>
                       </div>
                     )}
@@ -924,14 +924,14 @@ export default function CommunityPage() {
                         onChange={e => setCommentText(prev => ({ ...prev, [post.id]: e.target.value }))}
                         onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleCommentSubmit(post.id); } }}
                         placeholder="Viết bình luận..."
-                        className="flex-1 bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-1.5 text-xs text-white placeholder:text-gray-500 focus:outline-none focus:border-[#D4A843] transition-colors"
+                        className="flex-1 bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-1.5 text-xs text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
                       />
                       <button
                         onClick={() => handleCommentSubmit(post.id)}
                         disabled={!(commentText[post.id] || "").trim() || commentPosting[post.id]}
                         className={`text-xs font-medium px-3 py-1.5 rounded-lg transition-colors ${
                           (commentText[post.id] || "").trim() && !commentPosting[post.id]
-                            ? "bg-[#D4A843] text-black hover:bg-[#c49a3a]"
+                            ? "bg-[#E85D04] text-black hover:bg-[#c49a3a]"
                             : "bg-[#2a2a2a] text-gray-500 cursor-not-allowed"
                         }`}
                       >
@@ -955,7 +955,7 @@ export default function CommunityPage() {
             </div>
             {myProfile ? (
               <>
-                <div className="text-2xl font-bold text-[#D4A843] mb-1">{myProfile.xp.toLocaleString()} XP</div>
+                <div className="text-2xl font-bold text-[#E85D04] mb-1">{myProfile.xp.toLocaleString()} XP</div>
                 <div className="text-xs text-gray-400 mb-2">Level {myProfile.level} — {levelTitle(myProfile.level)}</div>
                 <div className="progress-bar">
                   <div className="progress-fill" style={{ width: `${Math.min(100, Math.round(((myProfile.xp - (myProfile.level - 1) * 200) / 200) * 100))}%` }} />
@@ -994,16 +994,16 @@ export default function CommunityPage() {
                   const isMe = myProfile?.id === user.id;
                   return (
                     <div key={user.id}
-                      className={`flex items-center gap-2.5 p-2 rounded-lg ${isMe ? "bg-[#D4A843]/10" : "hover:bg-white/3"} transition-colors`}>
+                      className={`flex items-center gap-2.5 p-2 rounded-lg ${isMe ? "bg-[#E85D04]/10" : "hover:bg-white/3"} transition-colors`}>
                       <span className="text-sm">{rankBadge(rank)}</span>
                       <UserAvatar
                         src={user.avatar_url}
                         initials={getAvatarInitials(user.full_name)}
                         size={28}
-                        gradient={isMe ? "linear-gradient(135deg,#D4A843,#059669)" : "linear-gradient(135deg,#3b82f6,#1d4ed8)"}
+                        gradient={isMe ? "linear-gradient(135deg,#E85D04,#059669)" : "linear-gradient(135deg,#3b82f6,#1d4ed8)"}
                       />
                       <div className="flex-1 min-w-0">
-                        <div className={`text-xs font-medium truncate ${isMe ? "text-[#D4A843]" : "text-white"}`}>
+                        <div className={`text-xs font-medium truncate ${isMe ? "text-[#E85D04]" : "text-white"}`}>
                           {isMe ? "Bạn" : user.full_name}
                         </div>
                       </div>
@@ -1016,16 +1016,16 @@ export default function CommunityPage() {
           </div>
 
           {/* Weekly Challenge */}
-          <div className="card-dark p-4 border border-[#D4A843]/20">
+          <div className="card-dark p-4 border border-[#E85D04]/20">
             <div className="flex items-center gap-2 mb-2">
-              <TrendingUp size={15} className="text-[#D4A843]" />
+              <TrendingUp size={15} className="text-[#E85D04]" />
               <span className="text-sm font-semibold text-white">Thử thách tuần</span>
             </div>
             <p className="text-xs text-gray-400 mb-3">Học 5 bài trong 7 ngày để nhận <strong className="text-[#f59e0b]">badge đặc biệt</strong> và 500 XP</p>
             <div className="flex gap-1 mb-2">
               {[1, 2, 3, 4, 5].map(d => (
                 <div key={d} className="flex-1 h-6 rounded flex items-center justify-center text-xs"
-                  style={{ background: d <= Math.min((myProfile?.streak ?? 0), 5) ? "#D4A843" : "#2a2a2a", color: d <= Math.min((myProfile?.streak ?? 0), 5) ? "white" : "#444" }}>
+                  style={{ background: d <= Math.min((myProfile?.streak ?? 0), 5) ? "#E85D04" : "#2a2a2a", color: d <= Math.min((myProfile?.streak ?? 0), 5) ? "white" : "#444" }}>
                   {d <= Math.min((myProfile?.streak ?? 0), 5) ? "✓" : d}
                 </div>
               ))}

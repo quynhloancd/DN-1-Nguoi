@@ -29,7 +29,7 @@ interface EmailList {
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 const LIST_COLORS = [
-  "#D4A843",
+  "#E85D04",
   "#3b82f6",
   "#8b5cf6",
   "#f59e0b",
@@ -213,7 +213,7 @@ export default function ListsPage() {
               className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4"
               style={{ background: "rgba(212,168,67,0.1)" }}
             >
-              <ListPlus size={28} className="text-[#D4A843]" />
+              <ListPlus size={28} className="text-[#E85D04]" />
             </div>
             <p className="text-white font-medium mb-1">
               Chưa có danh sách nào
@@ -243,7 +243,7 @@ export default function ListsPage() {
                       }}
                     />
                     <div className="min-w-0">
-                      <h3 className="text-white font-semibold text-sm truncate group-hover:text-[#D4A843] transition-colors">
+                      <h3 className="text-white font-semibold text-sm truncate group-hover:text-[#E85D04] transition-colors">
                         {list.name}
                       </h3>
                       {list.description && (

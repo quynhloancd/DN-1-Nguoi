@@ -212,7 +212,7 @@ export default function GoogleDrivePlayer({
             className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/70 hover:bg-black/50 transition-colors cursor-pointer group"
             aria-label="Phát video"
           >
-            <div className="w-16 h-16 rounded-full bg-[#D4A843]/90 group-hover:bg-[#D4A843] flex items-center justify-center transition-colors shadow-lg">
+            <div className="w-16 h-16 rounded-full bg-[#E85D04]/90 group-hover:bg-[#E85D04] flex items-center justify-center transition-colors shadow-lg">
               <svg
                 viewBox="0 0 24 24"
                 fill="white"
@@ -232,7 +232,7 @@ export default function GoogleDrivePlayer({
         {/* Loading state */}
         {!loaded && (
           <div className="absolute inset-0 flex flex-col items-center justify-center z-20 bg-[#111]">
-            <div className="w-8 h-8 border-2 border-[#D4A843] border-t-transparent rounded-full animate-spin mb-3" />
+            <div className="w-8 h-8 border-2 border-[#E85D04] border-t-transparent rounded-full animate-spin mb-3" />
             <p className="text-xs text-gray-500">
               {title ?? "Đang tải video..."}
             </p>
@@ -301,7 +301,7 @@ export default function GoogleDrivePlayer({
           <button
             onClick={toggleFullscreen}
             aria-label={isFullscreen ? "Thoát toàn màn hình" : "Toàn màn hình"}
-            className="p-1 text-gray-400 hover:text-[#D4A843] transition-colors"
+            className="p-1 text-gray-400 hover:text-[#E85D04] transition-colors"
           >
             {isFullscreen ? <Minimize size={16} /> : <Maximize size={16} />}
           </button>

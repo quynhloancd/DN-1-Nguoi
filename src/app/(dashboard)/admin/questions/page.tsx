@@ -179,7 +179,7 @@ export default function AdminQuestionsPage() {
             <div className="text-xs text-gray-500 mt-1">Chờ phản hồi</div>
           </div>
           <div className="card-dark p-4 text-center">
-            <div className="text-2xl font-bold text-[#D4A843]">
+            <div className="text-2xl font-bold text-[#E85D04]">
               {questions.filter((q) => q.status === "answered").length}
             </div>
             <div className="text-xs text-gray-500 mt-1">Đã trả lời</div>
@@ -195,7 +195,7 @@ export default function AdminQuestionsPage() {
               onClick={() => setFilter(f)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                 filter === f
-                  ? "bg-[#D4A843]/15 text-[#D4A843] border border-[#D4A843]/30"
+                  ? "bg-[#E85D04]/15 text-[#E85D04] border border-[#E85D04]/30"
                   : "bg-[#1a1a1a] text-gray-400 border border-[#2a2a2a] hover:text-white"
               }`}
             >
@@ -271,7 +271,7 @@ export default function AdminQuestionsPage() {
                         {q.email && (
                           <a
                             href={`mailto:${q.email}`}
-                            className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#D4A843]/30 hover:text-[#D4A843] transition-colors"
+                            className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#E85D04]/30 hover:text-[#E85D04] transition-colors"
                             title={`Email: ${q.email}`}
                           >
                             <Mail size={9} />
@@ -303,7 +303,7 @@ export default function AdminQuestionsPage() {
                       q.status === "pending"
                         ? "bg-[#f59e0b]/15 text-[#f59e0b]"
                         : q.status === "answered"
-                        ? "bg-[#D4A843]/15 text-[#D4A843]"
+                        ? "bg-[#E85D04]/15 text-[#E85D04]"
                         : "bg-gray-500/15 text-gray-400"
                     }`}
                   >
@@ -333,8 +333,8 @@ export default function AdminQuestionsPage() {
                         }}
                       >
                         <div className="flex items-center gap-1.5 mb-1">
-                          <CheckCircle2 size={12} className="text-[#D4A843]" />
-                          <span className="text-[10px] font-medium text-[#D4A843]">
+                          <CheckCircle2 size={12} className="text-[#E85D04]" />
+                          <span className="text-[10px] font-medium text-[#E85D04]">
                             {r.profiles?.full_name ?? "Staff"}
                           </span>
                           <span className="text-[10px] text-gray-500">
@@ -379,9 +379,9 @@ export default function AdminQuestionsPage() {
                             type="checkbox"
                             checked={sendEmailWithReply}
                             onChange={(e) => setSendEmailWithReply(e.target.checked)}
-                            className="w-3.5 h-3.5 rounded border-gray-600 bg-[#1a1a1a] text-[#D4A843] focus:ring-[#D4A843]/30"
+                            className="w-3.5 h-3.5 rounded border-gray-600 bg-[#1a1a1a] text-[#E85D04] focus:ring-[#E85D04]/30"
                           />
-                          <MailCheck size={12} className={sendEmailWithReply ? "text-[#D4A843]" : "text-gray-500"} />
+                          <MailCheck size={12} className={sendEmailWithReply ? "text-[#E85D04]" : "text-gray-500"} />
                           Gửi email thông báo
                         </label>
                       )}

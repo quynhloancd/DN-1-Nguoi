@@ -462,7 +462,7 @@ export default async function AssignmentsPage() {
         {/* ── Quick Auto-Assign Section ── */}
         <div className="card-dark p-5">
           <div className="flex items-center gap-2 mb-4">
-            <Shuffle size={16} className="text-[#D4A843]" />
+            <Shuffle size={16} className="text-[#E85D04]" />
             <h3 className="font-semibold text-white">Phân công tự động</h3>
           </div>
           <p className="text-sm text-gray-400 mb-4">
@@ -474,7 +474,7 @@ export default async function AssignmentsPage() {
                 <label className="text-xs text-gray-500 mb-1 block">Phương pháp</label>
                 <select
                   name="method"
-                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843]"
+                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04]"
                 >
                   <option value="round_robin">Round Robin (chia đều)</option>
                   <option value="rule_based">Rule-Based (theo quy tắc)</option>
@@ -483,7 +483,7 @@ export default async function AssignmentsPage() {
               <button
                 type="submit"
                 className="px-4 py-2 rounded-lg text-sm font-medium text-black transition-colors"
-                style={{ background: "#D4A843" }}
+                style={{ background: "#E85D04" }}
               >
                 Phân công ngay
               </button>
@@ -497,7 +497,7 @@ export default async function AssignmentsPage() {
         <div className="card-dark">
           <div className="flex items-center justify-between p-5 border-b border-[#2a2a2a]">
             <div className="flex items-center gap-2">
-              <Settings size={16} className="text-[#D4A843]" />
+              <Settings size={16} className="text-[#E85D04]" />
               <h3 className="font-semibold text-white">Quy tắc phân công</h3>
             </div>
             <span className="text-xs text-gray-500">{rules.length} quy tắc</span>
@@ -532,7 +532,7 @@ export default async function AssignmentsPage() {
                         </span>
                       ))}
                       {rule.assigned_profile && (
-                        <span className="text-xs text-[#D4A843]">
+                        <span className="text-xs text-[#E85D04]">
                           → {rule.assigned_profile.full_name}
                         </span>
                       )}
@@ -544,7 +544,7 @@ export default async function AssignmentsPage() {
                     <input type="hidden" name="current_active" value={String(rule.is_active)} />
                     <button
                       type="submit"
-                      className="text-xs px-3 py-1.5 rounded-lg border border-[#2a2a2a] text-gray-400 hover:text-white hover:border-[#D4A843] transition-colors"
+                      className="text-xs px-3 py-1.5 rounded-lg border border-[#2a2a2a] text-gray-400 hover:text-white hover:border-[#E85D04] transition-colors"
                     >
                       {rule.is_active ? "Tắt" : "Bật"}
                     </button>
@@ -561,7 +561,7 @@ export default async function AssignmentsPage() {
           {/* Add new rule form */}
           <div className="p-5 border-t border-[#2a2a2a]">
             <div className="flex items-center gap-2 mb-3">
-              <Plus size={14} className="text-[#D4A843]" />
+              <Plus size={14} className="text-[#E85D04]" />
               <span className="text-sm font-medium text-white">Thêm quy tắc mới</span>
             </div>
             <form action={createAssignmentRule} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -571,7 +571,7 @@ export default async function AssignmentsPage() {
                   type="text"
                   name="rule_name"
                   placeholder="VD: Lead từ Facebook Ads"
-                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#D4A843]"
+                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04]"
                   required
                 />
               </div>
@@ -582,14 +582,14 @@ export default async function AssignmentsPage() {
                   name="priority"
                   defaultValue={10}
                   min={1}
-                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843]"
+                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04]"
                 />
               </div>
               <div>
                 <label className="text-xs text-gray-500 mb-1 block">Nguồn (source)</label>
                 <select
                   name="condition_source"
-                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843]"
+                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04]"
                 >
                   <option value="">-- Không lọc --</option>
                   <option value="website">Website</option>
@@ -605,7 +605,7 @@ export default async function AssignmentsPage() {
                   type="text"
                   name="condition_utm_source"
                   placeholder="VD: facebook"
-                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#D4A843]"
+                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04]"
                 />
               </div>
               <div>
@@ -614,14 +614,14 @@ export default async function AssignmentsPage() {
                   type="text"
                   name="condition_utm_campaign"
                   placeholder="VD: summer_sale"
-                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#D4A843]"
+                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04]"
                 />
               </div>
               <div>
                 <label className="text-xs text-gray-500 mb-1 block">Phân cho</label>
                 <select
                   name="assign_to"
-                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843]"
+                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04]"
                 >
                   <option value="">-- Round Robin Pool --</option>
                   {saleReps.map((rep) => (
@@ -635,7 +635,7 @@ export default async function AssignmentsPage() {
                 <label className="text-xs text-gray-500 mb-1 block">Phương pháp</label>
                 <select
                   name="method"
-                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843]"
+                  className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04]"
                 >
                   <option value="specific">Chỉ định cụ thể</option>
                   <option value="round_robin_pool">Round Robin Pool</option>
@@ -645,7 +645,7 @@ export default async function AssignmentsPage() {
                 <button
                   type="submit"
                   className="px-4 py-2 rounded-lg text-sm font-medium text-black transition-colors"
-                  style={{ background: "#D4A843" }}
+                  style={{ background: "#E85D04" }}
                 >
                   Tạo quy tắc
                 </button>
@@ -658,7 +658,7 @@ export default async function AssignmentsPage() {
         <div className="card-dark">
           <div className="flex items-center justify-between p-5 border-b border-[#2a2a2a]">
             <div className="flex items-center gap-2">
-              <Users size={16} className="text-[#D4A843]" />
+              <Users size={16} className="text-[#E85D04]" />
               <h3 className="font-semibold text-white">Khối lượng công việc</h3>
             </div>
           </div>
@@ -680,7 +680,7 @@ export default async function AssignmentsPage() {
                         <div className="flex items-center gap-3">
                           <div
                             className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
-                            style={{ background: "linear-gradient(135deg,#D4A843,#b8922f)" }}
+                            style={{ background: "linear-gradient(135deg,#E85D04,#b8922f)" }}
                           >
                             {rep.full_name?.charAt(0)?.toUpperCase() || "?"}
                           </div>
@@ -700,7 +700,7 @@ export default async function AssignmentsPage() {
                         </span>
                       </td>
                       <td className="p-4 text-center">
-                        <span className="text-[#D4A843] font-semibold">{rep.won_deals}</span>
+                        <span className="text-[#E85D04] font-semibold">{rep.won_deals}</span>
                       </td>
                     </tr>
                   ))}
@@ -718,7 +718,7 @@ export default async function AssignmentsPage() {
         <div className="card-dark">
           <div className="flex items-center justify-between p-5 border-b border-[#2a2a2a]">
             <div className="flex items-center gap-2">
-              <UserCheck size={16} className="text-[#D4A843]" />
+              <UserCheck size={16} className="text-[#E85D04]" />
               <h3 className="font-semibold text-white">Phân công thủ công</h3>
             </div>
             <span className="text-xs text-gray-500">{unassignedContacts.length} lead chưa phân công</span>
@@ -734,7 +734,7 @@ export default async function AssignmentsPage() {
                     <input
                       type="checkbox"
                       name={`contact_${contact.id}`}
-                      className="w-4 h-4 rounded border-[#2a2a2a] bg-[#1a1a1a] accent-[#D4A843]"
+                      className="w-4 h-4 rounded border-[#2a2a2a] bg-[#1a1a1a] accent-[#E85D04]"
                     />
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium text-white truncate">{contact.full_name}</p>
@@ -752,7 +752,7 @@ export default async function AssignmentsPage() {
                 <select
                   name="assign_to"
                   required
-                  className="flex-1 max-w-xs bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843]"
+                  className="flex-1 max-w-xs bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04]"
                 >
                   <option value="">Chọn nhân viên...</option>
                   {saleReps.map((rep) => (
@@ -764,7 +764,7 @@ export default async function AssignmentsPage() {
                 <button
                   type="submit"
                   className="px-4 py-2 rounded-lg text-sm font-medium text-black transition-colors"
-                  style={{ background: "#D4A843" }}
+                  style={{ background: "#E85D04" }}
                 >
                   Phân công
                 </button>
@@ -781,7 +781,7 @@ export default async function AssignmentsPage() {
         <div className="card-dark">
           <div className="flex items-center justify-between p-5 border-b border-[#2a2a2a]">
             <div className="flex items-center gap-2">
-              <Clock size={16} className="text-[#D4A843]" />
+              <Clock size={16} className="text-[#E85D04]" />
               <h3 className="font-semibold text-white">Lịch sử phân công</h3>
             </div>
             <span className="text-xs text-gray-500">{logs.length} bản ghi gần nhất</span>

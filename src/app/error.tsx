@@ -133,7 +133,7 @@ export default function Error({ error, reset }: ErrorProps) {
               alignItems: "center",
               justifyContent: "center",
               gap: "8px",
-              backgroundColor: "#D4A843",
+              backgroundColor: "#E85D04",
               color: "#0a0a0a",
               fontWeight: 700,
               fontSize: "15px",

@@ -106,7 +106,7 @@ export default async function AdminBlogPage() {
       label: "Đã xuất bản",
       value: publishedCount.toLocaleString("vi-VN"),
       icon: Send,
-      color: "#D4A843",
+      color: "#E85D04",
       sub: "đang hiển thị",
     },
     {
@@ -216,7 +216,7 @@ export default async function AdminBlogPage() {
                       {/* Title + slug (clickable → edit) */}
                       <td className="px-4 py-3">
                         <Link href={`/admin/blog/${post.id}/edit`} className="block min-w-0 group/title">
-                          <div className="font-medium text-white truncate group-hover/title:text-[#D4A843] transition-colors">
+                          <div className="font-medium text-white truncate group-hover/title:text-[#E85D04] transition-colors">
                             {post.title}
                           </div>
                           <div className="text-[11px] text-gray-500 truncate mt-0.5 max-w-[300px]">
@@ -283,7 +283,7 @@ export default async function AdminBlogPage() {
                             className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-lg font-medium transition-colors"
                             style={{
                               background: "rgba(212,168,67,0.1)",
-                              color: "#D4A843",
+                              color: "#E85D04",
                               border: "1px solid rgba(212,168,67,0.25)",
                             }}
                           >

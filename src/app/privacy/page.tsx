@@ -267,7 +267,7 @@ export default function PrivacyPage() {
         <div className="max-w-4xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 text-sm text-[#D4A843] hover:text-[#e6be5a] transition-colors mb-6"
+            className="inline-flex items-center gap-1.5 text-sm text-[#E85D04] hover:text-[#e6be5a] transition-colors mb-6"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -332,7 +332,7 @@ export default function PrivacyPage() {
                 <li key={section.id}>
                   <a
                     href={`#${section.id}`}
-                    className="text-sm text-[#D4A843] hover:text-[#e6be5a] transition-colors"
+                    className="text-sm text-[#E85D04] hover:text-[#e6be5a] transition-colors"
                   >
                     {section.title}
                   </a>
@@ -362,7 +362,7 @@ export default function PrivacyPage() {
                       key={i}
                       className="flex gap-3 text-gray-300 leading-relaxed"
                     >
-                      <span className="text-[#D4A843] mt-1.5 shrink-0">
+                      <span className="text-[#E85D04] mt-1.5 shrink-0">
                         <svg
                           width="6"
                           height="6"
@@ -390,7 +390,7 @@ export default function PrivacyPage() {
                         key={ii}
                         className="flex gap-3 text-gray-300 leading-relaxed"
                       >
-                        <span className="text-[#D4A843] mt-1.5 shrink-0">
+                        <span className="text-[#E85D04] mt-1.5 shrink-0">
                           <svg
                             width="6"
                             height="6"
@@ -430,7 +430,7 @@ export default function PrivacyPage() {
                   </p>
                   <p className="text-gray-300">
                     <span className="text-gray-500">Website:</span>{" "}
-                    <Link href="/" className="text-[#D4A843] hover:underline">
+                    <Link href="/" className="text-[#E85D04] hover:underline">
                       {siteConfig.domain}
                     </Link>
                   </p>
@@ -438,7 +438,7 @@ export default function PrivacyPage() {
                     <span className="text-gray-500">Email:</span>{" "}
                     <a
                       href={`mailto:${siteConfig.supportEmail}`}
-                      className="text-[#D4A843] hover:underline"
+                      className="text-[#E85D04] hover:underline"
                     >
                       {siteConfig.supportEmail}
                     </a>
@@ -447,7 +447,7 @@ export default function PrivacyPage() {
                     <span className="text-gray-500">Zalo:</span>{" "}
                     <a
                       href={siteConfig.socials.zalo}
-                      className="text-[#D4A843] hover:underline"
+                      className="text-[#E85D04] hover:underline"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -475,13 +475,13 @@ export default function PrivacyPage() {
           <div className="pt-6 border-t border-[#1a1a1a] flex flex-col sm:flex-row gap-3">
             <Link
               href="/terms-of-service"
-              className="text-sm text-[#D4A843] hover:underline"
+              className="text-sm text-[#E85D04] hover:underline"
             >
               Điều khoản dịch vụ &rarr;
             </Link>
             <Link
               href="/"
-              className="text-sm text-[#D4A843] hover:underline"
+              className="text-sm text-[#E85D04] hover:underline"
             >
               &larr; Quay về trang chủ
             </Link>

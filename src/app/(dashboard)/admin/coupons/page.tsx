@@ -138,7 +138,7 @@ export default async function AdminCouponsPage() {
                 className="w-9 h-9 rounded-xl flex items-center justify-center"
                 style={{ background: "rgba(212,168,67,0.12)" }}
               >
-                <BarChart3 size={17} className="text-[#D4A843]" />
+                <BarChart3 size={17} className="text-[#E85D04]" />
               </div>
             </div>
             <div className="text-2xl font-bold text-white">{totalUses}</div>
@@ -214,7 +214,7 @@ export default async function AdminCouponsPage() {
                       >
                         {/* Code */}
                         <td className="px-5 py-3.5 whitespace-nowrap">
-                          <span className="font-mono text-sm font-bold text-[#D4A843]">
+                          <span className="font-mono text-sm font-bold text-[#E85D04]">
                             {coupon.code}
                           </span>
                         </td>

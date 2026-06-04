@@ -36,15 +36,15 @@ export function generateAbandonedCartEmail(
     .wrap { max-width:560px; margin:0 auto; padding:32px 16px; }
     .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:12px; padding:32px; }
     .logo { display:flex; align-items:center; gap:10px; margin-bottom:28px; }
-    .logo-icon { width:36px; height:36px; border-radius:8px; background:linear-gradient(135deg,#D4A843,#B8922E); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:13px; }
+    .logo-icon { width:36px; height:36px; border-radius:8px; background:linear-gradient(135deg,#E85D04,#B8922E); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:13px; }
     .logo-text { color:#fff; font-weight:700; font-size:16px; }
     h1 { color:#fff; font-size:22px; font-weight:700; margin:0 0 12px; line-height:1.3; }
     p { color:#9ca3af; font-size:14px; line-height:1.7; margin:0 0 16px; }
-    .btn { display:inline-block; padding:14px 32px; background:#D4A843; color:#fff; border-radius:8px; text-decoration:none; font-weight:700; font-size:15px; }
+    .btn { display:inline-block; padding:14px 32px; background:#E85D04; color:#fff; border-radius:8px; text-decoration:none; font-weight:700; font-size:15px; }
     .btn:hover { background:#B8922E; }
     .divider { height:1px; background:#2a2a2a; margin:24px 0; }
     .footer { color:#4b5563; font-size:12px; text-align:center; margin-top:24px; line-height:1.6; }
-    .highlight { color:#D4A843; font-weight:600; }
+    .highlight { color:#E85D04; font-weight:600; }
   </style>
 </head>
 <body>
@@ -61,7 +61,7 @@ export function generateAbandonedCartEmail(
         <div style="color:#6b7280;font-size:12px;margin-bottom:4px;">Khoá học</div>
         <div style="color:#fff;font-weight:600;font-size:15px;margin-bottom:12px;">${escapeHtml(productName)}</div>
         <div style="color:#6b7280;font-size:12px;margin-bottom:4px;">Số tiền</div>
-        <div style="color:#D4A843;font-weight:700;font-size:18px;">${escapeHtml(formattedAmount)}</div>
+        <div style="color:#E85D04;font-weight:700;font-size:18px;">${escapeHtml(formattedAmount)}</div>
       </div>
       <p>Hoàn tất thanh toán ngay để bắt đầu học và không bỏ lỡ kiến thức quan trọng!</p>
       <div style="text-align:center;margin:28px 0;">

@@ -52,7 +52,7 @@ function MenuButton({
       title={title}
       className={`p-1.5 rounded transition-colors ${
         active
-          ? "bg-[#D4A843]/20 text-[#D4A843]"
+          ? "bg-[#E85D04]/20 text-[#E85D04]"
           : "text-gray-400 hover:text-white hover:bg-white/10"
       } ${disabled ? "opacity-30 cursor-not-allowed" : ""}`}
     >
@@ -76,7 +76,7 @@ export default function RichTextEditor({
       Underline,
       Link.configure({
         openOnClick: false,
-        HTMLAttributes: { class: "text-[#D4A843] underline hover:text-[#e8c066]" },
+        HTMLAttributes: { class: "text-[#E85D04] underline hover:text-[#e8c066]" },
       }),
       Image.configure({
         HTMLAttributes: { class: "rounded-lg max-w-full my-4" },
@@ -340,7 +340,7 @@ export default function RichTextEditor({
           margin-bottom: 0.25rem;
         }
         .ProseMirror blockquote {
-          border-left: 3px solid #D4A843;
+          border-left: 3px solid #E85D04;
           padding-left: 1rem;
           color: #aaa;
           font-style: italic;
@@ -374,7 +374,7 @@ export default function RichTextEditor({
           margin: 1.5rem 0;
         }
         .ProseMirror a {
-          color: #D4A843;
+          color: #E85D04;
           text-decoration: underline;
         }
         .ProseMirror a:hover {

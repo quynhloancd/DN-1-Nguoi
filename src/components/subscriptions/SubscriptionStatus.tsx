@@ -107,7 +107,7 @@ export default function SubscriptionStatus() {
   if (loading) {
     return (
       <div className="card-dark p-6 flex items-center justify-center">
-        <Loader2 size={20} className="animate-spin text-[#D4A843]" />
+        <Loader2 size={20} className="animate-spin text-[#E85D04]" />
       </div>
     );
   }
@@ -173,7 +173,7 @@ export default function SubscriptionStatus() {
             className="w-9 h-9 rounded-xl flex items-center justify-center"
             style={{ background: "rgba(212,168,67,0.12)" }}
           >
-            <Crown size={17} className="text-[#D4A843]" />
+            <Crown size={17} className="text-[#E85D04]" />
           </div>
           <div>
             <h3 className="text-sm font-semibold text-white">{plan.name}</h3>
@@ -265,7 +265,7 @@ export default function SubscriptionStatus() {
                 width: `${progressPercent}%`,
                 background: isNearExpiry
                   ? "linear-gradient(90deg, #f59e0b, #ef4444)"
-                  : "linear-gradient(90deg, #D4A843, #22c55e)",
+                  : "linear-gradient(90deg, #E85D04, #22c55e)",
               }}
             />
           </div>
@@ -326,7 +326,7 @@ export default function SubscriptionStatus() {
               href="/subscriptions"
               className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white transition-all"
               style={{
-                background: "linear-gradient(135deg, #D4A843, #b8922e)",
+                background: "linear-gradient(135deg, #E85D04, #b8922e)",
                 boxShadow: "0 2px 8px rgba(212,168,67,0.3)",
               }}
             >

@@ -59,7 +59,7 @@ const STATUS_CONFIG: Record<
 > = {
   active: {
     label: "Hoạt động",
-    color: "#D4A843",
+    color: "#E85D04",
     bg: "rgba(212,168,67,0.1)",
     border: "rgba(212,168,67,0.2)",
   },
@@ -316,7 +316,7 @@ export default function SubscribersPage() {
       label: "Đang hoạt động",
       value: stats.active,
       icon: UserCheck,
-      color: "#D4A843",
+      color: "#E85D04",
     },
     {
       label: "Huỷ đăng ký",
@@ -483,7 +483,7 @@ export default function SubscribersPage() {
             </button>
             <button
               onClick={() => handleBulkChangeStatus("active")}
-              className="flex items-center gap-1.5 text-sm text-[#D4A843] hover:text-[#B8922E] transition-colors"
+              className="flex items-center gap-1.5 text-sm text-[#E85D04] hover:text-[#B8922E] transition-colors"
             >
               <RefreshCw size={14} /> Active
             </button>
@@ -570,7 +570,7 @@ export default function SubscribersPage() {
                             selected.size === subscribers.length
                           }
                           onChange={toggleSelectAll}
-                          className="accent-[#D4A843] w-3.5 h-3.5 cursor-pointer"
+                          className="accent-[#E85D04] w-3.5 h-3.5 cursor-pointer"
                         />
                       </th>
                       <th className="text-left text-xs text-gray-500 font-medium px-4 py-3">
@@ -611,7 +611,7 @@ export default function SubscribersPage() {
                               type="checkbox"
                               checked={selected.has(sub.id)}
                               onChange={() => toggleSelect(sub.id)}
-                              className="accent-[#D4A843] w-3.5 h-3.5 cursor-pointer"
+                              className="accent-[#E85D04] w-3.5 h-3.5 cursor-pointer"
                             />
                           </td>
                           <td className="px-4 py-3">

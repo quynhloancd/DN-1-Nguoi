@@ -45,14 +45,14 @@ function baseTemplate(content: string, recipientEmail?: string) {
     .wrap { max-width:560px; margin:0 auto; padding:32px 16px; }
     .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:12px; padding:32px; }
     .logo { display:flex; align-items:center; gap:10px; margin-bottom:28px; }
-    .logo-icon { width:36px; height:36px; border-radius:8px; background:linear-gradient(135deg,#D4A843,#B8922E); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:13px; }
+    .logo-icon { width:36px; height:36px; border-radius:8px; background:linear-gradient(135deg,#E85D04,#B8922E); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:13px; }
     .logo-text { color:#fff; font-weight:700; font-size:16px; }
     h1 { color:#fff; font-size:22px; font-weight:700; margin:0 0 12px; line-height:1.3; }
     p { color:#9ca3af; font-size:14px; line-height:1.7; margin:0 0 16px; }
-    .btn { display:inline-block; padding:12px 28px; background:#D4A843; color:#fff; border-radius:8px; text-decoration:none; font-weight:600; font-size:14px; }
+    .btn { display:inline-block; padding:12px 28px; background:#E85D04; color:#fff; border-radius:8px; text-decoration:none; font-weight:600; font-size:14px; }
     .divider { height:1px; background:#2a2a2a; margin:24px 0; }
     .footer { color:#4b5563; font-size:12px; text-align:center; margin-top:24px; line-height:1.6; }
-    .highlight { color:#D4A843; font-weight:600; }
+    .highlight { color:#E85D04; font-weight:600; }
   </style>
 </head>
 <body>
@@ -117,7 +117,7 @@ export async function sendPurchaseConfirmation(
         <div style="color:#6b7280;font-size:12px;margin-bottom:4px;">Sản phẩm</div>
         <div style="color:#fff;font-weight:600;font-size:15px;margin-bottom:12px;">${escapeHtml(productName)}</div>
         <div style="color:#6b7280;font-size:12px;margin-bottom:4px;">Số tiền</div>
-        <div style="color:#D4A843;font-weight:700;font-size:18px;margin-bottom:12px;">${escapeHtml(formattedAmount)}</div>
+        <div style="color:#E85D04;font-weight:700;font-size:18px;margin-bottom:12px;">${escapeHtml(formattedAmount)}</div>
         <div style="color:#6b7280;font-size:12px;margin-bottom:4px;">Mã đơn hàng</div>
         <div style="color:#9ca3af;font-family:monospace;font-size:13px;">DK${escapeHtml(orderCode)}</div>
       </div>
@@ -143,7 +143,7 @@ export async function sendWeeklyNewsletter(
       ${body}
       <div class="divider"></div>
       <p style="margin:0;font-size:13px;color:#6b7280;">— Thiên Huệ<br/>
-      <a href="${getBaseUrl()}" style="color:#D4A843;">${getSiteDomain()}</a></p>
+      <a href="${getBaseUrl()}" style="color:#E85D04;">${getSiteDomain()}</a></p>
     `),
   );
 }
@@ -191,7 +191,7 @@ export async function sendPasswordResetEmail(
       <p style="font-size:13px;color:#6b7280;">Link này sẽ hết hạn sau 1 giờ. Nếu bạn không yêu cầu đặt lại mật khẩu, hãy bỏ qua email này.</p>
       <div class="divider"></div>
       <p style="margin:0;font-size:12px;color:#4b5563;">Nếu nút không hoạt động, copy và dán link sau vào trình duyệt:<br/>
-      <a href="${escapeHtml(resetLink)}" style="color:#D4A843;word-break:break-all;font-size:11px;">${escapeHtml(resetLink)}</a></p>
+      <a href="${escapeHtml(resetLink)}" style="color:#E85D04;word-break:break-all;font-size:11px;">${escapeHtml(resetLink)}</a></p>
     `),
   );
 }
@@ -212,7 +212,7 @@ export async function sendEventReminder(
       <p>Sự kiện bạn đã đăng ký sắp bắt đầu:</p>
       <div style="background:#222;border:1px solid #333;border-radius:8px;padding:16px;margin:20px 0;">
         <div style="color:#fff;font-weight:600;font-size:15px;margin-bottom:8px;">${escapeHtml(eventTitle)}</div>
-        <div style="color:#D4A843;font-size:13px;">🕐 ${escapeHtml(eventTime)}</div>
+        <div style="color:#E85D04;font-size:13px;">🕐 ${escapeHtml(eventTime)}</div>
       </div>
       <a href="${escapeHtml(joinUrl)}" class="btn">Tham gia ngay →</a>
       <div class="divider"></div>
@@ -236,7 +236,7 @@ export async function sendAffiliateCommissionEmail(
       <p>Một khách hàng vừa mua <span class="highlight">${escapeHtml(productName)}</span> qua link giới thiệu của bạn.</p>
       <div style="background:#222;border:1px solid rgba(212,168,67,0.2);border-radius:8px;padding:20px;margin:20px 0;text-align:center;">
         <div style="color:#6b7280;font-size:12px;margin-bottom:6px;">Hoa hồng nhận được</div>
-        <div style="color:#D4A843;font-weight:700;font-size:26px;">${escapeHtml(formatted)}</div>
+        <div style="color:#E85D04;font-weight:700;font-size:26px;">${escapeHtml(formatted)}</div>
       </div>
       <p>Khoản hoa hồng đang chờ duyệt. Bạn có thể theo dõi chi tiết tại trang Affiliate.</p>
       <a href="${getBaseUrl()}/dashboard/affiliate" class="btn">Xem Affiliate Dashboard →</a>
@@ -313,7 +313,7 @@ export async function sendVerificationEmail(to: string, name: string, confirmUrl
       <a href="${escapeHtml(confirmUrl)}" class="btn">Xác thực tài khoản</a>
     </p>
     <p style="font-size:12px; color:#6b7280;">Nếu nút không hoạt động, bạn có thể copy đường link sau vào trình duyệt:<br/>
-    <a href="${escapeHtml(confirmUrl)}" style="color:#D4A843; word-break:break-all; font-size:11px;">${escapeHtml(confirmUrl)}</a></p>
+    <a href="${escapeHtml(confirmUrl)}" style="color:#E85D04; word-break:break-all; font-size:11px;">${escapeHtml(confirmUrl)}</a></p>
     <div class="divider"></div>
     <p style="font-size:12px; color:#6b7280; margin:0;">Link xác thực có hiệu lực trong 24 giờ. Nếu bạn không đăng ký tài khoản này, vui lòng bỏ qua email này.</p>
   `);
@@ -374,7 +374,7 @@ export async function sendQuestionReplyEmail(
         <div style="color:#6b7280;font-size:12px;margin-bottom:6px;">Câu hỏi của bạn</div>
         <div style="color:#9ca3af;font-size:14px;line-height:1.6;margin-bottom:16px;border-left:3px solid #333;padding-left:12px;">${escapeHtml(questionContent).substring(0, 300)}${questionContent.length > 300 ? "..." : ""}</div>
         <div style="height:1px;background:#333;margin:12px 0;"></div>
-        <div style="color:#D4A843;font-size:12px;margin-bottom:6px;">Phản hồi từ ${escapeHtml(staffName)}</div>
+        <div style="color:#E85D04;font-size:12px;margin-bottom:6px;">Phản hồi từ ${escapeHtml(staffName)}</div>
         <div style="color:#fff;font-size:14px;line-height:1.6;">${escapeHtml(replyContent)}</div>
       </div>
       <p>Nếu bạn cần thêm hỗ trợ, hãy đặt câu hỏi trực tiếp trong bài học hoặc reply email này.</p>
@@ -460,7 +460,7 @@ export async function sendCourseCompletionEmail(
       <p>Đây là một thành tích tuyệt vời — hãy tự hào về bản thân mình!</p>
       <div style="background:#222;border:1px solid rgba(212,168,67,0.2);border-radius:8px;padding:20px;margin:20px 0;text-align:center;">
         <div style="font-size:40px;margin-bottom:8px;">🎉</div>
-        <div style="color:#D4A843;font-weight:700;font-size:18px;">Hoàn thành xuất sắc!</div>
+        <div style="color:#E85D04;font-weight:700;font-size:18px;">Hoàn thành xuất sắc!</div>
         <div style="color:#9ca3af;font-size:13px;margin-top:4px;">${escapeHtml(courseName)}</div>
       </div>
       <p>Chứng chỉ hoàn thành khoá học của bạn đã sẵn sàng:</p>
@@ -468,7 +468,7 @@ export async function sendCourseCompletionEmail(
         <a href="${escapeHtml(certificateUrl)}" style="display:inline-block;padding:14px 32px;background:#FFD814;color:#0a0a0a;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px;">Xem chứng chỉ →</a>
       </div>
       <div class="divider"></div>
-      <p style="margin:0;font-size:13px;color:#6b7280;">Tiếp tục hành trình học tập — khám phá thêm các khoá học khác tại <a href="${getBaseUrl()}/courses" style="color:#D4A843;">${getSiteDomain()}/courses</a></p>
+      <p style="margin:0;font-size:13px;color:#6b7280;">Tiếp tục hành trình học tập — khám phá thêm các khoá học khác tại <a href="${getBaseUrl()}/courses" style="color:#E85D04;">${getSiteDomain()}/courses</a></p>
     `),
   );
 }

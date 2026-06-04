@@ -295,7 +295,7 @@ export default function InstructorQuestionsPage() {
             <select
               value={filterCourse}
               onChange={(e) => setFilterCourse(e.target.value)}
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843] transition-colors"
+              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04] transition-colors"
             >
               <option value="">Tất cả khoá học</option>
               {courses.map((c) => (
@@ -313,7 +313,7 @@ export default function InstructorQuestionsPage() {
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4A843] transition-colors"
+              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04] transition-colors"
             >
               <option value="">Tất cả</option>
               <option value="unresolved">Chưa giải đáp</option>
@@ -387,7 +387,7 @@ export default function InstructorQuestionsPage() {
                         {isPinned && (
                           <Pin
                             size={12}
-                            className="text-[#D4A843] shrink-0"
+                            className="text-[#E85D04] shrink-0"
                           />
                         )}
 
@@ -489,7 +489,7 @@ export default function InstructorQuestionsPage() {
                           disabled={actionLoading[`pin-${q.id}`]}
                           className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                             q.is_pinned
-                              ? "bg-[#D4A843]/10 text-[#D4A843] hover:bg-[#D4A843]/20"
+                              ? "bg-[#E85D04]/10 text-[#E85D04] hover:bg-[#E85D04]/20"
                               : "bg-gray-500/10 text-gray-400 hover:bg-gray-500/20"
                           } ${
                             actionLoading[`pin-${q.id}`]
@@ -589,7 +589,7 @@ export default function InstructorQuestionsPage() {
                             placeholder="Nhập trả lời..."
                             maxLength={5000}
                             rows={3}
-                            className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#D4A843] transition-colors"
+                            className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
                             style={{ minHeight: "80px" }}
                           />
                           <div className="flex items-center justify-between">
@@ -602,7 +602,7 @@ export default function InstructorQuestionsPage() {
                                 replyLoading[q.id] ||
                                 !(replyContent[q.id] ?? "").trim()
                               }
-                              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-[#D4A843] text-black hover:bg-[#c49a3a] ${
+                              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-[#E85D04] text-black hover:bg-[#c49a3a] ${
                                 replyLoading[q.id] ||
                                 !(replyContent[q.id] ?? "").trim()
                                   ? "opacity-40 cursor-not-allowed"

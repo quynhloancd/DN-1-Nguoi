@@ -155,7 +155,7 @@ export default function ConfirmOrderButton({
                   )}
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-500">Số tiền</span>
-                    <span className="text-[#D4A843] font-bold">
+                    <span className="text-[#E85D04] font-bold">
                       {amount.toLocaleString("vi-VN")}đ
                     </span>
                   </div>

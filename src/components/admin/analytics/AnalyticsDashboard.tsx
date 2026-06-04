@@ -335,7 +335,7 @@ export default function AnalyticsDashboard() {
           className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors"
           style={{
             background: "rgba(212,168,67,0.1)",
-            color: "#D4A843",
+            color: "#E85D04",
             border: "1px solid rgba(212,168,67,0.2)",
           }}
         >

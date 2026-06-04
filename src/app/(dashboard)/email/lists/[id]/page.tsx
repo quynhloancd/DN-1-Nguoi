@@ -47,7 +47,7 @@ const STATUS_CONFIG: Record<
 > = {
   active: {
     label: "Hoạt động",
-    color: "#D4A843",
+    color: "#E85D04",
     bg: "rgba(212,168,67,0.1)",
     border: "rgba(212,168,67,0.2)",
   },
@@ -66,7 +66,7 @@ const STATUS_CONFIG: Record<
 };
 
 const LIST_COLORS = [
-  "#D4A843",
+  "#E85D04",
   "#3b82f6",
   "#8b5cf6",
   "#f59e0b",

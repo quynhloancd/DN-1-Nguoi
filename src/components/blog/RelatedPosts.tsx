@@ -100,7 +100,7 @@ export default async function RelatedPosts({
           <Link
             key={post.id}
             href={`/blog/${post.slug}`}
-            className="group rounded-xl border border-white/10 bg-white/5 overflow-hidden transition-colors hover:border-[#D4A843]/30 hover:bg-white/[0.07]"
+            className="group rounded-xl border border-white/10 bg-white/5 overflow-hidden transition-colors hover:border-[#E85D04]/30 hover:bg-white/[0.07]"
           >
             {/* Thumbnail */}
             {post.thumbnail ? (
@@ -123,13 +123,13 @@ export default async function RelatedPosts({
             <div className="p-4">
               {/* Category badge */}
               {post.category && (
-                <span className="inline-block text-[10px] font-semibold uppercase tracking-wider text-[#D4A843] bg-[#D4A843]/10 px-2 py-0.5 rounded-full mb-2">
+                <span className="inline-block text-[10px] font-semibold uppercase tracking-wider text-[#E85D04] bg-[#E85D04]/10 px-2 py-0.5 rounded-full mb-2">
                   {post.category}
                 </span>
               )}
 
               {/* Title */}
-              <h3 className="text-sm font-semibold text-white leading-snug mb-1.5 line-clamp-2 group-hover:text-[#D4A843] transition-colors">
+              <h3 className="text-sm font-semibold text-white leading-snug mb-1.5 line-clamp-2 group-hover:text-[#E85D04] transition-colors">
                 {post.title}
               </h3>
 

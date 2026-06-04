@@ -115,7 +115,7 @@ export default function LoginForm() {
             borderColor: "rgba(212,168,67,0.25)",
           }}
         >
-          <p className="text-[#D4A843] font-medium mb-2">
+          <p className="text-[#E85D04] font-medium mb-2">
             Email chưa được xác nhận
           </p>
           <p className="text-gray-400 mb-3">
@@ -134,7 +134,7 @@ export default function LoginForm() {
               className="text-sm font-medium px-4 py-2 rounded-lg transition-all disabled:opacity-50"
               style={{
                 background: "rgba(212,168,67,0.15)",
-                color: "#D4A843",
+                color: "#E85D04",
                 border: "1px solid rgba(212,168,67,0.3)",
               }}
             >
@@ -160,7 +160,7 @@ export default function LoginForm() {
       </div>
 
       <div className="flex items-center justify-end">
-        <Link href="/forgot-password" className="text-sm text-[#D4A843] hover:underline">
+        <Link href="/forgot-password" className="text-sm text-[#E85D04] hover:underline">
           Quên mật khẩu?
         </Link>
       </div>

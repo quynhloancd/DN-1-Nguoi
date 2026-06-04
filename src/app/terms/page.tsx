@@ -200,7 +200,7 @@ export default function TermsPage() {
         <div className="max-w-4xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 text-sm text-[#D4A843] hover:text-[#e6be5a] transition-colors mb-6"
+            className="inline-flex items-center gap-1.5 text-sm text-[#E85D04] hover:text-[#e6be5a] transition-colors mb-6"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M10 12L6 8l4-4" />
@@ -229,7 +229,7 @@ export default function TermsPage() {
                 <li key={section.id}>
                   <a
                     href={`#${section.id}`}
-                    className="text-sm text-[#D4A843] hover:text-[#e6be5a] transition-colors"
+                    className="text-sm text-[#E85D04] hover:text-[#e6be5a] transition-colors"
                   >
                     {section.title}
                   </a>
@@ -258,7 +258,7 @@ export default function TermsPage() {
                       key={i}
                       className="flex gap-3 text-gray-300 leading-relaxed"
                     >
-                      <span className="text-[#D4A843] mt-1.5 shrink-0">
+                      <span className="text-[#E85D04] mt-1.5 shrink-0">
                         <svg
                           width="6"
                           height="6"
@@ -286,7 +286,7 @@ export default function TermsPage() {
                         key={i}
                         className="flex gap-3 text-gray-300 leading-relaxed"
                       >
-                        <span className="text-[#D4A843] mt-1.5 shrink-0">
+                        <span className="text-[#E85D04] mt-1.5 shrink-0">
                           <svg
                             width="6"
                             height="6"
@@ -328,7 +328,7 @@ export default function TermsPage() {
                     <span className="text-gray-500">Website:</span>{" "}
                     <Link
                       href="/"
-                      className="text-[#D4A843] hover:underline"
+                      className="text-[#E85D04] hover:underline"
                     >
                       {siteConfig.domain}
                     </Link>
@@ -337,7 +337,7 @@ export default function TermsPage() {
                     <span className="text-gray-500">Email hỗ trợ:</span>{" "}
                     <a
                       href={`mailto:${siteConfig.supportEmail}`}
-                      className="text-[#D4A843] hover:underline"
+                      className="text-[#E85D04] hover:underline"
                     >
                       {siteConfig.supportEmail}
                     </a>
@@ -348,7 +348,7 @@ export default function TermsPage() {
                       href={siteConfig.socials.zalo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#D4A843] hover:underline"
+                      className="text-[#E85D04] hover:underline"
                     >
                       {siteConfig.socials.zalo.replace(/.*\//, "").replace(/(\d{4})(\d{3})(\d{3})/, "$1 $2 $3")}
                     </a>
@@ -362,13 +362,13 @@ export default function TermsPage() {
           <div className="pt-6 border-t border-[#1a1a1a] flex flex-col sm:flex-row gap-3">
             <Link
               href="/privacy-policy"
-              className="text-sm text-[#D4A843] hover:underline"
+              className="text-sm text-[#E85D04] hover:underline"
             >
               Chính sách bảo mật &rarr;
             </Link>
             <Link
               href="/"
-              className="text-sm text-[#D4A843] hover:underline"
+              className="text-sm text-[#E85D04] hover:underline"
             >
               &larr; Quay về trang chủ
             </Link>

@@ -122,7 +122,7 @@ export default function LessonActions({
         {completed && nextLessonUrl && (
           <button
             onClick={goToNextLesson}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium bg-[#D4A843] text-black hover:bg-[#B8922E] transition-all"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium bg-[#E85D04] text-black hover:bg-[#B8922E] transition-all"
           >
             Bài tiếp theo
             <ChevronRight size={16} />
@@ -139,7 +139,7 @@ export default function LessonActions({
       {/* Auto-navigating indicator */}
       {justCompleted && nextLessonTitle && (
         <div className="flex items-center gap-2 text-xs text-gray-400 pl-1">
-          <Loader2 size={12} className="animate-spin text-[#D4A843]" />
+          <Loader2 size={12} className="animate-spin text-[#E85D04]" />
           <span>
             Đang chuyển đến{" "}
             <span className="text-gray-300">{nextLessonTitle}</span>...

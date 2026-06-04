@@ -453,7 +453,7 @@ export default function VideoPlayer({
         {/* Loading state */}
         {!ready && (
           <div className="absolute inset-0 flex flex-col items-center justify-center z-20 bg-[#111]">
-            <div className="w-8 h-8 border-2 border-[#D4A843] border-t-transparent rounded-full animate-spin mb-3" />
+            <div className="w-8 h-8 border-2 border-[#E85D04] border-t-transparent rounded-full animate-spin mb-3" />
             <p className="text-xs text-gray-500">
               {title ?? "Đang tải video..."}
             </p>
@@ -540,7 +540,7 @@ export default function VideoPlayer({
             <button
               onClick={togglePlay}
               aria-label={playing ? "Tạm dừng" : "Phát video"}
-              className="p-1 hover:text-[#D4A843] transition-colors"
+              className="p-1 hover:text-[#E85D04] transition-colors"
             >
               {playing ? <Pause size={18} /> : <Play size={18} />}
             </button>
@@ -551,7 +551,7 @@ export default function VideoPlayer({
               <button
                 onClick={toggleMute}
                 aria-label={muted ? "Bật âm thanh" : "Tắt âm thanh"}
-                className="p-1 hover:text-[#D4A843] transition-colors"
+                className="p-1 hover:text-[#E85D04] transition-colors"
               >
                 {muted || volume === 0 ? (
                   <VolumeX size={16} />
@@ -565,7 +565,7 @@ export default function VideoPlayer({
                 max={100}
                 value={muted ? 0 : volume}
                 onChange={(e) => changeVolume(Number(e.target.value))}
-                className="w-16 [@media(hover:hover)]:w-0 [@media(hover:hover)]:group-hover/vol:w-16 transition-all duration-200 h-1 accent-[#D4A843] cursor-pointer"
+                className="w-16 [@media(hover:hover)]:w-0 [@media(hover:hover)]:group-hover/vol:w-16 transition-all duration-200 h-1 accent-[#E85D04] cursor-pointer"
               />
             </div>
 
@@ -604,7 +604,7 @@ export default function VideoPlayer({
                       onClick={() => changeSpeed(s)}
                       className={`w-full text-left px-3 py-1.5 text-xs transition-colors ${
                         speed === s
-                          ? "text-[#D4A843] font-semibold bg-[#D4A843]/10"
+                          ? "text-[#E85D04] font-semibold bg-[#E85D04]/10"
                           : "text-gray-300 hover:text-white hover:bg-white/5"
                       }`}
                     >
@@ -619,7 +619,7 @@ export default function VideoPlayer({
             <button
               onClick={toggleFullscreen}
               aria-label={isFullscreen ? "Thoát toàn màn hình" : "Toàn màn hình"}
-              className="p-1 hover:text-[#D4A843] transition-colors"
+              className="p-1 hover:text-[#E85D04] transition-colors"
             >
               {isFullscreen ? (
                 <Minimize size={16} />

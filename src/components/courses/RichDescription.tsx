@@ -47,7 +47,7 @@ export default function RichDescription({ html }: { html: string }) {
           margin-bottom: 0.35rem;
         }
         .rich-description blockquote {
-          border-left: 3px solid #D4A843;
+          border-left: 3px solid #E85D04;
           padding-left: 1rem;
           color: #9ca3af;
           font-style: italic;
@@ -81,7 +81,7 @@ export default function RichDescription({ html }: { html: string }) {
           margin: 2rem 0;
         }
         .rich-description a {
-          color: #D4A843;
+          color: #E85D04;
           text-decoration: underline;
         }
         .rich-description a:hover {
@@ -118,7 +118,7 @@ export default function RichDescription({ html }: { html: string }) {
           border-radius: 0.15rem;
         }
         .rich-description u {
-          text-decoration-color: #D4A843;
+          text-decoration-color: #E85D04;
         }
       `}</style>
     </>

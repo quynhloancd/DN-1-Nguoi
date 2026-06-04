@@ -70,7 +70,7 @@ export default async function AdminZaloPage() {
       label: "Tai khoan lien ket Zalo",
       value: `${linkedCount || 0} / ${totalUsers || 0}`,
       icon: Users,
-      color: "#D4A843",
+      color: "#E85D04",
       bg: "rgba(212,168,67,0.1)",
     },
     {
@@ -118,7 +118,7 @@ export default async function AdminZaloPage() {
         {/* Configuration info */}
         <div className="card-dark p-6">
           <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
-            <MessageCircle size={16} className="text-[#D4A843]" />
+            <MessageCircle size={16} className="text-[#E85D04]" />
             Cau hinh Zalo OA
           </h3>
           {configured ? (
@@ -129,7 +129,7 @@ export default async function AdminZaloPage() {
               </div>
               <div className="text-xs text-gray-500 space-y-1">
                 <p>Webhook URL: <code className="text-gray-400">{process.env.NEXT_PUBLIC_APP_URL}/api/zalo/webhook</code></p>
-                <p>Cau hinh tai <a href="https://oa.zalo.me" target="_blank" rel="noopener noreferrer" className="text-[#D4A843] hover:underline">Zalo OA Dashboard</a></p>
+                <p>Cau hinh tai <a href="https://oa.zalo.me" target="_blank" rel="noopener noreferrer" className="text-[#E85D04] hover:underline">Zalo OA Dashboard</a></p>
               </div>
             </div>
           ) : (
@@ -156,7 +156,7 @@ export default async function AdminZaloPage() {
         {configured && (
           <div className="card-dark p-6">
             <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
-              <Send size={16} className="text-[#D4A843]" />
+              <Send size={16} className="text-[#E85D04]" />
               Gui tin nhan thu
             </h3>
             {adminProfile?.zalo_user_id ? (
@@ -196,7 +196,7 @@ CREATE INDEX idx_zalo_events_created ON zalo_webhook_events(created_at DESC);`}
         {recentEvents.length > 0 && (
           <div className="card-dark p-6">
             <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
-              <Activity size={16} className="text-[#D4A843]" />
+              <Activity size={16} className="text-[#E85D04]" />
               Su kien webhook gan day
             </h3>
             <div className="space-y-2">

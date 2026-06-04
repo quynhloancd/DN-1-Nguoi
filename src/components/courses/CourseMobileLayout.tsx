@@ -39,7 +39,7 @@ export default function CourseMobileLayout({
           onClick={() => setShowSidebar(true)}
           className="lg:hidden fixed bottom-5 right-5 z-40 flex items-center gap-2 px-4 py-3 rounded-full shadow-lg text-sm font-medium text-white transition-transform active:scale-95"
           style={{
-            background: "linear-gradient(135deg, #D4A843, #B8922E)",
+            background: "linear-gradient(135deg, #E85D04, #B8922E)",
             boxShadow: "0 4px 20px rgba(212,168,67,0.3)",
           }}
         >

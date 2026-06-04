@@ -264,10 +264,10 @@ async function sendBlogNotificationEmail(admin: any, post: any) {
           subject: `Bài viết mới: ${post.title}`,
           html: `
             <div style="font-family: -apple-system, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-              <h2 style="color: #D4A843;">${safeTitle}</h2>
+              <h2 style="color: #E85D04;">${safeTitle}</h2>
               ${safeExcerpt ? `<p style="color: #666;">${safeExcerpt}</p>` : ""}
               <a href="${baseUrl}/blog/${post.slug}"
-                 style="display: inline-block; padding: 12px 24px; background: #D4A843; color: white; text-decoration: none; border-radius: 8px; font-weight: bold;">
+                 style="display: inline-block; padding: 12px 24px; background: #E85D04; color: white; text-decoration: none; border-radius: 8px; font-weight: bold;">
                 Đọc bài viết
               </a>
               <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;" />

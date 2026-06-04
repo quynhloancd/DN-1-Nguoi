@@ -61,7 +61,7 @@ export default function InstructorDashboardPage() {
       label: "Khoá học",
       value: courses.length,
       icon: BookOpen,
-      color: "#D4A843",
+      color: "#E85D04",
       bg: "rgba(212,168,67,0.1)",
     },
     {
@@ -159,7 +159,7 @@ export default function InstructorDashboardPage() {
                   </div>
                   <ArrowRight
                     size={16}
-                    className="text-gray-500 group-hover:text-[#D4A843] transition-colors"
+                    className="text-gray-500 group-hover:text-[#E85D04] transition-colors"
                   />
                 </Link>
 
@@ -172,7 +172,7 @@ export default function InstructorDashboardPage() {
                       className="w-9 h-9 rounded-xl flex items-center justify-center"
                       style={{ background: "rgba(212,168,67,0.1)" }}
                     >
-                      <BookOpen size={18} style={{ color: "#D4A843" }} />
+                      <BookOpen size={18} style={{ color: "#E85D04" }} />
                     </div>
                     <div>
                       <div className="text-sm font-semibold text-white group-hover:text-white">
@@ -185,7 +185,7 @@ export default function InstructorDashboardPage() {
                   </div>
                   <ArrowRight
                     size={16}
-                    className="text-gray-500 group-hover:text-[#D4A843] transition-colors"
+                    className="text-gray-500 group-hover:text-[#E85D04] transition-colors"
                   />
                 </Link>
 
@@ -252,7 +252,7 @@ export default function InstructorDashboardPage() {
                   </h3>
                   <Link
                     href="/instructor/courses"
-                    className="text-xs text-[#D4A843] hover:underline flex items-center gap-1"
+                    className="text-xs text-[#E85D04] hover:underline flex items-center gap-1"
                   >
                     Xem tất cả <ArrowRight size={12} />
                   </Link>
@@ -282,7 +282,7 @@ export default function InstructorDashboardPage() {
                       </div>
                       <Link
                         href={`/instructor/submissions?product_id=${course.id}`}
-                        className="text-xs text-[#D4A843] hover:underline shrink-0"
+                        className="text-xs text-[#E85D04] hover:underline shrink-0"
                       >
                         Xem bài nộp
                       </Link>

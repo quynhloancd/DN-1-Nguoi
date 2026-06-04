@@ -124,7 +124,7 @@ function UnsubscribeContent() {
                   height="32"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#D4A843"
+                  stroke="#E85D04"
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -158,7 +158,7 @@ function UnsubscribeContent() {
                   display: "inline-block",
                   padding: "10px 24px",
                   borderRadius: "8px",
-                  background: "linear-gradient(135deg, #D4A843, #B8922E)",
+                  background: "linear-gradient(135deg, #E85D04, #B8922E)",
                   color: "#fff",
                   fontWeight: 600,
                   fontSize: "14px",
@@ -197,7 +197,7 @@ function UnsubscribeContent() {
                   display: "inline-block",
                   padding: "10px 24px",
                   borderRadius: "8px",
-                  background: "linear-gradient(135deg, #D4A843, #B8922E)",
+                  background: "linear-gradient(135deg, #E85D04, #B8922E)",
                   color: "#fff",
                   fontWeight: 600,
                   fontSize: "14px",
@@ -351,7 +351,7 @@ function UnsubscribeContent() {
                   href={getBaseUrl()}
                   style={{
                     fontSize: "14px",
-                    color: "#D4A843",
+                    color: "#E85D04",
                     textDecoration: "none",
                   }}
                 >

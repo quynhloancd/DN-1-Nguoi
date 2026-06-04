@@ -174,7 +174,7 @@ export default function ModerationPage() {
               onClick={() => handleFilterChange(f.key)}
               className={`flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg transition-colors ${
                 filter === f.key
-                  ? "bg-[#D4A843] text-black font-medium"
+                  ? "bg-[#E85D04] text-black font-medium"
                   : "bg-[#1a1a1a] text-gray-400 hover:text-white hover:bg-[#2a2a2a]"
               }`}
             >
@@ -206,7 +206,7 @@ export default function ModerationPage() {
         {/* Loading */}
         {loading && (
           <div className="flex items-center justify-center py-12">
-            <Loader2 size={24} className="text-[#D4A843] animate-spin" />
+            <Loader2 size={24} className="text-[#E85D04] animate-spin" />
           </div>
         )}
 

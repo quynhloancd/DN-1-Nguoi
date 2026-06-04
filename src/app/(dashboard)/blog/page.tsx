@@ -119,7 +119,7 @@ export default async function BlogPage({
                   href={href}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
                     isActive
-                      ? "bg-[#D4A843] text-white"
+                      ? "bg-[#E85D04] text-white"
                       : "text-gray-400 hover:text-white"
                   }`}
                   style={
@@ -150,7 +150,7 @@ export default async function BlogPage({
               {activeCategory ? (
                 <>
                   Hãy chọn danh mục khác hoặc{" "}
-                  <Link href="/blog" className="text-[#D4A843] hover:underline">
+                  <Link href="/blog" className="text-[#E85D04] hover:underline">
                     xem tất cả bài viết
                   </Link>
                   .
@@ -206,7 +206,7 @@ export default async function BlogPage({
                     </span>
                   )}
                 </div>
-                <h2 className="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-[#D4A843] transition-colors leading-snug">
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-[#E85D04] transition-colors leading-snug">
                   {featured.title}
                 </h2>
               </div>
@@ -231,7 +231,7 @@ export default async function BlogPage({
                   </span>
                   <span>{formatVietnameseDate(featured.published_at)}</span>
                 </div>
-                <span className="flex items-center gap-1 text-xs text-[#D4A843] font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="flex items-center gap-1 text-xs text-[#E85D04] font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                   Đọc bài viết <ArrowRight size={12} />
                 </span>
               </div>
@@ -292,7 +292,7 @@ export default async function BlogPage({
                       {post.category}
                     </span>
                   )}
-                  <h3 className="font-semibold text-white text-[15px] leading-snug mb-1.5 group-hover:text-[#D4A843] transition-colors line-clamp-2">
+                  <h3 className="font-semibold text-white text-[15px] leading-snug mb-1.5 group-hover:text-[#E85D04] transition-colors line-clamp-2">
                     {post.title}
                   </h3>
                   {post.excerpt && (

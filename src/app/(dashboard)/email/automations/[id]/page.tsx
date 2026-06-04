@@ -70,7 +70,7 @@ export default function AutomationEditorPage() {
         <div className="flex items-center gap-2">
           {hasChanges && <span className="text-xs text-[#f59e0b]">Chưa lưu</span>}
           <button onClick={() => handleSave(automation.flow_definition)} disabled={saving}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#D4A843] text-black">
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#E85D04] text-black">
             <Save size={13} />
             {saving ? "Đang lưu..." : "Lưu"}
           </button>
@@ -124,7 +124,7 @@ function NotFound() {
     <div className="h-screen flex items-center justify-center bg-[#0a0a0a]">
       <div className="text-center">
         <p className="text-gray-400">Không tìm thấy automation</p>
-        <Link href="/email/automations" className="text-[#D4A843] text-sm mt-2 inline-block">← Quay lại</Link>
+        <Link href="/email/automations" className="text-[#E85D04] text-sm mt-2 inline-block">← Quay lại</Link>
       </div>
     </div>
   );

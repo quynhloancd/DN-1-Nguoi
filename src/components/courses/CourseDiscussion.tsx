@@ -198,7 +198,7 @@ export default function CourseDiscussion({
     <div className="card-dark p-5">
       {/* Header */}
       <div className="flex items-center gap-2 mb-4">
-        <MessageSquare size={18} className="text-[#D4A843]" />
+        <MessageSquare size={18} className="text-[#E85D04]" />
         <h3 className="text-sm font-bold text-white">
           Thảo luận &mdash; {productTitle}
         </h3>
@@ -214,7 +214,7 @@ export default function CourseDiscussion({
           onChange={(e) => setContent(e.target.value)}
           placeholder="Chia sẻ câu hỏi hoặc thảo luận với các học viên khác..."
           rows={3}
-          className="w-full bg-[#111] border border-[#2a2a2a] rounded-xl p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#D4A843] transition-colors"
+          className="w-full bg-[#111] border border-[#2a2a2a] rounded-xl p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
           maxLength={5000}
         />
         {postError && (
@@ -281,7 +281,7 @@ export default function CourseDiscussion({
                     size={36}
                     gradient={
                       isVip
-                        ? "linear-gradient(135deg, #D4A843, #059669)"
+                        ? "linear-gradient(135deg, #E85D04, #059669)"
                         : "linear-gradient(135deg, #3b82f6, #1d4ed8)"
                     }
                   />
@@ -322,8 +322,8 @@ export default function CourseDiscussion({
                     onClick={() => toggleComments(post.id)}
                     className={`flex items-center gap-1.5 text-xs transition-colors ${
                       openComments === post.id
-                        ? "text-[#D4A843]"
-                        : "text-gray-500 hover:text-[#D4A843]"
+                        ? "text-[#E85D04]"
+                        : "text-gray-500 hover:text-[#E85D04]"
                     }`}
                   >
                     <MessageCircle size={13} />
@@ -345,7 +345,7 @@ export default function CourseDiscussion({
                     {/* Loading */}
                     {commentsLoading[post.id] && (
                       <div className="flex items-center gap-2 py-3 justify-center">
-                        <div className="w-4 h-4 border-2 border-[#D4A843] border-t-transparent rounded-full animate-spin" />
+                        <div className="w-4 h-4 border-2 border-[#E85D04] border-t-transparent rounded-full animate-spin" />
                         <span className="text-xs text-gray-500">
                           Đang tải...
                         </span>
@@ -410,7 +410,7 @@ export default function CourseDiscussion({
                           }
                         }}
                         placeholder="Viết bình luận..."
-                        className="flex-1 bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-1.5 text-xs text-white placeholder:text-gray-500 focus:outline-none focus:border-[#D4A843] transition-colors"
+                        className="flex-1 bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-1.5 text-xs text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
                       />
                       <button
                         onClick={() => handleCommentSubmit(post.id)}
@@ -421,7 +421,7 @@ export default function CourseDiscussion({
                         className={`text-xs font-medium px-3 py-1.5 rounded-lg transition-colors ${
                           (commentText[post.id] || "").trim() &&
                           !commentPosting[post.id]
-                            ? "bg-[#D4A843] text-black hover:bg-[#c49a3a]"
+                            ? "bg-[#E85D04] text-black hover:bg-[#c49a3a]"
                             : "bg-[#2a2a2a] text-gray-500 cursor-not-allowed"
                         }`}
                       >

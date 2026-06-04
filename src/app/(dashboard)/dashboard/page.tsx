@@ -11,14 +11,14 @@ import {
 import FeaturedCourses from "@/components/dashboard/FeaturedCourses";
 
 const quickCards = [
-  { href: "/courses", icon: BookOpen, color: "#D4A843", bg: "rgba(212,168,67,0.1)", label: "Khoá học của tôi", desc: "Xem và học các khoá học" },
+  { href: "/courses", icon: BookOpen, color: "#E85D04", bg: "rgba(212,168,67,0.1)", label: "Khoá học của tôi", desc: "Xem và học các khoá học" },
   { href: "/resources", icon: FolderOpen, color: "#3b82f6", bg: "rgba(59,130,246,0.1)", label: "Tài nguyên", desc: "Templates, tài liệu hỗ trợ" },
   { href: "/community", icon: Users, color: "#a855f7", bg: "rgba(168,85,247,0.1)", label: "Cộng đồng", desc: "Kết nối & học hỏi cùng nhau" },
 ];
 
 /* Mobile-only quick access — compact, action-oriented */
 const mobileQuickAccess = [
-  { href: "/courses", icon: BookOpen, color: "#D4A843", bg: "rgba(212,168,67,0.1)", label: "Khoá học của tôi" },
+  { href: "/courses", icon: BookOpen, color: "#E85D04", bg: "rgba(212,168,67,0.1)", label: "Khoá học của tôi" },
   { href: "/notifications", icon: Bell, color: "#ef4444", bg: "rgba(239,68,68,0.1)", label: "Thông báo" },
   { href: "/community", icon: Users, color: "#a855f7", bg: "rgba(168,85,247,0.1)", label: "Cộng đồng" },
 ];
@@ -32,7 +32,7 @@ function tierLabel(tier: string) {
 function tierColor(tier: string) {
   if (tier === "vip") return "#f59e0b";
   if (tier === "member") return "#a855f7";
-  return "#D4A843";
+  return "#E85D04";
 }
 
 export default async function DashboardPage() {
@@ -174,10 +174,10 @@ export default async function DashboardPage() {
             <div>
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-sm font-semibold text-white flex items-center gap-1.5">
-                  <BookOpen size={14} className="text-[#D4A843]" />
+                  <BookOpen size={14} className="text-[#E85D04]" />
                   Khoá học của tôi
                 </h3>
-                <Link href="/courses" className="text-xs text-[#D4A843] flex items-center gap-1">
+                <Link href="/courses" className="text-xs text-[#E85D04] flex items-center gap-1">
                   Xem tất cả <ArrowRight size={11} />
                 </Link>
               </div>
@@ -207,7 +207,7 @@ export default async function DashboardPage() {
                             className="h-full rounded-full transition-all"
                             style={{
                               width: `${c.progress}%`,
-                              background: c.progress === 100 ? "#22c55e" : "#D4A843",
+                              background: c.progress === 100 ? "#22c55e" : "#E85D04",
                             }}
                           />
                         </div>
@@ -230,12 +230,12 @@ export default async function DashboardPage() {
             href={siteConfig.socials.zalo}
             target="_blank"
             rel="noopener noreferrer"
-            className="card-dark p-4 border border-[#D4A843]/20 hover:bg-[#222] transition-all block"
+            className="card-dark p-4 border border-[#E85D04]/20 hover:bg-[#222] transition-all block"
             style={{ background: "rgba(212,168,67,0.05)" }}
           >
             <div className="flex items-center gap-2 mb-1.5">
-              <Star size={14} className="text-[#D4A843]" />
-              <span className="text-sm font-semibold text-[#D4A843]">Cần hỗ trợ?</span>
+              <Star size={14} className="text-[#E85D04]" />
+              <span className="text-sm font-semibold text-[#E85D04]">Cần hỗ trợ?</span>
             </div>
             <p className="text-xs text-gray-400 mb-2">Tư vấn khoá học phù hợp nhu cầu của bạn</p>
             <span className="btn-green text-xs inline-flex items-center gap-1.5">
@@ -258,7 +258,7 @@ export default async function DashboardPage() {
               </p>
               <div className="flex items-center gap-4 text-sm">
                 <span className="flex items-center gap-1.5 text-gray-300">
-                  <BookOpen size={14} className="text-[#D4A843]" />
+                  <BookOpen size={14} className="text-[#E85D04]" />
                   <span>{courses} khoá đăng ký</span>
                 </span>
                 <span className="flex items-center gap-1.5 text-gray-300">
@@ -300,10 +300,10 @@ export default async function DashboardPage() {
             <div>
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <BookOpen size={14} className="text-[#D4A843]" />
+                  <BookOpen size={14} className="text-[#E85D04]" />
                   Khoá học của tôi
                 </h3>
-                <Link href="/courses" className="text-xs text-[#D4A843] hover:underline flex items-center gap-1">
+                <Link href="/courses" className="text-xs text-[#E85D04] hover:underline flex items-center gap-1">
                   Xem tất cả <ArrowRight size={12} />
                 </Link>
               </div>
@@ -331,7 +331,7 @@ export default async function DashboardPage() {
                             className="h-full rounded-full transition-all"
                             style={{
                               width: `${c.progress}%`,
-                              background: c.progress === 100 ? "#22c55e" : "#D4A843",
+                              background: c.progress === 100 ? "#22c55e" : "#E85D04",
                             }}
                           />
                         </div>
@@ -341,7 +341,7 @@ export default async function DashboardPage() {
                         {c.completedLessons}/{c.totalLessons} bài học
                       </p>
                     </div>
-                    <PlayCircle size={22} className="text-gray-500 group-hover:text-[#D4A843] shrink-0 transition-colors" />
+                    <PlayCircle size={22} className="text-gray-500 group-hover:text-[#E85D04] shrink-0 transition-colors" />
                   </Link>
                 ))}
               </div>
@@ -383,12 +383,12 @@ export default async function DashboardPage() {
             href={siteConfig.socials.zalo}
             target="_blank"
             rel="noopener noreferrer"
-            className="card-dark p-5 border border-[#D4A843]/20 hover:bg-[#222] transition-all block"
+            className="card-dark p-5 border border-[#E85D04]/20 hover:bg-[#222] transition-all block"
             style={{ background: "rgba(212,168,67,0.05)" }}
           >
             <div className="flex items-center gap-2 mb-2">
-              <Star size={16} className="text-[#D4A843]" />
-              <span className="font-semibold text-[#D4A843]">Cần hỗ trợ?</span>
+              <Star size={16} className="text-[#E85D04]" />
+              <span className="font-semibold text-[#E85D04]">Cần hỗ trợ?</span>
             </div>
             <p className="text-sm text-gray-400 mb-3">
               Liên hệ để được tư vấn khoá học phù hợp với nhu cầu và mục tiêu của bạn.
@@ -408,7 +408,7 @@ export default async function DashboardPage() {
                 </h3>
                 <Link
                   href="/community"
-                  className="text-xs text-[#D4A843] hover:underline flex items-center gap-1"
+                  className="text-xs text-[#E85D04] hover:underline flex items-center gap-1"
                 >
                   Xem tất cả <ArrowRight size={12} />
                 </Link>
@@ -436,7 +436,7 @@ export default async function DashboardPage() {
                         src={avatarUrl}
                         initials={initials || "?"}
                         size={32}
-                        gradient="linear-gradient(135deg, #D4A843, #059669)"
+                        gradient="linear-gradient(135deg, #E85D04, #059669)"
                       />
                       <div className="flex-1 min-w-0">
                         <p className="text-sm text-white">

@@ -318,7 +318,7 @@ export default function SanPhamSoLanding() {
               disabled={loading}
               className="w-full flex items-center justify-center gap-2 rounded-xl py-4 mt-4 text-base sm:text-lg font-bold uppercase tracking-wide transition-all hover:opacity-95 hover:scale-[1.02] disabled:opacity-50 cursor-pointer"
               style={{
-                background: "linear-gradient(135deg, #D4A843 0%, #B8944A 100%)",
+                background: "linear-gradient(135deg, #E85D04 0%, #B8944A 100%)",
                 color: "#0A1020",
                 boxShadow: "0 0 30px rgba(212,168,67,0.4)",
               }}

@@ -69,7 +69,7 @@ const CATEGORIES: {
   },
 ];
 
-const PLACEHOLDER_COLORS = ["#D4A843", "#3b82f6", "#a855f7", "#f59e0b", "#ec4899", "#06b6d4"];
+const PLACEHOLDER_COLORS = ["#E85D04", "#3b82f6", "#a855f7", "#f59e0b", "#ec4899", "#06b6d4"];
 
 function formatPrice(p: number) {
   return p.toLocaleString("vi-VN") + "đ";
@@ -371,7 +371,7 @@ export default function CoursesClient({ courses }: { courses: CourseItem[] }) {
             icon={BookOpen}
             title="Tất cả khoá học"
             subtitle="Khám phá các khoá học chất lượng"
-            iconColor="#D4A843"
+            iconColor="#E85D04"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-4">
             {uncategorized.map((course, idx) => (

@@ -140,7 +140,7 @@ export default function SendingProgressPage() {
       <div>
         <TopBar title="Dang tai..." />
         <div className="flex items-center justify-center py-32">
-          <Loader2 size={28} className="animate-spin text-[#D4A843]" />
+          <Loader2 size={28} className="animate-spin text-[#E85D04]" />
         </div>
       </div>
     );
@@ -163,7 +163,7 @@ export default function SendingProgressPage() {
               <circle
                 cx="60" cy="60" r="52"
                 fill="none"
-                stroke={completed ? "#22c55e" : state?.status === "paused" ? "#f97316" : "#D4A843"}
+                stroke={completed ? "#22c55e" : state?.status === "paused" ? "#f97316" : "#E85D04"}
                 strokeWidth="8"
                 strokeLinecap="round"
                 strokeDasharray={`${2 * Math.PI * 52}`}
@@ -179,8 +179,8 @@ export default function SendingProgressPage() {
                 <Pause size={32} className="text-[#f97316] mb-1" />
               ) : (
                 <div className="relative">
-                  <Send size={24} className="text-[#D4A843]" />
-                  <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-[#D4A843] animate-ping" />
+                  <Send size={24} className="text-[#E85D04]" />
+                  <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-[#E85D04] animate-ping" />
                 </div>
               )}
               <span className="text-2xl font-bold text-white mt-1">{Math.round(progress)}%</span>
@@ -241,7 +241,7 @@ export default function SendingProgressPage() {
         {/* Stats row */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <div className="stat-card text-center">
-            <Send size={16} className="text-[#D4A843] mx-auto mb-2" />
+            <Send size={16} className="text-[#E85D04] mx-auto mb-2" />
             <div className="text-xl font-bold text-white">{sent.toLocaleString("vi-VN")}</div>
             <div className="text-xs text-gray-500 mt-1">Da gui</div>
           </div>
@@ -294,7 +294,7 @@ export default function SendingProgressPage() {
               <button
                 onClick={() => router.push(`/email/campaigns/${campaignId}`)}
                 className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-colors"
-                style={{ background: "rgba(212,168,67,0.12)", color: "#D4A843", border: "1px solid rgba(212,168,67,0.3)" }}
+                style={{ background: "rgba(212,168,67,0.12)", color: "#E85D04", border: "1px solid rgba(212,168,67,0.3)" }}
               >
                 <BarChart3 size={14} /> Xem analytics
               </button>

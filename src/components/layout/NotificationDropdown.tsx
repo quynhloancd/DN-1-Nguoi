@@ -171,7 +171,7 @@ export default function NotificationDropdown() {
               <button
                 onClick={markAllRead}
                 className="text-xs font-medium transition-colors"
-                style={{ color: "#D4A843" }}
+                style={{ color: "#E85D04" }}
               >
                 Đánh dấu tất cả đã đọc
               </button>
@@ -182,7 +182,7 @@ export default function NotificationDropdown() {
           <div className="overflow-y-auto" style={{ maxHeight: "360px" }}>
             {!loaded ? (
               <div className="py-8 flex justify-center">
-                <div className="w-5 h-5 border-2 border-[#D4A843] border-t-transparent rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-[#E85D04] border-t-transparent rounded-full animate-spin" />
               </div>
             ) : visible.length === 0 ? (
               <p className="text-xs text-gray-500 text-center py-8">
@@ -218,7 +218,7 @@ export default function NotificationDropdown() {
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-semibold text-white leading-snug">
                       {notif.is_broadcast && (
-                        <span className="text-[10px] text-[#D4A843] font-medium mr-1">
+                        <span className="text-[10px] text-[#E85D04] font-medium mr-1">
                           Chung
                         </span>
                       )}
@@ -236,7 +236,7 @@ export default function NotificationDropdown() {
                   {!notif.read && (
                     <span
                       className="w-2 h-2 rounded-full shrink-0 mt-1"
-                      style={{ background: "#D4A843" }}
+                      style={{ background: "#E85D04" }}
                     />
                   )}
                 </div>
@@ -253,7 +253,7 @@ export default function NotificationDropdown() {
               href="/notifications"
               onClick={() => setOpen(false)}
               className="text-xs font-medium transition-colors"
-              style={{ color: "#D4A843" }}
+              style={{ color: "#E85D04" }}
             >
               Xem tất cả →
             </a>

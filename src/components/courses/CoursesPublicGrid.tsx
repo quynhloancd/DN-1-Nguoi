@@ -64,7 +64,7 @@ const CATEGORIES: {
   },
 ];
 
-const PLACEHOLDER_COLORS = ["#D4A843", "#3b82f6", "#a855f7", "#f59e0b", "#ec4899", "#06b6d4"];
+const PLACEHOLDER_COLORS = ["#E85D04", "#3b82f6", "#a855f7", "#f59e0b", "#ec4899", "#06b6d4"];
 
 function formatPrice(p: number) {
   return p.toLocaleString("vi-VN") + "đ";
@@ -124,7 +124,7 @@ function PublicCourseCard({
               Miễn phí
             </span>
           ) : (
-            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-[#D4A843] text-black">
+            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-[#E85D04] text-black">
               {formatPrice(displayPrice)}
             </span>
           )}
@@ -153,11 +153,11 @@ function PublicCourseCard({
               <span className="text-sm font-bold text-[#22c55e]">Miễn phí</span>
             ) : hasSale ? (
               <div className="flex items-center gap-2">
-                <span className="text-sm font-bold text-[#D4A843]">{formatPrice(course.sale_price!)}</span>
+                <span className="text-sm font-bold text-[#E85D04]">{formatPrice(course.sale_price!)}</span>
                 <span className="text-xs text-gray-500 line-through">{formatPrice(course.price)}</span>
               </div>
             ) : (
-              <span className="text-sm font-bold text-[#D4A843]">{formatPrice(course.price)}</span>
+              <span className="text-sm font-bold text-[#E85D04]">{formatPrice(course.price)}</span>
             )}
           </div>
           {isComingSoon ? (
@@ -165,7 +165,7 @@ function PublicCourseCard({
               <Clock size={11} /> Chờ đón
             </span>
           ) : (
-            <span className="flex items-center gap-1 text-xs font-medium text-[#D4A843] group-hover:gap-2 transition-all">
+            <span className="flex items-center gap-1 text-xs font-medium text-[#E85D04] group-hover:gap-2 transition-all">
               Xem chi tiết <ArrowRight size={13} />
             </span>
           )}
@@ -228,7 +228,7 @@ export default function CoursesPublicGrid({ courses }: { courses: PublicCourse[]
         {/* Header */}
         <div className="mb-10">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">
-            Khoá Học Của <span className="text-[#D4A843]">Doanh Nghiệp 1 Người</span>
+            Khoá Học Của <span className="text-[#E85D04]">Doanh Nghiệp 1 Người</span>
           </h1>
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl">
             Được thiết kế để bạn áp dụng ngay — không lý thuyết suông. Học từ người đã làm được.
@@ -255,7 +255,7 @@ export default function CoursesPublicGrid({ courses }: { courses: PublicCourse[]
         {/* ── Uncategorized fallback ── */}
         {uncategorized.length > 0 && !CATEGORIES.some((cat) => publishedCourses.some((c) => c.category === cat.key)) && (
           <section className="mb-12">
-            <SectionHeader icon={Sparkles} title="Khoá học hiện có" subtitle="Bắt đầu học ngay với những khoá học chất lượng" iconColor="#D4A843" />
+            <SectionHeader icon={Sparkles} title="Khoá học hiện có" subtitle="Bắt đầu học ngay với những khoá học chất lượng" iconColor="#E85D04" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {uncategorized.map((course, idx) => (
                 <PublicCourseCard key={course.slug} course={course} idx={idx} />

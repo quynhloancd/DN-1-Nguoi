@@ -27,7 +27,7 @@ export default function ConversionFunnel({
     { label: "Đăng ký", count: totalUsers, color: "#3b82f6" },
     { label: "Ghi danh", count: enrolledUsers, color: "#06b6d4" },
     { label: "Thanh toán", count: paidUsers, color: "#10b981" },
-    { label: "Hoàn thành", count: completedUsers, color: "#D4A843" },
+    { label: "Hoàn thành", count: completedUsers, color: "#E85D04" },
   ];
 
   const getConversionRate = (current: number, previous: number): string => {

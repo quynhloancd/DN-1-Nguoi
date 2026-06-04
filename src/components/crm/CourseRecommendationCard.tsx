@@ -66,7 +66,7 @@ export default function CourseRecommendationCard({
           </span>
         </div>
 
-        <p className="text-xs text-[#D4A843] font-medium mt-0.5">
+        <p className="text-xs text-[#E85D04] font-medium mt-0.5">
           {formatVND(recommendation.product_price)}
         </p>
 
@@ -87,7 +87,7 @@ export default function CourseRecommendationCard({
               className="h-full rounded-full transition-all"
               style={{
                 width: `${Math.min(Math.max(recommendation.score, 0), 100)}%`,
-                backgroundColor: "#D4A843",
+                backgroundColor: "#E85D04",
               }}
             />
           </div>

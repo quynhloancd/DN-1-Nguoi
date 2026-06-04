@@ -295,7 +295,7 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
       <div className="p-4 border-b border-white/[0.06]">
         <div className="flex items-center justify-between mb-1">
           <div className="flex items-center gap-2">
-            <ClipboardCheck size={16} className="text-[#D4A843]" />
+            <ClipboardCheck size={16} className="text-[#E85D04]" />
             <h3 className="text-sm font-semibold text-white">{quiz.title}</h3>
           </div>
           {/* Countdown timer */}
@@ -335,7 +335,7 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
             <div key={question.id} className="space-y-2.5">
               {/* Question text */}
               <p className="text-sm text-white font-medium">
-                <span className="text-[#D4A843] mr-1.5">
+                <span className="text-[#E85D04] mr-1.5">
                   Câu {qIndex + 1}.
                 </span>
                 {question.question_text}
@@ -349,7 +349,7 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
                       <p className="text-sm text-gray-300 whitespace-pre-wrap">
                         {textAnswers[question.id] || "(Chưa trả lời)"}
                       </p>
-                      <p className="text-xs text-[#D4A843] mt-2 flex items-center gap-1.5">
+                      <p className="text-xs text-[#E85D04] mt-2 flex items-center gap-1.5">
                         <CheckCircle2 size={12} />
                         Đã gửi câu trả lời
                       </p>
@@ -391,9 +391,9 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
                       textColor = "text-red-400";
                     }
                   } else if (isSelected) {
-                    borderColor = "border-[#D4A843]/40";
-                    bgColor = "bg-[#D4A843]/10";
-                    textColor = "text-[#D4A843]";
+                    borderColor = "border-[#E85D04]/40";
+                    bgColor = "bg-[#E85D04]/10";
+                    textColor = "text-[#E85D04]";
                   }
 
                   return (
@@ -406,7 +406,7 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
                       className={`w-full text-left px-3 py-2.5 rounded-lg border ${borderColor} ${bgColor} transition-all flex items-center gap-2.5 group ${
                         result
                           ? "cursor-default"
-                          : "hover:border-[#D4A843]/30 hover:bg-[#D4A843]/5 cursor-pointer"
+                          : "hover:border-[#E85D04]/30 hover:bg-[#E85D04]/5 cursor-pointer"
                       }`}
                     >
                       {/* Radio indicator */}
@@ -419,8 +419,8 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
                                 ? "border-red-500"
                                 : "border-white/20"
                             : isSelected
-                              ? "border-[#D4A843]"
-                              : "border-white/20 group-hover:border-[#D4A843]/50"
+                              ? "border-[#E85D04]"
+                              : "border-white/20 group-hover:border-[#E85D04]/50"
                         }`}
                       >
                         {(isSelected || (result && isCorrect)) && (
@@ -432,7 +432,7 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
                                   : isWrong
                                     ? "bg-red-500"
                                     : ""
-                                : "bg-[#D4A843]"
+                                : "bg-[#E85D04]"
                             }`}
                           />
                         )}
@@ -521,7 +521,7 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
             disabled={submitting}
             className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40"
             style={{
-              background: "linear-gradient(135deg, #D4A843, #b8912e)",
+              background: "linear-gradient(135deg, #E85D04, #b8912e)",
               color: "#0a0a0a",
             }}
           >

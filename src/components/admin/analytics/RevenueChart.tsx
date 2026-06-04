@@ -146,7 +146,7 @@ export default function RevenueChart({ data, groupBy, loading }: RevenueChartPro
               yAxisId="left"
               dataKey="revenue"
               name="revenue"
-              fill="#D4A843"
+              fill="#E85D04"
               radius={[4, 4, 0, 0]}
               barSize={groupBy === 'day' ? 20 : 40}
             />

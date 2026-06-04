@@ -101,7 +101,7 @@ export default async function CRMPage() {
     qualified: "#f59e0b",
     negotiation: "#ef4444",
     customer: "#22c55e",
-    advocate: "#D4A843",
+    advocate: "#E85D04",
   };
   const journeyCountMap = new Map<string, number>();
   for (const row of (journeyFunnelRes.data ?? []) as { journey_stage: string }[]) {
@@ -181,7 +181,7 @@ export default async function CRMPage() {
       label: "Khách hàng",
       value: String(overview.total_customers),
       icon: Users,
-      color: "#D4A843",
+      color: "#E85D04",
     },
     {
       label: "TB/đơn hàng",
@@ -244,7 +244,7 @@ export default async function CRMPage() {
         {/* Quick Links */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { href: "/crm/contacts", label: "Khách hàng", desc: "Quản lý danh sách liên hệ", icon: Users, color: "#D4A843" },
+            { href: "/crm/contacts", label: "Khách hàng", desc: "Quản lý danh sách liên hệ", icon: Users, color: "#E85D04" },
             { href: "/crm/pipeline", label: "Pipeline", desc: "Theo dõi cơ hội kinh doanh", icon: GitBranch, color: "#8b5cf6" },
             { href: "/crm/performance", label: "Hiệu suất Sale", desc: "Phân tích hiệu quả bán hàng", icon: TrendingUp, color: "#3b82f6" },
             { href: "/crm/assignments", label: "Phân công Lead", desc: "Phân bổ lead cho sale", icon: UserCheck, color: "#22c55e" },
@@ -258,7 +258,7 @@ export default async function CRMPage() {
                   >
                     <link.icon size={16} style={{ color: link.color }} />
                   </div>
-                  <span className="text-sm font-semibold text-white group-hover:text-[#D4A843] transition-colors">
+                  <span className="text-sm font-semibold text-white group-hover:text-[#E85D04] transition-colors">
                     {link.label}
                   </span>
                 </div>
@@ -382,7 +382,7 @@ export default async function CRMPage() {
                         className="w-full rounded-t transition-all hover:opacity-80"
                         style={{
                           height: `${pct}%`,
-                          background: "#D4A843",
+                          background: "#E85D04",
                           minHeight: 4,
                         }}
                         title={`${dayLabel}: ${formatVND(d.revenue)} (${d.orders} đơn)`}
@@ -491,7 +491,7 @@ export default async function CRMPage() {
         {/* Top Products */}
         <div className="card-dark p-5">
           <div className="flex items-center gap-2 mb-4">
-            <Package size={16} className="text-[#D4A843]" />
+            <Package size={16} className="text-[#E85D04]" />
             <h3 className="font-semibold text-white">Sản phẩm bán chạy</h3>
           </div>
           {topProducts.length > 0 ? (
@@ -527,7 +527,7 @@ export default async function CRMPage() {
                         className="h-full rounded-full transition-all"
                         style={{
                           width: `${barPct}%`,
-                          background: i === 0 ? "#f59e0b" : "#D4A843",
+                          background: i === 0 ? "#f59e0b" : "#E85D04",
                         }}
                       />
                     </div>

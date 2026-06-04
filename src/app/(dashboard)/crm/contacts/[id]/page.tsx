@@ -129,7 +129,7 @@ const sourceConfig: Record<string, { label: string; color: string; bg: string }>
   manual: { label: "Thủ công", color: "#6b7280", bg: "rgba(107,114,128,0.1)" },
   import: { label: "Import", color: "#8b5cf6", bg: "rgba(139,92,246,0.1)" },
   website: { label: "Website", color: "#3b82f6", bg: "rgba(59,130,246,0.1)" },
-  referral: { label: "Giới thiệu", color: "#D4A843", bg: "rgba(212,168,67,0.1)" },
+  referral: { label: "Giới thiệu", color: "#E85D04", bg: "rgba(212,168,67,0.1)" },
   ads: { label: "Quảng cáo", color: "#f59e0b", bg: "rgba(245,158,11,0.1)" },
   social: { label: "MXH", color: "#ec4899", bg: "rgba(236,72,153,0.1)" },
 };
@@ -140,7 +140,7 @@ const dealStageConfig: Record<string, { label: string; color: string }> = {
   demo: { label: "Demo", color: "#a855f7" },
   proposal: { label: "Báo giá", color: "#ec4899" },
   negotiation: { label: "Đàm phán", color: "#f97316" },
-  won: { label: "Thành công", color: "#D4A843" },
+  won: { label: "Thành công", color: "#E85D04" },
   lost: { label: "Thất bại", color: "#ef4444" },
 };
 
@@ -335,7 +335,7 @@ export default async function ContactDetailPage({
             {/* Avatar */}
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white shrink-0"
-              style={{ background: "linear-gradient(135deg, #D4A843, #b8922e)" }}
+              style={{ background: "linear-gradient(135deg, #E85D04, #b8922e)" }}
             >
               {contact.full_name.charAt(0).toUpperCase()}
             </div>
@@ -351,7 +351,7 @@ export default async function ContactDetailPage({
                   className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold"
                   style={{
                     background: "rgba(212,168,67,0.12)",
-                    color: "#D4A843",
+                    color: "#E85D04",
                     border: "1px solid rgba(212,168,67,0.3)",
                   }}
                 >
@@ -388,7 +388,7 @@ export default async function ContactDetailPage({
                     className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold"
                     style={{
                       background: "rgba(212,168,67,0.08)",
-                      color: "#D4A843",
+                      color: "#E85D04",
                     }}
                   >
                     <DollarSign size={12} />
@@ -414,13 +414,13 @@ export default async function ContactDetailPage({
                       className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 transition-all"
                       style={{
                         background: isActive
-                          ? "#D4A843"
+                          ? "#E85D04"
                           : isPast
                           ? "rgba(212,168,67,0.3)"
                           : "rgba(42,42,42,0.8)",
-                        color: isActive ? "#000" : isPast ? "#D4A843" : "#6b7280",
+                        color: isActive ? "#000" : isPast ? "#E85D04" : "#6b7280",
                         border: isActive
-                          ? "2px solid #D4A843"
+                          ? "2px solid #E85D04"
                           : isPast
                           ? "2px solid rgba(212,168,67,0.4)"
                           : "2px solid #2a2a2a",
@@ -434,7 +434,7 @@ export default async function ContactDetailPage({
                     </div>
                     <span
                       className="text-[10px] font-medium text-center truncate w-full"
-                      style={{ color: isActive ? "#D4A843" : isPast ? "#D4A843" : "#6b7280" }}
+                      style={{ color: isActive ? "#E85D04" : isPast ? "#E85D04" : "#6b7280" }}
                     >
                       {stage.label}
                     </span>
@@ -461,7 +461,7 @@ export default async function ContactDetailPage({
             {/* Add Activity Form */}
             <div className="card-dark p-5">
               <div className="flex items-center gap-2 mb-4">
-                <MessageSquare size={16} className="text-[#D4A843]" />
+                <MessageSquare size={16} className="text-[#E85D04]" />
                 <h3 className="font-semibold text-white text-sm">Thêm hoạt động</h3>
               </div>
               <form action={addActivity}>
@@ -497,7 +497,7 @@ export default async function ContactDetailPage({
             {/* Activity Timeline */}
             <div className="card-dark p-5">
               <div className="flex items-center gap-2 mb-5">
-                <Clock size={16} className="text-[#D4A843]" />
+                <Clock size={16} className="text-[#E85D04]" />
                 <h3 className="font-semibold text-white text-sm">
                   Lịch sử hoạt động
                 </h3>
@@ -583,7 +583,7 @@ export default async function ContactDetailPage({
             {/* Quick Info Card */}
             <div className="card-dark p-5">
               <div className="flex items-center gap-2 mb-4">
-                <User size={16} className="text-[#D4A843]" />
+                <User size={16} className="text-[#E85D04]" />
                 <h3 className="font-semibold text-white text-sm">Thông tin</h3>
               </div>
               <div className="space-y-3">
@@ -680,7 +680,7 @@ export default async function ContactDetailPage({
             {/* Orders Card */}
             <div className="card-dark p-5">
               <div className="flex items-center gap-2 mb-4">
-                <ShoppingCart size={16} className="text-[#D4A843]" />
+                <ShoppingCart size={16} className="text-[#E85D04]" />
                 <h3 className="font-semibold text-white text-sm">Đơn hàng</h3>
                 <span className="text-xs text-gray-500 ml-auto">{orders.length}</span>
               </div>
@@ -727,7 +727,7 @@ export default async function ContactDetailPage({
             {/* Enrolled Courses Card */}
             <div className="card-dark p-5">
               <div className="flex items-center gap-2 mb-4">
-                <BookOpen size={16} className="text-[#D4A843]" />
+                <BookOpen size={16} className="text-[#E85D04]" />
                 <h3 className="font-semibold text-white text-sm">Khoá học đã đăng ký</h3>
                 <span className="text-xs text-gray-500 ml-auto">{enrollments.length}</span>
               </div>
@@ -763,7 +763,7 @@ export default async function ContactDetailPage({
             {recommendations.length > 0 && (
               <div className="card-dark p-5">
                 <div className="flex items-center gap-2 mb-4">
-                  <Lightbulb size={16} className="text-[#D4A843]" />
+                  <Lightbulb size={16} className="text-[#E85D04]" />
                   <h3 className="font-semibold text-white text-sm">Gợi ý khoá học</h3>
                 </div>
                 <div className="space-y-2.5">
@@ -781,8 +781,8 @@ export default async function ContactDetailPage({
                       )}
                       {rec.score != null && (
                         <div className="flex items-center gap-1 mt-1.5">
-                          <TrendingUp size={10} className="text-[#D4A843]" />
-                          <span className="text-[10px] text-[#D4A843] font-semibold">
+                          <TrendingUp size={10} className="text-[#E85D04]" />
+                          <span className="text-[10px] text-[#E85D04] font-semibold">
                             Score: {rec.score}
                           </span>
                         </div>
@@ -797,7 +797,7 @@ export default async function ContactDetailPage({
             {nextActions.length > 0 && (
               <div className="card-dark p-5">
                 <div className="flex items-center gap-2 mb-4">
-                  <ListTodo size={16} className="text-[#D4A843]" />
+                  <ListTodo size={16} className="text-[#E85D04]" />
                   <h3 className="font-semibold text-white text-sm">Việc cần làm</h3>
                   <span className="text-xs text-gray-500 ml-auto">{nextActions.length}</span>
                 </div>
@@ -838,7 +838,7 @@ export default async function ContactDetailPage({
             {deals.length > 0 && (
               <div className="card-dark p-5">
                 <div className="flex items-center gap-2 mb-4">
-                  <Briefcase size={16} className="text-[#D4A843]" />
+                  <Briefcase size={16} className="text-[#E85D04]" />
                   <h3 className="font-semibold text-white text-sm">Deals</h3>
                   <span className="text-xs text-gray-500 ml-auto">{deals.length}</span>
                 </div>

@@ -98,7 +98,7 @@ export default function TopBar({ title, subtitle, onMenuClick, notification, pro
         const current = promotions[promoIndex % promotions.length];
         const inner = (
           <div className="notification-bar flex flex-wrap items-center justify-center gap-x-2 gap-y-1 py-1.5 sm:py-2 px-3 sm:px-4 text-sm">
-            <Bell size={13} className="text-[#D4A843] shrink-0" />
+            <Bell size={13} className="text-[#E85D04] shrink-0" />
             <span className="text-gray-400 text-xs">
               Doanh Nghiệp 1 Người vừa cập nhật:
             </span>
@@ -110,7 +110,7 @@ export default function TopBar({ title, subtitle, onMenuClick, notification, pro
                   <button
                     key={i}
                     className="w-1.5 h-1.5 rounded-full transition-colors"
-                    style={{ background: i === promoIndex % promotions.length ? "#D4A843" : "#333" }}
+                    style={{ background: i === promoIndex % promotions.length ? "#E85D04" : "#333" }}
                     onClick={(e) => { e.preventDefault(); e.stopPropagation(); setPromoIndex(i); }}
                   />
                 ))}
@@ -126,7 +126,7 @@ export default function TopBar({ title, subtitle, onMenuClick, notification, pro
       {/* Legacy notification support */}
       {!promotions?.length && notification && (
         <div className="notification-bar flex flex-wrap items-center justify-center gap-x-2 gap-y-1 py-1.5 sm:py-2 px-3 sm:px-4 text-sm">
-          <Bell size={13} className="text-[#D4A843] shrink-0" />
+          <Bell size={13} className="text-[#E85D04] shrink-0" />
           <span className="text-gray-400 text-xs">
             Doanh Nghiệp 1 Người vừa cập nhật:
           </span>
@@ -174,13 +174,13 @@ export default function TopBar({ title, subtitle, onMenuClick, notification, pro
           <div className="relative" ref={menuRef}>
             <button
               onClick={() => setAvatarMenuOpen(!avatarMenuOpen)}
-              className="shrink-0 rounded-full focus:outline-none focus:ring-2 focus:ring-[#D4A843]/50"
+              className="shrink-0 rounded-full focus:outline-none focus:ring-2 focus:ring-[#E85D04]/50"
             >
               <UserAvatar
                 src={profile?.avatar_url}
                 initials={initials}
                 size={32}
-                gradient="linear-gradient(135deg, #D4A843, #059669)"
+                gradient="linear-gradient(135deg, #E85D04, #059669)"
               />
             </button>
 
@@ -200,7 +200,7 @@ export default function TopBar({ title, subtitle, onMenuClick, notification, pro
                       src={profile?.avatar_url}
                       initials={initials}
                       size={36}
-                      gradient="linear-gradient(135deg, #D4A843, #059669)"
+                      gradient="linear-gradient(135deg, #E85D04, #059669)"
                     />
                     <div className="min-w-0">
                       <div className="text-sm font-medium text-white truncate">

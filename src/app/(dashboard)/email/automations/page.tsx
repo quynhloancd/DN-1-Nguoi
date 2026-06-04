@@ -104,7 +104,7 @@ export default function AutomationsPage() {
   const stats = [
     { label: "Total automations", value: totalCount, icon: Workflow, color: "#3b82f6" },
     { label: "Active automations", value: activeCount, icon: Play, color: "#22c55e" },
-    { label: "Total enrolled", value: totalEnrolled, icon: Users, color: "#D4A843" },
+    { label: "Total enrolled", value: totalEnrolled, icon: Users, color: "#E85D04" },
     { label: "Completion rate", value: `${completionRate}%`, icon: Workflow, color: "#8b5cf6" },
   ];
 
@@ -191,7 +191,7 @@ export default function AutomationsPage() {
                 onClick={() => setActiveTab(tab.value)}
                 className={`px-4 py-2.5 text-sm font-medium transition-colors relative ${
                   activeTab === tab.value
-                    ? "text-[#D4A843] border-b-2 border-[#D4A843]"
+                    ? "text-[#E85D04] border-b-2 border-[#E85D04]"
                     : "text-gray-500 hover:text-gray-300"
                 }`}
               >
@@ -203,7 +203,7 @@ export default function AutomationsPage() {
           <button
             onClick={() => setShowCreateModal(true)}
             className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-white transition-colors"
-            style={{ background: "#D4A843" }}
+            style={{ background: "#E85D04" }}
           >
             <Plus size={15} /> Tạo automation mới
           </button>
@@ -240,7 +240,7 @@ export default function AutomationsPage() {
               className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
               style={{ background: "rgba(212,168,67,0.1)" }}
             >
-              <Workflow size={28} className="text-[#D4A843]" />
+              <Workflow size={28} className="text-[#E85D04]" />
             </div>
             <p className="text-white font-medium mb-1">
               {activeTab !== "all" ? "Không tìm thấy automation nào" : "Chưa có automation nào"}
@@ -254,7 +254,7 @@ export default function AutomationsPage() {
               <button
                 onClick={() => setShowCreateModal(true)}
                 className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-white transition-colors"
-                style={{ background: "#D4A843" }}
+                style={{ background: "#E85D04" }}
               >
                 <Plus size={15} /> Tạo automation mới
               </button>
@@ -313,7 +313,7 @@ export default function AutomationsPage() {
                       </div>
                       <div className="text-center min-w-[50px]">
                         <div className="text-gray-500 mb-0.5">Completed</div>
-                        <div className="font-semibold" style={{ color: "#D4A843" }}>
+                        <div className="font-semibold" style={{ color: "#E85D04" }}>
                           {a.completed_count ?? 0}
                         </div>
                       </div>
@@ -410,7 +410,7 @@ export default function AutomationsPage() {
                   value={newName}
                   onChange={(e) => setNewName(e.target.value)}
                   placeholder="VD: Welcome Series"
-                  className="w-full px-3 py-2.5 rounded-lg text-sm text-white placeholder:text-gray-500 bg-[#0d0d0d] border border-[#2a2a2a] outline-none focus:border-[#D4A843] transition-colors"
+                  className="w-full px-3 py-2.5 rounded-lg text-sm text-white placeholder:text-gray-500 bg-[#0d0d0d] border border-[#2a2a2a] outline-none focus:border-[#E85D04] transition-colors"
                 />
               </div>
 
@@ -424,7 +424,7 @@ export default function AutomationsPage() {
                   onChange={(e) => setNewDescription(e.target.value)}
                   placeholder="Mô tả ngắn gọn về automation này..."
                   rows={3}
-                  className="w-full px-3 py-2.5 rounded-lg text-sm text-white placeholder:text-gray-500 bg-[#0d0d0d] border border-[#2a2a2a] outline-none focus:border-[#D4A843] transition-colors resize-none"
+                  className="w-full px-3 py-2.5 rounded-lg text-sm text-white placeholder:text-gray-500 bg-[#0d0d0d] border border-[#2a2a2a] outline-none focus:border-[#E85D04] transition-colors resize-none"
                 />
               </div>
 
@@ -436,7 +436,7 @@ export default function AutomationsPage() {
                 <select
                   value={newTriggerType}
                   onChange={(e) => setNewTriggerType(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-lg text-sm text-white bg-[#0d0d0d] border border-[#2a2a2a] outline-none focus:border-[#D4A843] transition-colors"
+                  className="w-full px-3 py-2.5 rounded-lg text-sm text-white bg-[#0d0d0d] border border-[#2a2a2a] outline-none focus:border-[#E85D04] transition-colors"
                 >
                   <option value="tag_added">Tag Added</option>
                   <option value="subscribed_to_list">Subscribed to List</option>
@@ -458,7 +458,7 @@ export default function AutomationsPage() {
                 onClick={handleCreate}
                 disabled={!newName.trim() || creating}
                 className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-white transition-colors disabled:opacity-50"
-                style={{ background: "#D4A843" }}
+                style={{ background: "#E85D04" }}
               >
                 {creating ? (
                   <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />

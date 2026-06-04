@@ -128,15 +128,15 @@ export default function AIAssistant({ context }: AIAssistantProps) {
             {messages.map((msg, i) => (
               <div key={i} className={`flex gap-2 ${msg.role === "user" ? "flex-row-reverse" : ""}`}>
                 <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5"
-                  style={{ background: msg.role === "user" ? "#D4A843" : "#333" }}>
+                  style={{ background: msg.role === "user" ? "#E85D04" : "#333" }}>
                   {msg.role === "user"
                     ? <User size={12} className="text-white" />
-                    : <Bot size={12} className="text-[#D4A843]" />}
+                    : <Bot size={12} className="text-[#E85D04]" />}
                 </div>
                 <div className="max-w-[80%]">
                   <div className="text-xs leading-relaxed whitespace-pre-wrap rounded-2xl px-3 py-2"
                     style={msg.role === "user"
-                      ? { background: "#D4A843", color: "white", borderBottomRightRadius: "4px" }
+                      ? { background: "#E85D04", color: "white", borderBottomRightRadius: "4px" }
                       : { background: "#252525", color: "#e5e7eb", borderBottomLeftRadius: "4px" }}>
                     {msg.content}
                   </div>
@@ -148,11 +148,11 @@ export default function AIAssistant({ context }: AIAssistantProps) {
               <div className="flex gap-2">
                 <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0"
                   style={{ background: "#333" }}>
-                  <Bot size={12} className="text-[#D4A843]" />
+                  <Bot size={12} className="text-[#E85D04]" />
                 </div>
                 <div className="px-3 py-2 rounded-2xl rounded-bl-sm"
                   style={{ background: "#252525" }}>
-                  <Loader2 size={14} className="text-[#D4A843] animate-spin" />
+                  <Loader2 size={14} className="text-[#E85D04] animate-spin" />
                 </div>
               </div>
             )}

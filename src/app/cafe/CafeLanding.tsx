@@ -83,7 +83,7 @@ const FEATURES = [
     tag: "Nghiên cứu",
     title: "100 mô hình kinh doanh sản phẩm số thực tế",
     benefit: "Không cần tự nghĩ — chọn 1 mô hình phù hợp và bắt đầu ngay",
-    color: "#D4A843",
+    color: "#E85D04",
   },
   {
     icon: Globe,
@@ -283,7 +283,7 @@ export default function CafeLanding() {
             style={{
               background: "rgba(212,168,67,0.1)",
               border: "1px solid rgba(212,168,67,0.25)",
-              color: "#D4A843",
+              color: "#E85D04",
             }}
           >
             <Coffee size={13} /> Chương trình giới hạn — Dành cho người
@@ -294,7 +294,7 @@ export default function CafeLanding() {
             Mời Bạn Ly Cafe 99K
             <br />
             Tôi Tặng Bạn{" "}
-            <span className="text-[#D4A843]">
+            <span className="text-[#E85D04]">
               100 Mô Hình Kinh Doanh Triệu Đô
             </span>
           </h1>
@@ -395,7 +395,7 @@ export default function CafeLanding() {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-8 leading-snug">
             Tôi Đã Nghiên Cứu{" "}
-            <span className="text-[#D4A843]">100 Mô Hình Kinh Doanh</span>{" "}
+            <span className="text-[#E85D04]">100 Mô Hình Kinh Doanh</span>{" "}
             Sản Phẩm Số Doanh Thu Triệu Đô
           </h2>
           <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-10 max-w-xl mx-auto">
@@ -413,7 +413,7 @@ export default function CafeLanding() {
               "Doanh thu bao nhiêu",
               "Ứng dụng cho VN ra sao",
             ].map((t, i) => (
-              <span key={i} className="text-[#D4A843] font-medium">
+              <span key={i} className="text-[#E85D04] font-medium">
                 {t}
                 {i < 4 ? " ·" : ""}
               </span>
@@ -485,7 +485,7 @@ export default function CafeLanding() {
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
               Thiên Huệ
             </h3>
-            <p className="text-sm sm:text-base text-[#D4A843] font-medium mb-6">
+            <p className="text-sm sm:text-base text-[#E85D04] font-medium mb-6">
               Chuyên gia Marketing & Thương hiệu cá nhân
             </p>
 
@@ -560,9 +560,9 @@ export default function CafeLanding() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center">
-                  <Check size={16} className="text-[#D4A843]" />
+                  <Check size={16} className="text-[#E85D04]" />
                 </div>
-                <span className="font-bold text-[#D4A843] text-sm uppercase tracking-wide">
+                <span className="font-bold text-[#E85D04] text-sm uppercase tracking-wide">
                   Sau
                 </span>
               </div>
@@ -571,7 +571,7 @@ export default function CafeLanding() {
                   <div key={i} className="flex items-start gap-3">
                     <Check
                       size={14}
-                      className="text-[#D4A843]/50 mt-1 shrink-0"
+                      className="text-[#E85D04]/50 mt-1 shrink-0"
                     />
                     <span className="text-sm text-gray-300 leading-relaxed">
                       {after}
@@ -606,7 +606,7 @@ export default function CafeLanding() {
                   className="flex items-center justify-between gap-4"
                 >
                   <span className="flex items-center gap-3 text-sm text-gray-300">
-                    <Check size={15} className="text-[#D4A843] shrink-0" />{" "}
+                    <Check size={15} className="text-[#E85D04] shrink-0" />{" "}
                     {item}
                   </span>
                   <span className="text-sm text-gray-500 line-through shrink-0">
@@ -627,7 +627,7 @@ export default function CafeLanding() {
                 <span className="text-base sm:text-lg font-bold text-white">
                   Hôm nay bạn chỉ cần:
                 </span>
-                <span className="text-3xl sm:text-4xl font-extrabold text-[#D4A843]">
+                <span className="text-3xl sm:text-4xl font-extrabold text-[#E85D04]">
                   99K
                 </span>
               </div>
@@ -662,7 +662,7 @@ export default function CafeLanding() {
                 border: "1px solid rgba(212,168,67,0.12)",
               }}
             >
-              <h3 className="font-bold text-[#D4A843] text-sm sm:text-base mb-6 flex items-center gap-2">
+              <h3 className="font-bold text-[#E85D04] text-sm sm:text-base mb-6 flex items-center gap-2">
                 <CheckCircle size={18} /> Dành cho bạn nếu:
               </h3>
               <div className="space-y-3">
@@ -675,7 +675,7 @@ export default function CafeLanding() {
                   <div key={i} className="flex items-start gap-3">
                     <Check
                       size={15}
-                      className="text-[#D4A843] mt-1 shrink-0"
+                      className="text-[#E85D04] mt-1 shrink-0"
                     />
                     <span className="text-sm text-gray-300 leading-relaxed">
                       {t}
@@ -722,8 +722,8 @@ export default function CafeLanding() {
       <section ref={formRef} id="register" className="py-8 sm:py-10 px-4">
         <div className="max-w-md mx-auto">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#D4A843]/10 mb-6">
-              <Coffee size={28} className="text-[#D4A843]" />
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#E85D04]/10 mb-6">
+              <Coffee size={28} className="text-[#E85D04]" />
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
               Đăng Ký & Nhận Tài Liệu
@@ -889,7 +889,7 @@ export default function CafeLanding() {
               disabled={loading}
               className="w-full flex items-center justify-center gap-2 rounded-xl py-4 mt-4 text-base sm:text-lg font-bold uppercase tracking-wide transition-all hover:opacity-95 hover:scale-[1.02] disabled:opacity-50 cursor-pointer"
               style={{
-                background: "linear-gradient(135deg, #D4A843 0%, #B8944A 100%)",
+                background: "linear-gradient(135deg, #E85D04 0%, #B8944A 100%)",
                 color: "#0A1020",
                 boxShadow: "0 0 30px rgba(212,168,67,0.4)",
               }}
@@ -996,12 +996,12 @@ export default function CafeLanding() {
                 border: "1px solid rgba(212,168,67,0.12)",
               }}
             >
-              <span className="text-4xl font-black text-[#D4A843]/20">
+              <span className="text-4xl font-black text-[#E85D04]/20">
                 02
               </span>
               <p className="text-sm sm:text-base text-gray-300 leading-relaxed mt-4">
                 Đầu tư{" "}
-                <strong className="text-[#D4A843]">99K</strong> — bằng một ly
+                <strong className="text-[#E85D04]">99K</strong> — bằng một ly
                 cafe — để có ngay 100 mô hình đã được chứng minh, nghiên cứu
                 kỹ, và sẵn sàng ứng dụng.
               </p>
@@ -1111,8 +1111,8 @@ export default function CafeLanding() {
                 borderBottom: "1px solid rgba(212,168,67,0.1)",
               }}
             >
-              <div className="w-18 h-18 rounded-full flex items-center justify-center mx-auto mb-5 bg-[#D4A843]/15 border-2 border-[#D4A843]/30 w-[72px] h-[72px]">
-                <CheckCircle size={36} className="text-[#D4A843]" />
+              <div className="w-18 h-18 rounded-full flex items-center justify-center mx-auto mb-5 bg-[#E85D04]/15 border-2 border-[#E85D04]/30 w-[72px] h-[72px]">
+                <CheckCircle size={36} className="text-[#E85D04]" />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                 Đăng Ký Thành Công!
@@ -1170,7 +1170,7 @@ export default function CafeLanding() {
                           <span
                             className={`text-sm font-semibold ${
                               item.highlight
-                                ? "text-[#D4A843]"
+                                ? "text-[#E85D04]"
                                 : "text-white font-mono"
                             }`}
                           >
@@ -1186,7 +1186,7 @@ export default function CafeLanding() {
                               {copied === item.key ? (
                                 <Check
                                   size={13}
-                                  className="text-[#D4A843]"
+                                  className="text-[#E85D04]"
                                 />
                               ) : (
                                 <Copy size={13} />
@@ -1205,12 +1205,12 @@ export default function CafeLanding() {
                       bankCode={paymentInfo.bank_code}
                       amount={paymentInfo.amount}
                       transferContent={paymentInfo.transfer_content}
-                      accentColor="#D4A843"
+                      accentColor="#E85D04"
                     />
                   )}
 
-                  <div className="mt-4 p-4 rounded-lg text-sm text-gray-400 leading-relaxed bg-[#D4A843]/5 border border-[#D4A843]/10">
-                    <span className="text-[#D4A843] font-medium">
+                  <div className="mt-4 p-4 rounded-lg text-sm text-gray-400 leading-relaxed bg-[#E85D04]/5 border border-[#E85D04]/10">
+                    <span className="text-[#E85D04] font-medium">
                       ⚡ Tự động xác nhận
                     </span>{" "}
                     — Sau khi chuyển khoản, hệ thống sẽ tự động mở khoá tài
@@ -1244,7 +1244,7 @@ export default function CafeLanding() {
                       <strong className="text-white">Đăng nhập</strong> tại{" "}
                       <Link
                         href="/login"
-                        className="text-[#D4A843] underline font-medium"
+                        className="text-[#E85D04] underline font-medium"
                       >
                         doanhnghiep1nguoi.online/login
                       </Link>{" "}

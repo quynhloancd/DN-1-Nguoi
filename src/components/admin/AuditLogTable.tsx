@@ -214,7 +214,7 @@ export default function AuditLogTable() {
           <select
             value={actionFilter}
             onChange={(e) => setActionFilter(e.target.value)}
-            className="bg-[#1a1a1a] border border-[#2a2a2a] text-white text-xs rounded-lg px-3 py-2 focus:outline-none focus:border-[#D4A843]/50 transition-colors"
+            className="bg-[#1a1a1a] border border-[#2a2a2a] text-white text-xs rounded-lg px-3 py-2 focus:outline-none focus:border-[#E85D04]/50 transition-colors"
           >
             {ACTION_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -232,7 +232,7 @@ export default function AuditLogTable() {
             value={dateFrom}
             onChange={(e) => setDateFrom(e.target.value)}
             placeholder="Từ ngày"
-            className="bg-[#1a1a1a] border border-[#2a2a2a] text-white text-xs rounded-lg px-3 py-2 focus:outline-none focus:border-[#D4A843]/50 transition-colors"
+            className="bg-[#1a1a1a] border border-[#2a2a2a] text-white text-xs rounded-lg px-3 py-2 focus:outline-none focus:border-[#E85D04]/50 transition-colors"
           />
           <span className="text-gray-500 text-xs">-</span>
           <input
@@ -240,7 +240,7 @@ export default function AuditLogTable() {
             value={dateTo}
             onChange={(e) => setDateTo(e.target.value)}
             placeholder="Đến ngày"
-            className="bg-[#1a1a1a] border border-[#2a2a2a] text-white text-xs rounded-lg px-3 py-2 focus:outline-none focus:border-[#D4A843]/50 transition-colors"
+            className="bg-[#1a1a1a] border border-[#2a2a2a] text-white text-xs rounded-lg px-3 py-2 focus:outline-none focus:border-[#E85D04]/50 transition-colors"
           />
         </div>
 
@@ -281,7 +281,7 @@ export default function AuditLogTable() {
                   <td colSpan={5} className="text-center py-12">
                     <Loader2
                       size={20}
-                      className="animate-spin text-[#D4A843] mx-auto"
+                      className="animate-spin text-[#E85D04] mx-auto"
                     />
                     <p className="text-gray-500 text-xs mt-2">
                       Đang tải...
@@ -407,7 +407,7 @@ export default function AuditLogTable() {
                   disabled={loading}
                   className={`w-8 h-8 rounded-lg text-xs font-medium transition-colors ${
                     pageNum === page
-                      ? "bg-[#D4A843]/15 text-[#D4A843] border border-[#D4A843]/30"
+                      ? "bg-[#E85D04]/15 text-[#E85D04] border border-[#E85D04]/30"
                       : "border border-[#2a2a2a] bg-[#1a1a1a] text-gray-400 hover:text-white hover:border-[#3a3a3a]"
                   }`}
                 >

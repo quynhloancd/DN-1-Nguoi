@@ -130,7 +130,7 @@ export default async function PerformancePage({
       label: "Tổng doanh thu",
       value: formatVND(totalRevenue),
       icon: DollarSign,
-      color: "#D4A843",
+      color: "#E85D04",
     },
     {
       label: "Tỷ lệ chuyển đổi TB",
@@ -223,7 +223,7 @@ export default async function PerformancePage({
         <div className="card-dark overflow-hidden">
           <div className="flex items-center justify-between p-5 border-b border-[#2a2a2a]">
             <div className="flex items-center gap-2">
-              <Trophy size={16} className="text-[#D4A843]" />
+              <Trophy size={16} className="text-[#E85D04]" />
               <h3 className="font-semibold text-white">Bảng xếp hạng</h3>
             </div>
             <span className="text-xs text-gray-500">
@@ -286,7 +286,7 @@ export default async function PerformancePage({
                               >
                                 <Trophy
                                   size={14}
-                                  className="text-[#D4A843]"
+                                  className="text-[#E85D04]"
                                 />
                               </div>
                             ) : (
@@ -304,14 +304,14 @@ export default async function PerformancePage({
                               <img
                                 src={rep.rep_avatar}
                                 alt={rep.rep_name}
-                                className={`w-8 h-8 rounded-full object-cover ring-2 ${isTop ? "ring-[#D4A843]/40" : "ring-transparent"}`}
+                                className={`w-8 h-8 rounded-full object-cover ring-2 ${isTop ? "ring-[#E85D04]/40" : "ring-transparent"}`}
                               />
                             ) : (
                               <div
                                 className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white"
                                 style={{
                                   background: isTop
-                                    ? "linear-gradient(135deg, #D4A843, #b8922e)"
+                                    ? "linear-gradient(135deg, #E85D04, #b8922e)"
                                     : "linear-gradient(135deg, #3b82f6, #1d4ed8)",
                                 }}
                               >
@@ -322,13 +322,13 @@ export default async function PerformancePage({
                               <p
                                 className="font-medium text-white text-sm"
                                 style={{
-                                  color: isTop ? "#D4A843" : undefined,
+                                  color: isTop ? "#E85D04" : undefined,
                                 }}
                               >
                                 {rep.rep_name}
                               </p>
                               {isTop && (
-                                <p className="text-[10px] text-[#D4A843] opacity-70">
+                                <p className="text-[10px] text-[#E85D04] opacity-70">
                                   Top performer
                                 </p>
                               )}
@@ -437,7 +437,7 @@ export default async function PerformancePage({
         {reps.length > 0 && (
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <TrendingUp size={16} className="text-[#D4A843]" />
+              <TrendingUp size={16} className="text-[#E85D04]" />
               <h3 className="font-semibold text-white">
                 Chi tiết từng thành viên
               </h3>
@@ -467,7 +467,7 @@ export default async function PerformancePage({
                           style={{
                             background:
                               idx === 0
-                                ? "linear-gradient(135deg, #D4A843, #b8922e)"
+                                ? "linear-gradient(135deg, #E85D04, #b8922e)"
                                 : "linear-gradient(135deg, #3b82f6, #1d4ed8)",
                           }}
                         >
@@ -483,7 +483,7 @@ export default async function PerformancePage({
                         </p>
                       </div>
                       {idx === 0 && (
-                        <Trophy size={16} className="text-[#D4A843] shrink-0" />
+                        <Trophy size={16} className="text-[#E85D04] shrink-0" />
                       )}
                     </div>
 
@@ -603,7 +603,7 @@ export default async function PerformancePage({
                     {/* Quick Stats Footer */}
                     <div className="flex items-center justify-between pt-3 border-t border-[#2a2a2a]">
                       <div className="text-center">
-                        <p className="text-sm font-bold text-[#D4A843]">
+                        <p className="text-sm font-bold text-[#E85D04]">
                           {formatVND(rep.total_revenue)}
                         </p>
                         <p className="text-[10px] text-gray-500">Revenue</p>

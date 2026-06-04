@@ -28,7 +28,7 @@ const categories: Category[] = [
   {
     name: "Templates Video AI",
     icon: Video,
-    color: "#D4A843",
+    color: "#E85D04",
     bg: "rgba(212,168,67,0.1)",
     resources: [
       {
@@ -123,7 +123,7 @@ export default function ResourcesPage() {
               className="w-9 h-9 rounded-xl flex items-center justify-center"
               style={{ background: "rgba(212,168,67,0.1)" }}
             >
-              <FileText size={18} className="text-[#D4A843]" />
+              <FileText size={18} className="text-[#E85D04]" />
             </div>
             <div>
               <h2 className="text-lg font-bold text-white">
