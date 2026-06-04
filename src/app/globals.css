@@ -40,14 +40,14 @@ body {
 /* ─── Custom component classes ─── */
 
 .card-dark {
-  background-color: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background-color: #111111;
+  border: 1px solid #1f1f1f;
   border-radius: 0.75rem;
 }
 
 .stat-card {
-  background-color: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background-color: #111111;
+  border: 1px solid #1f1f1f;
   border-radius: 0.75rem;
   padding: 20px;
 }
