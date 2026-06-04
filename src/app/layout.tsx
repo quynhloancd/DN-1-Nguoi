@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: `${siteConfig.owner.name}, AI workflow, n8n automation, ứng dụng AI, workflow tự động hoá, doanh nghiệp 1 người, AI không cần code, tiết kiệm thời gian AI, ${siteConfig.shortName}`,
   manifest: "/manifest.json",
-  metadataBase: new URL(getBaseUrl()),
+  metadataBase: (() => { try { return new URL(getBaseUrl()); } catch { return new URL("https://doanhnghiep1nguoi.online"); } })(),
   alternates: {
     types: {
       "application/rss+xml": "/feed.xml",

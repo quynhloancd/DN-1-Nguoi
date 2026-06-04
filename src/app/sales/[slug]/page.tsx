@@ -30,41 +30,45 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const supabase = await createClient();
-  const { data: product } = await supabase
-    .from("products")
-    .select("title, description, thumbnail")
-    .eq("slug", slug)
-    .eq("status", "published")
-    .single();
+  try {
+    const supabase = await createClient();
+    const { data: product } = await supabase
+      .from("products")
+      .select("title, description, thumbnail")
+      .eq("slug", slug)
+      .eq("status", "published")
+      .single();
 
-  if (!product) return { title: "Khoá học không tồn tại" };
+    if (!product) return { title: "Khoá học không tồn tại" };
 
-  const title = `${product.title} — ${siteConfig.name}`;
-  const description =
-    product.description ?? `Khoá học ${product.title} từ ${siteConfig.owner.name}`;
+    const title = `${product.title} — ${siteConfig.name}`;
+    const description =
+      product.description ?? `Khoá học ${product.title} từ ${siteConfig.owner.name}`;
 
-  return {
-    title,
-    description,
-    openGraph: {
+    return {
       title,
       description,
-      siteName: siteConfig.name,
-      locale: "vi_VN",
-      type: "website",
-      images: product.thumbnail ? [product.thumbnail] : undefined,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: product.thumbnail ? [product.thumbnail] : undefined,
-    },
-    alternates: {
-      canonical: `${getBaseUrl()}/sales/${slug}`,
-    },
-  };
+      openGraph: {
+        title,
+        description,
+        siteName: siteConfig.name,
+        locale: "vi_VN",
+        type: "website",
+        images: product.thumbnail ? [product.thumbnail] : undefined,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images: product.thumbnail ? [product.thumbnail] : undefined,
+      },
+      alternates: {
+        canonical: `${getBaseUrl()}/sales/${slug}`,
+      },
+    };
+  } catch {
+    return { title: `Khoá học — ${siteConfig.name}` };
+  }
 }
 
 /* ─── Types ─── */

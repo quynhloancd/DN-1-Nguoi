@@ -95,7 +95,8 @@ export function getZaloPhone(): string {
  * Never returns a trailing slash.
  */
 export function getBaseUrl(): string {
-  const envUrl = process.env.NEXT_PUBLIC_APP_URL;
-  if (envUrl) return envUrl.replace(/\/$/, "");
-  return `https://${siteConfig.domain}`;
+  const envUrl = process.env.NEXT_PUBLIC_APP_URL?.trim();
+  if (envUrl && envUrl.startsWith("http")) return envUrl.replace(/\/$/, "");
+  const domain = siteConfig.domain?.trim() || "doanhnghiep1nguoi.online";
+  return `https://${domain}`;
 }
