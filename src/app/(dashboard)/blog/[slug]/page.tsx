@@ -20,14 +20,18 @@ import RelatedPosts from "@/components/blog/RelatedPosts";
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
-  const { createAdminClient } = await import("@/lib/supabase/server");
-  const supabase = await createAdminClient();
-  const { data: posts } = await supabase
-    .from("blog_posts")
-    .select("slug")
-    .eq("status", "published");
-
-  return (posts || []).map((p) => ({ slug: p.slug }));
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return [];
+  try {
+    const { createAdminClient } = await import("@/lib/supabase/server");
+    const supabase = await createAdminClient();
+    const { data: posts } = await supabase
+      .from("blog_posts")
+      .select("slug")
+      .eq("status", "published");
+    return (posts || []).map((p) => ({ slug: p.slug }));
+  } catch {
+    return [];
+  }
 }
 
 // ---------------------------------------------------------------------------

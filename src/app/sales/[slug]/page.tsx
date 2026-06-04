@@ -6,18 +6,20 @@ import { siteConfig, getBaseUrl } from "@/lib/site-config";
 import SalesPageTemplate from "@/components/sales/SalesPageTemplate";
 import PublicHeader from "@/components/layout/PublicHeader";
 
-export const revalidate = 3600;
-
 /* ─── Static Params ─── */
 
 export async function generateStaticParams() {
-  const supabase = await createAdminClient();
-  const { data: products } = await supabase
-    .from("products")
-    .select("slug")
-    .eq("status", "published");
-
-  return (products || []).map((p) => ({ slug: p.slug }));
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return [];
+  try {
+    const supabase = await createAdminClient();
+    const { data: products } = await supabase
+      .from("products")
+      .select("slug")
+      .eq("status", "published");
+    return (products || []).map((p) => ({ slug: p.slug }));
+  } catch {
+    return [];
+  }
 }
 
 /* ─── Metadata ─── */
