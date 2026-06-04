@@ -5,10 +5,6 @@ import { usePathname } from "next/navigation";
 
 // Routes where the cookie banner should never appear (sales / checkout pages)
 const HIDE_ON_PATHS = [
-  "/hocchuaxongtiendave",
-  "/updateveo3.1",
-  "/updateveo3",
-  "/slowenglish",
   "/sanphamso",
   "/cafe",
   "/weballinone",
