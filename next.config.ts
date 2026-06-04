@@ -2,8 +2,11 @@ import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
 
 // Derive Supabase hostname from env so it's not hardcoded
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
-const supabaseHostname = supabaseUrl ? new URL(supabaseUrl).hostname : "";
+const supabaseUrl = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").trim();
+const supabaseHostname = (() => {
+  try { return supabaseUrl && supabaseUrl.startsWith("https://") ? new URL(supabaseUrl).hostname : ""; }
+  catch { return ""; }
+})();
 
 // CSP report URI — configurable via env, defaults to empty (disables reporting)
 const cspReportUri = process.env.CSP_REPORT_URI ?? "";
