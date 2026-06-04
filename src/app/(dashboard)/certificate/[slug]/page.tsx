@@ -36,18 +36,22 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const supabase = await createClient();
-  const { data: product } = await supabase
-    .from("products")
-    .select("title")
-    .eq("slug", slug)
-    .single();
-
-  return {
-    title: product
-      ? `Chứng chỉ - ${product.title}`
-      : "Chứng chỉ hoàn thành",
-  };
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
+    return { title: "Chứng chỉ hoàn thành" };
+  }
+  try {
+    const supabase = await createClient();
+    const { data: product } = await supabase
+      .from("products")
+      .select("title")
+      .eq("slug", slug)
+      .single();
+    return {
+      title: product ? `Chứng chỉ - ${product.title}` : "Chứng chỉ hoàn thành",
+    };
+  } catch {
+    return { title: "Chứng chỉ hoàn thành" };
+  }
 }
 
 // ─── Page ────────────────────────────────────────────────────────────────────

@@ -142,26 +142,30 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const supabase = await createClient();
-  const { data: product } = await supabase
-    .from("products")
-    .select("title, description, thumbnail")
-    .eq("slug", slug)
-    .single();
+  try {
+    const supabase = await createClient();
+    const { data: product } = await supabase
+      .from("products")
+      .select("title, description, thumbnail")
+      .eq("slug", slug)
+      .single();
 
-  if (!product) return { title: "Khoá học không tồn tại" };
-  return {
-    title: `${product.title} — ${siteConfig.name}`,
-    description: product.description ?? undefined,
-    alternates: {
-      canonical: `${getBaseUrl()}/courses/${slug}`,
-    },
-    openGraph: {
+    if (!product) return { title: "Khoá học không tồn tại" };
+    return {
       title: `${product.title} — ${siteConfig.name}`,
       description: product.description ?? undefined,
-      images: product.thumbnail ? [product.thumbnail] : undefined,
-    },
-  };
+      alternates: {
+        canonical: `${getBaseUrl()}/courses/${slug}`,
+      },
+      openGraph: {
+        title: `${product.title} — ${siteConfig.name}`,
+        description: product.description ?? undefined,
+        images: product.thumbnail ? [product.thumbnail] : undefined,
+      },
+    };
+  } catch {
+    return { title: `Khoá học — ${siteConfig.name}` };
+  }
 }
 
 /* ─── Page ─── */

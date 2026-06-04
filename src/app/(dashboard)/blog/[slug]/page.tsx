@@ -94,13 +94,20 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
 
-  const supabase = await createClient();
-  const { data: post } = await supabase
-    .from("blog_posts")
-    .select("title, excerpt, thumbnail, tags, published_at, slug, content, focus_keyword")
-    .eq("slug", slug)
-    .eq("status", "published")
-    .single();
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
+    return { title: "Bài viết — Doanh Nghiệp 1 Người" };
+  }
+  let post: { title: string; excerpt?: string; thumbnail?: string; tags?: string[]; published_at?: string; slug: string; content?: string; focus_keyword?: string } | null = null;
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("blog_posts")
+      .select("title, excerpt, thumbnail, tags, published_at, slug, content, focus_keyword")
+      .eq("slug", slug)
+      .eq("status", "published")
+      .single();
+    post = data;
+  } catch { /* no-op */ }
 
   if (!post) {
     return { title: "Bài viết không tồn tại — Doanh Nghiệp 1 Người" };
