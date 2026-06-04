@@ -26,7 +26,7 @@ export const siteConfig = {
   owner: {
     name: env("NEXT_PUBLIC_OWNER_NAME", "Thiên Huệ AI"),
     bio: env("NEXT_PUBLIC_OWNER_BIO", "Chuyên gia AI Workflow cho người kinh doanh & đi làm 35-50 tuổi"),
-    avatar: env("NEXT_PUBLIC_OWNER_AVATAR", "/images/about/portrait.jpg"),
+    avatar: env("NEXT_PUBLIC_OWNER_AVATAR", "/images/logo.png"),
   },
 
   // ─── Colors (CSS values) ───

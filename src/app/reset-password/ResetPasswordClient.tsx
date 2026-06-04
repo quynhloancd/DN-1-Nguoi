@@ -99,8 +99,8 @@ function ResetPasswordForm() {
     return (
       <div className="w-full max-w-md text-center">
         <img
-          src="/images/about/portrait.jpg" alt="Thiên Huệ"
-          className="w-14 h-14 rounded-2xl mb-4 object-cover inline-block"
+          src="/images/logo.png" alt="Thiên Huệ AI"
+          className="w-14 h-14 rounded-2xl mb-4 object-contain inline-block"
         />
         <h1 className="text-2xl font-bold text-white mb-2">Đang xác thực...</h1>
         <p className="text-gray-400 text-sm">Vui lòng đợi trong giây lát</p>
@@ -168,8 +168,8 @@ function ResetPasswordForm() {
       {/* Logo */}
       <div className="text-center mb-8">
         <img
-          src="/images/about/portrait.jpg" alt="Thiên Huệ"
-          className="w-14 h-14 rounded-2xl mb-4 object-cover inline-block"
+          src="/images/logo.png" alt="Thiên Huệ AI"
+          className="w-14 h-14 rounded-2xl mb-4 object-contain inline-block"
         />
         <h1 className="text-2xl font-bold text-white">Đặt lại mật khẩu</h1>
         <p className="text-gray-400 mt-1 text-sm">Nhập mật khẩu mới cho tài khoản của bạn</p>
