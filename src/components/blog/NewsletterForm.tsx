@@ -42,7 +42,7 @@ export default function NewsletterForm() {
   return (
     <div
       className="card-dark p-6 text-center"
-      style={{ borderColor: "rgba(212,168,67,0.2)" }}
+      style={{ borderColor: "rgba(232,93,4,0.25)" }}
     >
       <div className="text-2xl mb-3">{"📬"}</div>
       <h3 className="font-bold text-white mb-1">

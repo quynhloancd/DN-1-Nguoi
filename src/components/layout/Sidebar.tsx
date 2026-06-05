@@ -416,7 +416,7 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
               />
               <div className="flex-1 min-w-0">
                 <div className="text-sm font-medium text-white truncate">{displayName}</div>
-                <div className="text-[11px] text-gray-500 truncate">{email || "Đang tải..."}</div>
+                {email && <div className="text-[11px] text-gray-500 truncate">{email}</div>}
               </div>
             </div>
             <form action={signOut}>
