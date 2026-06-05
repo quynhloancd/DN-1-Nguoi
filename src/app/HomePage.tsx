@@ -189,12 +189,11 @@ export default function HomePage() {
   const pad = (n: number) => n.toString().padStart(2, "0");
 
   const navLinks = [
-    { label: "Khoá học", href: "#courses" },
     { label: "Lộ trình", href: "#roadmap" },
-    { label: "Học viên", href: "#testimonials" },
+    { label: "Sản phẩm", href: "#courses" },
+    { label: "Khoá học", href: "/courses" },
     { label: "Blog", href: "/blog" },
     { label: "Cộng đồng", href: "/community" },
-    { label: "Tư vấn 1-1", href: "/consulting" },
   ];
 
   return (
