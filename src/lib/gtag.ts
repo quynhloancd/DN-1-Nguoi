@@ -50,12 +50,22 @@ export function trackPurchase(
 
 /**
  * Track a begin_checkout event (GA4 e-commerce).
+ * Reads UTM attribution from sessionStorage key "dk_utm" and appends to event.
  */
 export function trackBeginCheckout(value: number, items?: unknown[]) {
+  let utmData: Record<string, string> = {};
+  try {
+    const stored = typeof window !== "undefined" ? sessionStorage.getItem("dk_utm") : null;
+    if (stored) utmData = JSON.parse(stored);
+  } catch { /* ignore */ }
+
   event("begin_checkout", {
     value,
     currency: "VND",
     items,
+    ...(utmData.utm_source && { campaign_source: utmData.utm_source }),
+    ...(utmData.utm_medium && { campaign_medium: utmData.utm_medium }),
+    ...(utmData.utm_campaign && { campaign_name: utmData.utm_campaign }),
   });
 }
 
