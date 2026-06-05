@@ -113,11 +113,8 @@ function ResetPasswordForm() {
     return (
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div
-            className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4 text-2xl font-bold text-white"
-            style={{ background: "linear-gradient(135deg, #E85D04, #B8922E)" }}
-          >
-            ĐK
+          <div className="w-14 h-14 mb-4 inline-flex items-center justify-center">
+            <img src="/images/logo.png" alt="Thiên Huệ AI" className="w-14 h-14 rounded-2xl object-contain" />
           </div>
           <h1 className="text-2xl font-bold text-white">Đổi mật khẩu thành công!</h1>
           <p className="text-gray-400 mt-2 text-sm">
@@ -139,11 +136,8 @@ function ResetPasswordForm() {
     return (
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div
-            className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4 text-2xl font-bold text-white"
-            style={{ background: "linear-gradient(135deg, #E85D04, #B8922E)" }}
-          >
-            ĐK
+          <div className="w-14 h-14 mb-4 inline-flex items-center justify-center">
+            <img src="/images/logo.png" alt="Thiên Huệ AI" className="w-14 h-14 rounded-2xl object-contain" />
           </div>
           <h1 className="text-2xl font-bold text-white">Đặt lại mật khẩu</h1>
         </div>
@@ -232,8 +226,8 @@ export default function ResetPasswordPage() {
         fallback={
           <div className="w-full max-w-md text-center">
             <img
-              src="/images/about/portrait.jpg" alt="Thiên Huệ"
-              className="w-14 h-14 rounded-2xl mb-4 object-cover inline-block"
+              src="/images/logo.png" alt="Thiên Huệ AI"
+              className="w-14 h-14 rounded-2xl mb-4 object-contain inline-block"
             />
             <h1 className="text-2xl font-bold text-white mb-2">Đang tải...</h1>
           </div>

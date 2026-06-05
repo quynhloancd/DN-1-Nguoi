@@ -27,9 +27,9 @@ export default function SocialLoginButtons() {
     <div className="space-y-3">
       {/* Divider */}
       <div className="flex items-center gap-3 my-5">
-        <div className="flex-1 h-px bg-gray-200" />
+        <div className="flex-1 h-px bg-white/10" />
         <span className="text-xs text-gray-400 uppercase tracking-wide">hoặc</span>
-        <div className="flex-1 h-px bg-gray-200" />
+        <div className="flex-1 h-px bg-white/10" />
       </div>
 
       {/* Google */}
