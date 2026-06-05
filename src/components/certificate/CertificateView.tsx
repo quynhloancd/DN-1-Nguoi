@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useCallback } from "react";
-import { Download, Share2, Loader2, CheckCircle, Printer, ExternalLink } from "lucide-react";
+import { Share2, CheckCircle, Printer, ExternalLink } from "lucide-react";
 import { siteConfig, getBaseUrl } from "@/lib/site-config";
 
 interface CertificateViewProps {
@@ -26,30 +26,7 @@ export default function CertificateView({
   const courseName = rawCourseName.normalize("NFC");
   const instructorName = rawInstructorName.normalize("NFC");
   const certRef = useRef<HTMLDivElement>(null);
-  const [downloading, setDownloading] = useState(false);
   const [copied, setCopied] = useState(false);
-
-  const handleDownload = useCallback(async () => {
-    if (!certRef.current || downloading) return;
-    setDownloading(true);
-    try {
-      const html2canvas = (await import("html2canvas")).default;
-      const canvas = await html2canvas(certRef.current, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: null,
-        logging: false,
-      });
-      const link = document.createElement("a");
-      link.download = `certificate-${certificateId}.png`;
-      link.href = canvas.toDataURL("image/png");
-      link.click();
-    } catch (err) {
-      console.error("Download failed:", err);
-    } finally {
-      setDownloading(false);
-    }
-  }, [certificateId, downloading]);
 
   const handleShare = useCallback(() => {
     const url = window.location.href;
@@ -455,34 +432,16 @@ export default function CertificateView({
       {/* Action buttons */}
       <div className="flex items-center justify-center gap-3">
         <button
-          onClick={handleDownload}
-          disabled={downloading}
-          className="flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all disabled:opacity-50"
+          onClick={handlePrintPDF}
+          className="flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
           style={{
             background: "rgba(212,168,67,0.15)",
             color: "#E85D04",
             border: "1px solid rgba(212,168,67,0.4)",
           }}
         >
-          {downloading ? (
-            <Loader2 size={16} className="animate-spin" />
-          ) : (
-            <Download size={16} />
-          )}
-          {downloading ? "Đang tải..." : "Tải chứng chỉ PNG"}
-        </button>
-
-        <button
-          onClick={handlePrintPDF}
-          className="flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium transition-colors"
-          style={{
-            background: "#1f1f1f",
-            color: "#ccc",
-            border: "1px solid #333",
-          }}
-        >
           <Printer size={16} />
-          Tải PDF
+          Tải chứng chỉ (PDF/PNG)
         </button>
 
         <button

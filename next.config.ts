@@ -63,9 +63,7 @@ const nextConfig: NextConfig = {
               "default-src 'self'; " +
               // 'unsafe-inline' is required for Next.js inline scripts (style/script hydration).
               // 'wasm-unsafe-eval' is kept for WebAssembly modules (e.g. Cloudflare Turnstile).
-              // TODO: Remove 'unsafe-eval' when html2canvas is replaced or updated to not require eval
-              // Required by: html2canvas library used in CertificateView.tsx
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://challenges.cloudflare.com https://www.youtube.com https://connect.facebook.net https://www.googletagmanager.com; " +
+              "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://challenges.cloudflare.com https://www.youtube.com https://connect.facebook.net https://www.googletagmanager.com; " +
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
               `img-src 'self' data: blob: ${supabaseHostname ? `https://${supabaseHostname}` : ""} https://i.ytimg.com https://img.youtube.com; ` +
               "font-src 'self' data: https://fonts.gstatic.com; " +

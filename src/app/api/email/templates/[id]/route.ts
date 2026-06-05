@@ -74,7 +74,25 @@ export async function PUT(
     if (subject !== undefined) updates.subject = subject;
     if (html_content !== undefined) updates.html_content = html_content;
     if (text_content !== undefined) updates.text_content = text_content;
-    if (thumbnail_url !== undefined) updates.thumbnail_url = thumbnail_url;
+    if (thumbnail_url !== undefined) {
+      if (thumbnail_url !== null && thumbnail_url !== "") {
+        try {
+          const parsed = new URL(thumbnail_url);
+          const supabaseHost = process.env.NEXT_PUBLIC_SUPABASE_URL
+            ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).hostname
+            : "";
+          const allowed =
+            parsed.protocol === "https:" &&
+            (parsed.hostname === supabaseHost || parsed.hostname.endsWith(".supabase.co"));
+          if (!allowed) {
+            return NextResponse.json({ error: "thumbnail_url phải là URL ảnh từ Supabase Storage." }, { status: 400 });
+          }
+        } catch {
+          return NextResponse.json({ error: "thumbnail_url không hợp lệ." }, { status: 400 });
+        }
+      }
+      updates.thumbnail_url = thumbnail_url || null;
+    }
     if (is_active !== undefined) updates.is_active = is_active;
     if (variables !== undefined) updates.variables = variables;
 
