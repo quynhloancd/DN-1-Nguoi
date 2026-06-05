@@ -22,7 +22,7 @@ import {
 const courseSubNav = [
   { href: "/courses?cat=video", icon: Video, label: "Làm video", color: "#3b82f6" },
   { href: "/courses?cat=branding", icon: Globe, label: "Xây kênh & thương hiệu", color: "#a855f7" },
-  { href: "/courses?cat=business", icon: TrendingUp, label: "Kinh doanh & chuyển đổi", color: "#f59e0b" },
+  { href: "/courses?cat=business", icon: TrendingUp, label: "Kinh doanh & chuyển đổi", color: "#E85D04" },
   { href: "/courses?cat=personal_development", icon: Sparkles, label: "Phát triển bản thân", color: "#22c55e" },
 ];
 
@@ -301,7 +301,7 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
         {isStaff && (
           <div className="mt-6">
             {!isCompact && (
-              <div className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-widest text-[#f59e0b]">
+              <div className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-widest text-[#E85D04]">
                 {isAdmin ? "Admin" : "Quản lý"}
               </div>
             )}
@@ -357,7 +357,7 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
           target="_blank"
           rel="noopener noreferrer"
           className="block mx-3 mb-3 p-3 rounded-xl border border-[#E85D04]/20 hover:bg-[#1a1a1a] transition-colors"
-          style={{ background: "rgba(212,168,67,0.06)" }}
+          style={{ background: "rgba(232,93,4,0.08)" }}
         >
           <div className="flex items-center gap-2 mb-1.5">
             <Star size={14} className="text-[#E85D04]" />
@@ -373,7 +373,7 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
         <div className="mx-3 mb-2 px-2">
           <div className="flex items-center justify-between text-[10px] text-gray-500 mb-1">
             <span className="flex items-center gap-1">
-              <Zap size={10} className="text-[#f59e0b]" />
+              <Zap size={10} className="text-[#E85D04]" />
               Level {profile.level}
             </span>
             <span
