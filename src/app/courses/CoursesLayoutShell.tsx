@@ -16,7 +16,7 @@ export default function CoursesLayoutShell({
     <MobileSidebarProvider>
       <div
         className="flex h-screen overflow-hidden"
-        style={{ background: "#0a0a0a" }}
+        style={{ background: "#F8F9FA" }}
       >
         <Sidebar
           collapsed={collapsed}

@@ -19,7 +19,7 @@ export default async function CoursesLayout({
 
   /* ── Public → lightweight header ── */
   return (
-    <div className="min-h-screen" style={{ background: "#0a0a0a" }}>
+    <div className="min-h-screen" style={{ background: "#F8F9FA" }}>
       <PublicHeader />
       <main>{children}</main>
     </div>
