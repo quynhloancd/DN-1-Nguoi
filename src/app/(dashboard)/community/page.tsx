@@ -776,25 +776,25 @@ export default function CommunityPage() {
                       <div className="absolute left-0 bottom-full mb-2 z-20 bg-[#F0F1F3] border border-[#E5E7EB] rounded-xl shadow-lg overflow-hidden min-w-[180px]">
                         <button
                           onClick={() => handleShare(post.id, "copy")}
-                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-300 hover:bg-white/5 hover:text-[#1B2A4A] transition-colors">
+                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-[#1B2A4A] transition-colors">
                           {copiedLink ? <Check size={14} className="text-green-400" /> : <Copy size={14} />}
                           {copiedLink ? "Đã copy!" : "Sao chép liên kết"}
                         </button>
                         <button
                           onClick={() => handleShare(post.id, "facebook")}
-                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-300 hover:bg-white/5 hover:text-[#1B2A4A] transition-colors">
+                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-[#1B2A4A] transition-colors">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                           Facebook
                         </button>
                         <button
                           onClick={() => handleShare(post.id, "x")}
-                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-300 hover:bg-white/5 hover:text-[#1B2A4A] transition-colors">
+                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-[#1B2A4A] transition-colors">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                           X (Twitter)
                         </button>
                         <button
                           onClick={() => handleShare(post.id, "zalo")}
-                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-300 hover:bg-white/5 hover:text-[#1B2A4A] transition-colors">
+                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-[#1B2A4A] transition-colors">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 14.163c-.18.36-.66.66-1.14.66H9.168c-.66 0-1.2-.36-1.32-.9-.12-.36 0-.78.3-1.08l4.56-5.1H9.468c-.42 0-.78-.36-.78-.78s.36-.78.78-.78h6.12c.48 0 .9.24 1.08.66.18.36.06.84-.24 1.14l-4.56 5.1h4.56c.42 0 .78.36.78.78.06.12-.06.24-.06.3z"/></svg>
                           Zalo
                         </button>
@@ -834,7 +834,7 @@ export default function CommunityPage() {
                             onChange={() => setReportReason(r.value)}
                             className="accent-[#E85D04]"
                           />
-                          <span className="text-xs text-gray-300">{r.label}</span>
+                          <span className="text-xs text-gray-600">{r.label}</span>
                         </label>
                       ))}
                     </div>
