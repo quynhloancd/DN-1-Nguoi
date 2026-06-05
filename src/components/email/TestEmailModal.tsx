@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { X, Send, Loader2, Check, AlertCircle, Mail } from "lucide-react";
@@ -119,7 +119,7 @@ export default function TestEmailModal({
         {/* Body */}
         <div className="p-5 space-y-4">
           <div>
-            <label className="block text-xs font-medium text-gray-400 mb-1.5">
+            <label className="block text-xs font-medium text-gray-700 mb-1.5">
               Dia chi email nhan test
             </label>
             <input

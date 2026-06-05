@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import {
@@ -123,7 +123,7 @@ export default function BulkEnrollForm({
         {/* Email textarea */}
         <div>
           <div className="flex items-center justify-between mb-1.5">
-            <label className="text-xs text-gray-400 font-medium">
+            <label className="text-xs text-gray-700 font-medium">
               Danh sách email
             </label>
             {emailCount > 0 && (
@@ -148,7 +148,7 @@ export default function BulkEnrollForm({
         {/* Course selection */}
         <div>
           <div className="flex items-center justify-between mb-2">
-            <label className="text-xs text-gray-400 font-medium">
+            <label className="text-xs text-gray-700 font-medium">
               Chọn khoá học{" "}
               <span className="text-gray-500">(có thể chọn nhiều)</span>
             </label>

@@ -99,7 +99,7 @@ function CourseCard({
     ? { className: "card-dark overflow-hidden flex flex-col opacity-80 cursor-default" }
     : {
         href: `/courses/${course.slug}`,
-        className: "card-dark overflow-hidden flex flex-col hover:ring-1 hover:ring-white/10 transition-all group",
+        className: "card-dark overflow-hidden flex flex-col hover:ring-1 hover:ring-[#E85D04]/20 hover:shadow-md transition-all group",
       };
 
   return (
@@ -187,7 +187,7 @@ function CourseCard({
         <div className="flex-1" />
 
         {/* Price + CTA */}
-        <div className="flex items-center justify-between mt-auto pt-3" style={{ borderTop: "1px solid #222" }}>
+        <div className="flex items-center justify-between mt-auto pt-3" style={{ borderTop: "1px solid #E5E7EB" }}>
           <div>
             {isComingSoon ? (
               <span className="text-xs text-gray-500 italic">Đang chuẩn bị</span>

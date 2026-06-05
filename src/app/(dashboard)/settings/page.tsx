@@ -143,18 +143,18 @@ function ProfileTab({
     return (
       <div className="space-y-6">
         <div className="card-dark p-6 animate-pulse">
-          <div className="h-5 w-32 bg-[#2a2a2a] rounded mb-4" />
+          <div className="h-5 w-32 bg-gray-200 rounded mb-4" />
           <div className="flex items-center gap-5">
-            <div className="w-20 h-20 rounded-full bg-[#2a2a2a]" />
-            <div className="h-8 w-24 bg-[#2a2a2a] rounded" />
+            <div className="w-20 h-20 rounded-full bg-gray-200" />
+            <div className="h-8 w-24 bg-gray-200 rounded" />
           </div>
         </div>
         <div className="card-dark p-6 animate-pulse">
-          <div className="h-5 w-40 bg-[#2a2a2a] rounded mb-4" />
+          <div className="h-5 w-40 bg-gray-200 rounded mb-4" />
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="h-10 bg-[#2a2a2a] rounded" />
-            <div className="h-10 bg-[#2a2a2a] rounded" />
-            <div className="h-10 bg-[#2a2a2a] rounded" />
+            <div className="h-10 bg-gray-200 rounded" />
+            <div className="h-10 bg-gray-200 rounded" />
+            <div className="h-10 bg-gray-200 rounded" />
           </div>
         </div>
       </div>
@@ -195,7 +195,7 @@ function ProfileTab({
             </div>
           )}
           <div>
-            <label htmlFor="avatarUpload" className="px-3 py-1.5 rounded-lg text-sm font-medium mb-2 inline-flex cursor-pointer hover:bg-[#333] transition-colors"
+            <label htmlFor="avatarUpload" className="px-3 py-1.5 rounded-lg text-sm font-medium mb-2 inline-flex cursor-pointer hover:bg-gray-100 transition-colors"
               style={{ background: "#E5E7EB", color: "#9ca3af" }}>
               {uploadingAvatar ? "Đang tải..." : "Tải ảnh lên"}
               <input id="avatarUpload" type="file" accept="image/*" className="hidden" onChange={handleAvatarUpload} disabled={uploadingAvatar} />
@@ -332,7 +332,7 @@ function ProfileTab({
               Liên kết tài khoản Zalo để nhận thông báo đơn hàng, bài học mới và nhắc nhở học tập qua Zalo.
             </p>
             <div className="p-3 rounded-lg text-xs text-gray-400 space-y-2" style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}>
-              <p className="font-medium text-gray-300">Cách liên kết:</p>
+              <p className="font-medium text-gray-700">Cách liên kết:</p>
               <ol className="list-decimal list-inside space-y-1">
                 <li>Mở Zalo và tìm kiếm OA &quot;Doanh Nghiệp 1 Người&quot;</li>
                 <li>Nhấn &quot;Theo dõi&quot; OA</li>
@@ -564,7 +564,7 @@ function SecurityTab() {
                   <button
                     type="button"
                     onClick={() => setShowOld(!showOld)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
                   >
                     {showOld ? <EyeOff size={15} /> : <Eye size={15} />}
                   </button>
@@ -585,7 +585,7 @@ function SecurityTab() {
                   <button
                     type="button"
                     onClick={() => setShowNew(!showNew)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
                   >
                     {showNew ? <EyeOff size={15} /> : <Eye size={15} />}
                   </button>
@@ -606,7 +606,7 @@ function SecurityTab() {
                   <button
                     type="button"
                     onClick={() => setShowConfirm(!showConfirm)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
                   >
                     {showConfirm ? <EyeOff size={15} /> : <Eye size={15} />}
                   </button>
@@ -665,7 +665,7 @@ function SecurityTab() {
               <button
                 onClick={() => { setShowDeleteConfirm(false); setDeleteError(null); }}
                 disabled={deleteLoading}
-                className="text-sm text-gray-400 hover:text-gray-200 px-4 py-2 rounded-lg transition-colors"
+                className="text-sm text-gray-500 hover:text-[#1B2A4A] px-4 py-2 rounded-lg transition-colors"
               >
                 Huỷ
               </button>

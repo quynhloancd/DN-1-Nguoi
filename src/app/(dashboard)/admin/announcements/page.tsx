@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState, useCallback } from "react";
 import TopBar from "@/components/layout/TopBar";
@@ -126,7 +126,7 @@ export default function AnnouncementsPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Title */}
             <div>
-              <label className="block text-xs text-gray-400 mb-1.5 font-medium">
+              <label className="block text-xs text-gray-700 mb-1.5 font-medium">
                 Tiêu đề <span className="text-red-400">*</span>
               </label>
               <input
@@ -142,7 +142,7 @@ export default function AnnouncementsPage() {
 
             {/* Message */}
             <div>
-              <label className="block text-xs text-gray-400 mb-1.5 font-medium">
+              <label className="block text-xs text-gray-700 mb-1.5 font-medium">
                 Nội dung <span className="text-red-400">*</span>
               </label>
               <textarea
@@ -158,7 +158,7 @@ export default function AnnouncementsPage() {
 
             {/* Link */}
             <div>
-              <label className="block text-xs text-gray-400 mb-1.5 font-medium flex items-center gap-1">
+              <label className="block text-xs text-gray-700 mb-1.5 font-medium flex items-center gap-1">
                 <Link2 size={12} /> Link đính kèm (tuỳ chọn)
               </label>
               <input

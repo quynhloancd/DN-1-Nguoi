@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -260,7 +260,7 @@ export default function AdminPromotionsPage() {
             </h3>
 
             <div>
-              <label className="text-xs text-gray-400 block mb-1">
+              <label className="text-xs text-gray-700 block mb-1">
                 Nhãn (badge)
               </label>
               <input
@@ -273,7 +273,7 @@ export default function AdminPromotionsPage() {
             </div>
 
             <div>
-              <label className="text-xs text-gray-400 block mb-1">
+              <label className="text-xs text-gray-700 block mb-1">
                 Nội dung quảng cáo *
               </label>
               <input
@@ -286,7 +286,7 @@ export default function AdminPromotionsPage() {
             </div>
 
             <div>
-              <label className="text-xs text-gray-400 block mb-1">
+              <label className="text-xs text-gray-700 block mb-1">
                 Đường dẫn (tuỳ chọn)
               </label>
               <input

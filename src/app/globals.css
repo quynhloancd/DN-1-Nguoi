@@ -146,18 +146,18 @@ body {
 .btn-gold:hover { background: linear-gradient(135deg, #FFA41C, #E8960A); }
 
 .input-dark {
-  background: #F8F9FA;
+  background: #FFFFFF;
   border: 1px solid #E5E7EB;
   color: #1B2A4A;
   border-radius: 8px;
-  padding: 8px 12px;
+  padding: 10px 14px;
   font-size: 14px;
   outline: none;
   transition: border 0.15s;
   width: 100%;
   font-family: inherit;
 }
-.input-dark:focus { border-color: #E85D04; }
+.input-dark:focus { border-color: #E85D04; outline: none; }
 .input-dark::placeholder { color: #9CA3AF; }
 
 .notification-bar {
@@ -177,6 +177,14 @@ body {
   background: #E85D04;
   border-radius: 99px;
   transition: width 0.3s ease;
+}
+
+/* ─── Form label contrast fix ─── */
+/* Ensure form labels are always readable on white backgrounds */
+form label,
+label[for],
+label[htmlFor] {
+  color: #374151;
 }
 
 /* Focus-visible — keyboard accessibility */

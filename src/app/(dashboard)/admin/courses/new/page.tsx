@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -157,7 +157,7 @@ export default function NewCoursePage() {
 
           {/* Tiêu đề */}
           <div>
-            <label className="block text-sm text-gray-400 mb-1.5">
+            <label className="block text-sm text-gray-700 mb-1.5">
               Tiêu đề <span className="text-red-400">*</span>
             </label>
             <input
@@ -172,7 +172,7 @@ export default function NewCoursePage() {
 
           {/* Đường dẫn (Slug) */}
           <div>
-            <label className="block text-sm text-gray-400 mb-1.5">
+            <label className="block text-sm text-gray-700 mb-1.5">
               Đường dẫn <span className="text-red-400">*</span>
             </label>
             <input
@@ -187,7 +187,7 @@ export default function NewCoursePage() {
 
           {/* Mô tả */}
           <div>
-            <label className="block text-sm text-gray-400 mb-1.5">
+            <label className="block text-sm text-gray-700 mb-1.5">
               Mô tả
             </label>
             <textarea
@@ -210,7 +210,7 @@ export default function NewCoursePage() {
           {/* Giá gốc & Giá khuyến mãi */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm text-gray-400 mb-1.5">
+              <label className="block text-sm text-gray-700 mb-1.5">
                 Giá gốc (VNĐ)
               </label>
               <input
@@ -222,7 +222,7 @@ export default function NewCoursePage() {
               />
             </div>
             <div>
-              <label className="block text-sm text-gray-400 mb-1.5">
+              <label className="block text-sm text-gray-700 mb-1.5">
                 Giá khuyến mãi (VNĐ)
               </label>
               <input
@@ -239,7 +239,7 @@ export default function NewCoursePage() {
           {/* Loại sản phẩm & Cấp độ yêu cầu */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm text-gray-400 mb-1.5">
+              <label className="block text-sm text-gray-700 mb-1.5">
                 Loại sản phẩm
               </label>
               <select
@@ -254,7 +254,7 @@ export default function NewCoursePage() {
               </select>
             </div>
             <div>
-              <label className="block text-sm text-gray-400 mb-1.5">
+              <label className="block text-sm text-gray-700 mb-1.5">
                 Cấp độ yêu cầu
               </label>
               <select
@@ -272,7 +272,7 @@ export default function NewCoursePage() {
           {/* Trạng thái & Thứ tự sắp xếp */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm text-gray-400 mb-1.5">
+              <label className="block text-sm text-gray-700 mb-1.5">
                 Trạng thái
               </label>
               <select
@@ -287,7 +287,7 @@ export default function NewCoursePage() {
               </select>
             </div>
             <div>
-              <label className="block text-sm text-gray-400 mb-1.5">
+              <label className="block text-sm text-gray-700 mb-1.5">
                 Thứ tự sắp xếp
               </label>
               <input
@@ -302,7 +302,7 @@ export default function NewCoursePage() {
 
           {/* Danh mục */}
           <div>
-            <label className="block text-sm text-gray-400 mb-1.5">
+            <label className="block text-sm text-gray-700 mb-1.5">
               Danh mục khoá học
             </label>
             <select
@@ -320,7 +320,7 @@ export default function NewCoursePage() {
 
           {/* Giảng viên */}
           <div>
-            <label className="text-sm text-gray-400 mb-1.5 flex items-center gap-1.5">
+            <label className="text-sm text-gray-700 mb-1.5 flex items-center gap-1.5">
               <GraduationCap size={13} />
               Giảng viên phụ trách
             </label>

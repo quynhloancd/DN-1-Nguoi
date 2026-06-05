@@ -1,4 +1,4 @@
-import TopBar from "@/components/layout/TopBar";
+﻿import TopBar from "@/components/layout/TopBar";
 import { createAdminClient } from "@/lib/supabase/server";
 import { createContact, importContacts, syncContactsFromOrders } from "@/lib/actions/crm";
 import {
@@ -338,7 +338,7 @@ export default async function CRMContactsPage({
           <form action={createContact}>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div>
-                <label className="text-xs text-gray-400 mb-1 block">Tên <span className="text-red-400">*</span></label>
+                <label className="text-xs text-gray-700 mb-1 block">Tên <span className="text-red-400">*</span></label>
                 <input
                   type="text"
                   name="full_name"
@@ -348,7 +348,7 @@ export default async function CRMContactsPage({
                 />
               </div>
               <div>
-                <label className="text-xs text-gray-400 mb-1 block">Email</label>
+                <label className="text-xs text-gray-700 mb-1 block">Email</label>
                 <input
                   type="email"
                   name="email"
@@ -357,7 +357,7 @@ export default async function CRMContactsPage({
                 />
               </div>
               <div>
-                <label className="text-xs text-gray-400 mb-1 block">SĐT</label>
+                <label className="text-xs text-gray-700 mb-1 block">SĐT</label>
                 <input
                   type="tel"
                   name="phone"
@@ -366,7 +366,7 @@ export default async function CRMContactsPage({
                 />
               </div>
               <div>
-                <label className="text-xs text-gray-400 mb-1 block">Công ty</label>
+                <label className="text-xs text-gray-700 mb-1 block">Công ty</label>
                 <input
                   type="text"
                   name="company"
@@ -375,7 +375,7 @@ export default async function CRMContactsPage({
                 />
               </div>
               <div>
-                <label className="text-xs text-gray-400 mb-1 block">Nguồn</label>
+                <label className="text-xs text-gray-700 mb-1 block">Nguồn</label>
                 <select name="source" className="input-dark w-full px-3 py-2 text-sm">
                   <option value="manual">Thủ công</option>
                   <option value="website">Website</option>
@@ -385,7 +385,7 @@ export default async function CRMContactsPage({
                 </select>
               </div>
               <div>
-                <label className="text-xs text-gray-400 mb-1 block">Ghi chú</label>
+                <label className="text-xs text-gray-700 mb-1 block">Ghi chú</label>
                 <input
                   type="text"
                   name="notes"

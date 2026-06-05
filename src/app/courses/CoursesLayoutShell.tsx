@@ -22,7 +22,7 @@ export default function CoursesLayoutShell({
           collapsed={collapsed}
           onToggle={() => setCollapsed(!collapsed)}
         />
-        <main className="flex-1 overflow-y-auto">{children}</main>
+        <main className="flex-1 overflow-y-auto bg-[#F8F9FA]">{children}</main>
         <AIAssistant />
       </div>
     </MobileSidebarProvider>

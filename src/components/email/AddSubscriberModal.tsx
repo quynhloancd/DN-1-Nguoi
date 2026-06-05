@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { X, Plus, Loader2 } from "lucide-react";
@@ -129,7 +129,7 @@ export default function AddSubscriberModal({
           )}
 
           <div>
-            <label className="block text-sm text-gray-400 mb-1.5">
+            <label className="block text-sm text-gray-700 mb-1.5">
               Email <span className="text-red-400">*</span>
             </label>
             <input
@@ -143,7 +143,7 @@ export default function AddSubscriberModal({
           </div>
 
           <div>
-            <label className="block text-sm text-gray-400 mb-1.5">
+            <label className="block text-sm text-gray-700 mb-1.5">
               Họ và tên
             </label>
             <input
@@ -156,7 +156,7 @@ export default function AddSubscriberModal({
           </div>
 
           <div>
-            <label className="block text-sm text-gray-400 mb-1.5">
+            <label className="block text-sm text-gray-700 mb-1.5">
               Số điện thoại
             </label>
             <input
@@ -169,7 +169,7 @@ export default function AddSubscriberModal({
           </div>
 
           <div>
-            <label className="block text-sm text-gray-400 mb-1.5">
+            <label className="block text-sm text-gray-700 mb-1.5">
               Tags <span className="text-gray-500 text-xs">(phân cách bằng dấu phẩy)</span>
             </label>
             <input
@@ -182,7 +182,7 @@ export default function AddSubscriberModal({
           </div>
 
           <div>
-            <label className="block text-sm text-gray-400 mb-1.5">
+            <label className="block text-sm text-gray-700 mb-1.5">
               Danh sách
             </label>
             <select

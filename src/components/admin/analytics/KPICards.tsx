@@ -62,9 +62,9 @@ function KPICard({ label, value, percentChange, icon, color }: CardConfig) {
           </span>
         )}
       </div>
-      <p className="text-gray-400 text-sm mb-1">{label}</p>
-      <p className="text-white text-xl font-bold">{value}</p>
-      <div className="mt-3 h-1 rounded-full bg-white/5 overflow-hidden">
+      <p className="text-gray-600 text-sm mb-1">{label}</p>
+      <p className="text-[#1B2A4A] text-xl font-bold">{value}</p>
+      <div className="mt-3 h-1 rounded-full bg-gray-100 overflow-hidden">
         <div
           className="h-full rounded-full transition-all duration-500"
           style={{
@@ -81,12 +81,12 @@ function SkeletonCard() {
   return (
     <div className="card-dark p-5 animate-pulse">
       <div className="flex items-center justify-between mb-3">
-        <div className="w-10 h-10 rounded-lg bg-white/10" />
-        <div className="w-12 h-4 rounded bg-white/10" />
+        <div className="w-10 h-10 rounded-lg bg-gray-100" />
+        <div className="w-12 h-4 rounded bg-gray-100" />
       </div>
-      <div className="w-20 h-4 rounded bg-white/10 mb-2" />
-      <div className="w-28 h-6 rounded bg-white/10" />
-      <div className="mt-3 h-1 rounded-full bg-white/5" />
+      <div className="w-20 h-4 rounded bg-gray-100 mb-2" />
+      <div className="w-28 h-6 rounded bg-gray-100" />
+      <div className="mt-3 h-1 rounded-full bg-gray-100" />
     </div>
   );
 }

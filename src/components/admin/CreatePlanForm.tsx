@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -150,7 +150,7 @@ export default function CreatePlanForm() {
         {/* Name + Slug */}
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-xs font-medium text-gray-400 mb-1.5">
+            <label className="block text-xs font-medium text-gray-700 mb-1.5">
               Tên gói
             </label>
             <input
@@ -167,7 +167,7 @@ export default function CreatePlanForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-medium text-gray-400 mb-1.5">
+            <label className="block text-xs font-medium text-gray-700 mb-1.5">
               Slug (tự động)
             </label>
             <input
@@ -187,7 +187,7 @@ export default function CreatePlanForm() {
 
         {/* Description */}
         <div>
-          <label className="block text-xs font-medium text-gray-400 mb-1.5">
+          <label className="block text-xs font-medium text-gray-700 mb-1.5">
             Mô tả
           </label>
           <input
@@ -206,7 +206,7 @@ export default function CreatePlanForm() {
         {/* Billing period + Tier */}
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-xs font-medium text-gray-400 mb-1.5">
+            <label className="block text-xs font-medium text-gray-700 mb-1.5">
               Chu kỳ thanh toán
             </label>
             <select
@@ -229,7 +229,7 @@ export default function CreatePlanForm() {
             </select>
           </div>
           <div>
-            <label className="block text-xs font-medium text-gray-400 mb-1.5">
+            <label className="block text-xs font-medium text-gray-700 mb-1.5">
               Tier cấp quyền
             </label>
             <select
@@ -254,7 +254,7 @@ export default function CreatePlanForm() {
         {/* Price + Original Price */}
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-xs font-medium text-gray-400 mb-1.5">
+            <label className="block text-xs font-medium text-gray-700 mb-1.5">
               Giá (VND)
             </label>
             <input
@@ -272,7 +272,7 @@ export default function CreatePlanForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-medium text-gray-400 mb-1.5">
+            <label className="block text-xs font-medium text-gray-700 mb-1.5">
               Giá gốc (VND, tuỳ chọn)
             </label>
             <input
@@ -292,7 +292,7 @@ export default function CreatePlanForm() {
 
         {/* Features */}
         <div>
-          <label className="block text-xs font-medium text-gray-400 mb-1.5">
+          <label className="block text-xs font-medium text-gray-700 mb-1.5">
             Tính năng (mỗi dòng 1 tính năng)
           </label>
           <textarea
@@ -310,7 +310,7 @@ export default function CreatePlanForm() {
 
         {/* Sort order */}
         <div className="w-1/2">
-          <label className="block text-xs font-medium text-gray-400 mb-1.5">
+          <label className="block text-xs font-medium text-gray-700 mb-1.5">
             Thứ tự hiển thị
           </label>
           <input

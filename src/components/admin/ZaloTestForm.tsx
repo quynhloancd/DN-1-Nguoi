@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { Send, CheckCircle, XCircle } from "lucide-react";
@@ -37,7 +37,7 @@ export default function ZaloTestForm({ adminZaloId }: ZaloTestFormProps) {
   return (
     <form onSubmit={handleSend} className="space-y-3">
       <div>
-        <label className="block text-xs text-gray-400 mb-1.5 font-medium">Noi dung tin nhan</label>
+        <label className="block text-xs text-gray-700 mb-1.5 font-medium">Noi dung tin nhan</label>
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useCallback, useRef, useMemo } from "react";
 import { useRouter } from "next/navigation";
@@ -432,7 +432,7 @@ export default function NewBlogPostPage() {
 
         {/* ── Title (always visible at top) ── */}
         <div className="card-dark p-5">
-          <label className="block text-xs font-medium text-gray-400 mb-1.5">
+          <label className="block text-xs font-medium text-gray-700 mb-1.5">
             Tiêu đề bài viết <span className="text-red-400">*</span>
           </label>
           <input
@@ -462,7 +462,7 @@ export default function NewBlogPostPage() {
 
         {/* ── Editor Section (with sticky toolbar) ── */}
         <div>
-          <label className="block text-xs font-medium text-gray-400 mb-2">
+          <label className="block text-xs font-medium text-gray-700 mb-2">
             Nội dung bài viết
           </label>
 
@@ -507,7 +507,7 @@ export default function NewBlogPostPage() {
 
               {/* ── Google Preview ── */}
               <div>
-                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">
                   Xem trước trên Google
                 </label>
                 <div className="rounded-lg p-4" style={{ background: "#fff" }}>
@@ -531,7 +531,7 @@ export default function NewBlogPostPage() {
 
               {/* ── Focus Keyword ── */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs font-medium text-gray-400 mb-1.5">
+                <label className="flex items-center gap-1.5 text-xs font-medium text-gray-700 mb-1.5">
                   <Target size={11} /> Từ khóa chính (Focus keyword)
                 </label>
                 <input
@@ -548,7 +548,7 @@ export default function NewBlogPostPage() {
               {/* ── Slug ── */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-gray-400 mb-1.5">
+                  <label className="block text-xs font-medium text-gray-700 mb-1.5">
                     Slug (URL)
                   </label>
                   <div className="flex items-center gap-2">
@@ -564,7 +564,7 @@ export default function NewBlogPostPage() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-gray-400 mb-1.5">
+                  <label className="block text-xs font-medium text-gray-700 mb-1.5">
                     Chủ đề
                   </label>
                   <input
@@ -578,7 +578,7 @@ export default function NewBlogPostPage() {
 
               {/* ── Meta description ── */}
               <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1.5">
+                <label className="block text-xs font-medium text-gray-700 mb-1.5">
                   Mô tả meta (SEO description)
                 </label>
                 <textarea
@@ -608,7 +608,7 @@ export default function NewBlogPostPage() {
               {/* ── Tags + Thumbnail ── */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="flex items-center gap-1.5 text-xs font-medium text-gray-400 mb-1.5">
+                  <label className="flex items-center gap-1.5 text-xs font-medium text-gray-700 mb-1.5">
                     <Tag size={11} /> Tags (phân cách bằng dấu phẩy)
                   </label>
                   <input
@@ -619,7 +619,7 @@ export default function NewBlogPostPage() {
                   />
                 </div>
                 <div>
-                  <label className="flex items-center gap-1.5 text-xs font-medium text-gray-400 mb-1.5">
+                  <label className="flex items-center gap-1.5 text-xs font-medium text-gray-700 mb-1.5">
                     <ImageIcon size={11} /> Ảnh thumbnail (tối đa 2MB)
                   </label>
                   <input
@@ -667,7 +667,7 @@ export default function NewBlogPostPage() {
 
               {/* ── Author Info ── */}
               <div>
-                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
+                <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-3">
                   <User size={11} className="inline mr-1" />
                   Thông tin tác giả
                 </label>
@@ -714,7 +714,7 @@ export default function NewBlogPostPage() {
 
               {/* ── SEO Analysis Checklist ── */}
               <div>
-                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
+                <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-3">
                   Phân tích SEO
                 </label>
                 <div className="space-y-1.5">

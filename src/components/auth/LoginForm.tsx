@@ -118,8 +118,8 @@ export default function LoginForm() {
           <p className="text-[#E85D04] font-medium mb-2">
             Email chưa được xác nhận
           </p>
-          <p className="text-gray-400 mb-3">
-            Vui lòng kiểm tra hộp thư <strong className="text-white">{unconfirmedEmail}</strong> và
+          <p className="text-gray-600 mb-3">
+            Vui lòng kiểm tra hộp thư <strong className="text-[#1B2A4A]">{unconfirmedEmail}</strong> và
             nhấn vào link xác nhận. Kiểm tra cả mục <strong>Spam / Junk</strong>.
           </p>
           {resendSuccess ? (

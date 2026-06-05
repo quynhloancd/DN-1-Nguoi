@@ -164,7 +164,7 @@ export default async function DashboardPage() {
                 >
                   <item.icon size={20} style={{ color: item.color }} />
                 </div>
-                <span className="text-[11px] text-gray-300 font-medium text-center leading-tight">{item.label}</span>
+                <span className="text-[11px] text-gray-600 font-medium text-center leading-tight">{item.label}</span>
               </Link>
             ))}
           </div>
@@ -189,7 +189,7 @@ export default async function DashboardPage() {
                     className="card-dark p-3 flex items-center gap-3 hover:bg-[#F0F1F3] transition-colors"
                   >
                     {/* Thumbnail */}
-                    <div className="w-12 h-12 rounded-lg bg-[#222] overflow-hidden shrink-0">
+                    <div className="w-12 h-12 rounded-lg bg-[#F0F1F3] overflow-hidden shrink-0">
                       {c.thumbnail ? (
                         <Image src={c.thumbnail} alt={c.title} width={48} height={48} className="w-full h-full object-cover" />
                       ) : (
@@ -202,7 +202,7 @@ export default async function DashboardPage() {
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium text-[#1B2A4A] truncate">{c.title}</p>
                       <div className="flex items-center gap-2 mt-1">
-                        <div className="flex-1 h-1.5 rounded-full bg-[#2a2a2a] overflow-hidden">
+                        <div className="flex-1 h-1.5 rounded-full bg-[#E5E7EB] overflow-hidden">
                           <div
                             className="h-full rounded-full transition-all"
                             style={{
@@ -230,7 +230,7 @@ export default async function DashboardPage() {
             href={siteConfig.socials.zalo}
             target="_blank"
             rel="noopener noreferrer"
-            className="card-dark p-4 border border-[#E85D04]/20 hover:bg-[#222] transition-all block"
+            className="card-dark p-4 border border-[#E85D04]/20 hover:bg-[#FFF3E0] transition-all block"
             style={{ background: "rgba(212,168,67,0.05)" }}
           >
             <div className="flex items-center gap-2 mb-1.5">
@@ -314,7 +314,7 @@ export default async function DashboardPage() {
                     href={`/courses/${c.slug}`}
                     className="card-dark p-4 flex items-center gap-4 hover:bg-[#F0F1F3] transition-colors group"
                   >
-                    <div className="w-14 h-14 rounded-lg bg-[#222] overflow-hidden shrink-0">
+                    <div className="w-14 h-14 rounded-lg bg-[#F0F1F3] overflow-hidden shrink-0">
                       {c.thumbnail ? (
                         <Image src={c.thumbnail} alt={c.title} width={56} height={56} className="w-full h-full object-cover" />
                       ) : (
@@ -326,7 +326,7 @@ export default async function DashboardPage() {
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium text-[#1B2A4A] truncate">{c.title}</p>
                       <div className="flex items-center gap-2 mt-1.5">
-                        <div className="flex-1 h-1.5 rounded-full bg-[#2a2a2a] overflow-hidden">
+                        <div className="flex-1 h-1.5 rounded-full bg-[#E5E7EB] overflow-hidden">
                           <div
                             className="h-full rounded-full transition-all"
                             style={{
@@ -361,7 +361,7 @@ export default async function DashboardPage() {
                 <Link
                   key={card.label}
                   href={card.href}
-                  className="card-dark p-4 hover:bg-[#222] transition-all duration-150 group cursor-pointer"
+                  className="card-dark p-4 hover:bg-[#F8F9FA] transition-all duration-150 group cursor-pointer"
                 >
                   <div
                     className="w-9 h-9 rounded-xl flex items-center justify-center mb-3"
@@ -383,7 +383,7 @@ export default async function DashboardPage() {
             href={siteConfig.socials.zalo}
             target="_blank"
             rel="noopener noreferrer"
-            className="card-dark p-5 border border-[#E85D04]/20 hover:bg-[#222] transition-all block"
+            className="card-dark p-5 border border-[#E85D04]/20 hover:bg-[#FFF3E0] transition-all block"
             style={{ background: "rgba(212,168,67,0.05)" }}
           >
             <div className="flex items-center gap-2 mb-2">
@@ -442,7 +442,7 @@ export default async function DashboardPage() {
                         <p className="text-sm text-[#1B2A4A]">
                           <span className="font-medium">{author}</span>
                           <span className="text-gray-400"> đã đăng: </span>
-                          <span className="text-gray-300">{preview}</span>
+                          <span className="text-gray-600">{preview}</span>
                         </p>
                         <p className="text-xs text-gray-400 mt-0.5">{ago}</p>
                       </div>

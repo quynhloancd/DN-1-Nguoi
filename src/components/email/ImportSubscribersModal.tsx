@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { X, Upload, FileText, Check, AlertTriangle, Loader2 } from "lucide-react";
@@ -406,7 +406,7 @@ export default function ImportSubscribersModal({
                     </h3>
                     <div className="grid grid-cols-3 gap-3">
                       <div>
-                        <label className="block text-xs text-gray-400 mb-1">
+                        <label className="block text-xs text-gray-700 mb-1">
                           Email <span className="text-red-400">*</span>
                         </label>
                         <select
@@ -428,7 +428,7 @@ export default function ImportSubscribersModal({
                         </select>
                       </div>
                       <div>
-                        <label className="block text-xs text-gray-400 mb-1">
+                        <label className="block text-xs text-gray-700 mb-1">
                           Tên
                         </label>
                         <select
@@ -450,7 +450,7 @@ export default function ImportSubscribersModal({
                         </select>
                       </div>
                       <div>
-                        <label className="block text-xs text-gray-400 mb-1">
+                        <label className="block text-xs text-gray-700 mb-1">
                           SĐT
                         </label>
                         <select
@@ -552,7 +552,7 @@ export default function ImportSubscribersModal({
 
                   {/* Target list */}
                   <div>
-                    <label className="block text-sm text-gray-400 mb-1.5">
+                    <label className="block text-sm text-gray-700 mb-1.5">
                       Thêm vào danh sách{" "}
                       <span className="text-gray-500 text-xs">(tuỳ chọn)</span>
                     </label>

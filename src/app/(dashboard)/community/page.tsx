@@ -719,7 +719,7 @@ export default function CommunityPage() {
                       <span className="text-sm font-semibold text-[#1B2A4A]">{fullName}</span>
                       {isVip && <span className="badge-gold text-[10px]">VIP</span>}
                     </div>
-                    <span className="text-xs text-gray-400">{formatCreatedAt(post.created_at)}</span>
+                    <span className="text-xs text-gray-500">{formatCreatedAt(post.created_at)}</span>
                   </div>
                 </div>
 
@@ -956,11 +956,11 @@ export default function CommunityPage() {
             {myProfile ? (
               <>
                 <div className="text-2xl font-bold text-[#E85D04] mb-1">{myProfile.xp.toLocaleString()} XP</div>
-                <div className="text-xs text-gray-400 mb-2">Level {myProfile.level} — {levelTitle(myProfile.level)}</div>
+                <div className="text-xs text-gray-600 mb-2">Level {myProfile.level} — {levelTitle(myProfile.level)}</div>
                 <div className="progress-bar">
                   <div className="progress-fill" style={{ width: `${Math.min(100, Math.round(((myProfile.xp - (myProfile.level - 1) * 200) / 200) * 100))}%` }} />
                 </div>
-                <div className="text-xs text-gray-400 mt-1">{Math.max(0, myProfile.level * 200 - myProfile.xp)} XP để lên Level {myProfile.level + 1}</div>
+                <div className="text-xs text-gray-600 mt-1">{Math.max(0, myProfile.level * 200 - myProfile.xp)} XP để lên Level {myProfile.level + 1}</div>
               </>
             ) : (
               <div className="space-y-2 animate-pulse">

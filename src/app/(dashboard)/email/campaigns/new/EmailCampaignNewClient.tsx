@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
@@ -360,7 +360,7 @@ export default function NewCampaignPage() {
             </h2>
 
             <div>
-              <label className="block text-xs font-medium text-gray-400 mb-1.5">Ten campaign *</label>
+              <label className="block text-xs font-medium text-gray-700 mb-1.5">Ten campaign *</label>
               <input
                 type="text"
                 value={name}
@@ -371,7 +371,7 @@ export default function NewCampaignPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-gray-400 mb-1.5">Subject line *</label>
+              <label className="block text-xs font-medium text-gray-700 mb-1.5">Subject line *</label>
               <input
                 type="text"
                 value={subject}
@@ -389,7 +389,7 @@ export default function NewCampaignPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1.5">Ten nguoi gui</label>
+                <label className="block text-xs font-medium text-gray-700 mb-1.5">Ten nguoi gui</label>
                 <input
                   type="text"
                   value={fromName}
@@ -398,7 +398,7 @@ export default function NewCampaignPage() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1.5">Email nguoi gui</label>
+                <label className="block text-xs font-medium text-gray-700 mb-1.5">Email nguoi gui</label>
                 <input
                   type="email"
                   value={fromEmail}
@@ -409,7 +409,7 @@ export default function NewCampaignPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-gray-400 mb-1.5">Reply-to email (tuy chon)</label>
+              <label className="block text-xs font-medium text-gray-700 mb-1.5">Reply-to email (tuy chon)</label>
               <input
                 type="email"
                 value={replyTo}
@@ -436,7 +436,7 @@ export default function NewCampaignPage() {
             ) : (
               <>
                 <div>
-                  <label className="block text-xs font-medium text-gray-400 mb-1.5">Chon danh sach</label>
+                  <label className="block text-xs font-medium text-gray-700 mb-1.5">Chon danh sach</label>
                   <select
                     value={listId}
                     onChange={(e) => setListId(e.target.value)}

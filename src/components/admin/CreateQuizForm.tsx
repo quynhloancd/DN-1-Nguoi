@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -288,7 +288,7 @@ export default function CreateQuizForm({ lessons }: CreateQuizFormProps) {
         <form onSubmit={handleSubmit} className="p-4 pt-0 space-y-4">
           {/* Lesson selector */}
           <div>
-            <label className="text-xs font-medium text-gray-400 mb-1 block">
+            <label className="text-xs font-medium text-gray-700 mb-1 block">
               Bài học
             </label>
             <select
@@ -309,7 +309,7 @@ export default function CreateQuizForm({ lessons }: CreateQuizFormProps) {
           {/* Title + pass score */}
           <div className="grid grid-cols-1 sm:grid-cols-[1fr_120px] gap-3">
             <div>
-              <label className="text-xs font-medium text-gray-400 mb-1 block">
+              <label className="text-xs font-medium text-gray-700 mb-1 block">
                 Tiêu đề Quiz
               </label>
               <input
@@ -321,7 +321,7 @@ export default function CreateQuizForm({ lessons }: CreateQuizFormProps) {
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-gray-400 mb-1 block">
+              <label className="text-xs font-medium text-gray-700 mb-1 block">
                 Điểm đạt (%)
               </label>
               <input

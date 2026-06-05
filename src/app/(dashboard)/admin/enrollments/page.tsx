@@ -1,4 +1,4 @@
-import TopBar from "@/components/layout/TopBar";
+﻿import TopBar from "@/components/layout/TopBar";
 import { redirect } from "next/navigation";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { grantCourseAccess, revokeCourseAccess } from "@/lib/actions/enrollment";
@@ -231,7 +231,7 @@ export default async function AdminEnrollmentsPage({
 
           <form action={grantCourseAccess} className="space-y-4">
             <div>
-              <label className="block text-xs text-gray-400 mb-1.5 font-medium">Email học viên</label>
+              <label className="block text-xs text-gray-700 mb-1.5 font-medium">Email học viên</label>
               <input
                 type="email"
                 name="email"
@@ -241,7 +241,7 @@ export default async function AdminEnrollmentsPage({
               />
             </div>
             <div>
-              <label className="block text-xs text-gray-400 mb-2 font-medium">
+              <label className="block text-xs text-gray-700 mb-2 font-medium">
                 Chọn khoá học <span className="text-gray-500">(có thể chọn nhiều)</span>
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">

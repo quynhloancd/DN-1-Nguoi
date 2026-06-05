@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -114,7 +114,7 @@ export default function CreateCouponForm() {
       <form onSubmit={handleSubmit} className="p-5 space-y-4">
         {/* Code */}
         <div>
-          <label className="block text-xs font-medium text-gray-400 mb-1.5">
+          <label className="block text-xs font-medium text-gray-700 mb-1.5">
             Mã giảm giá
           </label>
           <div className="flex gap-2">
@@ -146,7 +146,7 @@ export default function CreateCouponForm() {
         {/* Discount type + value */}
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-xs font-medium text-gray-400 mb-1.5">
+            <label className="block text-xs font-medium text-gray-700 mb-1.5">
               Loại giảm giá
             </label>
             <div className="flex gap-1.5">
@@ -185,7 +185,7 @@ export default function CreateCouponForm() {
             </div>
           </div>
           <div>
-            <label className="block text-xs font-medium text-gray-400 mb-1.5">
+            <label className="block text-xs font-medium text-gray-700 mb-1.5">
               Giá trị {discountType === "percent" ? "(%)" : "(VNĐ)"}
             </label>
             <input
@@ -208,7 +208,7 @@ export default function CreateCouponForm() {
         {/* Max uses + Min order */}
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-xs font-medium text-gray-400 mb-1.5">
+            <label className="block text-xs font-medium text-gray-700 mb-1.5">
               Số lượt sử dụng tối đa
             </label>
             <input
@@ -225,7 +225,7 @@ export default function CreateCouponForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-medium text-gray-400 mb-1.5">
+            <label className="block text-xs font-medium text-gray-700 mb-1.5">
               Đơn tối thiểu (VNĐ)
             </label>
             <input
@@ -245,7 +245,7 @@ export default function CreateCouponForm() {
 
         {/* Expiry */}
         <div>
-          <label className="block text-xs font-medium text-gray-400 mb-1.5">
+          <label className="block text-xs font-medium text-gray-700 mb-1.5">
             Ngày hết hạn (tuỳ chọn)
           </label>
           <input
