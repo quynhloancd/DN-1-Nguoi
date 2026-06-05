@@ -273,7 +273,7 @@ export async function POST(req: NextRequest) {
           await sendPurchaseConfirmation(
             authUser.user.email,
             profile?.full_name || "ban",
-            (products?.name as string) || "San pham",
+            (products?.title as string) || "San pham",
             order.amount,
             order.order_code
           ).catch((err) => console.error("[PayOS Webhook] Non-critical error:", err));

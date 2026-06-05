@@ -281,7 +281,7 @@ export async function POST(req: NextRequest) {
         product_id: order.product_id as string,
         order_id: order.id as string,
         source: "purchase",
-      });
+      }, { onConflict: "user_id,product_id" });
 
       if (enrollErr) {
         // Critical: order paid but enrollment failed — alert admin immediately

@@ -58,7 +58,7 @@ function baseTemplate(content: string, recipientEmail?: string) {
 <body>
   <div class="wrap">
     <div class="logo">
-      <div class="logo-icon">LĐK</div>
+      <div class="logo-icon">DN1</div>
       <div class="logo-text">Doanh Nghiệp 1 Người</div>
     </div>
     <div class="card">
