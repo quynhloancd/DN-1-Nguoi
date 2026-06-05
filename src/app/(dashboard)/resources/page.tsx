@@ -198,7 +198,7 @@ export default function ResourcesPage() {
                       Truy cập
                     </a>
                   ) : (
-                    <span className="inline-flex items-center gap-1.5 text-xs text-gray-500 px-3 py-1.5 rounded-lg w-fit bg-[#222]">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg w-fit bg-gray-100 text-gray-500 border border-gray-200">
                       <Clock size={12} />
                       Sắp ra mắt
                     </span>

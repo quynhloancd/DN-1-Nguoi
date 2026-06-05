@@ -145,12 +145,12 @@ export default function LoginForm() {
       )}
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1.5">Email</label>
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
         <input id="email" name="email" type="email" placeholder="ban@email.com" className="input-dark w-full" required />
       </div>
 
       <div>
-        <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-1.5">Mật khẩu</label>
+        <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1.5">Mật khẩu</label>
         <PasswordInput id="password" name="password" placeholder="••••••••" />
       </div>
 
