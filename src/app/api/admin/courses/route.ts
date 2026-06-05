@@ -1,6 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { logAudit } from "@/lib/audit";
+import { z } from "zod";
+
+const CreateCourseSchema = z.object({
+  title: z.string().min(1, "Tiêu đề không được để trống").max(300),
+  slug: z.string().min(1).max(200).regex(/^[a-z0-9-]+$/, "Slug chỉ chứa chữ thường, số và dấu gạch ngang").optional(),
+  description: z.string().max(2000).optional(),
+  description_html: z.string().max(50000).optional(),
+  thumbnail: z.string().url().optional().or(z.literal("")),
+  price: z.number().min(0).max(100000000).default(0),
+  sale_price: z.number().min(0).max(100000000).nullable().optional(),
+  type: z.enum(["course", "ebook", "template", "tool"]).default("course"),
+  tier_required: z.enum(["free", "member", "vip"]).default("free"),
+  status: z.enum(["draft", "published", "archived"]).default("draft"),
+  category: z.string().max(100).optional(),
+  sort_order: z.number().int().min(0).default(0),
+  instructor_id: z.string().uuid().optional(),
+});
 
 // POST /api/admin/courses — create a new course (bypasses RLS)
 export async function POST(req: NextRequest) {
@@ -22,18 +39,23 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    let body;
+    let rawBody;
     try {
-      body = await req.json();
+      rawBody = await req.json();
     } catch {
       return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
+    }
+
+    const parsed = CreateCourseSchema.safeParse(rawBody);
+    if (!parsed.success) {
+      return NextResponse.json({ error: parsed.error.issues[0].message }, { status: 400 });
     }
 
     const admin = await createAdminClient();
 
     const { data, error } = await admin
       .from("products")
-      .insert(body)
+      .insert(parsed.data)
       .select("id")
       .single();
 

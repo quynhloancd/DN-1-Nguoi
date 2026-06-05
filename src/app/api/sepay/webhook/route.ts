@@ -276,12 +276,27 @@ export async function POST(req: NextRequest) {
 
     // 5. Cấp quyền truy cập khoá học
     if (order.user_id && order.product_id) {
-      await supabase.from("enrollments").upsert({
+      const { error: enrollErr } = await supabase.from("enrollments").upsert({
         user_id: order.user_id as string,
         product_id: order.product_id as string,
         order_id: order.id as string,
         source: "purchase",
       });
+
+      if (enrollErr) {
+        // Critical: order paid but enrollment failed — alert admin immediately
+        console.error(`[Sepay] ❌ ENROLLMENT FAILED for order ${matchedCode}:`, enrollErr.message);
+        alertPaymentFailure({
+          source: "SePay",
+          amount: transferAmount,
+          content: `ENROLLMENT FAILED for paid order ${matchedCode} — user=${order.user_id} product=${order.product_id} err=${enrollErr.message}`,
+          candidates: [matchedCode],
+          gateway,
+        });
+        // Continue to still process other steps (email, XP, etc.) — admin will fix enrollment manually
+      } else {
+        console.log(`[Sepay] ✅ Enrollment granted: order ${matchedCode}`);
+      }
 
       // 6. Upgrade tier nếu là Quyền Đồng Hành
       const products = order.products as Record<string, unknown> | null;

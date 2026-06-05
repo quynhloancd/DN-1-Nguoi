@@ -73,11 +73,27 @@ export async function POST(req: NextRequest) {
     page++;
   }
 
+  // Batch fetch existing enrollments for all found users — avoids N+1
+  const allUserIds = Object.values(emailToUserId);
+  const existingEnrollments = new Set<string>();
+  if (allUserIds.length > 0) {
+    const { data: existing } = await admin
+      .from("enrollments")
+      .select("user_id, product_id")
+      .in("user_id", allUserIds)
+      .in("product_id", product_ids);
+    for (const e of existing ?? []) {
+      existingEnrollments.add(`${e.user_id}:${e.product_id}`);
+    }
+  }
+
   // Categorize results
   const notFound: string[] = [];
   const granted: string[] = [];
   const alreadyEnrolled: string[] = [];
   const failed: string[] = [];
+  const rowsToInsert: Array<{ user_id: string; product_id: string; source: "admin" }> = [];
+  const emailsToGrant: string[] = [];
 
   for (const rawEmail of normalizedEmails) {
     const userId = emailToUserId[rawEmail];
@@ -86,16 +102,8 @@ export async function POST(req: NextRequest) {
       continue;
     }
 
-    // Check existing enrollments for this user
-    const { data: existing } = await admin
-      .from("enrollments")
-      .select("product_id")
-      .eq("user_id", userId)
-      .in("product_id", product_ids);
-
-    const existingSet = new Set((existing ?? []).map((e) => e.product_id));
     const newProductIds = product_ids.filter(
-      (pid: string) => !existingSet.has(pid)
+      (pid: string) => !existingEnrollments.has(`${userId}:${pid}`)
     );
 
     if (newProductIds.length === 0) {
@@ -103,20 +111,20 @@ export async function POST(req: NextRequest) {
       continue;
     }
 
-    // Insert enrollments
-    const rows = newProductIds.map((pid: string) => ({
-      user_id: userId,
-      product_id: pid,
-      source: "admin" as const,
-    }));
+    for (const pid of newProductIds) {
+      rowsToInsert.push({ user_id: userId, product_id: pid, source: "admin" });
+    }
+    emailsToGrant.push(rawEmail);
+  }
 
-    const { error } = await admin.from("enrollments").insert(rows);
-
+  // Batch insert all new enrollments in one query
+  if (rowsToInsert.length > 0) {
+    const { error } = await admin.from("enrollments").insert(rowsToInsert);
     if (error) {
-      console.error(`[Bulk Grant] Error for ${rawEmail}:`, error.message);
-      failed.push(rawEmail);
+      console.error("[Bulk Grant] Batch insert error:", error.message);
+      failed.push(...emailsToGrant);
     } else {
-      granted.push(rawEmail);
+      granted.push(...emailsToGrant);
     }
   }
 
