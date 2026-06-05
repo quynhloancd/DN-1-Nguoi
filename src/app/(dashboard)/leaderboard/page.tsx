@@ -155,7 +155,7 @@ export default async function LeaderboardPage() {
           <div className="p-4 border-b border-[#E5E7EB]">
             <h3 className="text-sm font-semibold text-[#1B2A4A]">Xếp hạng toàn thời gian</h3>
           </div>
-          <div className="divide-y divide-[#1f1f1f]">
+          <div className="divide-y divide-[#E5E7EB]">
             {leadersList.length === 0 && (
               <div className="p-8 text-center text-gray-500 text-sm">
                 Chưa có dữ liệu xếp hạng. Bắt đầu học để tích XP!
