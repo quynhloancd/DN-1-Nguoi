@@ -27,9 +27,9 @@ export default function SocialLoginButtons() {
     <div className="space-y-3">
       {/* Divider */}
       <div className="flex items-center gap-3 my-5">
-        <div className="flex-1 h-px bg-[#2a2a2a]" />
-        <span className="text-xs text-gray-500 uppercase tracking-wide">hoặc</span>
-        <div className="flex-1 h-px bg-[#2a2a2a]" />
+        <div className="flex-1 h-px bg-gray-200" />
+        <span className="text-xs text-gray-400 uppercase tracking-wide">hoặc</span>
+        <div className="flex-1 h-px bg-gray-200" />
       </div>
 
       {/* Google */}
@@ -37,7 +37,7 @@ export default function SocialLoginButtons() {
         type="button"
         onClick={() => handleSocialLogin("google")}
         disabled={loading !== null}
-        className="w-full flex items-center justify-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed border border-[#333] hover:border-[#555] bg-[#F0F1F3] hover:bg-[#222] text-white"
+        className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed border border-gray-300 hover:border-gray-400 bg-white hover:bg-gray-50 text-[#1B2A4A] shadow-sm"
       >
         {loading === "google" ? (
           <svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">
@@ -60,7 +60,7 @@ export default function SocialLoginButtons() {
         type="button"
         onClick={() => handleSocialLogin("facebook")}
         disabled={loading !== null}
-        className="w-full flex items-center justify-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed border border-[#333] hover:border-[#555] bg-[#F0F1F3] hover:bg-[#222] text-white"
+        className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed border border-gray-300 hover:border-gray-400 bg-white hover:bg-gray-50 text-[#1B2A4A] shadow-sm"
       >
         {loading === "facebook" ? (
           <svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">
