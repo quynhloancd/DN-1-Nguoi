@@ -8,7 +8,7 @@ const FAQ_ITEMS = [
   {
     question: "Tôi không biết gì về công nghệ, có học được không?",
     answer:
-      "Hoàn toàn có thể! Chương trình được thiết kế cho người MỚI BẮT ĐẦU. Thầy Khương sẽ hướng dẫn từng bước, có video minh họa chi tiết.",
+      "Hoàn toàn có thể! Chương trình được thiết kế cho người MỚI BẮT ĐẦU. Thiên Huệ AI sẽ hướng dẫn từng bước, có video minh họa chi tiết.",
   },
   {
     question: "Tôi không có vốn, có làm được không?",

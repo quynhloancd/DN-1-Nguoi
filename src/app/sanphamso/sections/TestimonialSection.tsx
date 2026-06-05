@@ -5,7 +5,7 @@ import { MessageCircle, Star } from "lucide-react";
 const TESTIMONIALS = [
   {
     quote:
-      "Sau 30 ngày áp dụng, em đã bán được khóa học đầu tiên với doanh thu 15 triệu. Thầy Khương dạy rất tâm huyết và thực chiến!",
+      "Sau 30 ngày áp dụng, em đã bán được khóa học đầu tiên với doanh thu 15 triệu. Thiên Huệ AI dạy rất tâm huyết và thực chiến!",
     author: "Chị Mai Anh, 32 tuổi, Hà Nội",
     revenue: "15 triệu",
   },
@@ -17,7 +17,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "Hệ thống bán hàng tự động giúp em có thời gian chăm con. Doanh thu vẫn đều 30-50 triệu/tháng. Cảm ơn Thầy!",
+      "Hệ thống bán hàng tự động giúp em có thời gian chăm con. Doanh thu vẫn đều 30-50 triệu/tháng. Cảm ơn Thiên Huệ AI!",
     author: "Chị Hương, 35 tuổi, Đà Nẵng",
     revenue: "30-50 triệu/tháng",
   },

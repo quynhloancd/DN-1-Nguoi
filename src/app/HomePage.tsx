@@ -365,13 +365,13 @@ export default function HomePage() {
 
           <div className="text-center mt-10">
             <button onClick={() => setShowLeadModal(true)} className="btn-green text-base py-3.5 px-8 justify-center inline-flex">
-              <Download size={18} /> Đăng ký nhận Bí Mật Video AI Triệu View
+              <Download size={18} /> Đăng ký nhận Checklist Miễn Phí
             </button>
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 4: ABOUT LÊ ĐĂNG KHƯƠNG ═══ */}
+      {/* ═══ SECTION 4: ABOUT THIÊN HUỆ ═══ */}
       <section className="py-12 sm:py-24 px-4 sm:px-6 bg-[#F8F9FA]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-14">
