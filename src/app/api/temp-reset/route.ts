@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/server";
 
-// TEMPORARY endpoint — delete after use
 export async function POST(req: NextRequest) {
   const secret = req.headers.get("x-reset-secret");
   if (secret !== "dn1-temp-2026") {
