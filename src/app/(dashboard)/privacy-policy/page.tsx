@@ -159,7 +159,7 @@ export default function PrivacyPolicyPage() {
               Chào mừng bạn đến với{" "}
               <span className="text-[#1B2A4A] font-medium">doanhnghiep1nguoi.online</span> —
               nền tảng học tập trực tuyến thuộc sở hữu của{" "}
-              <span className="text-[#1B2A4A] font-medium">Đăng Khương</span>.
+              <span className="text-[#1B2A4A] font-medium">Thiên Huệ AI</span>.
             </p>
             <p className="text-gray-300 leading-relaxed">
               Chúng tôi tôn trọng quyền riêng tư của bạn và cam kết bảo vệ
