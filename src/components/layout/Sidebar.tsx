@@ -163,7 +163,7 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
       {/* Logo */}
       <div className="flex items-center justify-between px-4 h-16 border-b border-[#E5E7EB]">
         {!isCompact && (
-          <Link href="/dashboard" className="flex items-center gap-2.5">
+          <Link href="/" className="flex items-center gap-2.5">
             <Image
               src={siteConfig.owner.avatar}
               alt={siteConfig.owner.name}
@@ -179,7 +179,7 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
           </Link>
         )}
         {isCompact && (
-          <Link href="/dashboard">
+          <Link href="/">
             <Image
               src={siteConfig.owner.avatar}
               alt={siteConfig.owner.name}

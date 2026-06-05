@@ -212,13 +212,13 @@ export default function HomePage() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-6">
             {navLinks.map((l) => (
-              <a key={l.label} href={l.href} className="text-sm text-gray-600 hover:text-[#1B2A4A] transition-colors">{l.label}</a>
+              <a key={l.label} href={l.href} className="text-sm text-[#1B2A4A] font-medium hover:text-[#E85D04] transition-colors">{l.label}</a>
             ))}
           </div>
 
           {/* Right */}
           <div className="hidden md:flex items-center gap-3">
-            <Link href="/login" className="text-sm text-gray-600 hover:text-[#1B2A4A] transition-colors">Đăng nhập</Link>
+            <Link href="/login" className="text-sm text-[#1B2A4A] font-medium hover:text-[#E85D04] transition-colors">Đăng nhập</Link>
             <button onClick={() => setShowLeadModal(true)} className="btn-green text-sm py-2 px-5">
               <Gift size={14} /> Nhận quà miễn phí
             </button>
