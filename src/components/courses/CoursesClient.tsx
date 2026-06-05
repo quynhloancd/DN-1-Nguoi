@@ -65,7 +65,7 @@ const CATEGORIES: {
     title: "Khóa học phát triển bản thân",
     subtitle: "Nâng cao kỹ năng và tư duy để thành công",
     icon: Sparkles,
-    color: "#22c55e",
+    color: "#E85D04",
   },
 ];
 
@@ -131,11 +131,11 @@ function CourseCard({
               <Clock size={11} /> Sắp ra mắt
             </span>
           ) : isFree ? (
-            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-[#22c55e] text-white">
+            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-[#E85D04] text-white">
               Miễn phí
             </span>
           ) : isEnrolled ? (
-            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-[#22c55e]/90 text-white">
+            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-[#E85D04]/90 text-white">
               Đã đăng ký
             </span>
           ) : (
@@ -148,7 +148,7 @@ function CourseCard({
         {/* Progress overlay */}
         {course.progress > 0 && !isComingSoon && (
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/40">
-            <div className="h-full bg-[#22c55e]" style={{ width: `${course.progress}%` }} />
+            <div className="h-full bg-[#E85D04]" style={{ width: `${course.progress}%` }} />
           </div>
         )}
       </div>
@@ -178,7 +178,7 @@ function CourseCard({
             </span>
           )}
           {course.progress > 0 && !isComingSoon && (
-            <span className="flex items-center gap-1 text-[#22c55e]">
+            <span className="flex items-center gap-1 text-[#E85D04]">
               <CheckCircle size={11} /> {course.progress}%
             </span>
           )}
@@ -192,7 +192,7 @@ function CourseCard({
             {isComingSoon ? (
               <span className="text-xs text-gray-500 italic">Đang chuẩn bị</span>
             ) : isFree ? (
-              <span className="text-sm font-bold text-[#22c55e]">Miễn phí</span>
+              <span className="text-sm font-bold text-[#E85D04]">Miễn phí</span>
             ) : isEnrolled ? (
               <span className="text-xs text-gray-400">Đã sở hữu</span>
             ) : hasSale ? (
@@ -221,7 +221,7 @@ function CourseCard({
               <Lock size={11} /> Mua ngay
             </span>
           ) : (
-            <span className="btn-success text-xs py-1.5 px-3">
+            <span className="btn-green text-xs py-1.5 px-3">
               <PlayCircle size={12} />
               {course.progress > 0 ? "Tiếp tục" : "Vào học"}
             </span>
