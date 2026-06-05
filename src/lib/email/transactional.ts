@@ -472,3 +472,77 @@ export async function sendCourseCompletionEmail(
     `),
   );
 }
+
+// ─── Booking notification emails ─────────────────────────────────────────────
+
+export interface BookingData {
+  name: string;
+  email: string;
+  phone: string;
+  business: string;
+  message: string;
+  preferredTime: string;
+  submittedAt: string;
+}
+
+/** Thông báo cho admin khi có lịch đặt tư vấn mới */
+export async function sendBookingNotificationToAdmin(booking: BookingData) {
+  const adminEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "support@doanhnghiep1nguoi.online";
+  const safeAdminEmail = process.env.BOOKING_NOTIFY_EMAIL || adminEmail;
+  return sesSendEmail(
+    safeAdminEmail,
+    `📅 Lịch tư vấn mới từ ${escapeHtml(booking.name)}`,
+    `<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"/>
+    <style>
+      body{margin:0;padding:0;background:#0a0a0a;font-family:-apple-system,sans-serif;}
+      .wrap{max-width:560px;margin:0 auto;padding:32px 16px;}
+      .card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:32px;}
+      h1{color:#E85D04;font-size:20px;margin:0 0 20px;}
+      .row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #2a2a2a;}
+      .label{color:#6b7280;font-size:13px;}
+      .value{color:#fff;font-size:13px;font-weight:600;text-align:right;max-width:60%;}
+      .msg{background:#222;border-radius:8px;padding:16px;margin-top:16px;color:#d1d5db;font-size:14px;line-height:1.6;}
+    </style>
+    </head><body><div class="wrap"><div class="card">
+      <h1>📅 Yêu cầu tư vấn 1-1 mới</h1>
+      <div class="row"><span class="label">Họ tên</span><span class="value">${escapeHtml(booking.name)}</span></div>
+      <div class="row"><span class="label">Email</span><span class="value">${escapeHtml(booking.email)}</span></div>
+      <div class="row"><span class="label">Số điện thoại</span><span class="value">${escapeHtml(booking.phone)}</span></div>
+      <div class="row"><span class="label">Lĩnh vực KD</span><span class="value">${escapeHtml(booking.business)}</span></div>
+      <div class="row"><span class="label">Thời gian muốn gặp</span><span class="value">${escapeHtml(booking.preferredTime)}</span></div>
+      <div class="row"><span class="label">Gửi lúc</span><span class="value">${escapeHtml(booking.submittedAt)}</span></div>
+      <div class="msg"><strong style="color:#E85D04;">Nội dung:</strong><br/>${escapeHtml(booking.message).replace(/\n/g, '<br/>')}</div>
+    </div></div></body></html>`,
+  );
+}
+
+/** Email xác nhận cho khách sau khi đặt lịch */
+export async function sendBookingConfirmationToUser(booking: BookingData) {
+  return sesSendEmail(
+    booking.email,
+    `Thiên Huệ đã nhận lịch tư vấn của bạn 📅`,
+    baseTemplate(`
+      <h1>Cảm ơn bạn, ${escapeHtml(booking.name)}! 🙌</h1>
+      <p>Tôi đã nhận được yêu cầu tư vấn 1-1 của bạn và sẽ liên hệ lại trong vòng <span class="highlight">24 giờ</span> để xác nhận lịch hẹn.</p>
+      <div style="background:#1f1f1f;border:1px solid #333;border-radius:8px;padding:20px;margin:20px 0;">
+        <div style="color:#9ca3af;font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Thông tin bạn đã gửi</div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #2a2a2a;">
+          <span style="color:#6b7280;font-size:13px;">Thời gian mong muốn</span>
+          <span style="color:#fff;font-size:13px;">${escapeHtml(booking.preferredTime)}</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;">
+          <span style="color:#6b7280;font-size:13px;">Số điện thoại</span>
+          <span style="color:#fff;font-size:13px;">${escapeHtml(booking.phone)}</span>
+        </div>
+      </div>
+      <p>Trong khi chờ đợi, bạn có thể:</p>
+      <ul style="color:#9ca3af;font-size:14px;line-height:2;padding-left:20px;margin:0 0 20px;">
+        <li>📋 <a href="${getBaseUrl()}#checklist" style="color:#E85D04;">Tải checklist 5 việc giao cho AI miễn phí</a></li>
+        <li>⚙️ <a href="${getBaseUrl()}/courses" style="color:#E85D04;">Khám phá các workflow n8n có sẵn</a></li>
+      </ul>
+      <div class="divider"></div>
+      <p style="margin:0;font-size:13px;color:#6b7280;">— Thiên Huệ | <a href="${getBaseUrl()}" style="color:#E85D04;">${getSiteDomain()}</a></p>
+    `, booking.email),
+  );
+}
+

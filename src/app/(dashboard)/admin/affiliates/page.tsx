@@ -7,6 +7,8 @@ import {
 } from "lucide-react";
 import EditCommissionForm from "@/components/affiliate/EditCommissionForm";
 import ApproveConversionButton from "@/components/affiliate/ApproveConversionButton";
+import RejectConversionButton from "@/components/affiliate/RejectConversionButton";
+import ProcessPayoutButton from "@/components/affiliate/ProcessPayoutButton";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -28,6 +30,18 @@ interface ConversionRow {
   affiliate_id: string;
   status: string;
   commission_amount: number;
+  created_at: string;
+  affiliates: { ref_code: string; profiles: { full_name: string | null } | null } | null;
+}
+
+interface PayoutRow {
+  id: string;
+  affiliate_id: string;
+  amount: number;
+  status: string;
+  bank_name: string | null;
+  bank_account: string | null;
+  bank_holder: string | null;
   created_at: string;
   affiliates: { ref_code: string; profiles: { full_name: string | null } | null } | null;
 }
@@ -125,6 +139,16 @@ export default async function AdminAffiliatesPage({
     .limit(50);
 
   const convRows = (pendingConversionRows || []) as unknown as ConversionRow[];
+
+  // Pending payouts
+  const { data: pendingPayoutRows } = await admin
+    .from("affiliate_payouts")
+    .select("id, affiliate_id, amount, status, bank_name, bank_account, bank_holder, created_at, affiliates(ref_code, profiles:user_id(full_name))")
+    .eq("status", "pending")
+    .order("created_at", { ascending: false })
+    .limit(50);
+
+  const payoutRows = (pendingPayoutRows || []) as unknown as PayoutRow[];
 
   // All ref codes from affiliates
   const allRefCodes = rows.map(r => r.ref_code).filter(Boolean);
@@ -267,8 +291,64 @@ export default async function AdminAffiliatesPage({
                         </td>
                         <td className="py-2.5 text-right text-[#E85D04] font-medium">{formatCurrency(conv.commission_amount || 0)}</td>
                         <td className="py-2.5 text-gray-500 text-xs">{formatDate(conv.created_at)}</td>
+                        <td className="py-2.5">
+                          <div className="flex items-center gap-2 justify-center">
+                            <ApproveConversionButton conversionId={conv.id} />
+                            <RejectConversionButton conversionId={conv.id} />
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+
+        {/* Pending Payouts — cần xử lý */}
+        <div className="card-dark p-5">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-sm font-semibold text-white flex items-center gap-2">
+              <Wallet size={16} className="text-[#22c55e]" />
+              Yêu cầu rút tiền chờ xử lý ({payoutRows.length})
+            </h3>
+          </div>
+
+          {payoutRows.length === 0 ? (
+            <p className="text-sm text-gray-500 text-center py-8">Không có yêu cầu rút tiền nào đang chờ.</p>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="text-left text-gray-500 text-xs border-b border-[#1f1f1f]">
+                    <th className="pb-2 font-medium">Affiliate</th>
+                    <th className="pb-2 font-medium">Mã ref</th>
+                    <th className="pb-2 font-medium text-right">Số tiền</th>
+                    <th className="pb-2 font-medium">Ngân hàng</th>
+                    <th className="pb-2 font-medium">Số TK</th>
+                    <th className="pb-2 font-medium">Chủ TK</th>
+                    <th className="pb-2 font-medium">Ngày yêu cầu</th>
+                    <th className="pb-2 font-medium text-center">Hành động</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {payoutRows.map((p) => {
+                    const aff = p.affiliates;
+                    const affName = (aff?.profiles as { full_name: string | null } | null)?.full_name || "—";
+                    return (
+                      <tr key={p.id} className="border-b border-[#1a1a1a] hover:bg-[#111]">
+                        <td className="py-2.5 text-white font-medium">{affName}</td>
+                        <td className="py-2.5">
+                          <code className="text-xs text-[#E85D04] bg-[#E85D04]/10 px-1.5 py-0.5 rounded">{aff?.ref_code || "—"}</code>
+                        </td>
+                        <td className="py-2.5 text-right text-[#22c55e] font-bold">{p.amount.toLocaleString("vi-VN")}đ</td>
+                        <td className="py-2.5 text-gray-300">{p.bank_name || "—"}</td>
+                        <td className="py-2.5 text-gray-300 font-mono text-xs">{p.bank_account || "—"}</td>
+                        <td className="py-2.5 text-gray-300">{p.bank_holder || "—"}</td>
+                        <td className="py-2.5 text-gray-500 text-xs">{formatDate(p.created_at)}</td>
                         <td className="py-2.5 text-center">
-                          <ApproveConversionButton conversionId={conv.id} />
+                          <ProcessPayoutButton payoutId={p.id} />
                         </td>
                       </tr>
                     );
