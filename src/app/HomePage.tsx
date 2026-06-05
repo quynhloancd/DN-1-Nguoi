@@ -500,8 +500,8 @@ export default function HomePage() {
                       {c.badge && (
                         <span className="text-xs font-bold px-2 py-0.5 rounded-md"
                           style={{
-                            background: c.badge === "Coming Soon" ? "rgba(249,115,22,0.1)" : c.badge === "Miễn phí" ? "rgba(34,197,94,0.1)" : "rgba(232,93,4,0.1)",
-                            color: c.badge === "Coming Soon" ? "#F97316" : c.badge === "Miễn phí" ? "#22c55e" : "#E85D04",
+                            background: "rgba(232,93,4,0.1)",
+                            color: "#E85D04",
                           }}>
                           {c.badge}
                         </span>
@@ -814,7 +814,7 @@ export default function HomePage() {
           </div>
 
           <button onClick={() => setShowLeadModal(true)}
-            className="btn-success py-3 px-6 sm:px-8 text-sm sm:text-base rounded-full shadow-lg flex-1 max-w-sm justify-center"
+            className="btn-green py-3 px-6 sm:px-8 text-sm sm:text-base rounded-full shadow-lg flex-1 max-w-sm justify-center"
             style={{ background: "#E85D04", boxShadow: "0 4px 20px rgba(232,93,4,0.3)" }}>
             <Download size={16} /> Nhận Checklist AI Miễn Phí Ngay
           </button>

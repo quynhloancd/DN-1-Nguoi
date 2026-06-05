@@ -166,7 +166,7 @@ export default async function BlogPage({
         {featured && (
           <Link
             href={`/blog/${featured.slug}`}
-            className="card-dark block hover:bg-[#1f1f1f] transition-all group overflow-hidden"
+            className="card-dark block hover:bg-[#F8F9FA] transition-all group overflow-hidden"
           >
             {/* Thumbnail */}
             {featured.thumbnail ? (
@@ -260,7 +260,7 @@ export default async function BlogPage({
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="card-dark block hover:bg-[#1f1f1f] transition-all group overflow-hidden"
+                className="card-dark block hover:bg-[#F8F9FA] transition-all group overflow-hidden"
               >
                 {/* Thumbnail */}
                 {post.thumbnail ? (

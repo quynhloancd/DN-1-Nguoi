@@ -161,7 +161,7 @@ export default function ResourcesPage() {
               {category.resources.map((resource) => (
                 <div
                   key={resource.title}
-                  className="card-dark p-5 flex flex-col justify-between hover:bg-[#1f1f1f] transition-colors"
+                  className="card-dark p-5 flex flex-col justify-between hover:bg-[#F8F9FA] transition-colors"
                 >
                   <div>
                     {/* Icon + title */}

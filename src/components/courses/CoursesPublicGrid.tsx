@@ -60,7 +60,7 @@ const CATEGORIES: {
     title: "Khóa học phát triển bản thân",
     subtitle: "Nâng cao kỹ năng và tư duy để thành công",
     icon: Sparkles,
-    color: "#22c55e",
+    color: "#E85D04",
   },
 ];
 
@@ -120,7 +120,7 @@ function PublicCourseCard({
               <Clock size={11} /> Sắp ra mắt
             </span>
           ) : isFree ? (
-            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-[#22c55e] text-[#1B2A4A]">
+            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-[#E85D04] text-white">
               Miễn phí
             </span>
           ) : (
@@ -145,12 +145,12 @@ function PublicCourseCard({
           )}
         </div>
         <div className="flex-1" />
-        <div className="flex items-center justify-between mt-auto pt-3" style={{ borderTop: "1px solid #222" }}>
+        <div className="flex items-center justify-between mt-auto pt-3" style={{ borderTop: "1px solid #E5E7EB" }}>
           <div>
             {isComingSoon ? (
               <span className="text-xs text-gray-500 italic">Đang chuẩn bị</span>
             ) : isFree ? (
-              <span className="text-sm font-bold text-[#22c55e]">Miễn phí</span>
+              <span className="text-sm font-bold text-[#E85D04]">Miễn phí</span>
             ) : hasSale ? (
               <div className="flex items-center gap-2">
                 <span className="text-sm font-bold text-[#E85D04]">{formatPrice(course.sale_price!)}</span>

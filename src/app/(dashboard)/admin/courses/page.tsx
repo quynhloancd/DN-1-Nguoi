@@ -222,7 +222,7 @@ export default async function AdminCoursesPage() {
             return (
               <div
                 key={course.id}
-                className="card-dark p-5 hover:bg-[#1f1f1f] transition-all"
+                className="card-dark p-5 hover:bg-[#F8F9FA] transition-all"
               >
                 <div className="flex flex-col md:flex-row md:items-center gap-4">
                   {/* Thumbnail + Info */}
@@ -306,7 +306,7 @@ export default async function AdminCoursesPage() {
                   <div className="flex items-center gap-2 shrink-0">
                     <Link
                       href={`/admin/courses/${course.id}`}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors text-gray-300 hover:text-[#1B2A4A] hover:bg-white/5"
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors text-gray-600 hover:text-[#1B2A4A] hover:bg-white/5"
                       style={{ border: "1px solid #2a2a2a" }}
                     >
                       <Edit2 size={12} />

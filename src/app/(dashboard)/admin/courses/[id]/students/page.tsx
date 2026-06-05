@@ -383,7 +383,7 @@ export default async function CourseStudentsPage({
                   className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5 ${
                     isActive
                       ? "bg-[#E85D04]/15 text-[#E85D04]"
-                      : "text-gray-500 hover:text-gray-300 hover:bg-[#1f1f1f]"
+                      : "text-gray-500 hover:text-gray-600 hover:bg-[#F8F9FA]"
                   }`}
                 >
                   {tab.label}
@@ -405,7 +405,7 @@ export default async function CourseStudentsPage({
           <a
             href={csvDataUri}
             download={`students-${course.slug || courseId}.csv`}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium text-gray-300 hover:text-[#1B2A4A] hover:bg-[#1f1f1f] transition-colors shrink-0"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium text-gray-600 hover:text-[#1B2A4A] hover:bg-[#F8F9FA] transition-colors shrink-0"
             style={{ border: "1px solid #2a2a2a" }}
           >
             <Download size={14} />

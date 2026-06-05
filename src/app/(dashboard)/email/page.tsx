@@ -150,7 +150,7 @@ export default async function EmailPage() {
                       return (
                         <tr key={c.id}
                           style={{ borderBottom: i < recentCampaigns.length - 1 ? "1px solid #2a2a2a" : "none" }}
-                          className="hover:bg-[#1f1f1f] transition-colors cursor-pointer">
+                          className="hover:bg-[#F8F9FA] transition-colors cursor-pointer">
                           <td className="px-4 py-3">
                             <div className="flex items-center gap-2">
                               <Mail size={13} className="text-[#3b82f6] shrink-0" />
@@ -160,7 +160,7 @@ export default async function EmailPage() {
                               </div>
                             </div>
                           </td>
-                          <td className="px-4 py-3 text-right text-gray-300 text-sm">
+                          <td className="px-4 py-3 text-right text-gray-600 text-sm">
                             {denom > 0 ? denom.toLocaleString("vi-VN") : "—"}
                           </td>
                           <td className="px-4 py-3 text-right">
@@ -307,7 +307,7 @@ export default async function EmailPage() {
             </div>
 
             {/* Automations quick link */}
-            <Link href="/email/automations" className="card-dark p-4 flex items-center gap-3 hover:bg-[#1f1f1f] transition-colors">
+            <Link href="/email/automations" className="card-dark p-4 flex items-center gap-3 hover:bg-[#F8F9FA] transition-colors">
               <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "rgba(20,184,166,0.1)" }}>
                 <Workflow size={18} className="text-[#14b8a6]" />
               </div>

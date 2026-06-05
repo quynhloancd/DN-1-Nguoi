@@ -687,7 +687,7 @@ export default function CheckoutModal({ product, onClose, onSuccess }: CheckoutM
               Email xác nhận đã được gửi tới <span className="font-semibold">{email}</span>
             </p>
             <div className="space-y-2">
-              <button onClick={onClose} className="btn-success w-full justify-center">
+              <button onClick={onClose} className="btn-green w-full justify-center">
                 Bắt đầu học ngay 🚀
               </button>
               <button onClick={onClose}

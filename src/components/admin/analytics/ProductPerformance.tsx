@@ -32,7 +32,7 @@ export default function ProductPerformance({
         <h3 className="text-white font-semibold mb-4">Hiệu suất sản phẩm</h3>
         <table className="w-full">
           <thead>
-            <tr className="border-b border-[#2a2a2a]">
+            <tr className="border-b border-[#E5E7EB]">
               <th className="text-xs text-gray-500 font-medium text-left pb-3 w-10">
                 #
               </th>
@@ -52,7 +52,7 @@ export default function ProductPerformance({
           </thead>
           <tbody>
             {Array.from({ length: 5 }).map((_, i) => (
-              <tr key={i} className="border-b border-[#2a2a2a]/50">
+              <tr key={i} className="border-b border-[#E5E7EB]/50">
                 <td className="py-3">
                   <div className="h-4 w-4 bg-[#2a2a2a] rounded animate-pulse" />
                 </td>
@@ -96,7 +96,7 @@ export default function ProductPerformance({
       <h3 className="text-white font-semibold mb-4">Hiệu suất sản phẩm</h3>
       <table className="w-full">
         <thead>
-          <tr className="border-b border-[#2a2a2a]">
+          <tr className="border-b border-[#E5E7EB]">
             <th className="text-xs text-gray-500 font-medium text-left pb-3 w-10">
               #
             </th>
@@ -118,7 +118,7 @@ export default function ProductPerformance({
           {topProducts.map((product, index) => (
             <tr
               key={product.id}
-              className={`text-sm text-gray-300 hover:bg-[#1a1a1a] transition-colors ${
+              className={`text-sm text-gray-600 hover:bg-[#F8F9FA] transition-colors ${
                 index % 2 === 1 ? "bg-[#141414]" : ""
               }`}
             >

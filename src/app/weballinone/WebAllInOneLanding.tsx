@@ -1288,9 +1288,9 @@ export default function WebAllInOneLanding() {
                   href={COURSE_URL}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all hover:scale-[1.02] w-full justify-center"
                   style={{
-                    background: "rgba(34,197,94,0.12)",
-                    color: "#22c55e",
-                    border: "1px solid rgba(34,197,94,0.25)",
+                    background: "rgba(232,93,4,0.1)",
+                    color: "#E85D04",
+                    border: "1px solid rgba(232,93,4,0.25)",
                   }}
                 >
                   <Monitor size={16} />

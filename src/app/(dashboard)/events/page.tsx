@@ -225,7 +225,7 @@ function EventCard({ event }: { event: EventRow }) {
 
   return (
     <div
-      className={`card-dark p-5 transition-all hover:bg-[#1f1f1f] ${isPast ? "opacity-60" : ""}`}
+      className={`card-dark p-5 transition-all hover:bg-[#F8F9FA] ${isPast ? "opacity-60" : ""}`}
     >
       <div className="flex items-start gap-4">
         {/* Date block */}

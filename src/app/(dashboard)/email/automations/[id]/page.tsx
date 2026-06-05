@@ -75,7 +75,7 @@ export default function AutomationEditorPage() {
             {saving ? "Đang lưu..." : "Lưu"}
           </button>
           <button onClick={handleToggleStatus}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[#333] text-gray-300 hover:text-[#1B2A4A]">
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[#E5E7EB] text-gray-600 hover:text-[#1B2A4A]">
             {automation.status === "active" ? <><Pause size={13} /> Tạm dừng</> : <><Play size={13} /> Kích hoạt</>}
           </button>
         </div>

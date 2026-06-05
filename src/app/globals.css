@@ -111,8 +111,8 @@ body {
 .btn-green:disabled { opacity: 0.4; cursor: not-allowed; }
 
 .btn-success {
-  background: #22c55e;
-  color: white;
+  background: #E85D04;
+  color: #ffffff;
   font-weight: 700;
   padding: 8px 20px;
   border-radius: 8px;
@@ -125,7 +125,7 @@ body {
   font-size: 14px;
   text-decoration: none;
 }
-.btn-success:hover { background: #16a34a; }
+.btn-success:hover { background: #F97316; }
 .btn-success:disabled { opacity: 0.4; cursor: not-allowed; }
 
 .btn-gold {

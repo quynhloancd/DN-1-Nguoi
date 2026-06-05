@@ -260,10 +260,10 @@ export default function PrivacyPage() {
   return (
     <div
       className="min-h-screen"
-      style={{ background: "radial-gradient(ellipse at top, #0d1117 0%, #0a0a0a 60%)" }}
+      style={{ background: "#FFFFFF" }}
     >
       {/* Header */}
-      <div className="border-b border-[#1a1a1a] px-4 sm:px-6 py-8 sm:py-12">
+      <div className="border-b border-[#E5E7EB] px-4 sm:px-6 py-8 sm:py-12">
         <div className="max-w-4xl mx-auto">
           <Link
             href="/"
@@ -287,7 +287,7 @@ export default function PrivacyPage() {
           <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
             Chính Sách Bảo Mật
           </h1>
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-500 text-sm">
             Cập nhật lần cuối: 18 tháng 5, 2026
           </p>
         </div>
@@ -323,8 +323,8 @@ export default function PrivacyPage() {
           </div>
 
           {/* Table of Contents */}
-          <nav className="rounded-xl border border-[#1a1a1a] bg-[#111] p-5">
-            <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
+          <nav className="rounded-xl border border-[#E5E7EB] bg-[#F8F9FA] p-5">
+            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
               Mục lục
             </h2>
             <ul className="space-y-2">
@@ -460,8 +460,8 @@ export default function PrivacyPage() {
           ))}
 
           {/* Legal basis note */}
-          <div className="rounded-xl border border-[#1a1a1a] bg-[#111] p-5">
-            <p className="text-sm text-gray-400 leading-relaxed">
+          <div className="rounded-xl border border-[#E5E7EB] bg-[#F8F9FA] p-5">
+            <p className="text-sm text-gray-500 leading-relaxed">
               <span className="text-white font-medium">Cơ sở pháp lý:</span>{" "}
               Chính sách bảo mật này được xây dựng tuân thủ Luật An ninh mạng 2018
               (Luật số 24/2018/QH14), Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu
@@ -472,7 +472,7 @@ export default function PrivacyPage() {
           </div>
 
           {/* Related links */}
-          <div className="pt-6 border-t border-[#1a1a1a] flex flex-col sm:flex-row gap-3">
+          <div className="pt-6 border-t border-[#E5E7EB] flex flex-col sm:flex-row gap-3">
             <Link
               href="/terms-of-service"
               className="text-sm text-[#E85D04] hover:underline"

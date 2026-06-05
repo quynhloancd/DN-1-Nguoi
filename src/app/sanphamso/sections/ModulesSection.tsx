@@ -136,7 +136,7 @@ export default function ModulesSection() {
                       <li key={bullet} className="flex items-start gap-3">
                         <span
                           className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full"
-                          style={{ background: "#22c55e" }}
+                          style={{ background: "#E85D04" }}
                         >
                           <Check
                             className="h-3 w-3 text-white"

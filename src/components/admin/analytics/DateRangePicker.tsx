@@ -47,7 +47,7 @@ export default function DateRangePicker({
             className={`px-3 py-1.5 text-sm rounded-lg border transition-colors ${
               active
                 ? "bg-[#E85D04]/20 text-[#E85D04] border-[#E85D04]/30"
-                : "bg-[#1a1a1a] text-gray-400 border-[#2a2a2a] hover:bg-[#222]"
+                : "bg-white text-gray-600 border-[#E5E7EB] hover:bg-[#F8F9FA]"
             }`}
           >
             {preset.label}
@@ -60,14 +60,14 @@ export default function DateRangePicker({
         type="date"
         value={from}
         onChange={(e) => onChange(e.target.value, to)}
-        className="bg-[#151515] border border-[#2a2a2a] text-white rounded-lg px-3 py-1.5 text-sm"
+        className="bg-white border border-[#E5E7EB] text-[#1B2A4A] rounded-lg px-3 py-1.5 text-sm"
       />
       <span className="text-gray-500 text-sm">–</span>
       <input
         type="date"
         value={to}
         onChange={(e) => onChange(from, e.target.value)}
-        className="bg-[#151515] border border-[#2a2a2a] text-white rounded-lg px-3 py-1.5 text-sm"
+        className="bg-white border border-[#E5E7EB] text-[#1B2A4A] rounded-lg px-3 py-1.5 text-sm"
       />
 
       {/* GroupBy toggle */}
@@ -77,7 +77,7 @@ export default function DateRangePicker({
           className={`px-3 py-1.5 text-sm rounded-lg border transition-colors ${
             groupBy === "day"
               ? "bg-[#E85D04]/20 text-[#E85D04] border-[#E85D04]/30"
-              : "bg-[#1a1a1a] text-gray-400 border-[#2a2a2a] hover:bg-[#222]"
+              : "bg-white text-gray-600 border-[#E5E7EB] hover:bg-[#F8F9FA]"
           }`}
         >
           Theo ngày
@@ -87,7 +87,7 @@ export default function DateRangePicker({
           className={`px-3 py-1.5 text-sm rounded-lg border transition-colors ${
             groupBy === "month"
               ? "bg-[#E85D04]/20 text-[#E85D04] border-[#E85D04]/30"
-              : "bg-[#1a1a1a] text-gray-400 border-[#2a2a2a] hover:bg-[#222]"
+              : "bg-white text-gray-600 border-[#E5E7EB] hover:bg-[#F8F9FA]"
           }`}
         >
           Theo tháng

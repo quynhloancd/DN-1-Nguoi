@@ -294,8 +294,8 @@ export default function TagsPage() {
 
           <div className="bg-[#F8F9FA] border border-[#E5E7EB] rounded-xl p-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-green-500/20">
-                <Tag size={18} className="text-green-400" />
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-[#E85D04]/10">
+                <Tag size={18} className="text-[#E85D04]" />
               </div>
               <div>
                 <p className="text-sm text-gray-400">Tag phổ biến nhất</p>
@@ -387,7 +387,7 @@ export default function TagsPage() {
             <select
               value={assignTagId}
               onChange={(e) => setAssignTagId(e.target.value)}
-              className="bg-[#F0F1F3] border border-[#333] rounded-lg px-3 py-2 text-[#1B2A4A] w-full md:w-64"
+              className="bg-[#F0F1F3] border border-[#E5E7EB] rounded-lg px-3 py-2 text-[#1B2A4A] w-full md:w-64"
             >
               <option value="">-- Chọn tag --</option>
               {tags.map((t) => (
@@ -413,7 +413,7 @@ export default function TagsPage() {
                 placeholder="Tìm theo email hoặc tên..."
                 value={subscriberSearch}
                 onChange={(e) => setSubscriberSearch(e.target.value)}
-                className="bg-[#F0F1F3] border border-[#333] rounded-lg pl-9 pr-3 py-2 text-[#1B2A4A] w-full"
+                className="bg-[#F0F1F3] border border-[#E5E7EB] rounded-lg pl-9 pr-3 py-2 text-[#1B2A4A] w-full"
               />
             </div>
           </div>
@@ -439,7 +439,7 @@ export default function TagsPage() {
                       type="checkbox"
                       checked={selectedSubscribers.includes(sub.id)}
                       onChange={() => toggleSubscriber(sub.id)}
-                      className="w-4 h-4 rounded border-[#333] bg-[#F0F1F3] accent-[#E85D04]"
+                      className="w-4 h-4 rounded border-[#E5E7EB] bg-[#F0F1F3] accent-[#E85D04]"
                     />
                     <div className="flex-1 min-w-0">
                       <p className="text-sm text-[#1B2A4A] truncate">
@@ -515,7 +515,7 @@ export default function TagsPage() {
                 placeholder="VD: VIP, Newsletter, Premium..."
                 value={formName}
                 onChange={(e) => setFormName(e.target.value)}
-                className="bg-[#F0F1F3] border border-[#333] rounded-lg px-3 py-2 text-[#1B2A4A] w-full"
+                className="bg-[#F0F1F3] border border-[#E5E7EB] rounded-lg px-3 py-2 text-[#1B2A4A] w-full"
               />
             </div>
 
@@ -552,7 +552,7 @@ export default function TagsPage() {
                 value={formDescription}
                 onChange={(e) => setFormDescription(e.target.value)}
                 rows={3}
-                className="bg-[#F0F1F3] border border-[#333] rounded-lg px-3 py-2 text-[#1B2A4A] w-full resize-none"
+                className="bg-[#F0F1F3] border border-[#E5E7EB] rounded-lg px-3 py-2 text-[#1B2A4A] w-full resize-none"
               />
             </div>
 
@@ -560,7 +560,7 @@ export default function TagsPage() {
             <div className="flex items-center justify-end gap-3 pt-2">
               <button
                 onClick={closeModal}
-                className="px-4 py-2 rounded-lg border border-[#333] text-gray-400 hover:text-[#1B2A4A] hover:border-[#555] transition-colors"
+                className="px-4 py-2 rounded-lg border border-[#E5E7EB] text-gray-400 hover:text-[#1B2A4A] hover:border-[#555] transition-colors"
               >
                 Hủy
               </button>

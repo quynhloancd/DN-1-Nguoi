@@ -510,7 +510,7 @@ export default function NovelEditor({ initialContent, initialHtml, onChange }: N
           {/* ── Slash command menu ── */}
           <EditorCommand
             ref={commandRef}
-            className="novel-command-menu z-50 overflow-hidden rounded-xl border border-[#333] bg-[#F0F1F3] shadow-2xl transition-all"
+            className="novel-command-menu z-50 overflow-hidden rounded-xl border border-[#E5E7EB] bg-[#F0F1F3] shadow-2xl transition-all"
           >
             <EditorCommandEmpty className="px-4 py-3 text-sm text-gray-500">
               Không tìm thấy lệnh nào
@@ -523,7 +523,7 @@ export default function NovelEditor({ initialContent, initialHtml, onChange }: N
                   onCommand={(val) => item.command?.(val)}
                   className="flex items-center gap-3 px-3 py-2.5 text-sm cursor-pointer hover:bg-[#252525] transition-colors aria-selected:bg-[#252525]"
                 >
-                  <div className="flex items-center justify-center w-9 h-9 rounded-lg border border-[#333] bg-white text-gray-400">
+                  <div className="flex items-center justify-center w-9 h-9 rounded-lg border border-[#E5E7EB] bg-white text-gray-400">
                     {item.icon}
                   </div>
                   <div>
@@ -536,7 +536,7 @@ export default function NovelEditor({ initialContent, initialHtml, onChange }: N
           </EditorCommand>
 
           {/* ── Bubble menu (select text to format) ── */}
-          <EditorBubble className="novel-bubble-menu flex items-center gap-0.5 rounded-xl border border-[#333] bg-[#F0F1F3] px-1 py-1 shadow-2xl">
+          <EditorBubble className="novel-bubble-menu flex items-center gap-0.5 rounded-xl border border-[#E5E7EB] bg-[#F0F1F3] px-1 py-1 shadow-2xl">
             <BubbleBtn
               action={(e) => e.chain().focus().toggleBold().run()}
               isActiveCheck={(e) => e.isActive("bold")}

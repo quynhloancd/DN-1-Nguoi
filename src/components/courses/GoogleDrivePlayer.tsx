@@ -245,7 +245,7 @@ export default function GoogleDrivePlayer({
             className="absolute top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none"
             style={{ animation: "fadeSlideIn 0.3s ease-out" }}
           >
-            <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#22c55e]/90 backdrop-blur-sm text-[#1B2A4A] text-sm font-medium shadow-lg">
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#E85D04]/90 backdrop-blur-sm text-white text-sm font-medium shadow-lg">
               <span>&#x2705;</span>
               <span>
                 {nextLessonUrl
@@ -280,7 +280,7 @@ export default function GoogleDrivePlayer({
             <>
               <div className="flex-1 h-1 bg-white/10 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-[#22c55e] rounded-full transition-all duration-1000"
+                  className="h-full bg-[#E85D04] rounded-full transition-all duration-1000"
                   style={{ width: `${progress}%` }}
                 />
               </div>

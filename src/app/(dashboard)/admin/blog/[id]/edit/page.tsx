@@ -533,7 +533,7 @@ export default function EditBlogPostPage() {
                       </div>
                     </div>
                   ) : (
-                    <button type="button" onClick={() => thumbInputRef.current?.click()} disabled={uploadingThumb} className="w-full h-24 rounded-lg border border-dashed border-[#333] hover:border-[#E85D0440] bg-[#141414] hover:bg-[#F0F1F3] transition-colors flex flex-col items-center justify-center gap-1.5 cursor-pointer">
+                    <button type="button" onClick={() => thumbInputRef.current?.click()} disabled={uploadingThumb} className="w-full h-24 rounded-lg border border-dashed border-[#E5E7EB] hover:border-[#E85D0440] bg-[#F8F9FA] hover:bg-[#F0F1F3] transition-colors flex flex-col items-center justify-center gap-1.5 cursor-pointer">
                       {uploadingThumb ? (
                         <><Loader2 size={18} className="text-gray-500 animate-spin" /><span className="text-xs text-gray-500">Đang tải lên...</span></>
                       ) : (

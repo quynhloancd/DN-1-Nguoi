@@ -329,7 +329,7 @@ export default function CoursePublicView({
               {/* Price */}
               <div className="mb-4">
                 {isFree ? (
-                  <div className="text-2xl font-bold text-[#22c55e]">
+                  <div className="text-2xl font-bold text-[#E85D04]">
                     Miễn phí
                   </div>
                 ) : (
@@ -375,14 +375,14 @@ export default function CoursePublicView({
               {!isAuthenticated ? (
                 <Link
                   href="/register"
-                  className={`${isFree ? "btn-success" : "btn-gold"} w-full justify-center text-sm py-3`}
+                  className={`${isFree ? "btn-green" : "btn-gold"} w-full justify-center text-sm py-3`}
                 >
                   {isFree ? "Đăng ký miễn phí để vào học" : "Đăng ký để mua khoá học"}
                 </Link>
               ) : isFree ? (
                 <Link
                   href={`/courses/${product.slug}`}
-                  className="btn-success w-full justify-center text-sm py-3"
+                  className="btn-green w-full justify-center text-sm py-3"
                 >
                   Vào học ngay
                 </Link>
@@ -566,7 +566,7 @@ export default function CoursePublicView({
                                 className={
                                   isPlaying
                                     ? "text-[#E85D04] shrink-0"
-                                    : "text-[#22c55e] shrink-0"
+                                    : "text-[#E85D04] shrink-0"
                                 }
                               />
                             ) : (
@@ -582,7 +582,7 @@ export default function CoursePublicView({
                                 dripLocked
                                   ? "text-gray-500"
                                   : lesson.is_free
-                                    ? "text-gray-200"
+                                    ? "text-[#1B2A4A]"
                                     : "text-gray-500"
                               } ${isPlaying ? "text-[#E85D04] font-medium" : ""}`}
                             >
@@ -606,9 +606,9 @@ export default function CoursePublicView({
                               <span
                                 className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
                                 style={{
-                                  background: "rgba(34,197,94,0.12)",
-                                  color: "#22c55e",
-                                  border: "1px solid rgba(34,197,94,0.25)",
+                                  background: "rgba(232,93,4,0.1)",
+                                  color: "#E85D04",
+                                  border: "1px solid rgba(232,93,4,0.25)",
                                 }}
                               >
                                 Miễn phí
@@ -661,16 +661,17 @@ export default function CoursePublicView({
       <div
         className="fixed bottom-0 left-0 right-0 z-40 lg:hidden"
         style={{
-          background: "rgba(10,10,10,0.95)",
+          background: "rgba(255,255,255,0.97)",
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
-          borderTop: "1px solid #1a1a1a",
+          borderTop: "1px solid #E5E7EB",
+          boxShadow: "0 -2px 12px rgba(0,0,0,0.08)",
         }}
       >
         <div className="flex items-center justify-between px-4 py-3">
           <div>
             {isFree ? (
-              <span className="text-base font-bold text-[#22c55e]">
+              <span className="text-base font-bold text-[#E85D04]">
                 Miễn phí
               </span>
             ) : (
@@ -691,13 +692,13 @@ export default function CoursePublicView({
           </div>
 
           {!isAuthenticated ? (
-            <Link href="/register" className={`${isFree ? "btn-success" : "btn-gold"} text-sm py-2.5 px-5`}>
+            <Link href="/register" className={`${isFree ? "btn-green" : "btn-gold"} text-sm py-2.5 px-5`}>
               {isFree ? "Đăng ký" : "Đăng ký ngay"}
             </Link>
           ) : isFree ? (
             <Link
               href={`/courses/${product.slug}`}
-              className="btn-success text-sm py-2.5 px-5"
+              className="btn-green text-sm py-2.5 px-5"
             >
               Vào học
             </Link>

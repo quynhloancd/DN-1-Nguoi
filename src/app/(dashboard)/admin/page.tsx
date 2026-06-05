@@ -198,7 +198,7 @@ export default async function AdminPage() {
         {/* Admin cards */}
         <div className="grid md:grid-cols-3 gap-4">
           {adminCards.map((card) => (
-            <div key={card.href} className="card-dark p-5 hover:bg-[#1f1f1f] transition-all">
+            <div key={card.href} className="card-dark p-5 hover:bg-[#F8F9FA] transition-all">
               <div className="flex items-start justify-between mb-3">
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center"
@@ -312,10 +312,10 @@ export default async function AdminPage() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-colors card-dark hover:bg-[#1f1f1f]"
+                className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-colors card-dark hover:bg-[#F8F9FA]"
               >
                 <item.icon size={15} style={{ color: item.color }} />
-                <span className="text-gray-300">{item.label}</span>
+                <span className="text-gray-600">{item.label}</span>
               </Link>
             ))}
           </div>

@@ -674,7 +674,7 @@ export default function AnalyticsPage() {
                         return (
                           <tr
                             key={c.id}
-                            className="hover:bg-[#1f1f1f] transition-colors"
+                            className="hover:bg-[#F8F9FA] transition-colors"
                             style={{
                               borderBottom:
                                 i < sortedCampaigns.length - 1
@@ -690,13 +690,13 @@ export default function AnalyticsPage() {
                                 {c.subject}
                               </div>
                             </td>
-                            <td className="px-4 py-3 text-right text-gray-300">
+                            <td className="px-4 py-3 text-right text-gray-600">
                               {c.sent_count.toLocaleString("vi-VN")}
                             </td>
-                            <td className="px-4 py-3 text-right text-gray-300">
+                            <td className="px-4 py-3 text-right text-gray-600">
                               {c.open_count.toLocaleString("vi-VN")}
                             </td>
-                            <td className="px-4 py-3 text-right text-gray-300">
+                            <td className="px-4 py-3 text-right text-gray-600">
                               {c.click_count.toLocaleString("vi-VN")}
                             </td>
                             <td className="px-4 py-3 text-right">
@@ -930,7 +930,7 @@ export default function AnalyticsPage() {
                           key={i}
                           className="flex items-center justify-between text-[11px]"
                         >
-                          <span className="text-gray-300 truncate max-w-[140px]">
+                          <span className="text-gray-600 truncate max-w-[140px]">
                             {b.email}
                           </span>
                           <span

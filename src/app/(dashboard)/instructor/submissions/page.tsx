@@ -351,7 +351,7 @@ export default function InstructorSubmissionsPage() {
                           <p className="text-xs text-gray-500 mb-1">
                             Nhận xét hiện tại
                           </p>
-                          <div className="bg-[#0d1a0d] border border-[#22c55e]/20 rounded-lg p-3 text-sm text-gray-300 whitespace-pre-line">
+                          <div className="bg-[#F8F9FA] border border-[#E5E7EB] rounded-lg p-3 text-sm text-[#1B2A4A] whitespace-pre-line">
                             {sub.feedback}
                           </div>
                         </div>

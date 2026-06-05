@@ -12,17 +12,17 @@ const triggerLabels: Record<string, string> = {
 
 export default function TriggerNode({ data }: { data: any }) {
   return (
-    <div className="px-4 py-3 rounded-xl border-2 border-[#22c55e] bg-white min-w-[180px] shadow-lg shadow-green-900/20">
+    <div className="px-4 py-3 rounded-xl border-2 border-[#E85D04] bg-white min-w-[180px] shadow-lg shadow-orange-900/20">
       <div className="flex items-center gap-2">
-        <div className="w-7 h-7 rounded-lg bg-[#22c55e20] flex items-center justify-center">
-          <Zap size={14} className="text-[#22c55e]" />
+        <div className="w-7 h-7 rounded-lg bg-[#E85D0420] flex items-center justify-center">
+          <Zap size={14} className="text-[#E85D04]" />
         </div>
         <div>
-          <div className="text-[10px] text-[#22c55e] font-bold uppercase">Trigger</div>
+          <div className="text-[10px] text-[#E85D04] font-bold uppercase">Trigger</div>
           <div className="text-xs text-[#1B2A4A] font-medium">{triggerLabels[data.triggerType] || "Thủ công"}</div>
         </div>
       </div>
-      <Handle type="source" position={Position.Bottom} className="!bg-[#22c55e] !w-3 !h-3 !border-2 !border-[#111]" />
+      <Handle type="source" position={Position.Bottom} className="!bg-[#E85D04] !w-3 !h-3 !border-2 !border-[#E5E7EB]" />
     </div>
   );
 }

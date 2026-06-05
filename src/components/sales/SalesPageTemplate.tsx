@@ -292,7 +292,7 @@ export default function SalesPageTemplate({
   const priceBlock = (
     <div className="flex items-center gap-3 flex-wrap">
       {isFree ? (
-        <span className="text-3xl font-bold text-[#22c55e]">
+        <span className="text-3xl font-bold text-[#E85D04]">
           Miễn phí
         </span>
       ) : (
@@ -397,7 +397,7 @@ export default function SalesPageTemplate({
 
             {/* Trust badge */}
             <div className="mt-6 flex items-center justify-center gap-2 text-sm text-gray-500">
-              <ShieldCheck size={16} className="text-[#22c55e]" />
+              <ShieldCheck size={16} className="text-[#E85D04]" />
               <span>
                 Hoàn tiền trong {guaranteeDays} ngày nếu không hài lòng
               </span>
@@ -409,12 +409,12 @@ export default function SalesPageTemplate({
       {/* ═══════════════════════════════════════════════
           SECTION 2: PAIN POINTS
       ═══════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20" style={{ background: "#0d0d0d" }}>
+      <section className="py-16 sm:py-20" style={{ background: "#F8F9FA" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#1B2A4A] text-center mb-3">
             Bạn có đang gặp vấn đề này?
           </h2>
-          <p className="text-gray-400 text-center mb-10 max-w-2xl mx-auto">
+          <p className="text-gray-500 text-center mb-10 max-w-2xl mx-auto">
             Nếu bạn đang gặp những vấn đề dưới đây, khoá học này chính là giải pháp dành cho bạn.
           </p>
 
@@ -424,15 +424,15 @@ export default function SalesPageTemplate({
                 key={i}
                 className="rounded-xl p-5 sm:p-6 transition-colors"
                 style={{
-                  background: "#F8F9FA",
-                  border: "1px solid #2a2a2a",
+                  background: "#FFFFFF",
+                  border: "1px solid #E5E7EB",
                 }}
               >
                 <div className="text-3xl mb-3">{point.icon}</div>
                 <h3 className="text-base font-semibold text-[#1B2A4A] mb-2">
                   {point.title}
                 </h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-sm text-gray-500 leading-relaxed">
                   {point.description}
                 </p>
               </div>
@@ -459,15 +459,15 @@ export default function SalesPageTemplate({
                 key={i}
                 className="rounded-xl p-5 sm:p-6 transition-colors"
                 style={{
-                  background: "#111",
-                  border: "1px solid rgba(212,168,67,0.15)",
+                  background: "#FFFFFF",
+                  border: "1px solid #E5E7EB",
                 }}
               >
                 <div className="text-3xl mb-3">{benefit.icon}</div>
                 <h3 className="text-base font-semibold text-[#1B2A4A] mb-2">
                   {benefit.title}
                 </h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-sm text-gray-500 leading-relaxed">
                   {benefit.description}
                 </p>
               </div>
@@ -479,12 +479,12 @@ export default function SalesPageTemplate({
       {/* ═══════════════════════════════════════════════
           SECTION 4: CURRICULUM
       ═══════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20" style={{ background: "#0d0d0d" }}>
+      <section className="py-16 sm:py-20" style={{ background: "#FFFFFF" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#1B2A4A] text-center mb-3">
             Nội dung khoá học
           </h2>
-          <p className="text-gray-400 text-center mb-10">
+          <p className="text-gray-500 text-center mb-10">
             {sortedChapters.length} chương &bull; {totalLessons} bài học
             {totalDuration > 0 && <> &bull; {formatTotalDuration(totalDuration)}</>}
           </p>
@@ -492,7 +492,7 @@ export default function SalesPageTemplate({
           {sortedChapters.length === 0 ? (
             <div
               className="rounded-xl p-10 text-center"
-              style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
+              style={{ background: "#F8F9FA", border: "1px solid #E5E7EB" }}
             >
               <BookOpen size={40} className="text-gray-500 mx-auto mb-3" />
               <h3 className="font-bold text-[#1B2A4A] mb-1">
@@ -517,8 +517,8 @@ export default function SalesPageTemplate({
                     key={chapter.id}
                     className="rounded-xl overflow-hidden"
                     style={{
-                      background: "#F8F9FA",
-                      border: "1px solid #2a2a2a",
+                      background: "#FFFFFF",
+                      border: "1px solid #E5E7EB",
                     }}
                   >
                     {/* Chapter header */}
@@ -562,7 +562,7 @@ export default function SalesPageTemplate({
                     {isExpanded && (
                       <div
                         className="px-4 pb-3 space-y-0.5"
-                        style={{ borderTop: "1px solid #1f1f1f" }}
+                        style={{ borderTop: "1px solid #E5E7EB" }}
                       >
                         {chapter.lessons.map((lesson) => (
                           <div
@@ -572,7 +572,7 @@ export default function SalesPageTemplate({
                             {lesson.is_free ? (
                               <PlayCircle
                                 size={16}
-                                className="text-[#22c55e] shrink-0"
+                                className="text-[#E85D04] shrink-0"
                               />
                             ) : (
                               <Lock
@@ -583,7 +583,7 @@ export default function SalesPageTemplate({
 
                             <span
                               className={`text-sm flex-1 ${
-                                lesson.is_free ? "text-gray-200" : "text-gray-500"
+                                lesson.is_free ? "text-[#1B2A4A]" : "text-gray-500"
                               }`}
                             >
                               {lesson.title}
@@ -593,9 +593,9 @@ export default function SalesPageTemplate({
                               <span
                                 className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
                                 style={{
-                                  background: "rgba(34,197,94,0.12)",
-                                  color: "#22c55e",
-                                  border: "1px solid rgba(34,197,94,0.25)",
+                                  background: "rgba(232,93,4,0.1)",
+                                  color: "#E85D04",
+                                  border: "1px solid rgba(232,93,4,0.25)",
                                 }}
                               >
                                 Miễn phí
@@ -652,8 +652,8 @@ export default function SalesPageTemplate({
           <div
             className="rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6"
             style={{
-              background: "#111",
-              border: "1px solid #2a2a2a",
+              background: "#FFFFFF",
+              border: "1px solid #E5E7EB",
             }}
           >
             {/* Avatar */}
@@ -682,14 +682,14 @@ export default function SalesPageTemplate({
       {/* ═══════════════════════════════════════════════
           SECTION 6: TESTIMONIALS / SOCIAL PROOF
       ═══════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20" style={{ background: "#0d0d0d" }}>
+      <section className="py-16 sm:py-20" style={{ background: "#F8F9FA" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           {testimonials && testimonials.length > 0 ? (
             <>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#1B2A4A] text-center mb-3">
                 Học viên nói gì?
               </h2>
-              <p className="text-gray-400 text-center mb-10">
+              <p className="text-gray-500 text-center mb-10">
                 Những chia sẻ từ học viên đã tham gia khoá học
               </p>
 
@@ -699,8 +699,8 @@ export default function SalesPageTemplate({
                     key={i}
                     className="rounded-xl p-5 sm:p-6"
                     style={{
-                      background: "#F8F9FA",
-                      border: "1px solid #2a2a2a",
+                      background: "#FFFFFF",
+                      border: "1px solid #E5E7EB",
                     }}
                   >
                     {/* Stars */}
@@ -792,8 +792,8 @@ export default function SalesPageTemplate({
                   key={i}
                   className="rounded-xl overflow-hidden"
                   style={{
-                    background: "#F8F9FA",
-                    border: "1px solid #2a2a2a",
+                    background: "#FFFFFF",
+                    border: "1px solid #E5E7EB",
                   }}
                 >
                   <button
@@ -812,9 +812,9 @@ export default function SalesPageTemplate({
                   {isOpen && (
                     <div
                       className="px-5 pb-4"
-                      style={{ borderTop: "1px solid #1f1f1f" }}
+                      style={{ borderTop: "1px solid #E5E7EB" }}
                     >
-                      <p className="text-sm text-gray-400 leading-relaxed pt-3">
+                      <p className="text-sm text-gray-500 leading-relaxed pt-3">
                         {faq.answer}
                       </p>
                     </div>
@@ -833,7 +833,7 @@ export default function SalesPageTemplate({
         className="py-16 sm:py-24"
         style={{
           background:
-            "linear-gradient(180deg, #0d0d0d 0%, rgba(212,168,67,0.05) 50%, #0d0d0d 100%)",
+            "linear-gradient(180deg, #FFFFFF 0%, #FFF3E0 50%, #FFFFFF 100%)",
         }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
@@ -863,12 +863,12 @@ export default function SalesPageTemplate({
           <div
             className="inline-flex items-center gap-2 rounded-full px-5 py-2.5"
             style={{
-              background: "rgba(34,197,94,0.08)",
-              border: "1px solid rgba(34,197,94,0.2)",
+              background: "rgba(232,93,4,0.08)",
+              border: "1px solid rgba(232,93,4,0.2)",
             }}
           >
-            <ShieldCheck size={18} className="text-[#22c55e]" />
-            <span className="text-sm font-medium text-[#22c55e]">
+            <ShieldCheck size={18} className="text-[#E85D04]" />
+            <span className="text-sm font-medium text-[#E85D04]">
               Cam kết hoàn tiền 100% trong {guaranteeDays} ngày
             </span>
           </div>
@@ -881,16 +881,17 @@ export default function SalesPageTemplate({
       <div
         className="fixed bottom-0 left-0 right-0 z-40 lg:hidden"
         style={{
-          background: "rgba(10,10,10,0.95)",
+          background: "rgba(255,255,255,0.97)",
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
-          borderTop: "1px solid #1a1a1a",
+          borderTop: "1px solid #E5E7EB",
+          boxShadow: "0 -2px 12px rgba(0,0,0,0.08)",
         }}
       >
         <div className="flex items-center justify-between px-4 py-3">
           <div>
             {isFree ? (
-              <span className="text-base font-bold text-[#22c55e]">
+              <span className="text-base font-bold text-[#E85D04]">
                 Miễn phí
               </span>
             ) : (

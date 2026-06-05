@@ -223,8 +223,8 @@ export default function AnnouncementsPage() {
               <div
                 className={`p-3 rounded-lg text-sm ${
                   result.type === "success"
-                    ? "bg-green-900/30 text-green-400 border border-green-800/40"
-                    : "bg-red-900/30 text-red-400 border border-red-800/40"
+                    ? "bg-[#E85D04]/10 text-[#E85D04] border border-[#E85D04]/30"
+                    : "bg-red-50 text-red-600 border border-red-200"
                 }`}
               >
                 {result.type === "success" && <CheckCircle size={14} className="inline mr-1.5" />}

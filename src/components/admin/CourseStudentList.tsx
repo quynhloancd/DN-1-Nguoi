@@ -263,7 +263,7 @@ export default function CourseStudentList({
               <div key={student.enrollmentId} className="card-dark overflow-hidden">
                 {/* ── Main row ─────────────────────────── */}
                 <div
-                  className="p-4 flex items-center gap-4 cursor-pointer hover:bg-[#1f1f1f] transition-colors"
+                  className="p-4 flex items-center gap-4 cursor-pointer hover:bg-[#F8F9FA] transition-colors"
                   onClick={() =>
                     setExpandedId(isExpanded ? null : student.enrollmentId)
                   }

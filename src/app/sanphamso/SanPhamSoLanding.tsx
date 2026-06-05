@@ -402,7 +402,7 @@ export default function SanPhamSoLanding() {
                 <a
                   href="/dashboard"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-base font-bold text-white transition-all hover:scale-[1.02]"
-                  style={{ background: "linear-gradient(135deg, #22c55e, #16a34a)" }}
+                  style={{ background: "linear-gradient(135deg, #E85D04, #F97316)" }}
                 >
                   Vào Học Ngay <ArrowRight size={16} />
                 </a>
@@ -502,13 +502,13 @@ export default function SanPhamSoLanding() {
                     ].map((item) => (
                       <div
                         key={item.key}
-                        className="flex items-center justify-between p-4 rounded-lg bg-[#1a1a1a]"
+                        className="flex items-center justify-between p-4 rounded-lg bg-[#F8F9FA]"
                       >
                         <span className="text-xs sm:text-sm text-gray-400">{item.label}</span>
                         <div className="flex items-center gap-2">
                           <span
                             className={`text-sm sm:text-base font-semibold ${
-                              item.highlight ? "text-[#FBBF24]" : "text-white font-mono"
+                              item.highlight ? "text-[#E85D04]" : "text-[#1B2A4A] font-mono"
                             }`}
                           >
                             {item.value}

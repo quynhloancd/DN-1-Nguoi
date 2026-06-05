@@ -10,7 +10,7 @@ interface OrdersChartProps {
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg p-3 shadow-lg">
+      <div className="bg-white border border-[#E5E7EB] rounded-lg p-3 shadow-lg">
         <p className="text-gray-300 text-sm font-medium mb-1">{label}</p>
         {payload.map((entry: any, index: number) => (
           <p key={index} className="text-sm" style={{ color: entry.color }}>

@@ -111,12 +111,12 @@ export default function RefundPolicyPage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <div className="border-b border-[#1a1a1a] px-4 sm:px-6 py-6 sm:py-8">
+      <div className="border-b border-[#E5E7EB] px-4 sm:px-6 py-6 sm:py-8">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
             Chính sách hoàn tiền
           </h1>
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-500 text-sm">
             Cập nhật lần cuối: 18 tháng 5, 2026
           </p>
         </div>
@@ -126,8 +126,8 @@ export default function RefundPolicyPage() {
       <div className="px-4 sm:px-6 py-6 sm:py-10">
         <div className="max-w-4xl mx-auto space-y-10">
           {/* Table of Contents */}
-          <nav className="rounded-xl border border-[#1a1a1a] bg-[#111] p-5">
-            <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
+          <nav className="rounded-xl border border-[#E5E7EB] bg-[#F8F9FA] p-5">
+            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
               Mục lục
             </h2>
             <ul className="space-y-2">
@@ -183,7 +183,7 @@ export default function RefundPolicyPage() {
               {section.extra?.map((paragraph, i) => (
                 <p
                   key={i}
-                  className="text-gray-400 leading-relaxed mb-3 text-sm"
+                  className="text-gray-500 leading-relaxed mb-3 text-sm"
                 >
                   {paragraph}
                 </p>
@@ -239,7 +239,7 @@ export default function RefundPolicyPage() {
           ))}
 
           {/* Related links */}
-          <div className="pt-6 border-t border-[#1a1a1a] flex flex-col sm:flex-row gap-3">
+          <div className="pt-6 border-t border-[#E5E7EB] flex flex-col sm:flex-row gap-3">
             <Link
               href="/terms-of-service"
               className="text-sm text-[#E85D04] hover:underline"

@@ -666,7 +666,7 @@ export default function CommunityPage() {
 
           {/* Report success toast */}
           {reportSuccess && (
-            <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-green-900/90 border border-green-700 text-green-200 text-sm px-4 py-2.5 rounded-xl shadow-lg pointer-events-none">
+            <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white border border-[#E5E7EB] text-[#1B2A4A] text-sm px-4 py-2.5 rounded-xl shadow-lg pointer-events-none">
               {reportSuccess}
             </div>
           )}

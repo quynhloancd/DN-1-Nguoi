@@ -466,7 +466,7 @@ export default function VideoPlayer({
             className="absolute top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none"
             style={{ animation: "fadeSlideIn 0.3s ease-out" }}
           >
-            <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#22c55e]/90 backdrop-blur-sm text-[#1B2A4A] text-sm font-medium shadow-lg">
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#E85D04]/90 backdrop-blur-sm text-white text-sm font-medium shadow-lg">
               <span>&#x2705;</span>
               <span>{nextLessonUrl ? "Hoàn thành! Đang chuyển bài..." : "Bài học đã hoàn thành!"}</span>
             </div>
@@ -527,10 +527,10 @@ export default function VideoPlayer({
             onClick={seek}
           >
             <div
-              className="h-full bg-[#22c55e] rounded-full relative"
+              className="h-full bg-[#E85D04] rounded-full relative"
               style={{ width: `${progress}%` }}
             >
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#22c55e] scale-0 group-hover:scale-100 transition-transform" />
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#E85D04] scale-0 group-hover:scale-100 transition-transform" />
             </div>
           </div>
 
@@ -592,7 +592,7 @@ export default function VideoPlayer({
               </button>
               {showSpeed && (
                 <div
-                  className="absolute bottom-full right-0 mb-1 bg-[#F0F1F3] border border-[#333] rounded-lg py-1 min-w-[90px] shadow-xl"
+                  className="absolute bottom-full right-0 mb-1 bg-[#F0F1F3] border border-[#E5E7EB] rounded-lg py-1 min-w-[90px] shadow-xl"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <div className="px-3 py-1 text-[10px] text-gray-500 font-medium uppercase tracking-wider">

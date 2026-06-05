@@ -6,7 +6,7 @@ const nodeCategories = [
   {
     label: "Triggers",
     nodes: [
-      { type: "trigger", label: "Trigger", icon: Zap, color: "#22c55e", description: "Bắt đầu automation" },
+      { type: "trigger", label: "Trigger", icon: Zap, color: "#E85D04", description: "Bắt đầu automation" },
     ],
   },
   {
@@ -55,7 +55,7 @@ export default function NodeSidebar() {
                 key={node.type}
                 draggable
                 onDragStart={(e) => onDragStart(e, node.type)}
-                className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg cursor-grab active:cursor-grabbing transition-all border border-transparent hover:border-[#333] hover:bg-[#F0F1F3]"
+                className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg cursor-grab active:cursor-grabbing transition-all border border-transparent hover:border-[#E5E7EB] hover:bg-[#F0F1F3]"
               >
                 <div
                   className="w-7 h-7 rounded-md flex items-center justify-center shrink-0"

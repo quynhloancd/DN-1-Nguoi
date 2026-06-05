@@ -468,7 +468,7 @@ export default function SubscribersPage() {
                 setBulkAction("add_to_list");
                 setBulkListModalOpen(true);
               }}
-              className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-[#1B2A4A] transition-colors"
+              className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-[#1B2A4A] transition-colors"
             >
               <ListPlus size={14} /> Thêm vào list
             </button>
@@ -477,7 +477,7 @@ export default function SubscribersPage() {
                 setBulkAction("remove_from_list");
                 setBulkListModalOpen(true);
               }}
-              className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-[#1B2A4A] transition-colors"
+              className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-[#1B2A4A] transition-colors"
             >
               <ListMinus size={14} /> Gỡ khỏi list
             </button>
@@ -598,7 +598,7 @@ export default function SubscribersPage() {
                       return (
                         <tr
                           key={sub.id}
-                          className="hover:bg-[#1f1f1f] transition-colors"
+                          className="hover:bg-[#F8F9FA] transition-colors"
                           style={{
                             borderBottom:
                               idx < subscribers.length - 1
@@ -626,7 +626,7 @@ export default function SubscribersPage() {
                             )}
                           </td>
                           <td className="px-4 py-3 hidden md:table-cell">
-                            <span className="text-gray-300 text-sm">
+                            <span className="text-gray-600 text-sm">
                               {sub.full_name || (
                                 <span className="text-gray-500">--</span>
                               )}
@@ -683,7 +683,7 @@ export default function SubscribersPage() {
                                       setOpenMenuId(null);
                                       // Could open an edit modal here
                                     }}
-                                    className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:bg-[#222] hover:text-[#1B2A4A] transition-colors"
+                                    className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:bg-[#222] hover:text-[#1B2A4A] transition-colors"
                                   >
                                     <Edit size={14} /> Chỉnh sửa
                                   </button>
@@ -693,7 +693,7 @@ export default function SubscribersPage() {
                                         setOpenMenuId(null);
                                         handleChangeStatus(sub.id, "active");
                                       }}
-                                      className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:bg-[#222] hover:text-[#1B2A4A] transition-colors"
+                                      className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:bg-[#222] hover:text-[#1B2A4A] transition-colors"
                                     >
                                       <UserCheck size={14} /> Đặt Active
                                     </button>
@@ -707,7 +707,7 @@ export default function SubscribersPage() {
                                           "unsubscribed"
                                         );
                                       }}
-                                      className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:bg-[#222] hover:text-[#1B2A4A] transition-colors"
+                                      className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:bg-[#222] hover:text-[#1B2A4A] transition-colors"
                                     >
                                       <UserMinus size={14} /> Unsubscribe
                                     </button>

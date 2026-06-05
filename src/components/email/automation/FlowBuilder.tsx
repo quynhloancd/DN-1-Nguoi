@@ -148,7 +148,7 @@ function FlowBuilderInner({ initialFlow, onChange, onSave }: FlowBuilderProps) {
           style={{ background: "#F8F9FA" }}
         >
           <Controls
-            className="!bg-[#F0F1F3] !border-[#333] !rounded-lg"
+            className="!bg-[#F0F1F3] !border-[#E5E7EB] !rounded-lg"
             style={{ button: { background: "#F0F1F3", color: "white", borderColor: "#333" } } as any}
           />
           <Background variant={BackgroundVariant.Dots} gap={20} size={1} color="#333" />

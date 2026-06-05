@@ -616,7 +616,7 @@ export default function CafeLanding() {
               ))}
             </div>
 
-            <div className="border-t border-[#2a2a2a] pt-6 mb-8">
+            <div className="border-t border-[#E5E7EB] pt-6 mb-8">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs text-gray-500">Tổng giá trị:</span>
                 <span className="text-xs text-gray-500 line-through">
@@ -957,7 +957,7 @@ export default function CafeLanding() {
                     openFaq === i ? "max-h-48" : "max-h-0"
                   }`}
                 >
-                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-gray-400 leading-relaxed border-t border-[#1f1f1f] pt-4">
+                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-gray-400 leading-relaxed border-t border-[#E5E7EB] pt-4">
                     {faq.a}
                   </div>
                 </div>
@@ -1024,7 +1024,7 @@ export default function CafeLanding() {
       </section>
 
       {/* ═══ FOOTER ═══ */}
-      <footer className="py-10 px-4 text-center border-t border-[#1a1a1a]">
+      <footer className="py-10 px-4 text-center border-t border-[#E5E7EB]">
         <p className="text-xs text-gray-500">
           &copy; {new Date().getFullYear()} Doanh Nghiệp 1 Người. All rights
           reserved.
@@ -1089,7 +1089,7 @@ export default function CafeLanding() {
                 <a
                   href="/dashboard"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-base font-bold text-white transition-all hover:scale-[1.02]"
-                  style={{ background: "linear-gradient(135deg, #22c55e, #16a34a)" }}
+                  style={{ background: "linear-gradient(135deg, #E85D04, #F97316)" }}
                 >
                   Vào Xem Ngay <ArrowRight size={16} />
                 </a>
@@ -1161,7 +1161,7 @@ export default function CafeLanding() {
                     ].map((item) => (
                       <div
                         key={item.key}
-                        className="flex items-center justify-between p-4 rounded-lg bg-[#1a1a1a]"
+                        className="flex items-center justify-between p-4 rounded-lg bg-[#F8F9FA]"
                       >
                         <span className="text-xs text-gray-400">
                           {item.label}
@@ -1171,7 +1171,7 @@ export default function CafeLanding() {
                             className={`text-sm font-semibold ${
                               item.highlight
                                 ? "text-[#E85D04]"
-                                : "text-white font-mono"
+                                : "text-[#1B2A4A] font-mono"
                             }`}
                           >
                             {item.value}

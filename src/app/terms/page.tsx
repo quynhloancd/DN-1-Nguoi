@@ -193,10 +193,10 @@ export default function TermsPage() {
   return (
     <div
       className="min-h-screen"
-      style={{ background: "radial-gradient(ellipse at top, #0d1117 0%, #0a0a0a 60%)" }}
+      style={{ background: "#FFFFFF" }}
     >
       {/* Header */}
-      <div className="border-b border-[#1a1a1a] px-4 sm:px-6 py-8 sm:py-12">
+      <div className="border-b border-[#E5E7EB] px-4 sm:px-6 py-8 sm:py-12">
         <div className="max-w-4xl mx-auto">
           <Link
             href="/"
@@ -207,10 +207,10 @@ export default function TermsPage() {
             </svg>
             Quay về trang chủ
           </Link>
-          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#1B2A4A] mb-2">
             Điều Khoản Sử Dụng
           </h1>
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-500 text-sm">
             Cập nhật lần cuối: 18/05/2026
           </p>
         </div>
@@ -220,8 +220,8 @@ export default function TermsPage() {
       <div className="px-4 sm:px-6 py-8 sm:py-12">
         <div className="max-w-4xl mx-auto space-y-10">
           {/* Table of Contents */}
-          <nav className="rounded-xl border border-[#1a1a1a] bg-[#111] p-5">
-            <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
+          <nav className="rounded-xl border border-[#E5E7EB] bg-[#F8F9FA] p-5">
+            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
               Mục lục
             </h2>
             <ul className="space-y-2">
@@ -241,7 +241,7 @@ export default function TermsPage() {
           {/* Sections */}
           {sections.map((section) => (
             <section key={section.id} id={section.id} className="scroll-mt-6">
-              <h2 className="text-lg sm:text-xl font-bold text-white mb-4">
+              <h2 className="text-lg sm:text-xl font-bold text-[#1B2A4A] mb-4">
                 {section.title}
               </h2>
 
@@ -277,7 +277,7 @@ export default function TermsPage() {
               {/* Subsections (for sections 5 & 6) */}
               {section.subsections?.map((sub, si) => (
                 <div key={si} className="mt-5 mb-4">
-                  <h3 className="text-base font-semibold text-white mb-3">
+                  <h3 className="text-base font-semibold text-[#1B2A4A] mb-3">
                     {sub.subtitle}
                   </h3>
                   <ul className="space-y-2 ml-1">
@@ -304,23 +304,23 @@ export default function TermsPage() {
               ))}
 
               {section.extra?.map((paragraph, i) => (
-                <p key={i} className="text-gray-400 leading-relaxed mb-3 text-sm italic">
+                <p key={i} className="text-gray-500 leading-relaxed mb-3 text-sm italic">
                   {paragraph}
                 </p>
               ))}
 
               {/* Contact info for the last section */}
               {section.id === "lien-he" && (
-                <div className="rounded-xl border border-[#1a1a1a] bg-[#111] p-5 mt-4 space-y-3">
+                <div className="rounded-xl border border-[#E5E7EB] bg-[#F8F9FA] p-5 mt-4 space-y-3">
                   <p className="text-gray-300">
                     <span className="text-gray-500">Nền tảng:</span>{" "}
-                    <span className="text-white font-medium">
+                    <span className="text-[#1B2A4A] font-medium">
                       {siteConfig.name}
                     </span>
                   </p>
                   <p className="text-gray-300">
                     <span className="text-gray-500">Người đại diện:</span>{" "}
-                    <span className="text-white font-medium">
+                    <span className="text-[#1B2A4A] font-medium">
                       {siteConfig.owner.name}
                     </span>
                   </p>
@@ -359,7 +359,7 @@ export default function TermsPage() {
           ))}
 
           {/* Related links */}
-          <div className="pt-6 border-t border-[#1a1a1a] flex flex-col sm:flex-row gap-3">
+          <div className="pt-6 border-t border-[#E5E7EB] flex flex-col sm:flex-row gap-3">
             <Link
               href="/privacy-policy"
               className="text-sm text-[#E85D04] hover:underline"

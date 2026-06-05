@@ -66,14 +66,14 @@ export default function RecentActivity({
       </h3>
 
       <div
-        className="space-y-1 max-h-[480px] overflow-y-auto border-l border-[#2a2a2a] ml-1"
+        className="space-y-1 max-h-[480px] overflow-y-auto border-l border-[#E5E7EB] ml-1"
       >
         {loading
           ? Array.from({ length: 5 }).map((_, i) => <SkeletonItem key={i} />)
           : activities.slice(0, 10).map((item, index) => (
               <div
                 key={index}
-                className="flex items-start gap-3 p-3 rounded-lg hover:bg-[#1a1a1a] transition-colors relative"
+                className="flex items-start gap-3 p-3 rounded-lg hover:bg-[#F8F9FA] transition-colors relative"
               >
                 {/* Colored dot */}
                 <div

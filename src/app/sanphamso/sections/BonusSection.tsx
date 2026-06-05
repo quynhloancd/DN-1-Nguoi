@@ -173,7 +173,7 @@ export default function BonusSection({
             className="flex items-center gap-2 text-sm"
             style={{ color: "rgba(255,255,255,0.6)" }}
           >
-            <ShieldCheck className="h-4 w-4" style={{ color: "#22c55e" }} />
+            <ShieldCheck className="h-4 w-4" style={{ color: "#E85D04" }} />
             Thanh toán an toàn 100%
           </span>
         </div>

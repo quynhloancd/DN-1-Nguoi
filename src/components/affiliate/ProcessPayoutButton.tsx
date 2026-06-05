@@ -49,7 +49,7 @@ export default function ProcessPayoutButton({ payoutId, onProcessed }: Props) {
       onClick={handleProcess}
       disabled={loading}
       className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg font-medium transition-opacity hover:opacity-80 disabled:opacity-50"
-      style={{ background: "rgba(34,197,94,0.12)", color: "#22c55e" }}
+      style={{ background: "rgba(232,93,4,0.1)", color: "#E85D04" }}
     >
       {loading ? <Loader2 size={12} className="animate-spin" /> : <CheckCircle size={12} />}
       Đã chuyển tiền

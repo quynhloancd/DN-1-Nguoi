@@ -93,7 +93,7 @@ export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
             <li key={text} className="flex items-start gap-3.5">
               <span
                 className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full"
-                style={{ background: "#22c55e" }}
+                style={{ background: "#E85D04" }}
               >
                 <Check className="h-3 w-3 text-white" strokeWidth={3} />
               </span>

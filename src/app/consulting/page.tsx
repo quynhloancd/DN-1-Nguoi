@@ -27,7 +27,7 @@ const packages = [
 
 export default function ConsultingPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white pt-24 px-4 pb-20">
+    <div className="min-h-screen bg-white text-[#1B2A4A] pt-24 px-4 pb-20">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-14">
           <div className="inline-block px-4 py-2 rounded-full text-sm font-bold mb-6" style={{background:"rgba(232,93,4,0.15)",color:"#E85D04"}}>
@@ -43,7 +43,7 @@ export default function ConsultingPage() {
 
         <div className="grid sm:grid-cols-2 gap-6 mb-14">
           {packages.map((pkg, i) => (
-            <div key={i} className="bg-[#111] rounded-2xl p-8" style={{border: pkg.highlight ? "2px solid rgba(232,93,4,0.5)" : "1px solid #1f1f1f"}}>
+            <div key={i} className="bg-white rounded-2xl p-8" style={{border: pkg.highlight ? "2px solid rgba(232,93,4,0.5)" : "1px solid #E5E7EB"}}>
               {pkg.badge && (
                 <span className="text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block" style={{background:"#E85D04",color:"#fff"}}>{pkg.badge}</span>
               )}
@@ -52,7 +52,7 @@ export default function ConsultingPage() {
               <div className="text-sm text-gray-500 mb-6">{pkg.duration}</div>
               <ul className="space-y-2 mb-8">
                 {pkg.features.map((f,j) => (
-                  <li key={j} className="flex items-start gap-2 text-sm text-gray-300">
+                  <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
                     <span style={{color:"#E85D04"}}>✓</span>{f}
                   </li>
                 ))}
@@ -65,7 +65,7 @@ export default function ConsultingPage() {
           ))}
         </div>
 
-        <div className="bg-[#111] rounded-2xl p-8 text-center" style={{border:"1px solid #1f1f1f"}}>
+        <div className="bg-[#F8F9FA] rounded-2xl p-8 text-center" style={{border:"1px solid #E5E7EB"}}>
           <h3 className="text-lg font-bold mb-2">Không chắc gói nào phù hợp?</h3>
           <p className="text-gray-400 mb-4 text-sm">Chat Zalo miễn phí để được tư vấn trước khi quyết định.</p>
           <a href={siteConfig.socials.zalo} target="_blank" rel="noopener noreferrer"

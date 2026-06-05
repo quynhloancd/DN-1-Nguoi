@@ -164,11 +164,11 @@ export default function CookieConsent() {
   if (!show) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white border-t border-[#333]">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white border-t border-[#E5E7EB]">
       <div className="max-w-4xl mx-auto">
         {/* ── Main banner ── */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-sm text-gray-300">
+          <p className="text-sm text-gray-600">
             Trang web sử dụng cookie để cải thiện trải nghiệm của bạn.
             Xem{" "}
             <a
@@ -188,7 +188,7 @@ export default function CookieConsent() {
             </button>
             <button
               onClick={declineAll}
-              className="px-4 py-2 text-sm text-gray-400 hover:text-[#1B2A4A] border border-[#333] rounded-lg transition-colors"
+              className="px-4 py-2 text-sm text-gray-400 hover:text-[#1B2A4A] border border-[#E5E7EB] rounded-lg transition-colors"
             >
               Từ chối
             </button>
@@ -203,11 +203,11 @@ export default function CookieConsent() {
 
         {/* ── Granular customization panel ── */}
         {showCustomize && (
-          <div className="mt-4 pt-4 border-t border-[#333] space-y-4">
+          <div className="mt-4 pt-4 border-t border-[#E5E7EB] space-y-4">
             {/* Essential */}
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-white">
+                <p className="text-sm font-medium text-[#1B2A4A]">
                   Cookie thiết yếu
                 </p>
                 <p className="text-xs text-gray-400">
@@ -220,7 +220,7 @@ export default function CookieConsent() {
             {/* Analytics */}
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-white">
+                <p className="text-sm font-medium text-[#1B2A4A]">
                   Cookie phân tích
                 </p>
                 <p className="text-xs text-gray-400">
@@ -233,7 +233,7 @@ export default function CookieConsent() {
             {/* Marketing */}
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-white">
+                <p className="text-sm font-medium text-[#1B2A4A]">
                   Cookie tiếp thị
                 </p>
                 <p className="text-xs text-gray-400">

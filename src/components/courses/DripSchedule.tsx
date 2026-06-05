@@ -49,7 +49,7 @@ export default function DripSchedule({
                   } ${isLast ? "mb-0" : "mb-0"}`}
                 >
                   {drip.isLocked ? (
-                    <div className="w-[30px] h-[30px] rounded-full bg-[#F0F1F3] border border-[#333] flex items-center justify-center">
+                    <div className="w-[30px] h-[30px] rounded-full bg-[#F0F1F3] border border-[#E5E7EB] flex items-center justify-center">
                       <Lock size={12} className="text-gray-500" />
                     </div>
                   ) : (

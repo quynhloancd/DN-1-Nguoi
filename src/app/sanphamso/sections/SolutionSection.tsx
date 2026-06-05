@@ -84,8 +84,8 @@ export default function SolutionSection() {
                   <th
                     className="w-1/2 px-5 py-4 text-sm font-semibold uppercase tracking-wider sm:px-6 sm:py-5 sm:text-base"
                     style={{
-                      color: "#22c55e",
-                      backgroundColor: "rgba(34,197,94,0.08)",
+                      color: "#E85D04",
+                      backgroundColor: "rgba(232,93,4,0.08)",
                     }}
                   >
                     Sản phẩm SỐ &#9989;

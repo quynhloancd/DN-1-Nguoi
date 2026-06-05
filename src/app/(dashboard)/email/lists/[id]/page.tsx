@@ -520,7 +520,7 @@ export default function ListDetailPage() {
                       return (
                         <tr
                           key={sub.id}
-                          className="hover:bg-[#1f1f1f] transition-colors"
+                          className="hover:bg-[#F8F9FA] transition-colors"
                           style={{
                             borderBottom:
                               idx < subscribers.length - 1
@@ -539,7 +539,7 @@ export default function ListDetailPage() {
                             )}
                           </td>
                           <td className="px-4 py-3 hidden md:table-cell">
-                            <span className="text-gray-300 text-sm">
+                            <span className="text-gray-600 text-sm">
                               {sub.full_name || (
                                 <span className="text-gray-500">--</span>
                               )}

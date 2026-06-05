@@ -198,7 +198,7 @@ export default function ModerationPage() {
           </div>
         )}
         {success && (
-          <div className="bg-green-900/50 border border-green-700 text-green-200 text-sm px-4 py-2.5 rounded-xl">
+          <div className="bg-white border border-[#E5E7EB] text-[#1B2A4A] text-sm px-4 py-2.5 rounded-xl">
             {success}
           </div>
         )}
@@ -213,7 +213,7 @@ export default function ModerationPage() {
         {/* Empty state */}
         {!loading && posts.length === 0 && (
           <div className="card-dark p-12 text-center">
-            <Shield size={40} className="text-green-500 mx-auto mb-3" />
+            <Shield size={40} className="text-[#E85D04] mx-auto mb-3" />
             <h3 className="text-lg font-semibold text-[#1B2A4A] mb-1">Không có bài viết nào</h3>
             <p className="text-sm text-gray-400">Cộng đồng đang an toàn! Không có nội dung cần kiểm duyệt.</p>
           </div>
@@ -313,7 +313,7 @@ export default function ModerationPage() {
                   <button
                     onClick={() => handleAction(post.id, "unhide")}
                     disabled={actionLoading === `${post.id}-unhide`}
-                    className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-green-900/30 text-green-400 hover:bg-green-900/50 transition-colors disabled:opacity-50"
+                    className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-[#E85D04]/10 text-[#E85D04] hover:bg-[#E85D04]/20 transition-colors disabled:opacity-50"
                   >
                     {actionLoading === `${post.id}-unhide` ? <Loader2 size={12} className="animate-spin" /> : <Eye size={12} />}
                     Hiện lại
