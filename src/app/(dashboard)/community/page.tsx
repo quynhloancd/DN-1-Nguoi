@@ -138,6 +138,7 @@ export default function CommunityPage() {
   const [posting, setPosting] = useState(false);
   const [tags, setTags] = useState<string[]>([]);
   const [myProfile, setMyProfile] = useState<UserProfile | null>(null);
+  const [myEmail, setMyEmail] = useState<string>("");
   const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
   const [postError, setPostError] = useState<string | null>(null);
   const [likeError, setLikeError] = useState<string | null>(null);
@@ -284,6 +285,7 @@ export default function CommunityPage() {
       const { data: { user } } = await supabase.auth.getUser();
 
       if (user) {
+        if (user.email) setMyEmail(user.email);
         const { data: profile } = await supabase
           .from("profiles")
           .select("id, full_name, avatar_url, xp, level, tier, streak")
@@ -555,7 +557,7 @@ export default function CommunityPage() {
             <div className="flex gap-3 mb-3">
               <UserAvatar
                 src={myProfile?.avatar_url}
-                initials={myProfile ? getAvatarInitials(myProfile.full_name) : "??"}
+                initials={myProfile ? getAvatarInitials(myProfile.full_name) : (myEmail ? myEmail[0].toUpperCase() : "T")}
                 size={36}
                 gradient="linear-gradient(135deg, #E85D04, #059669)"
               />

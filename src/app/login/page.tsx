@@ -18,9 +18,9 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="w-16 h-16 mb-4 inline-flex items-center justify-center">
+          <Link href="/" className="inline-flex items-center justify-center w-16 h-16 mb-4">
             <Image src="/images/logo.png" alt={siteConfig.name} width={64} height={64} className="rounded-2xl" />
-          </div>
+          </Link>
           <h1 className="text-2xl font-bold text-white">Đăng nhập</h1>
           <p className="text-gray-400 mt-1 text-sm">
             <span className="text-white font-semibold">Thiên Huệ AI</span> — Chào mừng trở lại

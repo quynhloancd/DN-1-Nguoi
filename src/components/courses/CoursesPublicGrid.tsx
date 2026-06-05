@@ -198,7 +198,7 @@ function SectionHeader({
       </div>
       <div>
         <h2 className="text-xl font-bold text-[#1B2A4A]">{title}</h2>
-        <p className="text-gray-400 text-sm mt-0.5">{subtitle}</p>
+        <p className="text-gray-500 text-sm mt-0.5">{subtitle}</p>
       </div>
     </div>
   );
@@ -230,7 +230,7 @@ export default function CoursesPublicGrid({ courses }: { courses: PublicCourse[]
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1B2A4A] mb-3">
             Khoá Học Của <span className="text-[#E85D04]">Doanh Nghiệp 1 Người</span>
           </h1>
-          <p className="text-gray-400 text-base sm:text-lg max-w-2xl">
+          <p className="text-gray-600 text-base sm:text-lg max-w-2xl">
             Được thiết kế để bạn áp dụng ngay — không lý thuyết suông. Học từ người đã làm được.
           </p>
         </div>

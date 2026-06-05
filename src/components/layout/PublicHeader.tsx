@@ -46,7 +46,7 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
             sizes="32px"
             className="w-8 h-8 rounded-lg object-cover"
           />
-          <span className="text-sm font-bold text-[#1B2A4A] leading-tight hidden sm:block">
+          <span className="text-sm font-bold text-white leading-tight hidden sm:block">
             {siteConfig.owner.name}
           </span>
         </Link>
@@ -55,13 +55,13 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
         <nav className="hidden md:flex items-center gap-6">
           <Link
             href="/courses"
-            className="text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
+            className="text-sm text-gray-300 hover:text-white transition-colors"
           >
             Khoá học
           </Link>
           <Link
             href="/blog"
-            className="text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
+            className="text-sm text-gray-300 hover:text-white transition-colors"
           >
             Blog
           </Link>
@@ -80,7 +80,7 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
               />
               <Link
                 href="/dashboard"
-                className="text-sm font-medium text-gray-300 hover:text-[#1B2A4A] transition-colors"
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
               >
                 Dashboard
               </Link>
@@ -89,7 +89,7 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
             <>
               <Link
                 href="/login"
-                className="text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
+                className="text-sm text-gray-300 hover:text-white transition-colors"
               >
                 Đăng nhập
               </Link>

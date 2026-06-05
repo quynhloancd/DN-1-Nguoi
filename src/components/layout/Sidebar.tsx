@@ -16,7 +16,7 @@ import {
   Star, ShieldCheck, Zap, X, UserPlus, Contact, GitBranch,
   FolderOpen, TrendingUp, Target, UserCheck, Tag, ClipboardCheck,
   CreditCard, GraduationCap, Megaphone, Eye, Shield,
-  Video, Globe, Sparkles,
+  Video, Globe, Sparkles, ShoppingBag,
 } from "lucide-react";
 
 const courseSubNav = [
@@ -28,6 +28,7 @@ const courseSubNav = [
 
 const mainNav = [
   { href: "/dashboard", icon: LayoutDashboard, label: "Tổng quan" },
+  { href: "/sanphamso", icon: ShoppingBag, label: "Sản phẩm" },
   { href: "/courses", icon: BookOpen, label: "Khoá học", subNav: courseSubNav },
   { href: "/resources", icon: FolderOpen, label: "Tài nguyên" },
   { href: "/community", icon: Users, label: "Cộng đồng" },
@@ -397,9 +398,9 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
       {/* Legal links */}
       {!isCompact && (
         <div className="mx-3 mb-2 flex gap-2 text-[10px] text-gray-500">
-          <Link href="/privacy-policy" className="hover:text-gray-400 transition-colors">Bảo mật</Link>
+          <Link href="/privacy" className="hover:text-gray-400 transition-colors">Bảo mật</Link>
           <span>&middot;</span>
-          <Link href="/terms-of-service" className="hover:text-gray-400 transition-colors">Điều khoản</Link>
+          <Link href="/terms" className="hover:text-gray-400 transition-colors">Điều khoản</Link>
         </div>
       )}
 

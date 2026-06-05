@@ -272,7 +272,7 @@ export default function CoursePublicView({
               </h1>
 
               {product.description && (
-                <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
+                <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
                   {product.description}
                 </p>
               )}
@@ -285,7 +285,7 @@ export default function CoursePublicView({
               )}
 
               {/* Stats */}
-              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
                 <span className="flex items-center gap-1.5">
                   <BookOpen size={16} className="text-[#E85D04]" />
                   {sortedChapters.length} chương
