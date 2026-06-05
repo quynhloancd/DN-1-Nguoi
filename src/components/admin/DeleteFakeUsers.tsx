@@ -65,7 +65,7 @@ export default function DeleteFakeUsers({ userIds, count }: Props) {
           <div className="card-dark p-6 max-w-md w-full relative" style={{ border: "1px solid rgba(239,68,68,0.3)" }}>
             <button
               onClick={() => { setShowConfirm(false); setResult(null); }}
-              className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"
+              className="absolute top-4 right-4 text-gray-500 hover:text-[#1B2A4A] transition-colors"
             >
               <X size={18} />
             </button>
@@ -96,7 +96,7 @@ export default function DeleteFakeUsers({ userIds, count }: Props) {
               </div>
             ) : (
               <>
-                <div className="rounded-lg p-4 mb-4" style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}>
+                <div className="rounded-lg p-4 mb-4" style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}>
                   <p className="text-sm text-gray-300 mb-3">
                     Sẽ xoá <span className="text-red-400 font-bold">{count}</span> tài khoản có các dấu hiệu:
                   </p>
@@ -132,8 +132,8 @@ export default function DeleteFakeUsers({ userIds, count }: Props) {
                   </button>
                   <button
                     onClick={() => setShowConfirm(false)}
-                    className="px-4 py-2.5 rounded-xl text-sm font-medium text-gray-400 hover:text-white transition-colors"
-                    style={{ background: "#1f1f1f", border: "1px solid #333" }}
+                    className="px-4 py-2.5 rounded-xl text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
+                    style={{ background: "#E5E7EB", border: "1px solid #333" }}
                   >
                     Huỷ
                   </button>

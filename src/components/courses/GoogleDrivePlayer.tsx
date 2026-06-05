@@ -231,7 +231,7 @@ export default function GoogleDrivePlayer({
 
         {/* Loading state */}
         {!loaded && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center z-20 bg-[#111]">
+          <div className="absolute inset-0 flex flex-col items-center justify-center z-20 bg-white">
             <div className="w-8 h-8 border-2 border-[#E85D04] border-t-transparent rounded-full animate-spin mb-3" />
             <p className="text-xs text-gray-500">
               {title ?? "Đang tải video..."}
@@ -245,7 +245,7 @@ export default function GoogleDrivePlayer({
             className="absolute top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none"
             style={{ animation: "fadeSlideIn 0.3s ease-out" }}
           >
-            <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#22c55e]/90 backdrop-blur-sm text-white text-sm font-medium shadow-lg">
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#22c55e]/90 backdrop-blur-sm text-[#1B2A4A] text-sm font-medium shadow-lg">
               <span>&#x2705;</span>
               <span>
                 {nextLessonUrl

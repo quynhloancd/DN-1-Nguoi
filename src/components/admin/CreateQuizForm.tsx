@@ -472,7 +472,7 @@ export default function CreateQuizForm({ lessons }: CreateQuizFormProps) {
             <button
               type="button"
               onClick={addQuestion}
-              className="w-full py-2.5 rounded-lg border border-dashed border-white/10 text-sm text-gray-400 hover:text-white hover:border-white/20 transition-colors flex items-center justify-center gap-1.5"
+              className="w-full py-2.5 rounded-lg border border-dashed border-white/10 text-sm text-gray-400 hover:text-[#1B2A4A] hover:border-white/20 transition-colors flex items-center justify-center gap-1.5"
             >
               <Plus size={14} />
               Thêm câu hỏi
@@ -506,7 +506,7 @@ export default function CreateQuizForm({ lessons }: CreateQuizFormProps) {
               className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40"
               style={{
                 background: "linear-gradient(135deg, #E85D04, #b8912e)",
-                color: "#0a0a0a",
+                color: "#F8F9FA",
               }}
             >
               {submitting ? (

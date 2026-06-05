@@ -172,7 +172,7 @@ export default async function AffiliateDashboardPage({
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4 text-2xl" style={{ background: "rgba(212,168,67,0.1)" }}>
                 <Link2 size={28} className="text-[#E85D04]" />
               </div>
-              <h2 className="text-xl font-bold text-white">Tham gia chương trình Affiliate</h2>
+              <h2 className="text-xl font-bold text-[#1B2A4A]">Tham gia chương trình Affiliate</h2>
               <p className="text-gray-400 text-sm mt-2">
                 Giới thiệu khoá học cho bạn bè và nhận <span className="text-[#E85D04] font-semibold">20% hoa hồng</span> mỗi đơn hàng.
               </p>
@@ -219,7 +219,7 @@ export default async function AffiliateDashboardPage({
             {/* Referral Link */}
             <div className="card-dark p-5">
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-semibold text-white flex items-center gap-2">
+                <h3 className="text-sm font-semibold text-[#1B2A4A] flex items-center gap-2">
                   <Link2 size={16} className="text-[#E85D04]" />
                   Link giới thiệu của bạn
                 </h3>
@@ -254,7 +254,7 @@ export default async function AffiliateDashboardPage({
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div className="card-dark p-4 text-center">
                 <div className="text-xs text-gray-400 mb-1">Tổng hoa hồng</div>
-                <div className="text-lg font-bold text-white">{formatCurrency(affiliate.total_earned || 0)}</div>
+                <div className="text-lg font-bold text-[#1B2A4A]">{formatCurrency(affiliate.total_earned || 0)}</div>
               </div>
               <div className="card-dark p-4 text-center">
                 <div className="text-xs text-gray-400 mb-1">Đã thanh toán</div>
@@ -270,7 +270,7 @@ export default async function AffiliateDashboardPage({
             {available >= 200000 && affiliate.bank_account && (
               <div className="card-dark p-4 flex items-center justify-between">
                 <div>
-                  <div className="text-sm font-medium text-white">Số dư khả dụng: <span className="text-[#E85D04]">{formatCurrency(available)}</span></div>
+                  <div className="text-sm font-medium text-[#1B2A4A]">Số dư khả dụng: <span className="text-[#E85D04]">{formatCurrency(available)}</span></div>
                   <div className="text-xs text-gray-400">Chuyển về {affiliate.bank_name} - {affiliate.bank_account}</div>
                 </div>
                 <form action={requestPayout}>
@@ -283,7 +283,7 @@ export default async function AffiliateDashboardPage({
 
             {/* Recent conversions */}
             <div className="card-dark p-5">
-              <h3 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+              <h3 className="text-sm font-semibold text-[#1B2A4A] mb-4 flex items-center gap-2">
                 <ShoppingCart size={16} className="text-[#a855f7]" />
                 Đơn hàng gần đây
               </h3>
@@ -293,7 +293,7 @@ export default async function AffiliateDashboardPage({
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="text-left text-gray-400 text-xs border-b border-[#1f1f1f]">
+                      <tr className="text-left text-gray-400 text-xs border-b border-[#E5E7EB]">
                         <th className="pb-2 font-medium">Sản phẩm</th>
                         <th className="pb-2 font-medium">Giá trị đơn</th>
                         <th className="pb-2 font-medium">Hoa hồng</th>
@@ -303,9 +303,9 @@ export default async function AffiliateDashboardPage({
                     </thead>
                     <tbody>
                       {conversions.map((c) => (
-                        <tr key={c.id} className="border-b border-[#1a1a1a]">
+                        <tr key={c.id} className="border-b border-[#E5E7EB]">
                           <td className="py-2.5 text-gray-300">{(c.products as { name: string } | null)?.name || "—"}</td>
-                          <td className="py-2.5 text-white">{formatCurrency(c.order_amount)}</td>
+                          <td className="py-2.5 text-[#1B2A4A]">{formatCurrency(c.order_amount)}</td>
                           <td className="py-2.5 text-[#E85D04] font-medium">{formatCurrency(c.commission_amount)}</td>
                           <td className="py-2.5">
                             <StatusBadge status={c.status} />
@@ -322,14 +322,14 @@ export default async function AffiliateDashboardPage({
             {/* Pending orders */}
             {pendingOrders.length > 0 && (
               <div className="card-dark p-5">
-                <h3 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+                <h3 className="text-sm font-semibold text-[#1B2A4A] mb-4 flex items-center gap-2">
                   <Clock size={16} className="text-[#f59e0b]" />
                   Đơn hàng chờ xử lý ({pendingOrders.length})
                 </h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="text-left text-gray-400 text-xs border-b border-[#1f1f1f]">
+                      <tr className="text-left text-gray-400 text-xs border-b border-[#E5E7EB]">
                         <th className="pb-2 font-medium">Khách hàng</th>
                         <th className="pb-2 font-medium">Mã đơn</th>
                         <th className="pb-2 font-medium">Thời gian</th>
@@ -337,7 +337,7 @@ export default async function AffiliateDashboardPage({
                     </thead>
                     <tbody>
                       {pendingOrders.map((o, i) => (
-                        <tr key={i} className="border-b border-[#1a1a1a]">
+                        <tr key={i} className="border-b border-[#E5E7EB]">
                           <td className="py-2.5 text-gray-300">{o.full_name}</td>
                           <td className="py-2.5">
                             <code className="text-xs text-[#f59e0b] bg-[#f59e0b]/10 px-1.5 py-0.5 rounded">DK{o.order_code}</code>
@@ -354,21 +354,21 @@ export default async function AffiliateDashboardPage({
             {/* Referred customers */}
             {referredCustomers.length > 0 && (
               <div className="card-dark p-5">
-                <h3 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+                <h3 className="text-sm font-semibold text-[#1B2A4A] mb-4 flex items-center gap-2">
                   <Users size={16} className="text-[#3b82f6]" />
                   Khách hàng đã giới thiệu ({referredCustomers.length})
                 </h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="text-left text-gray-400 text-xs border-b border-[#1f1f1f]">
+                      <tr className="text-left text-gray-400 text-xs border-b border-[#E5E7EB]">
                         <th className="pb-2 font-medium">Tên</th>
                         <th className="pb-2 font-medium">Ngày</th>
                       </tr>
                     </thead>
                     <tbody>
                       {referredCustomers.map((c, i) => (
-                        <tr key={i} className="border-b border-[#1a1a1a]">
+                        <tr key={i} className="border-b border-[#E5E7EB]">
                           <td className="py-2.5 text-gray-300">{c.full_name}</td>
                           <td className="py-2.5 text-gray-400 text-xs">{formatDate(c.created_at)}</td>
                         </tr>
@@ -381,7 +381,7 @@ export default async function AffiliateDashboardPage({
 
             {/* Bank info update */}
             <div className="card-dark p-5">
-              <h3 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+              <h3 className="text-sm font-semibold text-[#1B2A4A] mb-4 flex items-center gap-2">
                 <Banknote size={16} className="text-[#f59e0b]" />
                 Thông tin nhận tiền
               </h3>
@@ -407,14 +407,14 @@ export default async function AffiliateDashboardPage({
             {/* Payouts history */}
             {payouts.length > 0 && (
               <div className="card-dark p-5">
-                <h3 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+                <h3 className="text-sm font-semibold text-[#1B2A4A] mb-4 flex items-center gap-2">
                   <Wallet size={16} className="text-[#E85D04]" />
                   Lịch sử rút tiền
                 </h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="text-left text-gray-400 text-xs border-b border-[#1f1f1f]">
+                      <tr className="text-left text-gray-400 text-xs border-b border-[#E5E7EB]">
                         <th className="pb-2 font-medium">Số tiền</th>
                         <th className="pb-2 font-medium">Trạng thái</th>
                         <th className="pb-2 font-medium">Ngày yêu cầu</th>
@@ -422,8 +422,8 @@ export default async function AffiliateDashboardPage({
                     </thead>
                     <tbody>
                       {payouts.map((p) => (
-                        <tr key={p.id} className="border-b border-[#1a1a1a]">
-                          <td className="py-2.5 text-white font-medium">{formatCurrency(p.amount)}</td>
+                        <tr key={p.id} className="border-b border-[#E5E7EB]">
+                          <td className="py-2.5 text-[#1B2A4A] font-medium">{formatCurrency(p.amount)}</td>
                           <td className="py-2.5"><PayoutStatusBadge status={p.status} /></td>
                           <td className="py-2.5 text-gray-400 text-xs">{formatDate(p.created_at)}</td>
                         </tr>
@@ -451,7 +451,7 @@ function StatCard({ icon: Icon, label, value, color }: {
         <Icon size={16} style={{ color }} />
         <span className="text-xs text-gray-400">{label}</span>
       </div>
-      <div className="text-xl font-bold text-white">{value}</div>
+      <div className="text-xl font-bold text-[#1B2A4A]">{value}</div>
     </div>
   );
 }

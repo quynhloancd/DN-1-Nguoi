@@ -126,7 +126,7 @@ export default function ResourcesPage() {
               <FileText size={18} className="text-[#E85D04]" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-white">
+              <h2 className="text-lg font-bold text-[#1B2A4A]">
                 Thư viện tài nguyên
               </h2>
               <p className="text-sm text-gray-400">
@@ -148,7 +148,7 @@ export default function ResourcesPage() {
               >
                 <category.icon size={16} style={{ color: category.color }} />
               </div>
-              <h3 className="text-base font-semibold text-white">
+              <h3 className="text-base font-semibold text-[#1B2A4A]">
                 {category.name}
               </h3>
               <span className="text-xs text-gray-500">
@@ -176,7 +176,7 @@ export default function ResourcesPage() {
                         />
                       </div>
                       <div>
-                        <h4 className="text-sm font-semibold text-white leading-snug">
+                        <h4 className="text-sm font-semibold text-[#1B2A4A] leading-snug">
                           {resource.title}
                         </h4>
                       </div>

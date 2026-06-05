@@ -344,7 +344,7 @@ export default async function CRMInterestsPage({
                   <s.icon size={14} style={{ color: s.color }} />
                 </div>
               </div>
-              <div className="text-xl font-bold text-white">{s.value}</div>
+              <div className="text-xl font-bold text-[#1B2A4A]">{s.value}</div>
             </div>
           ))}
         </div>
@@ -360,7 +360,7 @@ export default async function CRMInterestsPage({
                   name="q"
                   defaultValue={q}
                   placeholder="Tên, email, khoá học..."
-                  className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg pl-9 pr-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
+                  className="w-full bg-white border border-[#E5E7EB] rounded-lg pl-9 pr-3 py-2 text-sm text-[#1B2A4A] placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
                 />
               </div>
             </div>
@@ -369,7 +369,7 @@ export default async function CRMInterestsPage({
               <select
                 name="status"
                 defaultValue={statusFilter}
-                className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04]"
+                className="w-full bg-white border border-[#E5E7EB] rounded-lg px-3 py-2 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#E85D04]"
               >
                 <option value="">Tất cả</option>
                 {Object.entries(statusConfig).map(([key, cfg]) => (
@@ -382,7 +382,7 @@ export default async function CRMInterestsPage({
               <select
                 name="product_id"
                 defaultValue={productFilter}
-                className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04]"
+                className="w-full bg-white border border-[#E5E7EB] rounded-lg px-3 py-2 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#E85D04]"
               >
                 <option value="">Tất cả khoá học</option>
                 {(allProducts ?? []).map((p) => (
@@ -430,7 +430,7 @@ export default async function CRMInterestsPage({
                       />
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <span className="text-sm font-semibold text-white">
+                          <span className="text-sm font-semibold text-[#1B2A4A]">
                             {customer.name}
                           </span>
                           {isVip && (
@@ -505,7 +505,7 @@ export default async function CRMInterestsPage({
                   </div>
 
                   {/* Course interests table */}
-                  <div className="border-t border-[#1f1f1f]">
+                  <div className="border-t border-[#E5E7EB]">
                     {customer.interests.map((interest, idx) => {
                       const product = interest.products;
                       const sc = statusConfig[interest.status] || statusConfig.new;
@@ -515,7 +515,7 @@ export default async function CRMInterestsPage({
                         <div
                           key={interest.id}
                           className={`flex flex-col sm:flex-row sm:items-center gap-3 px-4 py-3 hover:bg-[#161616] transition-colors ${
-                            idx > 0 ? "border-t border-[#1a1a1a]" : ""
+                            idx > 0 ? "border-t border-[#E5E7EB]" : ""
                           }`}
                         >
                           {/* Course info */}
@@ -534,7 +534,7 @@ export default async function CRMInterestsPage({
                             <div className="min-w-0 flex-1">
                               <Link
                                 href={`/courses/${product?.slug}`}
-                                className="text-sm text-white hover:text-[#E85D04] transition-colors truncate block font-medium"
+                                className="text-sm text-[#1B2A4A] hover:text-[#E85D04] transition-colors truncate block font-medium"
                               >
                                 {product?.title || "—"}
                               </Link>
@@ -600,7 +600,7 @@ export default async function CRMInterestsPage({
 
                   {/* Notes (show if any interest has notes) */}
                   {customer.interests.some((i) => i.notes) && (
-                    <div className="px-4 py-2.5 border-t border-[#1f1f1f] bg-[#0f0f0f]">
+                    <div className="px-4 py-2.5 border-t border-[#E5E7EB] bg-[#0f0f0f]">
                       {customer.interests
                         .filter((i) => i.notes)
                         .map((i) => (

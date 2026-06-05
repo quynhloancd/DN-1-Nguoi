@@ -292,7 +292,7 @@ export default function AdminSalesConfigPage() {
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <Link
             href="/admin/courses"
-            className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+            className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
           >
             <ArrowLeft size={14} />
             Quay lại
@@ -382,7 +382,7 @@ export default function AdminSalesConfigPage() {
             <div
               key={i}
               className="rounded-lg p-3 space-y-2"
-              style={{ background: "#1a1a1a", border: "1px solid #252525" }}
+              style={{ background: "#F0F1F3", border: "1px solid #252525" }}
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs text-gray-500">Vấn đề #{i + 1}</span>
@@ -447,7 +447,7 @@ export default function AdminSalesConfigPage() {
             <div
               key={i}
               className="rounded-lg p-3 space-y-2"
-              style={{ background: "#1a1a1a", border: "1px solid #252525" }}
+              style={{ background: "#F0F1F3", border: "1px solid #252525" }}
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs text-gray-500">Lợi ích #{i + 1}</span>
@@ -512,7 +512,7 @@ export default function AdminSalesConfigPage() {
             <div
               key={i}
               className="rounded-lg p-3 space-y-2"
-              style={{ background: "#1a1a1a", border: "1px solid #252525" }}
+              style={{ background: "#F0F1F3", border: "1px solid #252525" }}
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs text-gray-500">
@@ -594,7 +594,7 @@ export default function AdminSalesConfigPage() {
             <div
               key={i}
               className="rounded-lg p-3 space-y-2"
-              style={{ background: "#1a1a1a", border: "1px solid #252525" }}
+              style={{ background: "#F0F1F3", border: "1px solid #252525" }}
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs text-gray-500">FAQ #{i + 1}</span>

@@ -113,7 +113,7 @@ export default function CreatePlanForm() {
     return (
       <button
         onClick={() => setOpen(true)}
-        className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white transition-all"
+        className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-[#1B2A4A] transition-all"
         style={{
           background: "linear-gradient(135deg, #E85D04, #b8922e)",
           boxShadow: "0 2px 8px rgba(212,168,67,0.3)",
@@ -132,7 +132,7 @@ export default function CreatePlanForm() {
         className="flex items-center justify-between px-5 py-3"
         style={{ borderBottom: "1px solid #2a2a2a" }}
       >
-        <h3 className="text-sm font-semibold text-white">
+        <h3 className="text-sm font-semibold text-[#1B2A4A]">
           Tạo gói đăng ký mới
         </h3>
         <button
@@ -140,7 +140,7 @@ export default function CreatePlanForm() {
             handleReset();
             setOpen(false);
           }}
-          className="text-gray-500 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/5"
+          className="text-gray-500 hover:text-[#1B2A4A] transition-colors p-1 rounded-lg hover:bg-white/5"
         >
           <X size={16} />
         </button>
@@ -159,9 +159,9 @@ export default function CreatePlanForm() {
               onChange={(e) => handleNameChange(e.target.value)}
               placeholder="VD: Gói Member 6 tháng"
               required
-              className="w-full px-3 py-2 rounded-lg text-sm text-white placeholder-gray-600 outline-none transition-colors"
+              className="w-full px-3 py-2 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-600 outline-none transition-colors"
               style={{
-                background: "#1a1a1a",
+                background: "#F0F1F3",
                 border: "1px solid #2a2a2a",
               }}
             />
@@ -176,9 +176,9 @@ export default function CreatePlanForm() {
               onChange={(e) => setSlug(e.target.value)}
               placeholder="member-6-thang"
               required
-              className="w-full px-3 py-2 rounded-lg text-sm text-white placeholder-gray-600 outline-none transition-colors"
+              className="w-full px-3 py-2 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-600 outline-none transition-colors"
               style={{
-                background: "#1a1a1a",
+                background: "#F0F1F3",
                 border: "1px solid #2a2a2a",
               }}
             />
@@ -195,9 +195,9 @@ export default function CreatePlanForm() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Mô tả ngắn gọn về gói"
-            className="w-full px-3 py-2 rounded-lg text-sm text-white placeholder-gray-600 outline-none transition-colors"
+            className="w-full px-3 py-2 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-600 outline-none transition-colors"
             style={{
-              background: "#1a1a1a",
+              background: "#F0F1F3",
               border: "1px solid #2a2a2a",
             }}
           />
@@ -214,9 +214,9 @@ export default function CreatePlanForm() {
               onChange={(e) =>
                 setBillingPeriod(e.target.value as BillingPeriod)
               }
-              className="w-full px-3 py-2 rounded-lg text-sm text-white outline-none transition-colors"
+              className="w-full px-3 py-2 rounded-lg text-sm text-[#1B2A4A] outline-none transition-colors"
               style={{
-                background: "#1a1a1a",
+                background: "#F0F1F3",
                 border: "1px solid #2a2a2a",
                 colorScheme: "dark",
               }}
@@ -235,9 +235,9 @@ export default function CreatePlanForm() {
             <select
               value={tierGranted}
               onChange={(e) => setTierGranted(e.target.value)}
-              className="w-full px-3 py-2 rounded-lg text-sm text-white outline-none transition-colors"
+              className="w-full px-3 py-2 rounded-lg text-sm text-[#1B2A4A] outline-none transition-colors"
               style={{
-                background: "#1a1a1a",
+                background: "#F0F1F3",
                 border: "1px solid #2a2a2a",
                 colorScheme: "dark",
               }}
@@ -264,9 +264,9 @@ export default function CreatePlanForm() {
               placeholder="299000"
               required
               min={1}
-              className="w-full px-3 py-2 rounded-lg text-sm text-white placeholder-gray-600 outline-none transition-colors"
+              className="w-full px-3 py-2 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-600 outline-none transition-colors"
               style={{
-                background: "#1a1a1a",
+                background: "#F0F1F3",
                 border: "1px solid #2a2a2a",
               }}
             />
@@ -281,9 +281,9 @@ export default function CreatePlanForm() {
               onChange={(e) => setOriginalPrice(e.target.value)}
               placeholder="399000"
               min={0}
-              className="w-full px-3 py-2 rounded-lg text-sm text-white placeholder-gray-600 outline-none transition-colors"
+              className="w-full px-3 py-2 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-600 outline-none transition-colors"
               style={{
-                background: "#1a1a1a",
+                background: "#F0F1F3",
                 border: "1px solid #2a2a2a",
               }}
             />
@@ -300,9 +300,9 @@ export default function CreatePlanForm() {
             onChange={(e) => setFeatures(e.target.value)}
             placeholder={"Truy cập toàn bộ khoá học\nHỗ trợ 1-1\nCộng đồng VIP"}
             rows={4}
-            className="w-full px-3 py-2 rounded-lg text-sm text-white placeholder-gray-600 outline-none transition-colors resize-none"
+            className="w-full px-3 py-2 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-600 outline-none transition-colors resize-none"
             style={{
-              background: "#1a1a1a",
+              background: "#F0F1F3",
               border: "1px solid #2a2a2a",
             }}
           />
@@ -319,9 +319,9 @@ export default function CreatePlanForm() {
             onChange={(e) => setSortOrder(e.target.value)}
             placeholder="0"
             min={0}
-            className="w-full px-3 py-2 rounded-lg text-sm text-white placeholder-gray-600 outline-none transition-colors"
+            className="w-full px-3 py-2 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-600 outline-none transition-colors"
             style={{
-              background: "#1a1a1a",
+              background: "#F0F1F3",
               border: "1px solid #2a2a2a",
             }}
           />
@@ -345,7 +345,7 @@ export default function CreatePlanForm() {
           <button
             type="submit"
             disabled={loading}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all disabled:opacity-50"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-[#1B2A4A] transition-all disabled:opacity-50"
             style={{
               background: "linear-gradient(135deg, #E85D04, #b8922e)",
               boxShadow: "0 2px 8px rgba(212,168,67,0.3)",
@@ -369,8 +369,8 @@ export default function CreatePlanForm() {
               handleReset();
               setOpen(false);
             }}
-            className="px-4 py-2.5 rounded-xl text-sm font-medium text-gray-400 hover:text-white transition-colors"
-            style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+            className="px-4 py-2.5 rounded-xl text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
+            style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
           >
             Huỷ
           </button>

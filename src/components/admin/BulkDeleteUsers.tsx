@@ -100,7 +100,7 @@ export default function BulkDeleteUsers({ users }: Props) {
       >
         <button
           onClick={toggleAll}
-          className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
+          className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium text-gray-300 hover:text-[#1B2A4A] hover:bg-white/5 transition-colors"
         >
           {selected.size === deletableUsers.length ? (
             <CheckSquare size={14} className="text-red-400" />
@@ -117,7 +117,7 @@ export default function BulkDeleteUsers({ users }: Props) {
         <button
           onClick={handleBulkDelete}
           disabled={loading || selected.size === 0}
-          className="flex items-center gap-2 px-4 py-1.5 rounded-lg text-xs font-bold text-white transition-colors disabled:opacity-40"
+          className="flex items-center gap-2 px-4 py-1.5 rounded-lg text-xs font-bold text-[#1B2A4A] transition-colors disabled:opacity-40"
           style={{ background: selected.size > 0 ? "#dc2626" : "#4b5563" }}
         >
           {loading ? <Loader2 size={14} className="animate-spin" /> : <Trash2 size={14} />}
@@ -126,7 +126,7 @@ export default function BulkDeleteUsers({ users }: Props) {
 
         <button
           onClick={exitSelectMode}
-          className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
+          className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-gray-400 hover:text-[#1B2A4A] hover:bg-white/5 transition-colors"
         >
           <X size={14} />
           Huỷ
@@ -168,7 +168,7 @@ export default function BulkDeleteUsers({ users }: Props) {
               onChange={() => toggleSelect(u.id)}
               className="accent-red-500 w-4 h-4 rounded"
             />
-            <span className="text-sm text-white">{u.full_name || "Chưa đặt tên"}</span>
+            <span className="text-sm text-[#1B2A4A]">{u.full_name || "Chưa đặt tên"}</span>
             <span className="text-[11px] text-gray-500 truncate">{u.id.slice(0, 8)}...</span>
           </label>
         ))}

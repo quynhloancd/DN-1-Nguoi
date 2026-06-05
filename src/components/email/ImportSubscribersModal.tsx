@@ -240,7 +240,7 @@ export default function ImportSubscribersModal({
           className="flex items-center justify-between px-5 py-4 sticky top-0 z-10"
           style={{
             borderBottom: "1px solid #2a2a2a",
-            background: "#1a1a1a",
+            background: "#F0F1F3",
           }}
         >
           <h2 className="text-white font-semibold text-base">
@@ -251,7 +251,7 @@ export default function ImportSubscribersModal({
               resetState();
               onClose();
             }}
-            className="text-gray-500 hover:text-white transition-colors"
+            className="text-gray-500 hover:text-[#1B2A4A] transition-colors"
           >
             <X size={18} />
           </button>
@@ -328,10 +328,10 @@ export default function ImportSubscribersModal({
                 <div
                   className="rounded-xl p-8 text-center cursor-pointer transition-colors"
                   style={{
-                    border: `2px dashed ${dragOver ? "#E85D04" : "#2a2a2a"}`,
+                    border: `2px dashed ${dragOver ? "#E85D04" : "#E5E7EB"}`,
                     background: dragOver
                       ? "rgba(212,168,67,0.05)"
-                      : "#151515",
+                      : "#F8F9FA",
                   }}
                   onClick={() => fileInputRef.current?.click()}
                   onDragOver={(e) => {
@@ -369,7 +369,7 @@ export default function ImportSubscribersModal({
                   <div
                     className="flex items-center gap-3 px-4 py-3 rounded-lg"
                     style={{
-                      background: "#151515",
+                      background: "#F8F9FA",
                       border: "1px solid #2a2a2a",
                     }}
                   >
@@ -393,7 +393,7 @@ export default function ImportSubscribersModal({
                           phone: -1,
                         });
                       }}
-                      className="text-gray-500 hover:text-white text-xs"
+                      className="text-gray-500 hover:text-[#1B2A4A] text-xs"
                     >
                       Đổi file
                     </button>
@@ -401,7 +401,7 @@ export default function ImportSubscribersModal({
 
                   {/* Column mapping */}
                   <div className="space-y-3">
-                    <h3 className="text-sm font-medium text-white">
+                    <h3 className="text-sm font-medium text-[#1B2A4A]">
                       Ánh xạ cột
                     </h3>
                     <div className="grid grid-cols-3 gap-3">
@@ -477,7 +477,7 @@ export default function ImportSubscribersModal({
                   {/* Preview */}
                   {previewRows.length > 0 && (
                     <div>
-                      <h3 className="text-sm font-medium text-white mb-2">
+                      <h3 className="text-sm font-medium text-[#1B2A4A] mb-2">
                         Xem trước ({Math.min(5, csvRows.length)}/{csvRows.length} dòng)
                       </h3>
                       <div
@@ -490,7 +490,7 @@ export default function ImportSubscribersModal({
                               <tr
                                 style={{
                                   borderBottom: "1px solid #2a2a2a",
-                                  background: "#151515",
+                                  background: "#F8F9FA",
                                 }}
                               >
                                 {headers.map((h, i) => (
@@ -596,9 +596,9 @@ export default function ImportSubscribersModal({
                         resetState();
                         onClose();
                       }}
-                      className="flex-1 py-2.5 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-white"
+                      className="flex-1 py-2.5 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-[#1B2A4A]"
                       style={{
-                        background: "#1f1f1f",
+                        background: "#E5E7EB",
                         border: "1px solid #2a2a2a",
                       }}
                     >

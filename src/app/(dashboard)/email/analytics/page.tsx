@@ -278,7 +278,7 @@ export default function AnalyticsPage() {
         {/* Header with period selector */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h2 className="text-xl font-bold text-white">
+            <h2 className="text-xl font-bold text-[#1B2A4A]">
               Analytics Dashboard
             </h2>
             <p className="text-sm text-[#9ca3af] mt-0.5">
@@ -294,8 +294,8 @@ export default function AnalyticsPage() {
                   onClick={() => setPeriod(p.value)}
                   className={`px-3 py-1.5 text-xs font-medium transition-colors ${
                     period === p.value
-                      ? "bg-[#E85D04] text-white"
-                      : "bg-[#1a1a1a] text-[#9ca3af] hover:text-white"
+                      ? "bg-[#E85D04] text-[#1B2A4A]"
+                      : "bg-[#F0F1F3] text-[#9ca3af] hover:text-[#1B2A4A]"
                   }`}
                 >
                   {p.label}
@@ -304,8 +304,8 @@ export default function AnalyticsPage() {
             </div>
             <button
               onClick={fetchData}
-              className="p-1.5 rounded-lg text-[#9ca3af] hover:text-white transition-colors"
-              style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+              className="p-1.5 rounded-lg text-[#9ca3af] hover:text-[#1B2A4A] transition-colors"
+              style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
             >
               <RefreshCw size={14} className={loading ? "animate-spin" : ""} />
             </button>
@@ -368,7 +368,7 @@ export default function AnalyticsPage() {
                     </div>
                     <TrendingUp size={14} className="text-[#E85D04]" />
                   </div>
-                  <div className="text-2xl font-bold text-white mb-0.5">
+                  <div className="text-2xl font-bold text-[#1B2A4A] mb-0.5">
                     {s.value}
                   </div>
                   <div className="text-xs text-gray-500">{s.label}</div>
@@ -382,7 +382,7 @@ export default function AnalyticsPage() {
               {/* Email Activity Bar Chart */}
               <div className="card-dark p-5">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-semibold text-white text-sm">
+                  <h3 className="font-semibold text-[#1B2A4A] text-sm">
                     Hoạt động gửi email
                   </h3>
                   <div className="flex items-center gap-3 text-[11px]">
@@ -421,11 +421,11 @@ export default function AnalyticsPage() {
                             <div
                               className="absolute -top-12 left-1/2 -translate-x-1/2 px-2 py-1.5 rounded-lg text-[10px] whitespace-nowrap z-10"
                               style={{
-                                background: "#2a2a2a",
+                                background: "#E5E7EB",
                                 border: "1px solid #333",
                               }}
                             >
-                              <div className="text-white font-medium">
+                              <div className="text-[#1B2A4A] font-medium">
                                 {formatDate(d.date)}
                               </div>
                               <div className="text-[#E85D04]">
@@ -478,7 +478,7 @@ export default function AnalyticsPage() {
               {/* Open & Click Rate Trend (SVG) */}
               <div className="card-dark p-5">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-semibold text-white text-sm">
+                  <h3 className="font-semibold text-[#1B2A4A] text-sm">
                     Xu hướng Open & Click Rate
                   </h3>
                   <div className="flex items-center gap-3 text-[11px]">
@@ -520,7 +520,7 @@ export default function AnalyticsPage() {
                           padding -
                           ratio * (chartHeight - padding * 2)
                         }
-                        stroke="#2a2a2a"
+                        stroke="#E5E7EB"
                         strokeWidth="1"
                       />
                     ))}
@@ -576,13 +576,13 @@ export default function AnalyticsPage() {
                     <div
                       className="absolute top-0 px-2 py-1.5 rounded-lg text-[10px] z-10 pointer-events-none"
                       style={{
-                        background: "#2a2a2a",
+                        background: "#E5E7EB",
                         border: "1px solid #333",
                         left: `${(hoveredPoint / Math.max(dailyStats.length - 1, 1)) * 100}%`,
                         transform: "translateX(-50%)",
                       }}
                     >
-                      <div className="text-white font-medium">
+                      <div className="text-[#1B2A4A] font-medium">
                         {formatDate(dailyStats[hoveredPoint].date)}
                       </div>
                       <div className="text-[#E85D04]">
@@ -612,8 +612,8 @@ export default function AnalyticsPage() {
 
             {/* Campaign Performance Table */}
             <div className="card-dark overflow-hidden">
-              <div className="flex items-center justify-between p-4 border-b border-[#2a2a2a]">
-                <h3 className="font-semibold text-white text-sm">
+              <div className="flex items-center justify-between p-4 border-b border-[#E5E7EB]">
+                <h3 className="font-semibold text-[#1B2A4A] text-sm">
                   Hiệu suất Campaign
                 </h3>
                 <span className="text-xs text-[#9ca3af]">
@@ -639,7 +639,7 @@ export default function AnalyticsPage() {
                         ].map((col) => (
                           <th
                             key={col.key}
-                            className={`text-xs text-gray-500 font-medium px-4 py-3 cursor-pointer hover:text-white transition-colors ${
+                            className={`text-xs text-gray-500 font-medium px-4 py-3 cursor-pointer hover:text-[#1B2A4A] transition-colors ${
                               col.key === "name" ? "text-left" : "text-right"
                             }`}
                             onClick={() => handleSort(col.key)}
@@ -683,7 +683,7 @@ export default function AnalyticsPage() {
                             }}
                           >
                             <td className="px-4 py-3">
-                              <div className="text-white text-sm font-medium truncate max-w-[200px]">
+                              <div className="text-[#1B2A4A] text-sm font-medium truncate max-w-[200px]">
                                 {c.name || c.subject}
                               </div>
                               <div className="text-[11px] text-gray-500 truncate max-w-[200px]">
@@ -734,7 +734,7 @@ export default function AnalyticsPage() {
               <div className="card-dark p-5">
                 <div className="flex items-center gap-2 mb-4">
                   <UserPlus size={16} className="text-[#E85D04]" />
-                  <h3 className="font-semibold text-white text-sm">
+                  <h3 className="font-semibold text-[#1B2A4A] text-sm">
                     Subscribers mới
                   </h3>
                 </div>
@@ -776,10 +776,10 @@ export default function AnalyticsPage() {
                     </>
                   )}
                 </div>
-                <div className="mt-3 pt-3 border-t border-[#2a2a2a]">
+                <div className="mt-3 pt-3 border-t border-[#E5E7EB]">
                   <div className="flex items-center justify-between text-xs">
                     <span className="text-[#9ca3af]">Tổng mới</span>
-                    <span className="text-white font-medium">
+                    <span className="text-[#1B2A4A] font-medium">
                       {dailyStats
                         .reduce((sum, d) => sum + d.new_subscribers, 0)
                         .toLocaleString("vi-VN")}
@@ -792,7 +792,7 @@ export default function AnalyticsPage() {
               <div className="card-dark p-5">
                 <div className="flex items-center gap-2 mb-4">
                   <Trophy size={16} className="text-[#f59e0b]" />
-                  <h3 className="font-semibold text-white text-sm">
+                  <h3 className="font-semibold text-[#1B2A4A] text-sm">
                     Top Campaigns
                   </h3>
                 </div>
@@ -824,7 +824,7 @@ export default function AnalyticsPage() {
                               >
                                 {i + 1}
                               </span>
-                              <span className="text-white text-xs font-medium truncate">
+                              <span className="text-[#1B2A4A] text-xs font-medium truncate">
                                 {c.name || c.subject}
                               </span>
                             </div>
@@ -862,7 +862,7 @@ export default function AnalyticsPage() {
               <div className="card-dark p-5">
                 <div className="flex items-center gap-2 mb-4">
                   <ShieldAlert size={16} className="text-[#ef4444]" />
-                  <h3 className="font-semibold text-white text-sm">
+                  <h3 className="font-semibold text-[#1B2A4A] text-sm">
                     Bounce & Complaints
                   </h3>
                 </div>
@@ -873,7 +873,7 @@ export default function AnalyticsPage() {
                     style={{ background: "#222" }}
                   >
                     <div>
-                      <div className="text-xs text-white font-medium">
+                      <div className="text-xs text-[#1B2A4A] font-medium">
                         Hard Bounces
                       </div>
                       <div className="text-[10px] text-[#9ca3af]">
@@ -889,7 +889,7 @@ export default function AnalyticsPage() {
                     style={{ background: "#222" }}
                   >
                     <div>
-                      <div className="text-xs text-white font-medium">
+                      <div className="text-xs text-[#1B2A4A] font-medium">
                         Soft Bounces
                       </div>
                       <div className="text-[10px] text-[#9ca3af]">
@@ -905,7 +905,7 @@ export default function AnalyticsPage() {
                     style={{ background: "#222" }}
                   >
                     <div>
-                      <div className="text-xs text-white font-medium">
+                      <div className="text-xs text-[#1B2A4A] font-medium">
                         Complaints
                       </div>
                       <div className="text-[10px] text-[#9ca3af]">

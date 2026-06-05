@@ -191,7 +191,7 @@ export default function CoursePublicView({
   };
 
   return (
-    <div className="min-h-screen" style={{ background: "#0a0a0a" }}>
+    <div className="min-h-screen" style={{ background: "#F8F9FA" }}>
       {/* ═══ VIDEO PLAYER (when a free lesson is selected) ═══ */}
       {activeVideo && (
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-4">
@@ -208,12 +208,12 @@ export default function CoursePublicView({
             />
           ) : null}
           <div className="mt-3 flex items-center justify-between">
-            <h3 className="text-sm font-semibold text-white">
+            <h3 className="text-sm font-semibold text-[#1B2A4A]">
               {activeVideo.title}
             </h3>
             <button
               onClick={() => setActiveVideo(null)}
-              className="text-xs text-gray-500 hover:text-white transition-colors"
+              className="text-xs text-gray-500 hover:text-[#1B2A4A] transition-colors"
             >
               Đóng video
             </button>
@@ -255,7 +255,7 @@ export default function CoursePublicView({
             <div className="lg:col-span-2">
               {/* Thumbnail (mobile only, when no video is playing) */}
               {product.thumbnail && !activeVideo && (
-                <div className="lg:hidden mb-6 rounded-xl overflow-hidden border border-[#2a2a2a]">
+                <div className="lg:hidden mb-6 rounded-xl overflow-hidden border border-[#E5E7EB]">
                   <Image
                     src={product.thumbnail}
                     alt={product.title}
@@ -267,7 +267,7 @@ export default function CoursePublicView({
                 </div>
               )}
 
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-4">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1B2A4A] leading-tight mb-4">
                 {product.title}
               </h1>
 
@@ -310,11 +310,11 @@ export default function CoursePublicView({
             {/* Right: Price card */}
             <div
               className="card-dark p-5 lg:sticky lg:top-20"
-              style={{ background: "#151515" }}
+              style={{ background: "#F8F9FA" }}
             >
               {/* Thumbnail desktop */}
               {product.thumbnail && (
-                <div className="hidden lg:block mb-4 rounded-lg overflow-hidden border border-[#2a2a2a]">
+                <div className="hidden lg:block mb-4 rounded-lg overflow-hidden border border-[#E5E7EB]">
                   <Image
                     src={product.thumbnail}
                     alt={product.title}
@@ -417,9 +417,9 @@ export default function CoursePublicView({
           <div className="max-w-4xl">
             <div
               className="rounded-xl p-5 sm:p-6"
-              style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+              style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
             >
-              <h3 className="text-lg font-bold text-white mb-4">Giảng viên</h3>
+              <h3 className="text-lg font-bold text-[#1B2A4A] mb-4">Giảng viên</h3>
               <div className="flex items-start gap-4">
                 {instructor.avatar_url ? (
                   <Image
@@ -435,7 +435,7 @@ export default function CoursePublicView({
                   </div>
                 )}
                 <div>
-                  <p className="font-semibold text-white">
+                  <p className="font-semibold text-[#1B2A4A]">
                     {instructor.full_name}
                   </p>
                   {instructor.bio && (
@@ -453,7 +453,7 @@ export default function CoursePublicView({
       {/* ═══ CURRICULUM SECTION ═══ */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="lg:col-span-2 max-w-4xl">
-          <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
+          <h2 className="text-xl sm:text-2xl font-bold text-[#1B2A4A] mb-2">
             Nội dung khoá học
           </h2>
           <p className="text-sm text-gray-400 mb-6">
@@ -475,7 +475,7 @@ export default function CoursePublicView({
                   key={chapter.id}
                   className="rounded-xl overflow-hidden"
                   style={{
-                    background: "#151515",
+                    background: "#F8F9FA",
                     border: "1px solid #2a2a2a",
                   }}
                 >
@@ -495,7 +495,7 @@ export default function CoursePublicView({
                         {chIdx + 1}
                       </span>
                       <div>
-                        <h3 className="text-sm font-semibold text-white">
+                        <h3 className="text-sm font-semibold text-[#1B2A4A]">
                           {chapter.title}
                         </h3>
                         <span className="text-xs text-gray-500">
@@ -646,7 +646,7 @@ export default function CoursePublicView({
           {sortedChapters.length === 0 && (
             <div className="card-dark p-10 text-center">
               <BookOpen size={40} className="text-gray-500 mx-auto mb-3" />
-              <h3 className="font-bold text-white mb-1">
+              <h3 className="font-bold text-[#1B2A4A] mb-1">
                 Nội dung đang được cập nhật
               </h3>
               <p className="text-sm text-gray-400">

@@ -224,7 +224,7 @@ export default async function AdminEnrollmentsPage({
               <UserPlus size={17} className="text-[#E85D04]" />
             </div>
             <div>
-              <h2 className="text-sm font-semibold text-white">Cấp quyền khoá học</h2>
+              <h2 className="text-sm font-semibold text-[#1B2A4A]">Cấp quyền khoá học</h2>
               <p className="text-xs text-gray-500">Nhập email học viên và chọn khoá học để cấp quyền</p>
             </div>
           </div>
@@ -248,16 +248,16 @@ export default async function AdminEnrollmentsPage({
                 {(products ?? []).map((p) => (
                   <label
                     key={p.id}
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg border border-[#2a2a2a] hover:border-[#E85D04]/40 hover:bg-[#E85D04]/5 transition-all cursor-pointer group"
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg border border-[#E5E7EB] hover:border-[#E85D04]/40 hover:bg-[#E85D04]/5 transition-all cursor-pointer group"
                   >
                     <input
                       type="checkbox"
                       name="product_ids"
                       value={p.id}
-                      className="w-4 h-4 rounded border-gray-600 bg-[#1a1a1a] text-[#E85D04] focus:ring-[#E85D04]/50 focus:ring-offset-0 accent-[#E85D04]"
+                      className="w-4 h-4 rounded border-gray-600 bg-[#F0F1F3] text-[#E85D04] focus:ring-[#E85D04]/50 focus:ring-offset-0 accent-[#E85D04]"
                     />
                     <div className="flex-1 min-w-0">
-                      <span className="text-sm text-gray-300 group-hover:text-white transition-colors truncate block">
+                      <span className="text-sm text-gray-300 group-hover:text-[#1B2A4A] transition-colors truncate block">
                         {p.title}
                       </span>
                     </div>
@@ -297,7 +297,7 @@ export default async function AdminEnrollmentsPage({
             style={{ borderBottom: "1px solid #2a2a2a" }}
           >
             <span className="text-xs text-gray-500">
-              <span className="text-white font-medium">{totalEnrollments}</span> enrollment
+              <span className="text-[#1B2A4A] font-medium">{totalEnrollments}</span> enrollment
               {totalPages > 1 && (
                 <> &middot; Trang {safePage}/{totalPages}</>
               )}
@@ -337,7 +337,7 @@ export default async function AdminEnrollmentsPage({
                     >
                       {/* Học viên */}
                       <td className="px-5 py-3.5">
-                        <span className="text-white text-sm font-medium">
+                        <span className="text-[#1B2A4A] text-sm font-medium">
                           {row.profiles?.full_name ?? "—"}
                         </span>
                       </td>
@@ -391,36 +391,36 @@ export default async function AdminEnrollmentsPage({
               {safePage > 1 ? (
                 <Link
                   href={buildPageUrl(safePage - 1)}
-                  className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-colors"
-                  style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                  className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
+                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
                   ← Trước
                 </Link>
               ) : (
                 <span
                   className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-600 cursor-not-allowed"
-                  style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
                   ← Trước
                 </span>
               )}
 
               <span className="text-sm text-gray-400">
-                Trang <span className="text-white font-semibold">{safePage}</span> / {totalPages}
+                Trang <span className="text-[#1B2A4A] font-semibold">{safePage}</span> / {totalPages}
               </span>
 
               {safePage < totalPages ? (
                 <Link
                   href={buildPageUrl(safePage + 1)}
-                  className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-colors"
-                  style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                  className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
+                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
                   Tiếp →
                 </Link>
               ) : (
                 <span
                   className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-600 cursor-not-allowed"
-                  style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
                   Tiếp →
                 </span>

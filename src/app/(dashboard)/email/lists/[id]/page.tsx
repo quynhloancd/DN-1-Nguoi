@@ -290,7 +290,7 @@ export default function ListDetailPage() {
         {/* Back button */}
         <button
           onClick={() => router.push("/email/lists")}
-          className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+          className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
         >
           <ArrowLeft size={16} /> Quay lại danh sách
         </button>
@@ -347,9 +347,9 @@ export default function ListDetailPage() {
               <div className="flex gap-2">
                 <button
                   onClick={() => setEditing(false)}
-                  className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-white"
+                  className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-[#1B2A4A]"
                   style={{
-                    background: "#1f1f1f",
+                    background: "#E5E7EB",
                     border: "1px solid #2a2a2a",
                   }}
                 >
@@ -380,7 +380,7 @@ export default function ListDetailPage() {
                   }}
                 />
                 <div>
-                  <h2 className="text-white font-bold text-lg">{list.name}</h2>
+                  <h2 className="text-[#1B2A4A] font-bold text-lg">{list.name}</h2>
                   {list.description && (
                     <p className="text-gray-400 text-sm mt-1">
                       {list.description}
@@ -405,9 +405,9 @@ export default function ListDetailPage() {
               </div>
               <button
                 onClick={startEditing}
-                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-white shrink-0"
+                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-[#1B2A4A] shrink-0"
                 style={{
-                  background: "#1f1f1f",
+                  background: "#E5E7EB",
                   border: "1px solid #2a2a2a",
                 }}
               >
@@ -479,7 +479,7 @@ export default function ListDetailPage() {
               >
                 <Mail size={24} className="text-[#3b82f6]" />
               </div>
-              <p className="text-white font-medium mb-1">
+              <p className="text-[#1B2A4A] font-medium mb-1">
                 Chưa có subscriber nào trong list
               </p>
               <p className="text-gray-500 text-sm mb-4">
@@ -529,7 +529,7 @@ export default function ListDetailPage() {
                           }}
                         >
                           <td className="px-4 py-3">
-                            <div className="text-white text-sm font-medium">
+                            <div className="text-[#1B2A4A] text-sm font-medium">
                               {sub.email}
                             </div>
                             {sub.full_name && (
@@ -591,9 +591,9 @@ export default function ListDetailPage() {
                   <button
                     onClick={() => setPage((p) => Math.max(1, p - 1))}
                     disabled={page <= 1}
-                    className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-[#1B2A4A] disabled:opacity-30 disabled:cursor-not-allowed"
                     style={{
-                      background: "#1f1f1f",
+                      background: "#E5E7EB",
                       border: "1px solid #2a2a2a",
                     }}
                   >
@@ -604,9 +604,9 @@ export default function ListDetailPage() {
                       setPage((p) => Math.min(totalPages, p + 1))
                     }
                     disabled={page >= totalPages}
-                    className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-[#1B2A4A] disabled:opacity-30 disabled:cursor-not-allowed"
                     style={{
-                      background: "#1f1f1f",
+                      background: "#E5E7EB",
                       border: "1px solid #2a2a2a",
                     }}
                   >
@@ -637,12 +637,12 @@ export default function ListDetailPage() {
               className="flex items-center justify-between px-5 py-4"
               style={{ borderBottom: "1px solid #2a2a2a" }}
             >
-              <h3 className="text-white font-semibold text-sm">
+              <h3 className="text-[#1B2A4A] font-semibold text-sm">
                 Thêm subscriber vào list
               </h3>
               <button
                 onClick={() => setAddSubModalOpen(false)}
-                className="text-gray-500 hover:text-white transition-colors"
+                className="text-gray-500 hover:text-[#1B2A4A] transition-colors"
               >
                 <X size={16} />
               </button>
@@ -671,7 +671,7 @@ export default function ListDetailPage() {
                   onClick={() => setAddSubModalOpen(false)}
                   className="flex-1 py-2 text-sm font-medium text-gray-400 rounded-lg"
                   style={{
-                    background: "#1f1f1f",
+                    background: "#E5E7EB",
                     border: "1px solid #2a2a2a",
                   }}
                 >

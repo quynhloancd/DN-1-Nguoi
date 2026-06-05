@@ -233,7 +233,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                 <ShoppingCart size={17} className="text-[#3b82f6]" />
               </div>
             </div>
-            <div className="text-2xl font-bold text-white">{totalOrders}</div>
+            <div className="text-2xl font-bold text-[#1B2A4A]">{totalOrders}</div>
             <div className="text-xs text-gray-500 mt-0.5">Tổng đơn hàng</div>
           </div>
 
@@ -247,7 +247,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                 <CheckCircle size={17} className="text-[#E85D04]" />
               </div>
             </div>
-            <div className="text-2xl font-bold text-white">{paidOrders}</div>
+            <div className="text-2xl font-bold text-[#1B2A4A]">{paidOrders}</div>
             <div className="text-xs text-gray-500 mt-0.5">Đã thanh toán</div>
           </div>
 
@@ -261,7 +261,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                 <Clock size={17} className="text-[#f59e0b]" />
               </div>
             </div>
-            <div className="text-2xl font-bold text-white">{pendingOrders}</div>
+            <div className="text-2xl font-bold text-[#1B2A4A]">{pendingOrders}</div>
             <div className="text-xs text-gray-500 mt-0.5">Chờ thanh toán</div>
           </div>
 
@@ -275,7 +275,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                 <TrendingUp size={17} className="text-[#E85D04]" />
               </div>
             </div>
-            <div className="text-2xl font-bold text-white">
+            <div className="text-2xl font-bold text-[#1B2A4A]">
               {formatCurrency(totalRevenue)}
             </div>
             <div className="text-xs text-gray-500 mt-0.5">Doanh thu (đã thanh toán)</div>
@@ -311,13 +311,13 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
               {query ? (
                 <>
                   Tìm thấy{" "}
-                  <span className="text-white font-medium">{totalFilteredOrders}</span>{" "}
+                  <span className="text-[#1B2A4A] font-medium">{totalFilteredOrders}</span>{" "}
                   kết quả cho &ldquo;
                   <span className="text-[#E85D04]">{query}</span>&rdquo;
                 </>
               ) : (
                 <>
-                  <span className="text-white font-medium">{totalFilteredOrders}</span>{" "}
+                  <span className="text-[#1B2A4A] font-medium">{totalFilteredOrders}</span>{" "}
                   đơn hàng
                 </>
               )}
@@ -394,7 +394,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
 
                       {/* Khách hàng */}
                       <td className="px-5 py-3.5">
-                        <div className="font-medium text-white text-sm">
+                        <div className="font-medium text-[#1B2A4A] text-sm">
                           {order.customer_name ?? "—"}
                         </div>
                         {order.customer_email && (
@@ -418,7 +418,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
 
                       {/* Số tiền */}
                       <td className="px-5 py-3.5 whitespace-nowrap">
-                        <span className="font-bold text-white">
+                        <span className="font-bold text-[#1B2A4A]">
                           {formatCurrency(order.amount)}
                         </span>
                       </td>
@@ -502,36 +502,36 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
               {safePage > 1 ? (
                 <Link
                   href={buildPageUrl(safePage - 1)}
-                  className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-colors"
-                  style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                  className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
+                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
                   ← Trước
                 </Link>
               ) : (
                 <span
                   className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-600 cursor-not-allowed"
-                  style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
                   ← Trước
                 </span>
               )}
 
               <span className="text-sm text-gray-400">
-                Trang <span className="text-white font-semibold">{safePage}</span> / {totalPages}
+                Trang <span className="text-[#1B2A4A] font-semibold">{safePage}</span> / {totalPages}
               </span>
 
               {safePage < totalPages ? (
                 <Link
                   href={buildPageUrl(safePage + 1)}
-                  className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-colors"
-                  style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                  className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
+                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
                   Tiếp →
                 </Link>
               ) : (
                 <span
                   className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-600 cursor-not-allowed"
-                  style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
                   Tiếp →
                 </span>

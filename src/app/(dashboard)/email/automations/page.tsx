@@ -166,7 +166,7 @@ export default function AutomationsPage() {
           {stats.map((s) => (
             <div
               key={s.label}
-              className="bg-[#151515] border border-[#2a2a2a] rounded-xl p-4"
+              className="bg-[#F8F9FA] border border-[#E5E7EB] rounded-xl p-4"
             >
               <div className="flex items-center justify-between mb-3">
                 <div
@@ -176,7 +176,7 @@ export default function AutomationsPage() {
                   <s.icon size={18} style={{ color: s.color }} />
                 </div>
               </div>
-              <div className="text-2xl font-bold text-white mb-0.5">{s.value}</div>
+              <div className="text-2xl font-bold text-[#1B2A4A] mb-0.5">{s.value}</div>
               <div className="text-xs text-gray-500">{s.label}</div>
             </div>
           ))}
@@ -184,7 +184,7 @@ export default function AutomationsPage() {
 
         {/* Filter tabs + Create button */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <div className="flex items-center gap-0 border-b border-[#2a2a2a]">
+          <div className="flex items-center gap-0 border-b border-[#E5E7EB]">
             {FILTER_TABS.map((tab) => (
               <button
                 key={tab.value}
@@ -202,7 +202,7 @@ export default function AutomationsPage() {
 
           <button
             onClick={() => setShowCreateModal(true)}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-white transition-colors"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-[#1B2A4A] transition-colors"
             style={{ background: "#E85D04" }}
           >
             <Plus size={15} /> Tạo automation mới
@@ -215,7 +215,7 @@ export default function AutomationsPage() {
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
-                className="bg-[#151515] border border-[#2a2a2a] rounded-xl p-4 animate-pulse"
+                className="bg-[#F8F9FA] border border-[#E5E7EB] rounded-xl p-4 animate-pulse"
               >
                 <div className="flex items-center gap-4">
                   <div className="flex-1 space-y-2">
@@ -235,14 +235,14 @@ export default function AutomationsPage() {
             ))}
           </div>
         ) : filtered.length === 0 ? (
-          <div className="bg-[#151515] border border-[#2a2a2a] rounded-xl flex flex-col items-center justify-center py-16 text-center">
+          <div className="bg-[#F8F9FA] border border-[#E5E7EB] rounded-xl flex flex-col items-center justify-center py-16 text-center">
             <div
               className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
               style={{ background: "rgba(212,168,67,0.1)" }}
             >
               <Workflow size={28} className="text-[#E85D04]" />
             </div>
-            <p className="text-white font-medium mb-1">
+            <p className="text-[#1B2A4A] font-medium mb-1">
               {activeTab !== "all" ? "Không tìm thấy automation nào" : "Chưa có automation nào"}
             </p>
             <p className="text-gray-500 text-sm mb-4">
@@ -253,7 +253,7 @@ export default function AutomationsPage() {
             {activeTab === "all" && (
               <button
                 onClick={() => setShowCreateModal(true)}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-white transition-colors"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-[#1B2A4A] transition-colors"
                 style={{ background: "#E85D04" }}
               >
                 <Plus size={15} /> Tạo automation mới
@@ -270,13 +270,13 @@ export default function AutomationsPage() {
               return (
                 <div
                   key={a.id}
-                  className="bg-[#151515] border border-[#2a2a2a] rounded-xl p-4 hover:border-[#3a3a3a] transition-all"
+                  className="bg-[#F8F9FA] border border-[#E5E7EB] rounded-xl p-4 hover:border-[#3a3a3a] transition-all"
                 >
                   <div className="flex flex-col md:flex-row md:items-center gap-3">
                     {/* Info */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap mb-1">
-                        <h3 className="font-semibold text-white text-sm truncate">
+                        <h3 className="font-semibold text-[#1B2A4A] text-sm truncate">
                           {a.name}
                         </h3>
                         <span
@@ -307,7 +307,7 @@ export default function AutomationsPage() {
                     <div className="flex items-center gap-5 text-xs shrink-0">
                       <div className="text-center min-w-[50px]">
                         <div className="text-gray-500 mb-0.5">Enrolled</div>
-                        <div className="font-semibold text-white">
+                        <div className="font-semibold text-[#1B2A4A]">
                           {a.enrolled_count ?? 0}
                         </div>
                       </div>
@@ -332,7 +332,7 @@ export default function AutomationsPage() {
                           e.stopPropagation();
                           setOpenDropdown(openDropdown === a.id ? null : a.id);
                         }}
-                        className="p-2 rounded-lg text-gray-500 hover:text-white hover:bg-[#252525] transition-colors"
+                        className="p-2 rounded-lg text-gray-500 hover:text-[#1B2A4A] hover:bg-[#252525] transition-colors"
                       >
                         <MoreHorizontal size={16} />
                       </button>
@@ -340,18 +340,18 @@ export default function AutomationsPage() {
                       {openDropdown === a.id && (
                         <div
                           className="absolute right-0 top-full mt-1 w-44 rounded-lg overflow-hidden shadow-xl z-20"
-                          style={{ background: "#1f1f1f", border: "1px solid #2a2a2a" }}
+                          style={{ background: "#E5E7EB", border: "1px solid #2a2a2a" }}
                           onClick={(e) => e.stopPropagation()}
                         >
                           <Link
                             href={`/email/automations/${a.id}`}
-                            className="flex items-center gap-2 w-full px-3 py-2 text-xs text-gray-300 hover:bg-[#2a2a2a] hover:text-white transition-colors"
+                            className="flex items-center gap-2 w-full px-3 py-2 text-xs text-gray-300 hover:bg-[#2a2a2a] hover:text-[#1B2A4A] transition-colors"
                           >
                             <Edit size={12} /> Chỉnh sửa
                           </Link>
                           <button
                             onClick={() => handleToggleStatus(a.id, a.status)}
-                            className="flex items-center gap-2 w-full px-3 py-2 text-xs text-gray-300 hover:bg-[#2a2a2a] hover:text-white transition-colors"
+                            className="flex items-center gap-2 w-full px-3 py-2 text-xs text-gray-300 hover:bg-[#2a2a2a] hover:text-[#1B2A4A] transition-colors"
                           >
                             {a.status === "active" ? (
                               <>
@@ -363,7 +363,7 @@ export default function AutomationsPage() {
                               </>
                             )}
                           </button>
-                          <div className="border-t border-[#2a2a2a]" />
+                          <div className="border-t border-[#E5E7EB]" />
                           <button
                             onClick={() => handleDelete(a.id)}
                             className="flex items-center gap-2 w-full px-3 py-2 text-xs text-red-400 hover:bg-red-500/10 transition-colors"
@@ -390,9 +390,9 @@ export default function AutomationsPage() {
           />
           <div
             className="relative w-full max-w-md mx-4 rounded-xl p-6"
-            style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+            style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
           >
-            <h2 className="text-lg font-semibold text-white mb-1">
+            <h2 className="text-lg font-semibold text-[#1B2A4A] mb-1">
               Tạo automation mới
             </h2>
             <p className="text-sm text-gray-500 mb-5">
@@ -410,7 +410,7 @@ export default function AutomationsPage() {
                   value={newName}
                   onChange={(e) => setNewName(e.target.value)}
                   placeholder="VD: Welcome Series"
-                  className="w-full px-3 py-2.5 rounded-lg text-sm text-white placeholder:text-gray-500 bg-[#0d0d0d] border border-[#2a2a2a] outline-none focus:border-[#E85D04] transition-colors"
+                  className="w-full px-3 py-2.5 rounded-lg text-sm text-[#1B2A4A] placeholder:text-gray-500 bg-[#0d0d0d] border border-[#E5E7EB] outline-none focus:border-[#E85D04] transition-colors"
                 />
               </div>
 
@@ -424,7 +424,7 @@ export default function AutomationsPage() {
                   onChange={(e) => setNewDescription(e.target.value)}
                   placeholder="Mô tả ngắn gọn về automation này..."
                   rows={3}
-                  className="w-full px-3 py-2.5 rounded-lg text-sm text-white placeholder:text-gray-500 bg-[#0d0d0d] border border-[#2a2a2a] outline-none focus:border-[#E85D04] transition-colors resize-none"
+                  className="w-full px-3 py-2.5 rounded-lg text-sm text-[#1B2A4A] placeholder:text-gray-500 bg-[#0d0d0d] border border-[#E5E7EB] outline-none focus:border-[#E85D04] transition-colors resize-none"
                 />
               </div>
 
@@ -436,7 +436,7 @@ export default function AutomationsPage() {
                 <select
                   value={newTriggerType}
                   onChange={(e) => setNewTriggerType(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-lg text-sm text-white bg-[#0d0d0d] border border-[#2a2a2a] outline-none focus:border-[#E85D04] transition-colors"
+                  className="w-full px-3 py-2.5 rounded-lg text-sm text-[#1B2A4A] bg-[#0d0d0d] border border-[#E5E7EB] outline-none focus:border-[#E85D04] transition-colors"
                 >
                   <option value="tag_added">Tag Added</option>
                   <option value="subscribed_to_list">Subscribed to List</option>
@@ -450,14 +450,14 @@ export default function AutomationsPage() {
             <div className="flex items-center justify-end gap-3 mt-6">
               <button
                 onClick={() => setShowCreateModal(false)}
-                className="px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-white transition-colors"
+                className="px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
               >
                 Hủy
               </button>
               <button
                 onClick={handleCreate}
                 disabled={!newName.trim() || creating}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-white transition-colors disabled:opacity-50"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-[#1B2A4A] transition-colors disabled:opacity-50"
                 style={{ background: "#E85D04" }}
               >
                 {creating ? (

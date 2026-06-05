@@ -158,7 +158,7 @@ export default function SendingProgressPage() {
           <div className="relative w-40 h-40 mx-auto">
             <svg viewBox="0 0 120 120" className="w-full h-full">
               {/* Background circle */}
-              <circle cx="60" cy="60" r="52" fill="none" stroke="#2a2a2a" strokeWidth="8" />
+              <circle cx="60" cy="60" r="52" fill="none" stroke="#E5E7EB" strokeWidth="8" />
               {/* Progress circle */}
               <circle
                 cx="60" cy="60" r="52"
@@ -183,7 +183,7 @@ export default function SendingProgressPage() {
                   <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-[#E85D04] animate-ping" />
                 </div>
               )}
-              <span className="text-2xl font-bold text-white mt-1">{Math.round(progress)}%</span>
+              <span className="text-2xl font-bold text-[#1B2A4A] mt-1">{Math.round(progress)}%</span>
             </div>
           </div>
 
@@ -212,11 +212,11 @@ export default function SendingProgressPage() {
             ) : state?.status === "paused" ? (
               <h2 className="text-lg font-semibold text-[#f97316]">Campaign dang tam dung</h2>
             ) : (
-              <h2 className="text-lg font-semibold text-white">Dang gui emails...</h2>
+              <h2 className="text-lg font-semibold text-[#1B2A4A]">Dang gui emails...</h2>
             )}
 
             <p className="text-gray-400 text-sm mt-2">
-              Da gui <span className="text-white font-semibold">{sent.toLocaleString("vi-VN")}</span> / <span className="text-white font-semibold">{total.toLocaleString("vi-VN")}</span> emails
+              Da gui <span className="text-[#1B2A4A] font-semibold">{sent.toLocaleString("vi-VN")}</span> / <span className="text-[#1B2A4A] font-semibold">{total.toLocaleString("vi-VN")}</span> emails
             </p>
           </div>
 
@@ -242,22 +242,22 @@ export default function SendingProgressPage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <div className="stat-card text-center">
             <Send size={16} className="text-[#E85D04] mx-auto mb-2" />
-            <div className="text-xl font-bold text-white">{sent.toLocaleString("vi-VN")}</div>
+            <div className="text-xl font-bold text-[#1B2A4A]">{sent.toLocaleString("vi-VN")}</div>
             <div className="text-xs text-gray-500 mt-1">Da gui</div>
           </div>
           <div className="stat-card text-center">
             <XCircle size={16} className="text-[#ef4444] mx-auto mb-2" />
-            <div className="text-xl font-bold text-white">{failed.toLocaleString("vi-VN")}</div>
+            <div className="text-xl font-bold text-[#1B2A4A]">{failed.toLocaleString("vi-VN")}</div>
             <div className="text-xs text-gray-500 mt-1">That bai</div>
           </div>
           <div className="stat-card text-center">
             <Mail size={16} className="text-[#3b82f6] mx-auto mb-2" />
-            <div className="text-xl font-bold text-white">{total.toLocaleString("vi-VN")}</div>
+            <div className="text-xl font-bold text-[#1B2A4A]">{total.toLocaleString("vi-VN")}</div>
             <div className="text-xs text-gray-500 mt-1">Tong</div>
           </div>
           <div className="stat-card text-center">
             <Clock size={16} className="text-[#f59e0b] mx-auto mb-2" />
-            <div className="text-xl font-bold text-white">
+            <div className="text-xl font-bold text-[#1B2A4A]">
               {completed ? "0:00" : remaining > 0 ? `${remainingMin}:${String(remainingSec).padStart(2, "0")}` : "--:--"}
             </div>
             <div className="text-xs text-gray-500 mt-1">Con lai</div>
@@ -300,7 +300,7 @@ export default function SendingProgressPage() {
               </button>
               <button
                 onClick={() => router.push("/email/campaigns")}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm text-gray-400 hover:text-white transition-colors"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
                 style={{ border: "1px solid #2a2a2a" }}
               >
                 <ArrowLeft size={14} /> Ve danh sach

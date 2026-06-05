@@ -92,7 +92,7 @@ export default function TopBar({ title, subtitle, onMenuClick, notification, pro
     .toUpperCase() || "?";
 
   return (
-    <header className="sticky top-0 z-30" style={{ background: "rgba(10,10,10,0.95)", backdropFilter: "blur(8px)" }}>
+    <header className="sticky top-0 z-30" style={{ background: "rgba(255,255,255,0.97)", backdropFilter: "blur(8px)" }}>
       {/* Promotion Bar — dynamic rotating banners */}
       {promotions && promotions.length > 0 && (() => {
         const current = promotions[promoIndex % promotions.length];
@@ -136,32 +136,32 @@ export default function TopBar({ title, subtitle, onMenuClick, notification, pro
       )}
 
       {/* Main Top Bar */}
-      <div className="flex items-center justify-between px-4 sm:px-6 h-14 border-b border-[#1f1f1f]">
+      <div className="flex items-center justify-between px-4 sm:px-6 h-14 border-b border-[#E5E7EB]">
         <div className="flex items-center gap-3">
           <button onClick={handleMenuClick}
             aria-label="Mở menu"
-            className="text-gray-500 hover:text-white transition-colors lg:hidden">
+            className="text-gray-500 hover:text-[#1B2A4A] transition-colors lg:hidden">
             <Menu size={20} />
           </button>
           <div className="min-w-0">
-            <h1 className="text-sm sm:text-base font-semibold text-white leading-tight truncate">{title}</h1>
+            <h1 className="text-sm sm:text-base font-semibold text-[#1B2A4A] leading-tight truncate">{title}</h1>
             {subtitle && <p className="text-xs text-gray-500 leading-tight truncate hidden sm:block">{subtitle}</p>}
           </div>
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Search */}
-          <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-gray-500 cursor-pointer hover:bg-[#1a1a1a] transition-colors"
-            style={{ background: "#151515", border: "1px solid #2a2a2a", minWidth: 180 }}
+          <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-gray-500 cursor-pointer hover:bg-[#F0F1F3] transition-colors"
+            style={{ background: "#F8F9FA", border: "1px solid #E5E7EB", minWidth: 180 }}
             onClick={() => setSearchOpen(true)}>
             <Search size={14} />
             <span>Tìm kiếm...</span>
-            <kbd className="ml-auto text-[10px] text-gray-500 bg-[#2a2a2a] px-1.5 py-0.5 rounded">⌘K</kbd>
+            <kbd className="ml-auto text-[10px] text-gray-500 bg-[#E5E7EB] px-1.5 py-0.5 rounded">⌘K</kbd>
           </div>
 
           {/* Mobile search button */}
           <button
-            className="md:hidden text-gray-500 hover:text-white transition-colors p-1.5"
+            className="md:hidden text-gray-500 hover:text-[#1B2A4A] transition-colors p-1.5"
             onClick={() => setSearchOpen(true)}
           >
             <Search size={18} />
@@ -189,12 +189,12 @@ export default function TopBar({ title, subtitle, onMenuClick, notification, pro
               <div
                 className="absolute right-0 top-full mt-2 w-56 rounded-xl shadow-2xl z-50 py-1 overflow-hidden"
                 style={{
-                  background: "#1a1a1a",
-                  border: "1px solid #2a2a2a",
+                  background: "#FFFFFF",
+                  border: "1px solid #E5E7EB",
                 }}
               >
                 {/* User Info */}
-                <div className="px-4 py-3 border-b border-[#2a2a2a]">
+                <div className="px-4 py-3 border-b border-[#E5E7EB]">
                   <div className="flex items-center gap-3">
                     <UserAvatar
                       src={profile?.avatar_url}
@@ -203,7 +203,7 @@ export default function TopBar({ title, subtitle, onMenuClick, notification, pro
                       gradient="linear-gradient(135deg, #E85D04, #059669)"
                     />
                     <div className="min-w-0">
-                      <div className="text-sm font-medium text-white truncate">
+                      <div className="text-sm font-medium text-[#1B2A4A] truncate">
                         {displayName}
                       </div>
                       <div className="text-[11px] text-gray-500 truncate">
@@ -217,7 +217,7 @@ export default function TopBar({ title, subtitle, onMenuClick, notification, pro
                 <div className="py-1">
                   <Link
                     href="/settings"
-                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-colors"
+                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:bg-[#F8F9FA] hover:text-[#1B2A4A] transition-colors"
                     onClick={() => setAvatarMenuOpen(false)}
                   >
                     <Settings size={15} className="text-gray-500" />
@@ -226,7 +226,7 @@ export default function TopBar({ title, subtitle, onMenuClick, notification, pro
 
                   <Link
                     href="/dashboard"
-                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-colors"
+                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:bg-[#F8F9FA] hover:text-[#1B2A4A] transition-colors"
                     onClick={() => setAvatarMenuOpen(false)}
                   >
                     <User size={15} className="text-gray-500" />
@@ -235,11 +235,11 @@ export default function TopBar({ title, subtitle, onMenuClick, notification, pro
                 </div>
 
                 {/* Logout */}
-                <div className="border-t border-[#2a2a2a] py-1">
+                <div className="border-t border-[#E5E7EB] py-1">
                   <form action={signOut}>
                     <button
                       type="submit"
-                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-400 hover:text-red-400 hover:bg-red-500/5 transition-colors w-full"
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-500 hover:text-red-500 hover:bg-red-50 transition-colors w-full"
                     >
                       <LogOut size={15} />
                       Đăng xuất

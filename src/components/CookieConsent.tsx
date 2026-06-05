@@ -164,7 +164,7 @@ export default function CookieConsent() {
   if (!show) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-[#111] border-t border-[#333]">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white border-t border-[#333]">
       <div className="max-w-4xl mx-auto">
         {/* ── Main banner ── */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -182,13 +182,13 @@ export default function CookieConsent() {
           <div className="flex gap-3 shrink-0">
             <button
               onClick={() => setShowCustomize((v) => !v)}
-              className="px-4 py-2 text-sm text-[#E85D04] hover:text-white border border-[#E85D04] rounded-lg transition-colors"
+              className="px-4 py-2 text-sm text-[#E85D04] hover:text-[#1B2A4A] border border-[#E85D04] rounded-lg transition-colors"
             >
               Tùy chỉnh
             </button>
             <button
               onClick={declineAll}
-              className="px-4 py-2 text-sm text-gray-400 hover:text-white border border-[#333] rounded-lg transition-colors"
+              className="px-4 py-2 text-sm text-gray-400 hover:text-[#1B2A4A] border border-[#333] rounded-lg transition-colors"
             >
               Từ chối
             </button>

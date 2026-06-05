@@ -33,7 +33,7 @@ export default function CourseRecommendationCard({
   const statusStyle = STATUS_STYLES[recommendation.status] || STATUS_STYLES.suggested;
 
   return (
-    <div className="flex items-start gap-3 p-3 rounded-lg bg-[#1a1a1a] border border-[#2a2a2a]">
+    <div className="flex items-start gap-3 p-3 rounded-lg bg-[#F0F1F3] border border-[#E5E7EB]">
       {/* Thumbnail */}
       <div className="flex-shrink-0 w-10 h-10 rounded overflow-hidden bg-[#2a2a2a]">
         {recommendation.product_thumbnail ? (
@@ -52,7 +52,7 @@ export default function CourseRecommendationCard({
       {/* Content */}
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-2">
-          <p className="text-sm font-semibold text-white truncate">
+          <p className="text-sm font-semibold text-[#1B2A4A] truncate">
             {recommendation.product_title}
           </p>
           <span

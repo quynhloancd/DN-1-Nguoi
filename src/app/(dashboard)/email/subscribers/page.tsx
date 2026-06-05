@@ -349,7 +349,7 @@ export default function SubscribersPage() {
                   <s.icon size={18} style={{ color: s.color }} />
                 </div>
               </div>
-              <div className="text-2xl font-bold text-white">
+              <div className="text-2xl font-bold text-[#1B2A4A]">
                 {s.value.toLocaleString("vi-VN")}
               </div>
               <div className="text-xs text-gray-500 mt-0.5">{s.label}</div>
@@ -417,8 +417,8 @@ export default function SubscribersPage() {
 
               <button
                 onClick={() => setImportOpen(true)}
-                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-white"
-                style={{ background: "#1f1f1f", border: "1px solid #2a2a2a" }}
+                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-[#1B2A4A]"
+                style={{ background: "#E5E7EB", border: "1px solid #2a2a2a" }}
               >
                 <Upload size={14} /> Import CSV
               </button>
@@ -432,8 +432,8 @@ export default function SubscribersPage() {
 
               <button
                 onClick={handleExport}
-                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-white"
-                style={{ background: "#1f1f1f", border: "1px solid #2a2a2a" }}
+                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-[#1B2A4A]"
+                style={{ background: "#E5E7EB", border: "1px solid #2a2a2a" }}
               >
                 <Download size={14} /> Export
               </button>
@@ -450,7 +450,7 @@ export default function SubscribersPage() {
               border: "1px solid rgba(212,168,67,0.2)",
             }}
           >
-            <span className="text-sm text-white font-medium">
+            <span className="text-sm text-[#1B2A4A] font-medium">
               {selected.size} đã chọn
             </span>
             <div
@@ -468,7 +468,7 @@ export default function SubscribersPage() {
                 setBulkAction("add_to_list");
                 setBulkListModalOpen(true);
               }}
-              className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-[#1B2A4A] transition-colors"
             >
               <ListPlus size={14} /> Thêm vào list
             </button>
@@ -477,7 +477,7 @@ export default function SubscribersPage() {
                 setBulkAction("remove_from_list");
                 setBulkListModalOpen(true);
               }}
-              className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-[#1B2A4A] transition-colors"
             >
               <ListMinus size={14} /> Gỡ khỏi list
             </button>
@@ -495,7 +495,7 @@ export default function SubscribersPage() {
             </button>
             <button
               onClick={() => setSelected(new Set())}
-              className="ml-auto text-gray-500 hover:text-white transition-colors"
+              className="ml-auto text-gray-500 hover:text-[#1B2A4A] transition-colors"
             >
               <X size={16} />
             </button>
@@ -531,7 +531,7 @@ export default function SubscribersPage() {
               >
                 <Mail size={28} className="text-[#3b82f6]" />
               </div>
-              <p className="text-white font-medium mb-1">
+              <p className="text-[#1B2A4A] font-medium mb-1">
                 Chưa có subscriber nào
               </p>
               <p className="text-gray-500 text-sm max-w-xs mx-auto">
@@ -546,9 +546,9 @@ export default function SubscribersPage() {
                 </button>
                 <button
                   onClick={() => setImportOpen(true)}
-                  className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-white"
+                  className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-[#1B2A4A]"
                   style={{
-                    background: "#1f1f1f",
+                    background: "#E5E7EB",
                     border: "1px solid #2a2a2a",
                   }}
                 >
@@ -615,7 +615,7 @@ export default function SubscribersPage() {
                             />
                           </td>
                           <td className="px-4 py-3">
-                            <div className="text-white text-sm font-medium">
+                            <div className="text-[#1B2A4A] text-sm font-medium">
                               {sub.email}
                             </div>
                             {/* Show name on mobile below email */}
@@ -665,7 +665,7 @@ export default function SubscribersPage() {
                                     openMenuId === sub.id ? null : sub.id
                                   );
                                 }}
-                                className="text-gray-500 hover:text-white transition-colors p-1 rounded-md hover:bg-[#2a2a2a]"
+                                className="text-gray-500 hover:text-[#1B2A4A] transition-colors p-1 rounded-md hover:bg-[#2a2a2a]"
                               >
                                 <MoreHorizontal size={16} />
                               </button>
@@ -674,7 +674,7 @@ export default function SubscribersPage() {
                                 <div
                                   className="absolute right-0 top-8 z-20 w-44 rounded-lg py-1 shadow-xl"
                                   style={{
-                                    background: "#1a1a1a",
+                                    background: "#F0F1F3",
                                     border: "1px solid #2a2a2a",
                                   }}
                                 >
@@ -683,7 +683,7 @@ export default function SubscribersPage() {
                                       setOpenMenuId(null);
                                       // Could open an edit modal here
                                     }}
-                                    className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:bg-[#222] hover:text-white transition-colors"
+                                    className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:bg-[#222] hover:text-[#1B2A4A] transition-colors"
                                   >
                                     <Edit size={14} /> Chỉnh sửa
                                   </button>
@@ -693,7 +693,7 @@ export default function SubscribersPage() {
                                         setOpenMenuId(null);
                                         handleChangeStatus(sub.id, "active");
                                       }}
-                                      className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:bg-[#222] hover:text-white transition-colors"
+                                      className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:bg-[#222] hover:text-[#1B2A4A] transition-colors"
                                     >
                                       <UserCheck size={14} /> Đặt Active
                                     </button>
@@ -707,7 +707,7 @@ export default function SubscribersPage() {
                                           "unsubscribed"
                                         );
                                       }}
-                                      className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:bg-[#222] hover:text-white transition-colors"
+                                      className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:bg-[#222] hover:text-[#1B2A4A] transition-colors"
                                     >
                                       <UserMinus size={14} /> Unsubscribe
                                     </button>
@@ -751,9 +751,9 @@ export default function SubscribersPage() {
                   <button
                     onClick={() => setPage((p) => Math.max(1, p - 1))}
                     disabled={page <= 1}
-                    className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-[#1B2A4A] disabled:opacity-30 disabled:cursor-not-allowed"
                     style={{
-                      background: "#1f1f1f",
+                      background: "#E5E7EB",
                       border: "1px solid #2a2a2a",
                     }}
                   >
@@ -764,9 +764,9 @@ export default function SubscribersPage() {
                       setPage((p) => Math.min(totalPages, p + 1))
                     }
                     disabled={page >= totalPages}
-                    className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-[#1B2A4A] disabled:opacity-30 disabled:cursor-not-allowed"
                     style={{
-                      background: "#1f1f1f",
+                      background: "#E5E7EB",
                       border: "1px solid #2a2a2a",
                     }}
                   >
@@ -808,7 +808,7 @@ export default function SubscribersPage() {
             className="card-dark w-full max-w-sm p-5 space-y-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="text-white font-semibold">
+            <h3 className="text-[#1B2A4A] font-semibold">
               {bulkAction === "add_to_list"
                 ? "Thêm vào danh sách"
                 : "Gỡ khỏi danh sách"}
@@ -833,7 +833,7 @@ export default function SubscribersPage() {
                 }}
                 className="flex-1 py-2 text-sm font-medium text-gray-400 rounded-lg"
                 style={{
-                  background: "#1f1f1f",
+                  background: "#E5E7EB",
                   border: "1px solid #2a2a2a",
                 }}
               >

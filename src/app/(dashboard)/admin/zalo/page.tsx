@@ -109,7 +109,7 @@ export default async function AdminZaloPage() {
               </div>
               <div>
                 <div className="text-xs text-gray-500">{s.label}</div>
-                <div className="text-lg font-bold text-white">{s.value}</div>
+                <div className="text-lg font-bold text-[#1B2A4A]">{s.value}</div>
               </div>
             </div>
           ))}
@@ -117,7 +117,7 @@ export default async function AdminZaloPage() {
 
         {/* Configuration info */}
         <div className="card-dark p-6">
-          <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
+          <h3 className="font-semibold text-[#1B2A4A] mb-4 flex items-center gap-2">
             <MessageCircle size={16} className="text-[#E85D04]" />
             Cau hinh Zalo OA
           </h3>
@@ -155,7 +155,7 @@ export default async function AdminZaloPage() {
         {/* Test message */}
         {configured && (
           <div className="card-dark p-6">
-            <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
+            <h3 className="font-semibold text-[#1B2A4A] mb-4 flex items-center gap-2">
               <Send size={16} className="text-[#E85D04]" />
               Gui tin nhan thu
             </h3>
@@ -171,10 +171,10 @@ export default async function AdminZaloPage() {
 
         {/* SQL Migration info */}
         <div className="card-dark p-6">
-          <h3 className="font-semibold text-white mb-4">SQL Migration</h3>
+          <h3 className="font-semibold text-[#1B2A4A] mb-4">SQL Migration</h3>
           <div className="text-xs text-gray-500 space-y-2">
             <p>Chay lenh SQL sau de them cot zalo_user_id vao bang profiles:</p>
-            <pre className="p-3 rounded-lg text-gray-300 overflow-x-auto text-[11px]" style={{ background: "#1a1a1a" }}>
+            <pre className="p-3 rounded-lg text-gray-300 overflow-x-auto text-[11px]" style={{ background: "#F0F1F3" }}>
 {`-- Add zalo_user_id to profiles for linking Zalo accounts
 ALTER TABLE profiles ADD COLUMN zalo_user_id TEXT DEFAULT NULL;
 CREATE INDEX idx_profiles_zalo ON profiles(zalo_user_id) WHERE zalo_user_id IS NOT NULL;
@@ -195,7 +195,7 @@ CREATE INDEX idx_zalo_events_created ON zalo_webhook_events(created_at DESC);`}
         {/* Recent webhook events */}
         {recentEvents.length > 0 && (
           <div className="card-dark p-6">
-            <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
+            <h3 className="font-semibold text-[#1B2A4A] mb-4 flex items-center gap-2">
               <Activity size={16} className="text-[#E85D04]" />
               Su kien webhook gan day
             </h3>
@@ -206,7 +206,7 @@ CREATE INDEX idx_zalo_events_created ON zalo_webhook_events(created_at DESC);`}
                   <div
                     key={e.id}
                     className="flex items-center justify-between p-3 rounded-lg"
-                    style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                    style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                   >
                     <div className="flex items-center gap-3">
                       <span

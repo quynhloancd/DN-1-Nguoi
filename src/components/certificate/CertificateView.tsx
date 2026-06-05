@@ -448,7 +448,7 @@ export default function CertificateView({
           onClick={handleShare}
           className="flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium transition-colors"
           style={{
-            background: "#1f1f1f",
+            background: "#E5E7EB",
             color: "#ccc",
             border: "1px solid #333",
           }}

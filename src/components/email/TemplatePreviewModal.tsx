@@ -25,11 +25,11 @@ export default function TemplatePreviewModal({ open, onClose, html, subject }: T
     >
       <div
         className="w-full max-w-4xl max-h-[90vh] flex flex-col rounded-xl overflow-hidden"
-        style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+        style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-3 border-b border-[#2a2a2a]">
+        <div className="flex items-center justify-between px-5 py-3 border-b border-[#E5E7EB]">
           <div className="min-w-0">
             <h3 className="text-white font-semibold text-sm">Xem truoc email</h3>
             {subject && <p className="text-xs text-gray-500 truncate mt-0.5">{subject}</p>}
@@ -42,7 +42,7 @@ export default function TemplatePreviewModal({ open, onClose, html, subject }: T
                 onClick={() => setDevice("desktop")}
                 className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium transition-colors"
                 style={{
-                  background: device === "desktop" ? "#E85D04" : "#1f1f1f",
+                  background: device === "desktop" ? "#E85D04" : "#E5E7EB",
                   color: device === "desktop" ? "white" : "#9ca3af",
                 }}
               >
@@ -53,7 +53,7 @@ export default function TemplatePreviewModal({ open, onClose, html, subject }: T
                 onClick={() => setDevice("mobile")}
                 className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium transition-colors"
                 style={{
-                  background: device === "mobile" ? "#E85D04" : "#1f1f1f",
+                  background: device === "mobile" ? "#E85D04" : "#E5E7EB",
                   color: device === "mobile" ? "white" : "#9ca3af",
                 }}
               >
@@ -64,7 +64,7 @@ export default function TemplatePreviewModal({ open, onClose, html, subject }: T
 
             <button
               onClick={onClose}
-              className="text-gray-500 hover:text-white transition-colors p-1"
+              className="text-gray-500 hover:text-[#1B2A4A] transition-colors p-1"
             >
               <X size={18} />
             </button>

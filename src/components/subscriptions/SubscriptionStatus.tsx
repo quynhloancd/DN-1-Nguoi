@@ -123,7 +123,7 @@ export default function SubscriptionStatus() {
             <CreditCard size={17} className="text-gray-500" />
           </div>
           <div>
-            <h3 className="text-sm font-semibold text-white">
+            <h3 className="text-sm font-semibold text-[#1B2A4A]">
               Gói đăng ký
             </h3>
             <p className="text-xs text-gray-500">
@@ -176,7 +176,7 @@ export default function SubscriptionStatus() {
             <Crown size={17} className="text-[#E85D04]" />
           </div>
           <div>
-            <h3 className="text-sm font-semibold text-white">{plan.name}</h3>
+            <h3 className="text-sm font-semibold text-[#1B2A4A]">{plan.name}</h3>
             <p className="text-xs text-gray-500">
               {BILLING_LABELS[plan.billing_period] ?? plan.billing_period} -{" "}
               {formatCurrency(plan.price)}
@@ -220,7 +220,7 @@ export default function SubscriptionStatus() {
               <Calendar size={12} />
               Bắt đầu
             </div>
-            <div className="text-sm text-white font-medium">
+            <div className="text-sm text-[#1B2A4A] font-medium">
               {formatDate(subscription.current_period_start)}
             </div>
           </div>
@@ -229,7 +229,7 @@ export default function SubscriptionStatus() {
               <Calendar size={12} />
               Hết hạn
             </div>
-            <div className="text-sm text-white font-medium">
+            <div className="text-sm text-[#1B2A4A] font-medium">
               {formatDate(subscription.current_period_end)}
             </div>
           </div>
@@ -257,7 +257,7 @@ export default function SubscriptionStatus() {
           </div>
           <div
             className="w-full h-1.5 rounded-full overflow-hidden"
-            style={{ background: "#2a2a2a" }}
+            style={{ background: "#E5E7EB" }}
           >
             <div
               className="h-full rounded-full transition-all"
@@ -324,7 +324,7 @@ export default function SubscriptionStatus() {
           {(isNearExpiry || isCancelled) && (
             <a
               href="/subscriptions"
-              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white transition-all"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-[#1B2A4A] transition-all"
               style={{
                 background: "linear-gradient(135deg, #E85D04, #b8922e)",
                 boxShadow: "0 2px 8px rgba(212,168,67,0.3)",
@@ -345,9 +345,9 @@ export default function SubscriptionStatus() {
                     onChange={(e) => setCancelReason(e.target.value)}
                     placeholder="Lý do huỷ (tuỳ chọn)"
                     rows={2}
-                    className="w-full px-3 py-2 rounded-lg text-sm text-white placeholder-gray-600 outline-none resize-none"
+                    className="w-full px-3 py-2 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-600 outline-none resize-none"
                     style={{
-                      background: "#1a1a1a",
+                      background: "#F0F1F3",
                       border: "1px solid #2a2a2a",
                     }}
                   />
@@ -374,9 +374,9 @@ export default function SubscriptionStatus() {
                         setShowCancelConfirm(false);
                         setCancelReason("");
                       }}
-                      className="px-4 py-2 rounded-xl text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                      className="px-4 py-2 rounded-xl text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
                       style={{
-                        background: "#1a1a1a",
+                        background: "#F0F1F3",
                         border: "1px solid #2a2a2a",
                       }}
                     >
@@ -389,7 +389,7 @@ export default function SubscriptionStatus() {
                   onClick={() => setShowCancelConfirm(true)}
                   className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-gray-400 hover:text-red-400 transition-colors"
                   style={{
-                    background: "#1a1a1a",
+                    background: "#F0F1F3",
                     border: "1px solid #2a2a2a",
                   }}
                 >

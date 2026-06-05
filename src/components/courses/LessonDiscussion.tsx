@@ -280,7 +280,7 @@ function DiscussionThread({
             value={replyContent}
             onChange={(e) => setReplyContent(e.target.value)}
             placeholder="Viết phản hồi..."
-            className="w-full bg-[#0a0a0a] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-[#f5f5f5] placeholder-gray-600 focus:outline-none focus:border-[#E85D04]/50 resize-none transition-colors"
+            className="w-full bg-[#F8F9FA] border border-[#E5E7EB] rounded-lg px-3 py-2 text-sm text-[#f5f5f5] placeholder-gray-600 focus:outline-none focus:border-[#E85D04]/50 resize-none transition-colors"
             rows={2}
             maxLength={5000}
           />
@@ -313,7 +313,7 @@ function DiscussionThread({
 
       {/* Replies list */}
       {showReplies && (
-        <div className="ml-12 border-l-2 border-[#2a2a2a] pl-3">
+        <div className="ml-12 border-l-2 border-[#E5E7EB] pl-3">
           {loadingReplies ? (
             <div className="flex items-center justify-center py-4">
               <Loader2 size={16} className="animate-spin text-gray-500" />
@@ -428,7 +428,7 @@ export default function LessonDiscussion({ lessonId }: LessonDiscussionProps) {
               value={content}
               onChange={(e) => setContent(e.target.value)}
               placeholder="Đặt câu hỏi hoặc chia sẻ ý kiến về bài học này..."
-              className="w-full bg-[#0a0a0a] border border-[#2a2a2a] rounded-lg px-3 py-2.5 text-sm text-[#f5f5f5] placeholder-gray-600 focus:outline-none focus:border-[#E85D04]/50 resize-none transition-colors"
+              className="w-full bg-[#F8F9FA] border border-[#E5E7EB] rounded-lg px-3 py-2.5 text-sm text-[#f5f5f5] placeholder-gray-600 focus:outline-none focus:border-[#E85D04]/50 resize-none transition-colors"
               rows={3}
               maxLength={5000}
             />

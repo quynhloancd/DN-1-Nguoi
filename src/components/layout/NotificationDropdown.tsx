@@ -135,14 +135,14 @@ export default function NotificationDropdown() {
       <button
         ref={triggerRef}
         onClick={() => setOpen((v) => !v)}
-        className="relative p-2 rounded-lg transition-colors text-gray-400 hover:text-white"
+        className="relative p-2 rounded-lg transition-colors text-gray-400 hover:text-[#1B2A4A]"
         style={{ background: open ? "rgba(255,255,255,0.05)" : "transparent" }}
         aria-label="Thông báo"
       >
         <Bell size={18} />
         {unreadCount > 0 && (
           <span
-            className="absolute top-1 right-1 min-w-[16px] h-4 px-0.5 rounded-full flex items-center justify-center text-[10px] font-bold text-white"
+            className="absolute top-1 right-1 min-w-[16px] h-4 px-0.5 rounded-full flex items-center justify-center text-[10px] font-bold text-[#1B2A4A]"
             style={{ background: "#ef4444" }}
           >
             {unreadCount > 9 ? "9+" : unreadCount}
@@ -156,7 +156,7 @@ export default function NotificationDropdown() {
           ref={panelRef}
           className="absolute right-0 mt-2 w-80 rounded-xl shadow-xl z-50"
           style={{
-            background: "#1a1a1a",
+            background: "#F0F1F3",
             border: "1px solid #2a2a2a",
             top: "100%",
           }}
@@ -166,7 +166,7 @@ export default function NotificationDropdown() {
             className="flex items-center justify-between px-4 py-3"
             style={{ borderBottom: "1px solid #2a2a2a" }}
           >
-            <span className="text-sm font-semibold text-white">Thông báo</span>
+            <span className="text-sm font-semibold text-[#1B2A4A]">Thông báo</span>
             {unreadCount > 0 && (
               <button
                 onClick={markAllRead}
@@ -216,7 +216,7 @@ export default function NotificationDropdown() {
 
                   {/* Content */}
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs font-semibold text-white leading-snug">
+                    <p className="text-xs font-semibold text-[#1B2A4A] leading-snug">
                       {notif.is_broadcast && (
                         <span className="text-[10px] text-[#E85D04] font-medium mr-1">
                           Chung

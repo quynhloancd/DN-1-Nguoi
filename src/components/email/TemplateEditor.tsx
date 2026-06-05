@@ -98,17 +98,17 @@ export default function TemplateEditor({ open, onClose, onSave, initial }: Templ
       >
         <div
           className="w-full max-w-6xl max-h-[92vh] flex flex-col rounded-xl overflow-hidden"
-          style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+          style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
         >
           {/* Header */}
-          <div className="flex items-center justify-between px-5 py-3 border-b border-[#2a2a2a]">
+          <div className="flex items-center justify-between px-5 py-3 border-b border-[#E5E7EB]">
             <div className="flex items-center gap-2">
               <Layout size={16} className="text-[#E85D04]" />
               <h3 className="text-white font-semibold text-sm">
                 {initial?.id ? "Chinh sua template" : "Tao template moi"}
               </h3>
             </div>
-            <button onClick={onClose} className="text-gray-500 hover:text-white transition-colors p-1">
+            <button onClick={onClose} className="text-gray-500 hover:text-[#1B2A4A] transition-colors p-1">
               <X size={18} />
             </button>
           </div>
@@ -185,7 +185,7 @@ export default function TemplateEditor({ open, onClose, onSave, initial }: Templ
                       onClick={() => setEditorMode("wysiwyg")}
                       className="flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-medium transition-colors"
                       style={{
-                        background: editorMode === "wysiwyg" ? "rgba(212,168,67,0.15)" : "#1f1f1f",
+                        background: editorMode === "wysiwyg" ? "rgba(212,168,67,0.15)" : "#E5E7EB",
                         color: editorMode === "wysiwyg" ? "#E85D04" : "#9ca3af",
                       }}
                     >
@@ -197,7 +197,7 @@ export default function TemplateEditor({ open, onClose, onSave, initial }: Templ
                       onClick={() => setEditorMode("html")}
                       className="flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-medium transition-colors"
                       style={{
-                        background: editorMode === "html" ? "rgba(212,168,67,0.15)" : "#1f1f1f",
+                        background: editorMode === "html" ? "rgba(212,168,67,0.15)" : "#E5E7EB",
                         color: editorMode === "html" ? "#E85D04" : "#9ca3af",
                       }}
                     >
@@ -257,8 +257,8 @@ export default function TemplateEditor({ open, onClose, onSave, initial }: Templ
             </div>
 
             {/* Right: Live preview (desktop only) */}
-            <div className="hidden lg:flex flex-col w-[420px] border-l border-[#2a2a2a]">
-              <div className="px-4 py-2.5 border-b border-[#2a2a2a] flex items-center gap-2">
+            <div className="hidden lg:flex flex-col w-[420px] border-l border-[#E5E7EB]">
+              <div className="px-4 py-2.5 border-b border-[#E5E7EB] flex items-center gap-2">
                 <Eye size={13} className="text-gray-500" />
                 <span className="text-xs font-medium text-gray-400">Xem truoc truc tiep</span>
               </div>
@@ -276,10 +276,10 @@ export default function TemplateEditor({ open, onClose, onSave, initial }: Templ
           </div>
 
           {/* Footer */}
-          <div className="flex items-center justify-end gap-3 px-5 py-3 border-t border-[#2a2a2a]">
+          <div className="flex items-center justify-end gap-3 px-5 py-3 border-t border-[#E5E7EB]">
             <button
               onClick={onClose}
-              className="px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-white transition-colors"
+              className="px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
               style={{ border: "1px solid #2a2a2a" }}
             >
               Huy

@@ -83,7 +83,7 @@ export default function CreateCouponForm() {
     return (
       <button
         onClick={() => setOpen(true)}
-        className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white transition-all"
+        className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-[#1B2A4A] transition-all"
         style={{
           background: "linear-gradient(135deg, #E85D04, #b8922e)",
           boxShadow: "0 2px 8px rgba(212,168,67,0.3)",
@@ -102,10 +102,10 @@ export default function CreateCouponForm() {
         className="flex items-center justify-between px-5 py-3"
         style={{ borderBottom: "1px solid #2a2a2a" }}
       >
-        <h3 className="text-sm font-semibold text-white">Tạo mã giảm giá mới</h3>
+        <h3 className="text-sm font-semibold text-[#1B2A4A]">Tạo mã giảm giá mới</h3>
         <button
           onClick={() => { handleReset(); setOpen(false); }}
-          className="text-gray-500 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/5"
+          className="text-gray-500 hover:text-[#1B2A4A] transition-colors p-1 rounded-lg hover:bg-white/5"
         >
           <X size={16} />
         </button>
@@ -124,17 +124,17 @@ export default function CreateCouponForm() {
               onChange={(e) => setCode(e.target.value.toUpperCase())}
               placeholder="VD: SALE2024"
               required
-              className="flex-1 px-3 py-2 rounded-lg text-sm text-white placeholder-gray-600 outline-none transition-colors"
+              className="flex-1 px-3 py-2 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-600 outline-none transition-colors"
               style={{
-                background: "#1a1a1a",
+                background: "#F0F1F3",
                 border: "1px solid #2a2a2a",
               }}
             />
             <button
               type="button"
               onClick={handleAutoGenerate}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-white transition-colors"
-              style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
+              style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
               title="Tạo mã tự động"
             >
               <RefreshCw size={13} />
@@ -159,8 +159,8 @@ export default function CreateCouponForm() {
                     : "text-gray-500 hover:text-gray-300"
                 }`}
                 style={{
-                  background: discountType === "percent" ? "rgba(212,168,67,0.15)" : "#1a1a1a",
-                  border: `1px solid ${discountType === "percent" ? "rgba(212,168,67,0.4)" : "#2a2a2a"}`,
+                  background: discountType === "percent" ? "rgba(212,168,67,0.15)" : "#F0F1F3",
+                  border: `1px solid ${discountType === "percent" ? "rgba(212,168,67,0.4)" : "#E5E7EB"}`,
                 }}
               >
                 <Percent size={13} />
@@ -175,8 +175,8 @@ export default function CreateCouponForm() {
                     : "text-gray-500 hover:text-gray-300"
                 }`}
                 style={{
-                  background: discountType === "fixed" ? "rgba(212,168,67,0.15)" : "#1a1a1a",
-                  border: `1px solid ${discountType === "fixed" ? "rgba(212,168,67,0.4)" : "#2a2a2a"}`,
+                  background: discountType === "fixed" ? "rgba(212,168,67,0.15)" : "#F0F1F3",
+                  border: `1px solid ${discountType === "fixed" ? "rgba(212,168,67,0.4)" : "#E5E7EB"}`,
                 }}
               >
                 <DollarSign size={13} />
@@ -196,9 +196,9 @@ export default function CreateCouponForm() {
               required
               min={1}
               max={discountType === "percent" ? 100 : undefined}
-              className="w-full px-3 py-2 rounded-lg text-sm text-white placeholder-gray-600 outline-none transition-colors"
+              className="w-full px-3 py-2 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-600 outline-none transition-colors"
               style={{
-                background: "#1a1a1a",
+                background: "#F0F1F3",
                 border: "1px solid #2a2a2a",
               }}
             />
@@ -217,9 +217,9 @@ export default function CreateCouponForm() {
               onChange={(e) => setMaxUses(e.target.value)}
               placeholder="Không giới hạn"
               min={1}
-              className="w-full px-3 py-2 rounded-lg text-sm text-white placeholder-gray-600 outline-none transition-colors"
+              className="w-full px-3 py-2 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-600 outline-none transition-colors"
               style={{
-                background: "#1a1a1a",
+                background: "#F0F1F3",
                 border: "1px solid #2a2a2a",
               }}
             />
@@ -234,9 +234,9 @@ export default function CreateCouponForm() {
               onChange={(e) => setMinOrderAmount(e.target.value)}
               placeholder="0"
               min={0}
-              className="w-full px-3 py-2 rounded-lg text-sm text-white placeholder-gray-600 outline-none transition-colors"
+              className="w-full px-3 py-2 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-600 outline-none transition-colors"
               style={{
-                background: "#1a1a1a",
+                background: "#F0F1F3",
                 border: "1px solid #2a2a2a",
               }}
             />
@@ -252,9 +252,9 @@ export default function CreateCouponForm() {
             type="datetime-local"
             value={expiresAt}
             onChange={(e) => setExpiresAt(e.target.value)}
-            className="w-full px-3 py-2 rounded-lg text-sm text-white placeholder-gray-600 outline-none transition-colors"
+            className="w-full px-3 py-2 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-600 outline-none transition-colors"
             style={{
-              background: "#1a1a1a",
+              background: "#F0F1F3",
               border: "1px solid #2a2a2a",
               colorScheme: "dark",
             }}
@@ -279,7 +279,7 @@ export default function CreateCouponForm() {
           <button
             type="submit"
             disabled={loading}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all disabled:opacity-50"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-[#1B2A4A] transition-all disabled:opacity-50"
             style={{
               background: "linear-gradient(135deg, #E85D04, #b8922e)",
               boxShadow: "0 2px 8px rgba(212,168,67,0.3)",
@@ -300,8 +300,8 @@ export default function CreateCouponForm() {
           <button
             type="button"
             onClick={() => { handleReset(); setOpen(false); }}
-            className="px-4 py-2.5 rounded-xl text-sm font-medium text-gray-400 hover:text-white transition-colors"
-            style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+            className="px-4 py-2.5 rounded-xl text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
+            style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
           >
             Huỷ
           </button>

@@ -197,7 +197,7 @@ export default async function AdminAffiliatesPage({
         {/* Affiliates table */}
         <div className="card-dark p-5">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-sm font-semibold text-white flex items-center gap-2">
+            <h3 className="text-sm font-semibold text-[#1B2A4A] flex items-center gap-2">
               <Users size={16} className="text-[#3b82f6]" />
               Danh sách Affiliate ({totalAffiliates})
             </h3>
@@ -209,7 +209,7 @@ export default async function AdminAffiliatesPage({
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="text-left text-gray-500 text-xs border-b border-[#1f1f1f]">
+                  <tr className="text-left text-gray-500 text-xs border-b border-[#E5E7EB]">
                     <th className="pb-2 font-medium">Affiliate</th>
                     <th className="pb-2 font-medium">Mã</th>
                     <th className="pb-2 font-medium">Trạng thái</th>
@@ -226,8 +226,8 @@ export default async function AdminAffiliatesPage({
                     const statusCfg = STATUS_CONFIG[aff.status] || STATUS_CONFIG.pending;
                     const name = (aff.profiles as { full_name: string | null } | null)?.full_name || "—";
                     return (
-                      <tr key={aff.id} className="border-b border-[#1a1a1a] hover:bg-[#111]">
-                        <td className="py-2.5 text-white font-medium">{name}</td>
+                      <tr key={aff.id} className="border-b border-[#E5E7EB] hover:bg-white">
+                        <td className="py-2.5 text-[#1B2A4A] font-medium">{name}</td>
                         <td className="py-2.5">
                           <code className="text-xs text-[#E85D04] bg-[#E85D04]/10 px-1.5 py-0.5 rounded">{aff.ref_code}</code>
                         </td>
@@ -255,7 +255,7 @@ export default async function AdminAffiliatesPage({
         {/* Pending Conversions — cần duyệt */}
         <div className="card-dark p-5">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-sm font-semibold text-white flex items-center gap-2">
+            <h3 className="text-sm font-semibold text-[#1B2A4A] flex items-center gap-2">
               <Clock size={16} className="text-[#eab308]" />
               Conversion chờ duyệt ({convRows.length})
             </h3>
@@ -267,7 +267,7 @@ export default async function AdminAffiliatesPage({
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="text-left text-gray-500 text-xs border-b border-[#1f1f1f]">
+                  <tr className="text-left text-gray-500 text-xs border-b border-[#E5E7EB]">
                     <th className="pb-2 font-medium">ID</th>
                     <th className="pb-2 font-medium">Affiliate</th>
                     <th className="pb-2 font-medium">Mã ref</th>
@@ -281,11 +281,11 @@ export default async function AdminAffiliatesPage({
                     const aff = conv.affiliates;
                     const affName = (aff?.profiles as { full_name: string | null } | null)?.full_name || "—";
                     return (
-                      <tr key={conv.id} className="border-b border-[#1a1a1a] hover:bg-[#111]">
+                      <tr key={conv.id} className="border-b border-[#E5E7EB] hover:bg-white">
                         <td className="py-2.5">
                           <code className="text-xs text-gray-400">{conv.id.slice(0, 8)}…</code>
                         </td>
-                        <td className="py-2.5 text-white">{affName}</td>
+                        <td className="py-2.5 text-[#1B2A4A]">{affName}</td>
                         <td className="py-2.5">
                           <code className="text-xs text-[#E85D04] bg-[#E85D04]/10 px-1.5 py-0.5 rounded">{aff?.ref_code || "—"}</code>
                         </td>
@@ -309,7 +309,7 @@ export default async function AdminAffiliatesPage({
         {/* Pending Payouts — cần xử lý */}
         <div className="card-dark p-5">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-sm font-semibold text-white flex items-center gap-2">
+            <h3 className="text-sm font-semibold text-[#1B2A4A] flex items-center gap-2">
               <Wallet size={16} className="text-[#22c55e]" />
               Yêu cầu rút tiền chờ xử lý ({payoutRows.length})
             </h3>
@@ -321,7 +321,7 @@ export default async function AdminAffiliatesPage({
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="text-left text-gray-500 text-xs border-b border-[#1f1f1f]">
+                  <tr className="text-left text-gray-500 text-xs border-b border-[#E5E7EB]">
                     <th className="pb-2 font-medium">Affiliate</th>
                     <th className="pb-2 font-medium">Mã ref</th>
                     <th className="pb-2 font-medium text-right">Số tiền</th>
@@ -337,8 +337,8 @@ export default async function AdminAffiliatesPage({
                     const aff = p.affiliates;
                     const affName = (aff?.profiles as { full_name: string | null } | null)?.full_name || "—";
                     return (
-                      <tr key={p.id} className="border-b border-[#1a1a1a] hover:bg-[#111]">
-                        <td className="py-2.5 text-white font-medium">{affName}</td>
+                      <tr key={p.id} className="border-b border-[#E5E7EB] hover:bg-white">
+                        <td className="py-2.5 text-[#1B2A4A] font-medium">{affName}</td>
                         <td className="py-2.5">
                           <code className="text-xs text-[#E85D04] bg-[#E85D04]/10 px-1.5 py-0.5 rounded">{aff?.ref_code || "—"}</code>
                         </td>
@@ -362,7 +362,7 @@ export default async function AdminAffiliatesPage({
         {/* Affiliate orders */}
         <div className="card-dark p-5">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-sm font-semibold text-white flex items-center gap-2">
+            <h3 className="text-sm font-semibold text-[#1B2A4A] flex items-center gap-2">
               <ShoppingCart size={16} className="text-[#a855f7]" />
               Đơn hàng từ Affiliate ({affOrders.length})
             </h3>
@@ -382,7 +382,7 @@ export default async function AdminAffiliatesPage({
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="text-left text-gray-500 text-xs border-b border-[#1f1f1f]">
+                  <tr className="text-left text-gray-500 text-xs border-b border-[#E5E7EB]">
                     <th className="pb-2 font-medium">Mã đơn</th>
                     <th className="pb-2 font-medium">Khách hàng</th>
                     <th className="pb-2 font-medium">Sản phẩm</th>
@@ -398,15 +398,15 @@ export default async function AdminAffiliatesPage({
                     const osCfg = ORDER_STATUS[order.status] || ORDER_STATUS.pending;
                     const affName = order.ref_code ? (refToName[order.ref_code] || "—") : "—";
                     return (
-                      <tr key={order.id} className="border-b border-[#1a1a1a] hover:bg-[#111]">
+                      <tr key={order.id} className="border-b border-[#E5E7EB] hover:bg-white">
                         <td className="py-2.5">
                           <code className="text-xs text-[#a855f7] bg-[#a855f7]/10 px-1.5 py-0.5 rounded">DK{order.order_code}</code>
                         </td>
-                        <td className="py-2.5 text-white">{order.customer_name || "—"}</td>
+                        <td className="py-2.5 text-[#1B2A4A]">{order.customer_name || "—"}</td>
                         <td className="py-2.5 text-gray-300 max-w-[200px] truncate">
                           {(order.products as { title: string } | null)?.title || "—"}
                         </td>
-                        <td className="py-2.5 text-right text-white font-medium">{formatCurrency(order.amount)}</td>
+                        <td className="py-2.5 text-right text-[#1B2A4A] font-medium">{formatCurrency(order.amount)}</td>
                         <td className="py-2.5">
                           <span className="text-xs px-2 py-0.5 rounded font-medium" style={{ background: osCfg.bg, color: osCfg.color }}>
                             {osCfg.label}
@@ -441,7 +441,7 @@ function StatCard({ icon: Icon, label, value, sub, color }: {
         <Icon size={16} style={{ color }} />
         <span className="text-xs text-gray-500">{label}</span>
       </div>
-      <div className="text-xl font-bold text-white">{value}</div>
+      <div className="text-xl font-bold text-[#1B2A4A]">{value}</div>
       <div className="text-xs text-gray-500 mt-1">{sub}</div>
     </div>
   );

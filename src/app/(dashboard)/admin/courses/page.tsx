@@ -136,7 +136,7 @@ export default async function AdminCoursesPage() {
         {/* Header action row */}
         <div className="flex items-center justify-between gap-4">
           <div>
-            <h2 className="font-bold text-white text-base">
+            <h2 className="font-bold text-[#1B2A4A] text-base">
               Danh sách khoá học
             </h2>
             <p className="text-xs text-gray-500 mt-0.5">
@@ -159,7 +159,7 @@ export default async function AdminCoursesPage() {
               <BookOpen size={20} className="text-[#E85D04]" />
             </div>
             <div>
-              <div className="text-2xl font-bold text-white leading-none mb-1">
+              <div className="text-2xl font-bold text-[#1B2A4A] leading-none mb-1">
                 {totalCourses}
               </div>
               <div className="text-xs text-gray-500">Tổng khoá học</div>
@@ -174,7 +174,7 @@ export default async function AdminCoursesPage() {
               <Layers size={20} className="text-[#f59e0b]" />
             </div>
             <div>
-              <div className="text-2xl font-bold text-white leading-none mb-1">
+              <div className="text-2xl font-bold text-[#1B2A4A] leading-none mb-1">
                 {totalLessons}
               </div>
               <div className="text-xs text-gray-500">Tổng bài học</div>
@@ -189,7 +189,7 @@ export default async function AdminCoursesPage() {
               <Users size={20} className="text-[#3b82f6]" />
             </div>
             <div>
-              <div className="text-2xl font-bold text-white leading-none mb-1">
+              <div className="text-2xl font-bold text-[#1B2A4A] leading-none mb-1">
                 {totalEnrolled.toLocaleString("vi-VN")}
               </div>
               <div className="text-xs text-gray-500">Học viên đang học</div>
@@ -246,7 +246,7 @@ export default async function AdminCoursesPage() {
                     )}
                     <div className="min-w-0">
                       <div className="flex items-center gap-2 flex-wrap mb-1">
-                        <h3 className="font-semibold text-white text-sm leading-snug">
+                        <h3 className="font-semibold text-[#1B2A4A] text-sm leading-snug">
                           {course.title}
                         </h3>
                         <StatusBadge
@@ -275,13 +275,13 @@ export default async function AdminCoursesPage() {
                   <div className="flex items-center gap-6 text-xs shrink-0">
                     <div className="text-center">
                       <div className="text-gray-400 mb-0.5">Chương</div>
-                      <div className="font-semibold text-white">
+                      <div className="font-semibold text-[#1B2A4A]">
                         {chapterCount}
                       </div>
                     </div>
                     <div className="text-center">
                       <div className="text-gray-400 mb-0.5">Bài học</div>
-                      <div className="font-semibold text-white">
+                      <div className="font-semibold text-[#1B2A4A]">
                         {lessonCount}
                       </div>
                     </div>
@@ -290,7 +290,7 @@ export default async function AdminCoursesPage() {
                       className="text-center group"
                     >
                       <div className="text-gray-400 mb-0.5 group-hover:text-[#E85D04] transition-colors">Học viên</div>
-                      <div className="font-semibold text-white group-hover:text-[#E85D04] transition-colors">
+                      <div className="font-semibold text-[#1B2A4A] group-hover:text-[#E85D04] transition-colors">
                         {enrolled.toLocaleString("vi-VN")}
                       </div>
                     </Link>
@@ -306,7 +306,7 @@ export default async function AdminCoursesPage() {
                   <div className="flex items-center gap-2 shrink-0">
                     <Link
                       href={`/admin/courses/${course.id}`}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors text-gray-300 hover:text-white hover:bg-white/5"
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors text-gray-300 hover:text-[#1B2A4A] hover:bg-white/5"
                       style={{ border: "1px solid #2a2a2a" }}
                     >
                       <Edit2 size={12} />

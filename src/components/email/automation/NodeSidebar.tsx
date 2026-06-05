@@ -39,7 +39,7 @@ export default function NodeSidebar() {
   };
 
   return (
-    <div className="w-56 border-r border-[#2a2a2a] bg-[#111] overflow-y-auto p-3 space-y-4">
+    <div className="w-56 border-r border-[#E5E7EB] bg-white overflow-y-auto p-3 space-y-4">
       <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-1">
         Kéo thả vào canvas
       </div>
@@ -55,7 +55,7 @@ export default function NodeSidebar() {
                 key={node.type}
                 draggable
                 onDragStart={(e) => onDragStart(e, node.type)}
-                className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg cursor-grab active:cursor-grabbing transition-all border border-transparent hover:border-[#333] hover:bg-[#1a1a1a]"
+                className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg cursor-grab active:cursor-grabbing transition-all border border-transparent hover:border-[#333] hover:bg-[#F0F1F3]"
               >
                 <div
                   className="w-7 h-7 rounded-md flex items-center justify-center shrink-0"
@@ -64,7 +64,7 @@ export default function NodeSidebar() {
                   <node.icon size={14} style={{ color: node.color }} />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-medium text-white truncate">{node.label}</div>
+                  <div className="text-xs font-medium text-[#1B2A4A] truncate">{node.label}</div>
                   <div className="text-[10px] text-gray-500 truncate">{node.description}</div>
                 </div>
               </div>

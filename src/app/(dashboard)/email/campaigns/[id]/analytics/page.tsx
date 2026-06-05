@@ -213,7 +213,7 @@ export default function CampaignAnalyticsPage() {
         <div className="flex items-center justify-between">
           <button
             onClick={() => router.push("/email/campaigns")}
-            className="flex items-center gap-2 text-sm text-[#9ca3af] hover:text-white transition-colors"
+            className="flex items-center gap-2 text-sm text-[#9ca3af] hover:text-[#1B2A4A] transition-colors"
           >
             <ArrowLeft size={16} />
             Quay lại Campaigns
@@ -221,15 +221,15 @@ export default function CampaignAnalyticsPage() {
           <div className="flex items-center gap-2">
             <button
               onClick={fetchData}
-              className="p-1.5 rounded-lg text-[#9ca3af] hover:text-white transition-colors"
-              style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+              className="p-1.5 rounded-lg text-[#9ca3af] hover:text-[#1B2A4A] transition-colors"
+              style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
             >
               <RefreshCw size={14} className={loading ? "animate-spin" : ""} />
             </button>
             <button
               onClick={handleExport}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-[#9ca3af] hover:text-white transition-colors"
-              style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-[#9ca3af] hover:text-[#1B2A4A] transition-colors"
+              style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
             >
               <Download size={14} />
               Xuất CSV
@@ -250,17 +250,17 @@ export default function CampaignAnalyticsPage() {
                 className="card-dark p-4 flex flex-wrap items-center gap-4 text-xs text-[#9ca3af]"
               >
                 <span>
-                  <strong className="text-white">Tiêu đề:</strong>{" "}
+                  <strong className="text-[#1B2A4A]">Tiêu đề:</strong>{" "}
                   {campaign.subject}
                 </span>
                 {campaign.sent_at && (
                   <span>
-                    <strong className="text-white">Gửi lúc:</strong>{" "}
+                    <strong className="text-[#1B2A4A]">Gửi lúc:</strong>{" "}
                     {formatDate(campaign.sent_at)}
                   </span>
                 )}
                 <span>
-                  <strong className="text-white">Trạng thái:</strong>{" "}
+                  <strong className="text-[#1B2A4A]">Trạng thái:</strong>{" "}
                   <span className="text-[#E85D04] font-medium capitalize">
                     {campaign.status}
                   </span>
@@ -317,7 +317,7 @@ export default function CampaignAnalyticsPage() {
                   >
                     <s.icon size={16} style={{ color: s.color }} />
                   </div>
-                  <div className="text-xl font-bold text-white">
+                  <div className="text-xl font-bold text-[#1B2A4A]">
                     {s.value.toLocaleString("vi-VN")}
                   </div>
                   <div className="text-[11px] text-gray-500">{s.label}</div>
@@ -371,7 +371,7 @@ export default function CampaignAnalyticsPage() {
               {/* Timeline */}
               <div className="card-dark p-5">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-semibold text-white text-sm">
+                  <h3 className="font-semibold text-[#1B2A4A] text-sm">
                     Opens & Clicks theo thời gian
                   </h3>
                   <div className="flex items-center gap-3 text-[11px]">
@@ -418,7 +418,7 @@ export default function CampaignAnalyticsPage() {
                             padding -
                             ratio * (chartHeight - padding * 2)
                           }
-                          stroke="#2a2a2a"
+                          stroke="#E5E7EB"
                           strokeWidth="1"
                         />
                       ))}
@@ -466,13 +466,13 @@ export default function CampaignAnalyticsPage() {
                         <div
                           className="absolute top-0 px-2 py-1.5 rounded-lg text-[10px] z-10 pointer-events-none"
                           style={{
-                            background: "#2a2a2a",
+                            background: "#E5E7EB",
                             border: "1px solid #333",
                             left: `${(hoveredTimelinePoint / Math.max(timeline.length - 1, 1)) * 100}%`,
                             transform: "translateX(-50%)",
                           }}
                         >
-                          <div className="text-white font-medium">
+                          <div className="text-[#1B2A4A] font-medium">
                             {formatShortDate(
                               timeline[hoveredTimelinePoint].date
                             )}
@@ -507,7 +507,7 @@ export default function CampaignAnalyticsPage() {
               <div className="card-dark p-5">
                 <div className="flex items-center gap-2 mb-4">
                   <Link2 size={16} className="text-[#3b82f6]" />
-                  <h3 className="font-semibold text-white text-sm">
+                  <h3 className="font-semibold text-[#1B2A4A] text-sm">
                     Top Links được click
                   </h3>
                 </div>
@@ -557,7 +557,7 @@ export default function CampaignAnalyticsPage() {
             {/* Engagement breakdown */}
             {Object.keys(data.engagement_breakdown).length > 0 && (
               <div className="card-dark p-5">
-                <h3 className="font-semibold text-white text-sm mb-4">
+                <h3 className="font-semibold text-[#1B2A4A] text-sm mb-4">
                   Trạng thái gửi email
                 </h3>
                 <div className="flex flex-wrap gap-4">

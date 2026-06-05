@@ -180,9 +180,9 @@ export default function BulkEnrollForm({
                   type="checkbox"
                   checked={selectedCourses.has(c.id)}
                   onChange={() => toggleCourse(c.id)}
-                  className="w-4 h-4 rounded border-gray-600 bg-[#1a1a1a] accent-[#3b82f6]"
+                  className="w-4 h-4 rounded border-gray-600 bg-[#F0F1F3] accent-[#3b82f6]"
                 />
-                <span className="text-sm text-gray-300 group-hover:text-white transition-colors truncate flex-1">
+                <span className="text-sm text-gray-300 group-hover:text-[#1B2A4A] transition-colors truncate flex-1">
                   {c.title}
                 </span>
                 {c.price === 0 && (
@@ -220,7 +220,7 @@ export default function BulkEnrollForm({
         {result && (
           <div
             className="p-4 rounded-xl space-y-3"
-            style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+            style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
           >
             <h4 className="text-sm font-semibold text-white">
               Kết quả cấp quyền

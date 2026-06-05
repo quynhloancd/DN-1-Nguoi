@@ -212,14 +212,14 @@ export default function CourseStudentList({
             placeholder="Tìm theo tên, email, SĐT..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl text-sm bg-[#151515] text-white placeholder-gray-600 outline-none focus:ring-1 focus:ring-[#E85D04]/40"
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl text-sm bg-[#F8F9FA] text-[#1B2A4A] placeholder-gray-600 outline-none focus:ring-1 focus:ring-[#E85D04]/40"
             style={{ border: "1px solid #2a2a2a" }}
           />
         </div>
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-          className="px-3 py-2.5 rounded-xl text-sm bg-[#151515] text-gray-300 outline-none cursor-pointer"
+          className="px-3 py-2.5 rounded-xl text-sm bg-[#F8F9FA] text-gray-300 outline-none cursor-pointer"
           style={{ border: "1px solid #2a2a2a" }}
         >
           <option value="date">Mới đăng ký</option>
@@ -287,7 +287,7 @@ export default function CourseStudentList({
                   {/* Info */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="font-semibold text-white text-sm truncate">
+                      <span className="font-semibold text-[#1B2A4A] text-sm truncate">
                         {student.fullName}
                       </span>
                       <span
@@ -398,9 +398,9 @@ export default function CourseStudentList({
 
                 {/* ── Expanded detail ──────────────────── */}
                 {isExpanded && (
-                  <div className="border-t border-[#2a2a2a]">
+                  <div className="border-t border-[#E5E7EB]">
                     {/* Tabs */}
-                    <div className="flex border-b border-[#2a2a2a]">
+                    <div className="flex border-b border-[#E5E7EB]">
                       <button
                         onClick={() =>
                           setTab(student.enrollmentId, "progress")
@@ -457,7 +457,7 @@ export default function CourseStudentList({
                                   return (
                                     <div
                                       key={lesson.id}
-                                      className="flex items-center gap-3 py-1.5 px-3 rounded-lg hover:bg-[#1a1a1a]"
+                                      className="flex items-center gap-3 py-1.5 px-3 rounded-lg hover:bg-[#F0F1F3]"
                                     >
                                       {completed ? (
                                         <CheckCircle2
@@ -513,7 +513,7 @@ export default function CourseStudentList({
                               key={q.id}
                               className="p-3 rounded-lg"
                               style={{
-                                background: "#1a1a1a",
+                                background: "#F0F1F3",
                                 border: "1px solid #252525",
                               }}
                             >
@@ -542,7 +542,7 @@ export default function CourseStudentList({
                                 </span>
                               </div>
                               {q.reply && (
-                                <div className="ml-5 pl-3 border-l-2 border-[#2a2a2a]">
+                                <div className="ml-5 pl-3 border-l-2 border-[#E5E7EB]">
                                   <p className="text-xs text-gray-400">
                                     {q.reply}
                                   </p>
@@ -581,7 +581,7 @@ export default function CourseStudentList({
         >
           <div
             className="w-full max-w-md rounded-2xl p-6 space-y-4"
-            style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+            style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center gap-3">
@@ -592,7 +592,7 @@ export default function CourseStudentList({
                 <AlertTriangle size={20} className="text-red-400" />
               </div>
               <div>
-                <h3 className="font-semibold text-white text-sm">
+                <h3 className="font-semibold text-[#1B2A4A] text-sm">
                   Xoá học viên khỏi khoá học?
                 </h3>
                 <p className="text-xs text-gray-400 mt-0.5">
@@ -604,7 +604,7 @@ export default function CourseStudentList({
             <div
               className="p-3 rounded-lg text-sm"
               style={{
-                background: "#151515",
+                background: "#F8F9FA",
                 border: "1px solid #252525",
               }}
             >
@@ -615,7 +615,7 @@ export default function CourseStudentList({
                   size={32}
                 />
                 <div>
-                  <div className="font-medium text-white text-sm">
+                  <div className="font-medium text-[#1B2A4A] text-sm">
                     {deleteTarget.fullName}
                   </div>
                   <div className="text-xs text-gray-500">
@@ -634,7 +634,7 @@ export default function CourseStudentList({
               <button
                 onClick={() => setDeleteTarget(null)}
                 disabled={deleting}
-                className="flex-1 px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
+                className="flex-1 px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:text-[#1B2A4A] hover:bg-white/5 transition-colors"
                 style={{ border: "1px solid #2a2a2a" }}
               >
                 Huỷ bỏ
@@ -642,7 +642,7 @@ export default function CourseStudentList({
               <button
                 onClick={handleDelete}
                 disabled={deleting}
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium text-white transition-colors"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium text-[#1B2A4A] transition-colors"
                 style={{
                   background: deleting ? "#4a1a1a" : "#dc2626",
                   opacity: deleting ? 0.7 : 1,

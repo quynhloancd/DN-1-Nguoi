@@ -79,7 +79,7 @@ export default function JourneyStageIndicator({
               <div
                 className="flex-1 h-0.5 mx-1"
                 style={{
-                  backgroundColor: index < currentIndex ? STAGES[index + 1].color : "#2a2a2a",
+                  backgroundColor: index < currentIndex ? STAGES[index + 1].color : "#E5E7EB",
                 }}
               />
             )}

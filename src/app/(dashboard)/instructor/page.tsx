@@ -94,7 +94,7 @@ export default function InstructorDashboardPage() {
       <div className="p-4 sm:p-6 max-w-6xl mx-auto space-y-6 sm:space-y-8">
         {/* Welcome */}
         <div className="card-dark p-5">
-          <h2 className="text-xl font-bold text-white mb-1">
+          <h2 className="text-xl font-bold text-[#1B2A4A] mb-1">
             Xin chào Giảng viên!
           </h2>
           <p className="text-gray-400 text-sm">
@@ -123,7 +123,7 @@ export default function InstructorDashboardPage() {
                       <s.icon size={14} style={{ color: s.color }} />
                     </div>
                   </div>
-                  <div className="text-xl font-bold text-white">{s.value}</div>
+                  <div className="text-xl font-bold text-[#1B2A4A]">{s.value}</div>
                 </div>
               ))}
             </div>
@@ -149,7 +149,7 @@ export default function InstructorDashboardPage() {
                       />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-white group-hover:text-white">
+                      <div className="text-sm font-semibold text-[#1B2A4A] group-hover:text-[#1B2A4A]">
                         Chấm bài học viên
                       </div>
                       <div className="text-xs text-gray-400">
@@ -175,7 +175,7 @@ export default function InstructorDashboardPage() {
                       <BookOpen size={18} style={{ color: "#E85D04" }} />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-white group-hover:text-white">
+                      <div className="text-sm font-semibold text-[#1B2A4A] group-hover:text-[#1B2A4A]">
                         Khoá học của tôi
                       </div>
                       <div className="text-xs text-gray-400">
@@ -201,7 +201,7 @@ export default function InstructorDashboardPage() {
                       <Users size={18} style={{ color: "#3b82f6" }} />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-white group-hover:text-white">
+                      <div className="text-sm font-semibold text-[#1B2A4A] group-hover:text-[#1B2A4A]">
                         Tiến trình học viên
                       </div>
                       <div className="text-xs text-gray-400">
@@ -227,7 +227,7 @@ export default function InstructorDashboardPage() {
                       <MessageSquare size={18} style={{ color: "#a855f7" }} />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-white group-hover:text-white">
+                      <div className="text-sm font-semibold text-[#1B2A4A] group-hover:text-[#1B2A4A]">
                         Câu hỏi học viên
                       </div>
                       <div className="text-xs text-gray-400">
@@ -273,7 +273,7 @@ export default function InstructorDashboardPage() {
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-white truncate">
+                        <p className="text-sm font-medium text-[#1B2A4A] truncate">
                           {course.title}
                         </p>
                         <p className="text-xs text-gray-400">

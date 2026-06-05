@@ -295,7 +295,7 @@ export default function InstructorQuestionsPage() {
             <select
               value={filterCourse}
               onChange={(e) => setFilterCourse(e.target.value)}
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04] transition-colors"
+              className="w-full bg-white border border-[#E5E7EB] rounded-lg px-3 py-2 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#E85D04] transition-colors"
             >
               <option value="">Tất cả khoá học</option>
               {courses.map((c) => (
@@ -313,7 +313,7 @@ export default function InstructorQuestionsPage() {
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04] transition-colors"
+              className="w-full bg-white border border-[#E5E7EB] rounded-lg px-3 py-2 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#E85D04] transition-colors"
             >
               <option value="">Tất cả</option>
               <option value="unresolved">Chưa giải đáp</option>
@@ -361,7 +361,7 @@ export default function InstructorQuestionsPage() {
                     onClick={() =>
                       handleToggleExpand(q.id, q.reply_count)
                     }
-                    className="w-full flex items-center gap-3 p-4 text-left hover:bg-[#1a1a1a] transition-colors"
+                    className="w-full flex items-center gap-3 p-4 text-left hover:bg-[#F0F1F3] transition-colors"
                   >
                     {/* Avatar */}
                     <div className="w-9 h-9 rounded-full bg-[#2a2a2a] shrink-0 overflow-hidden flex items-center justify-center">
@@ -380,7 +380,7 @@ export default function InstructorQuestionsPage() {
 
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1 flex-wrap">
-                        <span className="text-sm font-medium text-white truncate">
+                        <span className="text-sm font-medium text-[#1B2A4A] truncate">
                           {q.student_name ?? "Học viên"}
                         </span>
 
@@ -445,13 +445,13 @@ export default function InstructorQuestionsPage() {
                       opacity: isExpanded ? 1 : 0,
                     }}
                   >
-                    <div className="px-4 pb-4 border-t border-[#2a2a2a]">
+                    <div className="px-4 pb-4 border-t border-[#E5E7EB]">
                       {/* Full question content */}
                       <div className="mt-3">
                         <p className="text-xs text-gray-500 mb-1">
                           Nội dung câu hỏi
                         </p>
-                        <div className="bg-[#111] rounded-lg p-3 text-sm text-gray-300 whitespace-pre-line">
+                        <div className="bg-white rounded-lg p-3 text-sm text-gray-300 whitespace-pre-line">
                           {q.content}
                         </div>
                       </div>
@@ -510,7 +510,7 @@ export default function InstructorQuestionsPage() {
                       </div>
 
                       {/* Replies section */}
-                      <div className="mt-4 pt-3 border-t border-[#2a2a2a]">
+                      <div className="mt-4 pt-3 border-t border-[#E5E7EB]">
                         <p className="text-xs text-gray-400 font-medium mb-2">
                           Trả lời ({q.reply_count})
                         </p>
@@ -551,7 +551,7 @@ export default function InstructorQuestionsPage() {
                                   </div>
                                   <div className="flex-1 min-w-0">
                                     <div className="flex items-center gap-2 mb-0.5">
-                                      <span className="text-xs font-medium text-white">
+                                      <span className="text-xs font-medium text-[#1B2A4A]">
                                         {reply.user_name ??
                                           "Người dùng"}
                                       </span>
@@ -559,7 +559,7 @@ export default function InstructorQuestionsPage() {
                                         {timeAgo(reply.created_at)}
                                       </span>
                                     </div>
-                                    <div className="bg-[#111] rounded-lg p-2.5 text-sm text-gray-300 whitespace-pre-line">
+                                    <div className="bg-white rounded-lg p-2.5 text-sm text-gray-300 whitespace-pre-line">
                                       {reply.content}
                                     </div>
                                   </div>
@@ -589,7 +589,7 @@ export default function InstructorQuestionsPage() {
                             placeholder="Nhập trả lời..."
                             maxLength={5000}
                             rows={3}
-                            className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
+                            className="w-full bg-white border border-[#E5E7EB] rounded-lg p-3 text-sm text-[#1B2A4A] placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
                             style={{ minHeight: "80px" }}
                           />
                           <div className="flex items-center justify-between">
@@ -636,7 +636,7 @@ export default function InstructorQuestionsPage() {
             <button
               onClick={handleLoadMore}
               disabled={loadingMore}
-              className={`px-6 py-2 rounded-lg text-sm font-medium transition-colors bg-[#1a1a1a] text-gray-300 hover:bg-[#222] border border-[#2a2a2a] ${
+              className={`px-6 py-2 rounded-lg text-sm font-medium transition-colors bg-[#F0F1F3] text-gray-300 hover:bg-[#222] border border-[#E5E7EB] ${
                 loadingMore ? "opacity-40 cursor-not-allowed" : ""
               }`}
             >

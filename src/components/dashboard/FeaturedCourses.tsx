@@ -56,7 +56,7 @@ export default async function FeaturedCourses() {
             <Link
               key={course.id}
               href={`/courses/${product.slug}`}
-              className="card-dark group hover:bg-[#1a1a1a] transition-all duration-200 overflow-hidden border border-transparent hover:border-[#E85D04]/20"
+              className="card-dark group hover:bg-[#F0F1F3] transition-all duration-200 overflow-hidden border border-transparent hover:border-[#E85D04]/20"
             >
               {/* Thumbnail */}
               <div className="relative aspect-video bg-[#222] overflow-hidden">
@@ -83,7 +83,7 @@ export default async function FeaturedCourses() {
 
               {/* Content */}
               <div className="p-3.5">
-                <h4 className="text-sm font-semibold text-white group-hover:text-[#E85D04] transition-colors line-clamp-2 leading-snug">
+                <h4 className="text-sm font-semibold text-[#1B2A4A] group-hover:text-[#E85D04] transition-colors line-clamp-2 leading-snug">
                   {product.title}
                 </h4>
 

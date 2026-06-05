@@ -215,7 +215,7 @@ export default function ListsPage() {
             >
               <ListPlus size={28} className="text-[#E85D04]" />
             </div>
-            <p className="text-white font-medium mb-1">
+            <p className="text-[#1B2A4A] font-medium mb-1">
               Chưa có danh sách nào
             </p>
             <p className="text-gray-500 text-sm max-w-xs mx-auto mb-4">
@@ -243,7 +243,7 @@ export default function ListsPage() {
                       }}
                     />
                     <div className="min-w-0">
-                      <h3 className="text-white font-semibold text-sm truncate group-hover:text-[#E85D04] transition-colors">
+                      <h3 className="text-[#1B2A4A] font-semibold text-sm truncate group-hover:text-[#E85D04] transition-colors">
                         {list.name}
                       </h3>
                       {list.description && (
@@ -263,7 +263,7 @@ export default function ListsPage() {
                           openMenuId === list.id ? null : list.id
                         );
                       }}
-                      className="text-gray-500 hover:text-white transition-colors p-1 rounded-md hover:bg-[#2a2a2a]"
+                      className="text-gray-500 hover:text-[#1B2A4A] transition-colors p-1 rounded-md hover:bg-[#2a2a2a]"
                     >
                       <MoreHorizontal size={16} />
                     </button>
@@ -272,7 +272,7 @@ export default function ListsPage() {
                       <div
                         className="absolute right-0 top-8 z-20 w-40 rounded-lg py-1 shadow-xl"
                         style={{
-                          background: "#1a1a1a",
+                          background: "#F0F1F3",
                           border: "1px solid #2a2a2a",
                         }}
                         onClick={(e) => e.stopPropagation()}
@@ -282,7 +282,7 @@ export default function ListsPage() {
                             setOpenMenuId(null);
                             router.push(`/email/lists/${list.id}`);
                           }}
-                          className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:bg-[#222] hover:text-white transition-colors"
+                          className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:bg-[#222] hover:text-[#1B2A4A] transition-colors"
                         >
                           <Eye size={14} /> Xem subscribers
                         </button>
@@ -291,7 +291,7 @@ export default function ListsPage() {
                             setOpenMenuId(null);
                             openEditModal(list);
                           }}
-                          className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:bg-[#222] hover:text-white transition-colors"
+                          className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:bg-[#222] hover:text-[#1B2A4A] transition-colors"
                         >
                           <Edit size={14} /> Chỉnh sửa
                         </button>
@@ -354,12 +354,12 @@ export default function ListsPage() {
               className="flex items-center justify-between px-5 py-4"
               style={{ borderBottom: "1px solid #2a2a2a" }}
             >
-              <h2 className="text-white font-semibold text-base">
+              <h2 className="text-[#1B2A4A] font-semibold text-base">
                 {editingList ? "Chỉnh sửa danh sách" : "Tạo danh sách mới"}
               </h2>
               <button
                 onClick={() => setModalOpen(false)}
-                className="text-gray-500 hover:text-white transition-colors"
+                className="text-gray-500 hover:text-[#1B2A4A] transition-colors"
               >
                 <X size={18} />
               </button>
@@ -435,9 +435,9 @@ export default function ListsPage() {
                 <button
                   type="button"
                   onClick={() => setModalOpen(false)}
-                  className="flex-1 py-2.5 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-white"
+                  className="flex-1 py-2.5 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-[#1B2A4A]"
                   style={{
-                    background: "#1f1f1f",
+                    background: "#E5E7EB",
                     border: "1px solid #2a2a2a",
                   }}
                 >

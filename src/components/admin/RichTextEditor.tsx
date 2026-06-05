@@ -53,7 +53,7 @@ function MenuButton({
       className={`p-1.5 rounded transition-colors ${
         active
           ? "bg-[#E85D04]/20 text-[#E85D04]"
-          : "text-gray-400 hover:text-white hover:bg-white/10"
+          : "text-gray-400 hover:text-[#1B2A4A] hover:bg-white/10"
       } ${disabled ? "opacity-30 cursor-not-allowed" : ""}`}
     >
       {children}
@@ -153,12 +153,12 @@ export default function RichTextEditor({
   return (
     <div
       className="rounded-xl overflow-hidden"
-      style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+      style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
     >
       {/* Toolbar */}
       <div
         className="flex flex-wrap items-center gap-0.5 px-2 py-1.5"
-        style={{ borderBottom: "1px solid #2a2a2a", background: "#1a1a1a" }}
+        style={{ borderBottom: "1px solid #2a2a2a", background: "#F0F1F3" }}
       >
         {/* Text formatting */}
         <MenuButton

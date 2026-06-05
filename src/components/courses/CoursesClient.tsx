@@ -106,7 +106,7 @@ function CourseCard({
     // @ts-expect-error -- polymorphic wrapper
     <Wrapper key={course.id} {...wrapperProps}>
       {/* Thumbnail */}
-      <div className="relative aspect-video bg-[#1a1a1a] overflow-hidden">
+      <div className="relative aspect-video bg-[#F0F1F3] overflow-hidden">
         {course.thumbnail ? (
           <Image
             src={course.thumbnail}
@@ -127,15 +127,15 @@ function CourseCard({
         {/* Badge overlay */}
         <div className="absolute top-3 left-3">
           {isComingSoon ? (
-            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-purple-600 text-white flex items-center gap-1">
+            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-purple-600 text-[#1B2A4A] flex items-center gap-1">
               <Clock size={11} /> Sắp ra mắt
             </span>
           ) : isFree ? (
-            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-[#E85D04] text-white">
+            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-[#E85D04] text-[#1B2A4A]">
               Miễn phí
             </span>
           ) : isEnrolled ? (
-            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-[#E85D04]/90 text-white">
+            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-[#E85D04]/90 text-[#1B2A4A]">
               Đã đăng ký
             </span>
           ) : (
@@ -155,7 +155,7 @@ function CourseCard({
 
       {/* Content */}
       <div className="p-4 flex flex-col flex-1">
-        <h3 className="font-semibold text-white text-sm leading-snug mb-1.5 line-clamp-2">
+        <h3 className="font-semibold text-[#1B2A4A] text-sm leading-snug mb-1.5 line-clamp-2">
           {course.title}
         </h3>
 
@@ -254,7 +254,7 @@ function SectionHeader({
         <Icon size={18} style={{ color: iconColor }} />
       </div>
       <div>
-        <h2 className="text-lg font-bold text-white">{title}</h2>
+        <h2 className="text-lg font-bold text-[#1B2A4A]">{title}</h2>
         <p className="text-gray-400 text-sm mt-0.5">{subtitle}</p>
       </div>
     </div>
@@ -402,7 +402,7 @@ export default function CoursesClient({ courses }: { courses: CourseItem[] }) {
       {courses.length === 0 && (
         <div className="card-dark p-10 text-center">
           <div className="text-4xl mb-3">📚</div>
-          <h3 className="font-bold text-white mb-1">Chưa có khoá học nào</h3>
+          <h3 className="font-bold text-[#1B2A4A] mb-1">Chưa có khoá học nào</h3>
           <p className="text-sm text-gray-400">Các khoá học sẽ sớm được cập nhật.</p>
         </div>
       )}

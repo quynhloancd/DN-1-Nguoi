@@ -323,7 +323,7 @@ export default async function ContactDetailPage({
         {/* Back Link */}
         <Link
           href="/crm/contacts"
-          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
         >
           <ArrowLeft size={16} />
           Quay lại danh sách
@@ -334,7 +334,7 @@ export default async function ContactDetailPage({
           <div className="flex flex-col md:flex-row md:items-center gap-5">
             {/* Avatar */}
             <div
-              className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white shrink-0"
+              className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-[#1B2A4A] shrink-0"
               style={{ background: "linear-gradient(135deg, #E85D04, #b8922e)" }}
             >
               {contact.full_name.charAt(0).toUpperCase()}
@@ -342,7 +342,7 @@ export default async function ContactDetailPage({
 
             {/* Name & Badges */}
             <div className="flex-1 min-w-0">
-              <h1 className="text-2xl font-bold text-white truncate">
+              <h1 className="text-2xl font-bold text-[#1B2A4A] truncate">
                 {contact.full_name}
               </h1>
               <div className="flex flex-wrap items-center gap-3 mt-2">
@@ -376,7 +376,7 @@ export default async function ContactDetailPage({
 
                 {/* Assigned Sales */}
                 {contact.assigned_profile?.full_name && (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gray-300 border border-[#2a2a2a]">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gray-300 border border-[#E5E7EB]">
                     <User size={12} />
                     {contact.assigned_profile.full_name}
                   </span>
@@ -444,7 +444,7 @@ export default async function ContactDetailPage({
                     <div
                       className="h-0.5 flex-1 min-w-4 mx-1"
                       style={{
-                        background: isPast ? "rgba(212,168,67,0.4)" : "#2a2a2a",
+                        background: isPast ? "rgba(212,168,67,0.4)" : "#E5E7EB",
                       }}
                     />
                   )}
@@ -462,7 +462,7 @@ export default async function ContactDetailPage({
             <div className="card-dark p-5">
               <div className="flex items-center gap-2 mb-4">
                 <MessageSquare size={16} className="text-[#E85D04]" />
-                <h3 className="font-semibold text-white text-sm">Thêm hoạt động</h3>
+                <h3 className="font-semibold text-[#1B2A4A] text-sm">Thêm hoạt động</h3>
               </div>
               <form action={addActivity}>
                 <input type="hidden" name="contact_id" value={contact.id} />
@@ -498,7 +498,7 @@ export default async function ContactDetailPage({
             <div className="card-dark p-5">
               <div className="flex items-center gap-2 mb-5">
                 <Clock size={16} className="text-[#E85D04]" />
-                <h3 className="font-semibold text-white text-sm">
+                <h3 className="font-semibold text-[#1B2A4A] text-sm">
                   Lịch sử hoạt động
                 </h3>
                 <span className="text-xs text-gray-500 ml-auto">
@@ -526,7 +526,7 @@ export default async function ContactDetailPage({
                         {idx < activities.length - 1 && (
                           <div
                             className="absolute left-[15px] top-9 bottom-0 w-px"
-                            style={{ background: "#2a2a2a" }}
+                            style={{ background: "#E5E7EB" }}
                           />
                         )}
                         {/* Icon */}
@@ -584,7 +584,7 @@ export default async function ContactDetailPage({
             <div className="card-dark p-5">
               <div className="flex items-center gap-2 mb-4">
                 <User size={16} className="text-[#E85D04]" />
-                <h3 className="font-semibold text-white text-sm">Thông tin</h3>
+                <h3 className="font-semibold text-[#1B2A4A] text-sm">Thông tin</h3>
               </div>
               <div className="space-y-3">
                 {/* Email */}
@@ -620,7 +620,7 @@ export default async function ContactDetailPage({
                 </div>
                 {/* UTM Attribution */}
                 {(contact.utm_source || contact.utm_medium || contact.utm_campaign) && (
-                  <div className="pt-2 border-t border-[#2a2a2a]">
+                  <div className="pt-2 border-t border-[#E5E7EB]">
                     <p className="text-[11px] text-gray-500 uppercase tracking-wide mb-2">UTM Attribution</p>
                     <div className="space-y-1.5">
                       {contact.utm_source && (
@@ -646,7 +646,7 @@ export default async function ContactDetailPage({
                 )}
                 {/* First Page / Referrer */}
                 {(contact.first_page || contact.referrer) && (
-                  <div className="pt-2 border-t border-[#2a2a2a]">
+                  <div className="pt-2 border-t border-[#E5E7EB]">
                     {contact.first_page && (
                       <div className="flex items-start gap-2 text-xs mb-1.5">
                         <Globe size={12} className="text-gray-500 shrink-0 mt-0.5" />
@@ -662,7 +662,7 @@ export default async function ContactDetailPage({
                   </div>
                 )}
                 {/* Dates */}
-                <div className="pt-2 border-t border-[#2a2a2a] space-y-1.5">
+                <div className="pt-2 border-t border-[#E5E7EB] space-y-1.5">
                   <div className="flex items-center gap-2 text-xs">
                     <span className="text-gray-500">Tạo lúc:</span>
                     <span className="text-gray-400">{formatDateTime(contact.created_at)}</span>
@@ -681,7 +681,7 @@ export default async function ContactDetailPage({
             <div className="card-dark p-5">
               <div className="flex items-center gap-2 mb-4">
                 <ShoppingCart size={16} className="text-[#E85D04]" />
-                <h3 className="font-semibold text-white text-sm">Đơn hàng</h3>
+                <h3 className="font-semibold text-[#1B2A4A] text-sm">Đơn hàng</h3>
                 <span className="text-xs text-gray-500 ml-auto">{orders.length}</span>
               </div>
               {orders.length === 0 ? (
@@ -696,7 +696,7 @@ export default async function ContactDetailPage({
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div className="min-w-0">
-                          <p className="text-sm text-white font-medium truncate">
+                          <p className="text-sm text-[#1B2A4A] font-medium truncate">
                             {order.products?.title || order.order_code || "Đơn hàng"}
                           </p>
                           <p className="text-[11px] text-gray-500 mt-0.5">
@@ -728,7 +728,7 @@ export default async function ContactDetailPage({
             <div className="card-dark p-5">
               <div className="flex items-center gap-2 mb-4">
                 <BookOpen size={16} className="text-[#E85D04]" />
-                <h3 className="font-semibold text-white text-sm">Khoá học đã đăng ký</h3>
+                <h3 className="font-semibold text-[#1B2A4A] text-sm">Khoá học đã đăng ký</h3>
                 <span className="text-xs text-gray-500 ml-auto">{enrollments.length}</span>
               </div>
               {enrollments.length === 0 ? (
@@ -764,7 +764,7 @@ export default async function ContactDetailPage({
               <div className="card-dark p-5">
                 <div className="flex items-center gap-2 mb-4">
                   <Lightbulb size={16} className="text-[#E85D04]" />
-                  <h3 className="font-semibold text-white text-sm">Gợi ý khoá học</h3>
+                  <h3 className="font-semibold text-[#1B2A4A] text-sm">Gợi ý khoá học</h3>
                 </div>
                 <div className="space-y-2.5">
                   {recommendations.map((rec) => (
@@ -773,7 +773,7 @@ export default async function ContactDetailPage({
                       className="p-3 rounded-lg"
                       style={{ background: "rgba(212,168,67,0.04)", border: "1px solid rgba(212,168,67,0.15)" }}
                     >
-                      <p className="text-sm text-white font-medium truncate">
+                      <p className="text-sm text-[#1B2A4A] font-medium truncate">
                         {rec.products?.title || "Khoá học"}
                       </p>
                       {rec.reason && (
@@ -798,7 +798,7 @@ export default async function ContactDetailPage({
               <div className="card-dark p-5">
                 <div className="flex items-center gap-2 mb-4">
                   <ListTodo size={16} className="text-[#E85D04]" />
-                  <h3 className="font-semibold text-white text-sm">Việc cần làm</h3>
+                  <h3 className="font-semibold text-[#1B2A4A] text-sm">Việc cần làm</h3>
                   <span className="text-xs text-gray-500 ml-auto">{nextActions.length}</span>
                 </div>
                 <div className="space-y-2.5">
@@ -839,7 +839,7 @@ export default async function ContactDetailPage({
               <div className="card-dark p-5">
                 <div className="flex items-center gap-2 mb-4">
                   <Briefcase size={16} className="text-[#E85D04]" />
-                  <h3 className="font-semibold text-white text-sm">Deals</h3>
+                  <h3 className="font-semibold text-[#1B2A4A] text-sm">Deals</h3>
                   <span className="text-xs text-gray-500 ml-auto">{deals.length}</span>
                 </div>
                 <div className="space-y-2.5">
@@ -853,7 +853,7 @@ export default async function ContactDetailPage({
                       >
                         <div className="flex items-start justify-between gap-2">
                           <div className="min-w-0">
-                            <p className="text-sm text-white font-medium truncate">
+                            <p className="text-sm text-[#1B2A4A] font-medium truncate">
                               {deal.title}
                             </p>
                             <span

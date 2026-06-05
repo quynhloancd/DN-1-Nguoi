@@ -336,7 +336,7 @@ export default function NewCampaignPage() {
               {i < STEPS.length - 1 && (
                 <div
                   className="flex-1 h-px mx-3"
-                  style={{ background: i < step ? "#E85D04" : "#2a2a2a" }}
+                  style={{ background: i < step ? "#E85D04" : "#E5E7EB" }}
                 />
               )}
             </div>
@@ -354,7 +354,7 @@ export default function NewCampaignPage() {
         {/* ──────────── Step 1: Basic Info ──────────── */}
         {step === 0 && (
           <div className="card-dark p-6 space-y-5">
-            <h2 className="text-white font-semibold text-base flex items-center gap-2">
+            <h2 className="text-[#1B2A4A] font-semibold text-base flex items-center gap-2">
               <FileText size={18} className="text-[#E85D04]" />
               Thong tin co ban
             </h2>
@@ -424,7 +424,7 @@ export default function NewCampaignPage() {
         {/* ──────────── Step 2: Recipients ──────────── */}
         {step === 1 && (
           <div className="card-dark p-6 space-y-5">
-            <h2 className="text-white font-semibold text-base flex items-center gap-2">
+            <h2 className="text-[#1B2A4A] font-semibold text-base flex items-center gap-2">
               <Users size={18} className="text-[#E85D04]" />
               Nguoi nhan
             </h2>
@@ -458,7 +458,7 @@ export default function NewCampaignPage() {
                   >
                     <Users size={18} className="text-[#E85D04]" />
                     <div>
-                      <p className="text-white text-sm font-medium">
+                      <p className="text-[#1B2A4A] text-sm font-medium">
                         {subscriberCount.toLocaleString("vi-VN")} nguoi nhan
                       </p>
                       <p className="text-xs text-gray-500">
@@ -481,7 +481,7 @@ export default function NewCampaignPage() {
                 onClick={() => setContentMode("template")}
                 className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors"
                 style={{
-                  background: contentMode === "template" ? "rgba(212,168,67,0.12)" : "#1f1f1f",
+                  background: contentMode === "template" ? "rgba(212,168,67,0.12)" : "#E5E7EB",
                   color: contentMode === "template" ? "#E85D04" : "#9ca3af",
                   border: contentMode === "template" ? "1px solid rgba(212,168,67,0.3)" : "1px solid #2a2a2a",
                 }}
@@ -492,7 +492,7 @@ export default function NewCampaignPage() {
                 onClick={() => setContentMode("custom")}
                 className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors"
                 style={{
-                  background: contentMode === "custom" ? "rgba(212,168,67,0.12)" : "#1f1f1f",
+                  background: contentMode === "custom" ? "rgba(212,168,67,0.12)" : "#E5E7EB",
                   color: contentMode === "custom" ? "#E85D04" : "#9ca3af",
                   border: contentMode === "custom" ? "1px solid rgba(212,168,67,0.3)" : "1px solid #2a2a2a",
                 }}
@@ -504,7 +504,7 @@ export default function NewCampaignPage() {
             {/* Template gallery */}
             {contentMode === "template" && (
               <div className="card-dark p-5">
-                <h3 className="text-white font-semibold text-sm mb-4">Chon template</h3>
+                <h3 className="text-[#1B2A4A] font-semibold text-sm mb-4">Chon template</h3>
                 {templatesLoading ? (
                   <div className="flex items-center justify-center py-8">
                     <Loader2 size={20} className="animate-spin text-gray-500" />
@@ -526,7 +526,7 @@ export default function NewCampaignPage() {
                           }}
                         >
                           <div className="flex items-start justify-between mb-2">
-                            <h4 className="text-white text-sm font-medium truncate flex-1">{tpl.name}</h4>
+                            <h4 className="text-[#1B2A4A] text-sm font-medium truncate flex-1">{tpl.name}</h4>
                             {selectedTemplate === tpl.id && (
                               <Check size={14} className="text-[#E85D04] shrink-0 ml-2" />
                             )}
@@ -541,7 +541,7 @@ export default function NewCampaignPage() {
                             </span>
                             <button
                               onClick={(e) => { e.stopPropagation(); previewTemplate(tpl.id); }}
-                              className="text-xs text-gray-500 hover:text-white flex items-center gap-1 transition-colors"
+                              className="text-xs text-gray-500 hover:text-[#1B2A4A] flex items-center gap-1 transition-colors"
                             >
                               <Eye size={11} /> Xem
                             </button>
@@ -557,7 +557,7 @@ export default function NewCampaignPage() {
             {/* Content Editor */}
             <div className="card-dark p-5 space-y-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-white font-semibold text-sm">Noi dung email</h3>
+                <h3 className="text-[#1B2A4A] font-semibold text-sm">Noi dung email</h3>
                 <div className="flex items-center gap-2">
                   {/* Editor mode toggle */}
                   <div className="flex rounded-lg overflow-hidden" style={{ border: "1px solid #2a2a2a" }}>
@@ -565,7 +565,7 @@ export default function NewCampaignPage() {
                       onClick={() => setEditorMode("wysiwyg")}
                       className="flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-medium transition-colors"
                       style={{
-                        background: editorMode === "wysiwyg" ? "rgba(212,168,67,0.15)" : "#1f1f1f",
+                        background: editorMode === "wysiwyg" ? "rgba(212,168,67,0.15)" : "#E5E7EB",
                         color: editorMode === "wysiwyg" ? "#E85D04" : "#9ca3af",
                       }}
                     >
@@ -576,7 +576,7 @@ export default function NewCampaignPage() {
                       onClick={() => setEditorMode("html")}
                       className="flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-medium transition-colors"
                       style={{
-                        background: editorMode === "html" ? "rgba(212,168,67,0.15)" : "#1f1f1f",
+                        background: editorMode === "html" ? "rgba(212,168,67,0.15)" : "#E5E7EB",
                         color: editorMode === "html" ? "#E85D04" : "#9ca3af",
                       }}
                     >
@@ -686,7 +686,7 @@ export default function NewCampaignPage() {
           <div className="space-y-4">
             {/* Summary card */}
             <div className="card-dark p-6 space-y-4">
-              <h2 className="text-white font-semibold text-base flex items-center gap-2">
+              <h2 className="text-[#1B2A4A] font-semibold text-base flex items-center gap-2">
                 <Send size={18} className="text-[#E85D04]" />
                 Xem lai campaign
               </h2>
@@ -694,23 +694,23 @@ export default function NewCampaignPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <p className="text-[11px] text-gray-500 mb-0.5">Ten campaign</p>
-                  <p className="text-white text-sm">{name || "--"}</p>
+                  <p className="text-[#1B2A4A] text-sm">{name || "--"}</p>
                 </div>
                 <div>
                   <p className="text-[11px] text-gray-500 mb-0.5">Subject line</p>
-                  <p className="text-white text-sm">{subject || "--"}</p>
+                  <p className="text-[#1B2A4A] text-sm">{subject || "--"}</p>
                 </div>
                 <div>
                   <p className="text-[11px] text-gray-500 mb-0.5">Nguoi gui</p>
-                  <p className="text-white text-sm">{fromName} &lt;{fromEmail}&gt;</p>
+                  <p className="text-[#1B2A4A] text-sm">{fromName} &lt;{fromEmail}&gt;</p>
                 </div>
                 <div>
                   <p className="text-[11px] text-gray-500 mb-0.5">Reply-to</p>
-                  <p className="text-white text-sm">{replyTo || fromEmail}</p>
+                  <p className="text-[#1B2A4A] text-sm">{replyTo || fromEmail}</p>
                 </div>
                 <div>
                   <p className="text-[11px] text-gray-500 mb-0.5">Nguoi nhan</p>
-                  <p className="text-white text-sm">
+                  <p className="text-[#1B2A4A] text-sm">
                     {listId ? lists.find((l) => l.id === listId)?.name : "Tat ca subscribers"}
                     {subscriberCount !== null && (
                       <span className="text-gray-500 ml-1">({subscriberCount.toLocaleString("vi-VN")} nguoi)</span>
@@ -719,7 +719,7 @@ export default function NewCampaignPage() {
                 </div>
                 <div>
                   <p className="text-[11px] text-gray-500 mb-0.5">Noi dung</p>
-                  <p className="text-white text-sm">{htmlContent.length} ky tu HTML</p>
+                  <p className="text-[#1B2A4A] text-sm">{htmlContent.length} ky tu HTML</p>
                 </div>
               </div>
 
@@ -735,7 +735,7 @@ export default function NewCampaignPage() {
 
             {/* Test email */}
             <div className="card-dark p-5 space-y-3">
-              <h3 className="text-white font-semibold text-sm flex items-center gap-2">
+              <h3 className="text-[#1B2A4A] font-semibold text-sm flex items-center gap-2">
                 <Mail size={15} className="text-[#3b82f6]" />
                 Gui email test
               </h3>
@@ -777,7 +777,7 @@ export default function NewCampaignPage() {
 
             {/* Schedule or send */}
             <div className="card-dark p-5 space-y-4">
-              <h3 className="text-white font-semibold text-sm flex items-center gap-2">
+              <h3 className="text-[#1B2A4A] font-semibold text-sm flex items-center gap-2">
                 <Clock size={15} className="text-[#f59e0b]" />
                 Len lich gui
               </h3>
@@ -791,7 +791,7 @@ export default function NewCampaignPage() {
                 {scheduledAt && (
                   <button
                     onClick={() => setScheduledAt("")}
-                    className="text-gray-500 hover:text-white transition-colors"
+                    className="text-gray-500 hover:text-[#1B2A4A] transition-colors"
                   >
                     <X size={16} />
                   </button>
@@ -835,7 +835,7 @@ export default function NewCampaignPage() {
           <button
             onClick={() => goToStep(Math.max(0, step - 1))}
             disabled={step === 0}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-white transition-colors disabled:opacity-30"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors disabled:opacity-30"
             style={{ border: "1px solid #2a2a2a" }}
           >
             <ChevronLeft size={15} /> Quay lai

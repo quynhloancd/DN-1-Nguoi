@@ -97,7 +97,7 @@ function PublicCourseCard({
   return (
     // @ts-expect-error -- polymorphic wrapper
     <Wrapper key={course.slug} {...wrapperProps}>
-      <div className="relative aspect-video bg-[#1a1a1a] overflow-hidden">
+      <div className="relative aspect-video bg-[#F0F1F3] overflow-hidden">
         {course.thumbnail ? (
           <Image
             src={course.thumbnail}
@@ -116,11 +116,11 @@ function PublicCourseCard({
         )}
         <div className="absolute top-3 left-3">
           {isComingSoon ? (
-            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-purple-600 text-white flex items-center gap-1">
+            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-purple-600 text-[#1B2A4A] flex items-center gap-1">
               <Clock size={11} /> Sắp ra mắt
             </span>
           ) : isFree ? (
-            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-[#22c55e] text-white">
+            <span className="px-2 py-1 rounded-md text-[11px] font-semibold bg-[#22c55e] text-[#1B2A4A]">
               Miễn phí
             </span>
           ) : (
@@ -132,7 +132,7 @@ function PublicCourseCard({
       </div>
 
       <div className="p-4 flex flex-col flex-1">
-        <h3 className="font-semibold text-white text-sm leading-snug mb-1.5 line-clamp-2">{course.title}</h3>
+        <h3 className="font-semibold text-[#1B2A4A] text-sm leading-snug mb-1.5 line-clamp-2">{course.title}</h3>
         {course.description && (
           <p className="text-xs text-gray-500 leading-relaxed line-clamp-2 mb-3">{course.description}</p>
         )}
@@ -197,7 +197,7 @@ function SectionHeader({
         <Icon size={18} style={{ color: iconColor }} />
       </div>
       <div>
-        <h2 className="text-xl font-bold text-white">{title}</h2>
+        <h2 className="text-xl font-bold text-[#1B2A4A]">{title}</h2>
         <p className="text-gray-400 text-sm mt-0.5">{subtitle}</p>
       </div>
     </div>
@@ -227,7 +227,7 @@ export default function CoursesPublicGrid({ courses }: { courses: PublicCourse[]
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1B2A4A] mb-3">
             Khoá Học Của <span className="text-[#E85D04]">Doanh Nghiệp 1 Người</span>
           </h1>
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl">
@@ -279,7 +279,7 @@ export default function CoursesPublicGrid({ courses }: { courses: PublicCourse[]
         {courses.length === 0 && (
           <div className="card-dark p-10 text-center">
             <div className="text-4xl mb-3">📚</div>
-            <h3 className="font-bold text-white mb-1">Chưa có khoá học nào</h3>
+            <h3 className="font-bold text-[#1B2A4A] mb-1">Chưa có khoá học nào</h3>
             <p className="text-sm text-gray-400">Các khoá học sẽ sớm được cập nhật.</p>
           </div>
         )}
@@ -297,7 +297,7 @@ export default function CoursesPublicGrid({ courses }: { courses: PublicCourse[]
             >
               Đăng ký miễn phí
             </Link>
-            <Link href="/login" className="text-sm text-gray-400 hover:text-white transition-colors py-2.5 px-4">
+            <Link href="/login" className="text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors py-2.5 px-4">
               Đăng nhập
             </Link>
           </div>

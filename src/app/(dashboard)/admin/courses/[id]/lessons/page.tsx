@@ -693,14 +693,14 @@ export default function LessonsPage() {
         <div className="mb-8">
           <Link
             href="/admin/courses"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-4 transition-colors"
+            className="inline-flex items-center gap-2 text-gray-400 hover:text-[#1B2A4A] mb-4 transition-colors"
           >
             <ArrowLeft size={18} />
             <span>Quay lại danh sách khóa học</span>
           </Link>
 
           <div className="flex items-center justify-between gap-4 flex-wrap">
-            <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+            <h1 className="text-2xl font-bold text-[#1B2A4A] flex items-center gap-3">
               <BookOpen size={28} />
               Quản lý bài học — {courseTitle}
             </h1>
@@ -710,7 +710,7 @@ export default function LessonsPage() {
               <button
                 onClick={handleDuplicateCourse}
                 disabled={duplicating}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors text-gray-300 hover:text-white hover:bg-white/5 disabled:opacity-50"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors text-gray-300 hover:text-[#1B2A4A] hover:bg-white/5 disabled:opacity-50"
                 style={{ border: "1px solid #2a2a2a" }}
               >
                 {duplicating ? (
@@ -787,7 +787,7 @@ export default function LessonsPage() {
           <DragOverlay>
             {activeChapterId ? (
               <div className="card-dark rounded-xl px-5 py-4 opacity-90 shadow-2xl border border-[#E85D04]/40">
-                <span className="text-white font-medium">
+                <span className="text-[#1B2A4A] font-medium">
                   {chapters.find((c) => c.id === activeChapterId)?.title}
                 </span>
               </div>
@@ -802,7 +802,7 @@ export default function LessonsPage() {
               className="card-dark rounded-xl p-5 space-y-4"
               style={{ border: "1px solid #2a2a2a" }}
             >
-              <h3 className="text-white font-medium text-sm">
+              <h3 className="text-[#1B2A4A] font-medium text-sm">
                 Thêm chương mới
               </h3>
               <input
@@ -830,7 +830,7 @@ export default function LessonsPage() {
                     setShowAddChapter(false);
                     setNewChapterTitle("");
                   }}
-                  className="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                  className="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
                 >
                   Hủy
                 </button>
@@ -855,11 +855,11 @@ export default function LessonsPage() {
             className="card-dark rounded-2xl p-6 max-w-md w-full mx-4 space-y-4"
             style={{ border: "1px solid #2a2a2a" }}
           >
-            <h3 className="text-white font-bold text-lg">Xác nhận xóa</h3>
+            <h3 className="text-[#1B2A4A] font-bold text-lg">Xác nhận xóa</h3>
             <p className="text-gray-400 text-sm">
               Bạn có chắc muốn xóa{" "}
               {deleteConfirm.type === "chapter" ? "chương" : "bài học"}{" "}
-              <span className="text-white font-medium">
+              <span className="text-[#1B2A4A] font-medium">
                 &ldquo;{deleteConfirm.title}&rdquo;
               </span>
               ?
@@ -876,13 +876,13 @@ export default function LessonsPage() {
                     ? handleDeleteChapter(deleteConfirm.id)
                     : handleDeleteLesson(deleteConfirm.id)
                 }
-                className="px-4 py-2 rounded-lg text-sm font-medium bg-red-600 hover:bg-red-500 text-white transition-colors"
+                className="px-4 py-2 rounded-lg text-sm font-medium bg-red-600 hover:bg-red-500 text-[#1B2A4A] transition-colors"
               >
                 Xóa
               </button>
               <button
                 onClick={() => setDeleteConfirm(null)}
-                className="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
               >
                 Hủy
               </button>
@@ -899,13 +899,13 @@ export default function LessonsPage() {
             style={{ border: "1px solid #2a2a2a" }}
           >
             <div className="flex items-center justify-between">
-              <h3 className="text-white font-bold text-lg flex items-center gap-2">
+              <h3 className="text-[#1B2A4A] font-bold text-lg flex items-center gap-2">
                 <FolderOutput size={20} className="text-blue-400" />
                 Sao chép nội dung sang khoá khác
               </h3>
               <button
                 onClick={() => setShowCopyModal(false)}
-                className="text-gray-400 hover:text-white p-1"
+                className="text-gray-400 hover:text-[#1B2A4A] p-1"
               >
                 <X size={20} />
               </button>
@@ -953,7 +953,7 @@ export default function LessonsPage() {
                     style={{
                       backgroundColor: selectedChapterIds.has(ch.id)
                         ? "rgba(59,130,246,0.08)"
-                        : "#1a1a1a",
+                        : "#F0F1F3",
                       border: selectedChapterIds.has(ch.id)
                         ? "1px solid rgba(59,130,246,0.3)"
                         : "1px solid #2a2a2a",
@@ -966,7 +966,7 @@ export default function LessonsPage() {
                       className="rounded border-gray-600"
                     />
                     <div className="flex-1 min-w-0">
-                      <div className="text-white text-sm font-medium truncate">
+                      <div className="text-[#1B2A4A] text-sm font-medium truncate">
                         {ch.title}
                       </div>
                       <div className="text-gray-500 text-xs">
@@ -1018,7 +1018,7 @@ export default function LessonsPage() {
               </button>
               <button
                 onClick={() => setShowCopyModal(false)}
-                className="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
               >
                 Đóng
               </button>
@@ -1105,13 +1105,13 @@ function ChapterCard({
               </button>
               <button
                 onClick={() => setEditingChapterId(null)}
-                className="text-gray-400 hover:text-white p-1"
+                className="text-gray-400 hover:text-[#1B2A4A] p-1"
               >
                 <X size={16} />
               </button>
             </div>
           ) : (
-            <span className="text-white font-medium">{chapter.title}</span>
+            <span className="text-[#1B2A4A] font-medium">{chapter.title}</span>
           )}
         </div>
 
@@ -1127,7 +1127,7 @@ function ChapterCard({
               setEditingChapterId(chapter.id);
               setEditingChapterTitle(chapter.title);
             }}
-            className="text-gray-400 hover:text-white p-1 rounded transition-colors"
+            className="text-gray-400 hover:text-[#1B2A4A] p-1 rounded transition-colors"
             title="Sửa chương"
           >
             <Edit2 size={16} />
@@ -1238,7 +1238,7 @@ function SortableLessonRow({
   return (
     <div
       ref={setNodeRef}
-      style={{ ...style, backgroundColor: "#1a1a1a" }}
+      style={{ ...style, backgroundColor: "#F0F1F3" }}
       className="flex items-center justify-between pl-10 pr-2 py-3 rounded-lg hover:bg-[#2a2a2a] transition-colors"
       {...attributes}
     >
@@ -1250,7 +1250,7 @@ function SortableLessonRow({
           <BookOpen size={16} className="text-gray-500" />
         )}
         <div>
-          <span className="text-white text-sm font-medium">{lesson.title}</span>
+          <span className="text-[#1B2A4A] text-sm font-medium">{lesson.title}</span>
           <div className="flex items-center gap-3 mt-0.5">
             {lesson.duration_sec > 0 && (
               <span className="text-gray-500 text-xs">
@@ -1276,7 +1276,7 @@ function SortableLessonRow({
       <div className="flex items-center gap-2">
         <button
           onClick={() => startEditLesson(lesson)}
-          className="text-gray-400 hover:text-white p-1.5 rounded transition-colors"
+          className="text-gray-400 hover:text-[#1B2A4A] p-1.5 rounded transition-colors"
           title="Sửa bài học"
         >
           <Edit2 size={14} />
@@ -1321,9 +1321,9 @@ function LessonFormComponent({
   return (
     <div
       className="mt-4 p-5 rounded-xl space-y-4"
-      style={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a" }}
+      style={{ backgroundColor: "#F0F1F3", border: "1px solid #2a2a2a" }}
     >
-      <h4 className="text-white font-medium text-sm">
+      <h4 className="text-[#1B2A4A] font-medium text-sm">
         {editingLessonId ? "Sửa bài học" : "Thêm bài học mới"}
       </h4>
 
@@ -1512,7 +1512,7 @@ function LessonFormComponent({
         </button>
         <button
           onClick={cancelLessonForm}
-          className="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-colors"
+          className="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
         >
           Hủy
         </button>
@@ -1555,7 +1555,7 @@ function LessonAttachmentsSection({
   return (
     <div
       className="p-4 rounded-lg space-y-3"
-      style={{ backgroundColor: "#151515", border: "1px solid #252525" }}
+      style={{ backgroundColor: "#F8F9FA", border: "1px solid #252525" }}
     >
       <div className="flex items-center justify-between">
         <label className="flex items-center gap-2 text-gray-400 text-xs font-medium">
@@ -1577,7 +1577,7 @@ function LessonAttachmentsSection({
 
       {/* Add link form */}
       {showAddForm && (
-        <div className="space-y-2 p-3 rounded-lg" style={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a" }}>
+        <div className="space-y-2 p-3 rounded-lg" style={{ backgroundColor: "#F0F1F3", border: "1px solid #2a2a2a" }}>
           <input
             type="text"
             value={linkName}
@@ -1624,11 +1624,11 @@ function LessonAttachmentsSection({
             <div
               key={idx}
               className="flex items-center justify-between gap-3 px-3 py-2 rounded-lg"
-              style={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a" }}
+              style={{ backgroundColor: "#F0F1F3", border: "1px solid #2a2a2a" }}
             >
               <div className="flex items-center gap-2 min-w-0">
                 <LinkIcon size={14} className="text-blue-400 shrink-0" />
-                <span className="text-white text-xs truncate">{att.name}</span>
+                <span className="text-[#1B2A4A] text-xs truncate">{att.name}</span>
               </div>
               <div className="flex items-center gap-1 shrink-0">
                 <a

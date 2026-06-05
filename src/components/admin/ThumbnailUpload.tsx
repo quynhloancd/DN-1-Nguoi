@@ -125,7 +125,7 @@ export default function ThumbnailUpload({ value, onChange }: ThumbnailUploadProp
 
       {/* Preview or Upload zone */}
       {value ? (
-        <div className="relative group rounded-lg overflow-hidden border border-[#2a2a2a]">
+        <div className="relative group rounded-lg overflow-hidden border border-[#E5E7EB]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={value}
@@ -136,7 +136,7 @@ export default function ThumbnailUpload({ value, onChange }: ThumbnailUploadProp
             <button
               type="button"
               onClick={() => inputRef.current?.click()}
-              className="px-3 py-1.5 rounded-lg bg-white/20 text-white text-xs font-medium hover:bg-white/30 transition-colors flex items-center gap-1.5"
+              className="px-3 py-1.5 rounded-lg bg-white/20 text-[#1B2A4A] text-xs font-medium hover:bg-white/30 transition-colors flex items-center gap-1.5"
             >
               <Upload size={12} />
               Thay ảnh
@@ -166,7 +166,7 @@ export default function ThumbnailUpload({ value, onChange }: ThumbnailUploadProp
             ${
               dragOver
                 ? "border-[#E85D04] bg-[#E85D04]/5"
-                : "border-[#2a2a2a] hover:border-[#3a3a3a] bg-[#161616]"
+                : "border-[#E5E7EB] hover:border-[#3a3a3a] bg-[#161616]"
             }
             ${uploading ? "pointer-events-none opacity-60" : ""}
           `}

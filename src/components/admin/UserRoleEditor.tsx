@@ -96,7 +96,7 @@ export default function UserRoleEditor({
           setError(null);
           setSaved(false);
         }}
-        className="bg-[#1a1a1a] border border-[#2a2a2a] text-white text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-[#E85D04]/50 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        className="bg-[#F0F1F3] border border-[#E5E7EB] text-[#1B2A4A] text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-[#E85D04]/50 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {availableRoles.map((r) => (
           <option key={r.value} value={r.value}>
@@ -114,7 +114,7 @@ export default function UserRoleEditor({
           setError(null);
           setSaved(false);
         }}
-        className="bg-[#1a1a1a] border border-[#2a2a2a] text-white text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-[#E85D04]/50 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        className="bg-[#F0F1F3] border border-[#E5E7EB] text-[#1B2A4A] text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-[#E85D04]/50 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {tierOptions.map((t) => (
           <option key={t.value} value={t.value}>

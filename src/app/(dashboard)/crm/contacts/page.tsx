@@ -262,7 +262,7 @@ export default async function CRMContactsPage({
                   <s.icon size={15} style={{ color: s.color }} />
                 </div>
               </div>
-              <div className="text-2xl font-bold text-white">{s.value}</div>
+              <div className="text-2xl font-bold text-[#1B2A4A]">{s.value}</div>
             </div>
           ))}
         </div>
@@ -313,14 +313,14 @@ export default async function CRMContactsPage({
             </div>
           </form>
           {/* Sync Button */}
-          <div className="mt-3 pt-3 border-t border-[#2a2a2a] flex items-center justify-between">
+          <div className="mt-3 pt-3 border-t border-[#E5E7EB] flex items-center justify-between">
             <p className="text-xs text-gray-500">
               Đồng bộ khách hàng từ đơn hàng và tài khoản đăng ký vào CRM.
             </p>
             <form action={syncContactsFromOrders}>
               <button
                 type="submit"
-                className="px-4 py-2 text-sm font-medium rounded-lg flex items-center gap-2 border border-[#2a2a2a] text-gray-300 hover:text-white hover:border-[#E85D04] transition-colors"
+                className="px-4 py-2 text-sm font-medium rounded-lg flex items-center gap-2 border border-[#E5E7EB] text-gray-300 hover:text-[#1B2A4A] hover:border-[#E85D04] transition-colors"
               >
                 <RefreshCw size={14} />
                 Đồng bộ
@@ -333,7 +333,7 @@ export default async function CRMContactsPage({
         <div className="card-dark p-5">
           <div className="flex items-center gap-2 mb-4">
             <UserPlus size={16} className="text-[#E85D04]" />
-            <h3 className="font-semibold text-white text-sm">Thêm khách hàng mới</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">Thêm khách hàng mới</h3>
           </div>
           <form action={createContact}>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -405,13 +405,13 @@ export default async function CRMContactsPage({
 
         {/* Import Section */}
         <details className="card-dark">
-          <summary className="p-4 cursor-pointer flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">
+          <summary className="p-4 cursor-pointer flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-[#1B2A4A] transition-colors">
             <FileUp size={16} className="text-[#a855f7]" />
             Import hàng loạt (CSV)
           </summary>
           <div className="px-4 pb-4">
             <p className="text-xs text-gray-500 mb-3">
-              Nhập mỗi dòng theo format: <code className="text-gray-400 bg-[#1a1a1a] px-1.5 py-0.5 rounded">Tên, Email, SĐT</code>
+              Nhập mỗi dòng theo format: <code className="text-gray-400 bg-[#F0F1F3] px-1.5 py-0.5 rounded">Tên, Email, SĐT</code>
             </p>
             <form action={importContacts}>
               <textarea
@@ -443,8 +443,8 @@ export default async function CRMContactsPage({
 
         {/* Contacts Table */}
         <div className="card-dark overflow-hidden">
-          <div className="flex items-center justify-between p-4 border-b border-[#2a2a2a]">
-            <h3 className="font-semibold text-white text-sm">
+          <div className="flex items-center justify-between p-4 border-b border-[#E5E7EB]">
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">
               Danh sách khách hàng
             </h3>
             <span className="text-xs text-gray-500">
@@ -492,7 +492,7 @@ export default async function CRMContactsPage({
                         <td className="px-4 py-3">
                           <div className="flex items-center gap-3">
                             <div
-                              className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
+                              className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-[#1B2A4A] shrink-0"
                               style={{ background: `linear-gradient(135deg, ${st.color}, ${st.color}99)` }}
                             >
                               {initial}
@@ -500,7 +500,7 @@ export default async function CRMContactsPage({
                             <div className="min-w-0">
                               <Link
                                 href={`/crm/contacts/${contact.id}`}
-                                className="font-medium text-white truncate block hover:underline"
+                                className="font-medium text-[#1B2A4A] truncate block hover:underline"
                               >
                                 {contact.full_name}
                               </Link>
@@ -665,9 +665,9 @@ export default async function CRMContactsPage({
 
           {/* Footer */}
           {contacts.length > 0 && (
-            <div className="px-4 py-3 border-t border-[#2a2a2a] flex items-center justify-between">
+            <div className="px-4 py-3 border-t border-[#E5E7EB] flex items-center justify-between">
               <p className="text-xs text-gray-500">
-                Hiển thị <span className="text-white font-semibold">{contacts.length}</span> khách hàng
+                Hiển thị <span className="text-[#1B2A4A] font-semibold">{contacts.length}</span> khách hàng
                 {(q || statusFilter || journeyStageFilter) && " (đã lọc)"}
               </p>
               {(q || statusFilter || journeyStageFilter) && (

@@ -12,7 +12,7 @@ const conditionLabels: Record<string, string> = {
 
 export default function ConditionNode({ data }: { data: any }) {
   return (
-    <div className="px-4 py-3 rounded-xl border border-[#14b8a6] bg-[#111] min-w-[200px] shadow-lg shadow-teal-900/20">
+    <div className="px-4 py-3 rounded-xl border border-[#14b8a6] bg-white min-w-[200px] shadow-lg shadow-teal-900/20">
       <Handle type="target" position={Position.Top} className="!bg-[#14b8a6] !w-3 !h-3 !border-2 !border-[#111]" />
       <div className="flex items-center gap-2">
         <div className="w-7 h-7 rounded-lg bg-[#14b8a620] flex items-center justify-center">
@@ -20,7 +20,7 @@ export default function ConditionNode({ data }: { data: any }) {
         </div>
         <div>
           <div className="text-[10px] text-[#14b8a6] font-bold uppercase">Điều kiện</div>
-          <div className="text-xs text-white font-medium">
+          <div className="text-xs text-[#1B2A4A] font-medium">
             {conditionLabels[data.conditionType] || "Chưa cấu hình"}
           </div>
         </div>

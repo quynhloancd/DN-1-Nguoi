@@ -139,9 +139,9 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <div className="border-b border-[#1a1a1a] px-4 sm:px-6 py-6 sm:py-8">
+      <div className="border-b border-[#E5E7EB] px-4 sm:px-6 py-6 sm:py-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#1B2A4A] mb-2">
             Chính sách bảo mật
           </h1>
           <p className="text-gray-400 text-sm">
@@ -157,9 +157,9 @@ export default function PrivacyPolicyPage() {
           <div className="space-y-3">
             <p className="text-gray-300 leading-relaxed">
               Chào mừng bạn đến với{" "}
-              <span className="text-white font-medium">doanhnghiep1nguoi.online</span> —
+              <span className="text-[#1B2A4A] font-medium">doanhnghiep1nguoi.online</span> —
               nền tảng học tập trực tuyến thuộc sở hữu của{" "}
-              <span className="text-white font-medium">Đăng Khương</span>.
+              <span className="text-[#1B2A4A] font-medium">Đăng Khương</span>.
             </p>
             <p className="text-gray-300 leading-relaxed">
               Chúng tôi tôn trọng quyền riêng tư của bạn và cam kết bảo vệ
@@ -176,7 +176,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           {/* Table of Contents */}
-          <nav className="rounded-xl border border-[#1a1a1a] bg-[#111] p-5">
+          <nav className="rounded-xl border border-[#E5E7EB] bg-white p-5">
             <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
               Mục lục
             </h2>
@@ -197,7 +197,7 @@ export default function PrivacyPolicyPage() {
           {/* Sections */}
           {sections.map((section) => (
             <section key={section.id} id={section.id} className="scroll-mt-6">
-              <h2 className="text-lg sm:text-xl font-bold text-white mb-4">
+              <h2 className="text-lg sm:text-xl font-bold text-[#1B2A4A] mb-4">
                 {section.title}
               </h2>
 
@@ -244,7 +244,7 @@ export default function PrivacyPolicyPage() {
                 <div className="card-dark p-5 mt-4 space-y-2">
                   <p className="text-gray-300">
                     <span className="text-gray-500">Nền tảng:</span>{" "}
-                    <span className="text-white font-medium">
+                    <span className="text-[#1B2A4A] font-medium">
                       Lê Doanh Nghiệp 1 Người
                     </span>
                   </p>
@@ -267,7 +267,7 @@ export default function PrivacyPolicyPage() {
                     <span className="text-gray-500">
                       Người chịu trách nhiệm bảo vệ dữ liệu:
                     </span>{" "}
-                    <span className="text-white font-medium">
+                    <span className="text-[#1B2A4A] font-medium">
                       Thiên Huệ
                     </span>
                   </p>
@@ -277,7 +277,7 @@ export default function PrivacyPolicyPage() {
           ))}
 
           {/* Related links */}
-          <div className="pt-6 border-t border-[#1a1a1a] flex flex-col sm:flex-row gap-3">
+          <div className="pt-6 border-t border-[#E5E7EB] flex flex-col sm:flex-row gap-3">
             <Link
               href="/terms-of-service"
               className="text-sm text-[#E85D04] hover:underline"

@@ -181,7 +181,7 @@ export default async function AdminQuizzesPage() {
                 <ClipboardCheck size={18} className="text-[#E85D04]" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-white">{totalQuizzes}</p>
+                <p className="text-2xl font-bold text-[#1B2A4A]">{totalQuizzes}</p>
                 <p className="text-xs text-gray-500">Tổng quiz</p>
               </div>
             </div>
@@ -196,7 +196,7 @@ export default async function AdminQuizzesPage() {
                 <Users size={18} className="text-[#3b82f6]" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-white">
+                <p className="text-2xl font-bold text-[#1B2A4A]">
                   {totalAttempts}
                 </p>
                 <p className="text-xs text-gray-500">Lượt làm bài</p>
@@ -213,7 +213,7 @@ export default async function AdminQuizzesPage() {
                 <TrendingUp size={18} className="text-[#22c55e]" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-white">
+                <p className="text-2xl font-bold text-[#1B2A4A]">
                   {overallAvgScore}%
                 </p>
                 <p className="text-xs text-gray-500">Điểm trung bình</p>
@@ -228,7 +228,7 @@ export default async function AdminQuizzesPage() {
         {/* Quiz list */}
         <div className="card-dark overflow-hidden">
           <div className="p-4 border-b border-white/[0.06] flex items-center justify-between">
-            <h2 className="text-sm font-semibold text-white flex items-center gap-2">
+            <h2 className="text-sm font-semibold text-[#1B2A4A] flex items-center gap-2">
               <BookOpen size={16} className="text-[#E85D04]" />
               Danh sách Quiz ({rows.length})
             </h2>
@@ -253,7 +253,7 @@ export default async function AdminQuizzesPage() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-sm font-semibold text-white truncate">
+                      <h3 className="text-sm font-semibold text-[#1B2A4A] truncate">
                         {row.title}
                       </h3>
                       <p className="text-xs text-gray-500 mt-0.5 truncate">
@@ -264,20 +264,20 @@ export default async function AdminQuizzesPage() {
                       {/* Stats row */}
                       <div className="flex items-center gap-4 mt-2">
                         <span className="text-xs text-gray-400">
-                          <span className="text-white font-medium">
+                          <span className="text-[#1B2A4A] font-medium">
                             {row.question_count}
                           </span>{" "}
                           câu hỏi
                         </span>
                         <span className="text-xs text-gray-400">
-                          <span className="text-white font-medium">
+                          <span className="text-[#1B2A4A] font-medium">
                             {row.attempts_count}
                           </span>{" "}
                           lượt làm
                         </span>
                         <span className="text-xs text-gray-400">
                           TB:{" "}
-                          <span className="text-white font-medium">
+                          <span className="text-[#1B2A4A] font-medium">
                             {row.avg_score}%
                           </span>
                         </span>

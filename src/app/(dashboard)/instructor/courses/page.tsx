@@ -61,10 +61,10 @@ export default function InstructorCoursesPage() {
             {courses.map((course) => (
               <div
                 key={course.id}
-                className="card-dark overflow-hidden hover:bg-[#1a1a1a] transition-colors group"
+                className="card-dark overflow-hidden hover:bg-[#F0F1F3] transition-colors group"
               >
                 {/* Thumbnail */}
-                <div className="aspect-video bg-[#1a1a1a] relative overflow-hidden">
+                <div className="aspect-video bg-[#F0F1F3] relative overflow-hidden">
                   {course.thumbnail ? (
                     <img
                       src={course.thumbnail}
@@ -80,7 +80,7 @@ export default function InstructorCoursesPage() {
 
                 {/* Info */}
                 <div className="p-4">
-                  <h3 className="text-sm font-semibold text-white mb-2 line-clamp-2 leading-snug">
+                  <h3 className="text-sm font-semibold text-[#1B2A4A] mb-2 line-clamp-2 leading-snug">
                     {course.title}
                   </h3>
 

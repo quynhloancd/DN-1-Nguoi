@@ -100,7 +100,7 @@ export default async function LeaderboardPage() {
               </div>
               <div>
                 <div className="text-xs text-gray-500">{s.label}</div>
-                <div className="text-xl font-bold text-white">{s.value}</div>
+                <div className="text-xl font-bold text-[#1B2A4A]">{s.value}</div>
               </div>
             </div>
           ))}
@@ -126,7 +126,7 @@ export default async function LeaderboardPage() {
                       size={48}
                       gradient={isMe ? "linear-gradient(135deg,#E85D04,#059669)" : `linear-gradient(135deg,${colors[i]},${colors[i]}88)`}
                     />
-                    <div className="text-xs font-medium text-white text-center">
+                    <div className="text-xs font-medium text-[#1B2A4A] text-center">
                       {(l.full_name ?? "?").split(" ").slice(-1)[0]}
                       {isMe && <span className="ml-1 text-[#E85D04]">(bạn)</span>}
                     </div>
@@ -134,7 +134,7 @@ export default async function LeaderboardPage() {
                       {(l.xp ?? 0).toLocaleString("vi-VN")} XP
                     </div>
                     <div
-                      className="w-20 rounded-t-lg flex items-end justify-center pb-2 text-xs font-bold text-white"
+                      className="w-20 rounded-t-lg flex items-end justify-center pb-2 text-xs font-bold text-[#1B2A4A]"
                       style={{
                         height: heights[i],
                         background: `linear-gradient(180deg,${colors[i]}33,${colors[i]}11)`,
@@ -152,8 +152,8 @@ export default async function LeaderboardPage() {
 
         {/* Full Leaderboard Table */}
         <div className="card-dark">
-          <div className="p-4 border-b border-[#2a2a2a]">
-            <h3 className="text-sm font-semibold text-white">Xếp hạng toàn thời gian</h3>
+          <div className="p-4 border-b border-[#E5E7EB]">
+            <h3 className="text-sm font-semibold text-[#1B2A4A]">Xếp hạng toàn thời gian</h3>
           </div>
           <div className="divide-y divide-[#1f1f1f]">
             {leadersList.length === 0 && (
@@ -216,7 +216,7 @@ export default async function LeaderboardPage() {
                     <Image src={myAvatarUrl} alt="" width={36} height={36} className="w-9 h-9 rounded-full object-cover shrink-0" unoptimized />
                   ) : (
                     <div
-                      className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
+                      className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-[#1B2A4A] shrink-0"
                       style={{ background: "linear-gradient(135deg,#E85D04,#059669)" }}
                     >
                       {initials(myName)}

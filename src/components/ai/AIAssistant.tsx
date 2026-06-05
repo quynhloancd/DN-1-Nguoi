@@ -104,7 +104,7 @@ export default function AIAssistant({ context }: AIAssistantProps) {
       {/* Chat window */}
       {open && (
         <div className="fixed bottom-0 right-0 sm:bottom-6 sm:right-6 z-50 w-full sm:w-80 sm:rounded-2xl overflow-hidden shadow-2xl flex flex-col"
-          style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", height: "100dvh", maxHeight: "480px" }}>
+          style={{ background: "#F0F1F3", border: "1px solid #2a2a2a", height: "100dvh", maxHeight: "480px" }}>
 
           {/* Header */}
           <div className="flex items-center gap-3 px-4 py-3 shrink-0"
@@ -114,11 +114,11 @@ export default function AIAssistant({ context }: AIAssistantProps) {
               <Sparkles size={16} className="text-white" />
             </div>
             <div className="flex-1">
-              <div className="font-semibold text-white text-sm">AI Assistant</div>
+              <div className="font-semibold text-[#1B2A4A] text-sm">AI Assistant</div>
               <div className="text-[11px] text-amber-300">Doanh Nghiệp 1 Người</div>
             </div>
             <button onClick={() => setOpen(false)}
-              className="text-amber-300 hover:text-white transition-colors p-1">
+              className="text-amber-300 hover:text-[#1B2A4A] transition-colors p-1">
               <X size={16} />
             </button>
           </div>
@@ -165,7 +165,7 @@ export default function AIAssistant({ context }: AIAssistantProps) {
                     onClick={() => sendMessage(q)}
                     className="w-full text-left text-xs px-3 py-2 rounded-xl transition-colors"
                     style={{ background: "#222", color: "#9ca3af", border: "1px solid #333" }}
-                    onMouseEnter={(e) => { e.currentTarget.style.background = "#2a2a2a"; e.currentTarget.style.color = "#fff"; }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = "#E5E7EB"; e.currentTarget.style.color = "#fff"; }}
                     onMouseLeave={(e) => { e.currentTarget.style.background = "#222"; e.currentTarget.style.color = "#9ca3af"; }}>
                     {q}
                   </button>

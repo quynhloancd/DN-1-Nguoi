@@ -196,7 +196,7 @@ export default function AdminQuestionsPage() {
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                 filter === f
                   ? "bg-[#E85D04]/15 text-[#E85D04] border border-[#E85D04]/30"
-                  : "bg-[#1a1a1a] text-gray-400 border border-[#2a2a2a] hover:text-white"
+                  : "bg-[#F0F1F3] text-gray-400 border border-[#E5E7EB] hover:text-[#1B2A4A]"
               }`}
             >
               {f === "all"
@@ -271,7 +271,7 @@ export default function AdminQuestionsPage() {
                         {q.email && (
                           <a
                             href={`mailto:${q.email}`}
-                            className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#E85D04]/30 hover:text-[#E85D04] transition-colors"
+                            className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#F0F1F3] border border-[#E5E7EB] hover:border-[#E85D04]/30 hover:text-[#E85D04] transition-colors"
                             title={`Email: ${q.email}`}
                           >
                             <Mail size={9} />
@@ -281,7 +281,7 @@ export default function AdminQuestionsPage() {
                         {q.profiles?.phone && (
                           <a
                             href={`tel:${q.profiles.phone}`}
-                            className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#1a1a1a] border border-[#2a2a2a] hover:border-green-500/30 hover:text-green-400 transition-colors"
+                            className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#F0F1F3] border border-[#E5E7EB] hover:border-green-500/30 hover:text-green-400 transition-colors"
                             title={`Điện thoại: ${q.profiles.phone}`}
                           >
                             <Phone size={9} />
@@ -289,7 +289,7 @@ export default function AdminQuestionsPage() {
                           </a>
                         )}
                         {q.reply_count > 0 && (
-                          <span className="px-1.5 py-0.5 rounded bg-[#1a1a1a] border border-[#2a2a2a]">
+                          <span className="px-1.5 py-0.5 rounded bg-[#F0F1F3] border border-[#E5E7EB]">
                             {q.reply_count} phản hồi
                           </span>
                         )}
@@ -379,7 +379,7 @@ export default function AdminQuestionsPage() {
                             type="checkbox"
                             checked={sendEmailWithReply}
                             onChange={(e) => setSendEmailWithReply(e.target.checked)}
-                            className="w-3.5 h-3.5 rounded border-gray-600 bg-[#1a1a1a] text-[#E85D04] focus:ring-[#E85D04]/30"
+                            className="w-3.5 h-3.5 rounded border-gray-600 bg-[#F0F1F3] text-[#E85D04] focus:ring-[#E85D04]/30"
                           />
                           <MailCheck size={12} className={sendEmailWithReply ? "text-[#E85D04]" : "text-gray-500"} />
                           Gửi email thông báo
@@ -390,7 +390,7 @@ export default function AdminQuestionsPage() {
                           setReplyingId(null);
                           setReplyContent("");
                         }}
-                        className="text-xs text-gray-500 hover:text-white transition-colors px-3 py-1.5"
+                        className="text-xs text-gray-500 hover:text-[#1B2A4A] transition-colors px-3 py-1.5"
                       >
                         Huỷ
                       </button>

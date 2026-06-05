@@ -119,12 +119,12 @@ export default async function BlogPage({
                   href={href}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
                     isActive
-                      ? "bg-[#E85D04] text-white"
-                      : "text-gray-400 hover:text-white"
+                      ? "bg-[#E85D04] text-[#1B2A4A]"
+                      : "text-gray-400 hover:text-[#1B2A4A]"
                   }`}
                   style={
                     !isActive
-                      ? { background: "#1a1a1a", border: "1px solid #2a2a2a" }
+                      ? { background: "#F0F1F3", border: "1px solid #2a2a2a" }
                       : {}
                   }
                 >
@@ -141,7 +141,7 @@ export default async function BlogPage({
             <div className="flex justify-center mb-4">
               <FileText size={48} className="text-gray-500" />
             </div>
-            <h2 className="text-xl font-bold text-white mb-2">
+            <h2 className="text-xl font-bold text-[#1B2A4A] mb-2">
               {activeCategory
                 ? `Không có bài viết nào trong mục "${activeCategory}"`
                 : "Chưa có bài viết nào"}
@@ -170,7 +170,7 @@ export default async function BlogPage({
           >
             {/* Thumbnail */}
             {featured.thumbnail ? (
-              <div className="relative w-full aspect-[21/9] bg-[#1a1a1a]">
+              <div className="relative w-full aspect-[21/9] bg-[#F0F1F3]">
                 <Image
                   src={featured.thumbnail}
                   alt={featured.title}
@@ -188,7 +188,7 @@ export default async function BlogPage({
                       </span>
                     )}
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-white leading-snug drop-shadow-lg">
+                  <h2 className="text-xl sm:text-2xl font-bold text-[#1B2A4A] leading-snug drop-shadow-lg">
                     {featured.title}
                   </h2>
                 </div>
@@ -206,7 +206,7 @@ export default async function BlogPage({
                     </span>
                   )}
                 </div>
-                <h2 className="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-[#E85D04] transition-colors leading-snug">
+                <h2 className="text-xl sm:text-2xl font-bold text-[#1B2A4A] mb-2 group-hover:text-[#E85D04] transition-colors leading-snug">
                   {featured.title}
                 </h2>
               </div>
@@ -264,7 +264,7 @@ export default async function BlogPage({
               >
                 {/* Thumbnail */}
                 {post.thumbnail ? (
-                  <div className="relative w-full aspect-[16/9] bg-[#1a1a1a]">
+                  <div className="relative w-full aspect-[16/9] bg-[#F0F1F3]">
                     <Image
                       src={post.thumbnail}
                       alt={post.title}
@@ -276,7 +276,7 @@ export default async function BlogPage({
                 ) : (
                   <div
                     className="w-full aspect-[16/9] flex items-center justify-center"
-                    style={{ background: "#1a1a1a" }}
+                    style={{ background: "#F0F1F3" }}
                   >
                     <FileText size={36} className="text-gray-700" />
                   </div>
@@ -292,7 +292,7 @@ export default async function BlogPage({
                       {post.category}
                     </span>
                   )}
-                  <h3 className="font-semibold text-white text-[15px] leading-snug mb-1.5 group-hover:text-[#E85D04] transition-colors line-clamp-2">
+                  <h3 className="font-semibold text-[#1B2A4A] text-[15px] leading-snug mb-1.5 group-hover:text-[#E85D04] transition-colors line-clamp-2">
                     {post.title}
                   </h3>
                   {post.excerpt && (
@@ -317,7 +317,7 @@ export default async function BlogPage({
                         <span
                           key={tag}
                           className="text-[10px] text-gray-500 px-1.5 py-0.5 rounded-full"
-                          style={{ background: "#1a1a1a" }}
+                          style={{ background: "#F0F1F3" }}
                         >
                           #{tag}
                         </span>

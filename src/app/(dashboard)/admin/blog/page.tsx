@@ -155,7 +155,7 @@ export default async function AdminBlogPage() {
                   <s.icon size={18} style={{ color: s.color }} />
                 </div>
               </div>
-              <div className="text-2xl font-bold text-white">{s.value}</div>
+              <div className="text-2xl font-bold text-[#1B2A4A]">{s.value}</div>
               <div className="text-xs font-semibold text-gray-300">{s.label}</div>
               <div className="text-[11px] text-gray-500">{s.sub}</div>
             </div>
@@ -216,7 +216,7 @@ export default async function AdminBlogPage() {
                       {/* Title + slug (clickable → edit) */}
                       <td className="px-4 py-3">
                         <Link href={`/admin/blog/${post.id}/edit`} className="block min-w-0 group/title">
-                          <div className="font-medium text-white truncate group-hover/title:text-[#E85D04] transition-colors">
+                          <div className="font-medium text-[#1B2A4A] truncate group-hover/title:text-[#E85D04] transition-colors">
                             {post.title}
                           </div>
                           <div className="text-[11px] text-gray-500 truncate mt-0.5 max-w-[300px]">
@@ -257,7 +257,7 @@ export default async function AdminBlogPage() {
 
                       {/* Views */}
                       <td className="px-4 py-3 whitespace-nowrap">
-                        <span className="flex items-center gap-1.5 text-sm font-semibold text-white">
+                        <span className="flex items-center gap-1.5 text-sm font-semibold text-[#1B2A4A]">
                           <Eye size={13} className="text-gray-500" />
                           {formatViews(post.views ?? 0)}
                         </span>
@@ -305,7 +305,7 @@ export default async function AdminBlogPage() {
           <div className="flex items-center justify-between gap-4">
             <p className="text-xs text-gray-500">
               Hiển thị{" "}
-              <span className="text-white font-semibold">{totalPosts}</span> bài
+              <span className="text-[#1B2A4A] font-semibold">{totalPosts}</span> bài
               viết
               {publishedCount > 0 && (
                 <>

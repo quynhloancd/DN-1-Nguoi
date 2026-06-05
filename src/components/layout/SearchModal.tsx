@@ -86,9 +86,9 @@ export function useSearchShortcut(onOpen: () => void): void {
 function SkeletonRow() {
   return (
     <div className="flex items-center gap-3 px-4 py-3 animate-pulse">
-      <div className="w-8 h-8 rounded-lg" style={{ background: "#2a2a2a" }} />
+      <div className="w-8 h-8 rounded-lg" style={{ background: "#E5E7EB" }} />
       <div className="flex-1 space-y-1.5">
-        <div className="h-3 rounded" style={{ background: "#2a2a2a", width: "60%" }} />
+        <div className="h-3 rounded" style={{ background: "#E5E7EB", width: "60%" }} />
         <div className="h-2.5 rounded" style={{ background: "#222", width: "40%" }} />
       </div>
     </div>
@@ -114,18 +114,18 @@ function ResultRow({ item, selected, onSelect }: ResultRowProps) {
       onMouseDown={onSelect}
       className="w-full flex items-center gap-3 px-4 py-3 text-left transition-colors"
       style={{
-        background: selected ? "#1f1f1f" : "transparent",
+        background: selected ? "#E5E7EB" : "transparent",
         borderLeft: selected ? "2px solid #E85D04" : "2px solid transparent",
       }}
     >
       <span
         className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center"
-        style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+        style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
       >
         <Icon size={15} className="text-[#E85D04]" />
       </span>
       <span className="flex-1 min-w-0">
-        <span className="block text-sm font-medium text-white truncate">{item.title}</span>
+        <span className="block text-sm font-medium text-[#1B2A4A] truncate">{item.title}</span>
         {item.subtitle && (
           <span className="block text-xs text-gray-500 truncate mt-0.5">{item.subtitle}</span>
         )}
@@ -273,7 +273,7 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
       >
         <div
           className="rounded-2xl overflow-hidden shadow-2xl"
-          style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+          style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
         >
           {/* Search input */}
           <div
@@ -288,7 +288,7 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Tìm kiếm khoá học, bài viết, cộng đồng..."
-              className="flex-1 bg-transparent text-white placeholder-gray-600 text-base py-4 outline-none"
+              className="flex-1 bg-transparent text-[#1B2A4A] placeholder-gray-600 text-base py-4 outline-none"
               autoComplete="off"
               spellCheck={false}
             />
@@ -302,7 +302,7 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
             )}
             <kbd
               className="flex-shrink-0 text-[10px] text-gray-500 px-1.5 py-0.5 rounded"
-              style={{ background: "#2a2a2a" }}
+              style={{ background: "#E5E7EB" }}
             >
               Esc để đóng
             </kbd>
@@ -334,7 +334,7 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
                     onMouseDown={() => runRecent(term)}
                     className="w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors"
                     style={{
-                      background: selectedIndex === i ? "#1f1f1f" : "transparent",
+                      background: selectedIndex === i ? "#E5E7EB" : "transparent",
                       borderLeft:
                         selectedIndex === i ? "2px solid #E85D04" : "2px solid transparent",
                     }}
@@ -398,15 +398,15 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
             style={{ borderTop: "1px solid #222" }}
           >
             <span>
-              <kbd className="px-1 py-0.5 rounded text-[10px]" style={{ background: "#2a2a2a" }}>↑↓</kbd>
+              <kbd className="px-1 py-0.5 rounded text-[10px]" style={{ background: "#E5E7EB" }}>↑↓</kbd>
               &nbsp;di chuyển
             </span>
             <span>
-              <kbd className="px-1 py-0.5 rounded text-[10px]" style={{ background: "#2a2a2a" }}>↵</kbd>
+              <kbd className="px-1 py-0.5 rounded text-[10px]" style={{ background: "#E5E7EB" }}>↵</kbd>
               &nbsp;chọn
             </span>
             <span>
-              <kbd className="px-1 py-0.5 rounded text-[10px]" style={{ background: "#2a2a2a" }}>Esc</kbd>
+              <kbd className="px-1 py-0.5 rounded text-[10px]" style={{ background: "#E5E7EB" }}>Esc</kbd>
               &nbsp;đóng
             </span>
           </div>

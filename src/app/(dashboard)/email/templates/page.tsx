@@ -179,7 +179,7 @@ export default function TemplatesPage() {
             {/* Search */}
             <div
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm"
-              style={{ background: "#1f1f1f", border: "1px solid #2a2a2a" }}
+              style={{ background: "#E5E7EB", border: "1px solid #2a2a2a" }}
             >
               <Search size={14} className="text-gray-500" />
               <input
@@ -187,7 +187,7 @@ export default function TemplatesPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Tim kiem template..."
-                className="bg-transparent border-none outline-none text-white text-sm placeholder:text-gray-500 w-40 sm:w-48"
+                className="bg-transparent border-none outline-none text-[#1B2A4A] text-sm placeholder:text-gray-500 w-40 sm:w-48"
               />
             </div>
 
@@ -231,7 +231,7 @@ export default function TemplatesPage() {
             >
               <Layout size={28} className="text-[#3b82f6]" />
             </div>
-            <p className="text-white font-medium mb-1">
+            <p className="text-[#1B2A4A] font-medium mb-1">
               {searchQuery || category !== "all"
                 ? "Khong tim thay template nao"
                 : "Chua co template nao"}
@@ -267,7 +267,7 @@ export default function TemplatesPage() {
                           <Mail size={14} style={{ color: cat.color }} />
                         </div>
                         <div className="min-w-0">
-                          <h3 className="text-white text-sm font-semibold truncate">{t.name}</h3>
+                          <h3 className="text-[#1B2A4A] text-sm font-semibold truncate">{t.name}</h3>
                           <p className="text-xs text-gray-500 truncate">{t.subject}</p>
                         </div>
                       </div>
@@ -290,23 +290,23 @@ export default function TemplatesPage() {
 
                   {/* Actions */}
                   <div
-                    className="flex items-center border-t border-[#2a2a2a] divide-x divide-[#2a2a2a]"
+                    className="flex items-center border-t border-[#E5E7EB] divide-x divide-[#2a2a2a]"
                   >
                     <button
                       onClick={() => handleEdit(t)}
-                      className="flex items-center justify-center gap-1.5 flex-1 py-2.5 text-xs text-gray-400 hover:text-white hover:bg-[#252525] transition-colors"
+                      className="flex items-center justify-center gap-1.5 flex-1 py-2.5 text-xs text-gray-400 hover:text-[#1B2A4A] hover:bg-[#252525] transition-colors"
                     >
                       <Edit size={12} /> Sua
                     </button>
                     <button
                       onClick={() => handlePreview(t)}
-                      className="flex items-center justify-center gap-1.5 flex-1 py-2.5 text-xs text-gray-400 hover:text-white hover:bg-[#252525] transition-colors"
+                      className="flex items-center justify-center gap-1.5 flex-1 py-2.5 text-xs text-gray-400 hover:text-[#1B2A4A] hover:bg-[#252525] transition-colors"
                     >
                       <Eye size={12} /> Xem
                     </button>
                     <button
                       onClick={() => handleDuplicate(t)}
-                      className="flex items-center justify-center gap-1.5 flex-1 py-2.5 text-xs text-gray-400 hover:text-white hover:bg-[#252525] transition-colors"
+                      className="flex items-center justify-center gap-1.5 flex-1 py-2.5 text-xs text-gray-400 hover:text-[#1B2A4A] hover:bg-[#252525] transition-colors"
                     >
                       <Copy size={12} /> Sao chep
                     </button>
@@ -326,9 +326,9 @@ export default function TemplatesPage() {
         {/* Summary */}
         {filtered.length > 0 && (
           <p className="text-xs text-gray-500">
-            Hien thi <span className="text-white font-semibold">{filtered.length}</span> template
+            Hien thi <span className="text-[#1B2A4A] font-semibold">{filtered.length}</span> template
             {category !== "all" && (
-              <> trong danh muc <span className="text-white font-semibold">{CATEGORIES.find(c => c.value === category)?.label}</span></>
+              <> trong danh muc <span className="text-[#1B2A4A] font-semibold">{CATEGORIES.find(c => c.value === category)?.label}</span></>
             )}
           </p>
         )}

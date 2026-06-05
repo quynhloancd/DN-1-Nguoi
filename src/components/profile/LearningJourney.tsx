@@ -161,7 +161,7 @@ export default function LearningJourney({ userId }: LearningJourneyProps) {
     <div>
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm font-bold text-white flex items-center gap-2">
+        <h3 className="text-sm font-bold text-[#1B2A4A] flex items-center gap-2">
           <Flag size={16} className="text-[#E85D04]" />
           Hành trình học tập
         </h3>
@@ -188,7 +188,7 @@ export default function LearningJourney({ userId }: LearningJourneyProps) {
               value={newTitle}
               onChange={(e) => setNewTitle(e.target.value)}
               placeholder="VD: Hoàn thành Module 1"
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
+              className="w-full bg-white border border-[#E5E7EB] rounded-lg px-3 py-2 text-sm text-[#1B2A4A] placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
               maxLength={200}
               required
             />
@@ -202,7 +202,7 @@ export default function LearningJourney({ userId }: LearningJourneyProps) {
               onChange={(e) => setNewDescription(e.target.value)}
               placeholder="Mô tả thêm về cột mốc này..."
               rows={2}
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
+              className="w-full bg-white border border-[#E5E7EB] rounded-lg p-3 text-sm text-[#1B2A4A] placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
               maxLength={1000}
             />
           </div>
@@ -215,7 +215,7 @@ export default function LearningJourney({ userId }: LearningJourneyProps) {
               value={newProductId}
               onChange={(e) => setNewProductId(e.target.value)}
               placeholder="ID khoá học (nếu có)"
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
+              className="w-full bg-white border border-[#E5E7EB] rounded-lg px-3 py-2 text-sm text-[#1B2A4A] placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
             />
           </div>
           <div className="flex items-center justify-between">
@@ -287,7 +287,7 @@ export default function LearningJourney({ userId }: LearningJourneyProps) {
 
                   {/* Content */}
                   <div className="flex-1 pb-1">
-                    <p className="text-sm font-medium text-white">
+                    <p className="text-sm font-medium text-[#1B2A4A]">
                       {event.title}
                     </p>
                     {event.description && (

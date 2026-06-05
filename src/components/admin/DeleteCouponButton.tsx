@@ -82,7 +82,7 @@ export default function DeleteCouponButton({ couponId, couponCode }: Props) {
                 setShowConfirm(false);
                 setResult(null);
               }}
-              className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"
+              className="absolute top-4 right-4 text-gray-500 hover:text-[#1B2A4A] transition-colors"
             >
               <X size={18} />
             </button>
@@ -124,7 +124,7 @@ export default function DeleteCouponButton({ couponId, couponCode }: Props) {
                 <div
                   className="rounded-lg p-4 mb-4"
                   style={{
-                    background: "#1a1a1a",
+                    background: "#F0F1F3",
                     border: "1px solid #2a2a2a",
                   }}
                 >
@@ -157,9 +157,9 @@ export default function DeleteCouponButton({ couponId, couponCode }: Props) {
                   </button>
                   <button
                     onClick={() => setShowConfirm(false)}
-                    className="px-4 py-2.5 rounded-xl text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                    className="px-4 py-2.5 rounded-xl text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
                     style={{
-                      background: "#1f1f1f",
+                      background: "#E5E7EB",
                       border: "1px solid #333",
                     }}
                   >

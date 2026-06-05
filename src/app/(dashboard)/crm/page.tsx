@@ -214,7 +214,7 @@ export default async function CRMPage() {
       <div className="p-6 max-w-6xl mx-auto space-y-6">
         {/* Header */}
         <div>
-          <h2 className="text-xl font-bold text-white">CRM Command Center</h2>
+          <h2 className="text-xl font-bold text-[#1B2A4A]">CRM Command Center</h2>
           <p className="text-gray-400 text-sm">Tổng quan hoạt động kinh doanh & quản lý khách hàng</p>
         </div>
 
@@ -236,7 +236,7 @@ export default async function CRMPage() {
                   <s.icon size={15} style={{ color: s.color }} />
                 </div>
               </div>
-              <div className="text-xl font-bold text-white">{s.value}</div>
+              <div className="text-xl font-bold text-[#1B2A4A]">{s.value}</div>
             </div>
           ))}
         </div>
@@ -258,7 +258,7 @@ export default async function CRMPage() {
                   >
                     <link.icon size={16} style={{ color: link.color }} />
                   </div>
-                  <span className="text-sm font-semibold text-white group-hover:text-[#E85D04] transition-colors">
+                  <span className="text-sm font-semibold text-[#1B2A4A] group-hover:text-[#E85D04] transition-colors">
                     {link.label}
                   </span>
                 </div>
@@ -272,7 +272,7 @@ export default async function CRMPage() {
         <div className="card-dark p-5">
           <div className="flex items-center gap-2 mb-4">
             <Target size={16} className="text-[#3b82f6]" />
-            <h3 className="font-semibold text-white">Customer Journey Funnel</h3>
+            <h3 className="font-semibold text-[#1B2A4A]">Customer Journey Funnel</h3>
           </div>
           {journeyFunnel.length > 0 ? (
             <div className="space-y-3">
@@ -283,7 +283,7 @@ export default async function CRMPage() {
                     <span className="text-xs text-gray-400 w-24 shrink-0 text-right">
                       {item.label}
                     </span>
-                    <div className="flex-1 h-7 rounded-md overflow-hidden" style={{ background: "#1a1a1a" }}>
+                    <div className="flex-1 h-7 rounded-md overflow-hidden" style={{ background: "#F0F1F3" }}>
                       <div
                         className="h-full rounded-md flex items-center px-3 transition-all"
                         style={{
@@ -292,7 +292,7 @@ export default async function CRMPage() {
                           borderLeft: `3px solid ${item.color}`,
                         }}
                       >
-                        <span className="text-xs font-semibold text-white">{item.count}</span>
+                        <span className="text-xs font-semibold text-[#1B2A4A]">{item.count}</span>
                       </div>
                     </div>
                   </div>
@@ -308,7 +308,7 @@ export default async function CRMPage() {
 
         {/* Revenue Stats Header */}
         <div>
-          <h2 className="text-xl font-bold text-white">Tổng quan doanh số</h2>
+          <h2 className="text-xl font-bold text-[#1B2A4A]">Tổng quan doanh số</h2>
           <p className="text-gray-400 text-sm">Dữ liệu cập nhật theo thời gian thực</p>
         </div>
 
@@ -325,7 +325,7 @@ export default async function CRMPage() {
                   <s.icon size={15} style={{ color: s.color }} />
                 </div>
               </div>
-              <div className="text-xl font-bold text-white">{s.value}</div>
+              <div className="text-xl font-bold text-[#1B2A4A]">{s.value}</div>
               {s.sub && <div className="text-xs text-gray-500 mt-0.5">{s.sub}</div>}
             </div>
           ))}
@@ -339,7 +339,7 @@ export default async function CRMPage() {
           >
             <AlertCircle size={16} className="text-[#f59e0b] shrink-0" />
             <div>
-              <strong className="text-white">
+              <strong className="text-[#1B2A4A]">
                 {overview.pending_orders} đơn hàng đang chờ xử lý
               </strong>
               <span className="text-gray-400 ml-2">
@@ -355,10 +355,10 @@ export default async function CRMPage() {
           <div className="card-dark p-5 md:col-span-2">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="font-semibold text-white text-sm">
+                <h3 className="font-semibold text-[#1B2A4A] text-sm">
                   Doanh thu 30 ngày qua
                 </h3>
-                <div className="text-xl font-bold text-white mt-1">
+                <div className="text-xl font-bold text-[#1B2A4A] mt-1">
                   {formatVND(totalChartRevenue)}
                 </div>
                 <div className="text-xs text-gray-400 flex items-center gap-1">
@@ -404,20 +404,20 @@ export default async function CRMPage() {
           {/* Order Status Donut */}
           <div className="card-dark p-5">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold text-white text-sm">Trạng thái đơn hàng</h3>
+              <h3 className="font-semibold text-[#1B2A4A] text-sm">Trạng thái đơn hàng</h3>
             </div>
             <div className="flex justify-center mb-4">
               <div
-                className="w-24 h-24 rounded-full flex items-center justify-center font-bold text-white"
+                className="w-24 h-24 rounded-full flex items-center justify-center font-bold text-[#1B2A4A]"
                 style={{
                   background: totalOrdersAll > 0
                     ? `conic-gradient(#22c55e 0% ${paidPct}%, #f59e0b ${paidPct}% ${paidPct + pendingPct}%, #6b7280 ${paidPct + pendingPct}% 100%)`
-                    : "#2a2a2a",
+                    : "#E5E7EB",
                 }}
               >
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center text-sm font-bold"
-                  style={{ background: "#1a1a1a" }}
+                  style={{ background: "#F0F1F3" }}
                 >
                   {totalOrdersAll > 0 ? `${paidPct}%` : "—"}
                 </div>
@@ -432,7 +432,7 @@ export default async function CRMPage() {
                   <div className="w-2 h-2 rounded-full" style={{ background: item.color }} />
                   <span className="text-xs text-gray-400">{item.label}</span>
                 </div>
-                <span className="text-xs font-semibold text-white">{item.count}</span>
+                <span className="text-xs font-semibold text-[#1B2A4A]">{item.count}</span>
               </div>
             ))}
           </div>
@@ -440,8 +440,8 @@ export default async function CRMPage() {
 
         {/* Recent Orders */}
         <div className="card-dark">
-          <div className="flex items-center justify-between p-5 border-b border-[#2a2a2a]">
-            <h3 className="font-semibold text-white">Đơn hàng gần đây</h3>
+          <div className="flex items-center justify-between p-5 border-b border-[#E5E7EB]">
+            <h3 className="font-semibold text-[#1B2A4A]">Đơn hàng gần đây</h3>
             <span className="text-xs text-gray-500">10 đơn mới nhất</span>
           </div>
           {recentOrders.length > 0 ? (
@@ -455,20 +455,20 @@ export default async function CRMPage() {
                 return (
                   <div key={order.id} className="flex items-center gap-4 p-4">
                     <div
-                      className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-[#1B2A4A] shrink-0"
                       style={{ background: "linear-gradient(135deg,#3b82f6,#1d4ed8)" }}
                     >
                       {initial}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-white truncate">
+                      <p className="text-sm font-medium text-[#1B2A4A] truncate">
                         {displayName}
                       </p>
                       <p className="text-xs text-gray-500 truncate">
                         {productTitle} &bull; {timeAgo(order.created_at)}
                       </p>
                     </div>
-                    <div className="text-sm font-semibold text-white">
+                    <div className="text-sm font-semibold text-[#1B2A4A]">
                       {formatVND(order.amount)}
                     </div>
                     <span
@@ -492,7 +492,7 @@ export default async function CRMPage() {
         <div className="card-dark p-5">
           <div className="flex items-center gap-2 mb-4">
             <Package size={16} className="text-[#E85D04]" />
-            <h3 className="font-semibold text-white">Sản phẩm bán chạy</h3>
+            <h3 className="font-semibold text-[#1B2A4A]">Sản phẩm bán chạy</h3>
           </div>
           {topProducts.length > 0 ? (
             <div className="space-y-3">
@@ -511,10 +511,10 @@ export default async function CRMPage() {
                         >
                           {i + 1}
                         </span>
-                        <span className="text-sm text-white">{product.title}</span>
+                        <span className="text-sm text-[#1B2A4A]">{product.title}</span>
                       </div>
                       <div className="text-right">
-                        <span className="text-sm font-semibold text-white">
+                        <span className="text-sm font-semibold text-[#1B2A4A]">
                           {formatVND(product.revenue)}
                         </span>
                         <span className="text-xs text-gray-500 ml-2">
@@ -522,7 +522,7 @@ export default async function CRMPage() {
                         </span>
                       </div>
                     </div>
-                    <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "#1a1a1a" }}>
+                    <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "#F0F1F3" }}>
                       <div
                         className="h-full rounded-full transition-all"
                         style={{

@@ -10,7 +10,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   return (
     <MobileSidebarProvider>
-      <div className="flex h-screen overflow-hidden" style={{ background: "#0a0a0a" }}>
+      <div className="flex h-screen overflow-hidden" style={{ background: "#F8F9FA" }}>
         <Sidebar collapsed={collapsed} onToggle={() => setCollapsed(!collapsed)} />
         <main className="flex-1 overflow-y-auto">
           {children}

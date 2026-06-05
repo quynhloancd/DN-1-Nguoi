@@ -86,7 +86,7 @@ export default async function EmailPage() {
                 </div>
                 <TrendingUp size={14} className="text-[#E85D04]" />
               </div>
-              <div className="text-2xl font-bold text-white mb-0.5">{s.value}</div>
+              <div className="text-2xl font-bold text-[#1B2A4A] mb-0.5">{s.value}</div>
               <div className="text-xs text-gray-500">{s.label}</div>
               <div className="text-[11px] text-gray-400 mt-1">{s.sub}</div>
             </div>
@@ -98,11 +98,11 @@ export default async function EmailPage() {
           {/* Recent campaigns */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="font-bold text-white text-lg">Campaigns gần đây</h2>
+              <h2 className="font-bold text-[#1B2A4A] text-lg">Campaigns gần đây</h2>
               <div className="flex items-center gap-2">
                 <Link
                   href="/email/campaigns"
-                  className="text-xs text-[#9ca3af] hover:text-white transition-colors flex items-center gap-1"
+                  className="text-xs text-[#9ca3af] hover:text-[#1B2A4A] transition-colors flex items-center gap-1"
                 >
                   Xem tất cả <ArrowRight size={12} />
                 </Link>
@@ -121,7 +121,7 @@ export default async function EmailPage() {
                   style={{ background: "rgba(59,130,246,0.1)" }}>
                   <Inbox size={24} className="text-[#3b82f6]" />
                 </div>
-                <p className="text-white font-medium mb-1">Chưa có campaign nào</p>
+                <p className="text-[#1B2A4A] font-medium mb-1">Chưa có campaign nào</p>
                 <p className="text-gray-500 text-sm">Tạo campaign đầu tiên để bắt đầu gửi email đến subscribers.</p>
               </div>
             ) : (
@@ -155,7 +155,7 @@ export default async function EmailPage() {
                             <div className="flex items-center gap-2">
                               <Mail size={13} className="text-[#3b82f6] shrink-0" />
                               <div>
-                                <div className="text-white text-sm font-medium leading-tight">{c.name || c.subject}</div>
+                                <div className="text-[#1B2A4A] text-sm font-medium leading-tight">{c.name || c.subject}</div>
                                 <div className="text-[11px] text-gray-500 mt-0.5">{dateLabel}</div>
                               </div>
                             </div>
@@ -194,7 +194,7 @@ export default async function EmailPage() {
             {/* Subscriber overview */}
             <div className="card-dark p-4">
               <div className="flex items-center justify-between mb-3">
-                <h3 className="font-semibold text-white text-sm">Subscribers</h3>
+                <h3 className="font-semibold text-[#1B2A4A] text-sm">Subscribers</h3>
                 <Link
                   href="/email/subscribers"
                   className="text-[11px] text-[#E85D04] hover:underline"
@@ -213,7 +213,7 @@ export default async function EmailPage() {
                   <div className="flex items-center gap-3 p-3 rounded-lg" style={{ background: "#222" }}>
                     <UserCheck size={14} className="text-[#E85D04]" />
                     <div className="flex-1">
-                      <div className="text-white text-xs font-medium">Đang hoạt động</div>
+                      <div className="text-[#1B2A4A] text-xs font-medium">Đang hoạt động</div>
                       <div className="text-[11px] text-gray-500">{active.toLocaleString("vi-VN")} subscribers</div>
                     </div>
                     <span className="text-xs font-medium text-[#E85D04]">
@@ -223,7 +223,7 @@ export default async function EmailPage() {
                   <div className="flex items-center gap-3 p-3 rounded-lg" style={{ background: "#222" }}>
                     <UserMinus size={14} className="text-[#f59e0b]" />
                     <div className="flex-1">
-                      <div className="text-white text-xs font-medium">Huỷ đăng ký</div>
+                      <div className="text-[#1B2A4A] text-xs font-medium">Huỷ đăng ký</div>
                       <div className="text-[11px] text-gray-500">{unsubscribed.toLocaleString("vi-VN")} subscribers</div>
                     </div>
                     <span className="text-xs font-medium text-[#f59e0b]">
@@ -233,7 +233,7 @@ export default async function EmailPage() {
                   <div className="flex items-center gap-3 p-3 rounded-lg" style={{ background: "#222" }}>
                     <AlertTriangle size={14} className="text-[#ef4444]" />
                     <div className="flex-1">
-                      <div className="text-white text-xs font-medium">Bounce rate</div>
+                      <div className="text-[#1B2A4A] text-xs font-medium">Bounce rate</div>
                       <div className="text-[11px] text-gray-500">{bounced.toLocaleString("vi-VN")} bounced</div>
                     </div>
                     <span className="text-xs font-medium text-[#ef4444]">{bounceRate}%</span>
@@ -277,7 +277,7 @@ export default async function EmailPage() {
 
             {/* Quick Compose */}
             <div className="card-dark p-4">
-              <h3 className="font-semibold text-white text-sm mb-3">Gửi broadcast nhanh</h3>
+              <h3 className="font-semibold text-[#1B2A4A] text-sm mb-3">Gửi broadcast nhanh</h3>
               <div className="space-y-2.5">
                 <input
                   type="text"
@@ -312,7 +312,7 @@ export default async function EmailPage() {
                 <Workflow size={18} className="text-[#14b8a6]" />
               </div>
               <div className="flex-1">
-                <div className="text-white text-sm font-medium">Automations</div>
+                <div className="text-[#1B2A4A] text-sm font-medium">Automations</div>
                 <div className="text-[11px] text-gray-500">{automations} workflow đang hoạt động</div>
               </div>
               <ArrowRight size={14} className="text-gray-500" />

@@ -332,7 +332,7 @@ export default async function CourseStudentsPage({
         {/* Back */}
         <Link
           href="/admin/courses"
-          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
         >
           <ArrowLeft size={16} />
           Quay lại danh sách khoá học
@@ -369,7 +369,7 @@ export default async function CourseStudentsPage({
         {/* Filter tabs + CSV export */}
         <div className="flex items-center justify-between gap-4 flex-wrap">
           {/* Filter tabs */}
-          <div className="flex items-center gap-1 p-1 rounded-xl bg-[#151515]" style={{ border: "1px solid #2a2a2a" }}>
+          <div className="flex items-center gap-1 p-1 rounded-xl bg-[#F8F9FA]" style={{ border: "1px solid #2a2a2a" }}>
             {FILTER_TABS.map((tab) => {
               const isActive = activeFilter === tab.key;
               return (
@@ -405,7 +405,7 @@ export default async function CourseStudentsPage({
           <a
             href={csvDataUri}
             download={`students-${course.slug || courseId}.csv`}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium text-gray-300 hover:text-white hover:bg-[#1f1f1f] transition-colors shrink-0"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium text-gray-300 hover:text-[#1B2A4A] hover:bg-[#1f1f1f] transition-colors shrink-0"
             style={{ border: "1px solid #2a2a2a" }}
           >
             <Download size={14} />
@@ -462,7 +462,7 @@ function StatCard({
         {icon}
       </div>
       <div>
-        <div className="text-2xl font-bold text-white leading-none mb-1">
+        <div className="text-2xl font-bold text-[#1B2A4A] leading-none mb-1">
           {value}
         </div>
         <div className="text-xs text-gray-500">{label}</div>

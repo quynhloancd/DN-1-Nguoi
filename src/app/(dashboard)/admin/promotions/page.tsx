@@ -201,7 +201,7 @@ export default function AdminPromotionsPage() {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="font-bold text-white text-base">
+            <h2 className="font-bold text-[#1B2A4A] text-base">
               Danh sách quảng cáo
             </h2>
             <p className="text-xs text-gray-500 mt-0.5">
@@ -234,7 +234,7 @@ export default function AdminPromotionsPage() {
               <span className="badge-green shrink-0">
                 {promotions.find((p) => p.is_active)?.label}
               </span>
-              <span className="text-white text-xs font-medium">
+              <span className="text-[#1B2A4A] text-xs font-medium">
                 {promotions.find((p) => p.is_active)?.text}
               </span>
               <div className="flex gap-1 ml-1">
@@ -255,7 +255,7 @@ export default function AdminPromotionsPage() {
         {/* Form */}
         {showForm && (
           <div className="card-dark p-5 space-y-4">
-            <h3 className="text-sm font-semibold text-white">
+            <h3 className="text-sm font-semibold text-[#1B2A4A]">
               {editingId ? "Chỉnh sửa quảng cáo" : "Thêm quảng cáo mới"}
             </h3>
 
@@ -350,7 +350,7 @@ export default function AdminPromotionsPage() {
                     <span className="badge-green text-[10px] shrink-0">
                       {promo.label}
                     </span>
-                    <span className="text-sm text-white font-medium truncate">
+                    <span className="text-sm text-[#1B2A4A] font-medium truncate">
                       {promo.text}
                     </span>
                   </div>
@@ -380,7 +380,7 @@ export default function AdminPromotionsPage() {
                   </button>
                   <button
                     onClick={() => handleEdit(promo)}
-                    className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
+                    className="p-1.5 rounded-lg text-gray-400 hover:text-[#1B2A4A] hover:bg-white/5 transition-colors"
                   >
                     <Edit2 size={15} />
                   </button>

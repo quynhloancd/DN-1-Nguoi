@@ -59,7 +59,7 @@ export default function DeleteQuizButton({
         >
           <div
             className="w-full max-w-md rounded-2xl p-6 space-y-4"
-            style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+            style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center gap-3">
@@ -70,7 +70,7 @@ export default function DeleteQuizButton({
                 <AlertTriangle size={20} className="text-red-400" />
               </div>
               <div>
-                <h3 className="font-semibold text-white text-sm">
+                <h3 className="font-semibold text-[#1B2A4A] text-sm">
                   Xoá quiz?
                 </h3>
                 <p className="text-xs text-gray-400 mt-0.5">
@@ -81,10 +81,10 @@ export default function DeleteQuizButton({
 
             <div
               className="p-3 rounded-lg text-sm text-gray-300"
-              style={{ background: "#151515", border: "1px solid #252525" }}
+              style={{ background: "#F8F9FA", border: "1px solid #252525" }}
             >
               <span className="text-gray-500">Quiz:</span>{" "}
-              <span className="font-medium text-white">{quizTitle}</span>
+              <span className="font-medium text-[#1B2A4A]">{quizTitle}</span>
             </div>
 
             <p className="text-xs text-gray-500 leading-relaxed">
@@ -96,7 +96,7 @@ export default function DeleteQuizButton({
               <button
                 onClick={() => setShowConfirm(false)}
                 disabled={deleting}
-                className="flex-1 px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
+                className="flex-1 px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:text-[#1B2A4A] hover:bg-white/5 transition-colors"
                 style={{ border: "1px solid #2a2a2a" }}
               >
                 Huỷ bỏ
@@ -104,7 +104,7 @@ export default function DeleteQuizButton({
               <button
                 onClick={handleDelete}
                 disabled={deleting}
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium text-white transition-colors"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium text-[#1B2A4A] transition-colors"
                 style={{
                   background: deleting ? "#4a1a1a" : "#dc2626",
                   opacity: deleting ? 0.7 : 1,

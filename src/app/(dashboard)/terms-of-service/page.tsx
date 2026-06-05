@@ -140,9 +140,9 @@ export default function TermsOfServicePage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <div className="border-b border-[#1a1a1a] px-4 sm:px-6 py-6 sm:py-8">
+      <div className="border-b border-[#E5E7EB] px-4 sm:px-6 py-6 sm:py-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#1B2A4A] mb-2">
             Điều khoản dịch vụ
           </h1>
           <p className="text-gray-400 text-sm">
@@ -155,7 +155,7 @@ export default function TermsOfServicePage() {
       <div className="px-4 sm:px-6 py-6 sm:py-10">
         <div className="max-w-4xl mx-auto space-y-10">
           {/* Table of Contents */}
-          <nav className="rounded-xl border border-[#1a1a1a] bg-[#111] p-5">
+          <nav className="rounded-xl border border-[#E5E7EB] bg-white p-5">
             <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
               Mục lục
             </h2>
@@ -176,7 +176,7 @@ export default function TermsOfServicePage() {
           {/* Sections */}
           {sections.map((section) => (
             <section key={section.id} id={section.id} className="scroll-mt-6">
-              <h2 className="text-lg sm:text-xl font-bold text-white mb-4">
+              <h2 className="text-lg sm:text-xl font-bold text-[#1B2A4A] mb-4">
                 {section.title}
               </h2>
 
@@ -213,7 +213,7 @@ export default function TermsOfServicePage() {
                 <div className="card-dark p-5 mt-4 space-y-2">
                   <p className="text-gray-300">
                     <span className="text-gray-500">Nền tảng:</span>{" "}
-                    <span className="text-white font-medium">
+                    <span className="text-[#1B2A4A] font-medium">
                       Doanh Nghiệp 1 Người
                     </span>
                   </p>
@@ -241,7 +241,7 @@ export default function TermsOfServicePage() {
           ))}
 
           {/* Back link */}
-          <div className="pt-6 border-t border-[#1a1a1a]">
+          <div className="pt-6 border-t border-[#E5E7EB]">
             <Link
               href="/"
               className="text-sm text-[#E85D04] hover:underline"

@@ -323,7 +323,7 @@ export default function SalesPageTemplate({
   );
 
   return (
-    <div className="min-h-screen" style={{ background: "#0a0a0a" }}>
+    <div className="min-h-screen" style={{ background: "#F8F9FA" }}>
       {/* ═══════════════════════════════════════════════
           SECTION 1: HERO
       ═══════════════════════════════════════════════ */}
@@ -351,7 +351,7 @@ export default function SalesPageTemplate({
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-24">
           <div className="text-center">
             {/* Title */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1B2A4A] leading-tight mb-6">
               {product.title}
             </h1>
 
@@ -411,7 +411,7 @@ export default function SalesPageTemplate({
       ═══════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20" style={{ background: "#0d0d0d" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-3">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1B2A4A] text-center mb-3">
             Bạn có đang gặp vấn đề này?
           </h2>
           <p className="text-gray-400 text-center mb-10 max-w-2xl mx-auto">
@@ -424,12 +424,12 @@ export default function SalesPageTemplate({
                 key={i}
                 className="rounded-xl p-5 sm:p-6 transition-colors"
                 style={{
-                  background: "#151515",
+                  background: "#F8F9FA",
                   border: "1px solid #2a2a2a",
                 }}
               >
                 <div className="text-3xl mb-3">{point.icon}</div>
-                <h3 className="text-base font-semibold text-white mb-2">
+                <h3 className="text-base font-semibold text-[#1B2A4A] mb-2">
                   {point.title}
                 </h3>
                 <p className="text-sm text-gray-400 leading-relaxed">
@@ -444,9 +444,9 @@ export default function SalesPageTemplate({
       {/* ═══════════════════════════════════════════════
           SECTION 3: SOLUTION / BENEFITS
       ═══════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20" style={{ background: "#0a0a0a" }}>
+      <section className="py-16 sm:py-20" style={{ background: "#F8F9FA" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-3">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1B2A4A] text-center mb-3">
             Khoá học này sẽ giúp bạn...
           </h2>
           <p className="text-gray-400 text-center mb-10 max-w-2xl mx-auto">
@@ -464,7 +464,7 @@ export default function SalesPageTemplate({
                 }}
               >
                 <div className="text-3xl mb-3">{benefit.icon}</div>
-                <h3 className="text-base font-semibold text-white mb-2">
+                <h3 className="text-base font-semibold text-[#1B2A4A] mb-2">
                   {benefit.title}
                 </h3>
                 <p className="text-sm text-gray-400 leading-relaxed">
@@ -481,7 +481,7 @@ export default function SalesPageTemplate({
       ═══════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20" style={{ background: "#0d0d0d" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-3">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1B2A4A] text-center mb-3">
             Nội dung khoá học
           </h2>
           <p className="text-gray-400 text-center mb-10">
@@ -492,10 +492,10 @@ export default function SalesPageTemplate({
           {sortedChapters.length === 0 ? (
             <div
               className="rounded-xl p-10 text-center"
-              style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+              style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
             >
               <BookOpen size={40} className="text-gray-500 mx-auto mb-3" />
-              <h3 className="font-bold text-white mb-1">
+              <h3 className="font-bold text-[#1B2A4A] mb-1">
                 Nội dung đang được cập nhật
               </h3>
               <p className="text-sm text-gray-400">
@@ -517,7 +517,7 @@ export default function SalesPageTemplate({
                     key={chapter.id}
                     className="rounded-xl overflow-hidden"
                     style={{
-                      background: "#151515",
+                      background: "#F8F9FA",
                       border: "1px solid #2a2a2a",
                     }}
                   >
@@ -537,7 +537,7 @@ export default function SalesPageTemplate({
                           {chIdx + 1}
                         </span>
                         <div>
-                          <h3 className="text-sm font-semibold text-white">
+                          <h3 className="text-sm font-semibold text-[#1B2A4A]">
                             {chapter.title}
                           </h3>
                           <span className="text-xs text-gray-500">
@@ -643,9 +643,9 @@ export default function SalesPageTemplate({
       {/* ═══════════════════════════════════════════════
           SECTION 5: INSTRUCTOR
       ═══════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20" style={{ background: "#0a0a0a" }}>
+      <section className="py-16 sm:py-20" style={{ background: "#F8F9FA" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1B2A4A] text-center mb-10">
             Giảng viên
           </h2>
 
@@ -668,7 +668,7 @@ export default function SalesPageTemplate({
 
             {/* Info */}
             <div className="text-center sm:text-left">
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-[#1B2A4A] mb-2">
                 {usedInstructor.name}
               </h3>
               <p className="text-gray-400 leading-relaxed">
@@ -686,7 +686,7 @@ export default function SalesPageTemplate({
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           {testimonials && testimonials.length > 0 ? (
             <>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-3">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1B2A4A] text-center mb-3">
                 Học viên nói gì?
               </h2>
               <p className="text-gray-400 text-center mb-10">
@@ -699,7 +699,7 @@ export default function SalesPageTemplate({
                     key={i}
                     className="rounded-xl p-5 sm:p-6"
                     style={{
-                      background: "#151515",
+                      background: "#F8F9FA",
                       border: "1px solid #2a2a2a",
                     }}
                   >
@@ -742,7 +742,7 @@ export default function SalesPageTemplate({
                         </div>
                       )}
                       <div>
-                        <p className="text-sm font-medium text-white">
+                        <p className="text-sm font-medium text-[#1B2A4A]">
                           {t.name}
                         </p>
                         <p className="text-xs text-gray-500">{t.role}</p>
@@ -763,7 +763,7 @@ export default function SalesPageTemplate({
                 }}
               >
                 <Users size={20} className="text-[#E85D04]" />
-                <span className="text-base font-semibold text-white">
+                <span className="text-base font-semibold text-[#1B2A4A]">
                   1,300+ học viên đã tham gia
                 </span>
               </div>
@@ -778,9 +778,9 @@ export default function SalesPageTemplate({
       {/* ═══════════════════════════════════════════════
           SECTION 7: FAQ
       ═══════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20" style={{ background: "#0a0a0a" }}>
+      <section className="py-16 sm:py-20" style={{ background: "#F8F9FA" }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1B2A4A] text-center mb-10">
             Câu hỏi thường gặp
           </h2>
 
@@ -792,7 +792,7 @@ export default function SalesPageTemplate({
                   key={i}
                   className="rounded-xl overflow-hidden"
                   style={{
-                    background: "#151515",
+                    background: "#F8F9FA",
                     border: "1px solid #2a2a2a",
                   }}
                 >
@@ -800,7 +800,7 @@ export default function SalesPageTemplate({
                     onClick={() => toggleFaq(i)}
                     className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/[0.02] transition-colors"
                   >
-                    <span className="text-sm font-medium text-white pr-4">
+                    <span className="text-sm font-medium text-[#1B2A4A] pr-4">
                       {faq.question}
                     </span>
                     {isOpen ? (
@@ -837,7 +837,7 @@ export default function SalesPageTemplate({
         }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1B2A4A] mb-6">
             Sẵn sàng bắt đầu?
           </h2>
 

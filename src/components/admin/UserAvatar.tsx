@@ -99,7 +99,7 @@ export default function UserAvatar({
 
   return (
     <div
-      className={`rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 ${className}`}
+      className={`rounded-full flex items-center justify-center text-xs font-bold text-[#1B2A4A] shrink-0 ${className}`}
       style={{
         width: size,
         height: size,

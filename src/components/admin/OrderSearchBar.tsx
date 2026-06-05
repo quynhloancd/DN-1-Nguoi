@@ -41,16 +41,16 @@ export default function OrderSearchBar() {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Tìm mã đơn, email, SĐT, tên khách..."
-          className="w-full pl-9 pr-9 py-2 rounded-xl text-sm text-white placeholder-gray-600 outline-none transition-colors"
+          className="w-full pl-9 pr-9 py-2 rounded-xl text-sm text-[#1B2A4A] placeholder-gray-600 outline-none transition-colors"
           style={{
-            background: "#1a1a1a",
+            background: "#F0F1F3",
             border: "1px solid #2a2a2a",
           }}
           onFocus={(e) => {
             e.currentTarget.style.borderColor = "rgba(212,168,67,0.4)";
           }}
           onBlur={(e) => {
-            e.currentTarget.style.borderColor = "#2a2a2a";
+            e.currentTarget.style.borderColor = "#E5E7EB";
           }}
         />
         {value && (

@@ -120,7 +120,7 @@ export default function AnnouncementsPage() {
         <div className="card-dark p-5">
           <div className="flex items-center gap-2 mb-4">
             <Megaphone size={18} className="text-[#E85D04]" />
-            <h3 className="text-sm font-bold text-white">Tạo thông báo chung</h3>
+            <h3 className="text-sm font-bold text-[#1B2A4A]">Tạo thông báo chung</h3>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -254,7 +254,7 @@ export default function AnnouncementsPage() {
 
         {/* Past announcements */}
         <div>
-          <h3 className="text-sm font-bold text-white mb-3 flex items-center gap-2">
+          <h3 className="text-sm font-bold text-[#1B2A4A] mb-3 flex items-center gap-2">
             <Users size={14} className="text-gray-400" />
             Thông báo chung đã gửi
           </h3>
@@ -279,7 +279,7 @@ export default function AnnouncementsPage() {
                 <div key={ann.id} className="card-dark p-4">
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-sm font-semibold text-white">{ann.title}</h4>
+                      <h4 className="text-sm font-semibold text-[#1B2A4A]">{ann.title}</h4>
                       <p className="text-xs text-gray-400 mt-1 whitespace-pre-wrap">{ann.message}</p>
                       {ann.link && (
                         <a

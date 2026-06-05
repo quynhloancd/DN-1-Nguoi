@@ -128,7 +128,7 @@ export default function BankTransferButtons({
       <div className="mt-5">
         <button
           onClick={() => setShowModal(true)}
-          className="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-xl text-base font-bold text-white transition-all active:scale-[0.98] hover:brightness-110 cursor-pointer"
+          className="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-xl text-base font-bold text-[#1B2A4A] transition-all active:scale-[0.98] hover:brightness-110 cursor-pointer"
           style={{
             background: "linear-gradient(135deg, #2563eb, #1d4ed8)",
             boxShadow: "0 4px 20px rgba(37,99,235,0.35)",
@@ -330,7 +330,7 @@ export default function BankTransferButtons({
               {/* Transfer button — copies content then opens bank app (mobile) or just copies (desktop) */}
               <button
                 onClick={handleTransfer}
-                className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-base font-bold text-white transition-all active:scale-[0.98] cursor-pointer"
+                className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-base font-bold text-[#1B2A4A] transition-all active:scale-[0.98] cursor-pointer"
                 style={{
                   background: "linear-gradient(135deg, #2563eb, #1d4ed8)",
                   boxShadow: "0 4px 16px rgba(37,99,235,0.3)",

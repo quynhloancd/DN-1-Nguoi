@@ -107,7 +107,7 @@ export default function AddSubscriberModal({
           </h2>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-white transition-colors"
+            className="text-gray-500 hover:text-[#1B2A4A] transition-colors"
           >
             <X size={18} />
           </button>
@@ -204,8 +204,8 @@ export default function AddSubscriberModal({
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 py-2.5 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-white"
-              style={{ background: "#1f1f1f", border: "1px solid #2a2a2a" }}
+              className="flex-1 py-2.5 text-sm font-medium text-gray-400 rounded-lg transition-colors hover:text-[#1B2A4A]"
+              style={{ background: "#E5E7EB", border: "1px solid #2a2a2a" }}
             >
               Hủy
             </button>

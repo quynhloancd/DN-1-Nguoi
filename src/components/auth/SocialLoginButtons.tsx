@@ -37,7 +37,7 @@ export default function SocialLoginButtons() {
         type="button"
         onClick={() => handleSocialLogin("google")}
         disabled={loading !== null}
-        className="w-full flex items-center justify-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed border border-[#333] hover:border-[#555] bg-[#1a1a1a] hover:bg-[#222] text-white"
+        className="w-full flex items-center justify-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed border border-[#333] hover:border-[#555] bg-[#F0F1F3] hover:bg-[#222] text-white"
       >
         {loading === "google" ? (
           <svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">
@@ -60,7 +60,7 @@ export default function SocialLoginButtons() {
         type="button"
         onClick={() => handleSocialLogin("facebook")}
         disabled={loading !== null}
-        className="w-full flex items-center justify-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed border border-[#333] hover:border-[#555] bg-[#1a1a1a] hover:bg-[#222] text-white"
+        className="w-full flex items-center justify-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed border border-[#333] hover:border-[#555] bg-[#F0F1F3] hover:bg-[#222] text-white"
       >
         {loading === "facebook" ? (
           <svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">

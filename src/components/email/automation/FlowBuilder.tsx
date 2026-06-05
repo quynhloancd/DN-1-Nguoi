@@ -145,11 +145,11 @@ function FlowBuilderInner({ initialFlow, onChange, onSave }: FlowBuilderProps) {
             animated: true,
             style: { stroke: "#E85D04", strokeWidth: 2 },
           }}
-          style={{ background: "#0a0a0a" }}
+          style={{ background: "#F8F9FA" }}
         >
           <Controls
-            className="!bg-[#1a1a1a] !border-[#333] !rounded-lg"
-            style={{ button: { background: "#1a1a1a", color: "white", borderColor: "#333" } } as any}
+            className="!bg-[#F0F1F3] !border-[#333] !rounded-lg"
+            style={{ button: { background: "#F0F1F3", color: "white", borderColor: "#333" } } as any}
           />
           <Background variant={BackgroundVariant.Dots} gap={20} size={1} color="#333" />
         </ReactFlow>

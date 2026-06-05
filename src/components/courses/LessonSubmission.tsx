@@ -171,7 +171,7 @@ export default function LessonSubmission({
       >
         <div className="flex items-center gap-2">
           <Upload size={16} className="text-[#E85D04]" />
-          <h3 className="font-semibold text-white text-sm">Nộp bài</h3>
+          <h3 className="font-semibold text-[#1B2A4A] text-sm">Nộp bài</h3>
           {submissions.length > 0 && (
             <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-[#E85D04]/15 text-[#E85D04] font-medium">
               {submissions.length}

@@ -202,7 +202,7 @@ export default function InstructorSubmissionsPage() {
             <select
               value={filterCourse}
               onChange={(e) => setFilterCourse(e.target.value)}
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04] transition-colors"
+              className="w-full bg-white border border-[#E5E7EB] rounded-lg px-3 py-2 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#E85D04] transition-colors"
             >
               <option value="">Tất cả khoá học</option>
               {courses.map((c) => (
@@ -220,7 +220,7 @@ export default function InstructorSubmissionsPage() {
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04] transition-colors"
+              className="w-full bg-white border border-[#E5E7EB] rounded-lg px-3 py-2 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#E85D04] transition-colors"
             >
               <option value="">Tất cả</option>
               <option value="pending">Chờ duyệt</option>
@@ -265,11 +265,11 @@ export default function InstructorSubmissionsPage() {
                     onClick={() =>
                       setExpandedId(isExpanded ? null : sub.id)
                     }
-                    className="w-full flex items-center gap-3 p-4 text-left hover:bg-[#1a1a1a] transition-colors"
+                    className="w-full flex items-center gap-3 p-4 text-left hover:bg-[#F0F1F3] transition-colors"
                   >
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-sm font-medium text-white truncate">
+                        <span className="text-sm font-medium text-[#1B2A4A] truncate">
                           {sub.student_name ?? "Học viên"}
                         </span>
                         <span
@@ -309,14 +309,14 @@ export default function InstructorSubmissionsPage() {
                       opacity: isExpanded ? 1 : 0,
                     }}
                   >
-                    <div className="px-4 pb-4 border-t border-[#2a2a2a]">
+                    <div className="px-4 pb-4 border-t border-[#E5E7EB]">
                       {/* Submission content */}
                       {sub.content && (
                         <div className="mt-3">
                           <p className="text-xs text-gray-500 mb-1">
                             Nội dung bài nộp
                           </p>
-                          <div className="bg-[#111] rounded-lg p-3 text-sm text-gray-300 whitespace-pre-line">
+                          <div className="bg-white rounded-lg p-3 text-sm text-gray-300 whitespace-pre-line">
                             {sub.content}
                           </div>
                         </div>
@@ -335,7 +335,7 @@ export default function InstructorSubmissionsPage() {
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#111] border border-[#2a2a2a] rounded-lg text-xs text-[#E85D04] hover:bg-[#1a1a1a] transition-colors"
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-[#E5E7EB] rounded-lg text-xs text-[#E85D04] hover:bg-[#F0F1F3] transition-colors"
                               >
                                 <ExternalLink size={12} />
                                 {link.label || link.url}
@@ -358,7 +358,7 @@ export default function InstructorSubmissionsPage() {
                       )}
 
                       {/* Review form */}
-                      <div className="mt-4 pt-3 border-t border-[#2a2a2a]">
+                      <div className="mt-4 pt-3 border-t border-[#E5E7EB]">
                         <p className="text-xs text-gray-400 font-medium mb-2">
                           Đánh giá bài nộp
                         </p>
@@ -373,7 +373,7 @@ export default function InstructorSubmissionsPage() {
                             }
                             placeholder="Nhập nhận xét cho học viên..."
                             rows={3}
-                            className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
+                            className="w-full bg-white border border-[#E5E7EB] rounded-lg p-3 text-sm text-[#1B2A4A] placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
                           />
                           <div className="flex flex-wrap gap-3 items-end">
                             <div>
@@ -394,7 +394,7 @@ export default function InstructorSubmissionsPage() {
                                     [sub.id]: e.target.value,
                                   }))
                                 }
-                                className="w-24 bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04] transition-colors"
+                                className="w-24 bg-white border border-[#E5E7EB] rounded-lg px-3 py-2 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#E85D04] transition-colors"
                               />
                             </div>
                             <div>
@@ -409,7 +409,7 @@ export default function InstructorSubmissionsPage() {
                                     [sub.id]: e.target.value,
                                   }))
                                 }
-                                className="bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04] transition-colors"
+                                className="bg-white border border-[#E5E7EB] rounded-lg px-3 py-2 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#E85D04] transition-colors"
                               >
                                 <option value="pending">Chờ duyệt</option>
                                 <option value="reviewed">Đã xem</option>
@@ -454,8 +454,8 @@ export default function InstructorSubmissionsPage() {
               disabled={offset === 0}
               className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
                 offset === 0
-                  ? "bg-[#1a1a1a] text-gray-600 cursor-not-allowed"
-                  : "bg-[#1a1a1a] text-gray-300 hover:bg-[#222]"
+                  ? "bg-[#F0F1F3] text-gray-600 cursor-not-allowed"
+                  : "bg-[#F0F1F3] text-gray-300 hover:bg-[#222]"
               }`}
             >
               Trước
@@ -468,8 +468,8 @@ export default function InstructorSubmissionsPage() {
               disabled={currentPage >= totalPages}
               className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
                 currentPage >= totalPages
-                  ? "bg-[#1a1a1a] text-gray-600 cursor-not-allowed"
-                  : "bg-[#1a1a1a] text-gray-300 hover:bg-[#222]"
+                  ? "bg-[#F0F1F3] text-gray-600 cursor-not-allowed"
+                  : "bg-[#F0F1F3] text-gray-300 hover:bg-[#222]"
               }`}
             >
               Sau

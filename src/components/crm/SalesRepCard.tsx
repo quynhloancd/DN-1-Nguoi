@@ -33,7 +33,7 @@ export default function SalesRepCard({ rep }: SalesRepCardProps) {
     .toUpperCase();
 
   return (
-    <div className="p-4 rounded-lg bg-[#1a1a1a] border border-[#2a2a2a]">
+    <div className="p-4 rounded-lg bg-[#F0F1F3] border border-[#E5E7EB]">
       {/* Header */}
       <div className="flex items-center gap-3 mb-3">
         {/* Avatar */}
@@ -45,18 +45,18 @@ export default function SalesRepCard({ rep }: SalesRepCardProps) {
               className="w-10 h-10 rounded-full object-cover"
             />
           ) : (
-            <div className="w-10 h-10 rounded-full bg-[#E85D04] flex items-center justify-center text-white text-sm font-bold">
+            <div className="w-10 h-10 rounded-full bg-[#E85D04] flex items-center justify-center text-[#1B2A4A] text-sm font-bold">
               {initials}
             </div>
           )}
           {rep.pending_actions > 0 && (
-            <div className="absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full bg-red-500 border-2 border-[#1a1a1a]" />
+            <div className="absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full bg-red-500 border-2 border-[#E5E7EB]" />
           )}
         </div>
 
         {/* Name and pending */}
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-bold text-white truncate">{rep.name}</p>
+          <p className="text-sm font-bold text-[#1B2A4A] truncate">{rep.name}</p>
           {rep.pending_actions > 0 && (
             <p className="text-xs text-red-400">
               {rep.pending_actions} hành động đang chờ
@@ -70,13 +70,13 @@ export default function SalesRepCard({ rep }: SalesRepCardProps) {
         {/* Contacts */}
         <div className="p-2 rounded bg-[#0f0f0f]">
           <p className="text-[10px] text-gray-500 uppercase tracking-wide">Liên hệ</p>
-          <p className="text-sm font-semibold text-white">{rep.total_contacts}</p>
+          <p className="text-sm font-semibold text-[#1B2A4A]">{rep.total_contacts}</p>
         </div>
 
         {/* Deals */}
         <div className="p-2 rounded bg-[#0f0f0f]">
           <p className="text-[10px] text-gray-500 uppercase tracking-wide">Deals</p>
-          <p className="text-sm font-semibold text-white">
+          <p className="text-sm font-semibold text-[#1B2A4A]">
             {rep.converted_contacts}/{rep.active_deals}
           </p>
         </div>

@@ -142,7 +142,7 @@ export default async function DashboardPage() {
         <div className="block lg:hidden space-y-5">
           {/* Greeting */}
           <div>
-            <h2 className="text-lg font-bold text-white">
+            <h2 className="text-lg font-bold text-[#1B2A4A]">
               Chào {displayName}! 👋
             </h2>
             <p className="text-sm text-gray-400 mt-0.5">
@@ -156,7 +156,7 @@ export default async function DashboardPage() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="card-dark p-3 flex flex-col items-center gap-2 hover:bg-[#1a1a1a] transition-colors"
+                className="card-dark p-3 flex flex-col items-center gap-2 hover:bg-[#F0F1F3] transition-colors"
               >
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center"
@@ -173,7 +173,7 @@ export default async function DashboardPage() {
           {myCourseProgress.length > 0 && (
             <div>
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-semibold text-white flex items-center gap-1.5">
+                <h3 className="text-sm font-semibold text-[#1B2A4A] flex items-center gap-1.5">
                   <BookOpen size={14} className="text-[#E85D04]" />
                   Khoá học của tôi
                 </h3>
@@ -186,7 +186,7 @@ export default async function DashboardPage() {
                   <Link
                     key={c.id}
                     href={`/courses/${c.slug}`}
-                    className="card-dark p-3 flex items-center gap-3 hover:bg-[#1a1a1a] transition-colors"
+                    className="card-dark p-3 flex items-center gap-3 hover:bg-[#F0F1F3] transition-colors"
                   >
                     {/* Thumbnail */}
                     <div className="w-12 h-12 rounded-lg bg-[#222] overflow-hidden shrink-0">
@@ -200,7 +200,7 @@ export default async function DashboardPage() {
                     </div>
                     {/* Info */}
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-white truncate">{c.title}</p>
+                      <p className="text-sm font-medium text-[#1B2A4A] truncate">{c.title}</p>
                       <div className="flex items-center gap-2 mt-1">
                         <div className="flex-1 h-1.5 rounded-full bg-[#2a2a2a] overflow-hidden">
                           <div
@@ -250,7 +250,7 @@ export default async function DashboardPage() {
           <div className="grid md:grid-cols-2 gap-4">
             {/* Welcome card */}
             <div className="card-dark p-5">
-              <h2 className="text-xl font-bold text-white mb-1">
+              <h2 className="text-xl font-bold text-[#1B2A4A] mb-1">
                 Xin chào, {displayName}! 👋
               </h2>
               <p className="text-gray-400 text-sm mb-4">
@@ -273,7 +273,7 @@ export default async function DashboardPage() {
               <div className="flex items-center justify-between mb-3">
                 <div>
                   <div className="text-xs text-gray-400 mb-0.5">Cấp độ của bạn</div>
-                  <div className="text-2xl font-bold text-white">Level {level}</div>
+                  <div className="text-2xl font-bold text-[#1B2A4A]">Level {level}</div>
                 </div>
                 <div
                   className="px-3 py-1 rounded-full text-xs font-semibold"
@@ -312,7 +312,7 @@ export default async function DashboardPage() {
                   <Link
                     key={c.id}
                     href={`/courses/${c.slug}`}
-                    className="card-dark p-4 flex items-center gap-4 hover:bg-[#1a1a1a] transition-colors group"
+                    className="card-dark p-4 flex items-center gap-4 hover:bg-[#F0F1F3] transition-colors group"
                   >
                     <div className="w-14 h-14 rounded-lg bg-[#222] overflow-hidden shrink-0">
                       {c.thumbnail ? (
@@ -324,7 +324,7 @@ export default async function DashboardPage() {
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-white truncate">{c.title}</p>
+                      <p className="text-sm font-medium text-[#1B2A4A] truncate">{c.title}</p>
                       <div className="flex items-center gap-2 mt-1.5">
                         <div className="flex-1 h-1.5 rounded-full bg-[#2a2a2a] overflow-hidden">
                           <div
@@ -369,7 +369,7 @@ export default async function DashboardPage() {
                   >
                     <card.icon size={18} style={{ color: card.color }} />
                   </div>
-                  <div className="text-sm font-semibold text-white group-hover:text-white leading-tight mb-1">
+                  <div className="text-sm font-semibold text-[#1B2A4A] group-hover:text-[#1B2A4A] leading-tight mb-1">
                     {card.label}
                   </div>
                   <div className="text-xs text-gray-400 leading-snug">{card.desc}</div>
@@ -439,7 +439,7 @@ export default async function DashboardPage() {
                         gradient="linear-gradient(135deg, #E85D04, #059669)"
                       />
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm text-white">
+                        <p className="text-sm text-[#1B2A4A]">
                           <span className="font-medium">{author}</span>
                           <span className="text-gray-400"> đã đăng: </span>
                           <span className="text-gray-300">{preview}</span>

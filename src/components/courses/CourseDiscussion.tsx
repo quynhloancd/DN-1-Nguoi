@@ -199,7 +199,7 @@ export default function CourseDiscussion({
       {/* Header */}
       <div className="flex items-center gap-2 mb-4">
         <MessageSquare size={18} className="text-[#E85D04]" />
-        <h3 className="text-sm font-bold text-white">
+        <h3 className="text-sm font-bold text-[#1B2A4A]">
           Thảo luận &mdash; {productTitle}
         </h3>
         <span className="text-xs text-gray-500 ml-auto">
@@ -214,7 +214,7 @@ export default function CourseDiscussion({
           onChange={(e) => setContent(e.target.value)}
           placeholder="Chia sẻ câu hỏi hoặc thảo luận với các học viên khác..."
           rows={3}
-          className="w-full bg-[#111] border border-[#2a2a2a] rounded-xl p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
+          className="w-full bg-white border border-[#E5E7EB] rounded-xl p-3 text-sm text-[#1B2A4A] placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
           maxLength={5000}
         />
         {postError && (
@@ -287,7 +287,7 @@ export default function CourseDiscussion({
                   />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium text-white">
+                      <span className="text-sm font-medium text-[#1B2A4A]">
                         {authorName}
                       </span>
                       {isVip && (
@@ -317,7 +317,7 @@ export default function CourseDiscussion({
                 )}
 
                 {/* Comment toggle */}
-                <div className="pt-2 border-t border-[#2a2a2a]">
+                <div className="pt-2 border-t border-[#E5E7EB]">
                   <button
                     onClick={() => toggleComments(post.id)}
                     className={`flex items-center gap-1.5 text-xs transition-colors ${
@@ -341,7 +341,7 @@ export default function CourseDiscussion({
                     opacity: openComments === post.id ? 1 : 0,
                   }}
                 >
-                  <div className="mt-3 pt-3 border-t border-[#2a2a2a]">
+                  <div className="mt-3 pt-3 border-t border-[#E5E7EB]">
                     {/* Loading */}
                     {commentsLoading[post.id] && (
                       <div className="flex items-center gap-2 py-3 justify-center">
@@ -374,7 +374,7 @@ export default function CourseDiscussion({
                                 />
                                 <div className="flex-1 min-w-0">
                                   <div className="flex items-center gap-2">
-                                    <span className="text-xs font-medium text-white">
+                                    <span className="text-xs font-medium text-[#1B2A4A]">
                                       {cName}
                                     </span>
                                     <span className="text-[10px] text-gray-500">
@@ -393,7 +393,7 @@ export default function CourseDiscussion({
                     )}
 
                     {/* Comment input */}
-                    <div className="flex gap-2 mt-3 pt-2 border-t border-[#2a2a2a]">
+                    <div className="flex gap-2 mt-3 pt-2 border-t border-[#E5E7EB]">
                       <input
                         type="text"
                         value={commentText[post.id] || ""}
@@ -410,7 +410,7 @@ export default function CourseDiscussion({
                           }
                         }}
                         placeholder="Viết bình luận..."
-                        className="flex-1 bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-1.5 text-xs text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
+                        className="flex-1 bg-white border border-[#E5E7EB] rounded-lg px-3 py-1.5 text-xs text-[#1B2A4A] placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
                       />
                       <button
                         onClick={() => handleCommentSubmit(post.id)}

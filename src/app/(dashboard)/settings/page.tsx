@@ -182,13 +182,13 @@ function ProfileTab({
 
       {/* Avatar */}
       <div className="card-dark p-6">
-        <h3 className="font-semibold text-white mb-4">Ảnh đại diện</h3>
+        <h3 className="font-semibold text-[#1B2A4A] mb-4">Ảnh đại diện</h3>
         <div className="flex items-center gap-5">
           {avatarUrl ? (
             <NextImage src={avatarUrl} alt="Avatar" width={80} height={80} className="w-20 h-20 rounded-full object-cover shrink-0" unoptimized />
           ) : (
             <div
-              className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold text-white shrink-0"
+              className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold text-[#1B2A4A] shrink-0"
               style={{ background: "linear-gradient(135deg, #E85D04, #059669)" }}
             >
               {initials}
@@ -196,7 +196,7 @@ function ProfileTab({
           )}
           <div>
             <label htmlFor="avatarUpload" className="px-3 py-1.5 rounded-lg text-sm font-medium mb-2 inline-flex cursor-pointer hover:bg-[#333] transition-colors"
-              style={{ background: "#2a2a2a", color: "#9ca3af" }}>
+              style={{ background: "#E5E7EB", color: "#9ca3af" }}>
               {uploadingAvatar ? "Đang tải..." : "Tải ảnh lên"}
               <input id="avatarUpload" type="file" accept="image/*" className="hidden" onChange={handleAvatarUpload} disabled={uploadingAvatar} />
             </label>
@@ -208,7 +208,7 @@ function ProfileTab({
 
       {/* Personal info form */}
       <div className="card-dark p-6">
-        <h3 className="font-semibold text-white mb-4">Thông tin cá nhân</h3>
+        <h3 className="font-semibold text-[#1B2A4A] mb-4">Thông tin cá nhân</h3>
         <form action={updateProfile} className="space-y-4">
           <div className="grid md:grid-cols-2 gap-4">
             <div>
@@ -268,7 +268,7 @@ function ProfileTab({
 
       {/* Social links (static for now) */}
       <div className="card-dark p-6">
-        <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
+        <h3 className="font-semibold text-[#1B2A4A] mb-4 flex items-center gap-2">
           <Globe size={16} /> Mạng xã hội
         </h3>
         <div className="space-y-3">
@@ -295,7 +295,7 @@ function ProfileTab({
 
       {/* Zalo link */}
       <div className="card-dark p-6">
-        <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
+        <h3 className="font-semibold text-[#1B2A4A] mb-4 flex items-center gap-2">
           <MessageCircle size={16} className="text-[#E85D04]" /> Liên kết Zalo
         </h3>
         {zaloLinked ? (
@@ -331,7 +331,7 @@ function ProfileTab({
             <p className="text-sm text-gray-400">
               Liên kết tài khoản Zalo để nhận thông báo đơn hàng, bài học mới và nhắc nhở học tập qua Zalo.
             </p>
-            <div className="p-3 rounded-lg text-xs text-gray-400 space-y-2" style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}>
+            <div className="p-3 rounded-lg text-xs text-gray-400 space-y-2" style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}>
               <p className="font-medium text-gray-300">Cách liên kết:</p>
               <ol className="list-decimal list-inside space-y-1">
                 <li>Mở Zalo và tìm kiếm OA &quot;Doanh Nghiệp 1 Người&quot;</li>
@@ -387,12 +387,12 @@ function NotificationsTab() {
     <div className="space-y-6">
       {groups.map((g) => (
         <div key={g.title} className="card-dark p-6">
-          <h3 className="font-semibold text-white mb-4">{g.title}</h3>
+          <h3 className="font-semibold text-[#1B2A4A] mb-4">{g.title}</h3>
           <div className="space-y-4">
             {g.items.map((item) => (
               <div key={item.key} className="flex items-center justify-between gap-4">
                 <div>
-                  <div className="text-sm text-white font-medium">{item.label}</div>
+                  <div className="text-sm text-[#1B2A4A] font-medium">{item.label}</div>
                   <div className="text-xs text-gray-500 mt-0.5">{item.desc}</div>
                 </div>
                 <button
@@ -514,7 +514,7 @@ function SecurityTab() {
     <div className="space-y-6">
       {/* Change password */}
       <div className="card-dark p-6">
-        <h3 className="font-semibold text-white mb-4">Đổi mật khẩu</h3>
+        <h3 className="font-semibold text-[#1B2A4A] mb-4">Đổi mật khẩu</h3>
 
         {isOAuthOnly === null ? (
           <p className="text-sm text-gray-400">Đang tải...</p>
@@ -658,7 +658,7 @@ function SecurityTab() {
               <button
                 onClick={handleDeleteAccount}
                 disabled={deleteLoading}
-                className="text-sm font-medium text-white bg-red-700 hover:bg-red-600 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-2 rounded-lg transition-colors"
+                className="text-sm font-medium text-[#1B2A4A] bg-red-700 hover:bg-red-600 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-2 rounded-lg transition-colors"
               >
                 {deleteLoading ? "Đang xoá..." : "Xác nhận xoá tài khoản"}
               </button>
@@ -712,7 +712,7 @@ function BillingTab() {
   return (
     <div className="space-y-6">
       <div className="card-dark p-6">
-        <h3 className="font-semibold text-white mb-4">Lịch sử thanh toán</h3>
+        <h3 className="font-semibold text-[#1B2A4A] mb-4">Lịch sử thanh toán</h3>
         {loading ? (
           <p className="text-sm text-gray-500">Đang tải...</p>
         ) : orders.length === 0 ? (
@@ -720,15 +720,15 @@ function BillingTab() {
         ) : (
           <div className="space-y-3">
             {orders.map((o) => (
-              <div key={o.id} className="flex items-center justify-between p-3 rounded-lg" style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}>
+              <div key={o.id} className="flex items-center justify-between p-3 rounded-lg" style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}>
                 <div>
-                  <div className="text-sm font-medium text-white">{o.product?.title ?? "Khoá học"}</div>
+                  <div className="text-sm font-medium text-[#1B2A4A]">{o.product?.title ?? "Khoá học"}</div>
                   <div className="text-xs text-gray-500 mt-0.5">
                     {new Date(o.created_at).toLocaleString("vi-VN", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Asia/Ho_Chi_Minh" })}
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-sm font-bold text-white">{o.amount.toLocaleString("vi-VN")}đ</div>
+                  <div className="text-sm font-bold text-[#1B2A4A]">{o.amount.toLocaleString("vi-VN")}đ</div>
                   <div className={`text-[10px] font-medium ${o.status === "paid" ? "text-[#22c55e]" : o.status === "pending" ? "text-[#f59e0b]" : "text-gray-500"}`}>
                     {o.status === "paid" ? "Đã thanh toán" : o.status === "pending" ? "Chờ thanh toán" : o.status}
                   </div>
@@ -764,7 +764,7 @@ export default function SettingsPage({
               style={
                 active === tab.id
                   ? { background: "rgba(212,168,67,0.1)", color: "#E85D04", border: "1px solid rgba(212,168,67,0.25)" }
-                  : { color: "#9ca3af", background: "#1a1a1a", border: "1px solid #2a2a2a" }
+                  : { color: "#9ca3af", background: "#F0F1F3", border: "1px solid #2a2a2a" }
               }
             >
               <tab.icon size={14} />

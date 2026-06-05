@@ -85,7 +85,7 @@ function DealCard({ deal, stageColor }: { deal: Deal; stageColor: string }) {
       className="card-dark p-3 rounded-lg"
       style={{ borderLeft: `3px solid ${stageColor}` }}
     >
-      <p className="text-sm font-semibold text-white truncate">{deal.title}</p>
+      <p className="text-sm font-semibold text-[#1B2A4A] truncate">{deal.title}</p>
 
       {deal.contacts && (
         <p className="text-xs text-gray-400 mt-1 truncate">
@@ -111,14 +111,14 @@ function DealCard({ deal, stageColor }: { deal: Deal; stageColor: string }) {
         </p>
       )}
 
-      <div className="flex items-center justify-between mt-2 pt-2 border-t border-[#2a2a2a]">
+      <div className="flex items-center justify-between mt-2 pt-2 border-t border-[#E5E7EB]">
         <span className="text-[11px] text-gray-500 flex items-center gap-1">
           <CalendarDays size={10} />
           {formatDate(deal.expected_close_date)}
         </span>
         {deal.assigned_profile && (
           <div
-            className="w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-bold text-white"
+            className="w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-bold text-[#1B2A4A]"
             style={{ background: "linear-gradient(135deg, #3b82f6, #1d4ed8)" }}
             title={deal.assigned_profile.full_name}
           >
@@ -201,7 +201,7 @@ export default async function PipelinePage({
             }}
           >
             <CheckCircle2 size={16} className="text-[#E85D04] shrink-0" />
-            <span className="text-white">{notification}</span>
+            <span className="text-[#1B2A4A]">{notification}</span>
           </div>
         )}
 
@@ -216,7 +216,7 @@ export default async function PipelinePage({
             </div>
             <div>
               <p className="text-xs text-gray-500">Tổng deals</p>
-              <p className="text-lg font-bold text-white">{totalDeals}</p>
+              <p className="text-lg font-bold text-[#1B2A4A]">{totalDeals}</p>
             </div>
           </div>
 
@@ -229,7 +229,7 @@ export default async function PipelinePage({
             </div>
             <div>
               <p className="text-xs text-gray-500">Giá trị pipeline</p>
-              <p className="text-lg font-bold text-white">{formatVND(totalValue)}</p>
+              <p className="text-lg font-bold text-[#1B2A4A]">{formatVND(totalValue)}</p>
             </div>
           </div>
 
@@ -242,7 +242,7 @@ export default async function PipelinePage({
             </div>
             <div>
               <p className="text-xs text-gray-500">Đã thắng</p>
-              <p className="text-lg font-bold text-white">{wonCount}</p>
+              <p className="text-lg font-bold text-[#1B2A4A]">{wonCount}</p>
             </div>
           </div>
 
@@ -255,14 +255,14 @@ export default async function PipelinePage({
             </div>
             <div>
               <p className="text-xs text-gray-500">Đã mất</p>
-              <p className="text-lg font-bold text-white">{lostCount}</p>
+              <p className="text-lg font-bold text-[#1B2A4A]">{lostCount}</p>
             </div>
           </div>
         </div>
 
         {/* Action button */}
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-bold text-white">Pipeline Board</h2>
+          <h2 className="text-lg font-bold text-[#1B2A4A]">Pipeline Board</h2>
           <Link
             href="/crm/pipeline?new=1"
             className="btn-green flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
@@ -275,7 +275,7 @@ export default async function PipelinePage({
         {/* New Deal Form */}
         {showNewForm && (
           <div className="card-dark p-5 rounded-xl">
-            <h3 className="text-sm font-semibold text-white mb-4">Tạo deal mới</h3>
+            <h3 className="text-sm font-semibold text-[#1B2A4A] mb-4">Tạo deal mới</h3>
             <form action={createDeal} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* Title */}
               <div className="sm:col-span-2 lg:col-span-2">
@@ -383,7 +383,7 @@ export default async function PipelinePage({
                 </button>
                 <Link
                   href="/crm/pipeline"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
                 >
                   Huỷ
                 </Link>
@@ -405,7 +405,7 @@ export default async function PipelinePage({
                   className="w-2 h-2 rounded-full"
                   style={{ background: stage.color }}
                 />
-                <span className="text-sm font-semibold text-white">
+                <span className="text-sm font-semibold text-[#1B2A4A]">
                   {stage.label}
                 </span>
                 <span className="text-xs text-gray-500 ml-auto">
@@ -425,7 +425,7 @@ export default async function PipelinePage({
                   ))
                 ) : (
                   <div
-                    className="rounded-lg p-4 text-center text-xs text-gray-500 border border-dashed border-[#2a2a2a]"
+                    className="rounded-lg p-4 text-center text-xs text-gray-500 border border-dashed border-[#E5E7EB]"
                   >
                     Chưa có deal
                   </div>

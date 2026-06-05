@@ -38,7 +38,7 @@ export default function ChangeRefCodeForm({ currentCode }: { currentCode: string
       <button
         type="button"
         onClick={() => setEditing(false)}
-        className="text-xs text-gray-500 hover:text-white transition-colors py-1.5 px-2"
+        className="text-xs text-gray-500 hover:text-[#1B2A4A] transition-colors py-1.5 px-2"
       >
         Huỷ
       </button>

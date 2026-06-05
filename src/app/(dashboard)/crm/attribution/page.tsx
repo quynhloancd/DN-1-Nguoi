@@ -179,7 +179,7 @@ export default async function AttributionPage({
         {/* Header with date filter */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h2 className="text-xl font-bold text-white flex items-center gap-2">
+            <h2 className="text-xl font-bold text-[#1B2A4A] flex items-center gap-2">
               <Target size={20} className="text-[#E85D04]" />
               Marketing Attribution
             </h2>
@@ -245,7 +245,7 @@ export default async function AttributionPage({
                   <stat.icon size={15} style={{ color: stat.color }} />
                 </div>
               </div>
-              <div className="text-xl font-bold text-white">{stat.value}</div>
+              <div className="text-xl font-bold text-[#1B2A4A]">{stat.value}</div>
             </div>
           ))}
         </div>
@@ -254,7 +254,7 @@ export default async function AttributionPage({
         <div className="card-dark p-5">
           <div className="flex items-center gap-2 mb-4">
             <BarChart2 size={16} className="text-[#E85D04]" />
-            <h3 className="font-semibold text-white text-sm">Phân bố nguồn khách hàng</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">Phân bố nguồn khách hàng</h3>
             <span className="text-xs text-gray-500 ml-auto">{totalTracked} contacts</span>
           </div>
 
@@ -268,18 +268,18 @@ export default async function AttributionPage({
                         className="w-3 h-3 rounded-sm"
                         style={{ background: getSourceColor(src.utm_source) }}
                       />
-                      <span className="text-white font-medium capitalize">
+                      <span className="text-[#1B2A4A] font-medium capitalize">
                         {src.utm_source}
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-gray-400 text-xs">{src.count} contacts</span>
-                      <span className="text-white font-semibold text-xs w-12 text-right">
+                      <span className="text-[#1B2A4A] font-semibold text-xs w-12 text-right">
                         {src.percentage.toFixed(1)}%
                       </span>
                     </div>
                   </div>
-                  <div className="h-2 rounded-full overflow-hidden" style={{ background: "#1a1a1a" }}>
+                  <div className="h-2 rounded-full overflow-hidden" style={{ background: "#F0F1F3" }}>
                     <div
                       className="h-full rounded-full transition-all"
                       style={{
@@ -301,10 +301,10 @@ export default async function AttributionPage({
 
         {/* Source Breakdown Table */}
         <div className="card-dark overflow-hidden">
-          <div className="flex items-center justify-between p-5 border-b border-[#2a2a2a]">
+          <div className="flex items-center justify-between p-5 border-b border-[#E5E7EB]">
             <div className="flex items-center gap-2">
               <Globe size={16} className="text-[#E85D04]" />
-              <h3 className="font-semibold text-white text-sm">Chi tiết theo nguồn</h3>
+              <h3 className="font-semibold text-[#1B2A4A] text-sm">Chi tiết theo nguồn</h3>
             </div>
             <span className="text-xs text-gray-500">{sourceRows.length} sources</span>
           </div>
@@ -339,16 +339,16 @@ export default async function AttributionPage({
                             className="w-3 h-3 rounded-sm shrink-0"
                             style={{ background: getSourceColor(row.utm_source) }}
                           />
-                          <span className="text-white font-medium capitalize">
+                          <span className="text-[#1B2A4A] font-medium capitalize">
                             {row.utm_source}
                           </span>
                         </div>
                       </td>
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-2">
-                          <span className="text-white font-semibold">{row.count}</span>
+                          <span className="text-[#1B2A4A] font-semibold">{row.count}</span>
                           <div className="flex-1 max-w-[80px]">
-                            <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "#1a1a1a" }}>
+                            <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "#F0F1F3" }}>
                               <div
                                 className="h-full rounded-full"
                                 style={{
@@ -381,7 +381,7 @@ export default async function AttributionPage({
                       </td>
                       <td className="px-4 py-3">
                         <div className="flex-1 max-w-[60px]">
-                          <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "#1a1a1a" }}>
+                          <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "#F0F1F3" }}>
                             <div
                               className="h-full rounded-full"
                               style={{
@@ -406,10 +406,10 @@ export default async function AttributionPage({
 
         {/* Campaign Performance Table */}
         <div className="card-dark overflow-hidden">
-          <div className="flex items-center justify-between p-5 border-b border-[#2a2a2a]">
+          <div className="flex items-center justify-between p-5 border-b border-[#E5E7EB]">
             <div className="flex items-center gap-2">
               <Target size={16} className="text-[#E85D04]" />
-              <h3 className="font-semibold text-white text-sm">Hiệu quả chiến dịch</h3>
+              <h3 className="font-semibold text-[#1B2A4A] text-sm">Hiệu quả chiến dịch</h3>
             </div>
             <span className="text-xs text-gray-500">{campaignRows.length} campaigns</span>
           </div>
@@ -441,7 +441,7 @@ export default async function AttributionPage({
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-2">
                           <ExternalLink size={12} className="text-gray-500 shrink-0" />
-                          <span className="text-white font-medium">{row.utm_campaign}</span>
+                          <span className="text-[#1B2A4A] font-medium">{row.utm_campaign}</span>
                         </div>
                       </td>
                       <td className="px-4 py-3">
@@ -465,7 +465,7 @@ export default async function AttributionPage({
                         </div>
                       </td>
                       <td className="px-4 py-3">
-                        <span className="text-white font-semibold">{row.count}</span>
+                        <span className="text-[#1B2A4A] font-semibold">{row.count}</span>
                       </td>
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-2">
@@ -481,7 +481,7 @@ export default async function AttributionPage({
                             {formatVND(row.revenue)}
                           </span>
                           <div className="flex-1 max-w-[60px]">
-                            <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "#1a1a1a" }}>
+                            <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "#F0F1F3" }}>
                               <div
                                 className="h-full rounded-full"
                                 style={{
@@ -509,7 +509,7 @@ export default async function AttributionPage({
         <div className="card-dark p-5">
           <div className="flex items-center gap-2 mb-4">
             <TrendingUp size={16} className="text-[#E85D04]" />
-            <h3 className="font-semibold text-white text-sm">Journey Stage theo nguồn</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">Journey Stage theo nguồn</h3>
           </div>
 
           {/* Legend */}
@@ -534,13 +534,13 @@ export default async function AttributionPage({
                           className="w-3 h-3 rounded-sm"
                           style={{ background: getSourceColor(row.utm_source) }}
                         />
-                        <span className="text-sm text-white font-medium capitalize">
+                        <span className="text-sm text-[#1B2A4A] font-medium capitalize">
                           {row.utm_source}
                         </span>
                       </div>
                       <span className="text-xs text-gray-500">{total} contacts</span>
                     </div>
-                    <div className="h-4 rounded-full overflow-hidden flex" style={{ background: "#1a1a1a" }}>
+                    <div className="h-4 rounded-full overflow-hidden flex" style={{ background: "#F0F1F3" }}>
                       {Object.entries(STAGE_COLORS).map(([stage, cfg]) => {
                         const stageCount = row.stages[stage] || 0;
                         if (stageCount === 0) return null;

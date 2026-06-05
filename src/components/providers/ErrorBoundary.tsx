@@ -44,7 +44,7 @@ export class ErrorBoundary extends Component<
             justifyContent: "center",
             minHeight: "50vh",
             padding: "2rem",
-            backgroundColor: "#0a0a0a",
+            backgroundColor: "#F8F9FA",
             color: "#f5f5f5",
             fontFamily:
               '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
@@ -56,7 +56,7 @@ export class ErrorBoundary extends Component<
               textAlign: "center",
               padding: "2.5rem",
               borderRadius: "1rem",
-              backgroundColor: "#111111",
+              backgroundColor: "#FFFFFF",
               border: "1px solid #222222",
             }}
           >
@@ -94,7 +94,7 @@ export class ErrorBoundary extends Component<
                 style={{
                   fontSize: "0.75rem",
                   color: "#ef4444",
-                  backgroundColor: "#1a1a1a",
+                  backgroundColor: "#F0F1F3",
                   padding: "0.75rem",
                   borderRadius: "0.5rem",
                   marginBottom: "1.5rem",
@@ -114,7 +114,7 @@ export class ErrorBoundary extends Component<
                 padding: "0.625rem 1.5rem",
                 fontSize: "0.95rem",
                 fontWeight: 600,
-                color: "#0a0a0a",
+                color: "#F8F9FA",
                 backgroundColor: "#E85D04",
                 border: "none",
                 borderRadius: "0.5rem",

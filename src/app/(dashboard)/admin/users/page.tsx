@@ -483,7 +483,7 @@ export default async function AdminUsersPage({
             {searchQuery && (
               <Link
                 href={`/admin/users${activeTab !== "all" ? `?tab=${activeTab}` : ""}`}
-                className="flex items-center px-3 py-2 text-xs text-gray-400 hover:text-white transition-colors"
+                className="flex items-center px-3 py-2 text-xs text-gray-400 hover:text-[#1B2A4A] transition-colors"
               >
                 Xoá
               </Link>
@@ -516,7 +516,7 @@ export default async function AdminUsersPage({
                   <ShoppingCart size={18} className="text-[#E85D04]" />
                 </div>
               </div>
-              <div className="text-2xl font-bold text-white">{filteredUsers.length}</div>
+              <div className="text-2xl font-bold text-[#1B2A4A]">{filteredUsers.length}</div>
               <div className="text-xs font-semibold text-gray-300">Khách đã mua</div>
               <div className="text-[11px] text-gray-500">có ít nhất 1 đơn thanh toán</div>
             </div>
@@ -551,7 +551,7 @@ export default async function AdminUsersPage({
                   <ShoppingCart size={18} className="text-[#f59e0b]" />
                 </div>
               </div>
-              <div className="text-2xl font-bold text-white">
+              <div className="text-2xl font-bold text-[#1B2A4A]">
                 {filteredUsers.reduce((sum, u) => {
                   const info = orderMap.get((u.email ?? "").toLowerCase());
                   return sum + (info?.paidCount ?? 0);
@@ -570,7 +570,7 @@ export default async function AdminUsersPage({
                   <DollarSign size={18} className="text-[#3b82f6]" />
                 </div>
               </div>
-              <div className="text-2xl font-bold text-white">
+              <div className="text-2xl font-bold text-[#1B2A4A]">
                 {filteredUsers.length > 0
                   ? formatVND(
                       Math.round(
@@ -597,7 +597,7 @@ export default async function AdminUsersPage({
                   <tabConfig.icon size={18} style={{ color: tabConfig.color }} />
                 </div>
               </div>
-              <div className="text-2xl font-bold text-white">{filteredUsers.length}</div>
+              <div className="text-2xl font-bold text-[#1B2A4A]">{filteredUsers.length}</div>
               <div className="text-xs font-semibold text-gray-300">
                 {tabConfig.label}
               </div>
@@ -615,7 +615,7 @@ export default async function AdminUsersPage({
                   <Star size={18} className="text-[#E85D04]" />
                 </div>
               </div>
-              <div className="text-2xl font-bold text-white">
+              <div className="text-2xl font-bold text-[#1B2A4A]">
                 {filteredUsers.reduce((sum, u) => sum + (u.xp ?? 0), 0).toLocaleString("vi-VN")}
               </div>
               <div className="text-xs font-semibold text-gray-300">Tổng XP</div>
@@ -631,7 +631,7 @@ export default async function AdminUsersPage({
                   <Flame size={18} className="text-[#f59e0b]" />
                 </div>
               </div>
-              <div className="text-2xl font-bold text-white">
+              <div className="text-2xl font-bold text-[#1B2A4A]">
                 {filteredUsers.filter((u) => (u.streak ?? 0) > 0).length}
               </div>
               <div className="text-xs font-semibold text-gray-300">Đang streak</div>
@@ -647,7 +647,7 @@ export default async function AdminUsersPage({
                   <Clock size={18} className="text-[#3b82f6]" />
                 </div>
               </div>
-              <div className="text-2xl font-bold text-white">
+              <div className="text-2xl font-bold text-[#1B2A4A]">
                 {filteredUsers.filter((u) => {
                   if (!u.last_login) return false;
                   return Date.now() - new Date(u.last_login).getTime() < 7 * 86400000;
@@ -687,7 +687,7 @@ export default async function AdminUsersPage({
             style={{ borderBottom: "1px solid #2a2a2a" }}
           >
             <span className="text-xs text-gray-500">
-              <span className="text-white font-semibold">{totalFiltered}</span> người dùng
+              <span className="text-[#1B2A4A] font-semibold">{totalFiltered}</span> người dùng
               {searchQuery && " (đã lọc)"}
               {totalPages > 1 && (
                 <> &middot; Trang {safePage}/{totalPages}</>
@@ -750,7 +750,7 @@ export default async function AdminUsersPage({
                             tier={profile.tier}
                           />
                           <div className="min-w-0">
-                            <div className="font-medium text-white truncate">
+                            <div className="font-medium text-[#1B2A4A] truncate">
                               {profile.full_name || "Chưa đặt tên"}
                             </div>
                             {profile.email && (
@@ -846,7 +846,7 @@ export default async function AdminUsersPage({
 
                           {/* XP / Level */}
                           <td className="px-4 py-3 whitespace-nowrap">
-                            <div className="font-semibold text-white">
+                            <div className="font-semibold text-[#1B2A4A]">
                               {(profile.xp ?? 0).toLocaleString("vi-VN")} XP
                             </div>
                             <div className="text-[11px] text-gray-500">
@@ -918,36 +918,36 @@ export default async function AdminUsersPage({
               {safePage > 1 ? (
                 <Link
                   href={buildPageUrl(safePage - 1)}
-                  className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-colors"
-                  style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                  className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
+                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
                   ← Trước
                 </Link>
               ) : (
                 <span
                   className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-600 cursor-not-allowed"
-                  style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
                   ← Trước
                 </span>
               )}
 
               <span className="text-sm text-gray-400">
-                Trang <span className="text-white font-semibold">{safePage}</span> / {totalPages}
+                Trang <span className="text-[#1B2A4A] font-semibold">{safePage}</span> / {totalPages}
               </span>
 
               {safePage < totalPages ? (
                 <Link
                   href={buildPageUrl(safePage + 1)}
-                  className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-colors"
-                  style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                  className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
+                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
                   Tiếp →
                 </Link>
               ) : (
                 <span
                   className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-600 cursor-not-allowed"
-                  style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
                   Tiếp →
                 </span>

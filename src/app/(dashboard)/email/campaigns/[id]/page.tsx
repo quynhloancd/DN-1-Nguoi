@@ -329,7 +329,7 @@ export default function EditCampaignPage() {
           {/* Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="stat-card text-center">
-              <div className="text-2xl font-bold text-white">{campaign.sent_count?.toLocaleString("vi-VN") ?? 0}</div>
+              <div className="text-2xl font-bold text-[#1B2A4A]">{campaign.sent_count?.toLocaleString("vi-VN") ?? 0}</div>
               <div className="text-xs text-gray-500 mt-1">Da gui</div>
             </div>
             <div className="stat-card text-center">
@@ -341,30 +341,30 @@ export default function EditCampaignPage() {
               <div className="text-xs text-gray-500 mt-1">Click rate</div>
             </div>
             <div className="stat-card text-center">
-              <div className="text-2xl font-bold text-white">{campaign.total_recipients?.toLocaleString("vi-VN") ?? 0}</div>
+              <div className="text-2xl font-bold text-[#1B2A4A]">{campaign.total_recipients?.toLocaleString("vi-VN") ?? 0}</div>
               <div className="text-xs text-gray-500 mt-1">Tong nguoi nhan</div>
             </div>
           </div>
 
           {/* Details */}
           <div className="card-dark p-6 space-y-4">
-            <h2 className="text-white font-semibold text-base">Chi tiet</h2>
+            <h2 className="text-[#1B2A4A] font-semibold text-base">Chi tiet</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
               <div>
                 <p className="text-[11px] text-gray-500 mb-0.5">Subject</p>
-                <p className="text-white">{campaign.subject}</p>
+                <p className="text-[#1B2A4A]">{campaign.subject}</p>
               </div>
               <div>
                 <p className="text-[11px] text-gray-500 mb-0.5">Nguoi gui</p>
-                <p className="text-white">{campaign.from_name} &lt;{campaign.from_email}&gt;</p>
+                <p className="text-[#1B2A4A]">{campaign.from_name} &lt;{campaign.from_email}&gt;</p>
               </div>
               <div>
                 <p className="text-[11px] text-gray-500 mb-0.5">Gui luc</p>
-                <p className="text-white">{formatDate(campaign.sent_at)}</p>
+                <p className="text-[#1B2A4A]">{formatDate(campaign.sent_at)}</p>
               </div>
               <div>
                 <p className="text-[11px] text-gray-500 mb-0.5">Tao luc</p>
-                <p className="text-white">{formatDate(campaign.created_at)}</p>
+                <p className="text-[#1B2A4A]">{formatDate(campaign.created_at)}</p>
               </div>
             </div>
 
@@ -382,7 +382,7 @@ export default function EditCampaignPage() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => router.push("/email/campaigns")}
-              className="px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-white transition-colors"
+              className="px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
               style={{ border: "1px solid #2a2a2a" }}
             >
               Quay lai
@@ -444,7 +444,7 @@ export default function EditCampaignPage() {
                 </span>
               </button>
               {i < STEPS.length - 1 && (
-                <div className="flex-1 h-px mx-3" style={{ background: i < step ? "#E85D04" : "#2a2a2a" }} />
+                <div className="flex-1 h-px mx-3" style={{ background: i < step ? "#E85D04" : "#E5E7EB" }} />
               )}
             </div>
           ))}
@@ -460,7 +460,7 @@ export default function EditCampaignPage() {
         {/* Step 1 */}
         {step === 0 && (
           <div className="card-dark p-6 space-y-5">
-            <h2 className="text-white font-semibold text-base flex items-center gap-2">
+            <h2 className="text-[#1B2A4A] font-semibold text-base flex items-center gap-2">
               <FileText size={18} className="text-[#E85D04]" /> Thong tin co ban
             </h2>
             <div>
@@ -492,7 +492,7 @@ export default function EditCampaignPage() {
         {/* Step 2 */}
         {step === 1 && (
           <div className="card-dark p-6 space-y-5">
-            <h2 className="text-white font-semibold text-base flex items-center gap-2">
+            <h2 className="text-[#1B2A4A] font-semibold text-base flex items-center gap-2">
               <Users size={18} className="text-[#E85D04]" /> Nguoi nhan
             </h2>
             <div>
@@ -508,7 +508,7 @@ export default function EditCampaignPage() {
               <div className="flex items-center gap-3 p-4 rounded-lg" style={{ background: "rgba(212,168,67,0.06)", border: "1px solid rgba(212,168,67,0.15)" }}>
                 <Users size={18} className="text-[#E85D04]" />
                 <div>
-                  <p className="text-white text-sm font-medium">{subscriberCount.toLocaleString("vi-VN")} nguoi nhan</p>
+                  <p className="text-[#1B2A4A] text-sm font-medium">{subscriberCount.toLocaleString("vi-VN")} nguoi nhan</p>
                   <p className="text-xs text-gray-500">{listId ? "Trong danh sach da chon" : "Tat ca subscribers"}</p>
                 </div>
               </div>
@@ -524,7 +524,7 @@ export default function EditCampaignPage() {
                 onClick={() => setContentMode("template")}
                 className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors"
                 style={{
-                  background: contentMode === "template" ? "rgba(212,168,67,0.12)" : "#1f1f1f",
+                  background: contentMode === "template" ? "rgba(212,168,67,0.12)" : "#E5E7EB",
                   color: contentMode === "template" ? "#E85D04" : "#9ca3af",
                   border: contentMode === "template" ? "1px solid rgba(212,168,67,0.3)" : "1px solid #2a2a2a",
                 }}
@@ -535,7 +535,7 @@ export default function EditCampaignPage() {
                 onClick={() => setContentMode("custom")}
                 className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors"
                 style={{
-                  background: contentMode === "custom" ? "rgba(212,168,67,0.12)" : "#1f1f1f",
+                  background: contentMode === "custom" ? "rgba(212,168,67,0.12)" : "#E5E7EB",
                   color: contentMode === "custom" ? "#E85D04" : "#9ca3af",
                   border: contentMode === "custom" ? "1px solid rgba(212,168,67,0.3)" : "1px solid #2a2a2a",
                 }}
@@ -546,7 +546,7 @@ export default function EditCampaignPage() {
 
             {contentMode === "template" && (
               <div className="card-dark p-5">
-                <h3 className="text-white font-semibold text-sm mb-4">Chon template</h3>
+                <h3 className="text-[#1B2A4A] font-semibold text-sm mb-4">Chon template</h3>
                 {templatesLoading ? (
                   <div className="flex items-center justify-center py-8"><Loader2 size={20} className="animate-spin text-gray-500" /></div>
                 ) : templates.length === 0 ? (
@@ -559,7 +559,7 @@ export default function EditCampaignPage() {
                         <div key={tpl.id} onClick={() => selectTemplate(tpl)} className="rounded-lg p-4 cursor-pointer transition-all"
                           style={{ background: selectedTemplate === tpl.id ? "rgba(212,168,67,0.08)" : "#252525", border: selectedTemplate === tpl.id ? "2px solid #E85D04" : "2px solid #333" }}>
                           <div className="flex items-start justify-between mb-2">
-                            <h4 className="text-white text-sm font-medium truncate flex-1">{tpl.name}</h4>
+                            <h4 className="text-[#1B2A4A] text-sm font-medium truncate flex-1">{tpl.name}</h4>
                             {selectedTemplate === tpl.id && <Check size={14} className="text-[#E85D04] shrink-0 ml-2" />}
                           </div>
                           <p className="text-xs text-gray-500 truncate mb-2">{tpl.subject}</p>
@@ -574,7 +574,7 @@ export default function EditCampaignPage() {
 
             <div className="card-dark p-5 space-y-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-white font-semibold text-sm">Noi dung HTML</h3>
+                <h3 className="text-[#1B2A4A] font-semibold text-sm">Noi dung HTML</h3>
                 <button onClick={() => setPreviewOpen(true)} disabled={!htmlContent}
                   className="flex items-center gap-1.5 text-xs text-[#E85D04] hover:underline disabled:opacity-40">
                   <Eye size={12} /> Xem truoc
@@ -611,15 +611,15 @@ export default function EditCampaignPage() {
         {step === 3 && (
           <div className="space-y-4">
             <div className="card-dark p-6 space-y-4">
-              <h2 className="text-white font-semibold text-base flex items-center gap-2">
+              <h2 className="text-[#1B2A4A] font-semibold text-base flex items-center gap-2">
                 <Send size={18} className="text-[#E85D04]" /> Xem lai campaign
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div><p className="text-[11px] text-gray-500 mb-0.5">Ten campaign</p><p className="text-white text-sm">{name || "--"}</p></div>
-                <div><p className="text-[11px] text-gray-500 mb-0.5">Subject line</p><p className="text-white text-sm">{subject || "--"}</p></div>
-                <div><p className="text-[11px] text-gray-500 mb-0.5">Nguoi gui</p><p className="text-white text-sm">{fromName} &lt;{fromEmail}&gt;</p></div>
+                <div><p className="text-[11px] text-gray-500 mb-0.5">Ten campaign</p><p className="text-[#1B2A4A] text-sm">{name || "--"}</p></div>
+                <div><p className="text-[11px] text-gray-500 mb-0.5">Subject line</p><p className="text-[#1B2A4A] text-sm">{subject || "--"}</p></div>
+                <div><p className="text-[11px] text-gray-500 mb-0.5">Nguoi gui</p><p className="text-[#1B2A4A] text-sm">{fromName} &lt;{fromEmail}&gt;</p></div>
                 <div><p className="text-[11px] text-gray-500 mb-0.5">Nguoi nhan</p>
-                  <p className="text-white text-sm">{listId ? lists.find((l) => l.id === listId)?.name : "Tat ca subscribers"}
+                  <p className="text-[#1B2A4A] text-sm">{listId ? lists.find((l) => l.id === listId)?.name : "Tat ca subscribers"}
                     {subscriberCount !== null && <span className="text-gray-500 ml-1">({subscriberCount.toLocaleString("vi-VN")})</span>}
                   </p>
                 </div>
@@ -633,7 +633,7 @@ export default function EditCampaignPage() {
 
             {/* Test email */}
             <div className="card-dark p-5 space-y-3">
-              <h3 className="text-white font-semibold text-sm flex items-center gap-2">
+              <h3 className="text-[#1B2A4A] font-semibold text-sm flex items-center gap-2">
                 <Mail size={15} className="text-[#3b82f6]" /> Gui email test
               </h3>
               <div className="flex gap-2">
@@ -650,12 +650,12 @@ export default function EditCampaignPage() {
 
             {/* Schedule */}
             <div className="card-dark p-5 space-y-4">
-              <h3 className="text-white font-semibold text-sm flex items-center gap-2">
+              <h3 className="text-[#1B2A4A] font-semibold text-sm flex items-center gap-2">
                 <Clock size={15} className="text-[#f59e0b]" /> Len lich gui
               </h3>
               <div className="flex items-center gap-3">
                 <input type="datetime-local" value={scheduledAt} onChange={(e) => setScheduledAt(e.target.value)} className="input-dark text-sm flex-1" />
-                {scheduledAt && <button onClick={() => setScheduledAt("")} className="text-gray-500 hover:text-white"><X size={16} /></button>}
+                {scheduledAt && <button onClick={() => setScheduledAt("")} className="text-gray-500 hover:text-[#1B2A4A]"><X size={16} /></button>}
               </div>
             </div>
 
@@ -680,7 +680,7 @@ export default function EditCampaignPage() {
         {/* Navigation */}
         <div className="flex items-center justify-between pt-2">
           <button onClick={() => goToStep(Math.max(0, step - 1))} disabled={step === 0}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-white transition-colors disabled:opacity-30"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors disabled:opacity-30"
             style={{ border: "1px solid #2a2a2a" }}>
             <ChevronLeft size={15} /> Quay lai
           </button>

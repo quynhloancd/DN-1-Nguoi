@@ -235,7 +235,7 @@ export default function AdminFeaturedCoursesPage() {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="font-bold text-white text-base">
+            <h2 className="font-bold text-[#1B2A4A] text-base">
               Khoá học nổi bật ({items.length}/3)
             </h2>
             <p className="text-xs text-gray-500 mt-0.5">
@@ -259,7 +259,7 @@ export default function AdminFeaturedCoursesPage() {
         {/* Form */}
         {showForm && (
           <div className="card-dark p-5 space-y-4">
-            <h3 className="text-sm font-semibold text-white">
+            <h3 className="text-sm font-semibold text-[#1B2A4A]">
               {editingId ? "Chỉnh sửa khoá học nổi bật" : "Thêm khoá học nổi bật"}
             </h3>
 
@@ -378,7 +378,7 @@ export default function AdminFeaturedCoursesPage() {
                     <span className="badge-green text-[10px] shrink-0">
                       {item.badge_text}
                     </span>
-                    <span className="text-sm text-white font-medium truncate">
+                    <span className="text-sm text-[#1B2A4A] font-medium truncate">
                       {item.products?.title || "Khoá học"}
                     </span>
                   </div>
@@ -415,7 +415,7 @@ export default function AdminFeaturedCoursesPage() {
                   </button>
                   <button
                     onClick={() => handleEdit(item)}
-                    className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
+                    className="p-1.5 rounded-lg text-gray-400 hover:text-[#1B2A4A] hover:bg-white/5 transition-colors"
                   >
                     <Edit2 size={15} />
                   </button>

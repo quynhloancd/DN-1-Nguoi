@@ -38,7 +38,7 @@ export default function EmailNav() {
       style={{
         background: "rgba(10,10,10,0.95)",
         backdropFilter: "blur(8px)",
-        borderColor: "#2a2a2a",
+        borderColor: "#E5E7EB",
       }}
     >
       <div className="max-w-6xl mx-auto px-6">
@@ -52,7 +52,7 @@ export default function EmailNav() {
                 className={`flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
                   active
                     ? "border-[#E85D04] text-[#E85D04]"
-                    : "border-transparent text-[#9ca3af] hover:text-white hover:border-[#2a2a2a]"
+                    : "border-transparent text-[#9ca3af] hover:text-[#1B2A4A] hover:border-[#E5E7EB]"
                 }`}
               >
                 <tab.icon size={14} />

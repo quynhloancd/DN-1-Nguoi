@@ -155,13 +155,13 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
       className="flex flex-col h-screen transition-all duration-300"
       style={{
         width: isMobile ? 260 : isCompact ? 64 : 240,
-        background: "#111111",
-        borderRight: isMobile ? "none" : "1px solid #1f1f1f",
+        background: "#FFFFFF",
+        borderRight: isMobile ? "none" : "1px solid #E5E7EB",
         flexShrink: 0,
       }}
     >
       {/* Logo */}
-      <div className="flex items-center justify-between px-4 h-16 border-b border-[#1f1f1f]">
+      <div className="flex items-center justify-between px-4 h-16 border-b border-[#E5E7EB]">
         {!isCompact && (
           <Link href="/dashboard" className="flex items-center gap-2.5">
             <Image
@@ -173,7 +173,7 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
               className="w-8 h-8 rounded-lg object-cover"
             />
             <div>
-              <div className="text-sm font-bold text-white leading-tight">{siteConfig.owner.name}</div>
+              <div className="text-sm font-bold text-[#1B2A4A] leading-tight">{siteConfig.owner.name}</div>
               <div className="text-[10px] text-gray-500 leading-tight">Doanh Nghiệp 1 Người</div>
             </div>
           </Link>
@@ -193,14 +193,14 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
         {isMobile ? (
           <button
             onClick={closeMobile}
-            className="text-gray-500 hover:text-white transition-colors p-1 rounded ml-auto"
+            className="text-gray-500 hover:text-[#1B2A4A] transition-colors p-1 rounded ml-auto"
           >
             <X size={18} />
           </button>
         ) : (
           <button
             onClick={onToggle}
-            className="text-gray-500 hover:text-white transition-colors p-1 rounded ml-auto"
+            className="text-gray-500 hover:text-[#1B2A4A] transition-colors p-1 rounded ml-auto"
           >
             {isCompact ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
           </button>
@@ -246,7 +246,7 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
                           <Link
                             key={sub.href}
                             href={sub.href}
-                            className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs text-gray-400 hover:text-white hover:bg-[#1a1a1a] transition-colors"
+                            className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs text-gray-500 hover:text-[#1B2A4A] hover:bg-[#F0F1F3] transition-colors"
                           >
                             <sub.icon size={13} style={{ color: sub.color }} className="shrink-0" />
                             <span className="truncate">{sub.label}</span>
@@ -356,14 +356,14 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
           href={siteConfig.socials.zalo}
           target="_blank"
           rel="noopener noreferrer"
-          className="block mx-3 mb-3 p-3 rounded-xl border border-[#E85D04]/20 hover:bg-[#1a1a1a] transition-colors"
+          className="block mx-3 mb-3 p-3 rounded-xl border border-[#E85D04]/20 hover:bg-[#FFF3E0] transition-colors"
           style={{ background: "rgba(232,93,4,0.08)" }}
         >
           <div className="flex items-center gap-2 mb-1.5">
             <Star size={14} className="text-[#E85D04]" />
             <span className="text-xs font-semibold text-[#E85D04]">Cần tư vấn?</span>
           </div>
-          <p className="text-[11px] text-gray-400 mb-2">Tư vấn khoá học phù hợp nhu cầu của bạn</p>
+          <p className="text-[11px] text-gray-500 mb-2">Tư vấn khoá học phù hợp nhu cầu của bạn</p>
           <span className="btn-green w-full text-xs py-1.5 justify-center inline-flex items-center">Liên hệ tư vấn</span>
         </a>
       )}
@@ -404,7 +404,7 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
       )}
 
       {/* User + Logout */}
-      <div className="border-t border-[#1f1f1f] p-3">
+      <div className="border-t border-[#E5E7EB] p-3">
         {!isCompact ? (
           <div className="space-y-3">
             <div className="flex items-center gap-3">
@@ -415,15 +415,15 @@ export default function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
                 gradient="linear-gradient(135deg, #E85D04, #059669)"
               />
               <div className="flex-1 min-w-0">
-                <div className="text-sm font-medium text-white truncate">{displayName}</div>
+                <div className="text-sm font-medium text-[#1B2A4A] truncate">{displayName}</div>
                 {email && <div className="text-[11px] text-gray-500 truncate">{email}</div>}
               </div>
             </div>
             <form action={signOut}>
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-red-400 transition-colors"
-                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid #1f1f1f" }}
+                className="w-full flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-medium text-gray-500 hover:text-red-500 transition-colors"
+                style={{ background: "#F8F9FA", border: "1px solid #E5E7EB" }}
               >
                 <LogOut size={14} />
                 Đăng xuất

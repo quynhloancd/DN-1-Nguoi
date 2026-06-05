@@ -160,7 +160,7 @@ export default function ModerationPage() {
             <div className="text-xs text-gray-400 mt-1">Bài đã ẩn</div>
           </div>
           <div className="card-dark p-4 text-center">
-            <div className="text-2xl font-bold text-white">{posts.length}</div>
+            <div className="text-2xl font-bold text-[#1B2A4A]">{posts.length}</div>
             <div className="text-xs text-gray-400 mt-1">Tổng cần xem</div>
           </div>
         </div>
@@ -175,7 +175,7 @@ export default function ModerationPage() {
               className={`flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg transition-colors ${
                 filter === f.key
                   ? "bg-[#E85D04] text-black font-medium"
-                  : "bg-[#1a1a1a] text-gray-400 hover:text-white hover:bg-[#2a2a2a]"
+                  : "bg-[#F0F1F3] text-gray-400 hover:text-[#1B2A4A] hover:bg-[#2a2a2a]"
               }`}
             >
               <f.icon size={12} />
@@ -184,7 +184,7 @@ export default function ModerationPage() {
           ))}
           <button
             onClick={() => fetchPosts()}
-            className="ml-auto flex items-center gap-1.5 text-xs text-gray-400 hover:text-white px-3 py-1.5 rounded-lg bg-[#1a1a1a] hover:bg-[#2a2a2a] transition-colors"
+            className="ml-auto flex items-center gap-1.5 text-xs text-gray-400 hover:text-[#1B2A4A] px-3 py-1.5 rounded-lg bg-[#F0F1F3] hover:bg-[#2a2a2a] transition-colors"
           >
             <RefreshCw size={12} />
             Làm mới
@@ -214,7 +214,7 @@ export default function ModerationPage() {
         {!loading && posts.length === 0 && (
           <div className="card-dark p-12 text-center">
             <Shield size={40} className="text-green-500 mx-auto mb-3" />
-            <h3 className="text-lg font-semibold text-white mb-1">Không có bài viết nào</h3>
+            <h3 className="text-lg font-semibold text-[#1B2A4A] mb-1">Không có bài viết nào</h3>
             <p className="text-sm text-gray-400">Cộng đồng đang an toàn! Không có nội dung cần kiểm duyệt.</p>
           </div>
         )}
@@ -262,7 +262,7 @@ export default function ModerationPage() {
                   gradient="linear-gradient(135deg, #3b82f6, #1d4ed8)"
                 />
                 <div className="flex-1">
-                  <span className="text-sm font-medium text-white">{fullName}</span>
+                  <span className="text-sm font-medium text-[#1B2A4A]">{fullName}</span>
                   <div className="text-xs text-gray-500">{formatDate(post.created_at)}</div>
                 </div>
                 <div className="flex items-center gap-3 text-xs text-gray-500">
@@ -274,7 +274,7 @@ export default function ModerationPage() {
               </div>
 
               {/* Content */}
-              <div className="bg-[#111] rounded-lg p-3 border border-[#2a2a2a]">
+              <div className="bg-white rounded-lg p-3 border border-[#E5E7EB]">
                 <p className="text-sm text-gray-200 whitespace-pre-line leading-relaxed">
                   {post.content.length > 500 ? post.content.slice(0, 500) + "..." : post.content}
                 </p>
@@ -298,7 +298,7 @@ export default function ModerationPage() {
               )}
 
               {/* Actions */}
-              <div className="flex items-center gap-2 pt-2 border-t border-[#2a2a2a]">
+              <div className="flex items-center gap-2 pt-2 border-t border-[#E5E7EB]">
                 {post.status === "visible" && (
                   <button
                     onClick={() => handleAction(post.id, "hide")}

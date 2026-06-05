@@ -163,7 +163,7 @@ export default async function PerformancePage({
         {/* Header + Date Filter */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h2 className="text-xl font-bold text-white">
+            <h2 className="text-xl font-bold text-[#1B2A4A]">
               Bảng xếp hạng Sales
             </h2>
             <p className="text-gray-400 text-sm">
@@ -190,7 +190,7 @@ export default async function PerformancePage({
             />
             <button
               type="submit"
-              className="px-3 py-1.5 rounded-lg text-xs font-medium text-white"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium text-[#1B2A4A]"
               style={{
                 background: "rgba(212,168,67,0.15)",
                 border: "1px solid rgba(212,168,67,0.3)",
@@ -213,7 +213,7 @@ export default async function PerformancePage({
               </div>
               <div>
                 <p className="text-xs text-gray-500">{stat.label}</p>
-                <p className="text-lg font-bold text-white">{stat.value}</p>
+                <p className="text-lg font-bold text-[#1B2A4A]">{stat.value}</p>
               </div>
             </div>
           ))}
@@ -221,10 +221,10 @@ export default async function PerformancePage({
 
         {/* Sales Leaderboard Table */}
         <div className="card-dark overflow-hidden">
-          <div className="flex items-center justify-between p-5 border-b border-[#2a2a2a]">
+          <div className="flex items-center justify-between p-5 border-b border-[#E5E7EB]">
             <div className="flex items-center gap-2">
               <Trophy size={16} className="text-[#E85D04]" />
-              <h3 className="font-semibold text-white">Bảng xếp hạng</h3>
+              <h3 className="font-semibold text-[#1B2A4A]">Bảng xếp hạng</h3>
             </div>
             <span className="text-xs text-gray-500">
               {reps.length} thành viên
@@ -235,7 +235,7 @@ export default async function PerformancePage({
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-[#2a2a2a]">
+                  <tr className="border-b border-[#E5E7EB]">
                     <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
                       #
                     </th>
@@ -272,7 +272,7 @@ export default async function PerformancePage({
                     return (
                       <tr
                         key={rep.rep_id}
-                        className="hover:bg-[#111111] transition-colors"
+                        className="hover:bg-white transition-colors"
                       >
                         {/* Rank */}
                         <td className="px-4 py-3">
@@ -308,7 +308,7 @@ export default async function PerformancePage({
                               />
                             ) : (
                               <div
-                                className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white"
+                                className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-[#1B2A4A]"
                                 style={{
                                   background: isTop
                                     ? "linear-gradient(135deg, #E85D04, #b8922e)"
@@ -320,7 +320,7 @@ export default async function PerformancePage({
                             )}
                             <div>
                               <p
-                                className="font-medium text-white text-sm"
+                                className="font-medium text-[#1B2A4A] text-sm"
                                 style={{
                                   color: isTop ? "#E85D04" : undefined,
                                 }}
@@ -338,7 +338,7 @@ export default async function PerformancePage({
 
                         {/* Contacts */}
                         <td className="px-4 py-3 text-center">
-                          <span className="text-white font-medium">
+                          <span className="text-[#1B2A4A] font-medium">
                             {rep.total_contacts}
                           </span>
                         </td>
@@ -355,7 +355,7 @@ export default async function PerformancePage({
 
                         {/* Revenue */}
                         <td className="px-4 py-3 text-right">
-                          <span className="text-white font-semibold">
+                          <span className="text-[#1B2A4A] font-semibold">
                             {formatVND(rep.total_revenue)}
                           </span>
                         </td>
@@ -363,7 +363,7 @@ export default async function PerformancePage({
                         {/* Conversion Rate with Progress Bar */}
                         <td className="px-4 py-3">
                           <div className="flex items-center gap-2">
-                            <div className="flex-1 h-2 rounded-full overflow-hidden bg-[#1a1a1a]">
+                            <div className="flex-1 h-2 rounded-full overflow-hidden bg-[#F0F1F3]">
                               <div
                                 className="h-full rounded-full transition-all"
                                 style={{
@@ -438,7 +438,7 @@ export default async function PerformancePage({
           <div>
             <div className="flex items-center gap-2 mb-4">
               <TrendingUp size={16} className="text-[#E85D04]" />
-              <h3 className="font-semibold text-white">
+              <h3 className="font-semibold text-[#1B2A4A]">
                 Chi tiết từng thành viên
               </h3>
             </div>
@@ -463,7 +463,7 @@ export default async function PerformancePage({
                         />
                       ) : (
                         <div
-                          className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white"
+                          className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-[#1B2A4A]"
                           style={{
                             background:
                               idx === 0
@@ -475,7 +475,7 @@ export default async function PerformancePage({
                         </div>
                       )}
                       <div className="flex-1 min-w-0">
-                        <p className="font-semibold text-white text-sm truncate">
+                        <p className="font-semibold text-[#1B2A4A] text-sm truncate">
                           {rep.rep_name}
                         </p>
                         <p className="text-xs text-gray-500">
@@ -601,7 +601,7 @@ export default async function PerformancePage({
                     </div>
 
                     {/* Quick Stats Footer */}
-                    <div className="flex items-center justify-between pt-3 border-t border-[#2a2a2a]">
+                    <div className="flex items-center justify-between pt-3 border-t border-[#E5E7EB]">
                       <div className="text-center">
                         <p className="text-sm font-bold text-[#E85D04]">
                           {formatVND(rep.total_revenue)}
@@ -609,7 +609,7 @@ export default async function PerformancePage({
                         <p className="text-[10px] text-gray-500">Revenue</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-sm font-bold text-white">
+                        <p className="text-sm font-bold text-[#1B2A4A]">
                           {rep.conversion_rate.toFixed(0)}%
                         </p>
                         <p className="text-[10px] text-gray-500">CVR</p>

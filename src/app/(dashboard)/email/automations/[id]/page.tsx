@@ -55,13 +55,13 @@ export default function AutomationEditorPage() {
   return (
     <div className="h-screen flex flex-col">
       {/* Top toolbar */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a] bg-[#0a0a0a]">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-[#E5E7EB] bg-[#F8F9FA]">
         <div className="flex items-center gap-3">
-          <Link href="/email/automations" className="text-gray-400 hover:text-white">
+          <Link href="/email/automations" className="text-gray-400 hover:text-[#1B2A4A]">
             <ArrowLeft size={18} />
           </Link>
           <div>
-            <h1 className="text-white font-semibold text-sm">{automation.name}</h1>
+            <h1 className="text-[#1B2A4A] font-semibold text-sm">{automation.name}</h1>
             <p className="text-xs text-gray-500">{automation.description || "Automation flow builder"}</p>
           </div>
           {/* Status badge */}
@@ -75,7 +75,7 @@ export default function AutomationEditorPage() {
             {saving ? "Đang lưu..." : "Lưu"}
           </button>
           <button onClick={handleToggleStatus}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[#333] text-gray-300 hover:text-white">
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[#333] text-gray-300 hover:text-[#1B2A4A]">
             {automation.status === "active" ? <><Pause size={13} /> Tạm dừng</> : <><Play size={13} /> Kích hoạt</>}
           </button>
         </div>
@@ -113,7 +113,7 @@ function StatusBadge({ status }: { status: string }) {
 
 function LoadingSkeleton() {
   return (
-    <div className="h-screen flex items-center justify-center bg-[#0a0a0a]">
+    <div className="h-screen flex items-center justify-center bg-[#F8F9FA]">
       <div className="animate-pulse text-gray-500">Đang tải...</div>
     </div>
   );
@@ -121,7 +121,7 @@ function LoadingSkeleton() {
 
 function NotFound() {
   return (
-    <div className="h-screen flex items-center justify-center bg-[#0a0a0a]">
+    <div className="h-screen flex items-center justify-center bg-[#F8F9FA]">
       <div className="text-center">
         <p className="text-gray-400">Không tìm thấy automation</p>
         <Link href="/email/automations" className="text-[#E85D04] text-sm mt-2 inline-block">← Quay lại</Link>

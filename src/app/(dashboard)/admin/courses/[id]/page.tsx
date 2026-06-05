@@ -11,7 +11,7 @@ import dynamic from "next/dynamic";
 
 const RichTextEditor = dynamic(
   () => import("@/components/admin/RichTextEditor"),
-  { ssr: false, loading: () => <div className="h-[200px] bg-[#151515] rounded-xl animate-pulse" /> }
+  { ssr: false, loading: () => <div className="h-[200px] bg-[#F8F9FA] rounded-xl animate-pulse" /> }
 );
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -304,7 +304,7 @@ export default function EditCoursePage() {
         <div className="flex items-center justify-between gap-4">
           <Link
             href="/admin/courses"
-            className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+            className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
           >
             <ArrowLeft size={14} />
             Quay lại

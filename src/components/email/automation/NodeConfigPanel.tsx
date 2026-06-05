@@ -13,10 +13,10 @@ interface NodeConfigPanelProps {
 
 export default function NodeConfigPanel({ node, onUpdate, onDelete, onClose }: NodeConfigPanelProps) {
   return (
-    <div className="w-72 border-l border-[#2a2a2a] bg-[#111] overflow-y-auto">
+    <div className="w-72 border-l border-[#E5E7EB] bg-white overflow-y-auto">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a]">
-        <h3 className="text-sm font-semibold text-white">Cấu hình</h3>
+      <div className="flex items-center justify-between px-4 py-3 border-b border-[#E5E7EB]">
+        <h3 className="text-sm font-semibold text-[#1B2A4A]">Cấu hình</h3>
         <div className="flex items-center gap-1">
           {node.type !== "trigger" && (
             <button
@@ -27,7 +27,7 @@ export default function NodeConfigPanel({ node, onUpdate, onDelete, onClose }: N
               <Trash2 size={14} />
             </button>
           )}
-          <button onClick={onClose} className="p-1.5 rounded hover:bg-[#222] text-gray-500 hover:text-white">
+          <button onClick={onClose} className="p-1.5 rounded hover:bg-[#222] text-gray-500 hover:text-[#1B2A4A]">
             <X size={14} />
           </button>
         </div>
@@ -61,7 +61,7 @@ function TriggerConfig({ data, onChange }: { data: any; onChange: (d: any) => vo
         <select
           value={data.triggerType || "manual"}
           onChange={(e) => onChange({ ...data, triggerType: e.target.value })}
-          className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-3 py-2 text-sm text-white"
+          className="w-full bg-[#F0F1F3] border border-[#333] rounded-lg px-3 py-2 text-sm text-[#1B2A4A]"
         >
           <option value="manual">Thủ công</option>
           <option value="tag_added">Khi được gắn tag</option>
@@ -76,7 +76,7 @@ function TriggerConfig({ data, onChange }: { data: any; onChange: (d: any) => vo
           <input
             value={data.config?.tag || ""}
             onChange={(e) => onChange({ ...data, config: { ...data.config, tag: e.target.value } })}
-            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-3 py-2 text-sm text-white"
+            className="w-full bg-[#F0F1F3] border border-[#333] rounded-lg px-3 py-2 text-sm text-[#1B2A4A]"
             placeholder="vd: new-subscriber"
           />
         </div>
@@ -87,7 +87,7 @@ function TriggerConfig({ data, onChange }: { data: any; onChange: (d: any) => vo
           <input
             value={data.config?.listId || ""}
             onChange={(e) => onChange({ ...data, config: { ...data.config, listId: e.target.value } })}
-            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-3 py-2 text-sm text-white"
+            className="w-full bg-[#F0F1F3] border border-[#333] rounded-lg px-3 py-2 text-sm text-[#1B2A4A]"
             placeholder="UUID của list"
           />
         </div>
@@ -110,7 +110,7 @@ function SendEmailConfig({ data, onChange }: { data: any; onChange: (d: any) => 
         <input
           value={data.subject || ""}
           onChange={(e) => onChange({ ...data, subject: e.target.value })}
-          className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-3 py-2 text-sm text-white"
+          className="w-full bg-[#F0F1F3] border border-[#333] rounded-lg px-3 py-2 text-sm text-[#1B2A4A]"
           placeholder="Nhập tiêu đề..."
         />
       </div>
@@ -119,7 +119,7 @@ function SendEmailConfig({ data, onChange }: { data: any; onChange: (d: any) => 
         <input
           value={data.templateId || ""}
           onChange={(e) => onChange({ ...data, templateId: e.target.value })}
-          className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-3 py-2 text-sm text-white"
+          className="w-full bg-[#F0F1F3] border border-[#333] rounded-lg px-3 py-2 text-sm text-[#1B2A4A]"
           placeholder="Chọn template..."
         />
       </div>
@@ -128,7 +128,7 @@ function SendEmailConfig({ data, onChange }: { data: any; onChange: (d: any) => 
         <textarea
           value={data.htmlContent || ""}
           onChange={(e) => onChange({ ...data, htmlContent: e.target.value })}
-          className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-3 py-2 text-sm text-white h-32 resize-none"
+          className="w-full bg-[#F0F1F3] border border-[#333] rounded-lg px-3 py-2 text-sm text-[#1B2A4A] h-32 resize-none"
           placeholder="<html>...</html>"
         />
       </div>
@@ -137,7 +137,7 @@ function SendEmailConfig({ data, onChange }: { data: any; onChange: (d: any) => 
         <input
           value={data.fromName || ""}
           onChange={(e) => onChange({ ...data, fromName: e.target.value })}
-          className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-3 py-2 text-sm text-white"
+          className="w-full bg-[#F0F1F3] border border-[#333] rounded-lg px-3 py-2 text-sm text-[#1B2A4A]"
           placeholder="Doanh Nghiệp 1 Người"
         />
       </div>
@@ -162,7 +162,7 @@ function WaitConfig({ data, onChange }: { data: any; onChange: (d: any) => void 
             min={0}
             value={data.days || 0}
             onChange={(e) => onChange({ ...data, days: parseInt(e.target.value) || 0 })}
-            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-2 py-2 text-sm text-white text-center"
+            className="w-full bg-[#F0F1F3] border border-[#333] rounded-lg px-2 py-2 text-sm text-[#1B2A4A] text-center"
           />
         </div>
         <div>
@@ -173,7 +173,7 @@ function WaitConfig({ data, onChange }: { data: any; onChange: (d: any) => void 
             max={23}
             value={data.hours || 0}
             onChange={(e) => onChange({ ...data, hours: parseInt(e.target.value) || 0 })}
-            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-2 py-2 text-sm text-white text-center"
+            className="w-full bg-[#F0F1F3] border border-[#333] rounded-lg px-2 py-2 text-sm text-[#1B2A4A] text-center"
           />
         </div>
         <div>
@@ -184,7 +184,7 @@ function WaitConfig({ data, onChange }: { data: any; onChange: (d: any) => void 
             max={59}
             value={data.minutes || 0}
             onChange={(e) => onChange({ ...data, minutes: parseInt(e.target.value) || 0 })}
-            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-2 py-2 text-sm text-white text-center"
+            className="w-full bg-[#F0F1F3] border border-[#333] rounded-lg px-2 py-2 text-sm text-[#1B2A4A] text-center"
           />
         </div>
       </div>
@@ -207,7 +207,7 @@ function ConditionConfig({ data, onChange }: { data: any; onChange: (d: any) => 
         <select
           value={data.conditionType || "has_tag"}
           onChange={(e) => onChange({ ...data, conditionType: e.target.value })}
-          className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-3 py-2 text-sm text-white"
+          className="w-full bg-[#F0F1F3] border border-[#333] rounded-lg px-3 py-2 text-sm text-[#1B2A4A]"
         >
           <option value="has_tag">Subscriber có tag</option>
           <option value="opened_email">Đã mở email trước đó</option>
@@ -221,7 +221,7 @@ function ConditionConfig({ data, onChange }: { data: any; onChange: (d: any) => 
           <input
             value={data.config?.tag || ""}
             onChange={(e) => onChange({ ...data, config: { ...data.config, tag: e.target.value } })}
-            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-3 py-2 text-sm text-white"
+            className="w-full bg-[#F0F1F3] border border-[#333] rounded-lg px-3 py-2 text-sm text-[#1B2A4A]"
             placeholder="vd: vip-customer"
           />
         </div>
@@ -254,7 +254,7 @@ function TagConfig({ data, onChange, label }: { data: any; onChange: (d: any) =>
         <input
           value={data.tagName || ""}
           onChange={(e) => onChange({ ...data, tagName: e.target.value })}
-          className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-3 py-2 text-sm text-white"
+          className="w-full bg-[#F0F1F3] border border-[#333] rounded-lg px-3 py-2 text-sm text-[#1B2A4A]"
           placeholder="vd: completed-course"
         />
       </div>

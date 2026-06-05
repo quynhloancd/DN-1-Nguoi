@@ -11,7 +11,7 @@ export default function Loading() {
           {/* Create post box */}
           <div
             className="rounded-xl p-4 space-y-3"
-            style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+            style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
           >
             <div className="flex gap-3">
               <div className="w-9 h-9 rounded-full bg-zinc-800 shrink-0" />
@@ -32,7 +32,7 @@ export default function Loading() {
             <div
               key={i}
               className="rounded-xl p-5 space-y-3"
-              style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+              style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
             >
               {/* Author row */}
               <div className="flex items-center gap-3">
@@ -56,7 +56,7 @@ export default function Loading() {
                 <div className="h-5 bg-zinc-800 rounded-full w-20" />
               </div>
               {/* Reactions */}
-              <div className="flex gap-4 pt-2 border-t border-[#2a2a2a]">
+              <div className="flex gap-4 pt-2 border-t border-[#E5E7EB]">
                 <div className="h-4 bg-zinc-800 rounded w-10" />
                 <div className="h-4 bg-zinc-800 rounded w-10" />
                 <div className="h-4 bg-zinc-800 rounded w-6" />
@@ -67,13 +67,13 @@ export default function Loading() {
 
         {/* Right sidebar — visible on xl+ */}
         <aside
-          className="hidden xl:block w-72 p-4 border-l border-[#1f1f1f] shrink-0 space-y-4"
+          className="hidden xl:block w-72 p-4 border-l border-[#E5E7EB] shrink-0 space-y-4"
           style={{ background: "#0d0d0d" }}
         >
           {/* XP card */}
           <div
             className="rounded-xl p-4 space-y-2"
-            style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+            style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
           >
             <div className="flex items-center gap-2 mb-1">
               <div className="w-4 h-4 bg-zinc-800 rounded" />
@@ -88,7 +88,7 @@ export default function Loading() {
           {/* Leaderboard card */}
           <div
             className="rounded-xl p-4 space-y-3"
-            style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+            style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
           >
             <div className="flex items-center gap-2 mb-1">
               <div className="w-4 h-4 bg-zinc-800 rounded" />
@@ -107,7 +107,7 @@ export default function Loading() {
           {/* Weekly challenge card */}
           <div
             className="rounded-xl p-4 space-y-2"
-            style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+            style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
           >
             <div className="flex items-center gap-2 mb-1">
               <div className="w-4 h-4 bg-zinc-800 rounded" />

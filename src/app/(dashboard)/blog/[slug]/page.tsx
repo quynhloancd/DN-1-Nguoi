@@ -343,11 +343,11 @@ export default async function BlogPostPage({ params }: PageProps) {
       <div className="p-6 max-w-4xl mx-auto">
         {/* Breadcrumb navigation */}
         <nav className="flex items-center gap-1.5 text-xs text-gray-500 mb-4">
-          <Link href="/" className="hover:text-white transition-colors">
+          <Link href="/" className="hover:text-[#1B2A4A] transition-colors">
             Trang chủ
           </Link>
           <span>/</span>
-          <Link href="/blog" className="hover:text-white transition-colors">
+          <Link href="/blog" className="hover:text-[#1B2A4A] transition-colors">
             Blog
           </Link>
           <span>/</span>
@@ -359,7 +359,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         {/* Back link */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-1.5 text-gray-400 hover:text-white text-sm mb-6 transition-colors"
+          className="inline-flex items-center gap-1.5 text-gray-400 hover:text-[#1B2A4A] text-sm mb-6 transition-colors"
         >
           <ArrowLeft size={15} /> Quay lại Blog
         </Link>
@@ -374,7 +374,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           )}
 
           {/* Title */}
-          <h1 className="text-2xl md:text-3xl font-bold text-white leading-snug mb-3">
+          <h1 className="text-2xl md:text-3xl font-bold text-[#1B2A4A] leading-snug mb-3">
             {post.title}
           </h1>
 
@@ -403,7 +403,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
           {/* Thumbnail */}
           {post.thumbnail && (
-            <div className="mb-6 rounded-xl overflow-hidden relative aspect-[16/9] bg-[#1a1a1a]">
+            <div className="mb-6 rounded-xl overflow-hidden relative aspect-[16/9] bg-[#F0F1F3]">
               <Image
                 src={post.thumbnail}
                 alt={post.title}
@@ -415,7 +415,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             </div>
           )}
 
-          <hr className="border-[#2a2a2a] mb-6" />
+          <hr className="border-[#E5E7EB] mb-6" />
 
           {/* Content rendered as rich HTML */}
           {post.content && (
@@ -449,7 +449,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         >
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-start">
             {/* Avatar */}
-            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden shrink-0 relative bg-[#1a1a1a]">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden shrink-0 relative bg-[#F0F1F3]">
               {DEFAULT_AUTHOR.avatar ? (
                 <img
                   src={DEFAULT_AUTHOR.avatar}
@@ -468,7 +468,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1">
                 Tác giả
               </p>
-              <h3 className="text-lg font-bold text-white mb-1.5">
+              <h3 className="text-lg font-bold text-[#1B2A4A] mb-1.5">
                 {DEFAULT_AUTHOR.name}
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed mb-3">

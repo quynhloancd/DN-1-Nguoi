@@ -20,7 +20,7 @@ export default function Loading() {
         {/* Featured post skeleton */}
         <div
           className="rounded-xl overflow-hidden"
-          style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+          style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
         >
           {/* Wide thumbnail */}
           <div className="w-full bg-zinc-800" style={{ aspectRatio: "21/9" }} />
@@ -49,7 +49,7 @@ export default function Loading() {
             <div
               key={i}
               className="rounded-xl overflow-hidden"
-              style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+              style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
             >
               {/* 16/9 thumbnail */}
               <div className="w-full bg-zinc-800" style={{ aspectRatio: "16/9" }} />
@@ -72,7 +72,7 @@ export default function Loading() {
         {/* Newsletter CTA skeleton */}
         <div
           className="rounded-xl p-6 space-y-3"
-          style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+          style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
         >
           <div className="h-5 bg-zinc-800 rounded w-48 mx-auto" />
           <div className="h-3 bg-zinc-800 rounded w-64 mx-auto" />

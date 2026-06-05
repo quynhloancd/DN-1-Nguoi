@@ -214,7 +214,7 @@ export default function StudentNotes({
       >
         <div className="flex items-center gap-2">
           <BookMarked size={16} className="text-[#E85D04]" />
-          <h3 className="font-semibold text-white text-sm">
+          <h3 className="font-semibold text-[#1B2A4A] text-sm">
             Ghi chú & Bookmark
           </h3>
           {notes.length > 0 && (

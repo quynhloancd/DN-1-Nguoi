@@ -105,7 +105,7 @@ export default function LessonActions({
           className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
             completed
               ? "bg-[#22c55e]/15 text-[#22c55e] border border-[#22c55e]/30 hover:bg-[#22c55e]/25"
-              : "bg-[#1a1a1a] text-gray-300 border border-[#2a2a2a] hover:border-[#22c55e]/50 hover:text-white"
+              : "bg-[#F0F1F3] text-gray-300 border border-[#E5E7EB] hover:border-[#22c55e]/50 hover:text-[#1B2A4A]"
           }`}
         >
           {toggling ? (

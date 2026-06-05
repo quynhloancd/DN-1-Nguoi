@@ -93,7 +93,7 @@ export default async function RelatedPosts({
 
   return (
     <section className="mt-10">
-      <h2 className="text-xl font-bold text-white mb-5">Bài viết liên quan</h2>
+      <h2 className="text-xl font-bold text-[#1B2A4A] mb-5">Bài viết liên quan</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {posts.map((post) => (
@@ -104,7 +104,7 @@ export default async function RelatedPosts({
           >
             {/* Thumbnail */}
             {post.thumbnail ? (
-              <div className="relative aspect-[16/9] bg-[#1a1a1a]">
+              <div className="relative aspect-[16/9] bg-[#F0F1F3]">
                 <Image
                   src={post.thumbnail}
                   alt={post.title}
@@ -114,7 +114,7 @@ export default async function RelatedPosts({
                 />
               </div>
             ) : (
-              <div className="aspect-[16/9] bg-[#1a1a1a] flex items-center justify-center">
+              <div className="aspect-[16/9] bg-[#F0F1F3] flex items-center justify-center">
                 <span className="text-3xl text-gray-500">&#x1f4dd;</span>
               </div>
             )}
@@ -129,7 +129,7 @@ export default async function RelatedPosts({
               )}
 
               {/* Title */}
-              <h3 className="text-sm font-semibold text-white leading-snug mb-1.5 line-clamp-2 group-hover:text-[#E85D04] transition-colors">
+              <h3 className="text-sm font-semibold text-[#1B2A4A] leading-snug mb-1.5 line-clamp-2 group-hover:text-[#E85D04] transition-colors">
                 {post.title}
               </h3>
 

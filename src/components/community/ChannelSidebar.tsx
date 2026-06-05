@@ -51,7 +51,7 @@ export default function ChannelSidebar({
     return (
       <>
         {/* Desktop skeleton */}
-        <div className="hidden md:block w-56 shrink-0 border-r border-[#1f1f1f] p-3 space-y-1" style={{ background: "#0d0d0d" }}>
+        <div className="hidden md:block w-56 shrink-0 border-r border-[#E5E7EB] p-3 space-y-1" style={{ background: "#0d0d0d" }}>
           <div className="px-3 py-2 mb-2">
             <div className="h-4 w-20 bg-[#2a2a2a] rounded animate-pulse" />
           </div>
@@ -63,7 +63,7 @@ export default function ChannelSidebar({
           ))}
         </div>
         {/* Mobile skeleton */}
-        <div className="md:hidden flex gap-2 px-4 py-2.5 overflow-x-auto scrollbar-none border-b border-[#1f1f1f]" style={{ background: "#0d0d0d" }}>
+        <div className="md:hidden flex gap-2 px-4 py-2.5 overflow-x-auto scrollbar-none border-b border-[#E5E7EB]" style={{ background: "#0d0d0d" }}>
           {[1, 2, 3, 4, 5].map((i) => (
             <div key={i} className="h-8 w-20 bg-[#2a2a2a] rounded-full animate-pulse shrink-0" />
           ))}
@@ -75,7 +75,7 @@ export default function ChannelSidebar({
   return (
     <>
       {/* Desktop: vertical sidebar */}
-      <nav className="hidden md:block w-56 shrink-0 border-r border-[#1f1f1f] p-3 space-y-0.5" style={{ background: "#0d0d0d" }}>
+      <nav className="hidden md:block w-56 shrink-0 border-r border-[#E5E7EB] p-3 space-y-0.5" style={{ background: "#0d0d0d" }}>
         <div className="px-3 py-2 mb-1">
           <span className="text-xs font-semibold uppercase tracking-wider text-gray-500">
             Khu vực
@@ -91,7 +91,7 @@ export default function ChannelSidebar({
               className={`group w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-left transition-all duration-150 ${
                 isActive
                   ? "bg-[#E85D04]/15 text-[#E85D04]"
-                  : "text-gray-400 hover:bg-white/5 hover:text-white"
+                  : "text-gray-400 hover:bg-white/5 hover:text-[#1B2A4A]"
               }`}
             >
               <span className="text-base leading-none">{channel.icon}</span>
@@ -109,7 +109,7 @@ export default function ChannelSidebar({
 
         {/* Tooltip-style description for active channel */}
         {channels.find((c) => c.id === activeChannel)?.description && (
-          <div className="mt-3 mx-3 p-2.5 rounded-lg bg-[#111] border border-[#1f1f1f]">
+          <div className="mt-3 mx-3 p-2.5 rounded-lg bg-white border border-[#E5E7EB]">
             <p className="text-[11px] text-gray-500 leading-relaxed">
               {channels.find((c) => c.id === activeChannel)?.description}
             </p>
@@ -119,7 +119,7 @@ export default function ChannelSidebar({
 
       {/* Mobile: horizontal scroll */}
       <div
-        className="md:hidden flex gap-2 px-4 py-2.5 overflow-x-auto scrollbar-none border-b border-[#1f1f1f]"
+        className="md:hidden flex gap-2 px-4 py-2.5 overflow-x-auto scrollbar-none border-b border-[#E5E7EB]"
         style={{ background: "#0d0d0d" }}
       >
         {channels.map((channel) => {
@@ -132,7 +132,7 @@ export default function ChannelSidebar({
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm whitespace-nowrap shrink-0 transition-all duration-150 ${
                 isActive
                   ? "bg-[#E85D04]/15 text-[#E85D04] border border-[#E85D04]/30"
-                  : "bg-[#111] text-gray-400 border border-[#2a2a2a] hover:bg-white/5 hover:text-white"
+                  : "bg-white text-gray-400 border border-[#E5E7EB] hover:bg-white/5 hover:text-[#1B2A4A]"
               }`}
             >
               <span className="text-sm leading-none">{channel.icon}</span>

@@ -71,10 +71,10 @@ export default function SegmentBuilder({ onSegmentChange, onPreview, compact }: 
   };
 
   return (
-    <div className={`space-y-3 ${compact ? "" : "p-4 bg-[#151515] rounded-xl border border-[#2a2a2a]"}`}>
+    <div className={`space-y-3 ${compact ? "" : "p-4 bg-[#F8F9FA] rounded-xl border border-[#E5E7EB]"}`}>
       {!compact && (
         <div className="flex items-center justify-between">
-          <h3 className="text-sm font-semibold text-white flex items-center gap-2">
+          <h3 className="text-sm font-semibold text-[#1B2A4A] flex items-center gap-2">
             <Filter size={14} className="text-[#E85D04]" />
             Segment Builder
           </h3>
@@ -94,7 +94,7 @@ export default function SegmentBuilder({ onSegmentChange, onPreview, compact }: 
               <select
                 value={cond.operator}
                 onChange={(e) => updateCondition(idx, { operator: e.target.value as "and" | "or" })}
-                className="bg-[#1a1a1a] border border-[#333] rounded px-2 py-1 text-[10px] text-gray-400 w-14"
+                className="bg-[#F0F1F3] border border-[#333] rounded px-2 py-1 text-[10px] text-gray-400 w-14"
               >
                 <option value="and">VÀ</option>
                 <option value="or">HOẶC</option>
@@ -105,7 +105,7 @@ export default function SegmentBuilder({ onSegmentChange, onPreview, compact }: 
             <select
               value={cond.type}
               onChange={(e) => updateCondition(idx, { type: e.target.value as SegmentCondition["type"], value: "" })}
-              className="bg-[#1a1a1a] border border-[#333] rounded-lg px-2 py-1.5 text-xs text-white flex-shrink-0"
+              className="bg-[#F0F1F3] border border-[#333] rounded-lg px-2 py-1.5 text-xs text-[#1B2A4A] flex-shrink-0"
             >
               <option value="has_tag">Có tag</option>
               <option value="in_list">Trong list</option>
@@ -118,7 +118,7 @@ export default function SegmentBuilder({ onSegmentChange, onPreview, compact }: 
               <select
                 value={cond.value}
                 onChange={(e) => updateCondition(idx, { value: e.target.value })}
-                className="bg-[#1a1a1a] border border-[#333] rounded-lg px-2 py-1.5 text-xs text-white flex-1 min-w-0"
+                className="bg-[#F0F1F3] border border-[#333] rounded-lg px-2 py-1.5 text-xs text-[#1B2A4A] flex-1 min-w-0"
               >
                 <option value="">Chọn tag...</option>
                 {tags.map(t => (
@@ -131,7 +131,7 @@ export default function SegmentBuilder({ onSegmentChange, onPreview, compact }: 
               <select
                 value={cond.value}
                 onChange={(e) => updateCondition(idx, { value: e.target.value })}
-                className="bg-[#1a1a1a] border border-[#333] rounded-lg px-2 py-1.5 text-xs text-white flex-1 min-w-0"
+                className="bg-[#F0F1F3] border border-[#333] rounded-lg px-2 py-1.5 text-xs text-[#1B2A4A] flex-1 min-w-0"
               >
                 <option value="">Chọn list...</option>
                 {lists.map(l => (
@@ -144,7 +144,7 @@ export default function SegmentBuilder({ onSegmentChange, onPreview, compact }: 
               <select
                 value={cond.value}
                 onChange={(e) => updateCondition(idx, { value: e.target.value })}
-                className="bg-[#1a1a1a] border border-[#333] rounded-lg px-2 py-1.5 text-xs text-white flex-1 min-w-0"
+                className="bg-[#F0F1F3] border border-[#333] rounded-lg px-2 py-1.5 text-xs text-[#1B2A4A] flex-1 min-w-0"
               >
                 <option value="">Chọn...</option>
                 <option value="active">Active</option>
@@ -158,7 +158,7 @@ export default function SegmentBuilder({ onSegmentChange, onPreview, compact }: 
                 type="date"
                 value={cond.value}
                 onChange={(e) => updateCondition(idx, { value: e.target.value })}
-                className="bg-[#1a1a1a] border border-[#333] rounded-lg px-2 py-1.5 text-xs text-white flex-1 min-w-0"
+                className="bg-[#F0F1F3] border border-[#333] rounded-lg px-2 py-1.5 text-xs text-[#1B2A4A] flex-1 min-w-0"
               />
             )}
 
@@ -176,7 +176,7 @@ export default function SegmentBuilder({ onSegmentChange, onPreview, compact }: 
       <div className="flex items-center gap-2 pt-1">
         <button
           onClick={addCondition}
-          className="flex items-center gap-1 text-xs text-gray-400 hover:text-white transition-colors"
+          className="flex items-center gap-1 text-xs text-gray-400 hover:text-[#1B2A4A] transition-colors"
         >
           <Plus size={12} />
           Thêm điều kiện

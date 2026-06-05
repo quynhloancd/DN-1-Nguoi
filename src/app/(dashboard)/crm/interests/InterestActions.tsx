@@ -144,7 +144,7 @@ export default function InterestActions({
         {showAssign && (
           <div
             className="absolute right-0 top-full mt-1 z-30 rounded-lg shadow-xl py-1 min-w-[180px]"
-            style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+            style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
           >
             <div className="px-3 py-1.5 text-[10px] text-gray-500 font-medium uppercase tracking-wide">
               Gán cho sale
@@ -202,9 +202,9 @@ export default function InterestActions({
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
           <div
             className="rounded-xl p-5 w-full max-w-md mx-4"
-            style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+            style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
           >
-            <h4 className="text-sm font-semibold text-white mb-3">
+            <h4 className="text-sm font-semibold text-[#1B2A4A] mb-3">
               Ghi chú chăm sóc
             </h4>
             <textarea
@@ -212,13 +212,13 @@ export default function InterestActions({
               onChange={(e) => setNotes(e.target.value)}
               placeholder="Nhập ghi chú về khách hàng này..."
               rows={4}
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
+              className="w-full bg-white border border-[#E5E7EB] rounded-lg p-3 text-sm text-[#1B2A4A] placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
               maxLength={2000}
             />
             <div className="flex justify-end gap-2 mt-3">
               <button
                 onClick={() => setShowNoteForm(false)}
-                className="px-3 py-1.5 rounded-lg text-xs text-gray-400 hover:text-white transition-colors"
+                className="px-3 py-1.5 rounded-lg text-xs text-gray-400 hover:text-[#1B2A4A] transition-colors"
                 style={{
                   background: "rgba(107,114,128,0.1)",
                   border: "1px solid #2a2a2a",

@@ -172,7 +172,7 @@ export default function CampaignsPage() {
                   <s.icon size={18} style={{ color: s.color }} />
                 </div>
               </div>
-              <div className="text-2xl font-bold text-white mb-0.5">{s.value}</div>
+              <div className="text-2xl font-bold text-[#1B2A4A] mb-0.5">{s.value}</div>
               <div className="text-xs text-gray-500">{s.label}</div>
             </div>
           ))}
@@ -184,7 +184,7 @@ export default function CampaignsPage() {
             {/* Search */}
             <div
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm"
-              style={{ background: "#1f1f1f", border: "1px solid #2a2a2a" }}
+              style={{ background: "#E5E7EB", border: "1px solid #2a2a2a" }}
             >
               <Search size={14} className="text-gray-500" />
               <input
@@ -192,7 +192,7 @@ export default function CampaignsPage() {
                 value={searchQuery}
                 onChange={(e) => { setSearchQuery(e.target.value); setPage(1); }}
                 placeholder="Tim kiem campaign..."
-                className="bg-transparent border-none outline-none text-white text-sm placeholder:text-gray-500 w-40 sm:w-56"
+                className="bg-transparent border-none outline-none text-[#1B2A4A] text-sm placeholder:text-gray-500 w-40 sm:w-56"
               />
             </div>
 
@@ -237,7 +237,7 @@ export default function CampaignsPage() {
             >
               <Inbox size={28} className="text-[#3b82f6]" />
             </div>
-            <p className="text-white font-medium mb-1">
+            <p className="text-[#1B2A4A] font-medium mb-1">
               {searchQuery || statusFilter !== "all"
                 ? "Khong tim thay campaign nao"
                 : "Chua co campaign nao"}
@@ -280,7 +280,7 @@ export default function CampaignsPage() {
                       {/* Info */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap mb-1">
-                          <h3 className="font-semibold text-white text-sm truncate">{c.name || c.subject}</h3>
+                          <h3 className="font-semibold text-[#1B2A4A] text-sm truncate">{c.name || c.subject}</h3>
                           <span
                             className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold whitespace-nowrap"
                             style={{ background: st.bg, color: st.color }}
@@ -307,7 +307,7 @@ export default function CampaignsPage() {
                       <div className="flex items-center gap-5 text-xs shrink-0">
                         <div className="text-center min-w-[50px]">
                           <div className="text-gray-500 mb-0.5">Da gui</div>
-                          <div className="font-semibold text-white">
+                          <div className="font-semibold text-[#1B2A4A]">
                             {c.sent_count > 0 ? c.sent_count.toLocaleString("vi-VN") : "--"}
                           </div>
                         </div>
@@ -332,7 +332,7 @@ export default function CampaignsPage() {
                             e.stopPropagation();
                             setOpenDropdown(openDropdown === c.id ? null : c.id);
                           }}
-                          className="p-2 rounded-lg text-gray-500 hover:text-white hover:bg-[#252525] transition-colors"
+                          className="p-2 rounded-lg text-gray-500 hover:text-[#1B2A4A] hover:bg-[#252525] transition-colors"
                         >
                           <MoreHorizontal size={16} />
                         </button>
@@ -340,30 +340,30 @@ export default function CampaignsPage() {
                         {openDropdown === c.id && (
                           <div
                             className="absolute right-0 top-full mt-1 w-44 rounded-lg overflow-hidden shadow-xl z-20"
-                            style={{ background: "#1f1f1f", border: "1px solid #2a2a2a" }}
+                            style={{ background: "#E5E7EB", border: "1px solid #2a2a2a" }}
                             onClick={(e) => e.stopPropagation()}
                           >
                             <button
                               onClick={() => { setOpenDropdown(null); router.push(`/email/campaigns/${c.id}`); }}
-                              className="flex items-center gap-2 w-full px-3 py-2 text-xs text-gray-300 hover:bg-[#2a2a2a] hover:text-white transition-colors"
+                              className="flex items-center gap-2 w-full px-3 py-2 text-xs text-gray-300 hover:bg-[#2a2a2a] hover:text-[#1B2A4A] transition-colors"
                             >
                               <Edit size={12} /> Chinh sua
                             </button>
                             <button
                               onClick={() => handleDuplicate(c.id)}
-                              className="flex items-center gap-2 w-full px-3 py-2 text-xs text-gray-300 hover:bg-[#2a2a2a] hover:text-white transition-colors"
+                              className="flex items-center gap-2 w-full px-3 py-2 text-xs text-gray-300 hover:bg-[#2a2a2a] hover:text-[#1B2A4A] transition-colors"
                             >
                               <Copy size={12} /> Nhan ban
                             </button>
                             {c.status === "sent" && (
                               <button
                                 onClick={() => { setOpenDropdown(null); router.push(`/email/campaigns/${c.id}/analytics`); }}
-                                className="flex items-center gap-2 w-full px-3 py-2 text-xs text-gray-300 hover:bg-[#2a2a2a] hover:text-white transition-colors"
+                                className="flex items-center gap-2 w-full px-3 py-2 text-xs text-gray-300 hover:bg-[#2a2a2a] hover:text-[#1B2A4A] transition-colors"
                               >
                                 <BarChart3 size={12} /> Xem analytics
                               </button>
                             )}
-                            <div className="border-t border-[#2a2a2a]" />
+                            <div className="border-t border-[#E5E7EB]" />
                             <button
                               onClick={() => handleDelete(c.id)}
                               className="flex items-center gap-2 w-full px-3 py-2 text-xs text-red-400 hover:bg-red-500/10 transition-colors"
@@ -389,7 +389,7 @@ export default function CampaignsPage() {
                   <button
                     onClick={() => setPage(Math.max(1, page - 1))}
                     disabled={page === 1}
-                    className="p-1.5 rounded-lg text-gray-500 hover:text-white hover:bg-[#252525] transition-colors disabled:opacity-30"
+                    className="p-1.5 rounded-lg text-gray-500 hover:text-[#1B2A4A] hover:bg-[#252525] transition-colors disabled:opacity-30"
                   >
                     <ChevronLeft size={16} />
                   </button>
@@ -409,7 +409,7 @@ export default function CampaignsPage() {
                   <button
                     onClick={() => setPage(Math.min(totalPages, page + 1))}
                     disabled={page === totalPages}
-                    className="p-1.5 rounded-lg text-gray-500 hover:text-white hover:bg-[#252525] transition-colors disabled:opacity-30"
+                    className="p-1.5 rounded-lg text-gray-500 hover:text-[#1B2A4A] hover:bg-[#252525] transition-colors disabled:opacity-30"
                   >
                     <ChevronRight size={16} />
                   </button>

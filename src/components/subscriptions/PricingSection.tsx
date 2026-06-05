@@ -164,7 +164,7 @@ export default function PricingSection({ onSubscribe }: PricingSectionProps) {
               style={{
                 background: isPopular
                   ? "linear-gradient(135deg, rgba(212,168,67,0.08), rgba(212,168,67,0.02))"
-                  : "#111111",
+                  : "#FFFFFF",
                 border: isPopular
                   ? "2px solid rgba(212,168,67,0.4)"
                   : "1px solid #2a2a2a",
@@ -177,7 +177,7 @@ export default function PricingSection({ onSubscribe }: PricingSectionProps) {
                   style={{
                     background:
                       "linear-gradient(135deg, #E85D04, #b8922e)",
-                    color: "#0a0a0a",
+                    color: "#F8F9FA",
                   }}
                 >
                   <Star size={11} />
@@ -283,7 +283,7 @@ export default function PricingSection({ onSubscribe }: PricingSectionProps) {
                   background: isPopular
                     ? "linear-gradient(135deg, #E85D04, #b8922e)"
                     : "rgba(212,168,67,0.1)",
-                  color: isPopular ? "#0a0a0a" : "#E85D04",
+                  color: isPopular ? "#F8F9FA" : "#E85D04",
                   border: isPopular
                     ? "none"
                     : "1px solid rgba(212,168,67,0.3)",

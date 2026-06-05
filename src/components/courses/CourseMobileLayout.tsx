@@ -27,7 +27,7 @@ export default function CourseMobileLayout({
 
       {/* Desktop sidebar */}
       <aside
-        className="hidden lg:block w-80 overflow-y-auto border-l border-[#2a2a2a] shrink-0"
+        className="hidden lg:block w-80 overflow-y-auto border-l border-[#E5E7EB] shrink-0"
         style={{ background: "#111" }}
       >
         {sidebarContent}
@@ -37,7 +37,7 @@ export default function CourseMobileLayout({
       {(chapterCount > 0 || lessonCount > 0) && (
         <button
           onClick={() => setShowSidebar(true)}
-          className="lg:hidden fixed bottom-5 right-5 z-40 flex items-center gap-2 px-4 py-3 rounded-full shadow-lg text-sm font-medium text-white transition-transform active:scale-95"
+          className="lg:hidden fixed bottom-5 right-5 z-40 flex items-center gap-2 px-4 py-3 rounded-full shadow-lg text-sm font-medium text-[#1B2A4A] transition-transform active:scale-95"
           style={{
             background: "linear-gradient(135deg, #E85D04, #B8922E)",
             boxShadow: "0 4px 20px rgba(212,168,67,0.3)",
@@ -65,17 +65,17 @@ export default function CourseMobileLayout({
             }}
           >
             {/* Handle bar + close */}
-            <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-[#2a2a2a]" style={{ background: "#111" }}>
+            <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-[#E5E7EB]" style={{ background: "#111" }}>
               <div>
                 <div className="w-10 h-1 rounded-full bg-gray-600 mx-auto mb-3" />
-                <h3 className="font-semibold text-white text-sm">Nội dung khoá học</h3>
+                <h3 className="font-semibold text-[#1B2A4A] text-sm">Nội dung khoá học</h3>
                 <p className="text-xs text-gray-500 mt-0.5">
                   {chapterCount} chương &middot; {lessonCount} bài học
                 </p>
               </div>
               <button
                 onClick={() => setShowSidebar(false)}
-                className="text-gray-500 hover:text-white transition-colors p-2"
+                className="text-gray-500 hover:text-[#1B2A4A] transition-colors p-2"
               >
                 <X size={20} />
               </button>

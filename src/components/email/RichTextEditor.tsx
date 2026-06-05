@@ -11,7 +11,7 @@ const ReactQuill = dynamic(() => import("react-quill-new"), {
     <div
       className="flex items-center justify-center rounded-lg"
       style={{
-        background: "#1f1f1f",
+        background: "#E5E7EB",
         border: "1px solid #2a2a2a",
         minHeight: 300,
       }}

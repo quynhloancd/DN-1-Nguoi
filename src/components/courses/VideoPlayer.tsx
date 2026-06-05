@@ -452,7 +452,7 @@ export default function VideoPlayer({
 
         {/* Loading state */}
         {!ready && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center z-20 bg-[#111]">
+          <div className="absolute inset-0 flex flex-col items-center justify-center z-20 bg-white">
             <div className="w-8 h-8 border-2 border-[#E85D04] border-t-transparent rounded-full animate-spin mb-3" />
             <p className="text-xs text-gray-500">
               {title ?? "Đang tải video..."}
@@ -466,7 +466,7 @@ export default function VideoPlayer({
             className="absolute top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none"
             style={{ animation: "fadeSlideIn 0.3s ease-out" }}
           >
-            <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#22c55e]/90 backdrop-blur-sm text-white text-sm font-medium shadow-lg">
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#22c55e]/90 backdrop-blur-sm text-[#1B2A4A] text-sm font-medium shadow-lg">
               <span>&#x2705;</span>
               <span>{nextLessonUrl ? "Hoàn thành! Đang chuyển bài..." : "Bài học đã hoàn thành!"}</span>
             </div>
@@ -478,7 +478,7 @@ export default function VideoPlayer({
             className="absolute top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none"
             style={{ animation: "fadeSlideIn 0.3s ease-out" }}
           >
-            <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#3b82f6]/90 backdrop-blur-sm text-white text-sm font-medium shadow-lg">
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#3b82f6]/90 backdrop-blur-sm text-[#1B2A4A] text-sm font-medium shadow-lg">
               <span>&#x25B6;</span>
               <span>Tiếp tục từ {resumeToast}</span>
             </div>
@@ -535,7 +535,7 @@ export default function VideoPlayer({
           </div>
 
           {/* Buttons row */}
-          <div className="flex items-center gap-2 text-white">
+          <div className="flex items-center gap-2 text-[#1B2A4A]">
             {/* Play / Pause */}
             <button
               onClick={togglePlay}
@@ -585,14 +585,14 @@ export default function VideoPlayer({
                   setShowSpeed(!showSpeed);
                 }}
                 aria-label="Tốc độ phát"
-                className="flex items-center gap-1 text-[11px] text-gray-300 hover:text-white transition-colors px-2 py-1 rounded hover:bg-white/10"
+                className="flex items-center gap-1 text-[11px] text-gray-300 hover:text-[#1B2A4A] transition-colors px-2 py-1 rounded hover:bg-white/10"
               >
                 <Gauge size={13} />
                 {speed === 1 ? "Tốc độ" : `${speed}x`}
               </button>
               {showSpeed && (
                 <div
-                  className="absolute bottom-full right-0 mb-1 bg-[#1a1a1a] border border-[#333] rounded-lg py-1 min-w-[90px] shadow-xl"
+                  className="absolute bottom-full right-0 mb-1 bg-[#F0F1F3] border border-[#333] rounded-lg py-1 min-w-[90px] shadow-xl"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <div className="px-3 py-1 text-[10px] text-gray-500 font-medium uppercase tracking-wider">
@@ -605,7 +605,7 @@ export default function VideoPlayer({
                       className={`w-full text-left px-3 py-1.5 text-xs transition-colors ${
                         speed === s
                           ? "text-[#E85D04] font-semibold bg-[#E85D04]/10"
-                          : "text-gray-300 hover:text-white hover:bg-white/5"
+                          : "text-gray-300 hover:text-[#1B2A4A] hover:bg-white/5"
                       }`}
                     >
                       {s === 1 ? "Bình thường" : `${s}x`}

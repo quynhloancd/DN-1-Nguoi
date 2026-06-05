@@ -336,7 +336,7 @@ export default function EditBlogPostPage() {
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <button
             onClick={() => router.push("/admin/blog")}
-            className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+            className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
           >
             <ArrowLeft size={14} /> Quay lại danh sách
           </button>
@@ -422,7 +422,7 @@ export default function EditBlogPostPage() {
           <label className="block text-xs font-medium text-gray-400 mb-2">Nội dung bài viết</label>
           {showPreview ? (
             <div className="card-dark p-6" style={{ minHeight: 450 }}>
-              <div className="flex items-center gap-2 mb-4 pb-3 border-b border-[#2a2a2a]">
+              <div className="flex items-center gap-2 mb-4 pb-3 border-b border-[#E5E7EB]">
                 <Eye size={14} className="text-blue-400" />
                 <span className="text-xs font-semibold text-blue-400">PREVIEW</span>
               </div>
@@ -442,7 +442,7 @@ export default function EditBlogPostPage() {
           >
             <div className="flex items-center gap-2">
               <Search size={15} className="text-[#E85D04]" />
-              <span className="text-sm font-semibold text-white">SEO & Thông tin bài viết</span>
+              <span className="text-sm font-semibold text-[#1B2A4A]">SEO & Thông tin bài viết</span>
               <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full" style={{ background: seoScore.color + "18", color: seoScore.color }}>
                 {seoScore.pct}%
               </span>
@@ -451,7 +451,7 @@ export default function EditBlogPostPage() {
           </button>
 
           {seoOpen && (
-            <div className="border-t border-[#2a2a2a] p-5 space-y-5">
+            <div className="border-t border-[#E5E7EB] p-5 space-y-5">
 
               {/* Google Preview */}
               <div>
@@ -522,9 +522,9 @@ export default function EditBlogPostPage() {
                   <input ref={thumbInputRef} type="file" accept="image/jpeg,image/png,image/webp,image/gif" onChange={handleThumbUpload} className="hidden" />
                   {thumbnail ? (
                     <div className="relative group">
-                      <img src={thumbnail} alt="Thumbnail" className="w-full h-32 object-cover rounded-lg border border-[#2a2a2a]" />
+                      <img src={thumbnail} alt="Thumbnail" className="w-full h-32 object-cover rounded-lg border border-[#E5E7EB]" />
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center gap-2">
-                        <button type="button" onClick={() => thumbInputRef.current?.click()} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-white/10 text-white hover:bg-white/20 transition-colors">
+                        <button type="button" onClick={() => thumbInputRef.current?.click()} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-white/10 text-[#1B2A4A] hover:bg-white/20 transition-colors">
                           <Upload size={12} className="inline mr-1" />Đổi ảnh
                         </button>
                         <button type="button" onClick={() => setThumbnail("")} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-red-500/20 text-red-400 hover:bg-red-500/30 transition-colors">
@@ -533,7 +533,7 @@ export default function EditBlogPostPage() {
                       </div>
                     </div>
                   ) : (
-                    <button type="button" onClick={() => thumbInputRef.current?.click()} disabled={uploadingThumb} className="w-full h-24 rounded-lg border border-dashed border-[#333] hover:border-[#E85D0440] bg-[#141414] hover:bg-[#1a1a1a] transition-colors flex flex-col items-center justify-center gap-1.5 cursor-pointer">
+                    <button type="button" onClick={() => thumbInputRef.current?.click()} disabled={uploadingThumb} className="w-full h-24 rounded-lg border border-dashed border-[#333] hover:border-[#E85D0440] bg-[#141414] hover:bg-[#F0F1F3] transition-colors flex flex-col items-center justify-center gap-1.5 cursor-pointer">
                       {uploadingThumb ? (
                         <><Loader2 size={18} className="text-gray-500 animate-spin" /><span className="text-xs text-gray-500">Đang tải lên...</span></>
                       ) : (
@@ -553,7 +553,7 @@ export default function EditBlogPostPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-4 items-start">
                   <div>
                     <input ref={authorAvatarRef} type="file" accept="image/jpeg,image/png,image/webp" onChange={handleAuthorAvatarUpload} className="hidden" />
-                    <div className="w-20 h-20 rounded-2xl overflow-hidden cursor-pointer relative group border border-[#2a2a2a]" onClick={() => authorAvatarRef.current?.click()}>
+                    <div className="w-20 h-20 rounded-2xl overflow-hidden cursor-pointer relative group border border-[#E5E7EB]" onClick={() => authorAvatarRef.current?.click()}>
                       {authorAvatar ? (
                         <img src={authorAvatar} alt="Author" className="w-full h-full object-cover" />
                       ) : (
@@ -562,7 +562,7 @@ export default function EditBlogPostPage() {
                         </div>
                       )}
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        {uploadingAuthorAvatar ? <Loader2 size={16} className="text-white animate-spin" /> : <Upload size={16} className="text-white" />}
+                        {uploadingAuthorAvatar ? <Loader2 size={16} className="text-[#1B2A4A] animate-spin" /> : <Upload size={16} className="text-[#1B2A4A]" />}
                       </div>
                     </div>
                     <p className="text-[9px] text-gray-500 mt-1 text-center">Ảnh tác giả</p>
@@ -614,7 +614,7 @@ export default function EditBlogPostPage() {
           className="flex items-center gap-3 pt-4 pb-6 sticky bottom-0 z-10 flex-wrap"
           style={{ background: "linear-gradient(to top, #111 60%, transparent)", paddingTop: 16 }}
         >
-          <button onClick={() => handleSave("draft")} disabled={!!saving} className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-colors" style={{ background: "#1f1f1f", color: "#9ca3af", border: "1px solid #333" }}>
+          <button onClick={() => handleSave("draft")} disabled={!!saving} className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-colors" style={{ background: "#E5E7EB", color: "#9ca3af", border: "1px solid #333" }}>
             {saving === "draft" ? <Loader2 size={14} className="animate-spin" /> : <Save size={14} />} Lưu nháp
           </button>
 
@@ -638,7 +638,7 @@ export default function EditBlogPostPage() {
               <button onClick={handleDelete} disabled={!!saving} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-red-500/15 text-red-400 border border-red-500/30 hover:bg-red-500/25 transition-colors">
                 {saving === "delete" ? <Loader2 size={12} className="animate-spin" /> : "Xoá"}
               </button>
-              <button onClick={() => setShowDelete(false)} className="px-3 py-1.5 rounded-lg text-xs font-medium text-gray-500 hover:text-white transition-colors">
+              <button onClick={() => setShowDelete(false)} className="px-3 py-1.5 rounded-lg text-xs font-medium text-gray-500 hover:text-[#1B2A4A] transition-colors">
                 Huỷ
               </button>
             </div>

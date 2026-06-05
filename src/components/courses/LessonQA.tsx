@@ -119,7 +119,7 @@ export default function LessonQA({
       >
         <div className="flex items-center gap-2">
           <MessageCircleQuestion size={16} className="text-[#3b82f6]" />
-          <h3 className="font-semibold text-white text-sm">
+          <h3 className="font-semibold text-[#1B2A4A] text-sm">
             Hỏi giảng viên
           </h3>
           {questions.length > 0 && (
@@ -210,7 +210,7 @@ export default function LessonQA({
                     />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-0.5">
-                        <span className="text-xs font-medium text-white">
+                        <span className="text-xs font-medium text-[#1B2A4A]">
                           {q.profiles?.full_name ?? "Thành viên"}
                         </span>
                         <span className="text-[10px] text-gray-500">

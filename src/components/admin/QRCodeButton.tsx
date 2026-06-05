@@ -68,7 +68,7 @@ export default function QRCodeButton({
             {/* Close button */}
             <button
               onClick={() => setOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"
+              className="absolute top-4 right-4 text-gray-500 hover:text-[#1B2A4A] transition-colors"
             >
               <X size={20} />
             </button>
@@ -105,7 +105,7 @@ export default function QRCodeButton({
             <div
               className="rounded-xl p-4 space-y-2.5"
               style={{
-                background: "#1a1a1a",
+                background: "#F0F1F3",
                 border: "1px solid #2a2a2a",
               }}
             >
@@ -148,7 +148,7 @@ export default function QRCodeButton({
             {(customerName || customerEmail || customerPhone) && (
               <div
                 className="rounded-xl p-4 space-y-1.5"
-                style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
               >
                 <p className="text-xs text-gray-500 font-medium mb-2">
                   Thông tin khách hàng

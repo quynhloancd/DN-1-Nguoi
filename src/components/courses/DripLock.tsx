@@ -25,10 +25,10 @@ export default function DripLock({
   const formattedDate = formatDripDate(new Date(unlockDate));
 
   return (
-    <div className="relative rounded-xl overflow-hidden border border-[#2a2a2a] bg-[#0a0a0a]">
+    <div className="relative rounded-xl overflow-hidden border border-[#E5E7EB] bg-[#F8F9FA]">
       {/* Blurred placeholder to hint there is content behind the lock */}
-      <div className="aspect-video bg-[#111] flex items-center justify-center">
-        <div className="absolute inset-0 backdrop-blur-sm bg-[#0a0a0a]/80" />
+      <div className="aspect-video bg-white flex items-center justify-center">
+        <div className="absolute inset-0 backdrop-blur-sm bg-[#F8F9FA]/80" />
 
         {/* Lock content */}
         <div className="relative z-10 flex flex-col items-center gap-4 px-6 py-10 text-center max-w-md">

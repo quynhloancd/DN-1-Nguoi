@@ -59,7 +59,7 @@ export default function NextActionCard({ action }: NextActionCardProps) {
   const Icon = TYPE_ICONS[action.type] || ClipboardList;
 
   return (
-    <div className="flex items-start gap-3 p-3 rounded-lg bg-[#1a1a1a] border border-[#2a2a2a]">
+    <div className="flex items-start gap-3 p-3 rounded-lg bg-[#F0F1F3] border border-[#E5E7EB]">
       {/* Priority dot */}
       <div className="flex-shrink-0 mt-1">
         <div
@@ -75,7 +75,7 @@ export default function NextActionCard({ action }: NextActionCardProps) {
 
       {/* Content */}
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-bold text-white truncate">{action.title}</p>
+        <p className="text-sm font-bold text-[#1B2A4A] truncate">{action.title}</p>
 
         {action.description && (
           <p className="text-xs text-gray-400 mt-0.5 line-clamp-2">

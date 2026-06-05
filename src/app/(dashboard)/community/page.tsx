@@ -564,7 +564,7 @@ export default function CommunityPage() {
                 value={postText}
                 onChange={e => setPostText(e.target.value)}
                 placeholder="Chia sẻ học hỏi, thắc mắc hay thành tích của bạn..."
-                className="flex-1 bg-[#111] border border-[#2a2a2a] rounded-xl p-3 text-sm text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
+                className="flex-1 bg-white border border-[#E5E7EB] rounded-xl p-3 text-sm text-[#1B2A4A] placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] transition-colors"
                 rows={3}
               />
             </div>
@@ -582,7 +582,7 @@ export default function CommunityPage() {
                 <button
                   onClick={() => { fileInputRef.current?.click(); setShowEmojiPicker(false); }}
                   disabled={uploading || !!imageUrl}
-                  className={`p-2 rounded-lg transition-colors ${imageUrl ? "text-[#E85D04] bg-white/5" : "text-gray-500 hover:text-white hover:bg-white/5"} ${uploading ? "opacity-50 cursor-not-allowed" : ""}`}
+                  className={`p-2 rounded-lg transition-colors ${imageUrl ? "text-[#E85D04] bg-white/5" : "text-gray-500 hover:text-[#1B2A4A] hover:bg-white/5"} ${uploading ? "opacity-50 cursor-not-allowed" : ""}`}
                   title="Hình ảnh">
                   {uploading ? <Loader2 size={16} className="animate-spin" /> : <Image size={16} />}
                 </button>
@@ -590,7 +590,7 @@ export default function CommunityPage() {
                 {/* Link button */}
                 <button
                   onClick={handleLinkInsert}
-                  className="p-2 rounded-lg text-gray-500 hover:text-white hover:bg-white/5 transition-colors"
+                  className="p-2 rounded-lg text-gray-500 hover:text-[#1B2A4A] hover:bg-white/5 transition-colors"
                   title="Chèn link">
                   <Link2 size={16} />
                 </button>
@@ -599,12 +599,12 @@ export default function CommunityPage() {
                 <div className="relative">
                   <button
                     onClick={() => setShowEmojiPicker(v => !v)}
-                    className={`p-2 rounded-lg transition-colors ${showEmojiPicker ? "text-[#E85D04] bg-white/5" : "text-gray-500 hover:text-white hover:bg-white/5"}`}
+                    className={`p-2 rounded-lg transition-colors ${showEmojiPicker ? "text-[#E85D04] bg-white/5" : "text-gray-500 hover:text-[#1B2A4A] hover:bg-white/5"}`}
                     title="Emoji">
                     <Smile size={16} />
                   </button>
                   {showEmojiPicker && (
-                    <div className="absolute left-0 bottom-full mb-2 z-20 bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-2 shadow-lg">
+                    <div className="absolute left-0 bottom-full mb-2 z-20 bg-[#F0F1F3] border border-[#E5E7EB] rounded-xl p-2 shadow-lg">
                       <div className="grid grid-cols-5 gap-1">
                         {COMMON_EMOJIS.map(emoji => (
                           <button
@@ -639,13 +639,13 @@ export default function CommunityPage() {
                 />
                 {uploading && (
                   <div className="absolute inset-0 flex items-center justify-center bg-black/50 rounded-xl">
-                    <Loader2 size={24} className="text-white animate-spin" />
+                    <Loader2 size={24} className="text-[#1B2A4A] animate-spin" />
                   </div>
                 )}
                 {!uploading && (
                   <button
                     onClick={removeImage}
-                    className="absolute -top-2 -right-2 w-6 h-6 flex items-center justify-center bg-red-600 hover:bg-red-500 text-white rounded-full transition-colors shadow-lg"
+                    className="absolute -top-2 -right-2 w-6 h-6 flex items-center justify-center bg-red-600 hover:bg-red-500 text-[#1B2A4A] rounded-full transition-colors shadow-lg"
                     title="Xoá ảnh">
                     <X size={14} />
                   </button>
@@ -716,7 +716,7 @@ export default function CommunityPage() {
                   />
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-semibold text-white">{fullName}</span>
+                      <span className="text-sm font-semibold text-[#1B2A4A]">{fullName}</span>
                       {isVip && <span className="badge-gold text-[10px]">VIP</span>}
                     </div>
                     <span className="text-xs text-gray-400">{formatCreatedAt(post.created_at)}</span>
@@ -753,7 +753,7 @@ export default function CommunityPage() {
                 )}
 
                 {/* Reactions */}
-                <div className="flex items-center gap-4 pt-3 border-t border-[#2a2a2a]">
+                <div className="flex items-center gap-4 pt-3 border-t border-[#E5E7EB]">
                   <button
                     onClick={() => handleLike(post.id)}
                     className={`flex items-center gap-1.5 text-sm transition-colors ${isLiked ? "text-red-400" : "text-gray-500 hover:text-red-400"}`}>
@@ -773,28 +773,28 @@ export default function CommunityPage() {
                       <Share2 size={15} />
                     </button>
                     {shareOpen === post.id && (
-                      <div className="absolute left-0 bottom-full mb-2 z-20 bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl shadow-lg overflow-hidden min-w-[180px]">
+                      <div className="absolute left-0 bottom-full mb-2 z-20 bg-[#F0F1F3] border border-[#E5E7EB] rounded-xl shadow-lg overflow-hidden min-w-[180px]">
                         <button
                           onClick={() => handleShare(post.id, "copy")}
-                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-300 hover:bg-white/5 hover:text-[#1B2A4A] transition-colors">
                           {copiedLink ? <Check size={14} className="text-green-400" /> : <Copy size={14} />}
                           {copiedLink ? "Đã copy!" : "Sao chép liên kết"}
                         </button>
                         <button
                           onClick={() => handleShare(post.id, "facebook")}
-                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-300 hover:bg-white/5 hover:text-[#1B2A4A] transition-colors">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                           Facebook
                         </button>
                         <button
                           onClick={() => handleShare(post.id, "x")}
-                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-300 hover:bg-white/5 hover:text-[#1B2A4A] transition-colors">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                           X (Twitter)
                         </button>
                         <button
                           onClick={() => handleShare(post.id, "zalo")}
-                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                          className="flex items-center gap-2.5 w-full px-3 py-2.5 text-xs text-gray-300 hover:bg-white/5 hover:text-[#1B2A4A] transition-colors">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 14.163c-.18.36-.66.66-1.14.66H9.168c-.66 0-1.2-.36-1.32-.9-.12-.36 0-.78.3-1.08l4.56-5.1H9.468c-.42 0-.78-.36-.78-.78s.36-.78.78-.78h6.12c.48 0 .9.24 1.08.66.18.36.06.84-.24 1.14l-4.56 5.1h4.56c.42 0 .78.36.78.78.06.12-.06.24-.06.3z"/></svg>
                           Zalo
                         </button>
@@ -815,11 +815,11 @@ export default function CommunityPage() {
 
                 {/* Report Modal */}
                 {reportingPost === post.id && (
-                  <div className="mt-3 pt-3 border-t border-[#2a2a2a] bg-[#161616] rounded-lg p-4">
+                  <div className="mt-3 pt-3 border-t border-[#E5E7EB] bg-[#161616] rounded-lg p-4">
                     <div className="flex items-center gap-2 mb-3">
                       <AlertTriangle size={16} className="text-orange-400" />
-                      <span className="text-sm font-medium text-white">Báo cáo bài viết</span>
-                      <button onClick={() => setReportingPost(null)} className="ml-auto text-gray-500 hover:text-white">
+                      <span className="text-sm font-medium text-[#1B2A4A]">Báo cáo bài viết</span>
+                      <button onClick={() => setReportingPost(null)} className="ml-auto text-gray-500 hover:text-[#1B2A4A]">
                         <X size={14} />
                       </button>
                     </div>
@@ -842,7 +842,7 @@ export default function CommunityPage() {
                       value={reportDetails}
                       onChange={e => setReportDetails(e.target.value)}
                       placeholder="Chi tiết thêm (tuỳ chọn)..."
-                      className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg p-2 text-xs text-white placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] mb-3"
+                      className="w-full bg-white border border-[#E5E7EB] rounded-lg p-2 text-xs text-[#1B2A4A] placeholder:text-gray-500 resize-none focus:outline-none focus:border-[#E85D04] mb-3"
                       rows={2}
                     />
                     {reportError && <p className="text-xs text-red-400 mb-2">{reportError}</p>}
@@ -852,7 +852,7 @@ export default function CommunityPage() {
                         disabled={!reportReason || reportSubmitting}
                         className={`text-xs font-medium px-4 py-1.5 rounded-lg transition-colors ${
                           reportReason && !reportSubmitting
-                            ? "bg-orange-600 text-white hover:bg-orange-500"
+                            ? "bg-orange-600 text-[#1B2A4A] hover:bg-orange-500"
                             : "bg-[#2a2a2a] text-gray-500 cursor-not-allowed"
                         }`}
                       >
@@ -860,7 +860,7 @@ export default function CommunityPage() {
                       </button>
                       <button
                         onClick={() => setReportingPost(null)}
-                        className="text-xs text-gray-500 hover:text-white px-3 py-1.5"
+                        className="text-xs text-gray-500 hover:text-[#1B2A4A] px-3 py-1.5"
                       >
                         Huỷ
                       </button>
@@ -876,7 +876,7 @@ export default function CommunityPage() {
                     opacity: openComments === post.id ? 1 : 0,
                   }}
                 >
-                  <div className="mt-3 pt-3 border-t border-[#2a2a2a] bg-[#161616] rounded-lg p-3">
+                  <div className="mt-3 pt-3 border-t border-[#E5E7EB] bg-[#161616] rounded-lg p-3">
                     {/* Loading */}
                     {commentsLoading[post.id] && (
                       <div className="flex items-center gap-2 py-4 justify-center">
@@ -904,7 +904,7 @@ export default function CommunityPage() {
                                 />
                                 <div className="flex-1 min-w-0">
                                   <div className="flex items-center gap-2">
-                                    <span className="text-xs font-medium text-white">{cName}</span>
+                                    <span className="text-xs font-medium text-[#1B2A4A]">{cName}</span>
                                     <span className="text-[10px] text-gray-500">{formatCreatedAt(comment.created_at)}</span>
                                   </div>
                                   <p className="text-xs text-gray-300 leading-relaxed mt-0.5 break-words">{linkifyContent(comment.content)}</p>
@@ -917,14 +917,14 @@ export default function CommunityPage() {
                     )}
 
                     {/* Comment input */}
-                    <div className="flex gap-2 mt-3 pt-3 border-t border-[#2a2a2a]">
+                    <div className="flex gap-2 mt-3 pt-3 border-t border-[#E5E7EB]">
                       <input
                         type="text"
                         value={commentText[post.id] || ""}
                         onChange={e => setCommentText(prev => ({ ...prev, [post.id]: e.target.value }))}
                         onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleCommentSubmit(post.id); } }}
                         placeholder="Viết bình luận..."
-                        className="flex-1 bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-1.5 text-xs text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
+                        className="flex-1 bg-white border border-[#E5E7EB] rounded-lg px-3 py-1.5 text-xs text-[#1B2A4A] placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
                       />
                       <button
                         onClick={() => handleCommentSubmit(post.id)}
@@ -946,12 +946,12 @@ export default function CommunityPage() {
         </div>
 
         {/* Right Sidebar */}
-        <aside className="hidden xl:block w-72 p-4 border-l border-[#1f1f1f] shrink-0 space-y-4" style={{ background: "#0d0d0d" }}>
+        <aside className="hidden xl:block w-72 p-4 border-l border-[#E5E7EB] shrink-0 space-y-4" style={{ background: "#0d0d0d" }}>
           {/* XP Card */}
           <div className="card-dark p-4">
             <div className="flex items-center gap-2 mb-3">
               <Flame size={15} className="text-[#f59e0b]" />
-              <span className="text-sm font-semibold text-white">XP của bạn</span>
+              <span className="text-sm font-semibold text-[#1B2A4A]">XP của bạn</span>
             </div>
             {myProfile ? (
               <>
@@ -975,7 +975,7 @@ export default function CommunityPage() {
           <div className="card-dark p-4">
             <div className="flex items-center gap-2 mb-3">
               <Trophy size={15} className="text-[#f59e0b]" />
-              <span className="text-sm font-semibold text-white">Top thành viên</span>
+              <span className="text-sm font-semibold text-[#1B2A4A]">Top thành viên</span>
             </div>
             <div className="space-y-2">
               {leaderboard.length === 0 ? (
@@ -1019,13 +1019,13 @@ export default function CommunityPage() {
           <div className="card-dark p-4 border border-[#E85D04]/20">
             <div className="flex items-center gap-2 mb-2">
               <TrendingUp size={15} className="text-[#E85D04]" />
-              <span className="text-sm font-semibold text-white">Thử thách tuần</span>
+              <span className="text-sm font-semibold text-[#1B2A4A]">Thử thách tuần</span>
             </div>
             <p className="text-xs text-gray-400 mb-3">Học 5 bài trong 7 ngày để nhận <strong className="text-[#f59e0b]">badge đặc biệt</strong> và 500 XP</p>
             <div className="flex gap-1 mb-2">
               {[1, 2, 3, 4, 5].map(d => (
                 <div key={d} className="flex-1 h-6 rounded flex items-center justify-center text-xs"
-                  style={{ background: d <= Math.min((myProfile?.streak ?? 0), 5) ? "#E85D04" : "#2a2a2a", color: d <= Math.min((myProfile?.streak ?? 0), 5) ? "white" : "#444" }}>
+                  style={{ background: d <= Math.min((myProfile?.streak ?? 0), 5) ? "#E85D04" : "#E5E7EB", color: d <= Math.min((myProfile?.streak ?? 0), 5) ? "white" : "#444" }}>
                   {d <= Math.min((myProfile?.streak ?? 0), 5) ? "✓" : d}
                 </div>
               ))}

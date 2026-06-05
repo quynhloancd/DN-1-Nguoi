@@ -113,7 +113,7 @@ export default async function AdminCouponsPage() {
                 <Tag size={17} className="text-[#3b82f6]" />
               </div>
             </div>
-            <div className="text-2xl font-bold text-white">{totalCoupons}</div>
+            <div className="text-2xl font-bold text-[#1B2A4A]">{totalCoupons}</div>
             <div className="text-xs text-gray-500 mt-0.5">Tổng mã giảm giá</div>
           </div>
 
@@ -127,7 +127,7 @@ export default async function AdminCouponsPage() {
                 <CheckCircle size={17} className="text-[#22c55e]" />
               </div>
             </div>
-            <div className="text-2xl font-bold text-white">{activeCoupons}</div>
+            <div className="text-2xl font-bold text-[#1B2A4A]">{activeCoupons}</div>
             <div className="text-xs text-gray-500 mt-0.5">Đang hoạt động</div>
           </div>
 
@@ -141,7 +141,7 @@ export default async function AdminCouponsPage() {
                 <BarChart3 size={17} className="text-[#E85D04]" />
               </div>
             </div>
-            <div className="text-2xl font-bold text-white">{totalUses}</div>
+            <div className="text-2xl font-bold text-[#1B2A4A]">{totalUses}</div>
             <div className="text-xs text-gray-500 mt-0.5">Tổng lượt sử dụng</div>
           </div>
         </div>
@@ -158,7 +158,7 @@ export default async function AdminCouponsPage() {
           >
             <span className="text-xs text-gray-500">
               Hiển thị{" "}
-              <span className="text-white font-medium">{rows.length}</span>{" "}
+              <span className="text-[#1B2A4A] font-medium">{rows.length}</span>{" "}
               mã giảm giá
             </span>
           </div>
@@ -237,7 +237,7 @@ export default async function AdminCouponsPage() {
 
                         {/* Value */}
                         <td className="px-5 py-3.5 whitespace-nowrap">
-                          <span className="font-bold text-white">
+                          <span className="font-bold text-[#1B2A4A]">
                             {coupon.discount_type === "percent"
                               ? `${coupon.discount_value}%`
                               : formatCurrency(coupon.discount_value)}

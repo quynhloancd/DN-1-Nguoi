@@ -54,7 +54,7 @@ export default function BookingForm() {
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#E85D04]/15 mb-2">
           <CheckCircle size={32} className="text-[#E85D04]" />
         </div>
-        <h3 className="text-xl font-bold text-white">Đã nhận được yêu cầu của bạn!</h3>
+        <h3 className="text-xl font-bold text-[#1B2A4A]">Đã nhận được yêu cầu của bạn!</h3>
         <p className="text-gray-400 max-w-sm mx-auto">
           Thiên Huệ sẽ liên hệ lại với bạn trong vòng <span className="text-[#E85D04] font-semibold">24 giờ</span> để xác nhận lịch hẹn.
         </p>
@@ -76,7 +76,7 @@ export default function BookingForm() {
           onChange={handleChange}
           placeholder="Nguyễn Văn A"
           required
-          className="w-full px-4 py-3 rounded-xl bg-[#111] border border-[#2a2a2a] text-white placeholder-gray-600 focus:border-[#E85D04] focus:outline-none transition-colors"
+          className="w-full px-4 py-3 rounded-xl bg-white border border-[#E5E7EB] text-[#1B2A4A] placeholder-gray-600 focus:border-[#E85D04] focus:outline-none transition-colors"
         />
       </div>
 
@@ -93,7 +93,7 @@ export default function BookingForm() {
             onChange={handleChange}
             placeholder="email@example.com"
             required
-            className="w-full px-4 py-3 rounded-xl bg-[#111] border border-[#2a2a2a] text-white placeholder-gray-600 focus:border-[#E85D04] focus:outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-white border border-[#E5E7EB] text-[#1B2A4A] placeholder-gray-600 focus:border-[#E85D04] focus:outline-none transition-colors"
           />
         </div>
         <div>
@@ -107,7 +107,7 @@ export default function BookingForm() {
             onChange={handleChange}
             placeholder="0912 345 678"
             required
-            className="w-full px-4 py-3 rounded-xl bg-[#111] border border-[#2a2a2a] text-white placeholder-gray-600 focus:border-[#E85D04] focus:outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-white border border-[#E5E7EB] text-[#1B2A4A] placeholder-gray-600 focus:border-[#E85D04] focus:outline-none transition-colors"
           />
         </div>
       </div>
@@ -123,7 +123,7 @@ export default function BookingForm() {
           onChange={handleChange}
           placeholder="VD: Chủ shop thời trang online, Quản lý kinh doanh, ..."
           required
-          className="w-full px-4 py-3 rounded-xl bg-[#111] border border-[#2a2a2a] text-white placeholder-gray-600 focus:border-[#E85D04] focus:outline-none transition-colors"
+          className="w-full px-4 py-3 rounded-xl bg-white border border-[#E5E7EB] text-[#1B2A4A] placeholder-gray-600 focus:border-[#E85D04] focus:outline-none transition-colors"
         />
       </div>
 
@@ -137,7 +137,7 @@ export default function BookingForm() {
           value={form.preferredTime}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 rounded-xl bg-[#111] border border-[#2a2a2a] text-white focus:border-[#E85D04] focus:outline-none transition-colors"
+          className="w-full px-4 py-3 rounded-xl bg-white border border-[#E5E7EB] text-[#1B2A4A] focus:border-[#E85D04] focus:outline-none transition-colors"
         >
           <option value="" disabled>Chọn khung giờ phù hợp</option>
           {PREFERRED_TIMES.map((t) => (
@@ -158,7 +158,7 @@ export default function BookingForm() {
           rows={4}
           placeholder="Mô tả ngắn quy trình hiện tại của bạn và bạn muốn AI giúp gì... (VD: Mỗi ngày mất 2h gửi báo cáo thủ công, muốn tự động hoá)"
           required
-          className="w-full px-4 py-3 rounded-xl bg-[#111] border border-[#2a2a2a] text-white placeholder-gray-600 focus:border-[#E85D04] focus:outline-none transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-xl bg-white border border-[#E5E7EB] text-[#1B2A4A] placeholder-gray-600 focus:border-[#E85D04] focus:outline-none transition-colors resize-none"
         />
       </div>
 
@@ -171,7 +171,7 @@ export default function BookingForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-4 rounded-xl font-bold text-white text-base transition-all disabled:opacity-60 flex items-center justify-center gap-2"
+        className="w-full py-4 rounded-xl font-bold text-[#1B2A4A] text-base transition-all disabled:opacity-60 flex items-center justify-center gap-2"
         style={{ background: "linear-gradient(135deg, #E85D04, #F97316)" }}
       >
         {loading ? (

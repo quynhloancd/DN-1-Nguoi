@@ -309,14 +309,14 @@ export default function CheckoutModal({ product, onClose, onSuccess }: CheckoutM
         <div className="flex items-center justify-between px-5 py-4"
           style={{ borderBottom: "1px solid #2a2a2a" }}>
           <div>
-            <h2 className="font-bold text-white text-base">
+            <h2 className="font-bold text-[#1B2A4A] text-base">
               {step === "success" ? "Thanh toán thành công 🎉" : "Thanh toán"}
             </h2>
             {step !== "success" && (
               <p className="text-xs text-gray-400 mt-0.5">{product.name}</p>
             )}
           </div>
-          <button onClick={onClose} className="text-gray-500 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/5">
+          <button onClick={onClose} className="text-gray-500 hover:text-[#1B2A4A] transition-colors p-1 rounded-lg hover:bg-white/5">
             <X size={18} />
           </button>
         </div>
@@ -327,7 +327,7 @@ export default function CheckoutModal({ product, onClose, onSuccess }: CheckoutM
             <div className="p-4 rounded-xl mb-4" style={{ background: "#222", border: "1px solid #333" }}>
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <div className="font-semibold text-white text-sm mb-1">{product.name}</div>
+                  <div className="font-semibold text-[#1B2A4A] text-sm mb-1">{product.name}</div>
                   {product.description && (
                     <div className="text-xs text-gray-400 leading-relaxed">{product.description}</div>
                   )}
@@ -394,14 +394,14 @@ export default function CheckoutModal({ product, onClose, onSuccess }: CheckoutM
                     value={couponCode}
                     onChange={(e) => { setCouponCode(e.target.value.toUpperCase()); setCouponError(""); }}
                     placeholder="Nhập mã giảm giá"
-                    className="flex-1 px-3 py-2 rounded-lg text-sm text-white placeholder-gray-600 outline-none transition-colors font-mono"
-                    style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                    className="flex-1 px-3 py-2 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-600 outline-none transition-colors font-mono"
+                    style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                     onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); handleApplyCoupon(); } }}
                   />
                   <button
                     onClick={handleApplyCoupon}
                     disabled={couponLoading || !couponCode.trim()}
-                    className="px-4 py-2 rounded-lg text-xs font-semibold text-white transition-all disabled:opacity-50"
+                    className="px-4 py-2 rounded-lg text-xs font-semibold text-[#1B2A4A] transition-all disabled:opacity-50"
                     style={{
                       background: "linear-gradient(135deg, #E85D04, #b8922e)",
                     }}
@@ -493,7 +493,7 @@ export default function CheckoutModal({ product, onClose, onSuccess }: CheckoutM
                       <Wallet size={20} className="text-[#E85D04]" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="font-semibold text-white text-sm">
+                      <div className="font-semibold text-[#1B2A4A] text-sm">
                         {payosLoading ? (
                           <span className="flex items-center gap-2">
                             <Loader2 size={14} className="animate-spin" />
@@ -532,7 +532,7 @@ export default function CheckoutModal({ product, onClose, onSuccess }: CheckoutM
                       <Building2 size={20} className="text-gray-400" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="font-semibold text-white text-sm">
+                      <div className="font-semibold text-[#1B2A4A] text-sm">
                         Chuyển khoản ngân hàng
                       </div>
                       <div className="text-xs text-gray-400 mt-0.5">
@@ -617,10 +617,10 @@ export default function CheckoutModal({ product, onClose, onSuccess }: CheckoutM
 
             {/* Manual transfer info (when no Sepay) */}
             {order.manual && (
-              <div className="p-4 rounded-xl mb-4" style={{ background: "#1a1a1a", border: "1px solid #333" }}>
+              <div className="p-4 rounded-xl mb-4" style={{ background: "#F0F1F3", border: "1px solid #333" }}>
                 <div className="flex items-center gap-2 mb-3">
                   <CreditCard size={16} className="text-[#E85D04]" />
-                  <span className="text-sm font-semibold text-white">Thông tin chuyển khoản</span>
+                  <span className="text-sm font-semibold text-[#1B2A4A]">Thông tin chuyển khoản</span>
                 </div>
                 <p className="text-xs text-gray-400 mb-3">
                   Vui lòng chuyển khoản theo thông tin bên dưới. Admin sẽ xác nhận và kích hoạt khoá học cho bạn.
@@ -644,7 +644,7 @@ export default function CheckoutModal({ product, onClose, onSuccess }: CheckoutM
                     </span>
                     {item.copyable && (
                       <button onClick={() => copyToClipboard(item.value, item.key)}
-                        className="text-gray-500 hover:text-white transition-colors">
+                        className="text-gray-500 hover:text-[#1B2A4A] transition-colors">
                         {copied === item.key ? <Check size={13} className="text-[#E85D04]" /> : <Copy size={13} />}
                       </button>
                     )}
@@ -679,7 +679,7 @@ export default function CheckoutModal({ product, onClose, onSuccess }: CheckoutM
               style={{ background: "rgba(34,197,94,0.15)", border: "2px solid rgba(34,197,94,0.4)" }}>
               <CheckCircle size={32} className="text-[#22c55e]" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Thanh toán thành công!</h3>
+            <h3 className="text-xl font-bold text-[#1B2A4A] mb-2">Thanh toán thành công!</h3>
             <p className="text-gray-400 text-sm mb-2">
               Cảm ơn bạn đã tin tưởng. Quyền truy cập đã được kích hoạt ngay lập tức.
             </p>
@@ -691,7 +691,7 @@ export default function CheckoutModal({ product, onClose, onSuccess }: CheckoutM
                 Bắt đầu học ngay 🚀
               </button>
               <button onClick={onClose}
-                className="w-full py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                className="w-full py-2 text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors">
                 Đóng
               </button>
             </div>

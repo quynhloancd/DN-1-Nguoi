@@ -45,7 +45,7 @@ export default function NewsletterForm() {
       style={{ borderColor: "rgba(232,93,4,0.25)" }}
     >
       <div className="text-2xl mb-3">{"📬"}</div>
-      <h3 className="font-bold text-white mb-1">
+      <h3 className="font-bold text-[#1B2A4A] mb-1">
         Nhận bài viết mới mỗi tuần
       </h3>
       <p className="text-sm text-gray-400 mb-4">

@@ -186,7 +186,7 @@ export default async function AdminPage() {
                 <DollarSign size={14} style={{ color: s.color }} />
                 <span className="text-xs text-gray-500">{s.label}</span>
               </div>
-              <div className="text-xl font-bold text-white">{s.value}</div>
+              <div className="text-xl font-bold text-[#1B2A4A]">{s.value}</div>
               <div className="text-[11px] mt-1" style={{ color: s.color }}>{s.change}</div>
             </div>
           ))}
@@ -208,7 +208,7 @@ export default async function AdminPage() {
                 </div>
                 <span className="text-xs text-gray-500 font-medium">{card.count}</span>
               </div>
-              <h3 className="font-semibold text-white mb-1">{card.title}</h3>
+              <h3 className="font-semibold text-[#1B2A4A] mb-1">{card.title}</h3>
               <p className="text-xs text-gray-500 leading-relaxed mb-4">{card.desc}</p>
               <div className="flex gap-2 flex-wrap">
                 {card.actions.map((action) => (
@@ -237,13 +237,13 @@ export default async function AdminPage() {
         <div className="grid md:grid-cols-2 gap-6">
           {/* Recent users */}
           <div>
-            <h2 className="font-bold text-white mb-3 text-sm">Học viên mới đăng ký</h2>
+            <h2 className="font-bold text-[#1B2A4A] mb-3 text-sm">Học viên mới đăng ký</h2>
             <div className="card-dark divide-y divide-[#2a2a2a]">
               {(recentUsers ?? []).length === 0 && (
                 <div className="p-4 text-sm text-gray-500">Chưa có học viên nào.</div>
               )}
               {(recentUsers ?? []).map((u, i) => (
-                <div key={i} className="flex items-center gap-3 p-3 hover:bg-[#1a1a1a] transition-colors">
+                <div key={i} className="flex items-center gap-3 p-3 hover:bg-[#F0F1F3] transition-colors">
                   <UserAvatar
                     src={u.avatar_url}
                     initials={(u.full_name ?? "?").slice(0, 2).toUpperCase()}
@@ -252,7 +252,7 @@ export default async function AdminPage() {
                     size={28}
                   />
                   <div className="flex-1 min-w-0">
-                    <div className="text-sm text-white truncate">{u.full_name ?? "Thành viên"}</div>
+                    <div className="text-sm text-[#1B2A4A] truncate">{u.full_name ?? "Thành viên"}</div>
                   </div>
                   <div className="text-xs text-gray-500 shrink-0">{timeAgo(u.created_at)}</div>
                 </div>
@@ -262,13 +262,13 @@ export default async function AdminPage() {
 
           {/* Recent orders */}
           <div>
-            <h2 className="font-bold text-white mb-3 text-sm">Đơn hàng gần đây</h2>
+            <h2 className="font-bold text-[#1B2A4A] mb-3 text-sm">Đơn hàng gần đây</h2>
             <div className="card-dark divide-y divide-[#2a2a2a]">
               {(recentOrders ?? []).length === 0 && (
                 <div className="p-4 text-sm text-gray-500">Chưa có đơn hàng nào.</div>
               )}
               {(recentOrders ?? []).map((o, i) => (
-                <div key={i} className="flex items-center gap-3 p-3 hover:bg-[#1a1a1a] transition-colors">
+                <div key={i} className="flex items-center gap-3 p-3 hover:bg-[#F0F1F3] transition-colors">
                   <div
                     className="w-2 h-2 rounded-full shrink-0 mt-0.5"
                     style={{
@@ -281,13 +281,13 @@ export default async function AdminPage() {
                     }}
                   />
                   <div className="flex-1 min-w-0">
-                    <div className="text-sm text-white truncate">
+                    <div className="text-sm text-[#1B2A4A] truncate">
                       {o.customer_name ?? o.order_code}
                     </div>
                     <div className="text-xs text-gray-500">{o.order_code}</div>
                   </div>
                   <div className="text-right shrink-0">
-                    <div className="text-sm font-semibold text-white">
+                    <div className="text-sm font-semibold text-[#1B2A4A]">
                       {o.amount.toLocaleString("vi-VN")}đ
                     </div>
                     <div className="text-xs text-gray-500">{timeAgo(o.created_at)}</div>
@@ -300,7 +300,7 @@ export default async function AdminPage() {
 
         {/* Quick actions */}
         <div>
-          <h2 className="font-bold text-white mb-3 text-sm">Thao tác nhanh</h2>
+          <h2 className="font-bold text-[#1B2A4A] mb-3 text-sm">Thao tác nhanh</h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
             {[
               { label: "Thêm khoá học", icon: BookOpen, color: "#E85D04", href: "/admin/courses" },

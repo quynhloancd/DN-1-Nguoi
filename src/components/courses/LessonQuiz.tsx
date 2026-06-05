@@ -269,7 +269,7 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
               <Trophy size={16} className="text-[#22c55e]" />
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-white">
+              <h3 className="text-sm font-semibold text-[#1B2A4A]">
                 {quiz.title}
               </h3>
               <p className="text-xs text-[#22c55e] flex items-center gap-1 mt-0.5">
@@ -280,7 +280,7 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
           </div>
           <button
             onClick={() => setShowQuiz(true)}
-            className="text-xs text-gray-400 hover:text-white transition-colors px-3 py-1.5 rounded-lg hover:bg-white/5"
+            className="text-xs text-gray-400 hover:text-[#1B2A4A] transition-colors px-3 py-1.5 rounded-lg hover:bg-white/5"
           >
             Làm lại
           </button>
@@ -296,7 +296,7 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
         <div className="flex items-center justify-between mb-1">
           <div className="flex items-center gap-2">
             <ClipboardCheck size={16} className="text-[#E85D04]" />
-            <h3 className="text-sm font-semibold text-white">{quiz.title}</h3>
+            <h3 className="text-sm font-semibold text-[#1B2A4A]">{quiz.title}</h3>
           </div>
           {/* Countdown timer */}
           {timeLeft !== null && !result && (
@@ -334,7 +334,7 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
           return (
             <div key={question.id} className="space-y-2.5">
               {/* Question text */}
-              <p className="text-sm text-white font-medium">
+              <p className="text-sm text-[#1B2A4A] font-medium">
                 <span className="text-[#E85D04] mr-1.5">
                   Câu {qIndex + 1}.
                 </span>
@@ -359,7 +359,7 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
                       placeholder="Nhập câu trả lời của bạn..."
                       value={textAnswers[question.id] || ""}
                       onChange={(e) => setTextAnswers(prev => ({...prev, [question.id]: e.target.value}))}
-                      className="w-full p-3 rounded-lg text-sm text-white placeholder-gray-500 resize-none"
+                      className="w-full p-3 rounded-lg text-sm text-[#1B2A4A] placeholder-gray-500 resize-none"
                       style={{ background: '#1a1a1a', border: '1px solid #333', minHeight: '100px' }}
                       rows={4}
                     />
@@ -510,7 +510,7 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
         {result ? (
           <button
             onClick={handleRetry}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-white/5 hover:bg-white/10 text-white border border-white/10"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-white/5 hover:bg-white/10 text-[#1B2A4A] border border-white/10"
           >
             <RotateCcw size={14} />
             Làm lại
@@ -522,7 +522,7 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
             className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40"
             style={{
               background: "linear-gradient(135deg, #E85D04, #b8912e)",
-              color: "#0a0a0a",
+              color: "#F8F9FA",
             }}
           >
             {submitting ? (

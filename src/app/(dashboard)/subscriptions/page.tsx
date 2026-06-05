@@ -36,7 +36,7 @@ export default async function SubscriptionsPage() {
         {/* If user has active sub, show status first */}
         {hasActiveSub && (
           <div>
-            <h2 className="text-lg font-bold text-white mb-4">
+            <h2 className="text-lg font-bold text-[#1B2A4A] mb-4">
               Gói hiện tại của bạn
             </h2>
             <SubscriptionStatus />
@@ -45,7 +45,7 @@ export default async function SubscriptionsPage() {
 
         {/* Pricing section */}
         <div>
-          <h2 className="text-lg font-bold text-white mb-2">
+          <h2 className="text-lg font-bold text-[#1B2A4A] mb-2">
             {hasActiveSub
               ? "Nâng cấp gói đăng ký"
               : "Chọn gói đăng ký"}

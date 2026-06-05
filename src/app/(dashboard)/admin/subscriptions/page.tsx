@@ -178,7 +178,7 @@ export default async function AdminSubscriptionsPage() {
                 <CreditCard size={17} className="text-[#3b82f6]" />
               </div>
             </div>
-            <div className="text-2xl font-bold text-white">
+            <div className="text-2xl font-bold text-[#1B2A4A]">
               {totalPlansCount ?? 0}
             </div>
             <div className="text-xs text-gray-500 mt-0.5">Gói đăng ký</div>
@@ -194,7 +194,7 @@ export default async function AdminSubscriptionsPage() {
                 <Users size={17} className="text-[#E85D04]" />
               </div>
             </div>
-            <div className="text-2xl font-bold text-white">
+            <div className="text-2xl font-bold text-[#1B2A4A]">
               {activeSubCount ?? 0}
             </div>
             <div className="text-xs text-gray-500 mt-0.5">
@@ -212,7 +212,7 @@ export default async function AdminSubscriptionsPage() {
                 <TrendingUp size={17} className="text-[#22c55e]" />
               </div>
             </div>
-            <div className="text-2xl font-bold text-white">
+            <div className="text-2xl font-bold text-[#1B2A4A]">
               {formatCurrency(monthlyRevenue)}
             </div>
             <div className="text-xs text-gray-500 mt-0.5">
@@ -230,7 +230,7 @@ export default async function AdminSubscriptionsPage() {
                 <BarChart3 size={17} className="text-[#ef4444]" />
               </div>
             </div>
-            <div className="text-2xl font-bold text-white">{churnRate}%</div>
+            <div className="text-2xl font-bold text-[#1B2A4A]">{churnRate}%</div>
             <div className="text-xs text-gray-500 mt-0.5">
               Tỷ lệ huỷ (30 ngày)
             </div>
@@ -249,7 +249,7 @@ export default async function AdminSubscriptionsPage() {
           >
             <span className="text-xs text-gray-500">
               Hiển thị{" "}
-              <span className="text-white font-medium">
+              <span className="text-[#1B2A4A] font-medium">
                 {plansWithCounts.length}
               </span>{" "}
               gói đăng ký
@@ -297,7 +297,7 @@ export default async function AdminSubscriptionsPage() {
                     >
                       {/* Name */}
                       <td className="px-5 py-3.5">
-                        <div className="font-medium text-white text-sm">
+                        <div className="font-medium text-[#1B2A4A] text-sm">
                           {plan.name}
                         </div>
                         <div className="text-xs text-gray-500 mt-0.5">
@@ -318,7 +318,7 @@ export default async function AdminSubscriptionsPage() {
 
                       {/* Price */}
                       <td className="px-5 py-3.5 whitespace-nowrap">
-                        <span className="font-bold text-white">
+                        <span className="font-bold text-[#1B2A4A]">
                           {formatCurrency(plan.price)}
                         </span>
                         {plan.original_price &&

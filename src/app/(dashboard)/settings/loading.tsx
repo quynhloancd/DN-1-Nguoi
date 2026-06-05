@@ -22,7 +22,7 @@ export default function Loading() {
           <div className="w-52 shrink-0 hidden md:block">
             <div
               className="rounded-xl p-2 space-y-0.5"
-              style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+              style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
             >
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="flex items-center gap-2.5 px-3 py-2.5">
@@ -38,7 +38,7 @@ export default function Loading() {
             {/* Avatar card */}
             <div
               className="rounded-xl p-6"
-              style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+              style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
             >
               <div className="h-4 bg-zinc-800 rounded w-28 mb-4" />
               <div className="flex items-center gap-5">
@@ -53,7 +53,7 @@ export default function Loading() {
             {/* Personal info form card */}
             <div
               className="rounded-xl p-6 space-y-5"
-              style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+              style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
             >
               <div className="h-4 bg-zinc-800 rounded w-40" />
               {/* Name + email grid */}
@@ -83,7 +83,7 @@ export default function Loading() {
             {/* Social links card */}
             <div
               className="rounded-xl p-6 space-y-4"
-              style={{ background: "#151515", border: "1px solid #2a2a2a" }}
+              style={{ background: "#F8F9FA", border: "1px solid #2a2a2a" }}
             >
               <div className="h-4 bg-zinc-800 rounded w-32" />
               {[1, 2, 3, 4].map((i) => (

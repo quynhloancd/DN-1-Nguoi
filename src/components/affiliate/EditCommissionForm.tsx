@@ -50,7 +50,7 @@ export default function EditCommissionForm({
       <button
         type="button"
         onClick={() => setEditing(false)}
-        className="text-gray-500 hover:text-white transition-colors p-0.5"
+        className="text-gray-500 hover:text-[#1B2A4A] transition-colors p-0.5"
         title="Huỷ"
       >
         <X size={14} />

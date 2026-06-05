@@ -195,7 +195,7 @@ export default function InstructorStudentsPage() {
                 <Users size={14} style={{ color: "#3b82f6" }} />
               </div>
             </div>
-            <div className="text-xl font-bold text-white">
+            <div className="text-xl font-bold text-[#1B2A4A]">
               {summaryStats.totalStudents}
             </div>
           </div>
@@ -252,7 +252,7 @@ export default function InstructorStudentsPage() {
             <select
               value={filterCourse}
               onChange={(e) => setFilterCourse(e.target.value)}
-              className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#E85D04] transition-colors"
+              className="w-full bg-white border border-[#E5E7EB] rounded-lg px-3 py-2 text-sm text-[#1B2A4A] focus:outline-none focus:border-[#E85D04] transition-colors"
             >
               <option value="">Tất cả khoá học</option>
               {courses.map((c) => (
@@ -277,7 +277,7 @@ export default function InstructorStudentsPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Tìm theo tên hoặc email..."
-                className="w-full bg-[#111] border border-[#2a2a2a] rounded-lg pl-9 pr-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
+                className="w-full bg-white border border-[#E5E7EB] rounded-lg pl-9 pr-3 py-2 text-sm text-[#1B2A4A] placeholder:text-gray-500 focus:outline-none focus:border-[#E85D04] transition-colors"
               />
             </div>
           </div>
@@ -320,7 +320,7 @@ export default function InstructorStudentsPage() {
                   {/* ── Row header ──────────────────────────────── */}
                   <button
                     onClick={() => toggleExpanded(key)}
-                    className="w-full flex items-center gap-3 p-4 text-left hover:bg-[#1a1a1a] transition-colors"
+                    className="w-full flex items-center gap-3 p-4 text-left hover:bg-[#F0F1F3] transition-colors"
                   >
                     {/* Avatar */}
                     <div className="shrink-0">
@@ -340,7 +340,7 @@ export default function InstructorStudentsPage() {
                     {/* Info */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-sm font-medium text-white truncate">
+                        <span className="text-sm font-medium text-[#1B2A4A] truncate">
                           {student.full_name ?? "Học viên"}
                         </span>
                         {!filterCourse && student.course_title && (
@@ -412,7 +412,7 @@ export default function InstructorStudentsPage() {
                       opacity: isExpanded ? 1 : 0,
                     }}
                   >
-                    <div className="px-4 pb-4 border-t border-[#2a2a2a]">
+                    <div className="px-4 pb-4 border-t border-[#E5E7EB]">
                       {/* Mobile dates */}
                       <div className="sm:hidden mt-3 flex gap-4 text-[10px] text-gray-500">
                         <span>
@@ -430,7 +430,7 @@ export default function InstructorStudentsPage() {
                         </p>
 
                         {/* Visual progress breakdown */}
-                        <div className="bg-[#111] rounded-lg p-3 space-y-3">
+                        <div className="bg-white rounded-lg p-3 space-y-3">
                           {/* Large progress bar */}
                           <div>
                             <div className="flex items-center justify-between mb-1.5">
@@ -457,7 +457,7 @@ export default function InstructorStudentsPage() {
 
                           {/* Lesson count grid */}
                           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#1a1a1a]">
+                            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#F0F1F3]">
                               <CheckCircle2
                                 size={14}
                                 className="text-[#22c55e] shrink-0"
@@ -471,7 +471,7 @@ export default function InstructorStudentsPage() {
                                 </p>
                               </div>
                             </div>
-                            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#1a1a1a]">
+                            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#F0F1F3]">
                               <Clock
                                 size={14}
                                 className="text-gray-500 shrink-0"
@@ -487,7 +487,7 @@ export default function InstructorStudentsPage() {
                                 </p>
                               </div>
                             </div>
-                            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#1a1a1a]">
+                            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#F0F1F3]">
                               <BookOpen
                                 size={14}
                                 className="text-[#E85D04] shrink-0"
@@ -506,7 +506,7 @@ export default function InstructorStudentsPage() {
                       </div>
 
                       {/* Summary line */}
-                      <div className="mt-3 pt-3 border-t border-[#2a2a2a] flex items-center gap-4 text-xs text-gray-400">
+                      <div className="mt-3 pt-3 border-t border-[#E5E7EB] flex items-center gap-4 text-xs text-gray-400">
                         <span>
                           Hoàn thành:{" "}
                           <strong
@@ -539,8 +539,8 @@ export default function InstructorStudentsPage() {
               disabled={offset === 0}
               className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
                 offset === 0
-                  ? "bg-[#1a1a1a] text-gray-600 cursor-not-allowed"
-                  : "bg-[#1a1a1a] text-gray-300 hover:bg-[#222]"
+                  ? "bg-[#F0F1F3] text-gray-600 cursor-not-allowed"
+                  : "bg-[#F0F1F3] text-gray-300 hover:bg-[#222]"
               }`}
             >
               Trước
@@ -553,8 +553,8 @@ export default function InstructorStudentsPage() {
               disabled={currentPage >= totalPages}
               className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
                 currentPage >= totalPages
-                  ? "bg-[#1a1a1a] text-gray-600 cursor-not-allowed"
-                  : "bg-[#1a1a1a] text-gray-300 hover:bg-[#222]"
+                  ? "bg-[#F0F1F3] text-gray-600 cursor-not-allowed"
+                  : "bg-[#F0F1F3] text-gray-300 hover:bg-[#222]"
               }`}
             >
               Sau

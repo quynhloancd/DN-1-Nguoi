@@ -147,7 +147,7 @@ function MonthCalendar({
             <Calendar size={20} className="text-[#E85D04]" />
           </div>
           <div>
-            <h2 className="text-lg font-bold text-white">
+            <h2 className="text-lg font-bold text-[#1B2A4A]">
               {VIET_MONTHS[month]}, {year}
             </h2>
             <p className="text-xs text-gray-500">Lịch sự kiện trong tháng</p>
@@ -156,13 +156,13 @@ function MonthCalendar({
         <div className="flex items-center gap-1">
           <button
             onClick={onPrev}
-            className="p-2 rounded-lg text-gray-500 hover:text-white hover:bg-white/5 transition-colors"
+            className="p-2 rounded-lg text-gray-500 hover:text-[#1B2A4A] hover:bg-white/5 transition-colors"
           >
             <ChevronLeft size={16} />
           </button>
           <button
             onClick={onNext}
-            className="p-2 rounded-lg text-gray-500 hover:text-white hover:bg-white/5 transition-colors"
+            className="p-2 rounded-lg text-gray-500 hover:text-[#1B2A4A] hover:bg-white/5 transition-colors"
           >
             <ChevronRight size={16} />
           </button>
@@ -195,7 +195,7 @@ function MonthCalendar({
               onClick={() => onSelectDay(day)}
               className={`relative h-10 rounded-xl flex flex-col items-center justify-center text-sm font-medium transition-all ${
                 isSelected
-                  ? "bg-[#E85D04] text-white"
+                  ? "bg-[#E85D04] text-[#1B2A4A]"
                   : isToday
                   ? "bg-[#E85D04]/20 text-[#E85D04] ring-1 ring-[#E85D04]/40"
                   : "text-gray-400 hover:bg-white/5"
@@ -230,7 +230,7 @@ function EventCard({ event }: { event: EventRow }) {
       <div className="flex items-start gap-4">
         {/* Date block */}
         <div className="shrink-0 w-14 text-center">
-          <div className="text-2xl font-bold text-white">
+          <div className="text-2xl font-bold text-[#1B2A4A]">
             {new Date(event.event_date + "T00:00:00").getDate()}
           </div>
           <div className="text-[10px] text-gray-500 uppercase">
@@ -268,7 +268,7 @@ function EventCard({ event }: { event: EventRow }) {
           </div>
 
           {/* Title */}
-          <h3 className="font-semibold text-white text-base leading-snug mb-1.5">
+          <h3 className="font-semibold text-[#1B2A4A] text-base leading-snug mb-1.5">
             {event.title}
           </h3>
 
@@ -388,13 +388,13 @@ function CreateEventForm({
   return (
     <div className="card-dark p-6 border border-[#E85D04]/30">
       <div className="flex items-center justify-between mb-5">
-        <h3 className="text-lg font-bold text-white flex items-center gap-2">
+        <h3 className="text-lg font-bold text-[#1B2A4A] flex items-center gap-2">
           <Plus size={18} className="text-[#E85D04]" />
           Tạo sự kiện mới
         </h3>
         <button
           onClick={onCancel}
-          className="p-2 rounded-lg text-gray-500 hover:text-white hover:bg-white/5 transition-colors"
+          className="p-2 rounded-lg text-gray-500 hover:text-[#1B2A4A] hover:bg-white/5 transition-colors"
         >
           <X size={16} />
         </button>
@@ -563,7 +563,7 @@ function CreateEventForm({
           <button
             type="button"
             onClick={onCancel}
-            className="px-4 py-2 text-sm text-gray-400 rounded-lg hover:text-white hover:bg-white/5 transition-colors"
+            className="px-4 py-2 text-sm text-gray-400 rounded-lg hover:text-[#1B2A4A] hover:bg-white/5 transition-colors"
           >
             Huỷ
           </button>
@@ -717,7 +717,7 @@ export default function EventsPage() {
         {/* Events for selected day */}
         {selectedDay !== null && (
           <div>
-            <h2 className="font-bold text-white text-lg mb-4 flex items-center gap-2">
+            <h2 className="font-bold text-[#1B2A4A] text-lg mb-4 flex items-center gap-2">
               <Calendar size={18} className="text-[#E85D04]" />
               Sự kiện ngày {selectedDay}/{viewMonth + 1}/{viewYear}
             </h2>
@@ -741,7 +741,7 @@ export default function EventsPage() {
 
         {/* Upcoming events list */}
         <div>
-          <h2 className="font-bold text-white text-lg mb-4 flex items-center gap-2">
+          <h2 className="font-bold text-[#1B2A4A] text-lg mb-4 flex items-center gap-2">
             <Clock size={18} className="text-[#E85D04]" />
             Sự kiện sắp tới
           </h2>

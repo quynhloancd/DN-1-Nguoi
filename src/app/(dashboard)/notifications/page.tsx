@@ -162,7 +162,7 @@ export default function NotificationsPage() {
                 className={`text-xs px-3 py-1.5 rounded-lg transition-colors ${
                   filter === f.key
                     ? "bg-[#E85D04] text-black font-medium"
-                    : "bg-[#1a1a1a] text-gray-400 hover:text-white hover:bg-[#2a2a2a]"
+                    : "bg-[#F0F1F3] text-gray-400 hover:text-[#1B2A4A] hover:bg-[#2a2a2a]"
                 }`}
               >
                 {f.label}
@@ -192,7 +192,7 @@ export default function NotificationsPage() {
         ) : filtered.length === 0 ? (
           <div className="card-dark p-10 text-center">
             <Bell size={40} className="mx-auto mb-3 text-gray-500" />
-            <h3 className="font-bold text-white mb-1">
+            <h3 className="font-bold text-[#1B2A4A] mb-1">
               {filter === "all" ? "Chưa có thông báo" : "Không có thông báo"}
             </h3>
             <p className="text-sm text-gray-400">
