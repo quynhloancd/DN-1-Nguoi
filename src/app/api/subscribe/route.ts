@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/server";
 import { rateLimit } from "@/lib/rate-limit";
 import { z } from "zod";
-import { sendLeadMagnetEmail } from "@/lib/email/transactional";
+import { sendConfirmationEmail } from "@/lib/email/transactional";
 
 const SubscribeSchema = z.object({
   email: z.string().email("Email không hợp lệ"),
@@ -77,7 +77,7 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // Insert new subscriber
+    // Insert new subscriber — status: "pending" until double opt-in confirmed
     const subscriberTags = customTags && Array.isArray(customTags) ? customTags : ["newsletter"];
     const { data: subscriber, error: insertError } = await supabase
       .from("subscribers")
@@ -85,7 +85,7 @@ export async function POST(req: NextRequest) {
         email: normalizedEmail,
         full_name: name || null,
         phone: phone || null,
-        status: "active",
+        status: "pending",
         source: source || "blog_newsletter",
         tags: subscriberTags,
         subscribed_at: new Date().toISOString(),
@@ -119,13 +119,13 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // Send lead magnet email (best-effort, don't block response)
-    sendLeadMagnetEmail(normalizedEmail, name).catch((err) => {
-      console.error("sendLeadMagnetEmail error:", err);
+    // Send double opt-in confirmation email (best-effort, don't block response)
+    sendConfirmationEmail(normalizedEmail).catch((err) => {
+      console.error("sendConfirmationEmail error:", err);
     });
 
     return NextResponse.json(
-      { message: "Đăng ký thành công! Cảm ơn bạn đã theo dõi." },
+      { message: "Vui lòng kiểm tra email để xác nhận đăng ký!" },
       { status: 201 }
     );
   } catch (err) {
