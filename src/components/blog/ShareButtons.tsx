@@ -115,9 +115,9 @@ export default function ShareButtons({ title, slug }: ShareButtonsProps) {
           onClick={copyLink}
           className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-medium transition-all hover:scale-[1.03] active:scale-[0.98]"
           style={{
-            background: copied ? "rgba(34,197,94,0.1)" : "rgba(255,255,255,0.06)",
-            color: copied ? "#22c55e" : "#9ca3af",
-            border: `1px solid ${copied ? "rgba(34,197,94,0.25)" : "rgba(255,255,255,0.1)"}`,
+            background: copied ? "rgba(232,93,4,0.1)" : "#F0F1F3",
+            color: copied ? "#E85D04" : "#6b7280",
+            border: `1px solid ${copied ? "rgba(232,93,4,0.25)" : "#E5E7EB"}`,
           }}
           title="Sao chép link"
         >

@@ -119,12 +119,12 @@ export default async function BlogPage({
                   href={href}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
                     isActive
-                      ? "bg-[#E85D04] text-[#1B2A4A]"
-                      : "text-gray-400 hover:text-[#1B2A4A]"
+                      ? "bg-[#E85D04] text-white"
+                      : "text-gray-500 hover:text-[#1B2A4A]"
                   }`}
                   style={
                     !isActive
-                      ? { background: "#F0F1F3", border: "1px solid #2a2a2a" }
+                      ? { background: "#F0F1F3", border: "1px solid #E5E7EB" }
                       : {}
                   }
                 >
@@ -200,7 +200,7 @@ export default async function BlogPage({
                   {featured.category && (
                     <span
                       className="text-[11px] text-gray-500 px-2 py-0.5 rounded-full"
-                      style={{ background: "#222" }}
+                      style={{ background: "#F0F1F3" }}
                     >
                       {featured.category}
                     </span>
@@ -242,7 +242,7 @@ export default async function BlogPage({
                     <span
                       key={tag}
                       className="text-[10px] text-gray-500 px-1.5 py-0.5 rounded-full"
-                      style={{ background: "#222" }}
+                      style={{ background: "#F0F1F3" }}
                     >
                       #{tag}
                     </span>
@@ -287,7 +287,7 @@ export default async function BlogPage({
                   {post.category && (
                     <span
                       className="text-[11px] text-gray-500 font-medium px-2 py-0.5 rounded-full mb-2 inline-block"
-                      style={{ background: "#222" }}
+                      style={{ background: "#F0F1F3" }}
                     >
                       {post.category}
                     </span>

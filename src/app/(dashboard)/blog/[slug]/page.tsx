@@ -434,7 +434,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               <span
                 key={tag}
                 className="text-xs px-2.5 py-1 rounded-full text-gray-400"
-                style={{ background: "#222", border: "1px solid #2a2a2a" }}
+                style={{ background: "#F0F1F3", border: "1px solid #E5E7EB" }}
               >
                 #{tag}
               </span>
@@ -445,7 +445,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         {/* ── Author Box ── */}
         <div
           className="card-dark p-5 sm:p-6 mb-6"
-          style={{ borderColor: "rgba(212,168,67,0.15)" }}
+          style={{ borderColor: "rgba(232,93,4,0.20)" }}
         >
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-start">
             {/* Avatar */}
