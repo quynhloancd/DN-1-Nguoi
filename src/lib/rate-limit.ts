@@ -21,12 +21,25 @@ import { Redis } from "@upstash/redis";
 
 // ─── Upstash Redis configuration ────────────────────────────────────────────
 
-const useUpstash = !!(
-  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
-);
+function isUpstashConfigured(): boolean {
+  const url = process.env.UPSTASH_REDIS_REST_URL || "";
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN || "";
+  return !!(url.startsWith("https://") && token);
+}
 
-/** Shared Redis instance for login rate limiting (lazy-initialised). */
-const redis = useUpstash ? Redis.fromEnv() : null;
+/** Lazy Redis singleton — only instantiated on first use at runtime, not at build time. */
+let _redis: Redis | null = null;
+function getRedis(): Redis | null {
+  if (!isUpstashConfigured()) return null;
+  if (!_redis) {
+    try {
+      _redis = Redis.fromEnv();
+    } catch {
+      return null;
+    }
+  }
+  return _redis;
+}
 
 const upstashLimiters: Record<string, Ratelimit> = {};
 
@@ -38,7 +51,7 @@ function getUpstashLimiter(
   const key = `${prefix}:${maxRequests}:${windowSeconds}`;
   if (!upstashLimiters[key]) {
     upstashLimiters[key] = new Ratelimit({
-      redis: Redis.fromEnv(),
+      redis: getRedis()!,
       limiter: Ratelimit.slidingWindow(maxRequests, `${windowSeconds} s`),
       prefix: `rl:${prefix}`,
     });
@@ -130,6 +143,7 @@ export async function checkRateLimit(key: string): Promise<{
   remainingAttempts: number;
   retryAfterSec: number;
 }> {
+  const redis = getRedis();
   if (!redis) return checkRateLimitMemory(key);
 
   const redisKey = `login-attempts:${key}`;
@@ -163,6 +177,7 @@ export async function checkRateLimit(key: string): Promise<{
 }
 
 export async function recordFailedAttempt(key: string): Promise<void> {
+  const redis = getRedis();
   if (!redis) {
     recordFailedAttemptMemory(key);
     return;
@@ -187,6 +202,7 @@ export async function recordFailedAttempt(key: string): Promise<void> {
 }
 
 export async function resetRateLimit(key: string): Promise<void> {
+  const redis = getRedis();
   if (!redis) {
     resetRateLimitMemory(key);
     return;
@@ -228,7 +244,7 @@ export async function rateLimit(
   windowSeconds: number
 ): Promise<{ allowed: boolean; retryAfterSec: number }> {
   // ── Upstash Redis path ──────────────────────────────────────────────────
-  if (useUpstash) {
+  if (isUpstashConfigured()) {
     const limiter = getUpstashLimiter("api", maxRequests, windowSeconds);
     const result = await limiter.limit(key);
     return {
