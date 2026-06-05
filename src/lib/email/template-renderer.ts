@@ -22,8 +22,8 @@ const COMPANY_NAME = process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người";
  * @returns HTML đã render xong
  *
  * @example
- * renderTemplate("Xin chào {{name}}", { name: "Khương" })
- * // => "Xin chào Khương"
+ * renderTemplate("Xin chào {{name}}", { name: "Thiên Huệ" })
+ * // => "Xin chào Thiên Huệ"
  */
 // Keys whose values are safe URLs (already constructed by us) and must not be escaped
 const URL_VARIABLE_KEYS = new Set(["unsubscribe_url"]);

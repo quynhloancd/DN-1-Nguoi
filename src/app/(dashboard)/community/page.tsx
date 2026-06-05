@@ -677,15 +677,15 @@ export default function CommunityPage() {
               {[1, 2, 3].map(i => (
                 <div key={i} className="card-dark p-5 animate-pulse">
                   <div className="flex gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-full bg-[#2a2a2a]" />
+                    <div className="w-9 h-9 rounded-full bg-gray-200" />
                     <div className="flex-1 space-y-2">
-                      <div className="h-3 bg-[#2a2a2a] rounded w-1/4" />
-                      <div className="h-2 bg-[#2a2a2a] rounded w-1/6" />
+                      <div className="h-3 bg-gray-200 rounded w-1/4" />
+                      <div className="h-2 bg-gray-200 rounded w-1/6" />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <div className="h-3 bg-[#2a2a2a] rounded" />
-                    <div className="h-3 bg-[#2a2a2a] rounded w-4/5" />
+                    <div className="h-3 bg-gray-200 rounded" />
+                    <div className="h-3 bg-gray-200 rounded w-4/5" />
                   </div>
                 </div>
               ))}
@@ -724,7 +724,7 @@ export default function CommunityPage() {
                 </div>
 
                 {/* Content */}
-                <p className="text-sm text-gray-200 leading-relaxed whitespace-pre-line mb-3">{linkifyContent(post.content)}</p>
+                <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line mb-3">{linkifyContent(post.content)}</p>
 
                 {/* Post Image */}
                 {post.image_url && (
@@ -815,7 +815,7 @@ export default function CommunityPage() {
 
                 {/* Report Modal */}
                 {reportingPost === post.id && (
-                  <div className="mt-3 pt-3 border-t border-[#E5E7EB] bg-[#161616] rounded-lg p-4">
+                  <div className="mt-3 pt-3 border-t border-[#E5E7EB] bg-gray-50 rounded-lg p-4">
                     <div className="flex items-center gap-2 mb-3">
                       <AlertTriangle size={16} className="text-orange-400" />
                       <span className="text-sm font-medium text-[#1B2A4A]">Báo cáo bài viết</span>
@@ -853,7 +853,7 @@ export default function CommunityPage() {
                         className={`text-xs font-medium px-4 py-1.5 rounded-lg transition-colors ${
                           reportReason && !reportSubmitting
                             ? "bg-orange-600 text-[#1B2A4A] hover:bg-orange-500"
-                            : "bg-[#2a2a2a] text-gray-500 cursor-not-allowed"
+                            : "bg-gray-200 text-gray-400 cursor-not-allowed"
                         }`}
                       >
                         {reportSubmitting ? "Đang gửi..." : "Gửi báo cáo"}
@@ -876,7 +876,7 @@ export default function CommunityPage() {
                     opacity: openComments === post.id ? 1 : 0,
                   }}
                 >
-                  <div className="mt-3 pt-3 border-t border-[#E5E7EB] bg-[#161616] rounded-lg p-3">
+                  <div className="mt-3 pt-3 border-t border-[#E5E7EB] bg-gray-50 rounded-lg p-3">
                     {/* Loading */}
                     {commentsLoading[post.id] && (
                       <div className="flex items-center gap-2 py-4 justify-center">
@@ -887,7 +887,7 @@ export default function CommunityPage() {
 
                     {/* Comments list */}
                     {!commentsLoading[post.id] && (
-                      <div className="max-h-[280px] overflow-y-auto space-y-3 scrollbar-thin scrollbar-thumb-[#2a2a2a] scrollbar-track-transparent">
+                      <div className="max-h-[280px] overflow-y-auto space-y-3 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
                         {(commentsMap[post.id] || []).length === 0 ? (
                           <p className="text-xs text-gray-500 text-center py-3">Chưa có bình luận nào</p>
                         ) : (
@@ -907,7 +907,7 @@ export default function CommunityPage() {
                                     <span className="text-xs font-medium text-[#1B2A4A]">{cName}</span>
                                     <span className="text-[10px] text-gray-500">{formatCreatedAt(comment.created_at)}</span>
                                   </div>
-                                  <p className="text-xs text-gray-300 leading-relaxed mt-0.5 break-words">{linkifyContent(comment.content)}</p>
+                                  <p className="text-xs text-gray-600 leading-relaxed mt-0.5 break-words">{linkifyContent(comment.content)}</p>
                                 </div>
                               </div>
                             );
@@ -932,7 +932,7 @@ export default function CommunityPage() {
                         className={`text-xs font-medium px-3 py-1.5 rounded-lg transition-colors ${
                           (commentText[post.id] || "").trim() && !commentPosting[post.id]
                             ? "bg-[#E85D04] text-black hover:bg-[#c49a3a]"
-                            : "bg-[#2a2a2a] text-gray-500 cursor-not-allowed"
+                            : "bg-gray-200 text-gray-400 cursor-not-allowed"
                         }`}
                       >
                         {commentPosting[post.id] ? "..." : "Gửi"}
@@ -946,7 +946,7 @@ export default function CommunityPage() {
         </div>
 
         {/* Right Sidebar */}
-        <aside className="hidden xl:block w-72 p-4 border-l border-[#E5E7EB] shrink-0 space-y-4" style={{ background: "#0d0d0d" }}>
+        <aside className="hidden xl:block w-72 p-4 border-l border-[#E5E7EB] shrink-0 space-y-4" style={{ background: "#F8F9FA" }}>
           {/* XP Card */}
           <div className="card-dark p-4">
             <div className="flex items-center gap-2 mb-3">
@@ -964,9 +964,9 @@ export default function CommunityPage() {
               </>
             ) : (
               <div className="space-y-2 animate-pulse">
-                <div className="h-6 bg-[#2a2a2a] rounded w-24" />
-                <div className="h-3 bg-[#2a2a2a] rounded w-32" />
-                <div className="h-2 bg-[#2a2a2a] rounded" />
+                <div className="h-6 bg-gray-200 rounded w-24" />
+                <div className="h-3 bg-gray-200 rounded w-32" />
+                <div className="h-2 bg-gray-200 rounded" />
               </div>
             )}
           </div>
@@ -982,9 +982,9 @@ export default function CommunityPage() {
                 <div className="space-y-2 animate-pulse">
                   {[1, 2, 3, 4, 5].map(i => (
                     <div key={i} className="flex items-center gap-2.5 p-2">
-                      <div className="w-5 h-5 bg-[#2a2a2a] rounded" />
-                      <div className="w-7 h-7 bg-[#2a2a2a] rounded-full" />
-                      <div className="flex-1 h-3 bg-[#2a2a2a] rounded" />
+                      <div className="w-5 h-5 bg-gray-200 rounded" />
+                      <div className="w-7 h-7 bg-gray-200 rounded-full" />
+                      <div className="flex-1 h-3 bg-gray-200 rounded" />
                     </div>
                   ))}
                 </div>

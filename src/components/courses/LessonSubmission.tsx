@@ -295,7 +295,7 @@ export default function LessonSubmission({
               </div>
             )}
             {success && (
-              <div className="flex items-start gap-2 text-xs text-[#22c55e] bg-[#22c55e]/10 border border-[#22c55e]/20 rounded-lg px-3 py-2">
+              <div className="flex items-start gap-2 text-xs text-[#E85D04] bg-[#E85D04]/10 border border-[#E85D04]/20 rounded-lg px-3 py-2">
                 <CheckCircle2 size={14} className="shrink-0 mt-0.5" />
                 Nộp bài thành công!
               </div>

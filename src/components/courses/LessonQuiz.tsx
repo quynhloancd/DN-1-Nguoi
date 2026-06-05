@@ -264,15 +264,15 @@ export default function LessonQuiz({ lessonId }: LessonQuizProps) {
           <div className="flex items-center gap-3">
             <div
               className="w-8 h-8 rounded-lg flex items-center justify-center"
-              style={{ background: "rgba(34,197,94,0.15)" }}
+              style={{ background: "rgba(232,93,4,0.15)" }}
             >
-              <Trophy size={16} className="text-[#22c55e]" />
+              <Trophy size={16} className="text-[#E85D04]" />
             </div>
             <div>
               <h3 className="text-sm font-semibold text-[#1B2A4A]">
                 {quiz.title}
               </h3>
-              <p className="text-xs text-[#22c55e] flex items-center gap-1 mt-0.5">
+              <p className="text-xs text-[#E85D04] flex items-center gap-1 mt-0.5">
                 <CheckCircle2 size={12} />
                 Đã hoàn thành — Điểm cao nhất: {bestAttempt.score}%
               </p>

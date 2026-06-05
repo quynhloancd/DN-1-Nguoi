@@ -326,7 +326,7 @@ export default function CoursesClient({ courses }: { courses: CourseItem[] }) {
             icon={GraduationCap}
             title="Khoá học của tôi"
             subtitle={`Bạn có quyền truy cập ${myCourses.length} khoá học`}
-            iconColor="#22c55e"
+            iconColor="#E85D04"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-4">
             {myCourses.map((course, idx) => (
