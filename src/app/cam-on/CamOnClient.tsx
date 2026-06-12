@@ -5,7 +5,7 @@ import Image from "next/image";
 import { CheckCircle, ArrowRight, Users } from "lucide-react";
 
 // âš ï¸ Äiá»n link Zalo group tháº­t vÃ o Ä‘Ã¢y
-const ZALO_GROUP_LINK = "https://zalo.me/g/placeholder";
+const ZALO_GROUP_LINK = "https://zalo.me/g/rwbdziccjrlrzxhsbdja";
 
 export default function CamOnClient() {
   return (
@@ -157,4 +157,5 @@ export default function CamOnClient() {
     </div>
   );
 }
+
 
