@@ -54,16 +54,40 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
         {/* Center Nav Links — hidden on mobile */}
         <nav className="hidden md:flex items-center gap-6">
           <Link
-            href="/courses"
+            href="/"
             className="text-sm text-gray-300 hover:text-white transition-colors"
           >
-            Khoá học
+            Trang chủ
           </Link>
           <Link
-            href="/blog"
+            href="/tool-ai"
             className="text-sm text-gray-300 hover:text-white transition-colors"
           >
-            Blog
+            Tool AI
+          </Link>
+          <Link
+            href="/combo"
+            className="text-sm text-gray-300 hover:text-white transition-colors"
+          >
+            Combo
+          </Link>
+          <Link
+            href="/khoa-hoc-de-xuat"
+            className="text-sm text-gray-300 hover:text-white transition-colors"
+          >
+            Khóa học đề xuất
+          </Link>
+          <Link
+            href="/tai-nguyen-mien-phi"
+            className="text-sm text-gray-300 hover:text-white transition-colors"
+          >
+            Tài nguyên miễn phí
+          </Link>
+          <Link
+            href="/community"
+            className="text-sm text-gray-300 hover:text-white transition-colors"
+          >
+            Cộng đồng
           </Link>
         </nav>
 

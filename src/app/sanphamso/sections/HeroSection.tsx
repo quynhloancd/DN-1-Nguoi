@@ -43,9 +43,9 @@ export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
         <span
           className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold tracking-wide uppercase sm:text-sm"
           style={{
-            borderColor: "rgba(251,191,36,0.3)",
-            color: "#FBBF24",
-            background: "rgba(251,191,36,0.08)",
+            borderColor: "rgba(249,115,22,0.3)",
+            color: "#F97316",
+            background: "rgba(249,115,22,0.08)",
           }}
         >
           <Zap className="h-3.5 w-3.5" />
@@ -69,8 +69,8 @@ export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
           <span
             className="mt-3 block text-4xl italic sm:text-4xl md:text-5xl lg:text-6xl"
             style={{
-              color: "#FBBF24",
-              textShadow: "0 0 60px rgba(251,191,36,0.3)",
+              color: "#F97316",
+              textShadow: "0 0 60px rgba(249,115,22,0.3)",
               lineHeight: 1.1,
             }}
           >
@@ -124,10 +124,10 @@ export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
         <button
           type="button"
           onClick={handleCTAClick}
-          className="mb-6 flex cursor-pointer items-center gap-2 rounded-xl px-10 py-[18px] text-lg font-bold tracking-wide text-black shadow-lg ring-2 ring-[#FBBF24]/30 transition-all duration-200 hover:scale-105 hover:shadow-xl sm:px-12 sm:py-5 sm:text-lg"
+          className="mb-6 flex cursor-pointer items-center gap-2 rounded-xl px-10 py-[18px] text-lg font-bold tracking-wide text-white shadow-lg ring-2 ring-[#F97316]/30 transition-all duration-200 hover:scale-105 hover:shadow-xl sm:px-12 sm:py-5 sm:text-lg"
           style={{
-            background: "linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%)",
-            boxShadow: "0 0 30px rgba(251,191,36,0.3)",
+            background: "linear-gradient(135deg, #F97316 0%, #EA580C 100%)",
+            boxShadow: "0 0 30px rgba(249,115,22,0.3)",
           }}
         >
           ĐĂNG KÝ NGAY – CHỈ 100K

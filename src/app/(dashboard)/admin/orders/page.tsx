@@ -23,7 +23,7 @@ const PAGE_SIZE = 20;
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-type OrderStatus = "pending" | "paid" | "cancelled" | "refunded";
+type OrderStatus = "pending" | "paid" | "delivered" | "cancelled" | "refunded" | "error";
 
 interface OrderRow {
   id: string;
@@ -31,9 +31,13 @@ interface OrderRow {
   customer_name: string | null;
   customer_email: string | null;
   customer_phone: string | null;
+  customer_zalo: string | null;
   amount: number;
   status: OrderStatus;
   payment_method: string | null;
+  product_type: string | null;
+  product_title: string | null;
+  notes: string | null;
   paid_at: string | null;
   created_at: string;
   products: { title: string } | null;
@@ -68,6 +72,12 @@ const STATUS_CONFIG: Record<
     color: "#22c55e",
     border: "rgba(34,197,94,0.2)",
   },
+  delivered: {
+    label: "Đã giao",
+    bg: "rgba(232,93,4,0.1)",
+    color: "#E85D04",
+    border: "rgba(232,93,4,0.2)",
+  },
   pending: {
     label: "Chờ thanh toán",
     bg: "rgba(245,158,11,0.1)",
@@ -86,6 +96,12 @@ const STATUS_CONFIG: Record<
     color: "#ef4444",
     border: "rgba(239,68,68,0.2)",
   },
+  error: {
+    label: "Lỗi",
+    bg: "rgba(127,29,29,0.15)",
+    color: "#b91c1c",
+    border: "rgba(127,29,29,0.3)",
+  },
 };
 
 function StatusBadge({ status }: { status: OrderStatus }) {
@@ -103,6 +119,8 @@ function StatusBadge({ status }: { status: OrderStatus }) {
 function StatusIcon({ status }: { status: OrderStatus }) {
   switch (status) {
     case "paid":
+      return <CheckCircle size={17} className="text-[#22c55e]" />;
+    case "delivered":
       return <CheckCircle size={17} className="text-[#E85D04]" />;
     case "pending":
       return <Clock size={17} className="text-[#f59e0b]" />;
@@ -110,19 +128,28 @@ function StatusIcon({ status }: { status: OrderStatus }) {
       return <Ban size={17} className="text-[#6b7280]" />;
     case "refunded":
       return <XCircle size={17} className="text-[#ef4444]" />;
+    case "error":
+      return <XCircle size={17} className="text-[#b91c1c]" />;
+    default:
+      return null;
   }
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
+const VALID_STATUSES: OrderStatus[] = ["pending", "paid", "delivered", "refunded", "cancelled", "error"];
+
 interface PageProps {
-  searchParams: Promise<{ q?: string; page?: string }>;
+  searchParams: Promise<{ q?: string; page?: string; status?: string }>;
 }
 
 export default async function AdminOrdersPage({ searchParams }: PageProps) {
   const resolvedParams = await searchParams;
   const query = (resolvedParams.q ?? "").trim();
   const currentPage = Math.max(1, parseInt(resolvedParams.page ?? "1", 10) || 1);
+  const statusFilter = VALID_STATUSES.includes(resolvedParams.status as OrderStatus)
+    ? (resolvedParams.status as OrderStatus)
+    : null;
 
   // Auth check
   const authClient = await createClient();
@@ -157,6 +184,9 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
     paginationCountQuery = paginationCountQuery.or(
       `order_code.ilike.${q},customer_name.ilike.${q},customer_email.ilike.${q},customer_phone.ilike.${q}`
     );
+  }
+  if (statusFilter) {
+    paginationCountQuery = paginationCountQuery.eq("status", statusFilter);
   }
 
   const [
@@ -193,6 +223,9 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
       `order_code.ilike.${q},customer_name.ilike.${q},customer_email.ilike.${q},customer_phone.ilike.${q}`
     );
   }
+  if (statusFilter) {
+    dbQuery = dbQuery.eq("status", statusFilter);
+  }
 
   const from = (safePage - 1) * PAGE_SIZE;
   const to = from + PAGE_SIZE - 1;
@@ -205,7 +238,15 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
   function buildPageUrl(page: number) {
     const parts: string[] = [];
     if (query) parts.push(`q=${encodeURIComponent(query)}`);
+    if (statusFilter) parts.push(`status=${statusFilter}`);
     if (page > 1) parts.push(`page=${page}`);
+    return `/admin/orders${parts.length > 0 ? `?${parts.join("&")}` : ""}`;
+  }
+
+  function buildFilterUrl(status: string | null) {
+    const parts: string[] = [];
+    if (query) parts.push(`q=${encodeURIComponent(query)}`);
+    if (status) parts.push(`status=${status}`);
     return `/admin/orders${parts.length > 0 ? `?${parts.join("&")}` : ""}`;
   }
 
@@ -286,6 +327,28 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
         <Suspense fallback={null}>
           <OrderSearchBar />
         </Suspense>
+
+        {/* ── Status filter tabs ── */}
+        <div className="flex items-center gap-2 flex-wrap">
+          {([null, "pending", "paid", "delivered", "refunded", "error"] as (OrderStatus | null)[]).map((s) => {
+            const isActive = statusFilter === s;
+            const label = s === null ? "Tất cả" : STATUS_CONFIG[s]?.label ?? s;
+            return (
+              <Link
+                key={s ?? "all"}
+                href={buildFilterUrl(s)}
+                className="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all"
+                style={
+                  isActive
+                    ? { background: "#E85D04", color: "#fff", border: "1px solid #E85D04" }
+                    : { background: "#F0F1F3", color: "#6b7280", border: "1px solid #e5e7eb" }
+                }
+              >
+                {label}
+              </Link>
+            );
+          })}
+        </div>
 
         {/* ── Bulk delete ── */}
         {canWrite && (
@@ -407,13 +470,28 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                             {order.customer_phone}
                           </div>
                         )}
+                        {order.customer_zalo && (
+                          <div className="text-xs text-blue-500 mt-0.5">
+                            Zalo: {order.customer_zalo}
+                          </div>
+                        )}
                       </td>
 
                       {/* Sản phẩm */}
                       <td className="px-5 py-3.5">
-                        <span className="text-gray-300 text-sm">
-                          {order.products?.title ?? "—"}
-                        </span>
+                        <div className="text-gray-700 text-sm">
+                          {order.product_title ?? order.products?.title ?? "—"}
+                        </div>
+                        {order.product_type && (
+                          <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded mt-0.5 inline-block"
+                            style={{
+                              background: order.product_type === "tool" ? "rgba(59,130,246,0.1)" : order.product_type === "combo" ? "rgba(232,93,4,0.1)" : "rgba(139,92,246,0.1)",
+                              color: order.product_type === "tool" ? "#3b82f6" : order.product_type === "combo" ? "#E85D04" : "#7c3aed",
+                            }}
+                          >
+                            {order.product_type.toUpperCase()}
+                          </span>
+                        )}
                       </td>
 
                       {/* Số tiền */}
