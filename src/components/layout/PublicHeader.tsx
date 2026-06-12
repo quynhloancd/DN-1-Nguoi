@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import UserAvatar from "@/components/admin/UserAvatar";
 import { siteConfig } from "@/lib/site-config";
 
@@ -13,7 +14,18 @@ interface PublicHeaderProps {
   } | null;
 }
 
+const navLinks = [
+  { label: "Trang chủ", href: "/" },
+  { label: "Tool AI", href: "/tool-ai" },
+  { label: "Combo", href: "/combo" },
+  { label: "Khóa học đề xuất", href: "/khoa-hoc-de-xuat" },
+  { label: "Tài nguyên miễn phí", href: "/tai-nguyen-mien-phi" },
+  { label: "Cộng đồng", href: "https://zalo.me/g/rwbdziccjrlrzxhsbdja", external: true },
+];
+
 export default function PublicHeader({ user }: PublicHeaderProps) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   const initials = user?.full_name
     ? user.full_name
         .split(" ")
@@ -53,42 +65,27 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
 
         {/* Center Nav Links — hidden on mobile */}
         <nav className="hidden md:flex items-center gap-6">
-          <Link
-            href="/"
-            className="text-sm text-gray-300 hover:text-white transition-colors"
-          >
-            Trang chủ
-          </Link>
-          <Link
-            href="/tool-ai"
-            className="text-sm text-gray-300 hover:text-white transition-colors"
-          >
-            Tool AI
-          </Link>
-          <Link
-            href="/combo"
-            className="text-sm text-gray-300 hover:text-white transition-colors"
-          >
-            Combo
-          </Link>
-          <Link
-            href="/khoa-hoc-de-xuat"
-            className="text-sm text-gray-300 hover:text-white transition-colors"
-          >
-            Khóa học đề xuất
-          </Link>
-          <Link
-            href="/tai-nguyen-mien-phi"
-            className="text-sm text-gray-300 hover:text-white transition-colors"
-          >
-            Tài nguyên miễn phí
-          </Link>
-          <Link
-            href="/community"
-            className="text-sm text-gray-300 hover:text-white transition-colors"
-          >
-            Cộng đồng
-          </Link>
+          {navLinks.map((link) =>
+            link.external ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-300 hover:text-white transition-colors"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm text-gray-300 hover:text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
 
         {/* Right side */}
@@ -113,7 +110,7 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
             <>
               <Link
                 href="/login"
-                className="text-sm text-gray-300 hover:text-white transition-colors"
+                className="text-sm text-gray-300 hover:text-white transition-colors hidden sm:block"
               >
                 Đăng nhập
               </Link>
@@ -129,8 +126,62 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
               </Link>
             </>
           )}
+
+          {/* Hamburger — mobile only */}
+          <button
+            className="md:hidden flex items-center justify-center w-8 h-8 text-gray-300 hover:text-white transition-colors"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label="Mở menu"
+          >
+            {mobileOpen ? (
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" clipRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" />
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" clipRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
+
+      {/* Mobile dropdown menu */}
+      {mobileOpen && (
+        <div
+          className="md:hidden absolute top-14 left-0 right-0 z-50 border-t"
+          style={{
+            background: "rgba(10,10,10,0.97)",
+            borderColor: "#1a1a1a",
+          }}
+        >
+          <nav className="flex flex-col px-4 py-3 gap-1">
+            {navLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-300 hover:text-white transition-colors py-2.5 border-b border-gray-800 last:border-0"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-gray-300 hover:text-white transition-colors py-2.5 border-b border-gray-800 last:border-0"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

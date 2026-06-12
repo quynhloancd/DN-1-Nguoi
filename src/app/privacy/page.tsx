@@ -4,13 +4,13 @@ import { siteConfig, getBaseUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: `Chính Sách Bảo Mật | ${siteConfig.name}`,
-  description: `Chính sách bảo mật và bảo vệ dữ liệu cá nhân của nền tảng ${siteConfig.name}, tuân thủ Luật An ninh mạng 2018 và Nghị định 13/2023/NĐ-CP.`,
+  description: `Chính sách bảo mật và bảo vệ dữ liệu cá nhân của kho tool AI ${siteConfig.name}, tuân thủ Luật An ninh mạng 2018 và Nghị định 13/2023/NĐ-CP.`,
   alternates: {
     canonical: `${getBaseUrl()}/privacy`,
   },
   openGraph: {
     title: `Chính Sách Bảo Mật — ${siteConfig.name}`,
-    description: `Chính sách bảo mật và bảo vệ dữ liệu cá nhân của nền tảng ${siteConfig.name}`,
+    description: `Chính sách bảo mật và bảo vệ dữ liệu cá nhân của kho tool AI ${siteConfig.name}`,
   },
 };
 
@@ -19,7 +19,7 @@ const sections = [
     id: "thu-thap",
     title: "1. Thu thập thông tin",
     content: [
-      "Khi bạn sử dụng nền tảng doanhnghiep1nguoi.online, chúng tôi thu thập các loại thông tin cá nhân sau đây, phù hợp với quy định tại Điều 2 Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân:",
+      "Khi bạn sử dụng kho tool AI doanhnghiep1nguoi.online, chúng tôi thu thập các loại thông tin cá nhân sau đây, phù hợp với quy định tại Điều 2 Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân:",
     ],
     subsections: [
       {
@@ -34,7 +34,7 @@ const sections = [
       {
         label: "b) Thông tin được thu thập tự động:",
         items: [
-          "Lịch sử học tập: khoá học đã đăng ký, tiến độ hoàn thành bài học, kết quả bài kiểm tra",
+          "Lịch sử mua hàng: tool AI / sản phẩm số đã mua, quyền truy cập tool đã kích hoạt, tài liệu hướng dẫn đã truy cập",
           "Dữ liệu hoạt động: tần suất truy cập, thời gian sử dụng, tương tác trong cộng đồng",
           "Thông tin kỹ thuật: địa chỉ IP, loại trình duyệt (User-Agent), hệ điều hành, thiết bị truy cập",
           "Dữ liệu cookie và mã theo dõi (xem mục 5)",
@@ -53,22 +53,22 @@ const sections = [
         label: "a) Cung cấp dịch vụ:",
         items: [
           "Tạo và quản lý tài khoản người dùng",
-          "Cấp quyền truy cập khoá học đã mua hoặc đăng ký",
-          "Theo dõi tiến độ học tập và cấp chứng chỉ hoàn thành",
+          "Cấp quyền truy cập tool AI / sản phẩm số đã mua",
+          "Theo dõi lịch sử mua hàng và cấp quyền truy cập tool",
           "Xử lý đơn hàng và thanh toán",
         ],
       },
       {
         label: "b) Cải thiện trải nghiệm:",
         items: [
-          "Phân tích hành vi sử dụng để tối ưu nội dung và giao diện nền tảng",
-          "Đề xuất khoá học và nội dung phù hợp với nhu cầu của bạn",
+          "Phân tích hành vi sử dụng để tối ưu nội dung và giao diện kho tool AI",
+          "Đề xuất tool AI và sản phẩm phù hợp với nhu cầu của bạn",
         ],
       },
       {
         label: "c) Truyền thông và hỗ trợ:",
         items: [
-          "Gửi email xác nhận đăng ký, thông báo khoá học, cập nhật bài học mới",
+          "Gửi email xác nhận đơn hàng, thông báo tool AI mới, cập nhật tài liệu hướng dẫn mới",
           "Gửi thông tin khuyến mãi và chương trình ưu đãi (bạn có thể huỷ đăng ký bất cứ lúc nào)",
           "Phản hồi câu hỏi và yêu cầu hỗ trợ kỹ thuật",
         ],
@@ -88,7 +88,7 @@ const sections = [
     title: "3. Chia sẻ thông tin với bên thứ ba",
     content: [
       "Chúng tôi cam kết không bán, trao đổi hoặc cho thuê thông tin cá nhân của bạn cho bất kỳ bên thứ ba nào vì mục đích thương mại.",
-      "Theo Điều 17 Nghị định 13/2023/NĐ-CP, chúng tôi chỉ chia sẻ dữ liệu với các nhà cung cấp dịch vụ đáng tin cậy sau đây để vận hành nền tảng:",
+      "Theo Điều 17 Nghị định 13/2023/NĐ-CP, chúng tôi chỉ chia sẻ dữ liệu với các nhà cung cấp dịch vụ đáng tin cậy sau đây để vận hành kho tool AI:",
     ],
     subsections: [
       {
@@ -103,8 +103,8 @@ const sections = [
       {
         label: "b) Dịch vụ phân tích và tiếp thị:",
         items: [
-          "Facebook Pixel (Meta): theo dõi hiệu quả quảng cáo và phân tích hành vi người dùng trên nền tảng",
-          "YouTube (Google): nhúng video bài học, có thể thu thập dữ liệu theo chính sách riêng của Google",
+          "Facebook Pixel (Meta): theo dõi hiệu quả quảng cáo và phân tích hành vi khách hàng trên kho tool AI",
+          "YouTube (Google): nhúng video tài liệu hướng dẫn, có thể thu thập dữ liệu theo chính sách riêng của Google",
         ],
       },
     ],
@@ -144,14 +144,14 @@ const sections = [
     id: "cookie",
     title: "5. Cookie và công nghệ theo dõi",
     content: [
-      "Chúng tôi sử dụng cookie và các công nghệ tương tự để cải thiện trải nghiệm của bạn trên nền tảng. Theo Nghị định 13/2023/NĐ-CP, bạn có quyền được thông báo và lựa chọn về việc sử dụng cookie.",
+      "Chúng tôi sử dụng cookie và các công nghệ tương tự để cải thiện trải nghiệm của bạn trên kho tool AI. Theo Nghị định 13/2023/NĐ-CP, bạn có quyền được thông báo và lựa chọn về việc sử dụng cookie.",
     ],
     subsections: [
       {
         label: "a) Các loại cookie chúng tôi sử dụng:",
         items: [
           "Cookie thiết yếu (Session cookie): duy trì trạng thái đăng nhập, bảo mật phiên làm việc. Cookie này tự động xoá khi bạn đóng trình duyệt",
-          "Cookie phân tích (Analytics): thu thập dữ liệu ẩn danh về cách bạn sử dụng nền tảng để cải thiện dịch vụ",
+          "Cookie phân tích (Analytics): thu thập dữ liệu ẩn danh về cách bạn sử dụng kho tool AI để cải thiện dịch vụ",
           "Cookie affiliate: theo dõi nguồn giới thiệu để tính hoa hồng cho đối tác. Cookie này có thời hạn 30 ngày",
           "Facebook Pixel: theo dõi chuyển đổi từ quảng cáo Facebook, đo lường hiệu quả chiến dịch tiếp thị",
         ],
@@ -159,9 +159,9 @@ const sections = [
       {
         label: "b) Quản lý cookie:",
         items: [
-          "Bạn có thể quản lý cài đặt cookie thông qua banner đồng ý cookie trên nền tảng hoặc thông qua cài đặt trình duyệt",
+          "Bạn có thể quản lý cài đặt cookie thông qua banner đồng ý cookie trên kho tool AI hoặc thông qua cài đặt trình duyệt",
           "Vô hiệu hoá cookie thiết yếu có thể ảnh hưởng đến khả năng sử dụng một số tính năng",
-          "Bạn có thể từ chối cookie phân tích và tiếp thị mà không ảnh hưởng đến trải nghiệm học tập cơ bản",
+          "Bạn có thể từ chối cookie phân tích và tiếp thị mà không ảnh hưởng đến trải nghiệm mua hàng cơ bản",
         ],
       },
     ],
@@ -220,7 +220,7 @@ const sections = [
         label: "Thời gian lưu trữ cụ thể:",
         items: [
           "Dữ liệu tài khoản (tên, email, số điện thoại): trong suốt thời gian tài khoản còn hoạt động và 30 ngày sau khi yêu cầu xoá",
-          "Lịch sử học tập và chứng chỉ: trong suốt thời gian tài khoản hoạt động để đảm bảo quyền truy cập khoá học",
+          "Lịch sử mua hàng và quyền truy cập tool: trong suốt thời gian tài khoản hoạt động để đảm bảo quyền truy cập sản phẩm số",
           "Dữ liệu thanh toán và hoá đơn: lưu trữ tối thiểu 10 năm theo quy định của Luật Kế toán Việt Nam",
           "Nhật ký truy cập (IP, User-Agent): lưu trữ tối đa 12 tháng cho mục đích bảo mật",
           "Dữ liệu cookie phân tích: tối đa 26 tháng",
@@ -240,11 +240,11 @@ const sections = [
     ],
     list: [
       "Thông báo cho bạn qua email đã đăng ký ít nhất 7 ngày trước khi thay đổi có hiệu lực",
-      "Đăng thông báo rõ ràng trên nền tảng",
+      "Đăng thông báo rõ ràng trên kho tool AI",
       "Cập nhật ngày \"Cập nhật lần cuối\" ở đầu trang chính sách",
     ],
     extra: [
-      "Việc tiếp tục sử dụng nền tảng sau khi chính sách được cập nhật đồng nghĩa với việc bạn chấp nhận các thay đổi. Chúng tôi khuyến khích bạn xem lại chính sách này định kỳ.",
+      "Việc tiếp tục sử dụng kho tool AI sau khi chính sách được cập nhật đồng nghĩa với việc bạn chấp nhận các thay đổi. Chúng tôi khuyến khích bạn xem lại chính sách này định kỳ.",
     ],
   },
   {
@@ -301,8 +301,8 @@ export default function PrivacyPage() {
             <p className="text-gray-300 leading-relaxed">
               Chào mừng bạn đến với{" "}
               <span className="text-white font-medium">{siteConfig.domain}</span>{" "}
-              -- nền tảng học tập trực tuyến thuộc sở hữu và vận hành bởi{" "}
-              <span className="text-white font-medium">{siteConfig.name}</span>.
+              -- kho tool AI thuộc sở hữu và vận hành bởi{" "}
+              <span className="text-white font-medium">Doanh Nghiệp 1 Người</span>.
             </p>
             <p className="text-gray-300 leading-relaxed">
               Chúng tôi tôn trọng quyền riêng tư của bạn và cam kết bảo vệ thông
@@ -317,7 +317,7 @@ export default function PrivacyPage() {
               sử dụng, lưu trữ và bảo vệ dữ liệu cá nhân của bạn.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              Bằng việc truy cập và sử dụng nền tảng, bạn xác nhận đã đọc, hiểu và
+              Bằng việc truy cập và sử dụng kho tool AI, bạn xác nhận đã đọc, hiểu và
               đồng ý với các điều khoản trong chính sách bảo mật này.
             </p>
           </div>
@@ -474,7 +474,7 @@ export default function PrivacyPage() {
           {/* Related links */}
           <div className="pt-6 border-t border-[#E5E7EB] flex flex-col sm:flex-row gap-3">
             <Link
-              href="/terms-of-service"
+              href="/terms"
               className="text-sm text-[#E85D04] hover:underline"
             >
               Điều khoản dịch vụ &rarr;

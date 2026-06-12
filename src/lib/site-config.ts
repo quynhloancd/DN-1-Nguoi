@@ -15,11 +15,12 @@ export const siteConfig = {
   name: env("NEXT_PUBLIC_SITE_NAME", "Doanh Nghiệp 1 Người"),
   shortName: env("NEXT_PUBLIC_SITE_SHORT_NAME", "DN1N"),
   domain: env("NEXT_PUBLIC_SITE_DOMAIN", "doanhnghiep1nguoi.online"),
-  tagline: env("NEXT_PUBLIC_SITE_TAGLINE", "Ứng dụng AI vào công việc — dùng được ngay, không cần code"),
+  tagline: env("NEXT_PUBLIC_SITE_TAGLINE", "Kho tool AI thực chiến cho người kinh doanh online một mình"),
   description: env(
     "NEXT_PUBLIC_SITE_DESCRIPTION",
-    "Tôi giúp người 35–50 tuổi đang kinh doanh hoặc đi làm ứng dụng AI vào công việc thực tế — thông qua các tool và workflow đóng gói sẵn, không cần biết code."
+    "Doanh Nghiệp 1 Người là kho tool AI thực chiến — tự làm content, ảnh, video và workflow bán hàng mà không cần thuê team, không cần biết code."
   ),
+  keywords: "kho tool AI, tool AI bán hàng, AI không cần code, doanh nghiệp 1 người",
 
   // ─── Owner ───
   // Env: NEXT_PUBLIC_OWNER_NAME, NEXT_PUBLIC_OWNER_BIO, NEXT_PUBLIC_OWNER_AVATAR

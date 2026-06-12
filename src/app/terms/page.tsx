@@ -4,13 +4,13 @@ import { siteConfig, getBaseUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: `Điều Khoản Sử Dụng | ${siteConfig.name}`,
-  description: `Điều khoản sử dụng nền tảng học tập trực tuyến ${siteConfig.name} — ${siteConfig.domain}. Tuân thủ Nghị định 52/2013/NĐ-CP về thương mại điện tử.`,
+  description: `Điều khoản sử dụng kho tool AI ${siteConfig.name} — ${siteConfig.domain}. Tuân thủ Nghị định 52/2013/NĐ-CP về thương mại điện tử.`,
   alternates: {
     canonical: `${getBaseUrl()}/terms`,
   },
   openGraph: {
     title: `Điều Khoản Sử Dụng — ${siteConfig.name}`,
-    description: `Điều khoản sử dụng nền tảng học tập trực tuyến ${siteConfig.name}`,
+    description: `Điều khoản sử dụng kho tool AI ${siteConfig.name}`,
   },
 };
 
@@ -19,17 +19,17 @@ const sections = [
     id: "gioi-thieu",
     title: "1. Giới thiệu",
     content: [
-      `Chào mừng bạn đến với ${siteConfig.domain} ("Nền tảng") — nền tảng học tập trực tuyến thuộc sở hữu và vận hành bởi ${siteConfig.name} ("chúng tôi", "của chúng tôi").`,
-      `Nền tảng hoạt động theo mô hình sàn giao dịch thương mại điện tử cung cấp dịch vụ nội dung số (khoá học trực tuyến), tuân thủ Nghị định 52/2013/NĐ-CP ngày 16 tháng 5 năm 2013 của Chính phủ về thương mại điện tử và các văn bản hướng dẫn thi hành.`,
-      "Bằng việc truy cập, đăng ký tài khoản hoặc sử dụng bất kỳ dịch vụ nào trên Nền tảng, bạn xác nhận đã đọc, hiểu và đồng ý tuân thủ toàn bộ các điều khoản được quy định trong văn bản này.",
-      "Nếu bạn không đồng ý với bất kỳ điều khoản nào, vui lòng ngừng sử dụng Nền tảng ngay lập tức.",
+      `Chào mừng bạn đến với ${siteConfig.domain} ("Kho Tool AI") — kho tool AI thuộc sở hữu và vận hành bởi Doanh Nghiệp 1 Người ("chúng tôi", "của chúng tôi").`,
+      `Kho Tool AI hoạt động theo mô hình sàn giao dịch thương mại điện tử cung cấp dịch vụ nội dung số (tool AI, combo sản phẩm số), tuân thủ Nghị định 52/2013/NĐ-CP ngày 16 tháng 5 năm 2013 của Chính phủ về thương mại điện tử và các văn bản hướng dẫn thi hành.`,
+      "Bằng việc truy cập, đăng ký tài khoản hoặc sử dụng bất kỳ dịch vụ nào trên Kho Tool AI, bạn xác nhận đã đọc, hiểu và đồng ý tuân thủ toàn bộ các điều khoản được quy định trong văn bản này.",
+      "Nếu bạn không đồng ý với bất kỳ điều khoản nào, vui lòng ngừng sử dụng Kho Tool AI ngay lập tức.",
     ],
   },
   {
     id: "dieu-khoan-su-dung",
     title: "2. Điều khoản sử dụng",
     content: [
-      "Để sử dụng đầy đủ các tính năng của Nền tảng, bạn cần đăng ký tài khoản với thông tin chính xác, đầy đủ và cập nhật. Khi sử dụng Nền tảng, bạn cam kết:",
+      "Để sử dụng đầy đủ các tính năng của Kho Tool AI, bạn cần đăng ký tài khoản với thông tin chính xác, đầy đủ và cập nhật. Khi sử dụng Kho Tool AI, bạn cam kết:",
     ],
     list: [
       "Đủ 16 tuổi trở lên hoặc có sự đồng ý của cha mẹ/người giám hộ hợp pháp",
@@ -37,8 +37,8 @@ const sections = [
       "Chịu trách nhiệm bảo mật thông tin đăng nhập (email, mật khẩu) và mọi hoạt động diễn ra dưới tài khoản của mình",
       "Không chia sẻ, chuyển nhượng hoặc cho phép người khác sử dụng tài khoản của mình",
       "Mỗi cá nhân chỉ được đăng ký và duy trì một tài khoản duy nhất",
-      "Không sử dụng Nền tảng cho mục đích bất hợp pháp, gian lận hoặc vi phạm quyền lợi của bên thứ ba",
-      "Không can thiệp, phá hoại hoặc gây ảnh hưởng đến hoạt động bình thường của Nền tảng",
+      "Không sử dụng Kho Tool AI cho mục đích bất hợp pháp, gian lận hoặc vi phạm quyền lợi của bên thứ ba",
+      "Không can thiệp, phá hoại hoặc gây ảnh hưởng đến hoạt động bình thường của Kho Tool AI",
       "Thông báo ngay cho chúng tôi nếu phát hiện truy cập trái phép vào tài khoản",
     ],
     extra: [
@@ -49,13 +49,13 @@ const sections = [
     id: "so-huu-tri-tue",
     title: "3. Quyền sở hữu trí tuệ",
     content: [
-      `Tất cả nội dung trên Nền tảng bao gồm nhưng không giới hạn: video bài giảng, văn bản, hình ảnh, âm thanh, template, mã nguồn, thiết kế giao diện, logo và thương hiệu "${siteConfig.name}" là tài sản trí tuệ của ${siteConfig.owner.name} hoặc các đối tác được uỷ quyền hợp pháp, được bảo hộ theo Luật Sở hữu trí tuệ Việt Nam năm 2005 (sửa đổi, bổ sung năm 2009, 2019, 2022).`,
+      `Tất cả nội dung trên Kho Tool AI bao gồm nhưng không giới hạn: video tài liệu hướng dẫn, văn bản, hình ảnh, âm thanh, template, mã nguồn, thiết kế giao diện, logo và thương hiệu "Doanh Nghiệp 1 Người" là tài sản trí tuệ của ${siteConfig.owner.name} hoặc các đối tác được uỷ quyền hợp pháp, được bảo hộ theo Luật Sở hữu trí tuệ Việt Nam năm 2005 (sửa đổi, bổ sung năm 2009, 2019, 2022).`,
     ],
     list: [
-      "Bạn được cấp quyền sử dụng cá nhân, không độc quyền, không chuyển nhượng để truy cập nội dung khoá học đã mua/đăng ký",
-      "Nghiêm cấm sao chép, tái tạo, phân phối, bán lại, cho thuê, chia sẻ công khai hoặc phát tán nội dung khoá học dưới mọi hình thức",
-      "Nghiêm cấm ghi màn hình, tải xuống video trái phép, sử dụng công cụ bên thứ ba để trích xuất, crawl hoặc scrape nội dung",
-      "Nghiêm cấm sử dụng nội dung khoá học cho mục đích thương mại mà không có sự cho phép bằng văn bản của chúng tôi",
+      "Bạn được cấp quyền sử dụng cá nhân, không độc quyền, không chuyển nhượng để truy cập tool AI / sản phẩm số đã mua",
+      "Nghiêm cấm sao chép, tái tạo, phân phối, bán lại, cho thuê, chia sẻ công khai hoặc phát tán tool AI và tài liệu hướng dẫn dưới mọi hình thức",
+      "Nghiêm cấm ghi màn hình, tải xuống trái phép, sử dụng công cụ bên thứ ba để trích xuất, crawl hoặc scrape nội dung",
+      "Nghiêm cấm sử dụng tool AI / sản phẩm số cho mục đích thương mại mà không có sự cho phép bằng văn bản của chúng tôi",
       "Vi phạm quyền sở hữu trí tuệ sẽ dẫn đến khoá tài khoản vĩnh viễn, không hoàn tiền, và có thể bị xử lý theo quy định pháp luật Việt Nam",
     ],
   },
@@ -63,15 +63,15 @@ const sections = [
     id: "thanh-toan-hoan-tien",
     title: "4. Thanh toán & hoàn tiền",
     content: [
-      "Khi mua khoá học hoặc đăng ký gói dịch vụ trên Nền tảng, bạn đồng ý với các điều khoản thanh toán và hoàn tiền sau đây, phù hợp với Điều 36 Nghị định 52/2013/NĐ-CP:",
+      "Khi mua tool AI hoặc combo sản phẩm số trên Kho Tool AI, bạn đồng ý với các điều khoản thanh toán và hoàn tiền sau đây, phù hợp với Điều 36 Nghị định 52/2013/NĐ-CP:",
     ],
     list: [
-      "Giá khoá học và gói dịch vụ được niêm yết bằng Việt Nam Đồng (VND) và đã bao gồm thuế GTGT (nếu có)",
-      "Phương thức thanh toán: chuyển khoản ngân hàng nội địa hoặc qua cổng thanh toán trực tuyến được tích hợp trên Nền tảng",
-      "Quyền truy cập khoá học được kích hoạt ngay sau khi hệ thống xác nhận thanh toán thành công",
-      "Hoàn tiền 100% trong vòng 3 ngày kể từ ngày thanh toán nếu bạn chưa xem quá 20% nội dung khoá học",
-      "Không hoàn tiền sau 3 ngày hoặc khi đã xem quá 20% nội dung, trừ trường hợp lỗi kỹ thuật nghiêm trọng từ phía Nền tảng",
-      "Gói đăng ký (subscription) không tự động gia hạn — bạn cần thực hiện thanh toán thủ công khi hết hạn",
+      "Giá tool AI và combo sản phẩm số được niêm yết bằng Việt Nam Đồng (VND) và đã bao gồm thuế GTGT (nếu có)",
+      "Phương thức thanh toán: chuyển khoản ngân hàng nội địa hoặc qua cổng thanh toán trực tuyến được tích hợp trên Kho Tool AI",
+      "Quyền truy cập tool AI / sản phẩm số được kích hoạt ngay sau khi hệ thống xác nhận thanh toán thành công",
+      "Sản phẩm số (tool AI, combo) không hoàn tiền sau khi đã nhận link / tài liệu hướng dẫn",
+      "Hỗ trợ kỹ thuật và hướng dẫn sử dụng qua Zalo group trong 30 ngày kể từ ngày mua",
+      "Trường hợp lỗi kỹ thuật nghiêm trọng từ phía Kho Tool AI khiến bạn không thể truy cập sản phẩm, chúng tôi sẽ hỗ trợ xử lý hoặc bồi hoàn phù hợp",
       "Chúng tôi có quyền thay đổi giá dịch vụ sau khi thông báo trước 7 ngày. Giá mới không áp dụng cho các đơn hàng đã thanh toán",
     ],
     extra: [
@@ -81,25 +81,25 @@ const sections = [
   {
     id: "quyen-nghia-vu-nguoi-dung",
     title: "5. Quyền và nghĩa vụ người dùng",
-    content: ["Khi sử dụng Nền tảng, bạn có các quyền và nghĩa vụ sau:"],
+    content: ["Khi sử dụng Kho Tool AI, bạn có các quyền và nghĩa vụ sau:"],
     subsections: [
       {
-        subtitle: "5.1. Quyền của người dùng",
+        subtitle: "5.1. Quyền của khách hàng",
         list: [
-          "Truy cập và sử dụng nội dung khoá học đã mua/đăng ký trong thời hạn cho phép",
-          "Nhận hỗ trợ kỹ thuật khi gặp sự cố truy cập hoặc sử dụng dịch vụ",
-          "Tham gia cộng đồng học viên, đặt câu hỏi và trao đổi kiến thức",
-          "Nhận chứng chỉ hoàn thành khoá học (nếu khoá học có cung cấp)",
-          "Yêu cầu hoàn tiền theo chính sách hoàn tiền nêu tại Mục 4",
+          "Truy cập và sử dụng tool AI / sản phẩm số đã mua trong thời hạn cho phép",
+          "Nhận hỗ trợ kỹ thuật khi gặp sự cố truy cập hoặc sử dụng sản phẩm",
+          "Tham gia cộng đồng Doanh Nghiệp 1 Người, đặt câu hỏi và trao đổi kiến thức",
+          "Nhận quyền truy cập tool và tài liệu hướng dẫn đi kèm sản phẩm đã mua",
+          "Được hỗ trợ qua Zalo group trong 30 ngày theo chính sách nêu tại Mục 4",
           "Yêu cầu xoá tài khoản và dữ liệu cá nhân theo quy định pháp luật",
           "Khiếu nại, phản ánh về chất lượng dịch vụ qua các kênh liên hệ chính thức",
         ],
       },
       {
-        subtitle: "5.2. Nghĩa vụ của người dùng",
+        subtitle: "5.2. Nghĩa vụ của khách hàng",
         list: [
           "Tuân thủ các điều khoản sử dụng và quy tắc ứng xử cộng đồng",
-          "Tôn trọng quyền sở hữu trí tuệ của Nền tảng và các bên liên quan",
+          "Tôn trọng quyền sở hữu trí tuệ của Kho Tool AI và các bên liên quan",
           "Không lạm dụng hệ thống hoàn tiền hoặc khuyến mãi",
           "Không đăng tải nội dung vi phạm pháp luật, xúc phạm, quấy rối hoặc spam trong cộng đồng",
           "Không mạo danh người khác hoặc cung cấp thông tin sai lệch",
@@ -110,26 +110,26 @@ const sections = [
   },
   {
     id: "quyen-nghia-vu-nen-tang",
-    title: "6. Quyền và nghĩa vụ nền tảng",
+    title: "6. Quyền và nghĩa vụ Kho Tool AI",
     content: [],
     subsections: [
       {
-        subtitle: "6.1. Quyền của nền tảng",
+        subtitle: "6.1. Quyền của Kho Tool AI",
         list: [
-          "Quản lý, vận hành và phát triển Nền tảng theo định hướng của mình",
-          "Tạm khoá hoặc chấm dứt tài khoản người dùng vi phạm điều khoản",
-          "Thay đổi, cập nhật hoặc ngừng cung cấp bất kỳ tính năng hoặc dịch vụ nào sau khi thông báo hợp lý",
-          "Thu thập và sử dụng dữ liệu người dùng theo Chính sách Bảo mật đã công bố",
+          "Quản lý, vận hành và phát triển Kho Tool AI theo định hướng của mình",
+          "Tạm khoá hoặc chấm dứt tài khoản khách hàng vi phạm điều khoản",
+          "Thay đổi, cập nhật hoặc ngừng cung cấp bất kỳ tính năng hoặc sản phẩm nào sau khi thông báo hợp lý",
+          "Thu thập và sử dụng dữ liệu khách hàng theo Chính sách Bảo mật đã công bố",
           "Từ chối cung cấp dịch vụ cho các trường hợp vi phạm pháp luật hoặc điều khoản sử dụng",
         ],
       },
       {
-        subtitle: "6.2. Nghĩa vụ của nền tảng",
+        subtitle: "6.2. Nghĩa vụ của Kho Tool AI",
         list: [
-          "Cung cấp dịch vụ đúng với mô tả và cam kết đã công bố",
-          "Bảo vệ thông tin cá nhân và dữ liệu người dùng theo quy định pháp luật",
-          "Hỗ trợ giải quyết khiếu nại, phản ánh của người dùng trong thời gian hợp lý",
-          "Thông báo kịp thời về các thay đổi quan trọng ảnh hưởng đến quyền lợi người dùng",
+          "Cung cấp tool AI / sản phẩm số đúng với mô tả và cam kết đã công bố",
+          "Bảo vệ thông tin cá nhân và dữ liệu khách hàng theo quy định pháp luật",
+          "Hỗ trợ giải quyết khiếu nại, phản ánh của khách hàng trong thời gian hợp lý",
+          "Thông báo kịp thời về các thay đổi quan trọng ảnh hưởng đến quyền lợi khách hàng",
           "Tuân thủ quy định pháp luật Việt Nam về thương mại điện tử và bảo vệ người tiêu dùng",
           "Công bố đầy đủ thông tin về dịch vụ, giá cả và chính sách theo Điều 29 Nghị định 52/2013/NĐ-CP",
         ],
@@ -140,13 +140,13 @@ const sections = [
     id: "bao-mat-thong-tin",
     title: "7. Bảo mật thông tin",
     content: [
-      "Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn theo các quy định của pháp luật Việt Nam về bảo vệ dữ liệu cá nhân. Chi tiết được quy định tại Chính sách Bảo mật của Nền tảng.",
+      "Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn theo các quy định của pháp luật Việt Nam về bảo vệ dữ liệu cá nhân. Chi tiết được quy định tại Chính sách Bảo mật của Kho Tool AI.",
     ],
     list: [
       "Thông tin cá nhân được thu thập, xử lý và lưu trữ theo đúng mục đích đã thông báo",
       "Áp dụng các biện pháp kỹ thuật và tổ chức phù hợp để bảo vệ dữ liệu: mã hoá HTTPS, xác thực an toàn, phân quyền truy cập",
       "Không bán, trao đổi hoặc cho thuê thông tin cá nhân cho bên thứ ba vì mục đích thương mại",
-      "Chỉ chia sẻ dữ liệu với các nhà cung cấp dịch vụ đáng tin cậy cần thiết cho việc vận hành Nền tảng",
+      "Chỉ chia sẻ dữ liệu với các nhà cung cấp dịch vụ đáng tin cậy cần thiết cho việc vận hành Kho Tool AI",
       "Người dùng có quyền truy cập, chỉnh sửa, yêu cầu xoá dữ liệu cá nhân của mình",
     ],
     extra: [
@@ -157,13 +157,13 @@ const sections = [
     id: "gioi-han-trach-nhiem",
     title: "8. Giới hạn trách nhiệm",
     content: [
-      'Nền tảng và toàn bộ nội dung được cung cấp trên cơ sở "nguyên trạng" (as-is) và "sẵn có" (as-available). Trong phạm vi pháp luật cho phép:',
+      'Kho Tool AI và toàn bộ sản phẩm số được cung cấp trên cơ sở "nguyên trạng" (as-is) và "sẵn có" (as-available). Trong phạm vi pháp luật cho phép:',
     ],
     list: [
-      "Chúng tôi không đảm bảo Nền tảng hoạt động liên tục, không gián đoạn hoặc hoàn toàn không có lỗi kỹ thuật",
-      "Chúng tôi không chịu trách nhiệm về kết quả cụ thể từ việc áp dụng kiến thức trong khoá học, vì kết quả phụ thuộc vào nỗ lực và hoàn cảnh cá nhân của mỗi học viên",
-      "Chúng tôi không chịu trách nhiệm về thiệt hại gián tiếp, ngẫu nhiên, đặc biệt hoặc mang tính hậu quả phát sinh từ việc sử dụng hoặc không thể sử dụng Nền tảng",
-      "Chúng tôi không chịu trách nhiệm về nội dung, sản phẩm hoặc dịch vụ của bên thứ ba được liên kết trên Nền tảng",
+      "Chúng tôi không đảm bảo Kho Tool AI hoạt động liên tục, không gián đoạn hoặc hoàn toàn không có lỗi kỹ thuật",
+      "Chúng tôi không chịu trách nhiệm về kết quả cụ thể từ việc áp dụng tool AI, vì kết quả phụ thuộc vào nỗ lực và hoàn cảnh cá nhân của mỗi khách hàng",
+      "Chúng tôi không chịu trách nhiệm về thiệt hại gián tiếp, ngẫu nhiên, đặc biệt hoặc mang tính hậu quả phát sinh từ việc sử dụng hoặc không thể sử dụng Kho Tool AI",
+      "Chúng tôi không chịu trách nhiệm về nội dung, sản phẩm hoặc dịch vụ của bên thứ ba được liên kết trên Kho Tool AI",
       "Trách nhiệm bồi thường tối đa của chúng tôi trong mọi trường hợp không vượt quá tổng số tiền bạn đã thanh toán cho dịch vụ liên quan trong 12 tháng gần nhất",
     ],
   },
@@ -174,10 +174,10 @@ const sections = [
       "Chúng tôi có quyền sửa đổi, bổ sung hoặc cập nhật các Điều khoản Sử dụng này vào bất kỳ thời điểm nào. Khi có thay đổi:",
     ],
     list: [
-      "Phiên bản mới sẽ được đăng tải trên Nền tảng kèm ngày cập nhật",
-      "Thay đổi quan trọng sẽ được thông báo qua email đăng ký hoặc thông báo trên Nền tảng trước ít nhất 7 ngày",
-      "Việc tiếp tục sử dụng Nền tảng sau ngày thay đổi có hiệu lực đồng nghĩa với việc bạn chấp nhận các điều khoản mới",
-      "Nếu không đồng ý với điều khoản mới, bạn có quyền ngừng sử dụng Nền tảng và yêu cầu xoá tài khoản",
+      "Phiên bản mới sẽ được đăng tải trên Kho Tool AI kèm ngày cập nhật",
+      "Thay đổi quan trọng sẽ được thông báo qua email đăng ký hoặc thông báo trên Kho Tool AI trước ít nhất 7 ngày",
+      "Việc tiếp tục sử dụng Kho Tool AI sau ngày thay đổi có hiệu lực đồng nghĩa với việc bạn chấp nhận các điều khoản mới",
+      "Nếu không đồng ý với điều khoản mới, bạn có quyền ngừng sử dụng Kho Tool AI và yêu cầu xoá tài khoản",
     ],
   },
   {
@@ -361,7 +361,7 @@ export default function TermsPage() {
           {/* Related links */}
           <div className="pt-6 border-t border-[#E5E7EB] flex flex-col sm:flex-row gap-3">
             <Link
-              href="/privacy-policy"
+              href="/privacy"
               className="text-sm text-[#E85D04] hover:underline"
             >
               Chính sách bảo mật &rarr;
