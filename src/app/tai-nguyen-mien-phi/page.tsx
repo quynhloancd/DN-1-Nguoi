@@ -91,7 +91,7 @@ export default function TaiNguyenMienPhiPage() {
           </p>
           <div className="w-full max-w-lg rounded-2xl overflow-hidden">
             <Image
-              src="/áº¢NH/thien-hue-ai-workspace-banner.jpg"
+              src="/anh/thien-hue-ai-workspace-banner.jpg"
               alt="ThiÃªn Huá»‡ - workspace AI"
               width={640}
               height={360}
@@ -206,4 +206,5 @@ export default function TaiNguyenMienPhiPage() {
     </div>
   );
 }
+
 

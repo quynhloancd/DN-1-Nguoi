@@ -45,7 +45,7 @@ export default function CamOnClient() {
             </p>
             <div className="mt-5 rounded-xl overflow-hidden max-w-xs mx-auto">
               <Image
-                src="/áº¢NH/thien-hue-thank-you.jpg"
+                src="/anh/thien-hue-thank-you.jpg"
                 alt="ThiÃªn Huá»‡ cáº£m Æ¡n"
                 width={320}
                 height={240}
@@ -125,7 +125,7 @@ export default function CamOnClient() {
             <div className="flex items-start gap-4">
               <div className="w-16 h-16 rounded-full overflow-hidden shrink-0 border-2 border-[#F97316]/30">
                 <Image
-                  src="/áº¢NH/thien-hue-avatar.jpg"
+                  src="/anh/thien-hue-avatar.jpg"
                   alt="ThiÃªn Huá»‡"
                   width={64}
                   height={64}
@@ -157,5 +157,6 @@ export default function CamOnClient() {
     </div>
   );
 }
+
 
 

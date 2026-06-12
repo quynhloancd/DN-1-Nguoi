@@ -123,7 +123,7 @@ export default function HomePage() {
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden">
                 <Image
-                  src="/áº¢NH/one-person-business-ai-system.jpg"
+                  src="/anh/one-person-business-ai-system.jpg"
                   alt="Há»‡ thá»‘ng AI cho doanh nghiá»‡p 1 ngÆ°á»i"
                   fill
                   sizes="(max-width: 1024px) 90vw, 45vw"
@@ -325,7 +325,7 @@ export default function HomePage() {
             <div className="flex justify-center">
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden shadow-lg">
                 <Image
-                  src="/áº¢NH/thien-hue-working.jpg"
+                  src="/anh/thien-hue-working.jpg"
                   alt="ThiÃªn Huá»‡ Ä‘ang lÃ m viá»‡c vá»›i AI"
                   fill
                   sizes="(max-width: 1024px) 320px, 320px"
@@ -349,4 +349,5 @@ export default function HomePage() {
     </div>
   );
 }
+
 
