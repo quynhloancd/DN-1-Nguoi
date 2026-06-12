@@ -28,15 +28,15 @@ type Tool = {
 };
 
 const BADGE_LABELS: Record<string, string> = {
-  free: "Miễn phí",
-  featured: "Nổi bật",
-  bestseller: "Bán chạy",
-  new: "Mới",
-  sale: "Giảm giá",
+  free: "Mi?n ph�",
+  featured: "N?i b?t",
+  bestseller: "B�n ch?y",
+  new: "M?i",
+  sale: "Gi?m gi�",
 };
 
 function formatPrice(p: number) {
-  return p.toLocaleString("vi-VN") + "đ";
+  return p.toLocaleString("vi-VN") + "?";
 }
 
 function getYouTubeId(url: string) {
@@ -97,7 +97,7 @@ export default async function ToolDetailPage({
 
   return (
     <div className="min-h-screen bg-white">
-      {/* ── Hero ────────────────────────────────────────────────────────── */}
+      {/* ?? Hero ?????????????????????????????????????????????????????????? */}
       <section style={{ background: "#1C2A44" }} className="py-16 px-4">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-10 items-center">
           <div className="flex-1 text-white">
@@ -127,7 +127,7 @@ export default async function ToolDetailPage({
                 </>
               ) : (
                 <span className="text-3xl font-extrabold text-orange-400">
-                  {tool.price === 0 ? "Miễn phí" : formatPrice(tool.price)}
+                  {tool.price === 0 ? "Mi?n ph�" : formatPrice(tool.price)}
                 </span>
               )}
             </div>
@@ -154,16 +154,16 @@ export default async function ToolDetailPage({
       </section>
 
       <div className="max-w-3xl mx-auto px-4 py-12 space-y-14">
-        {/* ── Tool giúp bạn làm gì ───────────────────────────────────────── */}
+        {/* ?? Tool gi�p b?n l�m g� ????????????????????????????????????????? */}
         {whatLines.length > 0 && (
           <section>
             <h2 className="text-xl font-bold text-[#1C2A44] mb-5">
-              Tool này giúp bạn làm gì?
+              Tool n�y gi�p b?n l�m g�?
             </h2>
             <ul className="space-y-3">
               {whatLines.map((line, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="mt-1 text-orange-500 shrink-0">✓</span>
+                  <span className="mt-1 text-orange-500 shrink-0">?</span>
                   <span className="text-gray-700">{line}</span>
                 </li>
               ))}
@@ -171,39 +171,39 @@ export default async function ToolDetailPage({
           </section>
         )}
 
-        {/* ── Bạn nhận được gì ───────────────────────────────────────────── */}
+        {/* ?? B?n nh?n ???c g� ????????????????????????????????????????????? */}
         <section>
           <h2 className="text-xl font-bold text-[#1C2A44] mb-5">
-            Bạn nhận được gì?
+            B?n nh?n ???c g�?
           </h2>
           <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm space-y-3">
             {[
-              tool.tool_link && "Link truy cập tool sau khi thanh toán",
-              tool.prompt_template && "Prompt mẫu kèm hướng dẫn cách dùng",
-              tool.guide_url && "Hướng dẫn sử dụng từng bước",
-              "Hỗ trợ qua nhóm Zalo",
-              tool.demo_video_url && "Video demo thực tế",
+              tool.tool_link && "Link truy c?p tool sau khi thanh to�n",
+              tool.prompt_template && "Prompt m?u k�m h??ng d?n c�ch d�ng",
+              tool.guide_url && "H??ng d?n s? d?ng t?ng b??c",
+              "H? tr? qua nh�m Zalo",
+              tool.demo_video_url && "Video demo th?c t?",
             ]
               .filter(Boolean)
               .map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <span className="text-green-500 text-lg">✔</span>
+                  <span className="text-green-500 text-lg">?</span>
                   <span className="text-gray-800">{item as string}</span>
                 </div>
               ))}
           </div>
         </section>
 
-        {/* ── Dành cho ai ────────────────────────────────────────────────── */}
+        {/* ?? D�nh cho ai ?????????????????????????????????????????????????? */}
         {suitableLines.length > 0 && (
           <section>
             <h2 className="text-xl font-bold text-[#1C2A44] mb-5">
-              Dành cho ai?
+              D�nh cho ai?
             </h2>
             <ul className="space-y-3">
               {suitableLines.map((line, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="mt-1 text-blue-500 shrink-0">→</span>
+                  <span className="mt-1 text-blue-500 shrink-0">?</span>
                   <span className="text-gray-700">{line}</span>
                 </li>
               ))}
@@ -211,11 +211,11 @@ export default async function ToolDetailPage({
           </section>
         )}
 
-        {/* ── Prompt mẫu ─────────────────────────────────────────────────── */}
+        {/* ?? Prompt m?u ??????????????????????????????????????????????????? */}
         {tool.prompt_template && (
           <section>
             <h2 className="text-xl font-bold text-[#1C2A44] mb-4">
-              Prompt mẫu
+              Prompt m?u
             </h2>
             <pre className="bg-gray-100 rounded-xl p-5 text-sm text-gray-800 whitespace-pre-wrap leading-relaxed overflow-x-auto">
               {tool.prompt_template}
@@ -223,7 +223,7 @@ export default async function ToolDetailPage({
           </section>
         )}
 
-        {/* ── Demo video ─────────────────────────────────────────────────── */}
+        {/* ?? Demo video ??????????????????????????????????????????????????? */}
         {ytId && (
           <section>
             <h2 className="text-xl font-bold text-[#1C2A44] mb-4">
@@ -241,17 +241,17 @@ export default async function ToolDetailPage({
           </section>
         )}
 
-        {/* ── Cách nhận tool ─────────────────────────────────────────────── */}
+        {/* ?? C�ch nh?n tool ??????????????????????????????????????????????? */}
         <section>
           <h2 className="text-xl font-bold text-[#1C2A44] mb-5">
-            Cách nhận tool
+            C�ch nh?n tool
           </h2>
           <ol className="space-y-3">
             {[
-              "Chọn tool phù hợp",
-              "Thanh toán qua link bên dưới",
-              "Nhận link tool + hướng dẫn sử dụng",
-              "Vào nhóm Zalo để được hỗ trợ",
+              "Ch?n tool ph� h?p",
+              "Thanh to�n qua link b�n d??i",
+              "Nh?n link tool + h??ng d?n s? d?ng",
+              "V�o nh�m Zalo ?? ???c h? tr?",
             ].map((step, i) => (
               <li key={i} className="flex items-center gap-4">
                 <span className="w-8 h-8 rounded-full bg-orange-500 text-white font-bold flex items-center justify-center shrink-0 text-sm">
@@ -263,11 +263,11 @@ export default async function ToolDetailPage({
           </ol>
         </section>
 
-        {/* ── FAQ ────────────────────────────────────────────────────────── */}
+        {/* ?? FAQ ?????????????????????????????????????????????????????????? */}
         {faqs.length > 0 && (
           <section>
             <h2 className="text-xl font-bold text-[#1C2A44] mb-5">
-              Câu hỏi thường gặp
+              C�u h?i th??ng g?p
             </h2>
             <div className="space-y-3">
               {faqs.map((item, i) => (
@@ -287,7 +287,7 @@ export default async function ToolDetailPage({
           </section>
         )}
 
-        {/* ── CTA cuối ───────────────────────────────────────────────────── */}
+        {/* ?? CTA cu?i ????????????????????????????????????????????????????? */}
         <section className="text-center py-8 space-y-4">
           <a
             href={ctaHref}
@@ -301,13 +301,13 @@ export default async function ToolDetailPage({
               href="/combo"
               className="text-sm text-blue-600 hover:underline"
             >
-              Xem combo tiết kiệm hơn →
+              Xem combo ti?t ki?m h?n ?
             </Link>
           </div>
         </section>
       </div>
 
-      {/* ── Modal liên hệ Zalo (hiện khi không có payment_link) ────────────── */}
+      {/* ?? Modal li�n h? Zalo (hi?n khi kh�ng c� payment_link) ?????????????? */}
       {!hasPaymentLink && (
         <div
           id="lien-he-zalo"
@@ -317,9 +317,9 @@ export default async function ToolDetailPage({
             <a
               href="#"
               className="absolute top-3 right-4 text-gray-400 hover:text-gray-600 text-2xl leading-none"
-              aria-label="Đóng"
+              aria-label="?�ng"
             >
-              ×
+              �
             </a>
             <div className="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-4">
               <svg viewBox="0 0 40 40" fill="none" className="w-9 h-9">
@@ -328,10 +328,10 @@ export default async function ToolDetailPage({
               </svg>
             </div>
             <h3 className="text-xl font-bold text-[#1C2A44] mb-2">
-              Liên hệ để mua
+              Li�n h? ?? mua
             </h3>
             <p className="text-gray-500 text-sm mb-6">
-              Tool này chưa có link thanh toán tự động. Nhắn Zalo để được hỗ trợ mua nhanh nhất!
+              Tool n�y ch?a c� link thanh to�n t? ??ng. Nh?n Zalo ?? ???c h? tr? mua nhanh nh?t!
             </p>
             <a
               href="https://zalo.me/0339033939"
@@ -340,10 +340,10 @@ export default async function ToolDetailPage({
               className="inline-block w-full py-3 rounded-xl font-bold text-white text-base transition-all"
               style={{ background: "#0068FF" }}
             >
-              Nhắn Zalo ngay
+              Nh?n Zalo ngay
             </a>
             <p className="text-xs text-gray-400 mt-3">
-              Thường phản hồi trong vòng 5 phút
+              Th??ng ph?n h?i trong v�ng 5 ph�t
             </p>
           </div>
         </div>

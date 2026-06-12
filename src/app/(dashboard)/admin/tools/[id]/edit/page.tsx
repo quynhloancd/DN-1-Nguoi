@@ -10,8 +10,8 @@ function generateSlug(title: string): string {
   return title
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/đ/g, "d")
+    .replace(/[?-?]/g, "")
+    .replace(/?/g, "d")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 }
@@ -100,7 +100,7 @@ export default function EditToolPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!title || !slug) { setError("Tên và slug không được để trống."); return; }
+    if (!title || !slug) { setError("T�n v� slug kh�ng ???c ?? tr?ng."); return; }
     setSubmitting(true);
     setError(null);
 
@@ -142,7 +142,7 @@ export default function EditToolPage() {
 
   return (
     <div>
-      <TopBar title="Chỉnh sửa Tool AI" subtitle={`Đang sửa: ${title}`} />
+      <TopBar title="Ch?nh s?a Tool AI" subtitle={`?ang s?a: ${title}`} />
       <div className="p-6 max-w-3xl mx-auto">
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && (
@@ -151,11 +151,11 @@ export default function EditToolPage() {
             </div>
           )}
 
-          {/* Thông tin cơ bản */}
+          {/* Th�ng tin c? b?n */}
           <div className="card-dark p-5 space-y-4">
-            <h3 className="font-semibold text-[#1B2A4A] text-sm">Thông tin cơ bản</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">Th�ng tin c? b?n</h3>
             <div>
-              <label className="label-form">Tên tool *</label>
+              <label className="label-form">T�n tool *</label>
               <input
                 className="input-form"
                 value={title}
@@ -168,43 +168,43 @@ export default function EditToolPage() {
               <input className="input-form" value={slug} onChange={(e) => setSlug(e.target.value)} />
             </div>
             <div>
-              <label className="label-form">Danh mục</label>
+              <label className="label-form">Danh m?c</label>
               <select className="input-form" value={categoryId} onChange={(e) => setCategoryId(e.target.value)}>
-                <option value="">-- Chọn danh mục --</option>
+                <option value="">-- Ch?n danh m?c --</option>
                 {categories.map((c) => (
                   <option key={c.id} value={c.id}>{c.name}</option>
                 ))}
               </select>
             </div>
             <div>
-              <label className="label-form">URL ảnh thumbnail</label>
+              <label className="label-form">URL ?nh thumbnail</label>
               <input className="input-form" value={thumbnailUrl} onChange={(e) => setThumbnailUrl(e.target.value)} placeholder="https://..." />
             </div>
           </div>
 
-          {/* Mô tả */}
+          {/* M� t? */}
           <div className="card-dark p-5 space-y-4">
-            <h3 className="font-semibold text-[#1B2A4A] text-sm">Mô tả</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">M� t?</h3>
             <div>
-              <label className="label-form">Mô tả ngắn</label>
+              <label className="label-form">M� t? ng?n</label>
               <textarea className="input-form" rows={2} value={shortDescription} onChange={(e) => setShortDescription(e.target.value)} />
             </div>
             <div>
-              <label className="label-form">Mô tả chi tiết (HTML)</label>
+              <label className="label-form">M� t? chi ti?t (HTML)</label>
               <textarea className="input-form" rows={4} value={descriptionHtml} onChange={(e) => setDescriptionHtml(e.target.value)} />
             </div>
           </div>
 
-          {/* Giá & Badge */}
+          {/* Gi� & Badge */}
           <div className="card-dark p-5 space-y-4">
-            <h3 className="font-semibold text-[#1B2A4A] text-sm">Giá & Trạng thái</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">Gi� & Tr?ng th�i</h3>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="label-form">Giá gốc (VND)</label>
+                <label className="label-form">Gi� g?c (VND)</label>
                 <input type="number" className="input-form" value={price} onChange={(e) => setPrice(parseInt(e.target.value) || 0)} min={0} />
               </div>
               <div>
-                <label className="label-form">Giá bán (VND)</label>
+                <label className="label-form">Gi� b�n (VND)</label>
                 <input type="number" className="input-form" value={salePrice} onChange={(e) => setSalePrice(e.target.value)} min={0} />
               </div>
             </div>
@@ -212,20 +212,20 @@ export default function EditToolPage() {
               <div>
                 <label className="label-form">Badge</label>
                 <select className="input-form" value={badge} onChange={(e) => setBadge(e.target.value)}>
-                  <option value="">-- Không có --</option>
-                  <option value="free">Miễn phí</option>
-                  <option value="featured">Nổi bật</option>
-                  <option value="bestseller">Bán chạy</option>
-                  <option value="new">Mới</option>
-                  <option value="sale">Giảm giá</option>
+                  <option value="">-- Kh�ng c� --</option>
+                  <option value="free">Mi?n ph�</option>
+                  <option value="featured">N?i b?t</option>
+                  <option value="bestseller">B�n ch?y</option>
+                  <option value="new">M?i</option>
+                  <option value="sale">Gi?m gi�</option>
                 </select>
               </div>
               <div>
-                <label className="label-form">Trạng thái</label>
+                <label className="label-form">Tr?ng th�i</label>
                 <select className="input-form" value={status} onChange={(e) => setStatus(e.target.value)}>
-                  <option value="draft">Nháp</option>
-                  <option value="published">Đang bán</option>
-                  <option value="hidden">Ẩn</option>
+                  <option value="draft">Nh�p</option>
+                  <option value="published">?ang b�n</option>
+                  <option value="hidden">?n</option>
                 </select>
               </div>
             </div>
@@ -233,7 +233,7 @@ export default function EditToolPage() {
 
           {/* Links */}
           <div className="card-dark p-5 space-y-4">
-            <h3 className="font-semibold text-[#1B2A4A] text-sm">Links & Tài nguyên</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">Links & T�i nguy�n</h3>
             <div>
               <label className="label-form">URL demo video (YouTube)</label>
               <input className="input-form" value={demoVideoUrl} onChange={(e) => setDemoVideoUrl(e.target.value)} />
@@ -243,41 +243,41 @@ export default function EditToolPage() {
               <input className="input-form" value={toolLink} onChange={(e) => setToolLink(e.target.value)} />
             </div>
             <div>
-              <label className="label-form">URL hướng dẫn</label>
+              <label className="label-form">URL h??ng d?n</label>
               <input className="input-form" value={guideUrl} onChange={(e) => setGuideUrl(e.target.value)} />
             </div>
           </div>
 
-          {/* Nội dung landing */}
+          {/* N?i dung landing */}
           <div className="card-dark p-5 space-y-4">
-            <h3 className="font-semibold text-[#1B2A4A] text-sm">Nội dung trang landing</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">N?i dung trang landing</h3>
             <div>
-              <label className="label-form">Prompt mẫu</label>
+              <label className="label-form">Prompt m?u</label>
               <textarea className="input-form" rows={4} value={promptTemplate} onChange={(e) => setPromptTemplate(e.target.value)} />
             </div>
             <div>
-              <label className="label-form">Người mua nhận được gì (mỗi dòng 1 điểm)</label>
+              <label className="label-form">Ng??i mua nh?n ???c g� (m?i d�ng 1 ?i?m)</label>
               <textarea className="input-form" rows={4} value={whatYouGet} onChange={(e) => setWhatYouGet(e.target.value)} />
             </div>
             <div>
-              <label className="label-form">Phù hợp với ai (mỗi dòng 1 đối tượng)</label>
+              <label className="label-form">Ph� h?p v?i ai (m?i d�ng 1 ??i t??ng)</label>
               <textarea className="input-form" rows={3} value={suitableFor} onChange={(e) => setSuitableFor(e.target.value)} />
             </div>
           </div>
 
-          {/* Thanh toán */}
+          {/* Thanh to�n */}
           <div className="card-dark p-5 space-y-4">
-            <h3 className="font-semibold text-[#1B2A4A] text-sm">Thanh toán & CTA</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">Thanh to�n & CTA</h3>
             <div>
-              <label className="label-form">Text nút CTA</label>
+              <label className="label-form">Text n�t CTA</label>
               <input className="input-form" value={ctaText} onChange={(e) => setCtaText(e.target.value)} />
             </div>
             <div>
-              <label className="label-form">Link thanh toán (PayOS / SePay)</label>
+              <label className="label-form">Link thanh to�n (PayOS / SePay)</label>
               <input className="input-form" value={paymentLink} onChange={(e) => setPaymentLink(e.target.value)} />
             </div>
             <div>
-              <label className="label-form">Trang redirect sau thanh toán</label>
+              <label className="label-form">Trang redirect sau thanh to�n</label>
               <input className="input-form" value={redirectAfterPurchase} onChange={(e) => setRedirectAfterPurchase(e.target.value)} />
             </div>
           </div>
@@ -288,11 +288,11 @@ export default function EditToolPage() {
               onClick={() => router.push("/admin/tools")}
               className="px-5 py-2.5 rounded-xl text-sm font-medium text-gray-600 border border-gray-300 hover:bg-gray-50"
             >
-              Huỷ
+              Hu?
             </button>
             <button type="submit" disabled={submitting} className="btn-green">
               {submitting ? <Loader2 size={15} className="animate-spin" /> : <Save size={15} />}
-              Lưu thay đổi
+              L?u thay ??i
             </button>
           </div>
         </form>

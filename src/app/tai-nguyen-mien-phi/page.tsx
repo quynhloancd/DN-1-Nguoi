@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -9,19 +9,19 @@ import { CheckSquare, Video, Wrench, CalendarDays, Lock } from "lucide-react";
 const resources = [
   {
     icon: CheckSquare,
-    title: "Checklist 5 bÆ°á»›c dÃ¹ng AI lÃ m content bÃ¡n hÃ ng",
+    title: "Checklist 5 bước dùng AI làm content bán hàng",
   },
   {
     icon: Video,
-    title: "10 prompt táº¡o video AI (copy-paste Ä‘Æ°á»£c ngay)",
+    title: "10 prompt tạo video AI (copy-paste được ngay)",
   },
   {
     icon: Wrench,
-    title: "Danh sÃ¡ch tool AI miá»…n phÃ­ cho ngÆ°á»i má»›i",
+    title: "Danh sách tool AI miễn phí cho người mới",
   },
   {
     icon: CalendarDays,
-    title: "Template káº¿ hoáº¡ch ná»™i dung 7 ngÃ y",
+    title: "Template kế hoạch nội dung 7 ngày",
   },
 ];
 
@@ -52,12 +52,12 @@ export default function TaiNguyenMienPhiPage() {
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data?.message || "CÃ³ lá»—i xáº£y ra. Vui lÃ²ng thá»­ láº¡i.");
+        throw new Error(data?.message || "Có lỗi xảy ra. Vui lòng thử lại.");
       }
 
       router.push("/cam-on");
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : "CÃ³ lá»—i xáº£y ra. Vui lÃ²ng thá»­ láº¡i.");
+      setError(err instanceof Error ? err.message : "Có lỗi xảy ra. Vui lòng thử lại.");
       setLoading(false);
     }
   }
@@ -70,12 +70,12 @@ export default function TaiNguyenMienPhiPage() {
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/images/logo.jpg"
-              alt="ThiÃªn Huá»‡ AI"
+              alt="Thiên Huệ AI"
               width={32}
               height={32}
               className="rounded-lg object-contain"
             />
-            <span className="text-sm font-bold text-white hidden sm:block">ThiÃªn Huá»‡ AI</span>
+            <span className="text-sm font-bold text-white hidden sm:block">Thiên Huệ AI</span>
           </Link>
         </div>
       </nav>
@@ -84,15 +84,15 @@ export default function TaiNguyenMienPhiPage() {
       <section className="bg-[#1C2A44] pt-14">
         <div className="max-w-4xl mx-auto px-4 py-12 sm:py-16 flex flex-col items-center text-center">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-3">
-            Nháº­n bá»™ tÃ i nguyÃªn AI miá»…n phÃ­ Ä‘á»ƒ báº¯t Ä‘áº§u
+            Nhận bộ tài nguyên AI miễn phí để bắt đầu
           </h1>
           <p className="text-gray-300 text-base sm:text-lg max-w-xl mb-8">
-            4 tÃ i nguyÃªn thá»±c chiáº¿n cho ngÆ°á»i kinh doanh online muá»‘n dÃ¹ng AI ngay hÃ´m nay
+            4 tài nguyên thực chiến cho người kinh doanh online muốn dùng AI ngay hôm nay
           </p>
           <div className="w-full max-w-lg rounded-2xl overflow-hidden">
             <Image
               src="/anh/thien-hue-ai-workspace-banner.jpg"
-              alt="ThiÃªn Huá»‡ - workspace AI"
+              alt="Thiên Huệ - workspace AI"
               width={640}
               height={360}
               className="w-full object-cover"
@@ -107,7 +107,7 @@ export default function TaiNguyenMienPhiPage() {
         {/* 4 Resources */}
         <section>
           <h2 className="text-xl font-extrabold text-center mb-6">
-            Báº¡n sáº½ nháº­n Ä‘Æ°á»£c 4 tÃ i nguyÃªn nÃ y:
+            Bạn sẽ nhận được 4 tài nguyên này:
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {resources.map((item, i) => (
@@ -130,19 +130,19 @@ export default function TaiNguyenMienPhiPage() {
         <section>
           <div className="bg-white rounded-2xl border border-gray-100 shadow-md max-w-lg mx-auto p-6 sm:p-8">
             <h2 className="text-xl font-extrabold mb-5 text-center">
-              Äiá»n thÃ´ng tin Ä‘á»ƒ nháº­n ngay
+              Điền thông tin để nhận ngay
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium mb-1" htmlFor="name">
-                  TÃªn cá»§a báº¡n <span className="text-red-500">*</span>
+                  Tên của bạn <span className="text-red-500">*</span>
                 </label>
                 <input
                   id="name"
                   type="text"
                   required
-                  placeholder="VÃ­ dá»¥: Nguyá»…n Thá»‹ Lan"
+                  placeholder="Ví dụ: Nguyễn Thị Lan"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F97316] focus:ring-1 focus:ring-[#F97316] transition"
@@ -166,13 +166,13 @@ export default function TaiNguyenMienPhiPage() {
 
               <div>
                 <label className="block text-sm font-medium mb-1" htmlFor="zalo">
-                  Sá»‘ Zalo{" "}
-                  <span className="text-gray-400 font-normal">(khÃ´ng báº¯t buá»™c)</span>
+                  Số Zalo{" "}
+                  <span className="text-gray-400 font-normal">(không bắt buộc)</span>
                 </label>
                 <input
                   id="zalo"
                   type="tel"
-                  placeholder="Äá»ƒ nháº­n há»— trá»£ nhanh hÆ¡n"
+                  placeholder="Để nhận hỗ trợ nhanh hơn"
                   value={zalo}
                   onChange={(e) => setZalo(e.target.value)}
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F97316] focus:ring-1 focus:ring-[#F97316] transition"
@@ -191,13 +191,13 @@ export default function TaiNguyenMienPhiPage() {
                 className="w-full py-4 rounded-xl font-bold text-white text-base transition-all hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed"
                 style={{ background: "#F97316" }}
               >
-                {loading ? "Äang gá»­i..." : "Nháº­n tÃ i nguyÃªn miá»…n phÃ­"}
+                {loading ? "Đang gửi..." : "Nhận tài nguyên miễn phí"}
               </button>
             </form>
 
             <div className="mt-4 flex items-center justify-center gap-1.5 text-gray-500 text-sm">
               <Lock size={13} />
-              <span>ThÃ´ng tin cá»§a báº¡n Ä‘Æ°á»£c báº£o máº­t. KhÃ´ng spam.</span>
+              <span>Thông tin của bạn được bảo mật. Không spam.</span>
             </div>
           </div>
         </section>

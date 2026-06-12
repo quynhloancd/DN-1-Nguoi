@@ -1,36 +1,36 @@
-// ──────────────────────────────────────────────
-// Site Configuration — Customize via Environment Variables
-// ──────────────────────────────────────────────
-// Tất cả giá trị đều có thể override bằng env vars trên Vercel.
-// Học viên KHÔNG cần sửa file này — chỉ cần set env vars.
-// ──────────────────────────────────────────────
+// ??????????????????????????????????????????????
+// Site Configuration � Customize via Environment Variables
+// ??????????????????????????????????????????????
+// T?t c? gi� tr? ??u c� th? override b?ng env vars tr�n Vercel.
+// H?c vi�n KH�NG c?n s?a file n�y � ch? c?n set env vars.
+// ??????????????????????????????????????????????
 
 const env = (key: string, fallback: string): string =>
   (typeof process !== "undefined" ? process.env?.[key] : undefined) || fallback;
 
 export const siteConfig = {
-  // ─── Brand ───
+  // ??? Brand ???
   // Env: NEXT_PUBLIC_SITE_NAME, NEXT_PUBLIC_SITE_SHORT_NAME, NEXT_PUBLIC_SITE_DOMAIN
   //      NEXT_PUBLIC_SITE_TAGLINE, NEXT_PUBLIC_SITE_DESCRIPTION
-  name: env("NEXT_PUBLIC_SITE_NAME", "Doanh Nghiệp 1 Người"),
+  name: env("NEXT_PUBLIC_SITE_NAME", "Doanh Nghi?p 1 Ng??i"),
   shortName: env("NEXT_PUBLIC_SITE_SHORT_NAME", "DN1N"),
   domain: env("NEXT_PUBLIC_SITE_DOMAIN", "doanhnghiep1nguoi.online"),
-  tagline: env("NEXT_PUBLIC_SITE_TAGLINE", "Kho tool AI thực chiến cho người kinh doanh online một mình"),
+  tagline: env("NEXT_PUBLIC_SITE_TAGLINE", "Kho tool AI th?c chi?n cho ng??i kinh doanh online m?t m�nh"),
   description: env(
     "NEXT_PUBLIC_SITE_DESCRIPTION",
-    "Doanh Nghiệp 1 Người là kho tool AI thực chiến — tự làm content, ảnh, video và workflow bán hàng mà không cần thuê team, không cần biết code."
+    "Doanh Nghi?p 1 Ng??i l� kho tool AI th?c chi?n � t? l�m content, ?nh, video v� workflow b�n h�ng m� kh�ng c?n thu� team, kh�ng c?n bi?t code."
   ),
-  keywords: "kho tool AI, tool AI bán hàng, AI không cần code, doanh nghiệp 1 người",
+  keywords: "kho tool AI, tool AI b�n h�ng, AI kh�ng c?n code, doanh nghi?p 1 ng??i",
 
-  // ─── Owner ───
+  // ??? Owner ???
   // Env: NEXT_PUBLIC_OWNER_NAME, NEXT_PUBLIC_OWNER_BIO, NEXT_PUBLIC_OWNER_AVATAR
   owner: {
-    name: env("NEXT_PUBLIC_OWNER_NAME", "Thiên Huệ AI"),
-    bio: env("NEXT_PUBLIC_OWNER_BIO", "Chuyên gia AI Workflow cho người kinh doanh & đi làm 35-50 tuổi"),
+    name: env("NEXT_PUBLIC_OWNER_NAME", "Thi�n Hu? AI"),
+    bio: env("NEXT_PUBLIC_OWNER_BIO", "Chuy�n gia AI Workflow cho ng??i kinh doanh & ?i l�m 35-50 tu?i"),
     avatar: env("NEXT_PUBLIC_OWNER_AVATAR", "/images/portrait.png"),
   },
 
-  // ─── Colors (CSS values) ───
+  // ??? Colors (CSS values) ???
   // Env: NEXT_PUBLIC_COLOR_BRAND, NEXT_PUBLIC_COLOR_BRAND_HOVER
   //      NEXT_PUBLIC_COLOR_BG, NEXT_PUBLIC_COLOR_SURFACE, NEXT_PUBLIC_COLOR_TEXT
   colors: {
@@ -41,7 +41,7 @@ export const siteConfig = {
     text: env("NEXT_PUBLIC_COLOR_TEXT", "#f5f5f5"),
   },
 
-  // ─── Social Links ───
+  // ??? Social Links ???
   // Env: NEXT_PUBLIC_SOCIAL_FACEBOOK, NEXT_PUBLIC_SOCIAL_YOUTUBE,
   //      NEXT_PUBLIC_SOCIAL_ZALO, NEXT_PUBLIC_SOCIAL_TIKTOK, NEXT_PUBLIC_SOCIAL_INSTAGRAM
   socials: {
@@ -52,20 +52,20 @@ export const siteConfig = {
     instagram: env("NEXT_PUBLIC_SOCIAL_INSTAGRAM", ""),
   },
 
-  // ─── Contact ───
+  // ??? Contact ???
   // Env: NEXT_PUBLIC_SUPPORT_EMAIL
   supportEmail: env("NEXT_PUBLIC_SUPPORT_EMAIL", "support@doanhnghiep1nguoi.online"),
 
-  // ─── Footer ───
+  // ??? Footer ???
   // Env: NEXT_PUBLIC_FOOTER_COPYRIGHT
   footer: {
     copyright: env(
       "NEXT_PUBLIC_FOOTER_COPYRIGHT",
-      `© ${new Date().getFullYear()} Doanh Nghiệp 1 Người | Thiên Huệ AI`
+      `� ${new Date().getFullYear()} Doanh Nghi?p 1 Ng??i | Thi�n Hu? AI`
     ),
   },
 
-  // ─── Features (toggle on/off) ───
+  // ??? Features (toggle on/off) ???
   // Env: NEXT_PUBLIC_FEATURE_AFFILIATE, NEXT_PUBLIC_FEATURE_COMMUNITY, etc.
   // Set to "false" to disable
   features: {
@@ -82,7 +82,7 @@ export const siteConfig = {
 export type SiteConfig = typeof siteConfig;
 
 /**
- * Extracts the phone number from the Zalo URL (e.g. "https://zalo.me/0782276727" → "0782276727").
+ * Extracts the phone number from the Zalo URL (e.g. "https://zalo.me/0782276727" ? "0782276727").
  * Falls back to the raw URL if parsing fails.
  */
 export function getZaloPhone(): string {

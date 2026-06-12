@@ -61,7 +61,7 @@ export default function EditComboPage() {
         .single();
 
       if (fetchError || !combo) {
-        setError("Không tìm thấy combo.");
+        setError("Kh�ng t�m th?y combo.");
         setLoading(false);
         return;
       }
@@ -94,16 +94,16 @@ export default function EditComboPage() {
     e.preventDefault();
     setError(null);
     setSuccess(false);
-    if (!title.trim()) { setError("Tiêu đề không được để trống"); return; }
-    if (!slug.trim()) { setError("Đường dẫn không được để trống"); return; }
-    if (!price || price <= 0) { setError("Giá gốc phải lớn hơn 0"); return; }
+    if (!title.trim()) { setError("Ti�u ?? kh�ng ???c ?? tr?ng"); return; }
+    if (!slug.trim()) { setError("???ng d?n kh�ng ???c ?? tr?ng"); return; }
+    if (!price || price <= 0) { setError("Gi� g?c ph?i l?n h?n 0"); return; }
 
     let faqParsed: unknown[] = [];
     if (faqRaw.trim()) {
       try {
         faqParsed = JSON.parse(faqRaw);
       } catch {
-        setError('FAQ không đúng định dạng JSON. Ví dụ: [{"q":"...","a":"..."}]');
+        setError('FAQ kh�ng ?�ng ??nh d?ng JSON. V� d?: [{"q":"...","a":"..."}]');
         return;
       }
     }
@@ -143,7 +143,7 @@ export default function EditComboPage() {
   async function handleDelete() {
     if (
       !confirm(
-        `Bạn có chắc muốn XÓA combo "${title}"? Hành động này không thể hoàn tác.`
+        `B?n c� ch?c mu?n X�A combo "${title}"? H�nh ??ng n�y kh�ng th? ho�n t�c.`
       )
     )
       return;
@@ -170,7 +170,7 @@ export default function EditComboPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <TopBar title="Chỉnh sửa combo" subtitle={title || "..."} />
+      <TopBar title="Ch?nh s?a combo" subtitle={title || "..."} />
 
       <div className="max-w-3xl mx-auto px-4 py-8">
         <form onSubmit={handleSubmit} className="card-dark p-6 space-y-5">
@@ -181,14 +181,14 @@ export default function EditComboPage() {
           )}
           {success && (
             <div className="bg-green-500/10 border border-green-500/50 text-green-400 px-4 py-3 rounded-lg text-sm">
-              Đã lưu thay đổi thành công.
+              ?� l?u thay ??i th�nh c�ng.
             </div>
           )}
 
-          {/* Tên combo */}
+          {/* T�n combo */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Tên combo <span className="text-red-400">*</span>
+              T�n combo <span className="text-red-400">*</span>
             </label>
             <input
               type="text"
@@ -202,7 +202,7 @@ export default function EditComboPage() {
           {/* Slug */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Đường dẫn (slug) <span className="text-red-400">*</span>
+              ???ng d?n (slug) <span className="text-red-400">*</span>
             </label>
             <input
               type="text"
@@ -216,7 +216,7 @@ export default function EditComboPage() {
           {/* Thumbnail URL */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              URL ảnh thumbnail
+              URL ?nh thumbnail
             </label>
             <input
               type="url"
@@ -227,10 +227,10 @@ export default function EditComboPage() {
             />
           </div>
 
-          {/* Mô tả ngắn */}
+          {/* M� t? ng?n */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Mô tả ngắn
+              M� t? ng?n
             </label>
             <textarea
               value={shortDescription}
@@ -240,10 +240,10 @@ export default function EditComboPage() {
             />
           </div>
 
-          {/* Mô tả HTML */}
+          {/* M� t? HTML */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Mô tả chi tiết (HTML)
+              M� t? chi ti?t (HTML)
             </label>
             <textarea
               value={descriptionHtml}
@@ -253,11 +253,11 @@ export default function EditComboPage() {
             />
           </div>
 
-          {/* Giá */}
+          {/* Gi� */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm text-gray-700 mb-1.5">
-                Giá gốc (VNĐ) <span className="text-red-400">*</span>
+                Gi� g?c (VN?) <span className="text-red-400">*</span>
               </label>
               <input
                 type="number"
@@ -270,14 +270,14 @@ export default function EditComboPage() {
             </div>
             <div>
               <label className="block text-sm text-gray-700 mb-1.5">
-                Giá bán (VNĐ)
+                Gi� b�n (VN?)
               </label>
               <input
                 type="number"
                 value={salePrice}
                 onChange={(e) => setSalePrice(e.target.value)}
                 min={0}
-                placeholder="Để trống nếu không khuyến mãi"
+                placeholder="?? tr?ng n?u kh�ng khuy?n m�i"
                 className="input-dark w-full"
               />
             </div>
@@ -292,31 +292,31 @@ export default function EditComboPage() {
                 onChange={(e) => setBadge(e.target.value)}
                 className="input-dark w-full"
               >
-                <option value="">— Không có —</option>
-                <option value="recommended">Đề xuất</option>
-                <option value="bestseller">Bán chạy</option>
-                <option value="sale">Khuyến mãi</option>
-                <option value="new">Mới</option>
+                <option value="">� Kh�ng c� �</option>
+                <option value="recommended">?? xu?t</option>
+                <option value="bestseller">B�n ch?y</option>
+                <option value="sale">Khuy?n m�i</option>
+                <option value="new">M?i</option>
               </select>
             </div>
             <div>
-              <label className="block text-sm text-gray-700 mb-1.5">Trạng thái</label>
+              <label className="block text-sm text-gray-700 mb-1.5">Tr?ng th�i</label>
               <select
                 value={status}
                 onChange={(e) => setStatus(e.target.value)}
                 className="input-dark w-full"
               >
-                <option value="draft">Bản nháp</option>
-                <option value="published">Đã xuất bản</option>
-                <option value="hidden">Ẩn</option>
+                <option value="draft">B?n nh�p</option>
+                <option value="published">?� xu?t b?n</option>
+                <option value="hidden">?n</option>
               </select>
             </div>
           </div>
 
-          {/* Lợi ích */}
+          {/* L?i �ch */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Lợi ích chính (mỗi dòng 1 lợi ích)
+              L?i �ch ch�nh (m?i d�ng 1 l?i �ch)
             </label>
             <textarea
               value={benefits}
@@ -326,10 +326,10 @@ export default function EditComboPage() {
             />
           </div>
 
-          {/* Phù hợp với ai */}
+          {/* Ph� h?p v?i ai */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Phù hợp với ai
+              Ph� h?p v?i ai
             </label>
             <input
               type="text"
@@ -339,10 +339,10 @@ export default function EditComboPage() {
             />
           </div>
 
-          {/* Link thanh toán */}
+          {/* Link thanh to�n */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Link thanh toán
+              Link thanh to�n
             </label>
             <input
               type="url"
@@ -374,19 +374,19 @@ export default function EditComboPage() {
             <textarea
               value={faqRaw}
               onChange={(e) => setFaqRaw(e.target.value)}
-              placeholder={'[{"q":"Câu hỏi?","a":"Trả lời."}]'}
+              placeholder={'[{"q":"C�u h?i?","a":"Tr? l?i."}]'}
               rows={5}
               className="input-dark w-full resize-none font-mono text-xs"
             />
             <p className="text-xs text-gray-500 mt-1">
-              Định dạng: {`[{"q":"câu hỏi","a":"trả lời"}]`}
+              ??nh d?ng: {`[{"q":"c�u h?i","a":"tr? l?i"}]`}
             </p>
           </div>
 
-          {/* Thứ tự */}
+          {/* Th? t? */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Thứ tự sắp xếp
+              Th? t? s?p x?p
             </label>
             <input
               type="number"
@@ -407,12 +407,12 @@ export default function EditComboPage() {
               {submitting ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" />
-                  Đang lưu...
+                  ?ang l?u...
                 </>
               ) : (
                 <>
                   <Save className="w-4 h-4" />
-                  Lưu thay đổi
+                  L?u thay ??i
                 </>
               )}
             </button>
@@ -428,7 +428,7 @@ export default function EditComboPage() {
               ) : (
                 <Trash2 className="w-4 h-4" />
               )}
-              Xóa combo
+              X�a combo
             </button>
           </div>
         </form>

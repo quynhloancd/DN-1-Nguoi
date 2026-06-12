@@ -3,255 +3,255 @@ import Link from "next/link";
 import { siteConfig, getBaseUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: `Chính Sách Bảo Mật | ${siteConfig.name}`,
-  description: `Chính sách bảo mật và bảo vệ dữ liệu cá nhân của kho tool AI ${siteConfig.name}, tuân thủ Luật An ninh mạng 2018 và Nghị định 13/2023/NĐ-CP.`,
+  title: `Ch�nh S�ch B?o M?t | ${siteConfig.name}`,
+  description: `Ch�nh s�ch b?o m?t v� b?o v? d? li?u c� nh�n c?a kho tool AI ${siteConfig.name}, tu�n th? Lu?t An ninh m?ng 2018 v� Ngh? ??nh 13/2023/N?-CP.`,
   alternates: {
     canonical: `${getBaseUrl()}/privacy`,
   },
   openGraph: {
-    title: `Chính Sách Bảo Mật — ${siteConfig.name}`,
-    description: `Chính sách bảo mật và bảo vệ dữ liệu cá nhân của kho tool AI ${siteConfig.name}`,
+    title: `Ch�nh S�ch B?o M?t � ${siteConfig.name}`,
+    description: `Ch�nh s�ch b?o m?t v� b?o v? d? li?u c� nh�n c?a kho tool AI ${siteConfig.name}`,
   },
 };
 
 const sections = [
   {
     id: "thu-thap",
-    title: "1. Thu thập thông tin",
+    title: "1. Thu th?p th�ng tin",
     content: [
-      "Khi bạn sử dụng kho tool AI doanhnghiep1nguoi.online, chúng tôi thu thập các loại thông tin cá nhân sau đây, phù hợp với quy định tại Điều 2 Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân:",
+      "Khi b?n s? d?ng kho tool AI doanhnghiep1nguoi.online, ch�ng t�i thu th?p c�c lo?i th�ng tin c� nh�n sau ?�y, ph� h?p v?i quy ??nh t?i ?i?u 2 Ngh? ??nh 13/2023/N?-CP v? b?o v? d? li?u c� nh�n:",
     ],
     subsections: [
       {
-        label: "a) Thông tin bạn cung cấp trực tiếp:",
+        label: "a) Th�ng tin b?n cung c?p tr?c ti?p:",
         items: [
-          "Họ và tên đầy đủ",
-          "Địa chỉ email",
-          "Số điện thoại",
-          "Thông tin thanh toán (được xử lý qua cổng thanh toán bên thứ ba -- chúng tôi không lưu trữ thông tin thẻ ngân hàng hoặc số tài khoản)",
+          "H? v� t�n ??y ??",
+          "??a ch? email",
+          "S? ?i?n tho?i",
+          "Th�ng tin thanh to�n (???c x? l� qua c?ng thanh to�n b�n th? ba -- ch�ng t�i kh�ng l?u tr? th�ng tin th? ng�n h�ng ho?c s? t�i kho?n)",
         ],
       },
       {
-        label: "b) Thông tin được thu thập tự động:",
+        label: "b) Th�ng tin ???c thu th?p t? ??ng:",
         items: [
-          "Lịch sử mua hàng: tool AI / sản phẩm số đã mua, quyền truy cập tool đã kích hoạt, tài liệu hướng dẫn đã truy cập",
-          "Dữ liệu hoạt động: tần suất truy cập, thời gian sử dụng, tương tác trong cộng đồng",
-          "Thông tin kỹ thuật: địa chỉ IP, loại trình duyệt (User-Agent), hệ điều hành, thiết bị truy cập",
-          "Dữ liệu cookie và mã theo dõi (xem mục 5)",
+          "L?ch s? mua h�ng: tool AI / s?n ph?m s? ?� mua, quy?n truy c?p tool ?� k�ch ho?t, t�i li?u h??ng d?n ?� truy c?p",
+          "D? li?u ho?t ??ng: t?n su?t truy c?p, th?i gian s? d?ng, t??ng t�c trong c?ng ??ng",
+          "Th�ng tin k? thu?t: ??a ch? IP, lo?i tr�nh duy?t (User-Agent), h? ?i?u h�nh, thi?t b? truy c?p",
+          "D? li?u cookie v� m� theo d�i (xem m?c 5)",
         ],
       },
     ],
   },
   {
     id: "muc-dich",
-    title: "2. Mục đích sử dụng thông tin",
+    title: "2. M?c ?�ch s? d?ng th�ng tin",
     content: [
-      "Theo Điều 3 Nghị định 13/2023/NĐ-CP, chúng tôi chỉ xử lý dữ liệu cá nhân khi có mục đích rõ ràng. Cụ thể, thông tin của bạn được sử dụng cho các mục đích sau:",
+      "Theo ?i?u 3 Ngh? ??nh 13/2023/N?-CP, ch�ng t�i ch? x? l� d? li?u c� nh�n khi c� m?c ?�ch r� r�ng. C? th?, th�ng tin c?a b?n ???c s? d?ng cho c�c m?c ?�ch sau:",
     ],
     subsections: [
       {
-        label: "a) Cung cấp dịch vụ:",
+        label: "a) Cung c?p d?ch v?:",
         items: [
-          "Tạo và quản lý tài khoản người dùng",
-          "Cấp quyền truy cập tool AI / sản phẩm số đã mua",
-          "Theo dõi lịch sử mua hàng và cấp quyền truy cập tool",
-          "Xử lý đơn hàng và thanh toán",
+          "T?o v� qu?n l� t�i kho?n ng??i d�ng",
+          "C?p quy?n truy c?p tool AI / s?n ph?m s? ?� mua",
+          "Theo d�i l?ch s? mua h�ng v� c?p quy?n truy c?p tool",
+          "X? l� ??n h�ng v� thanh to�n",
         ],
       },
       {
-        label: "b) Cải thiện trải nghiệm:",
+        label: "b) C?i thi?n tr?i nghi?m:",
         items: [
-          "Phân tích hành vi sử dụng để tối ưu nội dung và giao diện kho tool AI",
-          "Đề xuất tool AI và sản phẩm phù hợp với nhu cầu của bạn",
+          "Ph�n t�ch h�nh vi s? d?ng ?? t?i ?u n?i dung v� giao di?n kho tool AI",
+          "?? xu?t tool AI v� s?n ph?m ph� h?p v?i nhu c?u c?a b?n",
         ],
       },
       {
-        label: "c) Truyền thông và hỗ trợ:",
+        label: "c) Truy?n th�ng v� h? tr?:",
         items: [
-          "Gửi email xác nhận đơn hàng, thông báo tool AI mới, cập nhật tài liệu hướng dẫn mới",
-          "Gửi thông tin khuyến mãi và chương trình ưu đãi (bạn có thể huỷ đăng ký bất cứ lúc nào)",
-          "Phản hồi câu hỏi và yêu cầu hỗ trợ kỹ thuật",
+          "G?i email x�c nh?n ??n h�ng, th�ng b�o tool AI m?i, c?p nh?t t�i li?u h??ng d?n m?i",
+          "G?i th�ng tin khuy?n m�i v� ch??ng tr�nh ?u ?�i (b?n c� th? hu? ??ng k� b?t c? l�c n�o)",
+          "Ph?n h?i c�u h?i v� y�u c?u h? tr? k? thu?t",
         ],
       },
       {
-        label: "d) An ninh và pháp lý:",
+        label: "d) An ninh v� ph�p l�:",
         items: [
-          "Phát hiện và ngăn chặn hoạt động gian lận, truy cập trái phép",
-          "Tuân thủ các yêu cầu của Luật An ninh mạng 2018 và các quy định pháp luật hiện hành",
-          "Theo dõi và tính hoa hồng cho chương trình đối tác giới thiệu (affiliate)",
+          "Ph�t hi?n v� ng?n ch?n ho?t ??ng gian l?n, truy c?p tr�i ph�p",
+          "Tu�n th? c�c y�u c?u c?a Lu?t An ninh m?ng 2018 v� c�c quy ??nh ph�p lu?t hi?n h�nh",
+          "Theo d�i v� t�nh hoa h?ng cho ch??ng tr�nh ??i t�c gi?i thi?u (affiliate)",
         ],
       },
     ],
   },
   {
     id: "chia-se",
-    title: "3. Chia sẻ thông tin với bên thứ ba",
+    title: "3. Chia s? th�ng tin v?i b�n th? ba",
     content: [
-      "Chúng tôi cam kết không bán, trao đổi hoặc cho thuê thông tin cá nhân của bạn cho bất kỳ bên thứ ba nào vì mục đích thương mại.",
-      "Theo Điều 17 Nghị định 13/2023/NĐ-CP, chúng tôi chỉ chia sẻ dữ liệu với các nhà cung cấp dịch vụ đáng tin cậy sau đây để vận hành kho tool AI:",
+      "Ch�ng t�i cam k?t kh�ng b�n, trao ??i ho?c cho thu� th�ng tin c� nh�n c?a b?n cho b?t k? b�n th? ba n�o v� m?c ?�ch th??ng m?i.",
+      "Theo ?i?u 17 Ngh? ??nh 13/2023/N?-CP, ch�ng t�i ch? chia s? d? li?u v?i c�c nh� cung c?p d?ch v? ?�ng tin c?y sau ?�y ?? v?n h�nh kho tool AI:",
     ],
     subsections: [
       {
-        label: "a) Nhà cung cấp hạ tầng và dịch vụ:",
+        label: "a) Nh� cung c?p h? t?ng v� d?ch v?:",
         items: [
-          "Supabase: lưu trữ cơ sở dữ liệu, xác thực người dùng và quản lý phiên đăng nhập (trung tâm dữ liệu tại Singapore)",
-          "Vercel: hosting và phân phối nền tảng web, xử lý yêu cầu HTTP (trung tâm dữ liệu toàn cầu)",
-          "Amazon Web Services (AWS SES): gửi email giao dịch và email tiếp thị",
-          "Cloudflare: bảo mật, CDN và tối ưu hiệu suất website",
+          "Supabase: l?u tr? c? s? d? li?u, x�c th?c ng??i d�ng v� qu?n l� phi�n ??ng nh?p (trung t�m d? li?u t?i Singapore)",
+          "Vercel: hosting v� ph�n ph?i n?n t?ng web, x? l� y�u c?u HTTP (trung t�m d? li?u to�n c?u)",
+          "Amazon Web Services (AWS SES): g?i email giao d?ch v� email ti?p th?",
+          "Cloudflare: b?o m?t, CDN v� t?i ?u hi?u su?t website",
         ],
       },
       {
-        label: "b) Dịch vụ phân tích và tiếp thị:",
+        label: "b) D?ch v? ph�n t�ch v� ti?p th?:",
         items: [
-          "Facebook Pixel (Meta): theo dõi hiệu quả quảng cáo và phân tích hành vi khách hàng trên kho tool AI",
-          "YouTube (Google): nhúng video tài liệu hướng dẫn, có thể thu thập dữ liệu theo chính sách riêng của Google",
+          "Facebook Pixel (Meta): theo d�i hi?u qu? qu?ng c�o v� ph�n t�ch h�nh vi kh�ch h�ng tr�n kho tool AI",
+          "YouTube (Google): nh�ng video t�i li?u h??ng d?n, c� th? thu th?p d? li?u theo ch�nh s�ch ri�ng c?a Google",
         ],
       },
     ],
     extra: [
-      "Tất cả các nhà cung cấp dịch vụ trên đều tuân thủ các tiêu chuẩn bảo mật quốc tế (SOC 2, ISO 27001) và cam kết bảo vệ dữ liệu cá nhân.",
-      "Chúng tôi có thể tiết lộ thông tin cá nhân khi được yêu cầu bởi cơ quan nhà nước có thẩm quyền theo quy định tại Luật An ninh mạng 2018.",
+      "T?t c? c�c nh� cung c?p d?ch v? tr�n ??u tu�n th? c�c ti�u chu?n b?o m?t qu?c t? (SOC 2, ISO 27001) v� cam k?t b?o v? d? li?u c� nh�n.",
+      "Ch�ng t�i c� th? ti?t l? th�ng tin c� nh�n khi ???c y�u c?u b?i c? quan nh� n??c c� th?m quy?n theo quy ??nh t?i Lu?t An ninh m?ng 2018.",
     ],
   },
   {
     id: "bao-mat",
-    title: "4. Bảo mật dữ liệu",
+    title: "4. B?o m?t d? li?u",
     content: [
-      "Theo Điều 26 Nghị định 13/2023/NĐ-CP, chúng tôi áp dụng các biện pháp kỹ thuật và tổ chức phù hợp để bảo vệ thông tin cá nhân của bạn:",
+      "Theo ?i?u 26 Ngh? ??nh 13/2023/N?-CP, ch�ng t�i �p d?ng c�c bi?n ph�p k? thu?t v� t? ch?c ph� h?p ?? b?o v? th�ng tin c� nh�n c?a b?n:",
     ],
     subsections: [
       {
-        label: "a) Biện pháp kỹ thuật:",
+        label: "a) Bi?n ph�p k? thu?t:",
         items: [
-          "Mã hoá dữ liệu truyền tải qua giao thức HTTPS (TLS 1.3)",
-          "Supabase Row Level Security (RLS): đảm bảo mỗi người dùng chỉ truy cập được dữ liệu của chính mình",
-          "Mật khẩu được băm (bcrypt hash) và không bao giờ lưu dưới dạng văn bản thuần",
-          "Xác thực hai yếu tố (2FA) cho tài khoản quản trị",
+          "M� ho� d? li?u truy?n t?i qua giao th?c HTTPS (TLS 1.3)",
+          "Supabase Row Level Security (RLS): ??m b?o m?i ng??i d�ng ch? truy c?p ???c d? li?u c?a ch�nh m�nh",
+          "M?t kh?u ???c b?m (bcrypt hash) v� kh�ng bao gi? l?u d??i d?ng v?n b?n thu?n",
+          "X�c th?c hai y?u t? (2FA) cho t�i kho?n qu?n tr?",
         ],
       },
       {
-        label: "b) Biện pháp tổ chức:",
+        label: "b) Bi?n ph�p t? ch?c:",
         items: [
-          "Giới hạn quyền truy cập: chỉ nhân viên được uỷ quyền mới có quyền truy cập dữ liệu cá nhân",
-          "Giám sát hệ thống liên tục để phát hiện và xử lý sớm các mối đe doạ bảo mật",
-          "Sao lưu dữ liệu định kỳ để đảm bảo khả năng khôi phục khi có sự cố",
-          "Kiểm tra và cập nhật các biện pháp bảo mật thường xuyên",
+          "Gi?i h?n quy?n truy c?p: ch? nh�n vi�n ???c u? quy?n m?i c� quy?n truy c?p d? li?u c� nh�n",
+          "Gi�m s�t h? th?ng li�n t?c ?? ph�t hi?n v� x? l� s?m c�c m?i ?e do? b?o m?t",
+          "Sao l?u d? li?u ??nh k? ?? ??m b?o kh? n?ng kh�i ph?c khi c� s? c?",
+          "Ki?m tra v� c?p nh?t c�c bi?n ph�p b?o m?t th??ng xuy�n",
         ],
       },
     ],
   },
   {
     id: "cookie",
-    title: "5. Cookie và công nghệ theo dõi",
+    title: "5. Cookie v� c�ng ngh? theo d�i",
     content: [
-      "Chúng tôi sử dụng cookie và các công nghệ tương tự để cải thiện trải nghiệm của bạn trên kho tool AI. Theo Nghị định 13/2023/NĐ-CP, bạn có quyền được thông báo và lựa chọn về việc sử dụng cookie.",
+      "Ch�ng t�i s? d?ng cookie v� c�c c�ng ngh? t??ng t? ?? c?i thi?n tr?i nghi?m c?a b?n tr�n kho tool AI. Theo Ngh? ??nh 13/2023/N?-CP, b?n c� quy?n ???c th�ng b�o v� l?a ch?n v? vi?c s? d?ng cookie.",
     ],
     subsections: [
       {
-        label: "a) Các loại cookie chúng tôi sử dụng:",
+        label: "a) C�c lo?i cookie ch�ng t�i s? d?ng:",
         items: [
-          "Cookie thiết yếu (Session cookie): duy trì trạng thái đăng nhập, bảo mật phiên làm việc. Cookie này tự động xoá khi bạn đóng trình duyệt",
-          "Cookie phân tích (Analytics): thu thập dữ liệu ẩn danh về cách bạn sử dụng kho tool AI để cải thiện dịch vụ",
-          "Cookie affiliate: theo dõi nguồn giới thiệu để tính hoa hồng cho đối tác. Cookie này có thời hạn 30 ngày",
-          "Facebook Pixel: theo dõi chuyển đổi từ quảng cáo Facebook, đo lường hiệu quả chiến dịch tiếp thị",
+          "Cookie thi?t y?u (Session cookie): duy tr� tr?ng th�i ??ng nh?p, b?o m?t phi�n l�m vi?c. Cookie n�y t? ??ng xo� khi b?n ?�ng tr�nh duy?t",
+          "Cookie ph�n t�ch (Analytics): thu th?p d? li?u ?n danh v? c�ch b?n s? d?ng kho tool AI ?? c?i thi?n d?ch v?",
+          "Cookie affiliate: theo d�i ngu?n gi?i thi?u ?? t�nh hoa h?ng cho ??i t�c. Cookie n�y c� th?i h?n 30 ng�y",
+          "Facebook Pixel: theo d�i chuy?n ??i t? qu?ng c�o Facebook, ?o l??ng hi?u qu? chi?n d?ch ti?p th?",
         ],
       },
       {
-        label: "b) Quản lý cookie:",
+        label: "b) Qu?n l� cookie:",
         items: [
-          "Bạn có thể quản lý cài đặt cookie thông qua banner đồng ý cookie trên kho tool AI hoặc thông qua cài đặt trình duyệt",
-          "Vô hiệu hoá cookie thiết yếu có thể ảnh hưởng đến khả năng sử dụng một số tính năng",
-          "Bạn có thể từ chối cookie phân tích và tiếp thị mà không ảnh hưởng đến trải nghiệm mua hàng cơ bản",
+          "B?n c� th? qu?n l� c�i ??t cookie th�ng qua banner ??ng � cookie tr�n kho tool AI ho?c th�ng qua c�i ??t tr�nh duy?t",
+          "V� hi?u ho� cookie thi?t y?u c� th? ?nh h??ng ??n kh? n?ng s? d?ng m?t s? t�nh n?ng",
+          "B?n c� th? t? ch?i cookie ph�n t�ch v� ti?p th? m� kh�ng ?nh h??ng ??n tr?i nghi?m mua h�ng c? b?n",
         ],
       },
     ],
   },
   {
     id: "quyen",
-    title: "6. Quyền của người dùng",
+    title: "6. Quy?n c?a ng??i d�ng",
     content: [
-      "Theo Điều 9 Nghị định 13/2023/NĐ-CP và quy định của Luật An ninh mạng 2018, bạn có các quyền sau đối với dữ liệu cá nhân của mình:",
+      "Theo ?i?u 9 Ngh? ??nh 13/2023/N?-CP v� quy ??nh c?a Lu?t An ninh m?ng 2018, b?n c� c�c quy?n sau ??i v?i d? li?u c� nh�n c?a m�nh:",
     ],
     subsections: [
       {
-        label: "a) Quyền xem và truy cập dữ liệu:",
+        label: "a) Quy?n xem v� truy c?p d? li?u:",
         items: [
-          "Xem toàn bộ dữ liệu cá nhân mà chúng tôi lưu trữ về bạn",
-          "Yêu cầu bản sao dữ liệu cá nhân ở định dạng có thể đọc được (quyền di chuyển dữ liệu)",
+          "Xem to�n b? d? li?u c� nh�n m� ch�ng t�i l?u tr? v? b?n",
+          "Y�u c?u b?n sao d? li?u c� nh�n ? ??nh d?ng c� th? ??c ???c (quy?n di chuy?n d? li?u)",
         ],
       },
       {
-        label: "b) Quyền chỉnh sửa dữ liệu:",
+        label: "b) Quy?n ch?nh s?a d? li?u:",
         items: [
-          "Cập nhật hoặc sửa đổi thông tin cá nhân không chính xác hoặc không đầy đủ",
-          "Thay đổi thông tin liên hệ (email, số điện thoại) qua trang Cài đặt tài khoản",
+          "C?p nh?t ho?c s?a ??i th�ng tin c� nh�n kh�ng ch�nh x�c ho?c kh�ng ??y ??",
+          "Thay ??i th�ng tin li�n h? (email, s? ?i?n tho?i) qua trang C�i ??t t�i kho?n",
         ],
       },
       {
-        label: "c) Quyền xoá dữ liệu:",
+        label: "c) Quy?n xo� d? li?u:",
         items: [
-          "Yêu cầu xoá toàn bộ dữ liệu cá nhân khỏi hệ thống",
-          "Sau khi nhận yêu cầu, chúng tôi sẽ xoá hoặc ẩn danh hoá dữ liệu trong vòng 30 ngày",
-          "Một số dữ liệu có thể được giữ lại nếu pháp luật yêu cầu (ví dụ: hoá đơn thanh toán theo Luật Kế toán)",
+          "Y�u c?u xo� to�n b? d? li?u c� nh�n kh?i h? th?ng",
+          "Sau khi nh?n y�u c?u, ch�ng t�i s? xo� ho?c ?n danh ho� d? li?u trong v�ng 30 ng�y",
+          "M?t s? d? li?u c� th? ???c gi? l?i n?u ph�p lu?t y�u c?u (v� d?: ho� ??n thanh to�n theo Lu?t K? to�n)",
         ],
       },
       {
-        label: "d) Quyền khác:",
+        label: "d) Quy?n kh�c:",
         items: [
-          "Quyền hạn chế xử lý: yêu cầu ngừng xử lý dữ liệu trong một số trường hợp nhất định",
-          "Quyền phản đối: phản đối việc sử dụng dữ liệu cho mục đích tiếp thị trực tiếp",
-          "Quyền rút lại sự đồng ý: rút lại sự đồng ý đã cung cấp trước đó bất cứ lúc nào",
-          "Quyền khiếu nại: khiếu nại đến cơ quan bảo vệ dữ liệu cá nhân nếu cho rằng quyền của bạn bị vi phạm",
+          "Quy?n h?n ch? x? l�: y�u c?u ng?ng x? l� d? li?u trong m?t s? tr??ng h?p nh?t ??nh",
+          "Quy?n ph?n ??i: ph?n ??i vi?c s? d?ng d? li?u cho m?c ?�ch ti?p th? tr?c ti?p",
+          "Quy?n r�t l?i s? ??ng �: r�t l?i s? ??ng � ?� cung c?p tr??c ?� b?t c? l�c n�o",
+          "Quy?n khi?u n?i: khi?u n?i ??n c? quan b?o v? d? li?u c� nh�n n?u cho r?ng quy?n c?a b?n b? vi ph?m",
         ],
       },
     ],
     extra: [
-      `Để thực hiện bất kỳ quyền nào nêu trên, vui lòng liên hệ chúng tôi qua email ${siteConfig.supportEmail}. Chúng tôi sẽ xác minh danh tính và phản hồi trong vòng 72 giờ, xử lý hoàn tất trong vòng 30 ngày kể từ ngày nhận được yêu cầu hợp lệ.`,
+      `?? th?c hi?n b?t k? quy?n n�o n�u tr�n, vui l�ng li�n h? ch�ng t�i qua email ${siteConfig.supportEmail}. Ch�ng t�i s? x�c minh danh t�nh v� ph?n h?i trong v�ng 72 gi?, x? l� ho�n t?t trong v�ng 30 ng�y k? t? ng�y nh?n ???c y�u c?u h?p l?.`,
     ],
   },
   {
     id: "luu-tru",
-    title: "7. Thời gian lưu trữ dữ liệu",
+    title: "7. Th?i gian l?u tr? d? li?u",
     content: [
-      "Theo Điều 16 Nghị định 13/2023/NĐ-CP, chúng tôi chỉ lưu trữ dữ liệu cá nhân trong thời gian cần thiết cho mục đích đã nêu:",
+      "Theo ?i?u 16 Ngh? ??nh 13/2023/N?-CP, ch�ng t�i ch? l?u tr? d? li?u c� nh�n trong th?i gian c?n thi?t cho m?c ?�ch ?� n�u:",
     ],
     subsections: [
       {
-        label: "Thời gian lưu trữ cụ thể:",
+        label: "Th?i gian l?u tr? c? th?:",
         items: [
-          "Dữ liệu tài khoản (tên, email, số điện thoại): trong suốt thời gian tài khoản còn hoạt động và 30 ngày sau khi yêu cầu xoá",
-          "Lịch sử mua hàng và quyền truy cập tool: trong suốt thời gian tài khoản hoạt động để đảm bảo quyền truy cập sản phẩm số",
-          "Dữ liệu thanh toán và hoá đơn: lưu trữ tối thiểu 10 năm theo quy định của Luật Kế toán Việt Nam",
-          "Nhật ký truy cập (IP, User-Agent): lưu trữ tối đa 12 tháng cho mục đích bảo mật",
-          "Dữ liệu cookie phân tích: tối đa 26 tháng",
+          "D? li?u t�i kho?n (t�n, email, s? ?i?n tho?i): trong su?t th?i gian t�i kho?n c�n ho?t ??ng v� 30 ng�y sau khi y�u c?u xo�",
+          "L?ch s? mua h�ng v� quy?n truy c?p tool: trong su?t th?i gian t�i kho?n ho?t ??ng ?? ??m b?o quy?n truy c?p s?n ph?m s?",
+          "D? li?u thanh to�n v� ho� ??n: l?u tr? t?i thi?u 10 n?m theo quy ??nh c?a Lu?t K? to�n Vi?t Nam",
+          "Nh?t k� truy c?p (IP, User-Agent): l?u tr? t?i ?a 12 th�ng cho m?c ?�ch b?o m?t",
+          "D? li?u cookie ph�n t�ch: t?i ?a 26 th�ng",
         ],
       },
     ],
     extra: [
-      "Sau khi hết thời gian lưu trữ, dữ liệu sẽ được xoá vĩnh viễn hoặc ẩn danh hoá để không thể nhận dạng cá nhân.",
+      "Sau khi h?t th?i gian l?u tr?, d? li?u s? ???c xo� v?nh vi?n ho?c ?n danh ho� ?? kh�ng th? nh?n d?ng c� nh�n.",
     ],
   },
   {
     id: "thay-doi",
-    title: "8. Thay đổi chính sách bảo mật",
+    title: "8. Thay ??i ch�nh s�ch b?o m?t",
     content: [
-      "Chúng tôi có thể cập nhật chính sách bảo mật này theo thời gian để phản ánh các thay đổi trong hoạt động hoặc yêu cầu pháp lý mới.",
-      "Khi có thay đổi quan trọng, chúng tôi sẽ:",
+      "Ch�ng t�i c� th? c?p nh?t ch�nh s�ch b?o m?t n�y theo th?i gian ?? ph?n �nh c�c thay ??i trong ho?t ??ng ho?c y�u c?u ph�p l� m?i.",
+      "Khi c� thay ??i quan tr?ng, ch�ng t�i s?:",
     ],
     list: [
-      "Thông báo cho bạn qua email đã đăng ký ít nhất 7 ngày trước khi thay đổi có hiệu lực",
-      "Đăng thông báo rõ ràng trên kho tool AI",
-      "Cập nhật ngày \"Cập nhật lần cuối\" ở đầu trang chính sách",
+      "Th�ng b�o cho b?n qua email ?� ??ng k� �t nh?t 7 ng�y tr??c khi thay ??i c� hi?u l?c",
+      "??ng th�ng b�o r� r�ng tr�n kho tool AI",
+      "C?p nh?t ng�y \"C?p nh?t l?n cu?i\" ? ??u trang ch�nh s�ch",
     ],
     extra: [
-      "Việc tiếp tục sử dụng kho tool AI sau khi chính sách được cập nhật đồng nghĩa với việc bạn chấp nhận các thay đổi. Chúng tôi khuyến khích bạn xem lại chính sách này định kỳ.",
+      "Vi?c ti?p t?c s? d?ng kho tool AI sau khi ch�nh s�ch ???c c?p nh?t ??ng ngh?a v?i vi?c b?n ch?p nh?n c�c thay ??i. Ch�ng t�i khuy?n kh�ch b?n xem l?i ch�nh s�ch n�y ??nh k?.",
     ],
   },
   {
     id: "lien-he",
-    title: "9. Liên hệ",
+    title: "9. Li�n h?",
     content: [
-      "Nếu bạn có bất kỳ câu hỏi, yêu cầu hoặc khiếu nại nào liên quan đến chính sách bảo mật hoặc cách chúng tôi xử lý dữ liệu cá nhân, vui lòng liên hệ:",
+      "N?u b?n c� b?t k? c�u h?i, y�u c?u ho?c khi?u n?i n�o li�n quan ??n ch�nh s�ch b?o m?t ho?c c�ch ch�ng t�i x? l� d? li?u c� nh�n, vui l�ng li�n h?:",
     ],
   },
 ];
@@ -282,13 +282,13 @@ export default function PrivacyPage() {
             >
               <path d="m15 18-6-6 6-6" />
             </svg>
-            Quay về trang chủ
+            Quay v? trang ch?
           </Link>
           <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-            Chính Sách Bảo Mật
+            Ch�nh S�ch B?o M?t
           </h1>
           <p className="text-gray-500 text-sm">
-            Cập nhật lần cuối: 18 tháng 5, 2026
+            C?p nh?t l?n cu?i: 18 th�ng 5, 2026
           </p>
         </div>
       </div>
@@ -299,33 +299,33 @@ export default function PrivacyPage() {
           {/* Introduction */}
           <div className="space-y-3">
             <p className="text-gray-300 leading-relaxed">
-              Chào mừng bạn đến với{" "}
+              Ch�o m?ng b?n ??n v?i{" "}
               <span className="text-white font-medium">{siteConfig.domain}</span>{" "}
-              -- kho tool AI thuộc sở hữu và vận hành bởi{" "}
-              <span className="text-white font-medium">Doanh Nghiệp 1 Người</span>.
+              -- kho tool AI thu?c s? h?u v� v?n h�nh b?i{" "}
+              <span className="text-white font-medium">Doanh Nghi?p 1 Ng??i</span>.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              Chúng tôi tôn trọng quyền riêng tư của bạn và cam kết bảo vệ thông
-              tin cá nhân mà bạn cung cấp khi sử dụng dịch vụ. Chính sách bảo mật
-              này được xây dựng phù hợp với{" "}
-              <span className="text-white font-medium">Luật An ninh mạng 2018</span>{" "}
-              (Luật số 24/2018/QH14) và{" "}
+              Ch�ng t�i t�n tr?ng quy?n ri�ng t? c?a b?n v� cam k?t b?o v? th�ng
+              tin c� nh�n m� b?n cung c?p khi s? d?ng d?ch v?. Ch�nh s�ch b?o m?t
+              n�y ???c x�y d?ng ph� h?p v?i{" "}
+              <span className="text-white font-medium">Lu?t An ninh m?ng 2018</span>{" "}
+              (Lu?t s? 24/2018/QH14) v�{" "}
               <span className="text-white font-medium">
-                Nghị định 13/2023/NĐ-CP
+                Ngh? ??nh 13/2023/N?-CP
               </span>{" "}
-              về bảo vệ dữ liệu cá nhân, nhằm giải thích cách chúng tôi thu thập,
-              sử dụng, lưu trữ và bảo vệ dữ liệu cá nhân của bạn.
+              v? b?o v? d? li?u c� nh�n, nh?m gi?i th�ch c�ch ch�ng t�i thu th?p,
+              s? d?ng, l?u tr? v� b?o v? d? li?u c� nh�n c?a b?n.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              Bằng việc truy cập và sử dụng kho tool AI, bạn xác nhận đã đọc, hiểu và
-              đồng ý với các điều khoản trong chính sách bảo mật này.
+              B?ng vi?c truy c?p v� s? d?ng kho tool AI, b?n x�c nh?n ?� ??c, hi?u v�
+              ??ng � v?i c�c ?i?u kho?n trong ch�nh s�ch b?o m?t n�y.
             </p>
           </div>
 
           {/* Table of Contents */}
           <nav className="rounded-xl border border-[#E5E7EB] bg-[#F8F9FA] p-5">
             <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
-              Mục lục
+              M?c l?c
             </h2>
             <ul className="space-y-2">
               {sections.map((section) => (
@@ -417,13 +417,13 @@ export default function PrivacyPage() {
               {section.id === "lien-he" && (
                 <div className="card-dark p-5 mt-4 space-y-3">
                   <p className="text-gray-300">
-                    <span className="text-gray-500">Nền tảng:</span>{" "}
+                    <span className="text-gray-500">N?n t?ng:</span>{" "}
                     <span className="text-white font-medium">
                       {siteConfig.name}
                     </span>
                   </p>
                   <p className="text-gray-300">
-                    <span className="text-gray-500">Người chịu trách nhiệm bảo vệ dữ liệu:</span>{" "}
+                    <span className="text-gray-500">Ng??i ch?u tr�ch nhi?m b?o v? d? li?u:</span>{" "}
                     <span className="text-white font-medium">
                       {siteConfig.owner.name}
                     </span>
@@ -462,12 +462,12 @@ export default function PrivacyPage() {
           {/* Legal basis note */}
           <div className="rounded-xl border border-[#E5E7EB] bg-[#F8F9FA] p-5">
             <p className="text-sm text-gray-500 leading-relaxed">
-              <span className="text-white font-medium">Cơ sở pháp lý:</span>{" "}
-              Chính sách bảo mật này được xây dựng tuân thủ Luật An ninh mạng 2018
-              (Luật số 24/2018/QH14), Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu
-              cá nhân, và các quy định pháp luật liên quan của nước Cộng hoà Xã hội
-              Chủ nghĩa Việt Nam. Mọi tranh chấp phát sinh sẽ được giải quyết theo
-              pháp luật Việt Nam.
+              <span className="text-white font-medium">C? s? ph�p l�:</span>{" "}
+              Ch�nh s�ch b?o m?t n�y ???c x�y d?ng tu�n th? Lu?t An ninh m?ng 2018
+              (Lu?t s? 24/2018/QH14), Ngh? ??nh 13/2023/N?-CP v? b?o v? d? li?u
+              c� nh�n, v� c�c quy ??nh ph�p lu?t li�n quan c?a n??c C?ng ho� X� h?i
+              Ch? ngh?a Vi?t Nam. M?i tranh ch?p ph�t sinh s? ???c gi?i quy?t theo
+              ph�p lu?t Vi?t Nam.
             </p>
           </div>
 
@@ -477,13 +477,13 @@ export default function PrivacyPage() {
               href="/terms"
               className="text-sm text-[#E85D04] hover:underline"
             >
-              Điều khoản dịch vụ &rarr;
+              ?i?u kho?n d?ch v? &rarr;
             </Link>
             <Link
               href="/"
               className="text-sm text-[#E85D04] hover:underline"
             >
-              &larr; Quay về trang chủ
+              &larr; Quay v? trang ch?
             </Link>
           </div>
         </div>

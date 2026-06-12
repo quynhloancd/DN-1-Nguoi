@@ -1,17 +1,17 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const CATEGORIES = [
-  "Táº¥t cáº£",
-  "LÃ m video",
-  "LÃ m áº£nh",
-  "Content bÃ¡n hÃ ng",
+  "Tất cả",
+  "Làm video",
+  "Làm ảnh",
+  "Content bán hàng",
   "KOL / Avatar / Podcast",
   "Automation / n8n",
-  "Theo ngÃ nh",
+  "Theo ngành",
 ];
 
 interface Tool {
@@ -25,48 +25,48 @@ interface Tool {
 
 const TOOLS: Tool[] = [
   {
-    title: "Tool Táº¡o Video Thá»i Trang vá»›i Google Flow",
-    category: "LÃ m video",
+    title: "Tool Tạo Video Thời Trang với Google Flow",
+    category: "Làm video",
     description:
-      "DÃ nh cho shop thá»i trang muá»‘n táº¡o video sáº£n pháº©m/bá»™ Ä‘á»“ báº±ng AI, khÃ´ng cáº§n quay máº«u tháº­t.",
+      "Dành cho shop thời trang muốn tạo video sản phẩm/bộ đồ bằng AI, không cần quay mẫu thật.",
     price: 150000,
-    badge: "Ná»•i báº­t",
+    badge: "Nổi bật",
     slug: "tool-video-thoi-trang-google-flow",
   },
   {
-    title: "Tool Táº¡o Video HÃ ng Loáº¡t Cá»±c Nhanh",
-    category: "LÃ m video",
+    title: "Tool Tạo Video Hàng Loạt Cực Nhanh",
+    category: "Làm video",
     description:
-      "DÃ nh cho ngÆ°á»i lÃ m content, affiliate, bÃ¡n hÃ ng online muá»‘n táº¡o nhiá»u video nhanh tá»« template/prompt cÃ³ sáºµn.",
+      "Dành cho người làm content, affiliate, bán hàng online muốn tạo nhiều video nhanh từ template/prompt có sẵn.",
     price: 350000,
-    badge: "BÃ¡n cháº¡y",
+    badge: "Bán chạy",
     slug: "tool-video-hang-loat",
   },
   {
     title: "Tool KOL Podcast AI",
     category: "KOL / Avatar / Podcast",
     description:
-      "DÃ nh cho creator, ngÆ°á»i bÃ¡n khÃ³a há»c/dá»‹ch vá»¥, ngÆ°á»i muá»‘n táº¡o ná»™i dung dáº¡ng KOL/podcast báº±ng AI.",
+      "Dành cho creator, người bán khóa học/dịch vụ, người muốn tạo nội dung dạng KOL/podcast bằng AI.",
     price: 299000,
-    badge: "Má»›i",
+    badge: "Mới",
     slug: "tool-kol-podcast-ai",
   },
 ];
 
 function formatVND(price: number): string {
-  return price.toLocaleString("vi-VN") + "Ä‘";
+  return price.toLocaleString("vi-VN") + "đ";
 }
 
 function getBadgeColor(badge: string): string {
-  if (badge === "Má»›i") return "bg-blue-500 text-white";
+  if (badge === "Mới") return "bg-blue-500 text-white";
   return "bg-orange-500 text-white";
 }
 
 export default function ToolAIPage() {
-  const [activeCategory, setActiveCategory] = useState("Táº¥t cáº£");
+  const [activeCategory, setActiveCategory] = useState("Tất cả");
 
   const filteredTools =
-    activeCategory === "Táº¥t cáº£"
+    activeCategory === "Tất cả"
       ? TOOLS
       : TOOLS.filter((t) => t.category === activeCategory);
 
@@ -75,11 +75,11 @@ export default function ToolAIPage() {
       {/* Header */}
       <section className="bg-[#1C2A44] py-16 px-4 text-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-          Kho Tool AI Thá»±c Chiáº¿n
+          Kho Tool AI Thực Chiến
         </h1>
         <p className="text-slate-300 text-base md:text-lg max-w-2xl mx-auto">
-          Chá»n tool phÃ¹ há»£p Ä‘á»ƒ tá»± táº¡o content, áº£nh, video vÃ  workflow bÃ¡n hÃ ng
-          nhanh hÆ¡n.
+          Chọn tool phù hợp để tự tạo content, ảnh, video và workflow bán hàng
+          nhanh hơn.
         </p>
       </section>
 
@@ -106,7 +106,7 @@ export default function ToolAIPage() {
       <section className="px-4 pb-16 max-w-6xl mx-auto">
         {filteredTools.length === 0 ? (
           <p className="text-center text-slate-500 py-12">
-            ChÆ°a cÃ³ tool nÃ o trong danh má»¥c nÃ y.
+            Chưa có tool nào trong danh mục này.
           </p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -147,7 +147,7 @@ export default function ToolAIPage() {
                       href={`/tool-ai/${tool.slug}`}
                       className="flex-1 text-center text-sm font-medium border border-slate-300 text-slate-700 rounded-lg py-2 hover:border-[#1C2A44] hover:text-[#1C2A44] transition-colors"
                     >
-                      Xem chi tiáº¿t
+                      Xem chi tiết
                     </Link>
                     <Link
                       href={`/tool-ai/${tool.slug}#mua`}
@@ -169,15 +169,15 @@ export default function ToolAIPage() {
           <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-2 border-[#E2E8F0]">
             <Image
               src="/anh/thien-hue-tool-curator.jpg"
-              alt="ThiÃªn Huá»‡ - ngÆ°á»i tuyá»ƒn chá»n vÃ  test tool AI"
+              alt="Thiên Huệ - người tuyển chọn và test tool AI"
               fill
               className="object-cover"
             />
           </div>
           <p className="text-slate-600 text-base leading-relaxed">
-            <span className="font-semibold text-[#1C2A44]">ThiÃªn Huá»‡</span>{" "}
-            test vÃ  Ä‘Ã³ng gÃ³i tá»«ng tool trÆ°á»›c khi Ä‘Æ°a vÃ o kho. Báº¡n chá»‰ cáº§n
-            dÃ¹ng, khÃ´ng cáº§n tá»‘n thá»i gian tÃ¬m kiáº¿m.
+            <span className="font-semibold text-[#1C2A44]">Thiên Huệ</span>{" "}
+            test và đóng gói từng tool trước khi đưa vào kho. Bạn chỉ cần
+            dùng, không cần tốn thời gian tìm kiếm.
           </p>
         </div>
       </section>

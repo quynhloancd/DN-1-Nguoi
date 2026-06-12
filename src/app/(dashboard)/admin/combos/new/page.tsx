@@ -10,8 +10,8 @@ function generateSlug(title: string): string {
   return title
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/đ/g, "d")
+    .replace(/[?-?]/g, "")
+    .replace(/?/g, "d")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 }
@@ -69,16 +69,16 @@ export default function NewComboPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
-    if (!title.trim()) { setError("Tiêu đề không được để trống"); return; }
-    if (!slug.trim()) { setError("Đường dẫn không được để trống"); return; }
-    if (!price || price <= 0) { setError("Giá gốc phải lớn hơn 0"); return; }
+    if (!title.trim()) { setError("Ti�u ?? kh�ng ???c ?? tr?ng"); return; }
+    if (!slug.trim()) { setError("???ng d?n kh�ng ???c ?? tr?ng"); return; }
+    if (!price || price <= 0) { setError("Gi� g?c ph?i l?n h?n 0"); return; }
 
     let faqParsed: unknown[] = [];
     if (faqRaw.trim()) {
       try {
         faqParsed = JSON.parse(faqRaw);
       } catch {
-        setError("FAQ không đúng định dạng JSON. Ví dụ: [{\"q\":\"...\",\"a\":\"...\"}]");
+        setError("FAQ kh�ng ?�ng ??nh d?ng JSON. V� d?: [{\"q\":\"...\",\"a\":\"...\"}]");
         return;
       }
     }
@@ -120,7 +120,7 @@ export default function NewComboPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <TopBar title="Tạo combo mới" subtitle="Thêm combo tool AI vào nền tảng" />
+      <TopBar title="T?o combo m?i" subtitle="Th�m combo tool AI v�o n?n t?ng" />
 
       <div className="max-w-3xl mx-auto px-4 py-8">
         <form onSubmit={handleSubmit} className="card-dark p-6 space-y-5">
@@ -130,16 +130,16 @@ export default function NewComboPage() {
             </div>
           )}
 
-          {/* Tên combo */}
+          {/* T�n combo */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Tên combo <span className="text-red-400">*</span>
+              T�n combo <span className="text-red-400">*</span>
             </label>
             <input
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="Combo Người Mới"
+              placeholder="Combo Ng??i M?i"
               className="input-dark w-full"
               required
             />
@@ -148,7 +148,7 @@ export default function NewComboPage() {
           {/* Slug */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Đường dẫn (slug) <span className="text-red-400">*</span>
+              ???ng d?n (slug) <span className="text-red-400">*</span>
             </label>
             <input
               type="text"
@@ -163,7 +163,7 @@ export default function NewComboPage() {
           {/* Thumbnail URL */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              URL ảnh thumbnail
+              URL ?nh thumbnail
             </label>
             <input
               type="url"
@@ -174,39 +174,39 @@ export default function NewComboPage() {
             />
           </div>
 
-          {/* Mô tả ngắn */}
+          {/* M� t? ng?n */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Mô tả ngắn
+              M� t? ng?n
             </label>
             <textarea
               value={shortDescription}
               onChange={(e) => setShortDescription(e.target.value)}
-              placeholder="1-2 câu mô tả combo này dành cho ai và gồm gì"
+              placeholder="1-2 c�u m� t? combo n�y d�nh cho ai v� g?m g�"
               rows={3}
               className="input-dark w-full resize-none"
             />
           </div>
 
-          {/* Mô tả chi tiết HTML */}
+          {/* M� t? chi ti?t HTML */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Mô tả chi tiết (HTML)
+              M� t? chi ti?t (HTML)
             </label>
             <textarea
               value={descriptionHtml}
               onChange={(e) => setDescriptionHtml(e.target.value)}
-              placeholder="<p>Nội dung HTML chi tiết...</p>"
+              placeholder="<p>N?i dung HTML chi ti?t...</p>"
               rows={6}
               className="input-dark w-full resize-none font-mono text-xs"
             />
           </div>
 
-          {/* Giá gốc & Giá bán */}
+          {/* Gi� g?c & Gi� b�n */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm text-gray-700 mb-1.5">
-                Giá gốc (VNĐ) <span className="text-red-400">*</span>
+                Gi� g?c (VN?) <span className="text-red-400">*</span>
               </label>
               <input
                 type="number"
@@ -219,20 +219,20 @@ export default function NewComboPage() {
             </div>
             <div>
               <label className="block text-sm text-gray-700 mb-1.5">
-                Giá bán (VNĐ)
+                Gi� b�n (VN?)
               </label>
               <input
                 type="number"
                 value={salePrice}
                 onChange={(e) => setSalePrice(e.target.value)}
                 min={0}
-                placeholder="Để trống nếu không khuyến mãi"
+                placeholder="?? tr?ng n?u kh�ng khuy?n m�i"
                 className="input-dark w-full"
               />
             </div>
           </div>
 
-          {/* Badge & Trạng thái */}
+          {/* Badge & Tr?ng th�i */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm text-gray-700 mb-1.5">
@@ -243,61 +243,61 @@ export default function NewComboPage() {
                 onChange={(e) => setBadge(e.target.value)}
                 className="input-dark w-full"
               >
-                <option value="">— Không có —</option>
-                <option value="recommended">Đề xuất</option>
-                <option value="bestseller">Bán chạy</option>
-                <option value="sale">Khuyến mãi</option>
-                <option value="new">Mới</option>
+                <option value="">� Kh�ng c� �</option>
+                <option value="recommended">?? xu?t</option>
+                <option value="bestseller">B�n ch?y</option>
+                <option value="sale">Khuy?n m�i</option>
+                <option value="new">M?i</option>
               </select>
             </div>
             <div>
               <label className="block text-sm text-gray-700 mb-1.5">
-                Trạng thái
+                Tr?ng th�i
               </label>
               <select
                 value={status}
                 onChange={(e) => setStatus(e.target.value)}
                 className="input-dark w-full"
               >
-                <option value="draft">Bản nháp</option>
-                <option value="published">Đã xuất bản</option>
-                <option value="hidden">Ẩn</option>
+                <option value="draft">B?n nh�p</option>
+                <option value="published">?� xu?t b?n</option>
+                <option value="hidden">?n</option>
               </select>
             </div>
           </div>
 
-          {/* Lợi ích chính */}
+          {/* L?i �ch ch�nh */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Lợi ích chính (mỗi dòng 1 lợi ích)
+              L?i �ch ch�nh (m?i d�ng 1 l?i �ch)
             </label>
             <textarea
               value={benefits}
               onChange={(e) => setBenefits(e.target.value)}
-              placeholder={"Tool AI cơ bản, dễ dùng\nPrompt mẫu có sẵn\nGroup Zalo hỗ trợ"}
+              placeholder={"Tool AI c? b?n, d? d�ng\nPrompt m?u c� s?n\nGroup Zalo h? tr?"}
               rows={4}
               className="input-dark w-full resize-none"
             />
           </div>
 
-          {/* Phù hợp với ai */}
+          {/* Ph� h?p v?i ai */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Phù hợp với ai
+              Ph� h?p v?i ai
             </label>
             <input
               type="text"
               value={suitableFor}
               onChange={(e) => setSuitableFor(e.target.value)}
-              placeholder="Người mới bắt đầu với AI, chưa biết dùng tool nào"
+              placeholder="Ng??i m?i b?t ??u v?i AI, ch?a bi?t d�ng tool n�o"
               className="input-dark w-full"
             />
           </div>
 
-          {/* Link thanh toán */}
+          {/* Link thanh to�n */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Link thanh toán
+              Link thanh to�n
             </label>
             <input
               type="url"
@@ -330,19 +330,19 @@ export default function NewComboPage() {
             <textarea
               value={faqRaw}
               onChange={(e) => setFaqRaw(e.target.value)}
-              placeholder={'[{"q":"Combo này gồm gì?","a":"Gồm 3 tool AI..."}]'}
+              placeholder={'[{"q":"Combo n�y g?m g�?","a":"G?m 3 tool AI..."}]'}
               rows={4}
               className="input-dark w-full resize-none font-mono text-xs"
             />
             <p className="text-xs text-gray-500 mt-1">
-              Định dạng: {`[{"q":"câu hỏi","a":"trả lời"}]`}
+              ??nh d?ng: {`[{"q":"c�u h?i","a":"tr? l?i"}]`}
             </p>
           </div>
 
-          {/* Thứ tự sắp xếp */}
+          {/* Th? t? s?p x?p */}
           <div>
             <label className="block text-sm text-gray-700 mb-1.5">
-              Thứ tự sắp xếp
+              Th? t? s?p x?p
             </label>
             <input
               type="number"
@@ -363,12 +363,12 @@ export default function NewComboPage() {
               {submitting ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" />
-                  Đang tạo...
+                  ?ang t?o...
                 </>
               ) : (
                 <>
                   <Plus className="w-4 h-4" />
-                  Tạo combo
+                  T?o combo
                 </>
               )}
             </button>

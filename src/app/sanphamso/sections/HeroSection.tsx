@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import { ArrowRight, Check, Zap, Clock } from "lucide-react";
@@ -8,10 +8,10 @@ interface HeroSectionProps {
 }
 
 const CHECKMARKS = [
-  "Không cần vốn lớn — Khởi nghiệp chỉ với chiếc laptop",
-  "Không cần kho hàng — Bán 1 lần, thu tiền mãi mãi",
-  "Không cần kinh nghiệm — Có lộ trình từng bước A-Z",
-  "Tận dụng AI 2026 — Làm việc 10x năng suất",
+  "Kh�ng c?n v?n l?n � Kh?i nghi?p ch? v?i chi?c laptop",
+  "Kh�ng c?n kho h�ng � B�n 1 l?n, thu ti?n m�i m�i",
+  "Kh�ng c?n kinh nghi?m � C� l? tr�nh t?ng b??c A-Z",
+  "T?n d?ng AI 2026 � L�m vi?c 10x n?ng su?t",
 ];
 
 export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
@@ -49,7 +49,7 @@ export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
           }}
         >
           <Zap className="h-3.5 w-3.5" />
-          KOHADA — AI TECHNOLOGY · TRAINING · VIDEO
+          KOHADA � AI TECHNOLOGY � TRAINING � VIDEO
         </span>
 
         {/* Main Headline */}
@@ -58,13 +58,13 @@ export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
             className="block text-3xl leading-tight sm:text-3xl md:text-4xl lg:text-5xl"
             style={{ color: "#ffffff" }}
           >
-            CHỈ VỚI 1 LY SINH TỐ 100K
+            CH? V?I 1 LY SINH T? 100K
           </span>
           <span
             className="mt-2 block text-3xl leading-tight sm:text-3xl md:text-4xl lg:text-5xl"
             style={{ color: "#ffffff" }}
           >
-            BẠN SẼ SỞ HỮU LỘ TRÌNH KIẾM TIỀN
+            B?N S? S? H?U L? TR�NH KI?M TI?N
           </span>
           <span
             className="mt-3 block text-4xl italic sm:text-4xl md:text-5xl lg:text-6xl"
@@ -74,7 +74,7 @@ export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
               lineHeight: 1.1,
             }}
           >
-            TỪ SẢN PHẨM SỐ 2026
+            T? S?N PH?M S? 2026
           </span>
         </h1>
 
@@ -83,8 +83,8 @@ export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
           className="mx-auto mb-8 max-w-2xl text-sm leading-[1.8] sm:text-base md:text-lg"
           style={{ color: "rgba(255,255,255,0.6)" }}
         >
-          Bí quyết kiếm tiền từ sản phẩm số và các mô hình thành công trên toàn
-          cầu — Ứng dụng thực chiến cho thị trường Việt Nam 2026
+          B� quy?t ki?m ti?n t? s?n ph?m s? v� c�c m� h�nh th�nh c�ng tr�n to�n
+          c?u � ?ng d?ng th?c chi?n cho th? tr??ng Vi?t Nam 2026
         </p>
 
         {/* Checkmarks */}
@@ -111,7 +111,7 @@ export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
         <div className="mb-8 w-full sm:mb-10">
           <Image
             src="/images/sanphamso/banner.jpg"
-            alt="Lộ Trình Kiếm Tiền Từ Sản Phẩm Số 2026 — THIÊN HUỆ"
+            alt="L? Tr�nh Ki?m Ti?n T? S?n Ph?m S? 2026 � THI�N HU?"
             width={1200}
             height={675}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 960px"
@@ -130,7 +130,7 @@ export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
             boxShadow: "0 0 30px rgba(249,115,22,0.3)",
           }}
         >
-          ĐĂNG KÝ NGAY – CHỈ 100K
+          ??NG K� NGAY � CH? 100K
           <ArrowRight className="h-5 w-5" />
         </button>
 
@@ -146,7 +146,7 @@ export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
             className="text-sm sm:text-sm md:text-base"
             style={{ color: "rgba(255,255,255,0.7)" }}
           >
-            👥 Đã có 3.247+ học viên đăng ký | ⭐ 4.9/5 đánh giá
+            ?? ?� c� 3.247+ h?c vi�n ??ng k� | ? 4.9/5 ?�nh gi�
           </p>
         </div>
 
@@ -154,7 +154,7 @@ export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
         <p className="flex items-center gap-2 text-sm sm:text-base">
           <Clock className="h-4 w-4" style={{ color: "#FBBF24" }} />
           <span style={{ color: "rgba(255,255,255,0.7)" }}>
-            ⏰ Ưu đãi kết thúc trong 24 giờ
+            ? ?u ?�i k?t th�c trong 24 gi?
           </span>
         </p>
       </div>
