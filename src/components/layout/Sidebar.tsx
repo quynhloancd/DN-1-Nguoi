@@ -17,7 +17,7 @@ import {
   FolderOpen, TrendingUp, Target, UserCheck, Tag, ClipboardCheck,
   CreditCard, GraduationCap, Megaphone, Eye, Shield,
   Video, Globe, Sparkles, ShoppingBag, Wrench, LayoutList, Package,
-  UserCog, Image,
+  UserCog, Image as ImageIcon,
 } from "lucide-react";
 
 const courseSubNav = [
@@ -82,7 +82,7 @@ const adminNavGroups = [
     items: [
       { href: "/admin/resources", icon: FolderOpen, label: "Tài nguyên miễn phí", roles: ["admin", "manager", "editor"] },
       { href: "/admin/blog", icon: FileText, label: "Blog", roles: ["admin", "manager", "marketing"] },
-      { href: "/admin/promotions", icon: Image, label: "Banner / Quảng cáo", roles: ["admin", "manager"] },
+      { href: "/admin/promotions", icon: ImageIcon, label: "Banner / Quảng cáo", roles: ["admin", "manager"] },
       { href: "/admin/community", icon: MessageCircle, label: "Group Zalo / Cộng đồng", roles: ["admin", "manager"] },
     ],
   },
