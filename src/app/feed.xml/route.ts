@@ -1,6 +1,7 @@
 import { createAdminClient } from "@/lib/supabase/server";
 
-export const revalidate = 3600; // re-generate at most once per hour
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 // ---------------------------------------------------------------------------
 // Helpers
