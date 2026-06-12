@@ -94,6 +94,17 @@ const nextConfig: NextConfig = {
             },
           ]
         : []),
+      // Fallback wildcard for any Supabase project (covers cases where env is missing)
+      {
+        protocol: "https" as const,
+        hostname: "*.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
+      {
+        protocol: "https" as const,
+        hostname: "utdzhnywcctyzaosvaaz.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
       {
         protocol: "https",
         hostname: "qr.sepay.vn",
