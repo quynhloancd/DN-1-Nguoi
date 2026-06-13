@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
     const { allowed, retryAfterSec } = await rateLimit(`zalo-test:${user.id}`, 5, 60);
     if (!allowed) {
       return NextResponse.json(
-        { success: false, error: `Qua nhieu yeu cau. Vui long thu lai sau ${retryAfterSec}s.` },
+        { success: false, error: `Quá nhiều yêu cầu. Vui lòng thử lại sau ${retryAfterSec}s.` },
         { status: 429 }
       );
     }
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
 
     if (!zaloUserId || !message) {
       return NextResponse.json(
-        { success: false, error: "Thieu zaloUserId hoac message" },
+        { success: false, error: "Thiếu zaloUserId hoặc message" },
         { status: 400 }
       );
     }
@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.error("[Zalo Test]", err);
     return NextResponse.json(
-      { success: false, error: "Loi he thong" },
+      { success: false, error: "Lỗi hệ thống" },
       { status: 500 }
     );
   }

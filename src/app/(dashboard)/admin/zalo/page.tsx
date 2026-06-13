@@ -60,21 +60,21 @@ export default async function AdminZaloPage() {
 
   const stats = [
     {
-      label: "Trang thai ket noi",
-      value: configured ? "Da ket noi" : "Chua cau hinh",
+      label: "Trạng thái kết nối",
+      value: configured ? "Đã kết nối" : "Chưa cấu hình",
       icon: configured ? CheckCircle : XCircle,
       color: configured ? "#22c55e" : "#ef4444",
       bg: configured ? "rgba(34,197,94,0.1)" : "rgba(239,68,68,0.1)",
     },
     {
-      label: "Tai khoan lien ket Zalo",
+      label: "Tài khoản liên kết Zalo",
       value: `${linkedCount || 0} / ${totalUsers || 0}`,
       icon: Users,
       color: "#E85D04",
       bg: "rgba(212,168,67,0.1)",
     },
     {
-      label: "Su kien webhook",
+      label: "Sự kiện webhook",
       value: String(recentEvents.length),
       icon: Activity,
       color: "#3b82f6",
@@ -83,15 +83,15 @@ export default async function AdminZaloPage() {
   ];
 
   const eventLabels: Record<string, { label: string; color: string }> = {
-    follow: { label: "Theo doi", color: "#22c55e" },
-    unfollow: { label: "Bo theo doi", color: "#ef4444" },
-    user_send_text: { label: "Tin nhan", color: "#3b82f6" },
-    unknown: { label: "Khac", color: "#6b7280" },
+    follow: { label: "Theo dõi", color: "#22c55e" },
+    unfollow: { label: "Bỏ theo dõi", color: "#ef4444" },
+    user_send_text: { label: "Tin nhắn", color: "#3b82f6" },
+    unknown: { label: "Khác", color: "#6b7280" },
   };
 
   return (
     <div>
-      <TopBar title="Zalo OA" subtitle="Quan ly ket noi va thong bao Zalo Official Account" />
+      <TopBar title="Zalo OA" subtitle="Quản lý kết nối và thông báo Zalo Official Account" />
 
       <div className="p-4 sm:p-6 max-w-5xl mx-auto space-y-6">
         {/* Stats */}
@@ -119,31 +119,31 @@ export default async function AdminZaloPage() {
         <div className="card-dark p-6">
           <h3 className="font-semibold text-[#1B2A4A] mb-4 flex items-center gap-2">
             <MessageCircle size={16} className="text-[#E85D04]" />
-            Cau hinh Zalo OA
+            Cấu hình Zalo OA
           </h3>
           {configured ? (
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-sm text-[#22c55e]">
                 <CheckCircle size={14} />
-                <span>ZALO_OA_ACCESS_TOKEN da duoc cau hinh</span>
+                <span>ZALO_OA_ACCESS_TOKEN đã được cấu hình</span>
               </div>
               <div className="text-xs text-gray-500 space-y-1">
                 <p>Webhook URL: <code className="text-gray-400">{process.env.NEXT_PUBLIC_APP_URL}/api/zalo/webhook</code></p>
-                <p>Cau hinh tai <a href="https://oa.zalo.me" target="_blank" rel="noopener noreferrer" className="text-[#E85D04] hover:underline">Zalo OA Dashboard</a></p>
+                <p>Cấu hình tại <a href="https://oa.zalo.me" target="_blank" rel="noopener noreferrer" className="text-[#E85D04] hover:underline">Zalo OA Dashboard</a></p>
               </div>
             </div>
           ) : (
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-sm text-[#ef4444]">
                 <XCircle size={14} />
-                <span>Chua cau hinh Zalo OA</span>
+                <span>Chưa cấu hình Zalo OA</span>
               </div>
               <div className="text-xs text-gray-500 space-y-2">
-                <p>De kich hoat thong bao Zalo, can thiet lap cac bien moi truong:</p>
+                <p>Để kích hoạt thông báo Zalo, cần thiết lập các biến môi trường:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-400">
-                  <li><code>ZALO_OA_ACCESS_TOKEN</code> - Access token tu Zalo OA Dashboard</li>
+                  <li><code>ZALO_OA_ACCESS_TOKEN</code> - Access token từ Zalo OA Dashboard</li>
                   <li><code>ZALO_OA_APP_ID</code> - App ID</li>
-                  <li><code>ZALO_OA_SECRET_KEY</code> - Secret key de xac thuc webhook</li>
+                  <li><code>ZALO_OA_SECRET_KEY</code> - Secret key để xác thực webhook</li>
                   <li><code>ZALO_OA_REFRESH_TOKEN</code> - Refresh token</li>
                 </ul>
                 <p>Webhook URL: <code className="text-gray-400">{process.env.NEXT_PUBLIC_APP_URL}/api/zalo/webhook</code></p>
@@ -157,13 +157,13 @@ export default async function AdminZaloPage() {
           <div className="card-dark p-6">
             <h3 className="font-semibold text-[#1B2A4A] mb-4 flex items-center gap-2">
               <Send size={16} className="text-[#E85D04]" />
-              Gui tin nhan thu
+              Gửi tin nhắn thử
             </h3>
             {adminProfile?.zalo_user_id ? (
               <ZaloTestForm adminZaloId={adminProfile.zalo_user_id} />
             ) : (
               <div className="text-sm text-gray-400">
-                <p>Tai khoan admin chua lien ket Zalo. Hay theo doi OA bang tai khoan Zalo cua ban de lien ket tu dong.</p>
+                <p>Tài khoản admin chưa liên kết Zalo. Hãy theo dõi OA bằng tài khoản Zalo của bạn để liên kết tự động.</p>
               </div>
             )}
           </div>
@@ -173,7 +173,7 @@ export default async function AdminZaloPage() {
         <div className="card-dark p-6">
           <h3 className="font-semibold text-[#1B2A4A] mb-4">SQL Migration</h3>
           <div className="text-xs text-gray-500 space-y-2">
-            <p>Chay lenh SQL sau de them cot zalo_user_id vao bang profiles:</p>
+            <p>Chạy lệnh SQL sau để thêm cột zalo_user_id vào bảng profiles:</p>
             <pre className="p-3 rounded-lg text-gray-300 overflow-x-auto text-[11px]" style={{ background: "#F0F1F3" }}>
 {`-- Add zalo_user_id to profiles for linking Zalo accounts
 ALTER TABLE profiles ADD COLUMN zalo_user_id TEXT DEFAULT NULL;
@@ -197,7 +197,7 @@ CREATE INDEX idx_zalo_events_created ON zalo_webhook_events(created_at DESC);`}
           <div className="card-dark p-6">
             <h3 className="font-semibold text-[#1B2A4A] mb-4 flex items-center gap-2">
               <Activity size={16} className="text-[#E85D04]" />
-              Su kien webhook gan day
+              Sự kiện webhook gần đây
             </h3>
             <div className="space-y-2">
               {recentEvents.map((e) => {

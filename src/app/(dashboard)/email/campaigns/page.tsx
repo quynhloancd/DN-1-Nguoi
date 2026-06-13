@@ -25,20 +25,20 @@ interface Campaign {
 }
 
 const STATUS_CONFIG: Record<string, { label: string; color: string; bg: string }> = {
-  draft: { label: "Nhap", color: "#6b7280", bg: "rgba(107,114,128,0.12)" },
-  scheduled: { label: "Da len lich", color: "#3b82f6", bg: "rgba(59,130,246,0.12)" },
-  sending: { label: "Dang gui", color: "#f59e0b", bg: "rgba(245,158,11,0.12)" },
-  sent: { label: "Da gui", color: "#E85D04", bg: "rgba(212,168,67,0.12)" },
-  paused: { label: "Tam dung", color: "#f97316", bg: "rgba(249,115,22,0.12)" },
+  draft: { label: "Nháp", color: "#6b7280", bg: "rgba(107,114,128,0.12)" },
+  scheduled: { label: "Đã lên lịch", color: "#3b82f6", bg: "rgba(59,130,246,0.12)" },
+  sending: { label: "Đang gửi", color: "#f59e0b", bg: "rgba(245,158,11,0.12)" },
+  sent: { label: "Đã gửi", color: "#E85D04", bg: "rgba(212,168,67,0.12)" },
+  paused: { label: "Tạm dừng", color: "#f97316", bg: "rgba(249,115,22,0.12)" },
 };
 
 const STATUS_FILTERS = [
-  { value: "all", label: "Tat ca" },
-  { value: "draft", label: "Nhap" },
-  { value: "scheduled", label: "Da len lich" },
-  { value: "sending", label: "Dang gui" },
-  { value: "sent", label: "Da gui" },
-  { value: "paused", label: "Tam dung" },
+  { value: "all", label: "Tất cả" },
+  { value: "draft", label: "Nháp" },
+  { value: "scheduled", label: "Đã lên lịch" },
+  { value: "sending", label: "Đang gửi" },
+  { value: "sent", label: "Đã gửi" },
+  { value: "paused", label: "Tạm dừng" },
 ];
 
 const PAGE_SIZE = 10;
@@ -65,9 +65,9 @@ function getDateLabel(c: Campaign): string {
 }
 
 function getDatePrefix(c: Campaign): string {
-  if (c.sent_at) return "Gui luc";
-  if (c.scheduled_at) return "Len lich";
-  return "Tao luc";
+  if (c.sent_at) return "Gửi lúc";
+  if (c.scheduled_at) return "Lên lịch";
+  return "Tạo lúc";
 }
 
 // ─── Page ───────────────────────────────────────────────────────────────────
@@ -131,10 +131,10 @@ export default function CampaignsPage() {
   const draftCount = campaigns.filter((c) => c.status === "draft").length;
 
   const stats = [
-    { label: "Tong campaigns", value: totalCount, icon: Mail, color: "#3b82f6" },
-    { label: "Da gui", value: sentCount, icon: Send, color: "#E85D04" },
-    { label: "Dang gui", value: sendingCount, icon: Loader2, color: "#f59e0b" },
-    { label: "Nhap", value: draftCount, icon: Edit, color: "#6b7280" },
+    { label: "Tổng campaigns", value: totalCount, icon: Mail, color: "#3b82f6" },
+    { label: "Đã gửi", value: sentCount, icon: Send, color: "#E85D04" },
+    { label: "Đang gửi", value: sendingCount, icon: Loader2, color: "#f59e0b" },
+    { label: "Nháp", value: draftCount, icon: Edit, color: "#6b7280" },
   ];
 
   // Actions
@@ -148,7 +148,7 @@ export default function CampaignsPage() {
 
   const handleDelete = async (id: string) => {
     setOpenDropdown(null);
-    if (!confirm("Ban co chac chan muon xoa campaign nay?")) return;
+    if (!confirm("Bạn có chắc chắn muốn xóa campaign này?")) return;
     try {
       const res = await fetch(`/api/email/campaigns/${id}`, { method: "DELETE" });
       if (res.ok) fetchCampaigns();
@@ -157,7 +157,7 @@ export default function CampaignsPage() {
 
   return (
     <div>
-      <TopBar title="Campaigns" subtitle="Quan ly chien dich email" />
+      <TopBar title="Campaigns" subtitle="Quản lý chiến dịch email" />
 
       <div className="p-4 sm:p-6 max-w-6xl mx-auto space-y-6">
         {/* Stats row */}
@@ -191,7 +191,7 @@ export default function CampaignsPage() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => { setSearchQuery(e.target.value); setPage(1); }}
-                placeholder="Tim kiem campaign..."
+                placeholder="Tìm kiếm campaign..."
                 className="bg-transparent border-none outline-none text-[#1B2A4A] text-sm placeholder:text-gray-500 w-40 sm:w-56"
               />
             </div>
@@ -220,7 +220,7 @@ export default function CampaignsPage() {
             onClick={() => router.push("/email/campaigns/new")}
             className="btn-green flex items-center gap-2 text-sm shrink-0"
           >
-            <Plus size={15} /> Tao campaign moi
+            <Plus size={15} /> Tạo campaign mới
           </button>
         </div>
 
@@ -239,20 +239,20 @@ export default function CampaignsPage() {
             </div>
             <p className="text-[#1B2A4A] font-medium mb-1">
               {searchQuery || statusFilter !== "all"
-                ? "Khong tim thay campaign nao"
-                : "Chua co campaign nao"}
+                ? "Không tìm thấy campaign nào"
+                : "Chưa có campaign nào"}
             </p>
             <p className="text-gray-500 text-sm mb-4">
               {searchQuery || statusFilter !== "all"
-                ? "Thu thay doi bo loc hoac tu khoa tim kiem."
-                : "Tao campaign dau tien!"}
+                ? "Thử thay đổi bộ lọc hoặc từ khóa tìm kiếm."
+                : "Tạo campaign đầu tiên!"}
             </p>
             {!searchQuery && statusFilter === "all" && (
               <button
                 onClick={() => router.push("/email/campaigns/new")}
                 className="btn-green flex items-center gap-2 text-sm"
               >
-                <Plus size={15} /> Tao campaign moi
+                <Plus size={15} /> Tạo campaign mới
               </button>
             )}
           </div>
@@ -306,7 +306,7 @@ export default function CampaignsPage() {
                       {/* Stats */}
                       <div className="flex items-center gap-5 text-xs shrink-0">
                         <div className="text-center min-w-[50px]">
-                          <div className="text-gray-500 mb-0.5">Da gui</div>
+                          <div className="text-gray-500 mb-0.5">Đã gửi</div>
                           <div className="font-semibold text-[#1B2A4A]">
                             {c.sent_count > 0 ? c.sent_count.toLocaleString("vi-VN") : "--"}
                           </div>
@@ -347,13 +347,13 @@ export default function CampaignsPage() {
                               onClick={() => { setOpenDropdown(null); router.push(`/email/campaigns/${c.id}`); }}
                               className="flex items-center gap-2 w-full px-3 py-2 text-xs text-gray-300 hover:bg-[#2a2a2a] hover:text-[#1B2A4A] transition-colors"
                             >
-                              <Edit size={12} /> Chinh sua
+                              <Edit size={12} /> Chỉnh sửa
                             </button>
                             <button
                               onClick={() => handleDuplicate(c.id)}
                               className="flex items-center gap-2 w-full px-3 py-2 text-xs text-gray-300 hover:bg-[#2a2a2a] hover:text-[#1B2A4A] transition-colors"
                             >
-                              <Copy size={12} /> Nhan ban
+                              <Copy size={12} /> Nhân bản
                             </button>
                             {c.status === "sent" && (
                               <button
@@ -368,7 +368,7 @@ export default function CampaignsPage() {
                               onClick={() => handleDelete(c.id)}
                               className="flex items-center gap-2 w-full px-3 py-2 text-xs text-red-400 hover:bg-red-500/10 transition-colors"
                             >
-                              <Trash2 size={12} /> Xoa
+                              <Trash2 size={12} /> Xóa
                             </button>
                           </div>
                         )}
@@ -383,7 +383,7 @@ export default function CampaignsPage() {
             {totalPages > 1 && (
               <div className="flex items-center justify-between">
                 <p className="text-xs text-gray-500">
-                  Hien thi {(page - 1) * PAGE_SIZE + 1}-{Math.min(page * PAGE_SIZE, filtered.length)} trong {filtered.length} campaigns
+                  Hiển thị {(page - 1) * PAGE_SIZE + 1}-{Math.min(page * PAGE_SIZE, filtered.length)} trong {filtered.length} campaigns
                 </p>
                 <div className="flex items-center gap-1">
                   <button

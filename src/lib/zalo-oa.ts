@@ -61,18 +61,18 @@ export async function sendPurchaseNotification(
   amount: number,
   orderCode: string
 ): Promise<ZaloMessageResult> {
-  const text = `Xac nhan thanh toan thanh cong!
+  const text = `Xác nhận thanh toán thành công!
 
-Xin chao ${customerName},
+Xin chào ${customerName},
 
-Don hang cua ban da duoc xac nhan:
-San pham: ${productName}
-So tien: ${amount.toLocaleString("vi-VN")}d
-Ma don: ${orderCode}
+Đơn hàng của bạn đã được xác nhận:
+Sản phẩm: ${productName}
+Số tiền: ${amount.toLocaleString("vi-VN")}đ
+Mã đơn: ${orderCode}
 
-Quyen truy cap da duoc kich hoat. Hay dang nhap de bat dau hoc ngay!
+Quyền truy cập đã được kích hoạt. Hãy đăng nhập để bắt đầu học ngay!
 
-Cam on ban da tin tuong!`;
+Cảm ơn bạn đã tin tưởng!`;
 
   return sendZaloMessage(zaloUserId, text);
 }
@@ -82,11 +82,11 @@ export async function sendWelcomeNotification(
   zaloUserId: string,
   name: string
 ): Promise<ZaloMessageResult> {
-  const text = `Chao mung ${name} den voi nen tang!
+  const text = `Chào mừng ${name} đến với nền tảng!
 
-Tai khoan cua ban da duoc tao thanh cong. Hay kham pha cac khoa hoc va bat dau hanh trinh hoc tap ngay nhe!
+Tài khoản của bạn đã được tạo thành công. Hãy khám phá các khóa học và bắt đầu hành trình học tập ngay nhé!
 
-Meo: Theo doi OA de nhan thong bao khi co khoa hoc moi hoac khuyen mai dac biet.`;
+Mẹo: Theo dõi OA để nhận thông báo khi có khóa học mới hoặc khuyến mãi đặc biệt.`;
 
   return sendZaloMessage(zaloUserId, text);
 }
@@ -97,12 +97,12 @@ export async function sendNewLessonNotification(
   courseName: string,
   lessonName: string
 ): Promise<ZaloMessageResult> {
-  const text = `Bai hoc moi!
+  const text = `Bài học mới!
 
-Khoa hoc "${courseName}" vua cap nhat bai hoc moi:
+Khóa học "${courseName}" vừa cập nhật bài học mới:
 ${lessonName}
 
-Dang nhap ngay de hoc bai moi nhe!`;
+Đăng nhập ngay để học bài mới nhé!`;
 
   return sendZaloMessage(zaloUserId, text);
 }
@@ -114,13 +114,13 @@ export async function sendStudyReminder(
   courseName: string,
   progressPercent: number
 ): Promise<ZaloMessageResult> {
-  const text = `Nhac nho hoc tap
+  const text = `Nhắc nhở học tập
 
-Xin chao ${name},
+Xin chào ${name},
 
-Ban da hoan thanh ${progressPercent}% khoa hoc "${courseName}". Hay danh chut thoi gian de tiep tuc hoc nhe!
+Bạn đã hoàn thành ${progressPercent}% khóa học "${courseName}". Hãy dành chút thời gian để tiếp tục học nhé!
 
-Kien tri la chia khoa thanh cong!`;
+Kiên trì là chìa khóa thành công!`;
 
   return sendZaloMessage(zaloUserId, text);
 }

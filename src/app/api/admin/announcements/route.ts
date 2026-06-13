@@ -116,10 +116,10 @@ export async function POST(req: NextRequest) {
 
         emailsQueued = recipientEmails.length;
 
-        const siteName = process.env.EMAIL_FROM_NAME || "Doanh Nghiep 1 Nguoi";
+        const siteName = process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người";
         const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://doanhnghiep1nguoi.online";
         const htmlBody = announcementEmailHtml(content.trim(), siteName, baseUrl);
-        const subject = `${siteName} — Thong bao moi`;
+        const subject = `${siteName} — Thông báo mới`;
 
         // Fire and forget — send in batches of 50 with error logging
         const batchSize = 50;

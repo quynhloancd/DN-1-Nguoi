@@ -42,25 +42,25 @@ interface CampaignDraft {
 }
 
 const STEPS = [
-  { key: "info", label: "Thong tin co ban", icon: FileText },
-  { key: "recipients", label: "Nguoi nhan", icon: Users },
-  { key: "content", label: "Noi dung email", icon: Layout },
-  { key: "review", label: "Xem lai & Gui", icon: Send },
+  { key: "info", label: "Thông tin cơ bản", icon: FileText },
+  { key: "recipients", label: "Người nhận", icon: Users },
+  { key: "content", label: "Nội dung email", icon: Layout },
+  { key: "review", label: "Xem lại & Gửi", icon: Send },
 ];
 
 const VARIABLES = [
-  { label: "{{name}}", desc: "Ten nguoi nhan" },
-  { label: "{{email}}", desc: "Email nguoi nhan" },
-  { label: "{{unsubscribe_url}}", desc: "Link huy dang ky" },
-  { label: "{{company}}", desc: "Ten cong ty" },
-  { label: "{{date}}", desc: "Ngay hien tai" },
+  { label: "{{name}}", desc: "Tên người nhận" },
+  { label: "{{email}}", desc: "Email người nhận" },
+  { label: "{{unsubscribe_url}}", desc: "Link hủy đăng ký" },
+  { label: "{{company}}", desc: "Tên công ty" },
+  { label: "{{date}}", desc: "Ngày hiện tại" },
 ];
 
 const CATEGORY_LABELS: Record<string, { label: string; color: string }> = {
   marketing: { label: "Marketing", color: "#E85D04" },
   newsletter: { label: "Newsletter", color: "#3b82f6" },
   transactional: { label: "Transactional", color: "#f59e0b" },
-  other: { label: "Khac", color: "#6b7280" },
+  other: { label: "Khác", color: "#6b7280" },
 };
 
 // ─── Page ───────────────────────────────────────────────────────────────────
@@ -206,16 +206,16 @@ export default function NewCampaignPage() {
         const data = await res.json();
         const id = data.id || data.campaign?.id;
         if (!campaignId && id) setCampaignId(id);
-        setSaveMsg("Da luu!");
+        setSaveMsg("Đã lưu!");
         setTimeout(() => setSaveMsg(""), 2000);
         return id || campaignId || null;
       } else {
-        setSaveMsg("Loi khi luu");
+        setSaveMsg("Lỗi khi lưu");
         setTimeout(() => setSaveMsg(""), 3000);
         return campaignId || null;
       }
     } catch {
-      setSaveMsg("Loi ket noi");
+      setSaveMsg("Lỗi kết nối");
       return campaignId || null;
     } finally {
       setSaving(false);
@@ -242,12 +242,12 @@ export default function NewCampaignPage() {
         body: JSON.stringify({ test_email: testEmail }),
       });
       if (res.ok) {
-        setTestResult({ ok: true, msg: "Da gui email test thanh cong!" });
+        setTestResult({ ok: true, msg: "Đã gửi email test thành công!" });
       } else {
-        setTestResult({ ok: false, msg: "Gui that bai. Vui long thu lai." });
+        setTestResult({ ok: false, msg: "Gửi thất bại. Vui lòng thử lại." });
       }
     } catch {
-      setTestResult({ ok: false, msg: "Loi ket noi" });
+      setTestResult({ ok: false, msg: "Lỗi kết nối" });
     } finally {
       setTestSending(false);
     }
@@ -305,7 +305,7 @@ export default function NewCampaignPage() {
 
   return (
     <div>
-      <TopBar title="Tao campaign moi" />
+      <TopBar title="Tạo campaign mới" />
 
       <div className="p-4 sm:p-6 max-w-4xl mx-auto space-y-6">
         {/* Step indicator */}
@@ -345,7 +345,7 @@ export default function NewCampaignPage() {
 
         {/* Save indicator */}
         {saveMsg && (
-          <div className="flex items-center gap-2 text-xs" style={{ color: saveMsg.includes("Loi") ? "#ef4444" : "#E85D04" }}>
+          <div className="flex items-center gap-2 text-xs" style={{ color: saveMsg.includes("Lỗi") ? "#ef4444" : "#E85D04" }}>
             {saving ? <Loader2 size={12} className="animate-spin" /> : <Check size={12} />}
             {saveMsg}
           </div>
@@ -356,16 +356,16 @@ export default function NewCampaignPage() {
           <div className="card-dark p-6 space-y-5">
             <h2 className="text-[#1B2A4A] font-semibold text-base flex items-center gap-2">
               <FileText size={18} className="text-[#E85D04]" />
-              Thong tin co ban
+              Thông tin cơ bản
             </h2>
 
             <div>
-              <label className="block text-xs font-medium text-gray-700 mb-1.5">Ten campaign *</label>
+              <label className="block text-xs font-medium text-gray-700 mb-1.5">Tên campaign *</label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="VD: Welcome Series - Thang 6"
+                placeholder="VD: Welcome Series - Tháng 6"
                 className="input-dark w-full text-sm"
               />
             </div>
@@ -376,20 +376,20 @@ export default function NewCampaignPage() {
                 type="text"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                placeholder={`VD: Chao mung ban den voi ${siteConfig.shortName}!`}
+                placeholder={`VD: Chào mừng bạn đến với ${siteConfig.shortName}!`}
                 className="input-dark w-full text-sm"
               />
               <p className="text-[11px] text-gray-500 mt-1">
-                {subject.length} ky tu
+                {subject.length} ký tự
                 {subject.length > 50 && (
-                  <span className="text-[#f59e0b] ml-2">Nen giu duoi 50 ky tu</span>
+                  <span className="text-[#f59e0b] ml-2">Nên giữ dưới 50 ký tự</span>
                 )}
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-medium text-gray-700 mb-1.5">Ten nguoi gui</label>
+                <label className="block text-xs font-medium text-gray-700 mb-1.5">Tên người gửi</label>
                 <input
                   type="text"
                   value={fromName}
@@ -398,7 +398,7 @@ export default function NewCampaignPage() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-gray-700 mb-1.5">Email nguoi gui</label>
+                <label className="block text-xs font-medium text-gray-700 mb-1.5">Email người gửi</label>
                 <input
                   type="email"
                   value={fromEmail}
@@ -409,7 +409,7 @@ export default function NewCampaignPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-gray-700 mb-1.5">Reply-to email (tuy chon)</label>
+              <label className="block text-xs font-medium text-gray-700 mb-1.5">Reply-to email (tùy chọn)</label>
               <input
                 type="email"
                 value={replyTo}
@@ -426,7 +426,7 @@ export default function NewCampaignPage() {
           <div className="card-dark p-6 space-y-5">
             <h2 className="text-[#1B2A4A] font-semibold text-base flex items-center gap-2">
               <Users size={18} className="text-[#E85D04]" />
-              Nguoi nhan
+              Người nhận
             </h2>
 
             {listsLoading ? (
@@ -436,16 +436,16 @@ export default function NewCampaignPage() {
             ) : (
               <>
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 mb-1.5">Chon danh sach</label>
+                  <label className="block text-xs font-medium text-gray-700 mb-1.5">Chọn danh sách</label>
                   <select
                     value={listId}
                     onChange={(e) => setListId(e.target.value)}
                     className="input-dark w-full text-sm"
                   >
-                    <option value="">Tat ca subscribers</option>
+                    <option value="">Tất cả subscribers</option>
                     {lists.map((l) => (
                       <option key={l.id} value={l.id}>
-                        {l.name} ({l.subscriber_count ?? 0} nguoi)
+                        {l.name} ({l.subscriber_count ?? 0} người)
                       </option>
                     ))}
                   </select>
@@ -459,10 +459,10 @@ export default function NewCampaignPage() {
                     <Users size={18} className="text-[#E85D04]" />
                     <div>
                       <p className="text-[#1B2A4A] text-sm font-medium">
-                        {subscriberCount.toLocaleString("vi-VN")} nguoi nhan
+                        {subscriberCount.toLocaleString("vi-VN")} người nhận
                       </p>
                       <p className="text-xs text-gray-500">
-                        {listId ? "Trong danh sach da chon" : "Tat ca subscribers dang hoat dong"}
+                        {listId ? "Trong danh sách đã chọn" : "Tất cả subscribers đang hoạt động"}
                       </p>
                     </div>
                   </div>
@@ -486,7 +486,7 @@ export default function NewCampaignPage() {
                   border: contentMode === "template" ? "1px solid rgba(212,168,67,0.3)" : "1px solid #2a2a2a",
                 }}
               >
-                <Layout size={15} /> Chon template
+                <Layout size={15} /> Chọn template
               </button>
               <button
                 onClick={() => setContentMode("custom")}
@@ -497,20 +497,20 @@ export default function NewCampaignPage() {
                   border: contentMode === "custom" ? "1px solid rgba(212,168,67,0.3)" : "1px solid #2a2a2a",
                 }}
               >
-                <Sparkles size={15} /> Viet moi
+                <Sparkles size={15} /> Viết mới
               </button>
             </div>
 
             {/* Template gallery */}
             {contentMode === "template" && (
               <div className="card-dark p-5">
-                <h3 className="text-[#1B2A4A] font-semibold text-sm mb-4">Chon template</h3>
+                <h3 className="text-[#1B2A4A] font-semibold text-sm mb-4">Chọn template</h3>
                 {templatesLoading ? (
                   <div className="flex items-center justify-center py-8">
                     <Loader2 size={20} className="animate-spin text-gray-500" />
                   </div>
                 ) : templates.length === 0 ? (
-                  <p className="text-gray-500 text-sm text-center py-8">Chua co template nao</p>
+                  <p className="text-gray-500 text-sm text-center py-8">Chưa có template nào</p>
                 ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                     {templates.map((tpl) => {
@@ -543,7 +543,7 @@ export default function NewCampaignPage() {
                               onClick={(e) => { e.stopPropagation(); previewTemplate(tpl.id); }}
                               className="text-xs text-gray-500 hover:text-[#1B2A4A] flex items-center gap-1 transition-colors"
                             >
-                              <Eye size={11} /> Xem
+                              <Eye size={11} /> Xem trước
                             </button>
                           </div>
                         </div>
@@ -557,7 +557,7 @@ export default function NewCampaignPage() {
             {/* Content Editor */}
             <div className="card-dark p-5 space-y-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-[#1B2A4A] font-semibold text-sm">Noi dung email</h3>
+                <h3 className="text-[#1B2A4A] font-semibold text-sm">Nội dung email</h3>
                 <div className="flex items-center gap-2">
                   {/* Editor mode toggle */}
                   <div className="flex rounded-lg overflow-hidden" style={{ border: "1px solid #2a2a2a" }}>
@@ -589,14 +589,14 @@ export default function NewCampaignPage() {
                     disabled={!htmlContent}
                     className="flex items-center gap-1.5 text-xs text-[#E85D04] hover:underline disabled:opacity-40 disabled:no-underline"
                   >
-                    <Eye size={12} /> Xem truoc
+                    <Eye size={12} /> Xem trước
                   </button>
                 </div>
               </div>
 
               {/* Variables */}
               <div>
-                <label className="block text-[11px] text-gray-500 mb-1.5">Chen bien:</label>
+                <label className="block text-[11px] text-gray-500 mb-1.5">Chèn biến:</label>
                 <div className="flex flex-wrap gap-1.5">
                   {VARIABLES.map((v) => (
                     <button
@@ -618,7 +618,7 @@ export default function NewCampaignPage() {
                 <RichTextEditor
                   value={htmlContent}
                   onChange={setHtmlContent}
-                  placeholder="Nhap noi dung email..."
+                  placeholder="Nhập nội dung email..."
                   minHeight={350}
                 />
               )}
@@ -630,7 +630,7 @@ export default function NewCampaignPage() {
                     ref={htmlRef}
                     value={htmlContent}
                     onChange={(e) => setHtmlContent(e.target.value)}
-                    placeholder="Nhap noi dung HTML email..."
+                    placeholder="Nhập nội dung HTML email..."
                     rows={16}
                     className="input-dark w-full text-sm resize-none"
                     style={{ fontFamily: "'Fira Code', 'Cascadia Code', monospace", lineHeight: 1.6 }}
@@ -638,18 +638,18 @@ export default function NewCampaignPage() {
                 </>
               )}
 
-              <p className="text-[11px] text-gray-500">{htmlContent.length} ky tu</p>
+              <p className="text-[11px] text-gray-500">{htmlContent.length} ký tự</p>
 
               {/* Plain text */}
               <details className="group">
                 <summary className="text-xs text-gray-500 cursor-pointer hover:text-gray-300 transition-colors flex items-center gap-1.5">
                   <FileText size={12} />
-                  Phien ban plain text (tuy chon)
+                  Phiên bản plain text (tùy chọn)
                 </summary>
                 <textarea
                   value={textContent}
                   onChange={(e) => setTextContent(e.target.value)}
-                  placeholder="Noi dung text thuan..."
+                  placeholder="Nội dung text thuần..."
                   rows={6}
                   className="input-dark w-full text-sm resize-none mt-3"
                 />
@@ -675,7 +675,7 @@ export default function NewCampaignPage() {
                 }}
               >
                 <FlaskConical size={15} />
-                Gui Email Test
+                Gửi Email Test
               </button>
             </div>
           </div>
@@ -688,12 +688,12 @@ export default function NewCampaignPage() {
             <div className="card-dark p-6 space-y-4">
               <h2 className="text-[#1B2A4A] font-semibold text-base flex items-center gap-2">
                 <Send size={18} className="text-[#E85D04]" />
-                Xem lai campaign
+                Xem lại campaign
               </h2>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <p className="text-[11px] text-gray-500 mb-0.5">Ten campaign</p>
+                  <p className="text-[11px] text-gray-500 mb-0.5">Tên campaign</p>
                   <p className="text-[#1B2A4A] text-sm">{name || "--"}</p>
                 </div>
                 <div>
@@ -701,7 +701,7 @@ export default function NewCampaignPage() {
                   <p className="text-[#1B2A4A] text-sm">{subject || "--"}</p>
                 </div>
                 <div>
-                  <p className="text-[11px] text-gray-500 mb-0.5">Nguoi gui</p>
+                  <p className="text-[11px] text-gray-500 mb-0.5">Người gửi</p>
                   <p className="text-[#1B2A4A] text-sm">{fromName} &lt;{fromEmail}&gt;</p>
                 </div>
                 <div>
@@ -709,17 +709,17 @@ export default function NewCampaignPage() {
                   <p className="text-[#1B2A4A] text-sm">{replyTo || fromEmail}</p>
                 </div>
                 <div>
-                  <p className="text-[11px] text-gray-500 mb-0.5">Nguoi nhan</p>
+                  <p className="text-[11px] text-gray-500 mb-0.5">Người nhận</p>
                   <p className="text-[#1B2A4A] text-sm">
-                    {listId ? lists.find((l) => l.id === listId)?.name : "Tat ca subscribers"}
+                    {listId ? lists.find((l) => l.id === listId)?.name : "Tất cả subscribers"}
                     {subscriberCount !== null && (
-                      <span className="text-gray-500 ml-1">({subscriberCount.toLocaleString("vi-VN")} nguoi)</span>
+                      <span className="text-gray-500 ml-1">({subscriberCount.toLocaleString("vi-VN")} người)</span>
                     )}
                   </p>
                 </div>
                 <div>
-                  <p className="text-[11px] text-gray-500 mb-0.5">Noi dung</p>
-                  <p className="text-[#1B2A4A] text-sm">{htmlContent.length} ky tu HTML</p>
+                  <p className="text-[11px] text-gray-500 mb-0.5">Nội dung</p>
+                  <p className="text-[#1B2A4A] text-sm">{htmlContent.length} ký tự HTML</p>
                 </div>
               </div>
 
@@ -728,7 +728,7 @@ export default function NewCampaignPage() {
                   onClick={() => setPreviewOpen(true)}
                   className="flex items-center gap-1.5 text-xs text-[#E85D04] hover:underline"
                 >
-                  <Eye size={12} /> Xem truoc email
+                  <Eye size={12} /> Xem trước email
                 </button>
               )}
             </div>
@@ -737,7 +737,7 @@ export default function NewCampaignPage() {
             <div className="card-dark p-5 space-y-3">
               <h3 className="text-[#1B2A4A] font-semibold text-sm flex items-center gap-2">
                 <Mail size={15} className="text-[#3b82f6]" />
-                Gui email test
+                Gửi email test
               </h3>
               <div className="flex gap-2">
                 <input
@@ -754,7 +754,7 @@ export default function NewCampaignPage() {
                   style={{ background: "rgba(59,130,246,0.12)", color: "#3b82f6", border: "1px solid rgba(59,130,246,0.3)" }}
                 >
                   {testSending ? <Loader2 size={13} className="animate-spin" /> : <Send size={13} />}
-                  Gui test
+                  Gửi test
                 </button>
               </div>
               {/* Quick test modal button */}
@@ -763,10 +763,10 @@ export default function NewCampaignPage() {
                 className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-[#3b82f6] transition-colors"
               >
                 <FlaskConical size={12} />
-                Mo cua so gui test
+                Mở cửa sổ gửi test
               </button>
               {!campaignId && (
-                <p className="text-xs text-[#f59e0b]">Luu campaign truoc khi gui test.</p>
+                <p className="text-xs text-[#f59e0b]">Lưu campaign trước khi gửi test.</p>
               )}
               {testResult && (
                 <p className="text-xs" style={{ color: testResult.ok ? "#E85D04" : "#ef4444" }}>
@@ -779,7 +779,7 @@ export default function NewCampaignPage() {
             <div className="card-dark p-5 space-y-4">
               <h3 className="text-[#1B2A4A] font-semibold text-sm flex items-center gap-2">
                 <Clock size={15} className="text-[#f59e0b]" />
-                Len lich gui
+                Lên lịch gửi
               </h3>
               <div className="flex items-center gap-3">
                 <input
@@ -799,7 +799,7 @@ export default function NewCampaignPage() {
               </div>
               {scheduledAt && (
                 <p className="text-xs text-gray-500">
-                  Campaign se duoc gui vao {new Date(scheduledAt).toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" })}
+                  Campaign sẽ được gửi vào {new Date(scheduledAt).toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" })}
                 </p>
               )}
             </div>
@@ -815,7 +815,7 @@ export default function NewCampaignPage() {
                   className="px-6 py-3 rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
                   style={{ background: "rgba(59,130,246,0.12)", color: "#3b82f6", border: "1px solid rgba(59,130,246,0.3)" }}
                 >
-                  <Clock size={15} /> Len lich gui
+                  <Clock size={15} /> Lên lịch gửi
                 </button>
               )}
               <button
@@ -824,7 +824,7 @@ export default function NewCampaignPage() {
                 className="btn-green flex items-center gap-2 text-sm px-8 py-3 ml-auto"
               >
                 {sendingNow ? <Loader2 size={15} className="animate-spin" /> : <Send size={15} />}
-                {sendingNow ? "Dang xu ly..." : "Gui ngay"}
+                {sendingNow ? "Đang xử lý..." : "Gửi ngay"}
               </button>
             </div>
           </div>
@@ -838,7 +838,7 @@ export default function NewCampaignPage() {
             className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors disabled:opacity-30"
             style={{ border: "1px solid #2a2a2a" }}
           >
-            <ChevronLeft size={15} /> Quay lai
+            <ChevronLeft size={15} /> Quay lại
           </button>
 
           {step < STEPS.length - 1 && (
@@ -847,7 +847,7 @@ export default function NewCampaignPage() {
               disabled={!canProceed(step)}
               className="btn-green flex items-center gap-2 text-sm"
             >
-              Tiep theo <ChevronRight size={15} />
+              Tiếp theo <ChevronRight size={15} />
             </button>
           )}
         </div>

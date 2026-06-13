@@ -38,7 +38,7 @@ export async function GET(req: NextRequest) {
   if (coursesError) {
     console.error("[Instructor Questions GET] Courses error:", coursesError);
     return NextResponse.json(
-      { error: "Co loi xay ra khi tai du lieu." },
+      { error: "Có lỗi xảy ra khi tải dữ liệu." },
       { status: 500 }
     );
   }
@@ -70,7 +70,7 @@ export async function GET(req: NextRequest) {
   if (lessonsError) {
     console.error("[Instructor Questions GET] Lessons error:", lessonsError);
     return NextResponse.json(
-      { error: "Co loi xay ra khi tai du lieu." },
+      { error: "Có lỗi xảy ra khi tải dữ liệu." },
       { status: 500 }
     );
   }
@@ -110,7 +110,7 @@ export async function GET(req: NextRequest) {
   if (error) {
     console.error("[Instructor Questions GET] Error:", error);
     return NextResponse.json(
-      { error: "Co loi xay ra khi tai danh sach cau hoi." },
+      { error: "Có lỗi xảy ra khi tải danh sách câu hỏi." },
       { status: 500 }
     );
   }
@@ -195,7 +195,7 @@ export async function POST(req: NextRequest) {
 
   if (!content || typeof content !== "string" || !content.trim()) {
     return NextResponse.json(
-      { error: "Noi dung khong duoc de trong" },
+      { error: "Nội dung không được để trống" },
       { status: 400 }
     );
   }
@@ -210,7 +210,7 @@ export async function POST(req: NextRequest) {
 
   if (!discussion) {
     return NextResponse.json(
-      { error: "Cau hoi khong ton tai." },
+      { error: "Câu hỏi không tồn tại." },
       { status: 404 }
     );
   }
@@ -224,7 +224,7 @@ export async function POST(req: NextRequest) {
 
   if (!lesson) {
     return NextResponse.json(
-      { error: "Bai hoc khong ton tai." },
+      { error: "Bài học không tồn tại." },
       { status: 404 }
     );
   }
@@ -238,7 +238,7 @@ export async function POST(req: NextRequest) {
 
   if (!course) {
     return NextResponse.json(
-      { error: "Khong co quyen tra loi cau hoi nay." },
+      { error: "Không có quyền trả lời câu hỏi này." },
       { status: 403 }
     );
   }
@@ -260,7 +260,7 @@ export async function POST(req: NextRequest) {
   if (error) {
     console.error("[Instructor Questions POST] Error:", error);
     return NextResponse.json(
-      { error: "Co loi xay ra khi gui tra loi." },
+      { error: "Có lỗi xảy ra khi gửi trả lời." },
       { status: 500 }
     );
   }
@@ -322,7 +322,7 @@ export async function PATCH(req: NextRequest) {
 
   if (!discussion) {
     return NextResponse.json(
-      { error: "Cau hoi khong ton tai." },
+      { error: "Câu hỏi không tồn tại." },
       { status: 404 }
     );
   }
@@ -336,7 +336,7 @@ export async function PATCH(req: NextRequest) {
 
   if (!lesson) {
     return NextResponse.json(
-      { error: "Bai hoc khong ton tai." },
+      { error: "Bài học không tồn tại." },
       { status: 404 }
     );
   }
@@ -350,7 +350,7 @@ export async function PATCH(req: NextRequest) {
 
   if (!course) {
     return NextResponse.json(
-      { error: "Khong co quyen cap nhat cau hoi nay." },
+      { error: "Không có quyền cập nhật câu hỏi này." },
       { status: 403 }
     );
   }
@@ -378,7 +378,7 @@ export async function PATCH(req: NextRequest) {
   if (error) {
     console.error("[Instructor Questions PATCH] Error:", error);
     return NextResponse.json(
-      { error: "Co loi xay ra khi cap nhat cau hoi." },
+      { error: "Có lỗi xảy ra khi cập nhật câu hỏi." },
       { status: 500 }
     );
   }

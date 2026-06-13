@@ -23,7 +23,7 @@ interface Template {
 }
 
 const CATEGORIES = [
-  { value: "all", label: "Tat ca" },
+  { value: "all", label: "Tất cả" },
   { value: "marketing", label: "Marketing" },
   { value: "newsletter", label: "Newsletter" },
   { value: "transactional", label: "Transactional" },
@@ -33,7 +33,7 @@ const CATEGORY_LABELS: Record<string, { label: string; color: string }> = {
   marketing: { label: "Marketing", color: "#E85D04" },
   newsletter: { label: "Newsletter", color: "#3b82f6" },
   transactional: { label: "Transactional", color: "#f59e0b" },
-  other: { label: "Khac", color: "#6b7280" },
+  other: { label: "Khác", color: "#6b7280" },
 };
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
@@ -149,7 +149,7 @@ export default function TemplatesPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: `${t.name} (ban sao)`,
+          name: `${t.name} (bản sao)`,
           subject: t.subject,
           category: t.category,
           html_content: t.html_content,
@@ -161,7 +161,7 @@ export default function TemplatesPage() {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Ban co chac chan muon xoa template nay?")) return;
+    if (!confirm("Bạn có chắc chắn muốn xóa template này?")) return;
     try {
       await fetch(`/api/email/templates/${id}`, { method: "DELETE" });
       fetchTemplates();
@@ -170,7 +170,7 @@ export default function TemplatesPage() {
 
   return (
     <div>
-      <TopBar title="Email Templates" subtitle="Quan ly mau email" />
+      <TopBar title="Email Templates" subtitle="Quản lý mẫu email" />
 
       <div className="p-4 sm:p-6 max-w-6xl mx-auto space-y-6">
         {/* Toolbar */}
@@ -186,7 +186,7 @@ export default function TemplatesPage() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Tim kiem template..."
+                placeholder="Tìm kiếm template..."
                 className="bg-transparent border-none outline-none text-[#1B2A4A] text-sm placeholder:text-gray-500 w-40 sm:w-48"
               />
             </div>
@@ -214,7 +214,7 @@ export default function TemplatesPage() {
             onClick={handleCreate}
             className="btn-green flex items-center gap-2 text-sm shrink-0"
           >
-            <Plus size={15} /> Tao template moi
+            <Plus size={15} /> Tạo template mới
           </button>
         </div>
 
@@ -233,17 +233,17 @@ export default function TemplatesPage() {
             </div>
             <p className="text-[#1B2A4A] font-medium mb-1">
               {searchQuery || category !== "all"
-                ? "Khong tim thay template nao"
-                : "Chua co template nao"}
+                ? "Không tìm thấy template nào"
+                : "Chưa có template nào"}
             </p>
             <p className="text-gray-500 text-sm mb-4">
               {searchQuery || category !== "all"
-                ? "Thu thay doi bo loc hoac tu khoa."
-                : "Tao template dau tien de bat dau!"}
+                ? "Thử thay đổi bộ lọc hoặc từ khóa."
+                : "Tạo template đầu tiên để bắt đầu!"}
             </p>
             {!searchQuery && category === "all" && (
               <button onClick={handleCreate} className="btn-green flex items-center gap-2 text-sm">
-                <Plus size={15} /> Tao template moi
+                <Plus size={15} /> Tạo template mới
               </button>
             )}
           </div>
@@ -296,7 +296,7 @@ export default function TemplatesPage() {
                       onClick={() => handleEdit(t)}
                       className="flex items-center justify-center gap-1.5 flex-1 py-2.5 text-xs text-gray-400 hover:text-[#1B2A4A] hover:bg-[#252525] transition-colors"
                     >
-                      <Edit size={12} /> Sua
+                      <Edit size={12} /> Sửa
                     </button>
                     <button
                       onClick={() => handlePreview(t)}
@@ -308,13 +308,13 @@ export default function TemplatesPage() {
                       onClick={() => handleDuplicate(t)}
                       className="flex items-center justify-center gap-1.5 flex-1 py-2.5 text-xs text-gray-400 hover:text-[#1B2A4A] hover:bg-[#252525] transition-colors"
                     >
-                      <Copy size={12} /> Sao chep
+                      <Copy size={12} /> Sao chép
                     </button>
                     <button
                       onClick={() => handleDelete(t.id)}
                       className="flex items-center justify-center gap-1.5 flex-1 py-2.5 text-xs text-red-400 hover:text-red-300 hover:bg-red-500/5 transition-colors"
                     >
-                      <Trash2 size={12} /> Xoa
+                      <Trash2 size={12} /> Xóa
                     </button>
                   </div>
                 </div>
@@ -326,9 +326,9 @@ export default function TemplatesPage() {
         {/* Summary */}
         {filtered.length > 0 && (
           <p className="text-xs text-gray-500">
-            Hien thi <span className="text-[#1B2A4A] font-semibold">{filtered.length}</span> template
+            Hiển thị <span className="text-[#1B2A4A] font-semibold">{filtered.length}</span> template
             {category !== "all" && (
-              <> trong danh muc <span className="text-[#1B2A4A] font-semibold">{CATEGORIES.find(c => c.value === category)?.label}</span></>
+              <> trong danh mục <span className="text-[#1B2A4A] font-semibold">{CATEGORIES.find(c => c.value === category)?.label}</span></>
             )}
           </p>
         )}

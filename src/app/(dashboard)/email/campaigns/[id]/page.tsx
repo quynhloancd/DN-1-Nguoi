@@ -47,33 +47,33 @@ interface Campaign {
 }
 
 const STEPS = [
-  { key: "info", label: "Thong tin co ban", icon: FileText },
-  { key: "recipients", label: "Nguoi nhan", icon: Users },
-  { key: "content", label: "Noi dung email", icon: Layout },
-  { key: "review", label: "Xem lai & Gui", icon: Send },
+  { key: "info", label: "Thông tin cơ bản", icon: FileText },
+  { key: "recipients", label: "Người nhận", icon: Users },
+  { key: "content", label: "Nội dung email", icon: Layout },
+  { key: "review", label: "Xem lại & Gửi", icon: Send },
 ];
 
 const VARIABLES = [
-  { label: "{{name}}", desc: "Ten nguoi nhan" },
-  { label: "{{email}}", desc: "Email nguoi nhan" },
-  { label: "{{unsubscribe_url}}", desc: "Link huy dang ky" },
-  { label: "{{company}}", desc: "Ten cong ty" },
-  { label: "{{date}}", desc: "Ngay hien tai" },
+  { label: "{{name}}", desc: "Tên người nhận" },
+  { label: "{{email}}", desc: "Email người nhận" },
+  { label: "{{unsubscribe_url}}", desc: "Link hủy đăng ký" },
+  { label: "{{company}}", desc: "Tên công ty" },
+  { label: "{{date}}", desc: "Ngày hiện tại" },
 ];
 
 const CATEGORY_LABELS: Record<string, { label: string; color: string }> = {
   marketing: { label: "Marketing", color: "#E85D04" },
   newsletter: { label: "Newsletter", color: "#3b82f6" },
   transactional: { label: "Transactional", color: "#f59e0b" },
-  other: { label: "Khac", color: "#6b7280" },
+  other: { label: "Khác", color: "#6b7280" },
 };
 
 const STATUS_CONFIG: Record<string, { label: string; color: string }> = {
-  draft: { label: "Nhap", color: "#6b7280" },
-  scheduled: { label: "Da len lich", color: "#3b82f6" },
-  sending: { label: "Dang gui", color: "#f59e0b" },
-  sent: { label: "Da gui", color: "#E85D04" },
-  paused: { label: "Tam dung", color: "#f97316" },
+  draft: { label: "Nháp", color: "#6b7280" },
+  scheduled: { label: "Đã lên lịch", color: "#3b82f6" },
+  sending: { label: "Đang gửi", color: "#f59e0b" },
+  sent: { label: "Đã gửi", color: "#E85D04" },
+  paused: { label: "Tạm dừng", color: "#f97316" },
 };
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
@@ -228,13 +228,13 @@ export default function EditCampaignPage() {
         body: JSON.stringify(body),
       });
       if (res.ok) {
-        setSaveMsg("Da luu!");
+        setSaveMsg("Đã lưu!");
         setTimeout(() => setSaveMsg(""), 2000);
       } else {
-        setSaveMsg("Loi khi luu");
+        setSaveMsg("Lỗi khi lưu");
       }
     } catch {
-      setSaveMsg("Loi ket noi");
+      setSaveMsg("Lỗi kết nối");
     } finally {
       setSaving(false);
     }
@@ -257,10 +257,10 @@ export default function EditCampaignPage() {
         body: JSON.stringify({ test_email: testEmail }),
       });
       setTestResult(res.ok
-        ? { ok: true, msg: "Da gui email test thanh cong!" }
-        : { ok: false, msg: "Gui that bai." });
+        ? { ok: true, msg: "Đã gửi email test thành công!" }
+        : { ok: false, msg: "Gửi thất bại." });
     } catch {
-      setTestResult({ ok: false, msg: "Loi ket noi" });
+      setTestResult({ ok: false, msg: "Lỗi kết nối" });
     } finally {
       setTestSending(false);
     }
@@ -287,7 +287,7 @@ export default function EditCampaignPage() {
   if (loading) {
     return (
       <div>
-        <TopBar title="Dang tai..." />
+        <TopBar title="Đang tải..." />
         <div className="flex items-center justify-center py-32">
           <Loader2 size={28} className="animate-spin text-[#E85D04]" />
         </div>
@@ -303,7 +303,7 @@ export default function EditCampaignPage() {
 
     return (
       <div>
-        <TopBar title={campaign.name || campaign.subject} subtitle="Chi tiet campaign" />
+        <TopBar title={campaign.name || campaign.subject} subtitle="Chi tiết campaign" />
         <div className="p-4 sm:p-6 max-w-4xl mx-auto space-y-6">
           {/* Status */}
           <div className="flex items-center gap-3">
@@ -321,7 +321,7 @@ export default function EditCampaignPage() {
                 onClick={() => router.push(`/email/campaigns/${campaignId}/sending`)}
                 className="flex items-center gap-1.5 text-xs text-[#f59e0b] hover:underline"
               >
-                <Play size={12} /> Xem tien do
+                <Play size={12} /> Xem tiến độ
               </button>
             )}
           </div>
@@ -330,7 +330,7 @@ export default function EditCampaignPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="stat-card text-center">
               <div className="text-2xl font-bold text-[#1B2A4A]">{campaign.sent_count?.toLocaleString("vi-VN") ?? 0}</div>
-              <div className="text-xs text-gray-500 mt-1">Da gui</div>
+              <div className="text-xs text-gray-500 mt-1">Đã gửi</div>
             </div>
             <div className="stat-card text-center">
               <div className="text-2xl font-bold" style={{ color: "#E85D04" }}>{openRate}%</div>
@@ -342,28 +342,28 @@ export default function EditCampaignPage() {
             </div>
             <div className="stat-card text-center">
               <div className="text-2xl font-bold text-[#1B2A4A]">{campaign.total_recipients?.toLocaleString("vi-VN") ?? 0}</div>
-              <div className="text-xs text-gray-500 mt-1">Tong nguoi nhan</div>
+              <div className="text-xs text-gray-500 mt-1">Tổng người nhận</div>
             </div>
           </div>
 
           {/* Details */}
           <div className="card-dark p-6 space-y-4">
-            <h2 className="text-[#1B2A4A] font-semibold text-base">Chi tiet</h2>
+            <h2 className="text-[#1B2A4A] font-semibold text-base">Chi tiết</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
               <div>
                 <p className="text-[11px] text-gray-500 mb-0.5">Subject</p>
                 <p className="text-[#1B2A4A]">{campaign.subject}</p>
               </div>
               <div>
-                <p className="text-[11px] text-gray-500 mb-0.5">Nguoi gui</p>
+                <p className="text-[11px] text-gray-500 mb-0.5">Người gửi</p>
                 <p className="text-[#1B2A4A]">{campaign.from_name} &lt;{campaign.from_email}&gt;</p>
               </div>
               <div>
-                <p className="text-[11px] text-gray-500 mb-0.5">Gui luc</p>
+                <p className="text-[11px] text-gray-500 mb-0.5">Gửi lúc</p>
                 <p className="text-[#1B2A4A]">{formatDate(campaign.sent_at)}</p>
               </div>
               <div>
-                <p className="text-[11px] text-gray-500 mb-0.5">Tao luc</p>
+                <p className="text-[11px] text-gray-500 mb-0.5">Tạo lúc</p>
                 <p className="text-[#1B2A4A]">{formatDate(campaign.created_at)}</p>
               </div>
             </div>
@@ -373,7 +373,7 @@ export default function EditCampaignPage() {
                 onClick={() => setPreviewOpen(true)}
                 className="flex items-center gap-1.5 text-xs text-[#E85D04] hover:underline"
               >
-                <Eye size={12} /> Xem noi dung email
+                <Eye size={12} /> Xem nội dung email
               </button>
             )}
           </div>
@@ -385,7 +385,7 @@ export default function EditCampaignPage() {
               className="px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors"
               style={{ border: "1px solid #2a2a2a" }}
             >
-              Quay lai
+              Quay lại
             </button>
             {campaign.status === "sent" && (
               <button
@@ -418,7 +418,7 @@ export default function EditCampaignPage() {
 
   return (
     <div>
-      <TopBar title="Chinh sua campaign" subtitle={name || "Campaign"} />
+      <TopBar title="Chỉnh sửa campaign" subtitle={name || "Campaign"} />
 
       <div className="p-4 sm:p-6 max-w-4xl mx-auto space-y-6">
         {/* Step indicator */}
@@ -451,7 +451,7 @@ export default function EditCampaignPage() {
         </div>
 
         {saveMsg && (
-          <div className="flex items-center gap-2 text-xs" style={{ color: saveMsg.includes("Loi") ? "#ef4444" : "#E85D04" }}>
+          <div className="flex items-center gap-2 text-xs" style={{ color: saveMsg.includes("Lỗi") ? "#ef4444" : "#E85D04" }}>
             {saving ? <Loader2 size={12} className="animate-spin" /> : <Check size={12} />}
             {saveMsg}
           </div>
@@ -461,29 +461,29 @@ export default function EditCampaignPage() {
         {step === 0 && (
           <div className="card-dark p-6 space-y-5">
             <h2 className="text-[#1B2A4A] font-semibold text-base flex items-center gap-2">
-              <FileText size={18} className="text-[#E85D04]" /> Thong tin co ban
+              <FileText size={18} className="text-[#E85D04]" /> Thông tin cơ bản
             </h2>
             <div>
-              <label className="block text-xs font-medium text-gray-400 mb-1.5">Ten campaign *</label>
+              <label className="block text-xs font-medium text-gray-400 mb-1.5">Tên campaign *</label>
               <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="input-dark w-full text-sm" />
             </div>
             <div>
               <label className="block text-xs font-medium text-gray-400 mb-1.5">Subject line *</label>
               <input type="text" value={subject} onChange={(e) => setSubject(e.target.value)} className="input-dark w-full text-sm" />
-              <p className="text-[11px] text-gray-500 mt-1">{subject.length} ky tu</p>
+              <p className="text-[11px] text-gray-500 mt-1">{subject.length} ký tự</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1.5">Ten nguoi gui</label>
+                <label className="block text-xs font-medium text-gray-400 mb-1.5">Tên người gửi</label>
                 <input type="text" value={fromName} onChange={(e) => setFromName(e.target.value)} className="input-dark w-full text-sm" />
               </div>
               <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1.5">Email nguoi gui</label>
+                <label className="block text-xs font-medium text-gray-400 mb-1.5">Email người gửi</label>
                 <input type="email" value={fromEmail} disabled className="input-dark w-full text-sm opacity-60 cursor-not-allowed" />
               </div>
             </div>
             <div>
-              <label className="block text-xs font-medium text-gray-400 mb-1.5">Reply-to email (tuy chon)</label>
+              <label className="block text-xs font-medium text-gray-400 mb-1.5">Reply-to email (tùy chọn)</label>
               <input type="email" value={replyTo} onChange={(e) => setReplyTo(e.target.value)} className="input-dark w-full text-sm" />
             </div>
           </div>
@@ -493,14 +493,14 @@ export default function EditCampaignPage() {
         {step === 1 && (
           <div className="card-dark p-6 space-y-5">
             <h2 className="text-[#1B2A4A] font-semibold text-base flex items-center gap-2">
-              <Users size={18} className="text-[#E85D04]" /> Nguoi nhan
+              <Users size={18} className="text-[#E85D04]" /> Người nhận
             </h2>
             <div>
-              <label className="block text-xs font-medium text-gray-400 mb-1.5">Chon danh sach</label>
+              <label className="block text-xs font-medium text-gray-400 mb-1.5">Chọn danh sách</label>
               <select value={listId} onChange={(e) => setListId(e.target.value)} className="input-dark w-full text-sm">
-                <option value="">Tat ca subscribers</option>
+                <option value="">Tất cả subscribers</option>
                 {lists.map((l) => (
-                  <option key={l.id} value={l.id}>{l.name} ({l.subscriber_count ?? 0} nguoi)</option>
+                  <option key={l.id} value={l.id}>{l.name} ({l.subscriber_count ?? 0} người)</option>
                 ))}
               </select>
             </div>
@@ -508,8 +508,8 @@ export default function EditCampaignPage() {
               <div className="flex items-center gap-3 p-4 rounded-lg" style={{ background: "rgba(212,168,67,0.06)", border: "1px solid rgba(212,168,67,0.15)" }}>
                 <Users size={18} className="text-[#E85D04]" />
                 <div>
-                  <p className="text-[#1B2A4A] text-sm font-medium">{subscriberCount.toLocaleString("vi-VN")} nguoi nhan</p>
-                  <p className="text-xs text-gray-500">{listId ? "Trong danh sach da chon" : "Tat ca subscribers"}</p>
+                  <p className="text-[#1B2A4A] text-sm font-medium">{subscriberCount.toLocaleString("vi-VN")} người nhận</p>
+                  <p className="text-xs text-gray-500">{listId ? "Trong danh sách đã chọn" : "Tất cả subscribers"}</p>
                 </div>
               </div>
             )}
@@ -529,7 +529,7 @@ export default function EditCampaignPage() {
                   border: contentMode === "template" ? "1px solid rgba(212,168,67,0.3)" : "1px solid #2a2a2a",
                 }}
               >
-                <Layout size={15} /> Chon template
+                <Layout size={15} /> Chọn template
               </button>
               <button
                 onClick={() => setContentMode("custom")}
@@ -540,17 +540,17 @@ export default function EditCampaignPage() {
                   border: contentMode === "custom" ? "1px solid rgba(212,168,67,0.3)" : "1px solid #2a2a2a",
                 }}
               >
-                <Sparkles size={15} /> Viet moi
+                <Sparkles size={15} /> Viết mới
               </button>
             </div>
 
             {contentMode === "template" && (
               <div className="card-dark p-5">
-                <h3 className="text-[#1B2A4A] font-semibold text-sm mb-4">Chon template</h3>
+                <h3 className="text-[#1B2A4A] font-semibold text-sm mb-4">Chọn template</h3>
                 {templatesLoading ? (
                   <div className="flex items-center justify-center py-8"><Loader2 size={20} className="animate-spin text-gray-500" /></div>
                 ) : templates.length === 0 ? (
-                  <p className="text-gray-500 text-sm text-center py-8">Chua co template nao</p>
+                  <p className="text-gray-500 text-sm text-center py-8">Chưa có template nào</p>
                 ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                     {templates.map((tpl) => {
@@ -574,14 +574,14 @@ export default function EditCampaignPage() {
 
             <div className="card-dark p-5 space-y-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-[#1B2A4A] font-semibold text-sm">Noi dung HTML</h3>
+                <h3 className="text-[#1B2A4A] font-semibold text-sm">Nội dung HTML</h3>
                 <button onClick={() => setPreviewOpen(true)} disabled={!htmlContent}
                   className="flex items-center gap-1.5 text-xs text-[#E85D04] hover:underline disabled:opacity-40">
-                  <Eye size={12} /> Xem truoc
+                  <Eye size={12} /> Xem trước
                 </button>
               </div>
               <div>
-                <label className="block text-[11px] text-gray-500 mb-1.5">Chen bien:</label>
+                <label className="block text-[11px] text-gray-500 mb-1.5">Chèn biến:</label>
                 <div className="flex flex-wrap gap-1.5">
                   {VARIABLES.map((v) => (
                     <button key={v.label} type="button" onClick={() => insertVariable(v.label)}
@@ -595,10 +595,10 @@ export default function EditCampaignPage() {
               <textarea ref={htmlRef} value={htmlContent} onChange={(e) => setHtmlContent(e.target.value)}
                 rows={16} className="input-dark w-full text-sm resize-none"
                 style={{ fontFamily: "'Fira Code', 'Cascadia Code', monospace", lineHeight: 1.6 }} />
-              <p className="text-[11px] text-gray-500">{htmlContent.length} ky tu</p>
+              <p className="text-[11px] text-gray-500">{htmlContent.length} ký tự</p>
               <details className="group">
                 <summary className="text-xs text-gray-500 cursor-pointer hover:text-gray-300 flex items-center gap-1.5">
-                  <FileText size={12} /> Phien ban plain text (tuy chon)
+                  <FileText size={12} /> Phiên bản plain text (tùy chọn)
                 </summary>
                 <textarea value={textContent} onChange={(e) => setTextContent(e.target.value)}
                   rows={6} className="input-dark w-full text-sm resize-none mt-3" />
@@ -612,21 +612,21 @@ export default function EditCampaignPage() {
           <div className="space-y-4">
             <div className="card-dark p-6 space-y-4">
               <h2 className="text-[#1B2A4A] font-semibold text-base flex items-center gap-2">
-                <Send size={18} className="text-[#E85D04]" /> Xem lai campaign
+                <Send size={18} className="text-[#E85D04]" /> Xem lại campaign
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div><p className="text-[11px] text-gray-500 mb-0.5">Ten campaign</p><p className="text-[#1B2A4A] text-sm">{name || "--"}</p></div>
+                <div><p className="text-[11px] text-gray-500 mb-0.5">Tên campaign</p><p className="text-[#1B2A4A] text-sm">{name || "--"}</p></div>
                 <div><p className="text-[11px] text-gray-500 mb-0.5">Subject line</p><p className="text-[#1B2A4A] text-sm">{subject || "--"}</p></div>
-                <div><p className="text-[11px] text-gray-500 mb-0.5">Nguoi gui</p><p className="text-[#1B2A4A] text-sm">{fromName} &lt;{fromEmail}&gt;</p></div>
-                <div><p className="text-[11px] text-gray-500 mb-0.5">Nguoi nhan</p>
-                  <p className="text-[#1B2A4A] text-sm">{listId ? lists.find((l) => l.id === listId)?.name : "Tat ca subscribers"}
+                <div><p className="text-[11px] text-gray-500 mb-0.5">Người gửi</p><p className="text-[#1B2A4A] text-sm">{fromName} &lt;{fromEmail}&gt;</p></div>
+                <div><p className="text-[11px] text-gray-500 mb-0.5">Người nhận</p>
+                  <p className="text-[#1B2A4A] text-sm">{listId ? lists.find((l) => l.id === listId)?.name : "Tất cả subscribers"}
                     {subscriberCount !== null && <span className="text-gray-500 ml-1">({subscriberCount.toLocaleString("vi-VN")})</span>}
                   </p>
                 </div>
               </div>
               {htmlContent && (
                 <button onClick={() => setPreviewOpen(true)} className="flex items-center gap-1.5 text-xs text-[#E85D04] hover:underline">
-                  <Eye size={12} /> Xem truoc email
+                  <Eye size={12} /> Xem trước email
                 </button>
               )}
             </div>
@@ -634,7 +634,7 @@ export default function EditCampaignPage() {
             {/* Test email */}
             <div className="card-dark p-5 space-y-3">
               <h3 className="text-[#1B2A4A] font-semibold text-sm flex items-center gap-2">
-                <Mail size={15} className="text-[#3b82f6]" /> Gui email test
+                <Mail size={15} className="text-[#3b82f6]" /> Gửi email test
               </h3>
               <div className="flex gap-2">
                 <input type="email" value={testEmail} onChange={(e) => setTestEmail(e.target.value)}
@@ -642,7 +642,7 @@ export default function EditCampaignPage() {
                 <button onClick={sendTest} disabled={testSending || !testEmail}
                   className="px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2"
                   style={{ background: "rgba(59,130,246,0.12)", color: "#3b82f6", border: "1px solid rgba(59,130,246,0.3)" }}>
-                  {testSending ? <Loader2 size={13} className="animate-spin" /> : <Send size={13} />} Gui test
+                  {testSending ? <Loader2 size={13} className="animate-spin" /> : <Send size={13} />} Gửi test
                 </button>
               </div>
               {testResult && <p className="text-xs" style={{ color: testResult.ok ? "#E85D04" : "#ef4444" }}>{testResult.msg}</p>}
@@ -651,7 +651,7 @@ export default function EditCampaignPage() {
             {/* Schedule */}
             <div className="card-dark p-5 space-y-4">
               <h3 className="text-[#1B2A4A] font-semibold text-sm flex items-center gap-2">
-                <Clock size={15} className="text-[#f59e0b]" /> Len lich gui
+                <Clock size={15} className="text-[#f59e0b]" /> Lên lịch gửi
               </h3>
               <div className="flex items-center gap-3">
                 <input type="datetime-local" value={scheduledAt} onChange={(e) => setScheduledAt(e.target.value)} className="input-dark text-sm flex-1" />
@@ -665,13 +665,13 @@ export default function EditCampaignPage() {
                 <button onClick={async () => { await saveDraft(); router.push("/email/campaigns"); }}
                   className="px-6 py-3 rounded-lg text-sm font-medium flex items-center gap-2"
                   style={{ background: "rgba(59,130,246,0.12)", color: "#3b82f6", border: "1px solid rgba(59,130,246,0.3)" }}>
-                  <Clock size={15} /> Len lich gui
+                  <Clock size={15} /> Lên lịch gửi
                 </button>
               )}
               <button onClick={sendNow} disabled={sendingNow || !htmlContent.trim()}
                 className="btn-green flex items-center gap-2 text-sm px-8 py-3 ml-auto">
                 {sendingNow ? <Loader2 size={15} className="animate-spin" /> : <Send size={15} />}
-                {sendingNow ? "Dang xu ly..." : "Gui ngay"}
+                {sendingNow ? "Đang xử lý..." : "Gửi ngay"}
               </button>
             </div>
           </div>
@@ -682,12 +682,12 @@ export default function EditCampaignPage() {
           <button onClick={() => goToStep(Math.max(0, step - 1))} disabled={step === 0}
             className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-[#1B2A4A] transition-colors disabled:opacity-30"
             style={{ border: "1px solid #2a2a2a" }}>
-            <ChevronLeft size={15} /> Quay lai
+            <ChevronLeft size={15} /> Quay lại
           </button>
           {step < STEPS.length - 1 && (
             <button onClick={() => goToStep(step + 1)} disabled={!canProceed(step)}
               className="btn-green flex items-center gap-2 text-sm">
-              Tiep theo <ChevronRight size={15} />
+              Tiếp theo <ChevronRight size={15} />
             </button>
           )}
         </div>
