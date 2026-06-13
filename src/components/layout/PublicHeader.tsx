@@ -15,12 +15,12 @@ interface PublicHeaderProps {
 }
 
 const navLinks = [
-  { label: "Trang ch?", href: "/" },
+  { label: "Trang chủ", href: "/" },
   { label: "Tool AI", href: "/tool-ai" },
   { label: "Combo", href: "/combo" },
-  { label: "Kh�a h?c ?? xu?t", href: "/khoa-hoc-de-xuat" },
-  { label: "T�i nguy�n mi?n ph�", href: "/tai-nguyen-mien-phi" },
-  { label: "C?ng ??ng", href: "https://zalo.me/g/rwbdziccjrlrzxhsbdja", external: true },
+  { label: "Khóa học đề xuất", href: "/khoa-hoc-de-xuat" },
+  { label: "Tài nguyên miễn phí", href: "/tai-nguyen-mien-phi" },
+  { label: "Cộng đồng", href: "https://zalo.me/g/rwbdziccjrlrzxhsbdja", external: true },
 ];
 
 export default function PublicHeader({ user }: PublicHeaderProps) {
@@ -63,7 +63,7 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
           </span>
         </Link>
 
-        {/* Center Nav Links � hidden on mobile */}
+        {/* Center Nav Links — hidden on mobile */}
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) =>
             link.external ? (
@@ -112,7 +112,7 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
                 href="/login"
                 className="text-sm text-gray-300 hover:text-white transition-colors hidden sm:block"
               >
-                ??ng nh?p
+                Đăng nhập
               </Link>
               <Link
                 href="/register"
@@ -122,16 +122,16 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
                   color: "#131921",
                 }}
               >
-                ??ng k�
+                Đăng ký
               </Link>
             </>
           )}
 
-          {/* Hamburger � mobile only */}
+          {/* Hamburger — mobile only */}
           <button
             className="md:hidden flex items-center justify-center w-8 h-8 text-gray-300 hover:text-white transition-colors"
             onClick={() => setMobileOpen((v) => !v)}
-            aria-label="M? menu"
+            aria-label="Mở menu"
           >
             {mobileOpen ? (
               <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
