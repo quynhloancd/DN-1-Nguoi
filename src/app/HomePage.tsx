@@ -158,20 +158,20 @@ export default function HomePage() {
       </section>
 
       {/* ═══ KHỐI 3 — GIẢI PHÁP ═══ */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6" style={{ background: "#F8FAFC" }}>
+      <section className="bg-[#1C2A44] py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-center mb-4">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-center text-white mb-4">
             Không cần học AI quá sâu. Chỉ cần đúng tool, đúng prompt, đúng quy trình.
           </h2>
-          <p className="text-center text-gray-500 max-w-2xl mx-auto mb-12 text-base leading-relaxed">
+          <p className="text-center text-gray-300 max-w-2xl mx-auto mb-12 text-base leading-relaxed">
             Mỗi tool trên Doanh Nghiệp 1 Người được đóng gói theo hướng dùng được ngay: link tool, prompt mẫu, hướng dẫn từng bước, video/demo và group Zalo hỗ trợ.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {features.map((f, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
+              <div key={i} className="bg-white/10 rounded-2xl p-6 border border-white/10 text-center">
                 <div className="text-4xl mb-3">{f.emoji}</div>
-                <h3 className="font-bold text-base mb-2 text-[#1C2A44]">{f.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{f.desc}</p>
+                <h3 className="font-bold text-base mb-2 text-white">{f.title}</h3>
+                <p className="text-sm text-gray-300 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -226,9 +226,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══ KHỐI 5 — COMBO ĐỀ XUẤT ═══ */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6" style={{ background: "#F8FAFC" }}>
+      <section className="bg-[#1C2A44] py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-center mb-10 sm:mb-14">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-center text-white mb-10 sm:mb-14">
             Combo tiết kiệm hơn mua lẻ
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -290,13 +290,14 @@ export default function HomePage() {
               Xem tất cả combo →
             </Link>
           </div>
+
         </div>
       </section>
 
       {/* ═══ KHỐI 6 — TÀI NGUYÊN MIỄN PHÍ ═══ */}
-      <section className="bg-[#1C2A44] py-16 sm:py-24 px-4 sm:px-6">
+      <section className="bg-white py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-center text-white mb-10 sm:mb-14">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-center text-[#1C2A44] mb-10 sm:mb-14">
             Nhận bộ tài nguyên AI miễn phí
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -305,7 +306,7 @@ export default function HomePage() {
               {freeResources.map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span className="mt-0.5 shrink-0 text-xl" style={{ color: "#F97316" }}>✓</span>
-                  <p className="text-white text-base leading-relaxed">{item}</p>
+                  <p className="text-[#1C2A44] text-base leading-relaxed">{item}</p>
                 </div>
               ))}
             </div>
@@ -318,7 +319,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══ KHỐI 7 — GIỚI THIỆU THIÊN HUỆ ═══ */}
-      <section className="bg-white py-16 sm:py-24 px-4 sm:px-6">
+      <section className="bg-[#1C2A44] py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* Ảnh */}
@@ -335,10 +336,10 @@ export default function HomePage() {
             </div>
             {/* Text */}
             <div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1C2A44] mb-5 leading-snug">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-5 leading-snug">
                 Mình là Thiên Huệ — người gom tool và quy trình để bạn dùng AI dễ hơn
               </h2>
-              <p className="text-gray-500 text-base leading-relaxed">
+              <p className="text-gray-300 text-base leading-relaxed">
                 Mình không dạy lý thuyết AI phức tạp. Mình test tool, gom prompt, đóng gói quy trình và hướng dẫn lại bằng cách dễ hiểu để người kinh doanh online một mình có thể tự làm content, ảnh, video và workflow bán hàng nhanh hơn.
               </p>
             </div>
