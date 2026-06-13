@@ -52,14 +52,14 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
         <Link href="/" className="flex items-center gap-2.5">
           <Image
             src={siteConfig.owner.avatar}
-            alt={siteConfig.owner.name}
+            alt={siteConfig.name}
             width={32}
             height={32}
             sizes="32px"
             className="w-8 h-8 rounded-lg object-cover"
           />
           <span className="text-sm font-bold text-white leading-tight hidden sm:block">
-            {siteConfig.owner.name}
+            {siteConfig.name}
           </span>
         </Link>
 
