@@ -15,94 +15,94 @@ interface Combo {
 const COMBOS: Combo[] = [
   {
     slug: "combo-nguoi-moi",
-    title: "Combo Ng??i M?i",
+    title: "Combo Người Mới",
     short_description:
-      "D�nh cho ng??i m?i mu?n th? tool AI d? d�ng. G?m 2-3 tool c? b?n + prompt m?u + group Zalo.",
+      "Dành cho người mới muốn thử tool AI dễ dùng. Gồm 2-3 tool cơ bản + prompt mẫu + group Zalo.",
     price: 299000,
     sale_price: 199000,
     badge: "new",
-    suitable_for: "Ng??i m?i b?t ??u v?i AI, ch?a bi?t d�ng tool n�o",
+    suitable_for: "Người mới bắt đầu với AI, chưa biết dùng tool nào",
     benefits: [
-      "2�3 tool AI c? b?n, d? d�ng ngay",
-      "Prompt m?u c� s?n ?? d�ng li?n",
-      "V�o group Zalo h? tr?",
+      "2–3 tool AI cơ bản, dễ dùng ngay",
+      "Prompt mẫu có sẵn để dùng liền",
+      "Vào group Zalo hỗ trợ",
     ],
   },
   {
     slug: "combo-video-ai",
     title: "Combo Video AI",
     short_description:
-      "D�nh cho ng??i mu?n l�m video nhanh h?n. Tool video th?i trang, h�ng lo?t, storyboard, KOL/podcast.",
+      "Dành cho người muốn làm video nhanh hơn. Tool video thời trang, hàng loạt, storyboard, KOL/podcast.",
     price: 799000,
     sale_price: 499000,
     badge: "recommended",
-    suitable_for: "Creator, ch? shop mu?n l�m video b�n h�ng chuy�n nghi?p",
+    suitable_for: "Creator, chủ shop muốn làm video bán hàng chuyên nghiệp",
     benefits: [
-      "Tool video th?i trang & h�ng lo?t",
-      "Storyboard AI t? ??ng",
+      "Tool video thời trang & hàng loạt",
+      "Storyboard AI tự động",
       "KOL/Podcast AI",
-      "H??ng d?n quy tr�nh th?c chi?n",
+      "Hướng dẫn quy trình thực chiến",
     ],
   },
   {
     slug: "combo-chu-shop-online",
-    title: "Combo Ch? Shop Online",
+    title: "Combo Chủ Shop Online",
     short_description:
-      "D�nh cho ch? shop mu?n t? l�m ?nh, content, video b�n h�ng. Tool content, ?nh s?n ph?m, video ng?n, l?ch ??ng b�i.",
+      "Dành cho chủ shop muốn tự làm ảnh, content, video bán hàng. Tool content, ảnh sản phẩm, video ngắn, lịch đăng bài.",
     price: 999000,
     sale_price: 699000,
     badge: null,
-    suitable_for: "Ch? shop th?i trang, m? ph?m, ?? gia d?ng",
+    suitable_for: "Chủ shop thời trang, mỹ phẩm, đồ gia dụng",
     benefits: [
-      "Tool t?o ?nh s?n ph?m chuy�n nghi?p",
-      "Content b�n h�ng t? ??ng",
-      "Video ng?n b�n h�ng",
-      "L?ch ??ng b�i h�ng tu?n",
+      "Tool tạo ảnh sản phẩm chuyên nghiệp",
+      "Content bán hàng tự động",
+      "Video ngắn bán hàng",
+      "Lịch đăng bài hàng tuần",
     ],
   },
   {
     slug: "combo-doanh-nghiep-1-nguoi",
-    title: "Combo Doanh Nghi?p 1 Ng??i",
+    title: "Combo Doanh Nghiệp 1 Người",
     short_description:
-      "B? tool ??y ?? ?? t? v?n h�nh content m?t m�nh. Nhi?u tool + quy tr�nh + h? tr? ?u ti�n.",
+      "Bộ tool đầy đủ để tự vận hành content một mình. Nhiều tool + quy trình + hỗ trợ ưu tiên.",
     price: 1499000,
     sale_price: 999000,
     badge: "bestseller",
-    suitable_for: "Ng??i mu?n t? v?n h�nh to�n b? content marketing",
+    suitable_for: "Người muốn tự vận hành toàn bộ content marketing",
     benefits: [
-      "To�n b? tool AI th?c chi?n",
-      "Quy tr�nh v?n h�nh content ??y ??",
-      "H? tr? ?u ti�n 1-1",
-      "C?p nh?t tool m?i mi?n ph� 3 th�ng",
+      "Toàn bộ tool AI thực chiến",
+      "Quy trình vận hành content đầy đủ",
+      "Hỗ trợ ưu tiên 1-1",
+      "Cập nhật tool mới miễn phí 3 tháng",
     ],
     highlight: true,
   },
 ];
 
 function formatVND(price: number): string {
-  return price.toLocaleString("vi-VN") + "?";
+  return price.toLocaleString("vi-VN") + "đ";
 }
 
 function BadgeLabel({ badge }: { badge: string | null }) {
   if (!badge) return null;
   const map: Record<string, { label: string; className: string }> = {
     recommended: {
-      label: "?? xu?t",
+      label: "Đề xuất",
       className:
         "border border-orange-400 text-orange-400 bg-orange-400/10 px-2.5 py-0.5 rounded-full text-xs font-semibold",
     },
     bestseller: {
-      label: "B�n ch?y",
+      label: "Bán chạy",
       className:
         "bg-[#F97316] text-white px-2.5 py-0.5 rounded-full text-xs font-semibold",
     },
     sale: {
-      label: "Khuy?n m�i",
+      label: "Khuyến mãi",
       className:
         "bg-red-500 text-white px-2.5 py-0.5 rounded-full text-xs font-semibold",
     },
     new: {
-      label: "M?i",
+      label: "Mới",
       className:
         "bg-blue-500 text-white px-2.5 py-0.5 rounded-full text-xs font-semibold",
     },
@@ -118,10 +118,10 @@ export default function ComboPage() {
       {/* Hero */}
       <section className="bg-[#1C2A44] py-16 px-4 text-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-          Combo Tool AI Cho Doanh Nghi?p 1 Ng??i
+          Combo Tool AI Cho Doanh Nghiệp 1 Người
         </h1>
         <p className="text-slate-300 text-base md:text-lg max-w-2xl mx-auto">
-          Ti?t ki?m h?n mua l? t?ng tool � mua combo ?? c� ?? b? v� ti?t ki?m ??n 40%
+          Tiết kiệm hơn mua lẻ từng tool — mua combo để có đủ bộ và tiết kiệm đến 40%
         </p>
       </section>
 
@@ -193,20 +193,20 @@ export default function ComboPage() {
                             isHighlight ? "text-slate-200" : "text-slate-600"
                           }`}
                         >
-                          <span className="text-green-400 mt-0.5 shrink-0">?</span>
+                          <span className="text-green-400 mt-0.5 shrink-0">✓</span>
                           {b}
                         </li>
                       ))}
                     </ul>
                   )}
 
-                  {/* Ph� h?p v?i ai */}
+                  {/* Phù hợp với ai */}
                   <p
                     className={`text-xs ${
                       isHighlight ? "text-slate-400" : "text-slate-400"
                     }`}
                   >
-                    Ph� h?p v?i: {combo.suitable_for}
+                    Phù hợp với: {combo.suitable_for}
                   </p>
 
                   {/* Spacer */}
@@ -227,7 +227,7 @@ export default function ComboPage() {
                       </span>
                     </div>
                     <p className="text-xs font-medium text-green-400">
-                      Ti?t ki?m {formatVND(saving)} so v?i mua l?
+                      Tiết kiệm {formatVND(saving)} so với mua lẻ
                     </p>
                   </div>
 
@@ -241,7 +241,7 @@ export default function ComboPage() {
                           : "border-slate-300 text-slate-700 hover:border-[#1C2A44] hover:text-[#1C2A44]"
                       }`}
                     >
-                      Xem chi ti?t
+                      Xem chi tiết
                     </Link>
                     <Link
                       href={`/combo/${combo.slug}#mua`}
@@ -257,15 +257,15 @@ export default function ComboPage() {
         </div>
       </section>
 
-      {/* CTA cu?i */}
+      {/* CTA cuối */}
       <section className="bg-white border-t border-[#E2E8F0] py-12 px-4 text-center">
         <p className="text-slate-600 text-base">
-          Ch?a ch?c ch?n combo n�o?{" "}
+          Chưa chắc chọn combo nào?{" "}
           <Link
             href="/tool-ai"
             className="text-[#F97316] font-semibold hover:underline"
           >
-            Xem t?ng tool tr??c ?
+            Xem từng tool trước →
           </Link>
         </p>
       </section>

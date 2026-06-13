@@ -28,29 +28,29 @@ interface Combo {
 }
 
 function formatVND(price: number): string {
-  return price.toLocaleString("vi-VN") + "?";
+  return price.toLocaleString("vi-VN") + "đ";
 }
 
 function BadgeLabel({ badge }: { badge: string | null }) {
   if (!badge) return null;
   const map: Record<string, { label: string; className: string }> = {
     recommended: {
-      label: "?? xu?t",
+      label: "Đề xuất",
       className:
         "border border-orange-400 text-orange-400 bg-orange-400/10 px-3 py-1 rounded-full text-sm font-semibold",
     },
     bestseller: {
-      label: "B�n ch?y",
+      label: "Bán chạy",
       className:
         "bg-[#F97316] text-white px-3 py-1 rounded-full text-sm font-semibold",
     },
     sale: {
-      label: "Khuy?n m�i",
+      label: "Khuyến mãi",
       className:
         "bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold",
     },
     new: {
-      label: "M?i",
+      label: "Mới",
       className:
         "bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold",
     },
@@ -89,7 +89,7 @@ export default async function ComboDetailPage({
   const displayPrice = combo.sale_price ?? combo.price;
   const saving = combo.sale_price ? combo.price - combo.sale_price : 0;
 
-  // T�nh t?ng gi� l? t? c�c tool
+  // Tính tổng giá lẻ từ các tool
   const totalRetailPrice = tools.reduce((sum, t) => {
     const price = (t.tools as { price: number } | null)?.price ?? 0;
     return sum + price;
@@ -117,7 +117,7 @@ export default async function ComboDetailPage({
               href="/combo"
               className="text-slate-400 text-sm hover:text-white transition-colors"
             >
-              ? Xem t?t c? combo
+              ← Xem tất cả combo
             </Link>
             {combo.badge && <BadgeLabel badge={combo.badge} />}
           </div>
@@ -144,7 +144,7 @@ export default async function ComboDetailPage({
             </div>
             {saving > 0 && (
               <p className="text-green-400 text-sm font-medium mb-4">
-                Ti?t ki?m {formatVND(saving)} so v?i gi� g?c
+                Tiết kiệm {formatVND(saving)} so với giá gốc
               </p>
             )}
             <a
@@ -158,11 +158,11 @@ export default async function ComboDetailPage({
       </section>
 
       <div className="max-w-4xl mx-auto px-4 py-12 space-y-12">
-        {/* D�nh cho ai */}
+        {/* Dành cho ai */}
         {combo.suitable_for && (
           <section>
             <h2 className="text-2xl font-bold text-[#1C2A44] mb-4">
-              Combo n�y d�nh cho ai?
+              Combo này dành cho ai?
             </h2>
             <div className="bg-white rounded-xl border border-[#E2E8F0] p-6">
               <p className="text-slate-600 text-base leading-relaxed">
@@ -176,7 +176,7 @@ export default async function ComboDetailPage({
         {tools.length > 0 && (
           <section>
             <h2 className="text-2xl font-bold text-[#1C2A44] mb-4">
-              Combo g?m nh?ng tool n�o?
+              Combo gồm những tool nào?
             </h2>
             <div className="bg-white rounded-xl border border-[#E2E8F0] overflow-hidden">
               {tools.map((tool, idx) => {
@@ -211,21 +211,21 @@ export default async function ComboDetailPage({
           </section>
         )}
 
-        {/* So s�nh gi� l? */}
+        {/* So sánh giá lẻ */}
         {totalRetailPrice > 0 && (
           <section>
             <h2 className="text-2xl font-bold text-[#1C2A44] mb-4">
-              N?u mua l? s? t?n bao nhi�u?
+              Nếu mua lẻ sẽ tốn bao nhiêu?
             </h2>
             <div className="bg-white rounded-xl border border-[#E2E8F0] p-6 space-y-3">
               <div className="flex justify-between text-slate-600">
-                <span>T?ng gi� khi mua l? t?ng tool</span>
+                <span>Tổng giá khi mua lẻ từng tool</span>
                 <span className="font-semibold line-through text-slate-400">
                   {formatVND(totalRetailPrice)}
                 </span>
               </div>
               <div className="flex justify-between text-slate-600">
-                <span>Gi� combo</span>
+                <span>Giá combo</span>
                 <span className="font-bold text-[#F97316]">
                   {formatVND(displayPrice)}
                 </span>
@@ -233,7 +233,7 @@ export default async function ComboDetailPage({
               {savingVsRetail > 0 && (
                 <div className="border-t border-[#E2E8F0] pt-3 flex justify-between">
                   <span className="font-semibold text-[#1C2A44]">
-                    B?n ti?t ki?m ???c
+                    Bạn tiết kiệm được
                   </span>
                   <span className="font-extrabold text-green-500 text-lg">
                     {formatVND(savingVsRetail)}
@@ -248,14 +248,14 @@ export default async function ComboDetailPage({
         {benefits.length > 0 && (
           <section>
             <h2 className="text-2xl font-bold text-[#1C2A44] mb-4">
-              B?n nh?n ???c g�?
+              Bạn nhận được gì?
             </h2>
             <div className="bg-white rounded-xl border border-[#E2E8F0] p-6">
               <ul className="space-y-3">
                 {benefits.map((b, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-600">
                     <span className="text-green-500 font-bold mt-0.5 shrink-0">
-                      ?
+                      ✓
                     </span>
                     {b}
                   </li>
@@ -293,14 +293,14 @@ export default async function ComboDetailPage({
           </div>
           {saving > 0 && (
             <p className="text-green-400 text-sm">
-              Ti?t ki?m {formatVND(saving)} so v?i gi� g?c
+              Tiết kiệm {formatVND(saving)} so với giá gốc
             </p>
           )}
           <a
             href={paymentHref}
             className="inline-block bg-[#F97316] text-white font-bold text-xl px-10 py-4 rounded-xl hover:bg-orange-600 transition-colors mt-2"
           >
-            Mua ngay � {formatVND(displayPrice)}
+            Mua ngay — {formatVND(displayPrice)}
           </a>
         </section>
 
@@ -308,7 +308,7 @@ export default async function ComboDetailPage({
         {faqItems.length > 0 && (
           <section>
             <h2 className="text-2xl font-bold text-[#1C2A44] mb-4">
-              C�u h?i th??ng g?p
+              Câu hỏi thường gặp
             </h2>
             <div className="space-y-4">
               {faqItems.map((item, i) => (
