@@ -10,8 +10,8 @@ function generateSlug(title: string): string {
   return title
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[?-?]/g, "")
-    .replace(/?/g, "d")
+    .replace(/[\u0300-\u036f]/gu, "")
+    .replace(/[\u0111]/gu, "d")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 }
