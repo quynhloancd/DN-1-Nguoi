@@ -5,7 +5,7 @@ import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { Package, Plus, Edit2, ExternalLink } from "lucide-react";
 
 function formatPrice(price: number): string {
-  return price.toLocaleString("vi-VN") + "?";
+  return price.toLocaleString("vi-VN") + "đ";
 }
 
 type ComboStatus = "draft" | "published" | "hidden";
@@ -13,17 +13,17 @@ type ComboStatus = "draft" | "published" | "hidden";
 const STATUS_CONFIG: Record<ComboStatus, { label: string; className: string }> =
   {
     published: {
-      label: "?� xu?t b?n",
+      label: "Đã xuất bản",
       className:
         "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-900/30 text-green-400 border border-green-800/40",
     },
     draft: {
-      label: "B?n nh�p",
+      label: "Bản nháp",
       className:
         "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-gray-800 text-gray-400 border border-gray-700",
     },
     hidden: {
-      label: "?n",
+      label: "Ẩn",
       className:
         "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-900/30 text-red-400 border border-red-800/40",
     },
@@ -35,10 +35,10 @@ function StatusBadge({ status }: { status: ComboStatus }) {
 }
 
 const BADGE_LABELS: Record<string, string> = {
-  recommended: "?? xu?t",
-  bestseller: "B�n ch?y",
-  sale: "Khuy?n m�i",
-  new: "M?i",
+  recommended: "Đề xuất",
+  bestseller: "Bán chạy",
+  sale: "Khuyến mãi",
+  new: "Mới",
 };
 
 export default async function AdminCombosPage() {
@@ -70,8 +70,8 @@ export default async function AdminCombosPage() {
   return (
     <div>
       <TopBar
-        title="Qu?n l� Combo"
-        subtitle="T?o v� qu?n l� c�c combo tool AI"
+        title="Quản lý Combo"
+        subtitle="Tạo và quản lý các combo tool AI"
       />
 
       <div className="p-6 max-w-5xl mx-auto space-y-6">
@@ -79,15 +79,15 @@ export default async function AdminCombosPage() {
         <div className="flex items-center justify-between gap-4">
           <div>
             <h2 className="font-bold text-[#1B2A4A] text-base">
-              Danh s�ch combo
+              Danh sách combo
             </h2>
             <p className="text-xs text-gray-500 mt-0.5">
-              {list.length} combo � {totalPublished} ?� xu?t b?n
+              {list.length} combo • {totalPublished} đã xuất bản
             </p>
           </div>
           <Link href="/admin/combos/new" className="btn-green">
             <Plus size={15} />
-            T?o combo m?i
+            Tạo combo mới
           </Link>
         </div>
 
@@ -104,7 +104,7 @@ export default async function AdminCombosPage() {
               <div className="text-2xl font-bold text-[#1B2A4A] leading-none mb-1">
                 {list.length}
               </div>
-              <div className="text-xs text-gray-500">T?ng combo</div>
+              <div className="text-xs text-gray-500">Tổng combo</div>
             </div>
           </div>
           <div className="stat-card flex items-center gap-4">
@@ -118,7 +118,7 @@ export default async function AdminCombosPage() {
               <div className="text-2xl font-bold text-[#1B2A4A] leading-none mb-1">
                 {totalPublished}
               </div>
-              <div className="text-xs text-gray-500">?� xu?t b?n</div>
+              <div className="text-xs text-gray-500">Đã xuất bản</div>
             </div>
           </div>
           <div className="stat-card flex items-center gap-4">
@@ -132,7 +132,7 @@ export default async function AdminCombosPage() {
               <div className="text-2xl font-bold text-[#1B2A4A] leading-none mb-1">
                 {list.length - totalPublished}
               </div>
-              <div className="text-xs text-gray-500">B?n nh�p / ?n</div>
+              <div className="text-xs text-gray-500">Bản nháp / Ẩn</div>
             </div>
           </div>
         </div>
@@ -142,10 +142,10 @@ export default async function AdminCombosPage() {
           {list.length === 0 && (
             <div className="card-dark flex flex-col items-center justify-center py-16 text-center">
               <Package size={40} className="text-gray-700 mb-3" />
-              <p className="text-gray-500 text-sm">Ch?a c� combo n�o.</p>
+              <p className="text-gray-500 text-sm">Chưa có combo nào.</p>
               <Link href="/admin/combos/new" className="btn-green mt-4">
                 <Plus size={14} />
-                T?o combo ??u ti�n
+                Tạo combo đầu tiên
               </Link>
             </div>
           )}
@@ -186,7 +186,7 @@ export default async function AdminCombosPage() {
                       )}
                     </div>
                     <p className="text-xs text-gray-500 line-clamp-1 mb-1">
-                      {combo.short_description || "Ch?a c� m� t?"}
+                      {combo.short_description || "Chưa có mô tả"}
                     </p>
                     <div className="flex items-center gap-3 text-[11px] text-gray-500">
                       <span className="flex items-center gap-1">
@@ -200,7 +200,7 @@ export default async function AdminCombosPage() {
                 {/* Price */}
                 <div className="flex items-center gap-6 text-xs shrink-0">
                   <div className="text-center min-w-[100px]">
-                    <div className="text-gray-400 mb-0.5">Gi� b�n</div>
+                    <div className="text-gray-400 mb-0.5">Giá bán</div>
                     <div className="font-semibold text-[#E85D04]">
                       {formatPrice(combo.sale_price ?? combo.price ?? 0)}
                     </div>
@@ -229,7 +229,7 @@ export default async function AdminCombosPage() {
                     style={{ border: "1px solid #2a2a2a" }}
                   >
                     <Edit2 size={12} />
-                    S?a
+                    Sửa
                   </Link>
                 </div>
               </div>

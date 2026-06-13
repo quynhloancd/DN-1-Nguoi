@@ -10,8 +10,8 @@ function generateSlug(title: string): string {
   return title
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/gu, "")
-    .replace(/[\u0111]/gu, "d")
+    .replace(/[̀-ͯ]/gu, "")
+    .replace(/[đ]/gu, "d")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 }
@@ -81,7 +81,7 @@ export default function NewToolPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!title || !slug) { setError("T�n v� slug kh�ng ???c ?? tr?ng."); return; }
+    if (!title || !slug) { setError("Tên và slug không được để trống."); return; }
     setSubmitting(true);
     setError(null);
 
@@ -122,7 +122,7 @@ export default function NewToolPage() {
 
   return (
     <div>
-      <TopBar title="Th�m Tool AI m?i" subtitle="?i?n th�ng tin tool AI" />
+      <TopBar title="Thêm Tool AI mới" subtitle="Điền thông tin tool AI" />
       <div className="p-6 max-w-3xl mx-auto">
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && (
@@ -131,16 +131,16 @@ export default function NewToolPage() {
             </div>
           )}
 
-          {/* T�n & Slug */}
+          {/* Tên & Slug */}
           <div className="card-dark p-5 space-y-4">
-            <h3 className="font-semibold text-[#1B2A4A] text-sm">Th�ng tin c? b?n</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">Thông tin cơ bản</h3>
             <div>
-              <label className="label-form">T�n tool *</label>
+              <label className="label-form">Tên tool *</label>
               <input
                 className="input-form"
                 value={title}
                 onChange={(e) => handleTitleChange(e.target.value)}
-                placeholder="VD: Tool T?o Video Th?i Trang"
+                placeholder="VD: Tool Tạo Video Thời Trang"
                 required
               />
             </div>
@@ -154,16 +154,16 @@ export default function NewToolPage() {
               />
             </div>
             <div>
-              <label className="label-form">Danh m?c</label>
+              <label className="label-form">Danh mục</label>
               <select className="input-form" value={categoryId} onChange={(e) => setCategoryId(e.target.value)}>
-                <option value="">-- Ch?n danh m?c --</option>
+                <option value="">-- Chọn danh mục --</option>
                 {categories.map((c) => (
                   <option key={c.id} value={c.id}>{c.name}</option>
                 ))}
               </select>
             </div>
             <div>
-              <label className="label-form">URL ?nh thumbnail</label>
+              <label className="label-form">URL ảnh thumbnail</label>
               <input
                 className="input-form"
                 value={thumbnailUrl}
@@ -173,37 +173,37 @@ export default function NewToolPage() {
             </div>
           </div>
 
-          {/* M� t? */}
+          {/* Mô tả */}
           <div className="card-dark p-5 space-y-4">
-            <h3 className="font-semibold text-[#1B2A4A] text-sm">M� t?</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">Mô tả</h3>
             <div>
-              <label className="label-form">M� t? ng?n</label>
+              <label className="label-form">Mô tả ngắn</label>
               <textarea
                 className="input-form"
                 rows={2}
                 value={shortDescription}
                 onChange={(e) => setShortDescription(e.target.value)}
-                placeholder="1-2 c�u m� t? tool..."
+                placeholder="1-2 câu mô tả tool..."
               />
             </div>
             <div>
-              <label className="label-form">M� t? chi ti?t (HTML)</label>
+              <label className="label-form">Mô tả chi tiết (HTML)</label>
               <textarea
                 className="input-form"
                 rows={4}
                 value={descriptionHtml}
                 onChange={(e) => setDescriptionHtml(e.target.value)}
-                placeholder="<p>N?i dung chi ti?t...</p>"
+                placeholder="<p>Nội dung chi tiết...</p>"
               />
             </div>
           </div>
 
-          {/* Gi� & Badge */}
+          {/* Giá & Badge */}
           <div className="card-dark p-5 space-y-4">
-            <h3 className="font-semibold text-[#1B2A4A] text-sm">Gi� & Tr?ng th�i</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">Giá & Trạng thái</h3>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="label-form">Gi� g?c (VND)</label>
+                <label className="label-form">Giá gốc (VND)</label>
                 <input
                   type="number"
                   className="input-form"
@@ -213,14 +213,14 @@ export default function NewToolPage() {
                 />
               </div>
               <div>
-                <label className="label-form">Gi� b�n (VND)</label>
+                <label className="label-form">Giá bán (VND)</label>
                 <input
                   type="number"
                   className="input-form"
                   value={salePrice}
                   onChange={(e) => setSalePrice(e.target.value)}
                   min={0}
-                  placeholder="?? tr?ng n?u kh�ng gi?m gi�"
+                  placeholder="Để trống nếu không giảm giá"
                 />
               </div>
             </div>
@@ -228,20 +228,20 @@ export default function NewToolPage() {
               <div>
                 <label className="label-form">Badge</label>
                 <select className="input-form" value={badge} onChange={(e) => setBadge(e.target.value)}>
-                  <option value="">-- Kh�ng c� --</option>
-                  <option value="free">Mi?n ph�</option>
-                  <option value="featured">N?i b?t</option>
-                  <option value="bestseller">B�n ch?y</option>
-                  <option value="new">M?i</option>
-                  <option value="sale">Gi?m gi�</option>
+                  <option value="">-- Không có --</option>
+                  <option value="free">Miễn phí</option>
+                  <option value="featured">Nổi bật</option>
+                  <option value="bestseller">Bán chạy</option>
+                  <option value="new">Mới</option>
+                  <option value="sale">Giảm giá</option>
                 </select>
               </div>
               <div>
-                <label className="label-form">Tr?ng th�i</label>
+                <label className="label-form">Trạng thái</label>
                 <select className="input-form" value={status} onChange={(e) => setStatus(e.target.value)}>
-                  <option value="draft">Nh�p</option>
-                  <option value="published">?ang b�n</option>
-                  <option value="hidden">?n</option>
+                  <option value="draft">Nháp</option>
+                  <option value="published">Đang bán</option>
+                  <option value="hidden">Ẩn</option>
                 </select>
               </div>
             </div>
@@ -249,7 +249,7 @@ export default function NewToolPage() {
 
           {/* Links */}
           <div className="card-dark p-5 space-y-4">
-            <h3 className="font-semibold text-[#1B2A4A] text-sm">Links & T�i nguy�n</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">Links & Tài nguyên</h3>
             <div>
               <label className="label-form">URL demo video (YouTube)</label>
               <input className="input-form" value={demoVideoUrl} onChange={(e) => setDemoVideoUrl(e.target.value)} placeholder="https://youtube.com/..." />
@@ -259,41 +259,41 @@ export default function NewToolPage() {
               <input className="input-form" value={toolLink} onChange={(e) => setToolLink(e.target.value)} placeholder="https://..." />
             </div>
             <div>
-              <label className="label-form">URL h??ng d?n</label>
+              <label className="label-form">URL hướng dẫn</label>
               <input className="input-form" value={guideUrl} onChange={(e) => setGuideUrl(e.target.value)} placeholder="https://..." />
             </div>
           </div>
 
-          {/* N?i dung landing page */}
+          {/* Nội dung landing page */}
           <div className="card-dark p-5 space-y-4">
-            <h3 className="font-semibold text-[#1B2A4A] text-sm">N?i dung trang landing</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">Nội dung trang landing</h3>
             <div>
-              <label className="label-form">Prompt m?u</label>
-              <textarea className="input-form" rows={4} value={promptTemplate} onChange={(e) => setPromptTemplate(e.target.value)} placeholder="D�n prompt m?u v�o ?�y..." />
+              <label className="label-form">Prompt mẫu</label>
+              <textarea className="input-form" rows={4} value={promptTemplate} onChange={(e) => setPromptTemplate(e.target.value)} placeholder="Dán prompt mẫu vào đây..." />
             </div>
             <div>
-              <label className="label-form">Ng??i mua nh?n ???c g� (m?i d�ng 1 ?i?m)</label>
-              <textarea className="input-form" rows={4} value={whatYouGet} onChange={(e) => setWhatYouGet(e.target.value)} placeholder="Link tool&#10;Prompt m?u&#10;H??ng d?n chi ti?t" />
+              <label className="label-form">Người mua nhận được gì (mỗi dòng 1 điểm)</label>
+              <textarea className="input-form" rows={4} value={whatYouGet} onChange={(e) => setWhatYouGet(e.target.value)} placeholder="Link tool&#10;Prompt mẫu&#10;Hướng dẫn chi tiết" />
             </div>
             <div>
-              <label className="label-form">Ph� h?p v?i ai (m?i d�ng 1 ??i t??ng)</label>
-              <textarea className="input-form" rows={3} value={suitableFor} onChange={(e) => setSuitableFor(e.target.value)} placeholder="Shop th?i trang&#10;Content creator&#10;Ng??i m?i b?t ??u" />
+              <label className="label-form">Phù hợp với ai (mỗi dòng 1 đối tượng)</label>
+              <textarea className="input-form" rows={3} value={suitableFor} onChange={(e) => setSuitableFor(e.target.value)} placeholder="Shop thời trang&#10;Content creator&#10;Người mới bắt đầu" />
             </div>
           </div>
 
-          {/* Thanh to�n */}
+          {/* Thanh toán */}
           <div className="card-dark p-5 space-y-4">
-            <h3 className="font-semibold text-[#1B2A4A] text-sm">Thanh to�n & CTA</h3>
+            <h3 className="font-semibold text-[#1B2A4A] text-sm">Thanh toán & CTA</h3>
             <div>
-              <label className="label-form">Text n�t CTA</label>
+              <label className="label-form">Text nút CTA</label>
               <input className="input-form" value={ctaText} onChange={(e) => setCtaText(e.target.value)} placeholder="Mua ngay" />
             </div>
             <div>
-              <label className="label-form">Link thanh to�n (PayOS / SePay)</label>
+              <label className="label-form">Link thanh toán (PayOS / SePay)</label>
               <input className="input-form" value={paymentLink} onChange={(e) => setPaymentLink(e.target.value)} placeholder="https://pay.payos.vn/..." />
             </div>
             <div>
-              <label className="label-form">Trang redirect sau thanh to�n</label>
+              <label className="label-form">Trang redirect sau thanh toán</label>
               <input className="input-form" value={redirectAfterPurchase} onChange={(e) => setRedirectAfterPurchase(e.target.value)} placeholder="/cam-on" />
             </div>
           </div>
@@ -304,7 +304,7 @@ export default function NewToolPage() {
               onClick={() => router.push("/admin/tools")}
               className="px-5 py-2.5 rounded-xl text-sm font-medium text-gray-600 border border-gray-300 hover:bg-gray-50"
             >
-              Hu?
+              Hủy
             </button>
             <button
               type="submit"
@@ -312,7 +312,7 @@ export default function NewToolPage() {
               className="btn-green"
             >
               {submitting ? <Loader2 size={15} className="animate-spin" /> : <Plus size={15} />}
-              Th�m tool
+              Thêm tool
             </button>
           </div>
         </form>

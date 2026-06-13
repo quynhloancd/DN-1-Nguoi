@@ -5,31 +5,31 @@ import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { Plus, Edit2, ExternalLink, Wrench } from "lucide-react";
 
 function formatPrice(price: number): string {
-  if (price === 0) return "Mi?n ph�";
-  return price.toLocaleString("vi-VN") + "?";
+  if (price === 0) return "Miễn phí";
+  return price.toLocaleString("vi-VN") + "đ";
 }
 
 const BADGE_LABELS: Record<string, string> = {
-  free: "Mi?n ph�",
-  featured: "N?i b?t",
-  bestseller: "B�n ch?y",
-  new: "M?i",
-  sale: "Gi?m gi�",
+  free: "Miễn phí",
+  featured: "Nổi bật",
+  bestseller: "Bán chạy",
+  new: "Mới",
+  sale: "Giảm giá",
 };
 
 const STATUS_CONFIG: Record<string, { label: string; className: string }> = {
   published: {
-    label: "?ang b�n",
+    label: "Đang bán",
     className:
       "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-900/30 text-green-400 border border-green-800/40",
   },
   draft: {
-    label: "Nh�p",
+    label: "Nháp",
     className:
       "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-gray-800 text-gray-400 border border-gray-700",
   },
   hidden: {
-    label: "?n",
+    label: "Ẩn",
     className:
       "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-900/30 text-red-400 border border-red-800/40",
   },
@@ -67,8 +67,8 @@ export default async function AdminToolsPage() {
   return (
     <div>
       <TopBar
-        title="Qu?n l� Tool AI"
-        subtitle="T?o v� qu?n l� danh s�ch tool AI tr�n n?n t?ng"
+        title="Quản lý Tool AI"
+        subtitle="Tạo và quản lý danh sách tool AI trên nền tảng"
       />
 
       <div className="p-6 max-w-5xl mx-auto space-y-6">
@@ -76,15 +76,15 @@ export default async function AdminToolsPage() {
         <div className="flex items-center justify-between gap-4">
           <div>
             <h2 className="font-bold text-[#1B2A4A] text-base">
-              Danh s�ch Tool AI
+              Danh sách Tool AI
             </h2>
             <p className="text-xs text-gray-500 mt-0.5">
-              {items.length} tool � {publishedCount} ?ang b�n
+              {items.length} tool — {publishedCount} đang bán
             </p>
           </div>
           <Link href="/admin/tools/new" className="btn-green">
             <Plus size={15} />
-            Th�m tool m?i
+            Thêm tool mới
           </Link>
         </div>
 
@@ -101,7 +101,7 @@ export default async function AdminToolsPage() {
               <div className="text-2xl font-bold text-[#1B2A4A] leading-none mb-1">
                 {items.length}
               </div>
-              <div className="text-xs text-gray-500">T?ng tool</div>
+              <div className="text-xs text-gray-500">Tổng tool</div>
             </div>
           </div>
           <div className="stat-card flex items-center gap-4">
@@ -115,7 +115,7 @@ export default async function AdminToolsPage() {
               <div className="text-2xl font-bold text-[#1B2A4A] leading-none mb-1">
                 {publishedCount}
               </div>
-              <div className="text-xs text-gray-500">?ang b�n</div>
+              <div className="text-xs text-gray-500">Đang bán</div>
             </div>
           </div>
         </div>
@@ -125,10 +125,10 @@ export default async function AdminToolsPage() {
           {items.length === 0 && (
             <div className="card-dark flex flex-col items-center justify-center py-16 text-center">
               <Wrench size={40} className="text-gray-700 mb-3" />
-              <p className="text-gray-500 text-sm">Ch?a c� tool n�o.</p>
+              <p className="text-gray-500 text-sm">Chưa có tool nào.</p>
               <Link href="/admin/tools/new" className="btn-green mt-4">
                 <Plus size={14} />
-                Th�m tool ??u ti�n
+                Thêm tool đầu tiên
               </Link>
             </div>
           )}
@@ -175,7 +175,7 @@ export default async function AdminToolsPage() {
                         )}
                       </div>
                       <p className="text-xs text-gray-500 leading-relaxed line-clamp-1 mb-1">
-                        {tool.short_description || "Ch?a c� m� t?"}
+                        {tool.short_description || "Chưa có mô tả"}
                       </p>
                       <div className="flex items-center gap-3 text-[11px] text-gray-500">
                         <span>/tool-ai/{tool.slug}</span>
@@ -190,7 +190,7 @@ export default async function AdminToolsPage() {
 
                   {/* Price */}
                   <div className="text-center shrink-0">
-                    <div className="text-gray-400 text-xs mb-0.5">Gi� b�n</div>
+                    <div className="text-gray-400 text-xs mb-0.5">Giá bán</div>
                     <div className="font-semibold text-[#E85D04] text-sm">
                       {formatPrice(tool.sale_price ?? tool.price ?? 0)}
                     </div>
@@ -217,7 +217,7 @@ export default async function AdminToolsPage() {
                       }}
                     >
                       <Edit2 size={12} />
-                      S?a
+                      Sửa
                     </Link>
                   </div>
                 </div>

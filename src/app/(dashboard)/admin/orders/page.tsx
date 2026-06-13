@@ -21,7 +21,7 @@ import { Suspense } from "react";
 
 const PAGE_SIZE = 20;
 
-// ??? Types ????????????????????????????????????????????????????????????????????
+// --- Types ---
 
 type OrderStatus = "pending" | "paid" | "delivered" | "cancelled" | "refunded" | "error";
 
@@ -43,10 +43,10 @@ interface OrderRow {
   products: { title: string } | null;
 }
 
-// ??? Helpers ??????????????????????????????????????????????????????????????????
+// --- Helpers ---
 
 function formatCurrency(amount: number): string {
-  return amount.toLocaleString("vi-VN") + "?";
+  return amount.toLocaleString("vi-VN") + "đ";
 }
 
 function formatDateTime(iso: string): string {
@@ -67,37 +67,37 @@ const STATUS_CONFIG: Record<
   { label: string; bg: string; color: string; border: string }
 > = {
   paid: {
-    label: "?� thanh to�n",
+    label: "Đã thanh toán",
     bg: "rgba(34,197,94,0.1)",
     color: "#22c55e",
     border: "rgba(34,197,94,0.2)",
   },
   delivered: {
-    label: "?� giao",
+    label: "Đã giao",
     bg: "rgba(232,93,4,0.1)",
     color: "#E85D04",
     border: "rgba(232,93,4,0.2)",
   },
   pending: {
-    label: "Ch? thanh to�n",
+    label: "Chờ thanh toán",
     bg: "rgba(245,158,11,0.1)",
     color: "#f59e0b",
     border: "rgba(245,158,11,0.2)",
   },
   cancelled: {
-    label: "?� hu?",
+    label: "Đã hủy",
     bg: "rgba(107,114,128,0.1)",
     color: "#6b7280",
     border: "rgba(107,114,128,0.2)",
   },
   refunded: {
-    label: "Ho�n ti?n",
+    label: "Hoàn tiền",
     bg: "rgba(239,68,68,0.1)",
     color: "#ef4444",
     border: "rgba(239,68,68,0.2)",
   },
   error: {
-    label: "L?i",
+    label: "Lỗi",
     bg: "rgba(127,29,29,0.15)",
     color: "#b91c1c",
     border: "rgba(127,29,29,0.3)",
@@ -135,7 +135,7 @@ function StatusIcon({ status }: { status: OrderStatus }) {
   }
 }
 
-// ??? Page ?????????????????????????????????????????????????????????????????????
+// --- Page ---
 
 const VALID_STATUSES: OrderStatus[] = ["pending", "paid", "delivered", "refunded", "cancelled", "error"];
 
@@ -175,7 +175,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
   // Fetch orders with product title (bypass RLS)
   const supabase = await createAdminClient();
 
-  // ?? Compute stats and pagination count in parallel ??
+  // Compute stats and pagination count in parallel
   let paginationCountQuery = supabase
     .from("orders")
     .select("*", { count: "exact", head: true });
@@ -257,12 +257,12 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
   return (
     <div>
       <TopBar
-        title="Qu?n l� ??n h�ng"
-        subtitle="Theo d�i thanh to�n v� tr?ng th�i ??n h�ng"
+        title="Quản lý Đơn hàng"
+        subtitle="Theo dõi thanh toán và trạng thái đơn hàng"
       />
 
       <div className="p-6 max-w-7xl mx-auto space-y-6">
-        {/* ?? Stats row ?? */}
+        {/* Stats row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {/* Total orders */}
           <div className="stat-card">
@@ -275,7 +275,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
               </div>
             </div>
             <div className="text-2xl font-bold text-[#1B2A4A]">{totalOrders}</div>
-            <div className="text-xs text-gray-500 mt-0.5">T?ng ??n h�ng</div>
+            <div className="text-xs text-gray-500 mt-0.5">Tổng đơn hàng</div>
           </div>
 
           {/* Paid orders */}
@@ -289,7 +289,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
               </div>
             </div>
             <div className="text-2xl font-bold text-[#1B2A4A]">{paidOrders}</div>
-            <div className="text-xs text-gray-500 mt-0.5">?� thanh to�n</div>
+            <div className="text-xs text-gray-500 mt-0.5">Đã thanh toán</div>
           </div>
 
           {/* Pending orders */}
@@ -303,7 +303,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
               </div>
             </div>
             <div className="text-2xl font-bold text-[#1B2A4A]">{pendingOrders}</div>
-            <div className="text-xs text-gray-500 mt-0.5">Ch? thanh to�n</div>
+            <div className="text-xs text-gray-500 mt-0.5">Chờ thanh toán</div>
           </div>
 
           {/* Total revenue */}
@@ -319,20 +319,20 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
             <div className="text-2xl font-bold text-[#1B2A4A]">
               {formatCurrency(totalRevenue)}
             </div>
-            <div className="text-xs text-gray-500 mt-0.5">Doanh thu (?� thanh to�n)</div>
+            <div className="text-xs text-gray-500 mt-0.5">Doanh thu (Đã thanh toán)</div>
           </div>
         </div>
 
-        {/* ?? Search bar ?? */}
+        {/* Search bar */}
         <Suspense fallback={null}>
           <OrderSearchBar />
         </Suspense>
 
-        {/* ?? Status filter tabs ?? */}
+        {/* Status filter tabs */}
         <div className="flex items-center gap-2 flex-wrap">
           {([null, "pending", "paid", "delivered", "refunded", "error"] as (OrderStatus | null)[]).map((s) => {
             const isActive = statusFilter === s;
-            const label = s === null ? "T?t c?" : STATUS_CONFIG[s]?.label ?? s;
+            const label = s === null ? "Tất cả" : STATUS_CONFIG[s]?.label ?? s;
             return (
               <Link
                 key={s ?? "all"}
@@ -350,7 +350,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
           })}
         </div>
 
-        {/* ?? Bulk delete ?? */}
+        {/* Bulk delete */}
         {canWrite && (
           <BulkDeleteOrders
             orders={rows.map((o) => ({
@@ -363,7 +363,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
           />
         )}
 
-        {/* ?? Orders table ?? */}
+        {/* Orders table */}
         <div className="card-dark overflow-hidden">
           {/* Header */}
           <div
@@ -373,15 +373,15 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
             <span className="text-xs text-gray-500">
               {query ? (
                 <>
-                  T�m th?y{" "}
+                  Tìm thấy{" "}
                   <span className="text-[#1B2A4A] font-medium">{totalFilteredOrders}</span>{" "}
-                  k?t qu? cho &ldquo;
+                  kết quả cho &ldquo;
                   <span className="text-[#E85D04]">{query}</span>&rdquo;
                 </>
               ) : (
                 <>
                   <span className="text-[#1B2A4A] font-medium">{totalFilteredOrders}</span>{" "}
-                  ??n h�ng
+                  đơn hàng
                 </>
               )}
               {totalPages > 1 && (
@@ -397,20 +397,20 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                   border: "1px solid rgba(245,158,11,0.2)",
                 }}
               >
-                {pendingOrders} ??n ch? thanh to�n
+                {pendingOrders} đơn chờ thanh toán
               </span>
             )}
           </div>
 
           {error ? (
             <div className="p-8 text-center text-red-400 text-sm">
-              L?i khi t?i ??n h�ng: {error.message}
+              Lỗi khi tải đơn hàng: {error.message}
             </div>
           ) : rows.length === 0 ? (
             <div className="p-12 text-center text-gray-500 text-sm">
               {query
-                ? "Kh�ng t�m th?y ??n h�ng n�o kh?p v?i t? kho�."
-                : "Ch?a c� ??n h�ng n�o."}
+                ? "Không tìm thấy đơn hàng nào khớp với từ khóa."
+                : "Chưa có đơn hàng nào."}
             </div>
           ) : (
             <div className="overflow-x-auto">
@@ -418,13 +418,13 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                 <thead>
                   <tr style={{ borderBottom: "1px solid #2a2a2a" }}>
                     {[
-                      "M� ??n",
-                      "Kh�ch h�ng",
-                      "S?n ph?m",
-                      "S? ti?n",
-                      "Tr?ng th�i",
-                      "Thanh to�n",
-                      "Ng�y t?o",
+                      "Mã đơn",
+                      "Khách hàng",
+                      "Sản phẩm",
+                      "Số tiền",
+                      "Trạng thái",
+                      "Thanh toán",
+                      "Ngày tạo",
                       "",
                     ].map((col, i) => (
                       <th
@@ -448,17 +448,17 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                             : "none",
                       }}
                     >
-                      {/* M� ??n */}
+                      {/* Mã đơn */}
                       <td className="px-5 py-3.5 whitespace-nowrap">
                         <span className="font-mono text-xs text-gray-400">
                           {order.order_code}
                         </span>
                       </td>
 
-                      {/* Kh�ch h�ng */}
+                      {/* Khách hàng */}
                       <td className="px-5 py-3.5">
                         <div className="font-medium text-[#1B2A4A] text-sm">
-                          {order.customer_name ?? "�"}
+                          {order.customer_name ?? "—"}
                         </div>
                         {order.customer_email && (
                           <div className="text-xs text-gray-500 mt-0.5">
@@ -477,10 +477,10 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                         )}
                       </td>
 
-                      {/* S?n ph?m */}
+                      {/* Sản phẩm */}
                       <td className="px-5 py-3.5">
                         <div className="text-gray-700 text-sm">
-                          {order.product_title ?? order.products?.title ?? "�"}
+                          {order.product_title ?? order.products?.title ?? "—"}
                         </div>
                         {order.product_type && (
                           <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded mt-0.5 inline-block"
@@ -494,24 +494,24 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                         )}
                       </td>
 
-                      {/* S? ti?n */}
+                      {/* Số tiền */}
                       <td className="px-5 py-3.5 whitespace-nowrap">
                         <span className="font-bold text-[#1B2A4A]">
                           {formatCurrency(order.amount)}
                         </span>
                       </td>
 
-                      {/* Tr?ng th�i */}
+                      {/* Trạng thái */}
                       <td className="px-5 py-3.5">
                         <StatusBadge status={order.status} />
                       </td>
 
-                      {/* Thanh to�n */}
+                      {/* Thanh toán */}
                       <td className="px-5 py-3.5 whitespace-nowrap">
                         <div className="flex items-center gap-1.5">
                           <CreditCard size={13} className="text-gray-500" />
                           <span className="text-xs text-gray-400 capitalize">
-                            {order.payment_method ?? "�"}
+                            {order.payment_method ?? "—"}
                           </span>
                           {order.status === "pending" &&
                             bankAccount &&
@@ -537,7 +537,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                         )}
                       </td>
 
-                      {/* Ng�y t?o */}
+                      {/* Ngày tạo */}
                       <td className="px-5 py-3.5 whitespace-nowrap">
                         <span className="text-xs text-gray-500">
                           {formatDateTime(order.created_at)}
@@ -571,7 +571,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
             </div>
           )}
 
-          {/* ?? Pagination ?? */}
+          {/* Pagination */}
           {totalPages > 1 && (
             <div
               className="flex items-center justify-center gap-4 px-4 py-3"
@@ -583,14 +583,14 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                   className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
                   style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
-                  ? Tr??c
+                  ← Trước
                 </Link>
               ) : (
                 <span
                   className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-600 cursor-not-allowed"
                   style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
-                  ? Tr??c
+                  ← Trước
                 </span>
               )}
 
@@ -604,14 +604,14 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                   className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
                   style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
-                  Ti?p ?
+                  Tiếp →
                 </Link>
               ) : (
                 <span
                   className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-600 cursor-not-allowed"
                   style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
                 >
-                  Ti?p ?
+                  Tiếp →
                 </span>
               )}
             </div>
