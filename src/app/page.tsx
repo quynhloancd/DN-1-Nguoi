@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { siteConfig, getBaseUrl } from "@/lib/site-config";
 import HomePage from "./HomePage";
 import FAQJsonLd from "@/components/seo/FAQJsonLd";
+import PublicPageShell from "@/components/layout/PublicPageShell";
 
 const BASE_URL = getBaseUrl();
 
@@ -24,9 +25,9 @@ const homepageFaqs = [
 
 export default function Page() {
   return (
-    <>
+    <PublicPageShell>
       <FAQJsonLd questions={homepageFaqs} />
       <HomePage />
-    </>
+    </PublicPageShell>
   );
 }
