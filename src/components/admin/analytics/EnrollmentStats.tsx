@@ -66,7 +66,7 @@ export default function EnrollmentStats({
     <div className="card-dark p-5">
       {/* Title */}
       <h3 className="text-white font-semibold text-base mb-5">
-        Thống kê ghi danh
+        Thống kê đơn hàng
       </h3>
 
       {/* Mini stat numbers */}
@@ -78,7 +78,7 @@ export default function EnrollmentStats({
               {totalEnrollments.toLocaleString("vi-VN")}
             </span>
           </div>
-          <p className="text-xs text-gray-400">Tổng ghi danh</p>
+          <p className="text-xs text-gray-400">Tổng đơn hàng</p>
         </div>
 
         <div className="text-center">
@@ -88,7 +88,7 @@ export default function EnrollmentStats({
               {activeEnrollments.toLocaleString("vi-VN")}
             </span>
           </div>
-          <p className="text-xs text-gray-400">Đang học</p>
+          <p className="text-xs text-gray-400">Đang xử lý</p>
         </div>
 
         <div className="text-center">
@@ -105,7 +105,7 @@ export default function EnrollmentStats({
       {/* Overall completion progress bar */}
       <div className="mb-5">
         <div className="flex items-center justify-between mb-1.5">
-          <span className="text-xs text-gray-400">Tỷ lệ hoàn thành</span>
+          <span className="text-xs text-gray-400">Tỷ lệ hoàn tất</span>
           <span className="text-xs font-medium text-emerald-400">
             {completionRate}%
           </span>
@@ -124,7 +124,7 @@ export default function EnrollmentStats({
       {/* Top courses list */}
       {topCourses.length > 0 && (
         <div>
-          <p className="text-sm text-gray-400 mb-3">Khóa học nổi bật</p>
+          <p className="text-sm text-gray-400 mb-3">Tool nổi bật</p>
           <div className="space-y-3">
             {topCourses.map((course) => (
               <div key={course.title}>
@@ -133,7 +133,7 @@ export default function EnrollmentStats({
                     {course.title}
                   </span>
                   <span className="text-xs text-gray-400">
-                    {course.enrollments} học viên
+                    {course.enrollments} khách mua
                   </span>
                 </div>
                 <div
@@ -149,7 +149,7 @@ export default function EnrollmentStats({
                   />
                 </div>
                 <p className="text-xs text-gray-500 mt-0.5">
-                  {course.completionRate}% hoàn thành
+                  {course.completionRate}% hoàn tất
                 </p>
               </div>
             ))}

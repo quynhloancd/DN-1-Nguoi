@@ -128,8 +128,8 @@ export default async function AdminCoursesPage() {
   return (
     <div>
       <TopBar
-        title="Quản lý Khoá học"
-        subtitle="Tạo và quản lý nội dung khoá học trên nền tảng"
+        title="Khoá học đề xuất"
+        subtitle="Quản lý các khoá học đề xuất trên nền tảng"
       />
 
       <div className="p-6 max-w-5xl mx-auto space-y-6">
@@ -137,10 +137,10 @@ export default async function AdminCoursesPage() {
         <div className="flex items-center justify-between gap-4">
           <div>
             <h2 className="font-bold text-[#1B2A4A] text-base">
-              Danh sách khoá học
+              Danh sách khoá học đề xuất
             </h2>
             <p className="text-xs text-gray-500 mt-0.5">
-              {totalCourses} khoá học đang quản lý
+              {totalCourses} khoá học đề xuất đang quản lý
             </p>
           </div>
           <Link href="/admin/courses/new" className="btn-green">

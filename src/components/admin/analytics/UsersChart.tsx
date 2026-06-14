@@ -64,7 +64,7 @@ export default function UsersChart({ data, groupBy, loading }: UsersChartProps) 
 
   return (
     <div className="card-dark p-5">
-      <h3 className="mb-4 text-lg font-semibold text-white">Tăng trưởng học viên</h3>
+      <h3 className="mb-4 text-lg font-semibold text-white">Tăng trưởng khách hàng</h3>
       <div className="h-[300px] w-full">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={formattedData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
@@ -99,7 +99,7 @@ export default function UsersChart({ data, groupBy, loading }: UsersChartProps) 
             <Area
               type="monotone"
               dataKey="newUsers"
-              name="New Users"
+              name="Khách hàng mới"
               stroke="#3b82f6"
               fill="url(#colorNewUsers)"
               fillOpacity={1}
@@ -108,7 +108,7 @@ export default function UsersChart({ data, groupBy, loading }: UsersChartProps) 
             <Area
               type="monotone"
               dataKey="newEnrollments"
-              name="New Enrollments"
+              name="Đơn hàng mới"
               stroke="#10b981"
               fill="url(#colorNewEnrollments)"
               fillOpacity={1}

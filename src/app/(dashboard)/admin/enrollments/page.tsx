@@ -160,15 +160,15 @@ export default async function AdminEnrollmentsPage({
   const errorMessages: Record<string, string> = {
     missing_fields: "Vui lòng nhập email và tích chọn ít nhất 1 khoá học.",
     user_not_found: "Không tìm thấy tài khoản với email này.",
-    already_enrolled: "Học viên đã được cấp quyền khoá học này.",
+    already_enrolled: "Khách hàng đã được cấp quyền khoá học này.",
     failed: "Có lỗi xảy ra. Vui lòng thử lại.",
   };
 
   return (
     <div>
       <TopBar
-        title="Cấp quyền Khoá học"
-        subtitle="Quản lý quyền truy cập khoá học cho học viên"
+        title="Cấp quyền truy cập"
+        subtitle="Quản lý quyền truy cập khoá học cho khách hàng"
       />
 
       <div className="p-6 max-w-7xl mx-auto space-y-6">
@@ -225,13 +225,13 @@ export default async function AdminEnrollmentsPage({
             </div>
             <div>
               <h2 className="text-sm font-semibold text-[#1B2A4A]">Cấp quyền khoá học</h2>
-              <p className="text-xs text-gray-500">Nhập email học viên và chọn khoá học để cấp quyền</p>
+              <p className="text-xs text-gray-500">Nhập email khách hàng và chọn khoá học để cấp quyền</p>
             </div>
           </div>
 
           <form action={grantCourseAccess} className="space-y-4">
             <div>
-              <label className="block text-xs text-gray-700 mb-1.5 font-medium">Email học viên</label>
+              <label className="block text-xs text-gray-700 mb-1.5 font-medium">Email khách hàng</label>
               <input
                 type="email"
                 name="email"
@@ -313,7 +313,7 @@ export default async function AdminEnrollmentsPage({
               <table className="w-full text-sm">
                 <thead>
                   <tr style={{ borderBottom: "1px solid #2a2a2a" }}>
-                    {["Học viên", "Khoá học", "Nguồn", "Ngày cấp", "Hành động"].map(
+                    {["Khách hàng", "Khoá học", "Nguồn", "Ngày cấp", "Hành động"].map(
                       (col) => (
                         <th
                           key={col}

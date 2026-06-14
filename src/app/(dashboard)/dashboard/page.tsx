@@ -11,14 +11,14 @@ import {
 import FeaturedCourses from "@/components/dashboard/FeaturedCourses";
 
 const quickCards = [
-  { href: "/courses", icon: BookOpen, color: "#E85D04", bg: "rgba(212,168,67,0.1)", label: "Khoá học của tôi", desc: "Xem và học các khoá học" },
-  { href: "/resources", icon: FolderOpen, color: "#3b82f6", bg: "rgba(59,130,246,0.1)", label: "Tài nguyên", desc: "Templates, tài liệu hỗ trợ" },
+  { href: "/courses", icon: BookOpen, color: "#E85D04", bg: "rgba(212,168,67,0.1)", label: "Khoá học đề xuất", desc: "Học cách dùng tool hiệu quả" },
+  { href: "/resources", icon: FolderOpen, color: "#3b82f6", bg: "rgba(59,130,246,0.1)", label: "Tài nguyên của tôi", desc: "Templates, tài liệu hỗ trợ" },
   { href: "/community", icon: Users, color: "#a855f7", bg: "rgba(168,85,247,0.1)", label: "Cộng đồng", desc: "Kết nối & học hỏi cùng nhau" },
 ];
 
 /* Mobile-only quick access — compact, action-oriented */
 const mobileQuickAccess = [
-  { href: "/courses", icon: BookOpen, color: "#E85D04", bg: "rgba(212,168,67,0.1)", label: "Khoá học của tôi" },
+  { href: "/courses", icon: BookOpen, color: "#E85D04", bg: "rgba(212,168,67,0.1)", label: "Khoá học đề xuất" },
   { href: "/notifications", icon: Bell, color: "#ef4444", bg: "rgba(239,68,68,0.1)", label: "Thông báo" },
   { href: "/community", icon: Users, color: "#a855f7", bg: "rgba(168,85,247,0.1)", label: "Cộng đồng" },
 ];
@@ -146,7 +146,7 @@ export default async function DashboardPage() {
               Chào {displayName}! 👋
             </h2>
             <p className="text-sm text-gray-400 mt-0.5">
-              Tiếp tục hành trình học tập hôm nay
+              Khám phá kho tool AI cho việc kinh doanh của bạn hôm nay
             </p>
           </div>
 
@@ -254,7 +254,7 @@ export default async function DashboardPage() {
                 Xin chào, {displayName}! 👋
               </h2>
               <p className="text-gray-400 text-sm mb-4">
-                Tiếp tục hành trình học tập của bạn hôm nay.
+                Khám phá kho tool AI cho việc kinh doanh của bạn hôm nay.
               </p>
               <div className="flex items-center gap-4 text-sm">
                 <span className="flex items-center gap-1.5 text-gray-300">

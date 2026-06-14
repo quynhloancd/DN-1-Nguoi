@@ -23,7 +23,7 @@ const ROLE_OPTIONS: { value: Role; label: string }[] = [
   { value: "marketing", label: "Marketing" },
   { value: "sale", label: "Sale" },
   { value: "support", label: "CSKH" },
-  { value: "student", label: "Học viên" },
+  { value: "student", label: "Khách hàng" },
 ];
 
 const roleConfig: Record<Role, { label: string; bg: string; color: string; border: string }> = {
@@ -32,7 +32,7 @@ const roleConfig: Record<Role, { label: string; bg: string; color: string; borde
   marketing: { label: "Marketing", bg: "rgba(59,130,246,0.1)", color: "#3b82f6", border: "rgba(59,130,246,0.25)" },
   sale: { label: "Sale", bg: "rgba(245,158,11,0.1)", color: "#f59e0b", border: "rgba(245,158,11,0.25)" },
   support: { label: "CSKH", bg: "rgba(212,168,67,0.1)", color: "#E85D04", border: "rgba(212,168,67,0.25)" },
-  student: { label: "Học viên", bg: "rgba(107,114,128,0.1)", color: "#6b7280", border: "rgba(107,114,128,0.25)" },
+  student: { label: "Khách hàng", bg: "rgba(107,114,128,0.1)", color: "#6b7280", border: "rgba(107,114,128,0.25)" },
 };
 
 // ─── Auth guard: CHỈ admin ───────────────────────────────────────────────────

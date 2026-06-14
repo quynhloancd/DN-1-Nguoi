@@ -89,7 +89,7 @@ export default function InstructorDashboardPage() {
 
   return (
     <div>
-      <TopBar title="Giảng viên" subtitle="Quản lý khoá học" />
+      <TopBar title="Giảng viên" subtitle="Quản lý khoá học đề xuất" />
 
       <div className="p-4 sm:p-6 max-w-6xl mx-auto space-y-6 sm:space-y-8">
         {/* Welcome */}

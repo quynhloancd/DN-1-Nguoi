@@ -96,7 +96,7 @@ export default function AvgStats({
       color: "#f59e0b",
     },
     {
-      label: "Học viên mới TB/ngày",
+      label: "Khách hàng mới TB/ngày",
       value: formatDecimal(newUsers / days),
       subtitle: `Trong ${days} ngày`,
       icon: <UserPlus size={18} />,

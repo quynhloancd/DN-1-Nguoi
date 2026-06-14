@@ -20,7 +20,7 @@ export default async function AnalyticsPage() {
     <div>
       <TopBar
         title="Analytics Dashboard"
-        subtitle="Phân tích doanh thu, học viên, đơn hàng và hiệu suất sản phẩm"
+        subtitle="Phân tích doanh thu, khách hàng, đơn hàng và hiệu suất tool"
       />
       <div className="p-6 max-w-7xl mx-auto">
         <AnalyticsDashboard />

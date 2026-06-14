@@ -180,7 +180,7 @@ export default function AdminPromotionsPage() {
   return (
     <div>
       <TopBar
-        title="Quảng cáo đầu trang"
+        title="Banner / Quảng cáo"
         subtitle="Quản lý banner quảng cáo hiển thị trên Dashboard"
       />
 

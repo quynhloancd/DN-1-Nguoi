@@ -86,7 +86,7 @@ export default function DeleteCourseButton({ courseId, courseTitle }: DeleteCour
 
             <p className="text-xs text-gray-500 leading-relaxed">
               Tất cả dữ liệu liên quan sẽ bị xoá vĩnh viễn bao gồm: chương, bài học,
-              tiến độ học viên, đơn hàng và enrollment.
+              tiến độ khách hàng, đơn hàng và quyền truy cập.
             </p>
 
             <div className="flex items-center gap-3 pt-2">

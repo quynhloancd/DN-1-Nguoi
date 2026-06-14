@@ -329,7 +329,7 @@ function ProfileTab({
         ) : (
           <div className="space-y-3">
             <p className="text-sm text-gray-400">
-              Liên kết tài khoản Zalo để nhận thông báo đơn hàng, bài học mới và nhắc nhở học tập qua Zalo.
+              Liên kết tài khoản Zalo để nhận thông báo đơn hàng, tool mới và nhắc nhở quan trọng qua Zalo.
             </p>
             <div className="p-3 rounded-lg text-xs text-gray-400 space-y-2" style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}>
               <p className="font-medium text-gray-700">Cách liên kết:</p>

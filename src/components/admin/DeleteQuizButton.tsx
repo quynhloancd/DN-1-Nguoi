@@ -88,7 +88,7 @@ export default function DeleteQuizButton({
             </div>
 
             <p className="text-xs text-gray-500 leading-relaxed">
-              Tất cả câu hỏi và lịch sử làm bài của học viên sẽ bị xoá vĩnh
+              Tất cả câu hỏi và lịch sử làm bài của khách hàng sẽ bị xoá vĩnh
               viễn.
             </p>
 

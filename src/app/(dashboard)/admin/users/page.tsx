@@ -126,7 +126,7 @@ const roleConfig: Record<Role, { label: string; bg: string; color: string; borde
     border: "rgba(212,168,67,0.25)",
   },
   student: {
-    label: "Học viên",
+    label: "Khách hàng",
     bg: "rgba(107,114,128,0.1)",
     color: "#9ca3af",
     border: "rgba(107,114,128,0.25)",
@@ -404,8 +404,8 @@ export default async function AdminUsersPage({
   return (
     <div>
       <TopBar
-        title="Quản lý Người dùng"
-        subtitle={`${allUsers.length} người dùng`}
+        title="Quản lý Khách hàng"
+        subtitle={`${allUsers.length} khách hàng`}
       />
 
       <div className="p-6 max-w-7xl mx-auto space-y-6">
@@ -687,7 +687,7 @@ export default async function AdminUsersPage({
             style={{ borderBottom: "1px solid #2a2a2a" }}
           >
             <span className="text-xs text-gray-500">
-              <span className="text-[#1B2A4A] font-semibold">{totalFiltered}</span> người dùng
+              <span className="text-[#1B2A4A] font-semibold">{totalFiltered}</span> khách hàng
               {searchQuery && " (đã lọc)"}
               {totalPages > 1 && (
                 <> &middot; Trang {safePage}/{totalPages}</>
@@ -701,7 +701,7 @@ export default async function AdminUsersPage({
                 <tr style={{ borderBottom: "1px solid #2a2a2a" }}>
                   {(activeTab === "paid"
                     ? ["Khách hàng", "Doanh thu", "Đơn hàng", "Vai trò & Hạng", "Đơn gần nhất", "Ngày tham gia"]
-                    : ["Người dùng", "Vai trò & Hạng", "XP / Level", "Streak", "Đăng nhập cuối", "Ngày tham gia"]
+                    : ["Khách hàng", "Vai trò & Hạng", "XP / Level", "Streak", "Đăng nhập cuối", "Ngày tham gia"]
                   ).map((col) => (
                     <th
                       key={col}
@@ -722,8 +722,8 @@ export default async function AdminUsersPage({
                       className="px-4 py-12 text-center text-gray-500 text-sm"
                     >
                       {searchQuery
-                        ? "Không tìm thấy người dùng phù hợp."
-                        : "Chưa có người dùng nào trong nhóm này."}
+                        ? "Không tìm thấy khách hàng phù hợp."
+                        : "Chưa có khách hàng nào trong nhóm này."}
                     </td>
                   </tr>
                 ) : (

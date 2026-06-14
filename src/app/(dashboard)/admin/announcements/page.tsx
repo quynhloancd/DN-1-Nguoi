@@ -197,7 +197,7 @@ export default function AnnouncementsPage() {
                 />
                 <span className={`text-sm flex items-center gap-1.5 ${postToCommunity ? "text-gray-400" : "text-gray-600"}`}>
                   <Mail size={14} />
-                  Gửi email cho toàn bộ học viên
+                  Gửi email cho toàn bộ khách hàng
                 </span>
               </label>
             </div>
@@ -205,7 +205,7 @@ export default function AnnouncementsPage() {
             {sendEmail && postToCommunity && (
               <div className="px-3 py-2 rounded-lg bg-amber-900/20 border border-amber-800/30">
                 <p className="text-xs text-amber-400">
-                  Email sẽ được gửi cho tất cả học viên. Hành động không thể hoàn tác.
+                  Email sẽ được gửi cho tất cả khách hàng. Hành động không thể hoàn tác.
                 </p>
               </div>
             )}

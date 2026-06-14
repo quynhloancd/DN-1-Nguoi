@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import {
   Users, BookOpen, ShoppingCart, FileText, Mail,
-  TrendingUp, Plus, Settings, ArrowRight, AlertCircle, DollarSign
+  TrendingUp, Plus, Settings, ArrowRight, AlertCircle, DollarSign, Wrench, Package
 } from "lucide-react";
 import AnalyticsDashboard from "@/components/admin/analytics/AnalyticsDashboardWrapper";
 import UserAvatar from "@/components/admin/UserAvatar";
@@ -81,7 +81,7 @@ export default async function AdminPage() {
       color: "#f59e0b",
     },
     {
-      label: "Tổng học viên",
+      label: "Tổng khách hàng",
       value: (userCount ?? 0).toLocaleString("vi-VN"),
       change: "tài khoản",
       color: "#3b82f6",
@@ -107,9 +107,9 @@ export default async function AdminPage() {
     {
       href: "/admin/users",
       icon: Users,
-      title: "Quản lý học viên",
-      desc: "Xem danh sách, phân quyền và theo dõi tiến độ học viên",
-      count: `${(userCount ?? 0).toLocaleString("vi-VN")} học viên`,
+      title: "Khách hàng",
+      desc: "Xem danh sách, phân quyền và theo dõi đơn hàng / khách hàng",
+      count: `${(userCount ?? 0).toLocaleString("vi-VN")} khách hàng`,
       color: "#3b82f6",
       actions: ["Thêm thủ công", "Xuất Excel"],
     },
@@ -237,10 +237,10 @@ export default async function AdminPage() {
         <div className="grid md:grid-cols-2 gap-6">
           {/* Recent users */}
           <div>
-            <h2 className="font-bold text-[#1B2A4A] mb-3 text-sm">Học viên mới đăng ký</h2>
+            <h2 className="font-bold text-[#1B2A4A] mb-3 text-sm">Khách hàng mới</h2>
             <div className="card-dark divide-y divide-[#2a2a2a]">
               {(recentUsers ?? []).length === 0 && (
-                <div className="p-4 text-sm text-gray-500">Chưa có học viên nào.</div>
+                <div className="p-4 text-sm text-gray-500">Chưa có khách hàng nào.</div>
               )}
               {(recentUsers ?? []).map((u, i) => (
                 <div key={i} className="flex items-center gap-3 p-3 hover:bg-[#F0F1F3] transition-colors">
@@ -303,10 +303,10 @@ export default async function AdminPage() {
           <h2 className="font-bold text-[#1B2A4A] mb-3 text-sm">Thao tác nhanh</h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
             {[
-              { label: "Thêm khoá học", icon: BookOpen, color: "#E85D04", href: "/admin/courses" },
+              { label: "Thêm Tool AI", icon: Wrench, color: "#F97316", href: "/admin/tools" },
+              { label: "Thêm Combo", icon: Package, color: "#E85D04", href: "/admin/combos" },
               { label: "Xem đơn hàng", icon: ShoppingCart, color: "#f59e0b", href: "/admin/orders" },
-              { label: "Gửi newsletter", icon: Mail, color: "#3b82f6", href: "/email" },
-              { label: "Quản lý học viên", icon: Users, color: "#8b5cf6", href: "/admin/users" },
+              { label: "Khách hàng", icon: Users, color: "#8b5cf6", href: "/admin/users" },
               { label: "Cài đặt", icon: Settings, color: "#6b7280", href: "/settings" },
             ].map((item) => (
               <Link

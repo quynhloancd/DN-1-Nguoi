@@ -146,7 +146,7 @@ export default function AdminQuestionsPage() {
   if (loading) {
     return (
       <div>
-        <TopBar title="Câu hỏi học viên" subtitle="Đang tải..." />
+        <TopBar title="Hỗ trợ khách hàng" subtitle="Đang tải..." />
         <div className="flex items-center justify-center h-64">
           <Loader2 className="animate-spin text-gray-500" size={24} />
         </div>
@@ -159,7 +159,7 @@ export default function AdminQuestionsPage() {
   return (
     <div>
       <TopBar
-        title="Câu hỏi học viên"
+        title="Hỗ trợ khách hàng"
         subtitle={`${pendingCount} câu hỏi chờ phản hồi`}
       />
 

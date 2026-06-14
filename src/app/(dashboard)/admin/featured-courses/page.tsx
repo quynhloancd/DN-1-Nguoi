@@ -214,7 +214,7 @@ export default function AdminFeaturedCoursesPage() {
   return (
     <div>
       <TopBar
-        title="Khoá học nổi bật"
+        title="Khoá học đề xuất nổi bật"
         subtitle="Quản lý khoá học quảng bá trên Dashboard (tối đa 3)"
       />
 

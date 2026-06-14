@@ -29,8 +29,10 @@ const courseSubNav = [
 
 const mainNav = [
   { href: "/dashboard", icon: LayoutDashboard, label: "Tổng quan" },
+  { href: "/tool-ai", icon: Wrench, label: "Tool AI" },
+  { href: "/combo", icon: Package, label: "Combo" },
   { href: "/sanphamso", icon: ShoppingBag, label: "Sản phẩm" },
-  { href: "/courses", icon: BookOpen, label: "Khoá học", subNav: courseSubNav },
+  { href: "/courses", icon: BookOpen, label: "Khoá học đề xuất", subNav: courseSubNav },
   { href: "/resources", icon: FolderOpen, label: "Tài nguyên" },
   { href: "/community", icon: Users, label: "Cộng đồng" },
   { href: "/blog", icon: FileText, label: "Blog" },

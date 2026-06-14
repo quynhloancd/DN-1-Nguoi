@@ -14,7 +14,7 @@ interface UserRoleEditorProps {
 }
 
 const roleOptions: { value: Role; label: string }[] = [
-  { value: "student", label: "Học viên" },
+  { value: "student", label: "Khách hàng" },
   { value: "support", label: "CSKH" },
   { value: "sale", label: "Sale" },
   { value: "marketing", label: "Marketing" },

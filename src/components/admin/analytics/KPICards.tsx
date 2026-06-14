@@ -128,7 +128,7 @@ export default function KPICards({
       color: "#f59e0b",
     },
     {
-      label: "Học viên mới",
+      label: "Khách hàng mới",
       value: formatNumber(newUsers),
       percentChange: calcPercentChange(newUsers, prevUsers),
       icon: <Users size={20} />,
