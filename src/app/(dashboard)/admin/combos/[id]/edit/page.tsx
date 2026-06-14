@@ -35,6 +35,18 @@ export default function EditComboPage() {
   const [faqRaw, setFaqRaw] = useState("");
   const [sortOrder, setSortOrder] = useState(0);
 
+  // Danh sách tool trong combo (trường 8)
+  const [allTools, setAllTools] = useState<{ id: string; title: string }[]>([]);
+  const [selectedToolIds, setSelectedToolIds] = useState<string[]>([]);
+
+  function toggleTool(toolId: string) {
+    setSelectedToolIds((prev) =>
+      prev.includes(toolId)
+        ? prev.filter((t) => t !== toolId)
+        : [...prev, toolId]
+    );
+  }
+
   useEffect(() => {
     async function load() {
       const {
@@ -85,6 +97,25 @@ export default function EditComboPage() {
           : ""
       );
       setSortOrder(combo.sort_order ?? 0);
+
+      // Tải danh sách tool và các tool đang nằm trong combo
+      const { data: tools } = await supabase
+        .from("tools")
+        .select("id, title")
+        .order("title", { ascending: true });
+      setAllTools(tools ?? []);
+
+      const { data: comboTools } = await supabase
+        .from("combo_tools")
+        .select("tool_id")
+        .eq("combo_id", id)
+        .order("sort_order", { ascending: true });
+      setSelectedToolIds(
+        (comboTools ?? [])
+          .map((ct) => ct.tool_id as string | null)
+          .filter((t): t is string => !!t)
+      );
+
       setLoading(false);
     }
     load();
@@ -136,6 +167,34 @@ export default function EditComboPage() {
       setSubmitting(false);
       return;
     }
+
+    // Đồng bộ danh sách tool trong combo: xóa cũ, thêm mới
+    const { error: delCtError } = await supabase
+      .from("combo_tools")
+      .delete()
+      .eq("combo_id", id);
+    if (delCtError) {
+      setError("Lỗi khi cập nhật tool: " + delCtError.message);
+      setSubmitting(false);
+      return;
+    }
+    if (selectedToolIds.length > 0) {
+      const rows = selectedToolIds.map((toolId, index) => ({
+        combo_id: id,
+        tool_id: toolId,
+        tool_title: allTools.find((t) => t.id === toolId)?.title ?? "",
+        sort_order: index,
+      }));
+      const { error: insCtError } = await supabase
+        .from("combo_tools")
+        .insert(rows);
+      if (insCtError) {
+        setError("Lỗi khi lưu tool: " + insCtError.message);
+        setSubmitting(false);
+        return;
+      }
+    }
+
     setSuccess(true);
     setSubmitting(false);
   }
@@ -311,6 +370,38 @@ export default function EditComboPage() {
                 <option value="hidden">Ẩn</option>
               </select>
             </div>
+          </div>
+
+          {/* Danh sách tool trong combo */}
+          <div>
+            <label className="block text-sm text-gray-700 mb-1.5">
+              Tool nằm trong combo
+            </label>
+            {allTools.length === 0 ? (
+              <p className="text-xs text-gray-500">
+                Chưa có tool nào. Hãy tạo tool trước.
+              </p>
+            ) : (
+              <div className="max-h-56 overflow-y-auto rounded-lg border border-gray-200 divide-y divide-gray-100">
+                {allTools.map((tool) => (
+                  <label
+                    key={tool.id}
+                    className="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-700 cursor-pointer hover:bg-orange-50"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={selectedToolIds.includes(tool.id)}
+                      onChange={() => toggleTool(tool.id)}
+                      className="w-4 h-4 accent-[#F97316]"
+                    />
+                    {tool.title}
+                  </label>
+                ))}
+              </div>
+            )}
+            <p className="text-xs text-gray-500 mt-1">
+              Đã chọn {selectedToolIds.length} tool
+            </p>
           </div>
 
           {/* Lợi ích */}

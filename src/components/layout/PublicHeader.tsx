@@ -19,9 +19,11 @@ const navLinks = [
   { label: "Tool AI", href: "/tool-ai" },
   { label: "Combo", href: "/combo" },
   { label: "Khóa học đề xuất", href: "/khoa-hoc-de-xuat" },
-  { label: "Tài nguyên miễn phí", href: "/tai-nguyen-mien-phi" },
+  { label: "Blog", href: "/blog" },
   { label: "Cộng đồng", href: "https://zalo.me/g/rwbdziccjrlrzxhsbdja", external: true },
 ];
+
+const FREE_RESOURCE_HREF = "/tai-nguyen-mien-phi";
 
 export default function PublicHeader({ user }: PublicHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -41,17 +43,17 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
     <header
       className="fixed top-0 left-0 right-0 z-50"
       style={{
-        background: "rgba(10,10,10,0.92)",
+        background: "#1C2A44",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
-        borderBottom: "1px solid #1a1a1a",
+        borderBottom: "1px solid rgba(255,255,255,0.08)",
       }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 h-14">
         {/* Left: Logo */}
         <Link href="/" className="flex items-center gap-2.5">
           <Image
-            src={siteConfig.owner.avatar}
+            src="/anh/logo.png"
             alt={siteConfig.name}
             width={32}
             height={32}
@@ -72,7 +74,7 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-300 hover:text-white transition-colors"
+                className="text-sm text-gray-200 hover:text-white transition-colors"
               >
                 {link.label}
               </a>
@@ -80,7 +82,7 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-300 hover:text-white transition-colors"
+                className="text-sm text-gray-200 hover:text-white transition-colors"
               >
                 {link.label}
               </Link>
@@ -90,6 +92,21 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
 
         {/* Right side */}
         <div className="flex items-center gap-3">
+          {/* CTA cam: Nhận tài nguyên miễn phí */}
+          <Link
+            href={FREE_RESOURCE_HREF}
+            className="hidden sm:inline-block text-sm font-semibold py-1.5 px-4 rounded-lg transition-colors text-white"
+            style={{ background: "#F97316" }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "#EA580C";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "#F97316";
+            }}
+          >
+            Nhận tài nguyên miễn phí
+          </Link>
+
           {user ? (
             <>
               {/* Avatar */}
@@ -97,11 +114,11 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
                 src={user.avatar_url}
                 initials={initials}
                 size={32}
-                gradient="linear-gradient(135deg, #E85D04, #059669)"
+                gradient="linear-gradient(135deg, #F97316, #059669)"
               />
               <Link
                 href="/dashboard"
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                className="text-sm font-medium text-gray-200 hover:text-white transition-colors"
               >
                 Dashboard
               </Link>
@@ -110,16 +127,19 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
             <>
               <Link
                 href="/login"
-                className="text-sm text-gray-300 hover:text-white transition-colors hidden sm:block"
+                className="text-sm text-gray-200 hover:text-white transition-colors hidden sm:block"
               >
                 Đăng nhập
               </Link>
               <Link
                 href="/register"
-                className="text-sm font-semibold py-1.5 px-4 rounded-lg transition-all"
-                style={{
-                  background: "linear-gradient(135deg, #FFD814, #FFA41C)",
-                  color: "#131921",
+                className="text-sm font-semibold py-1.5 px-4 rounded-lg transition-all text-white"
+                style={{ background: "#F97316" }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "#EA580C";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "#F97316";
                 }}
               >
                 Đăng ký
@@ -129,7 +149,7 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
 
           {/* Hamburger — mobile only */}
           <button
-            className="md:hidden flex items-center justify-center w-8 h-8 text-gray-300 hover:text-white transition-colors"
+            className="md:hidden flex items-center justify-center w-8 h-8 text-gray-200 hover:text-white transition-colors"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Mở menu"
           >
@@ -151,8 +171,8 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
         <div
           className="md:hidden absolute top-14 left-0 right-0 z-50 border-t"
           style={{
-            background: "rgba(10,10,10,0.97)",
-            borderColor: "#1a1a1a",
+            background: "#1C2A44",
+            borderColor: "rgba(255,255,255,0.08)",
           }}
         >
           <nav className="flex flex-col px-4 py-3 gap-1">
@@ -163,7 +183,7 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-gray-300 hover:text-white transition-colors py-2.5 border-b border-gray-800 last:border-0"
+                  className="text-sm text-gray-200 hover:text-white transition-colors py-2.5 border-b border-white/10 last:border-0"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
@@ -172,13 +192,23 @@ export default function PublicHeader({ user }: PublicHeaderProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-gray-300 hover:text-white transition-colors py-2.5 border-b border-gray-800 last:border-0"
+                  className="text-sm text-gray-200 hover:text-white transition-colors py-2.5 border-b border-white/10 last:border-0"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </Link>
               )
             )}
+
+            {/* CTA cam trong mobile menu */}
+            <Link
+              href={FREE_RESOURCE_HREF}
+              className="mt-3 text-center text-sm font-semibold py-2.5 px-4 rounded-lg text-white"
+              style={{ background: "#F97316" }}
+              onClick={() => setMobileOpen(false)}
+            >
+              Nhận tài nguyên miễn phí
+            </Link>
           </nav>
         </div>
       )}

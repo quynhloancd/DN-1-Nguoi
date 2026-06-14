@@ -149,7 +149,7 @@ export default async function ComboDetailPage({
             )}
             <a
               href={paymentHref}
-              className="inline-block bg-[#F97316] text-white font-bold text-lg px-8 py-3 rounded-xl hover:bg-orange-600 transition-colors"
+              className="inline-block bg-[#F97316] text-white font-bold text-lg px-8 py-3 rounded-xl hover:bg-[#EA580C] transition-colors"
             >
               Mua ngay
             </a>
@@ -298,7 +298,7 @@ export default async function ComboDetailPage({
           )}
           <a
             href={paymentHref}
-            className="inline-block bg-[#F97316] text-white font-bold text-xl px-10 py-4 rounded-xl hover:bg-orange-600 transition-colors mt-2"
+            className="inline-block bg-[#F97316] text-white font-bold text-xl px-10 py-4 rounded-xl hover:bg-[#EA580C] transition-colors mt-2"
           >
             Mua ngay — {formatVND(displayPrice)}
           </a>
@@ -325,6 +325,27 @@ export default async function ComboDetailPage({
             </div>
           </section>
         )}
+
+        {/* CTA cuối trang */}
+        <section className="text-center py-4">
+          <p className="text-slate-600 mb-4">
+            Sẵn sàng tăng tốc với combo tool AI?
+          </p>
+          <a
+            href={paymentHref}
+            className="inline-block bg-[#F97316] text-white font-bold text-lg px-10 py-4 rounded-xl hover:bg-[#EA580C] transition-colors"
+          >
+            Mua {combo.title} ngay
+          </a>
+          <div className="mt-4">
+            <Link
+              href="/combo"
+              className="text-slate-500 text-sm hover:text-[#1C2A44] transition-colors"
+            >
+              ← Xem tất cả combo khác
+            </Link>
+          </div>
+        </section>
       </div>
     </div>
   );

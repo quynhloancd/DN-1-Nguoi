@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
+import { revalidatePath } from "next/cache";
+import { logAudit } from "@/lib/audit";
 
 const PAGE_SIZE = 20;
 
@@ -138,6 +140,50 @@ function StatusIcon({ status }: { status: OrderStatus }) {
 // --- Page ---
 
 const VALID_STATUSES: OrderStatus[] = ["pending", "paid", "delivered", "refunded", "cancelled", "error"];
+
+// --- Server action: cập nhật trạng thái đơn hàng thủ công ---
+
+async function updateOrderStatus(formData: FormData) {
+  "use server";
+
+  const orderId = String(formData.get("order_id") ?? "");
+  const newStatus = String(formData.get("status") ?? "") as OrderStatus;
+
+  if (!orderId || !VALID_STATUSES.includes(newStatus)) return;
+
+  // Chỉ admin/manager được cập nhật trạng thái
+  const authClient = await createClient();
+  const {
+    data: { user },
+  } = await authClient.auth.getUser();
+  if (!user) return;
+
+  const { data: profile } = await authClient
+    .from("profiles")
+    .select("role")
+    .eq("id", user.id)
+    .single();
+  if (!["admin", "manager"].includes(profile?.role ?? "")) return;
+
+  const admin = await createAdminClient();
+
+  const patch: Record<string, unknown> = { status: newStatus };
+  // Khi chuyển sang Đã thanh toán mà chưa có mốc thời gian thì ghi nhận paid_at
+  if (newStatus === "paid") {
+    patch.paid_at = new Date().toISOString();
+  }
+
+  await admin.from("orders").update(patch).eq("id", orderId);
+
+  await logAudit({
+    admin_id: user.id,
+    action: "order.confirm",
+    target_type: "order",
+    target_id: orderId,
+  });
+
+  revalidatePath("/admin/orders");
+}
 
 interface PageProps {
   searchParams: Promise<{ q?: string; page?: string; status?: string }>;
@@ -368,7 +414,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
           {/* Header */}
           <div
             className="flex items-center justify-between px-5 py-3"
-            style={{ borderBottom: "1px solid #2a2a2a" }}
+            style={{ borderBottom: "1px solid #E5E7EB" }}
           >
             <span className="text-xs text-gray-500">
               {query ? (
@@ -416,7 +462,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr style={{ borderBottom: "1px solid #2a2a2a" }}>
+                  <tr style={{ borderBottom: "1px solid #E5E7EB" }}>
                     {[
                       "Mã đơn",
                       "Khách hàng",
@@ -440,11 +486,11 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                   {rows.map((order, idx) => (
                     <tr
                       key={order.id}
-                      className="hover:bg-white/[0.02] transition-colors"
+                      className="hover:bg-[#FFF7ED] transition-colors"
                       style={{
                         borderBottom:
                           idx < rows.length - 1
-                            ? "1px solid #1f1f1f"
+                            ? "1px solid #F1F2F4"
                             : "none",
                       }}
                     >
@@ -546,7 +592,7 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
 
                       {/* Actions */}
                       <td className="px-5 py-3.5 whitespace-nowrap">
-                        <div className="flex items-center gap-1">
+                        <div className="flex items-center gap-1.5">
                           {canConfirm && order.status === "pending" && (
                             <ConfirmOrderButton
                               orderCode={order.order_code}
@@ -554,6 +600,37 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                               amount={order.amount}
                             />
                           )}
+
+                          {/* Cập nhật trạng thái thủ công (admin/manager) */}
+                          {canWrite && (
+                            <form
+                              action={updateOrderStatus}
+                              className="flex items-center gap-1"
+                            >
+                              <input type="hidden" name="order_id" value={order.id} />
+                              <select
+                                name="status"
+                                defaultValue={order.status}
+                                className="text-xs rounded-lg px-2 py-1.5 bg-white text-[#1B2A4A] focus:outline-none focus:border-[#F97316] cursor-pointer"
+                                style={{ border: "1px solid #E5E7EB" }}
+                              >
+                                {VALID_STATUSES.map((s) => (
+                                  <option key={s} value={s}>
+                                    {STATUS_CONFIG[s].label}
+                                  </option>
+                                ))}
+                              </select>
+                              <button
+                                type="submit"
+                                className="text-xs font-semibold text-white rounded-lg px-2.5 py-1.5 transition-colors"
+                                style={{ background: "#F97316" }}
+                                title="Lưu trạng thái"
+                              >
+                                Lưu
+                              </button>
+                            </form>
+                          )}
+
                           {canWrite &&
                             (order.status === "pending" ||
                               order.status === "cancelled") && (
@@ -575,20 +652,20 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
           {totalPages > 1 && (
             <div
               className="flex items-center justify-center gap-4 px-4 py-3"
-              style={{ borderTop: "1px solid #2a2a2a" }}
+              style={{ borderTop: "1px solid #E5E7EB" }}
             >
               {safePage > 1 ? (
                 <Link
                   href={buildPageUrl(safePage - 1)}
                   className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
-                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
+                  style={{ background: "#F8FAFC", border: "1px solid #E5E7EB" }}
                 >
                   ← Trước
                 </Link>
               ) : (
                 <span
                   className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-600 cursor-not-allowed"
-                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
+                  style={{ background: "#F8FAFC", border: "1px solid #E5E7EB" }}
                 >
                   ← Trước
                 </span>
@@ -602,14 +679,14 @@ export default async function AdminOrdersPage({ searchParams }: PageProps) {
                 <Link
                   href={buildPageUrl(safePage + 1)}
                   className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-[#1B2A4A] transition-colors"
-                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
+                  style={{ background: "#F8FAFC", border: "1px solid #E5E7EB" }}
                 >
                   Tiếp →
                 </Link>
               ) : (
                 <span
                   className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-600 cursor-not-allowed"
-                  style={{ background: "#F0F1F3", border: "1px solid #2a2a2a" }}
+                  style={{ background: "#F8FAFC", border: "1px solid #E5E7EB" }}
                 >
                   Tiếp →
                 </span>

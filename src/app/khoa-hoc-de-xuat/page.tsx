@@ -6,6 +6,7 @@ interface Course {
   suitable_for: string;
   outcomes: string[];
   price: string;
+  affiliate_link: string;
   affiliate_note: boolean;
 }
 
@@ -20,6 +21,7 @@ const COURSES: Course[] = [
       "Tiết kiệm 5-10h/tuần",
     ],
     price: "Liên hệ",
+    affiliate_link: "#",
     affiliate_note: true,
   },
   {
@@ -32,6 +34,7 @@ const COURSES: Course[] = [
       "Workflow làm video hàng loạt",
     ],
     price: "từ 500.000đ",
+    affiliate_link: "#",
     affiliate_note: true,
   },
   {
@@ -44,6 +47,7 @@ const COURSES: Course[] = [
       "Tạo hook và CTA hiệu quả",
     ],
     price: "từ 299.000đ",
+    affiliate_link: "#",
     affiliate_note: true,
   },
   {
@@ -56,6 +60,7 @@ const COURSES: Course[] = [
       "Xây dựng phễu bán hàng đơn giản",
     ],
     price: "từ 199.000đ",
+    affiliate_link: "#",
     affiliate_note: true,
   },
 ];
@@ -132,16 +137,18 @@ export default function KhoaHocDeXuatPage() {
 
                 {/* CTA Button */}
                 <a
-                  href="#"
+                  href={course.affiliate_link}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
                   className="block text-center text-sm font-semibold bg-[#F97316] text-white rounded-lg py-2.5 hover:bg-orange-600 transition-colors mb-3"
                 >
-                  Xem khóa học
+                  Đăng ký khóa học
                 </a>
 
                 {/* Affiliate Tag */}
                 {course.affiliate_note && (
-                  <p className="text-xs text-slate-400 text-center">
-                    🔗 Link giới thiệu / affiliate
+                  <p className="text-xs text-center" style={{ color: "#64748B" }}>
+                    Đây là link giới thiệu/affiliate.
                   </p>
                 )}
               </div>

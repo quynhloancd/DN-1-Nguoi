@@ -56,13 +56,14 @@ function parseLines(text: string): string[] {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const { slug } = await params;
   const supabase = await createClient();
   const { data } = await supabase
     .from("tools")
     .select("title, short_description")
-    .eq("slug", params.slug)
+    .eq("slug", slug)
     .eq("status", "published")
     .single();
 
@@ -75,14 +76,15 @@ export async function generateMetadata({
 export default async function ToolDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   const supabase = await createClient();
 
   const { data: tool } = await supabase
     .from("tools")
     .select("*")
-    .eq("slug", params.slug)
+    .eq("slug", slug)
     .eq("status", "published")
     .single<Tool>();
 
@@ -135,7 +137,6 @@ export default async function ToolDetailPage({
               href={ctaHref}
               className="inline-block px-8 py-3 rounded-xl font-bold text-white text-base transition-all"
               style={{ background: "#E85D04" }}
-              {...(!hasPaymentLink ? {} : {})}
             >
               {tool.cta_text}
             </a>

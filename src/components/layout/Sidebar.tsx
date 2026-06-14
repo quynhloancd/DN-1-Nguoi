@@ -63,7 +63,7 @@ const adminNavGroups = [
     items: [
       { href: "/admin/tools", icon: Wrench, label: "Tool AI", roles: ["admin", "manager", "editor", "instructor"] },
       { href: "/admin/categories", icon: LayoutList, label: "Danh mục Tool", roles: ["admin", "manager", "editor"] },
-      { href: "/admin/subscriptions", icon: Package, label: "Combo Tool", roles: ["admin", "manager"] },
+      { href: "/admin/combos", icon: Package, label: "Combo Tool", roles: ["admin", "manager"] },
       { href: "/admin/orders", icon: Rocket, label: "Đơn hàng", roles: ["admin", "manager", "sale"] },
       { href: "/admin/coupons", icon: Tag, label: "Mã giảm giá", roles: ["admin", "manager"] },
     ],
@@ -74,16 +74,17 @@ const adminNavGroups = [
       { href: "/admin/users", icon: Users, label: "Khách hàng", roles: ["admin", "manager", "sale"] },
       { href: "/crm/interests", icon: Eye, label: "Khách quan tâm", roles: ["admin", "manager", "sale", "support"] },
       { href: "/crm/pipeline", icon: GitBranch, label: "Pipeline", roles: ["admin", "manager", "sale"] },
+      { href: "/admin/zalo", icon: MessageCircle, label: "Zalo OA", roles: ["admin", "manager", "sale", "support"] },
       { href: "/email", icon: Mail, label: "Email Marketing", roles: ["admin", "manager", "marketing"] },
     ],
   },
   {
     group: "Nội dung",
     items: [
-      { href: "/admin/resources", icon: FolderOpen, label: "Tài nguyên miễn phí", roles: ["admin", "manager", "editor"] },
+      { href: "/resources", icon: FolderOpen, label: "Tài nguyên miễn phí", roles: ["admin", "manager", "editor"] },
       { href: "/admin/blog", icon: FileText, label: "Blog", roles: ["admin", "manager", "marketing"] },
       { href: "/admin/promotions", icon: ImageIcon, label: "Banner / Quảng cáo", roles: ["admin", "manager"] },
-      { href: "/admin/community", icon: MessageCircle, label: "Group Zalo / Cộng đồng", roles: ["admin", "manager"] },
+      { href: "/community", icon: MessageCircle, label: "Cộng đồng", roles: ["admin", "manager"] },
     ],
   },
   {
@@ -96,11 +97,12 @@ const adminNavGroups = [
   {
     group: "Hệ thống",
     items: [
-      { href: "/admin/settings", icon: Settings, label: "Cài đặt", roles: ["admin"] },
+      { href: "/settings", icon: Settings, label: "Cài đặt", roles: ["admin"] },
       { href: "/admin/roles", icon: UserCog, label: "Phân quyền", roles: ["admin"] },
+      { href: "/crm/moderation", icon: Shield, label: "Kiểm duyệt", roles: ["admin", "manager", "support"] },
       { href: "/admin/questions", icon: MessageSquare, label: "Hỗ trợ khách hàng", roles: ["admin", "manager", "support", "editor"] },
       { href: "/admin/quizzes", icon: ClipboardCheck, label: "Quiz", roles: ["admin", "manager", "editor"] },
-      { href: "/admin/leaderboard", icon: Trophy, label: "Bảng xếp hạng", roles: ["admin", "manager"] },
+      { href: "/leaderboard", icon: Trophy, label: "Bảng xếp hạng", roles: ["admin", "manager"] },
     ],
   },
 ];

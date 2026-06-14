@@ -1,8 +1,45 @@
 import TopBar from "@/components/layout/TopBar";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
-import { Plus, Edit2, ExternalLink, Wrench } from "lucide-react";
+import { Plus, Edit2, ExternalLink, Wrench, EyeOff, Eye, Trash2 } from "lucide-react";
+
+async function requireAdmin() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) redirect("/login");
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("role")
+    .eq("id", user.id)
+    .single();
+  if (!profile || !["admin", "manager", "editor"].includes(profile.role)) {
+    redirect("/dashboard");
+  }
+}
+
+async function toggleHideTool(formData: FormData) {
+  "use server";
+  await requireAdmin();
+  const id = String(formData.get("id"));
+  const current = String(formData.get("status"));
+  const next = current === "hidden" ? "draft" : "hidden";
+  const adminClient = await createAdminClient();
+  await adminClient.from("tools").update({ status: next, updated_at: new Date().toISOString() }).eq("id", id);
+  revalidatePath("/admin/tools");
+}
+
+async function deleteTool(formData: FormData) {
+  "use server";
+  await requireAdmin();
+  const id = String(formData.get("id"));
+  const adminClient = await createAdminClient();
+  await adminClient.from("tools").delete().eq("id", id);
+  revalidatePath("/admin/tools");
+}
 
 function formatPrice(price: number): string {
   if (price === 0) return "Miễn phí";
@@ -219,6 +256,38 @@ export default async function AdminToolsPage() {
                       <Edit2 size={12} />
                       Sửa
                     </Link>
+                    <form action={toggleHideTool}>
+                      <input type="hidden" name="id" value={tool.id} />
+                      <input type="hidden" name="status" value={tool.status} />
+                      <button
+                        type="submit"
+                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-gray-600 hover:text-[#1B2A4A] transition-colors"
+                        style={{ border: "1px solid #E2E8F0" }}
+                      >
+                        {tool.status === "hidden" ? (
+                          <>
+                            <Eye size={12} />
+                            Hiện
+                          </>
+                        ) : (
+                          <>
+                            <EyeOff size={12} />
+                            Ẩn
+                          </>
+                        )}
+                      </button>
+                    </form>
+                    <form action={deleteTool}>
+                      <input type="hidden" name="id" value={tool.id} />
+                      <button
+                        type="submit"
+                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-red-500 hover:text-red-600 transition-colors"
+                        style={{ border: "1px solid #FECACA" }}
+                      >
+                        <Trash2 size={12} />
+                        Xóa
+                      </button>
+                    </form>
                   </div>
                 </div>
               </div>

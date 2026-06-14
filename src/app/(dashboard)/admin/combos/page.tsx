@@ -67,6 +67,16 @@ export default async function AdminCombosPage() {
   const list = combos ?? [];
   const totalPublished = list.filter((c) => c.status === "published").length;
 
+  // Đếm số tool trong mỗi combo
+  const { data: comboTools } = await adminClient
+    .from("combo_tools")
+    .select("combo_id");
+  const toolCountMap = new Map<string, number>();
+  for (const ct of comboTools ?? []) {
+    const key = ct.combo_id as string;
+    toolCountMap.set(key, (toolCountMap.get(key) ?? 0) + 1);
+  }
+
   return (
     <div>
       <TopBar
@@ -197,8 +207,14 @@ export default async function AdminCombosPage() {
                   </div>
                 </div>
 
-                {/* Price */}
+                {/* Số tool + Price */}
                 <div className="flex items-center gap-6 text-xs shrink-0">
+                  <div className="text-center min-w-[60px]">
+                    <div className="text-gray-400 mb-0.5">Số tool</div>
+                    <div className="font-semibold text-[#1B2A4A]">
+                      {toolCountMap.get(combo.id) ?? 0}
+                    </div>
+                  </div>
                   <div className="text-center min-w-[100px]">
                     <div className="text-gray-400 mb-0.5">Giá bán</div>
                     <div className="font-semibold text-[#E85D04]">

@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import TopBar from "@/components/layout/TopBar";
-import { Save, Loader2 } from "lucide-react";
+import { Save, Loader2, Plus, Trash2 } from "lucide-react";
+
+type FaqItem = { question: string; answer: string };
 
 function generateSlug(title: string): string {
   return title
@@ -47,6 +49,17 @@ export default function EditToolPage() {
   const [ctaText, setCtaText] = useState("Mua ngay");
   const [paymentLink, setPaymentLink] = useState("");
   const [redirectAfterPurchase, setRedirectAfterPurchase] = useState("/cam-on");
+  const [faq, setFaq] = useState<FaqItem[]>([]);
+
+  function addFaq() {
+    setFaq((prev) => [...prev, { question: "", answer: "" }]);
+  }
+  function updateFaq(index: number, field: keyof FaqItem, value: string) {
+    setFaq((prev) => prev.map((it, i) => (i === index ? { ...it, [field]: value } : it)));
+  }
+  function removeFaq(index: number) {
+    setFaq((prev) => prev.filter((_, i) => i !== index));
+  }
 
   useEffect(() => {
     async function init() {
@@ -92,6 +105,14 @@ export default function EditToolPage() {
       setCtaText(tool.cta_text ?? "Mua ngay");
       setPaymentLink(tool.payment_link ?? "");
       setRedirectAfterPurchase(tool.redirect_after_purchase ?? "/cam-on");
+      setFaq(
+        Array.isArray(tool.faq)
+          ? tool.faq.map((f: { question?: string; answer?: string }) => ({
+              question: f?.question ?? "",
+              answer: f?.answer ?? "",
+            }))
+          : []
+      );
 
       setLoading(false);
     }
@@ -124,6 +145,7 @@ export default function EditToolPage() {
       cta_text: ctaText || "Mua ngay",
       payment_link: paymentLink || null,
       redirect_after_purchase: redirectAfterPurchase || "/cam-on",
+      faq: faq.filter((f) => f.question.trim() || f.answer.trim()),
       updated_at: new Date().toISOString(),
     };
 
@@ -280,6 +302,52 @@ export default function EditToolPage() {
               <label className="label-form">Trang redirect sau thanh toán</label>
               <input className="input-form" value={redirectAfterPurchase} onChange={(e) => setRedirectAfterPurchase(e.target.value)} />
             </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="card-dark p-5 space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="font-semibold text-[#1B2A4A] text-sm">Câu hỏi thường gặp (FAQ)</h3>
+              <button
+                type="button"
+                onClick={addFaq}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-[#F97316] border border-[#E2E8F0] hover:bg-orange-50"
+              >
+                <Plus size={13} />
+                Thêm câu hỏi
+              </button>
+            </div>
+            {faq.length === 0 && (
+              <p className="text-xs text-gray-500">Chưa có câu hỏi nào. Bấm "Thêm câu hỏi" để bổ sung.</p>
+            )}
+            {faq.map((item, i) => (
+              <div key={i} className="rounded-xl border border-[#E2E8F0] p-4 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-medium text-gray-500">Câu hỏi {i + 1}</span>
+                  <button
+                    type="button"
+                    onClick={() => removeFaq(i)}
+                    className="text-red-500 hover:text-red-600"
+                    aria-label="Xóa câu hỏi"
+                  >
+                    <Trash2 size={15} />
+                  </button>
+                </div>
+                <input
+                  className="input-form"
+                  value={item.question}
+                  onChange={(e) => updateFaq(i, "question", e.target.value)}
+                  placeholder="Câu hỏi..."
+                />
+                <textarea
+                  className="input-form"
+                  rows={2}
+                  value={item.answer}
+                  onChange={(e) => updateFaq(i, "answer", e.target.value)}
+                  placeholder="Câu trả lời..."
+                />
+              </div>
+            ))}
           </div>
 
           <div className="flex gap-3 justify-end">

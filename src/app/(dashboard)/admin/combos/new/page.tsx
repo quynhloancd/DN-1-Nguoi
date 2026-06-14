@@ -41,6 +41,18 @@ export default function NewComboPage() {
   const [faqRaw, setFaqRaw] = useState("");
   const [sortOrder, setSortOrder] = useState(0);
 
+  // Danh sách tool trong combo (trường 8)
+  const [allTools, setAllTools] = useState<{ id: string; title: string }[]>([]);
+  const [selectedToolIds, setSelectedToolIds] = useState<string[]>([]);
+
+  function toggleTool(toolId: string) {
+    setSelectedToolIds((prev) =>
+      prev.includes(toolId)
+        ? prev.filter((t) => t !== toolId)
+        : [...prev, toolId]
+    );
+  }
+
   useEffect(() => {
     async function checkAdmin() {
       const {
@@ -57,6 +69,11 @@ export default function NewComboPage() {
         router.push("/");
         return;
       }
+      const { data: tools } = await supabase
+        .from("tools")
+        .select("id, title")
+        .order("title", { ascending: true });
+      setAllTools(tools ?? []);
       setLoading(false);
     }
     checkAdmin();
@@ -84,29 +101,52 @@ export default function NewComboPage() {
     }
 
     setSubmitting(true);
-    const { error: dbError } = await supabase.from("combos").insert({
-      title: title.trim(),
-      slug: slug.trim(),
-      short_description: shortDescription.trim() || null,
-      description_html: descriptionHtml.trim() || null,
-      thumbnail_url: thumbnailUrl.trim() || null,
-      price,
-      sale_price: salePrice ? parseInt(salePrice) : null,
-      badge: badge || null,
-      status,
-      benefits: benefits.trim() || null,
-      suitable_for: suitableFor.trim() || null,
-      payment_link: paymentLink.trim() || null,
-      redirect_after_purchase: redirectAfterPurchase.trim() || "/cam-on",
-      faq: faqParsed,
-      sort_order: sortOrder,
-    });
+    const { data: inserted, error: dbError } = await supabase
+      .from("combos")
+      .insert({
+        title: title.trim(),
+        slug: slug.trim(),
+        short_description: shortDescription.trim() || null,
+        description_html: descriptionHtml.trim() || null,
+        thumbnail_url: thumbnailUrl.trim() || null,
+        price,
+        sale_price: salePrice ? parseInt(salePrice) : null,
+        badge: badge || null,
+        status,
+        benefits: benefits.trim() || null,
+        suitable_for: suitableFor.trim() || null,
+        payment_link: paymentLink.trim() || null,
+        redirect_after_purchase: redirectAfterPurchase.trim() || "/cam-on",
+        faq: faqParsed,
+        sort_order: sortOrder,
+      })
+      .select("id")
+      .single();
 
-    if (dbError) {
-      setError(dbError.message);
+    if (dbError || !inserted) {
+      setError(dbError?.message ?? "Không tạo được combo");
       setSubmitting(false);
       return;
     }
+
+    // Lưu danh sách tool trong combo (bảng combo_tools)
+    if (selectedToolIds.length > 0) {
+      const rows = selectedToolIds.map((toolId, index) => ({
+        combo_id: inserted.id,
+        tool_id: toolId,
+        tool_title: allTools.find((t) => t.id === toolId)?.title ?? "",
+        sort_order: index,
+      }));
+      const { error: ctError } = await supabase
+        .from("combo_tools")
+        .insert(rows);
+      if (ctError) {
+        setError("Đã tạo combo nhưng lỗi khi lưu tool: " + ctError.message);
+        setSubmitting(false);
+        return;
+      }
+    }
+
     router.push("/admin/combos");
   }
 
@@ -264,6 +304,38 @@ export default function NewComboPage() {
                 <option value="hidden">Ẩn</option>
               </select>
             </div>
+          </div>
+
+          {/* Danh sách tool trong combo */}
+          <div>
+            <label className="block text-sm text-gray-700 mb-1.5">
+              Tool nằm trong combo
+            </label>
+            {allTools.length === 0 ? (
+              <p className="text-xs text-gray-500">
+                Chưa có tool nào. Hãy tạo tool trước.
+              </p>
+            ) : (
+              <div className="max-h-56 overflow-y-auto rounded-lg border border-gray-200 divide-y divide-gray-100">
+                {allTools.map((tool) => (
+                  <label
+                    key={tool.id}
+                    className="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-700 cursor-pointer hover:bg-orange-50"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={selectedToolIds.includes(tool.id)}
+                      onChange={() => toggleTool(tool.id)}
+                      className="w-4 h-4 accent-[#F97316]"
+                    />
+                    {tool.title}
+                  </label>
+                ))}
+              </div>
+            )}
+            <p className="text-xs text-gray-500 mt-1">
+              Đã chọn {selectedToolIds.length} tool
+            </p>
           </div>
 
           {/* Lợi ích chính */}

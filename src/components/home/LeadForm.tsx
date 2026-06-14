@@ -7,6 +7,7 @@ export default function LeadForm() {
   const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [zalo, setZalo] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [error, setError] = useState("");
 
@@ -18,7 +19,7 @@ export default function LeadForm() {
       const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({ name, email, zalo, source: "home-lead-form" }),
       });
       if (res.ok) {
         router.push("/cam-on");
@@ -72,6 +73,18 @@ export default function LeadForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="ban@email.com"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#F97316] focus:border-transparent text-sm"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1.5">
+            Số Zalo <span className="text-gray-400 font-normal">(không bắt buộc)</span>
+          </label>
+          <input
+            type="tel"
+            value={zalo}
+            onChange={(e) => setZalo(e.target.value)}
+            placeholder="Để nhận hỗ trợ nhanh hơn"
             className="w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#F97316] focus:border-transparent text-sm"
           />
         </div>

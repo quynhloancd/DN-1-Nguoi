@@ -34,7 +34,7 @@ const featuredTools = [
     desc: "Sản xuất hàng chục video sản phẩm trong vài phút — lý tưởng cho shop bán hàng online.",
     price: "350.000đ",
     badge: "Bán chạy",
-    badgeColor: "#16a34a",
+    badgeColor: "#1C2A44",
   },
   {
     slug: "tool-kol-podcast-ai",
@@ -42,7 +42,7 @@ const featuredTools = [
     desc: "Tạo podcast và video KOL bằng AI — xây dựng thương hiệu cá nhân mà không cần lên sóng thật.",
     price: "299.000đ",
     badge: "Mới",
-    badgeColor: "#7c3aed",
+    badgeColor: "#FBBF24",
   },
 ];
 
@@ -194,8 +194,11 @@ export default function HomePage() {
                 <div className="p-5 flex flex-col flex-1">
                   {/* Badge */}
                   <span
-                    className="inline-block self-start text-xs font-bold px-2.5 py-1 rounded-md mb-3 text-white"
-                    style={{ background: tool.badgeColor }}
+                    className="inline-block self-start text-xs font-bold px-2.5 py-1 rounded-md mb-3"
+                    style={{
+                      background: tool.badgeColor,
+                      color: tool.badgeColor === "#FBBF24" ? "#1C2A44" : "#ffffff",
+                    }}
                   >
                     {tool.badge}
                   </span>
@@ -297,9 +300,18 @@ export default function HomePage() {
       {/* ═══ KHỐI 6 — TÀI NGUYÊN MIỄN PHÍ ═══ */}
       <section className="bg-white py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-center text-[#1C2A44] mb-10 sm:mb-14">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-center text-[#1C2A44] mb-8 sm:mb-10">
             Nhận bộ tài nguyên AI miễn phí
           </h2>
+          <div className="relative w-full max-w-3xl mx-auto aspect-[16/6] rounded-2xl overflow-hidden shadow-sm mb-10 sm:mb-14">
+            <Image
+              src="/anh/thien-hue-ai-workspace-banner.jpg"
+              alt="Bộ tài nguyên AI miễn phí cho người kinh doanh online một mình"
+              fill
+              sizes="(max-width: 1024px) 90vw, 768px"
+              className="object-cover"
+            />
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* Checklist trái */}
             <div className="space-y-4">
@@ -309,6 +321,12 @@ export default function HomePage() {
                   <p className="text-[#1C2A44] text-base leading-relaxed">{item}</p>
                 </div>
               ))}
+              <Link
+                href="/tai-nguyen-mien-phi"
+                className="inline-flex items-center gap-2 text-base font-semibold text-[#F97316] hover:underline pt-2"
+              >
+                Xem tất cả tài nguyên miễn phí →
+              </Link>
             </div>
             {/* Form phải */}
             <div className="flex justify-center lg:justify-end">
