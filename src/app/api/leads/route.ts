@@ -4,7 +4,13 @@ import { createAdminClient } from "@/lib/supabase/server";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, source } = body as { name?: string; email?: string; source?: string };
+    const { name, email, source, zalo, resource } = body as {
+      name?: string;
+      email?: string;
+      source?: string;
+      zalo?: string;
+      resource?: string;
+    };
 
     if (!email || !name) {
       return NextResponse.json({ error: "Thiếu tên hoặc email" }, { status: 400 });
@@ -23,6 +29,8 @@ export async function POST(req: NextRequest) {
         email: email.toLowerCase().trim(),
         name: name.trim(),
         source: source ?? "lo-trinh",
+        zalo: zalo?.trim() || null,
+        resource: resource?.trim() || null,
         subscribed: true,
         created_at: new Date().toISOString(),
       },
