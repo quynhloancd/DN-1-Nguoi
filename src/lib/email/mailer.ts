@@ -42,11 +42,24 @@ function toAsciiName(name: string): string {
     .trim();
 }
 
+/** Sender email cố định — domain đã verify trên Resend. KHÔNG đọc EMAIL_FROM
+ * từ env vì biến này trên Vercel có thể chứa giá trị bẩn/non-ASCII khiến
+ * Resend từ chối ("email address contains non-ASCII characters"). */
+const SENDER_EMAIL = "noreply@doanhnghiep1nguoi.online";
+
+/** Chỉ nhận email ASCII hợp lệ, ngược lại fallback SENDER_EMAIL */
+// eslint-disable-next-line no-control-regex
+function safeEmail(candidate?: string): string {
+  if (candidate && /^[\x00-\x7F]+$/.test(candidate) && candidate.includes("@") && !candidate.includes(" ")) {
+    return candidate;
+  }
+  return SENDER_EMAIL;
+}
+
 /** Lấy địa chỉ From đầy đủ: "Tên <email>" (tên fold ASCII) */
 function getFromAddress(): string {
-  const email = process.env.EMAIL_FROM || "noreply@doanhnghiep1nguoi.online";
   const name = toAsciiName(process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người");
-  return `${name} <${email}>`;
+  return `${name} <${SENDER_EMAIL}>`;
 }
 
 interface ResendPayload {
@@ -137,8 +150,8 @@ export async function sendEmail(
 export async function sendEmailWithParams(
   params: SendEmailParams
 ): Promise<SendResult> {
-  const fromEmail = params.fromEmail || process.env.EMAIL_FROM || "noreply@doanhnghiep1nguoi.online";
-  const fromName = params.fromName || process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người";
+  const fromEmail = safeEmail(params.fromEmail || process.env.EMAIL_FROM || undefined);
+  const fromName = toAsciiName(params.fromName || process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người");
 
   return postResend({
     from: `${fromName} <${fromEmail}>`,
