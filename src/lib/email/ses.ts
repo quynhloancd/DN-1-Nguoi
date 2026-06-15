@@ -30,27 +30,10 @@ function getApiKey(): string {
   return key;
 }
 
-/**
- * Bỏ dấu tiếng Việt → ASCII. Key Resend đang cấu hình trên Vercel từ chối
- * display name chứa ký tự non-ASCII ("Doanh Nghiệp 1 Người"), nên fold sang
- * ASCII để email gửi được. (Có thể bỏ hàm này nếu sau này đổi key Resend
- * chấp nhận non-ASCII.)
- */
-function toAsciiName(name: string): string {
-  return name
-    .replace(/đ/g, "d")
-    .replace(/Đ/g, "D")
-    .normalize("NFD") // tách dấu thành combining marks
-    // eslint-disable-next-line no-control-regex
-    .replace(/[^\x00-\x7F]/g, "") // bỏ mọi ký tự non-ASCII (gồm cả combining marks)
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-/** Lấy địa chỉ From đầy đủ: "Tên <email>" (tên fold ASCII cho an toàn) */
+/** Lấy địa chỉ From đầy đủ: "Tên <email>" */
 function getFromAddress(): string {
   const email = process.env.EMAIL_FROM || "noreply@doanhnghiep1nguoi.online";
-  const name = toAsciiName(process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người");
+  const name = process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người";
   return `${name} <${email}>`;
 }
 
