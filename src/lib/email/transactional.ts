@@ -2,7 +2,7 @@
  * Transactional Email Functions — powered by AWS SES
  * (Chuyển từ Resend sang SES để tránh quota limit)
  */
-import { sendEmail as sesSendEmail } from "./ses";
+import { sendEmail as sesSendEmail } from "./mailer";
 
 // ─── Utilities ──────────────────────────────────────────────────
 

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
-import { sendEmailWithParams } from "@/lib/email/ses";
+import { sendEmailWithParams } from "@/lib/email/mailer";
 import { renderTemplate } from "@/lib/email/template-renderer";
 
 // POST /api/email/campaigns/[id]/test — send a test email

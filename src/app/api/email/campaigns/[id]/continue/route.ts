@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
-import { sendEmailWithParams } from "@/lib/email/ses";
+import { sendEmailWithParams } from "@/lib/email/mailer";
 
 const BATCH_SIZE = 50;
 

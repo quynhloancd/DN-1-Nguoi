@@ -7,7 +7,7 @@
  */
 
 import { createAdminClient } from "@/lib/supabase/server";
-import { sendEmail } from "./ses";
+import { sendEmail } from "./mailer";
 import { getDefaultVariables, prepareEmailHtml } from "./template-renderer";
 import type { BatchResult, SendResult } from "./types";
 

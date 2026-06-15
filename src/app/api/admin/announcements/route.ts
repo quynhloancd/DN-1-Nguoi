@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
-import { sendEmail } from "@/lib/email/ses";
+import { sendEmail } from "@/lib/email/mailer";
 import { announcementEmailHtml } from "@/lib/email/templates/announcement";
 
 // GET /api/admin/announcements — list announcements

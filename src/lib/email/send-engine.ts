@@ -5,7 +5,7 @@
  * and List-Unsubscribe headers.
  */
 
-import { sendEmailWithParams } from "./ses";
+import { sendEmailWithParams } from "./mailer";
 import type {
   SendEmailParams,
   EmailCampaign,

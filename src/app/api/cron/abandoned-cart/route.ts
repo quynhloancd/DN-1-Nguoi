@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { timingSafeEqual } from "crypto";
 import { createAdminClient } from "@/lib/supabase/server";
-import { sendEmail } from "@/lib/email/ses";
+import { sendEmail } from "@/lib/email/mailer";
 import { generateAbandonedCartEmail } from "@/lib/email/templates/abandoned-cart";
 
 /**
