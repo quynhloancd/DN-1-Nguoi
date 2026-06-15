@@ -1,14 +1,18 @@
 /**
- * Email Client — powered by Resend
+ * Email Client — powered by Resend (gọi thẳng HTTP API, KHÔNG dùng SDK)
  *
  * Lưu ý: file vẫn tên `ses.ts` để giữ nguyên các import hiện có, nhưng
- * bên trong đã chuyển từ AWS SES sang Resend (hạ tầng email thật của dự án:
- * domain doanhnghiep1nguoi.online đã verify trên Resend, sender noreply@...).
+ * bên trong dùng Resend (hạ tầng email thật: domain doanhnghiep1nguoi.online
+ * đã verify trên Resend, sender noreply@...).
+ *
+ * Vì sao gọi HTTP API trực tiếp thay vì SDK `resend`: bản SDK mới thêm
+ * validation phía client từ chối display name non-ASCII ("Doanh Nghiệp 1
+ * Người") → "Invalid from field...". HTTP API của Resend chấp nhận non-ASCII
+ * bình thường, nên gọi trực tiếp để tránh phụ thuộc version SDK.
  *
  * Env cần: RESEND_API_KEY, EMAIL_FROM, EMAIL_FROM_NAME
  */
 
-import { Resend } from "resend";
 import type {
   SendEmailParams,
   BulkEmailEntry,
@@ -16,43 +20,32 @@ import type {
   BulkSendResult,
 } from "./types";
 
-// ─── Resend Client Singleton ─────────────────────────────────
+const RESEND_ENDPOINT = "https://api.resend.com/emails";
 
-let resendClient: Resend | null = null;
-
-/** Lấy Resend client singleton — khởi tạo 1 lần duy nhất */
-export function getResendClient(): Resend {
-  if (!resendClient) {
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
-      throw new Error(
-        "Missing RESEND_API_KEY. Cần có RESEND_API_KEY trong env để gửi email."
-      );
-    }
-    resendClient = new Resend(apiKey);
+function getApiKey(): string {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) {
+    throw new Error("Missing RESEND_API_KEY. Cần có RESEND_API_KEY trong env để gửi email.");
   }
-  return resendClient;
+  return key;
 }
 
-// ─── Sender Address ──────────────────────────────────────────
-
-/**
- * Mã hoá tên hiển thị theo RFC 2047 (MIME encoded-word) nếu chứa ký tự non-ASCII.
- * Resend từ chối field `from` nếu display name có ký tự non-ASCII chưa mã hoá
- * (vd tiếng Việt "Doanh Nghiệp 1 Người"). ASCII thuần thì giữ nguyên.
- */
-function encodeDisplayName(name: string): string {
-  // eslint-disable-next-line no-control-regex
-  if (/^[\x00-\x7F]*$/.test(name)) return name;
-  const b64 = Buffer.from(name, "utf-8").toString("base64");
-  return `=?UTF-8?B?${b64}?=`;
-}
-
-/** Lấy địa chỉ From đầy đủ: "Tên <email>" (tên đã mã hoá RFC 2047 nếu cần) */
+/** Lấy địa chỉ From đầy đủ: "Tên <email>" */
 function getFromAddress(): string {
   const email = process.env.EMAIL_FROM || "noreply@doanhnghiep1nguoi.online";
   const name = process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người";
-  return `${encodeDisplayName(name)} <${email}>`;
+  return `${name} <${email}>`;
+}
+
+interface ResendPayload {
+  from: string;
+  to: string[];
+  subject: string;
+  html: string;
+  text?: string;
+  reply_to?: string;
+  headers?: Record<string, string>;
+  tags?: Array<{ name: string; value: string }>;
 }
 
 /** Resend tag name/value chỉ cho phép ASCII chữ/số/_/-; chuẩn hoá để không bị reject */
@@ -65,6 +58,40 @@ function sanitizeTags(
     name: clean(name),
     value: clean(value),
   }));
+}
+
+/** Gửi 1 request tới Resend HTTP API */
+async function postResend(payload: ResendPayload): Promise<SendResult> {
+  const recipient = payload.to.join(", ");
+  try {
+    const res = await fetch(RESEND_ENDPOINT, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${getApiKey()}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const data = (await res.json().catch(() => ({}))) as {
+      id?: string;
+      message?: string;
+      error?: string;
+      name?: string;
+    };
+
+    if (!res.ok) {
+      const message = data?.message || data?.error || data?.name || `Resend HTTP ${res.status}`;
+      console.error(`[Resend] Gửi email thất bại đến ${recipient}:`, message);
+      return { success: false, error: message };
+    }
+
+    return { success: true, messageId: data?.id };
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Lỗi không xác định khi gửi email";
+    console.error(`[Resend] Gửi email thất bại đến ${recipient}:`, message);
+    return { success: false, error: message };
+  }
 }
 
 // ─── Send Single Email ───────────────────────────────────────
@@ -80,29 +107,14 @@ export async function sendEmail(
   textBody?: string,
   replyTo?: string
 ): Promise<SendResult> {
-  try {
-    const client = getResendClient();
-    const { data, error } = await client.emails.send({
-      from: getFromAddress(),
-      to: [to],
-      subject,
-      html: htmlBody,
-      ...(textBody ? { text: textBody } : {}),
-      ...(replyTo ? { replyTo } : {}),
-    });
-
-    if (error) {
-      console.error(`[Resend] Gửi email thất bại đến ${to}:`, error.message);
-      return { success: false, error: error.message };
-    }
-
-    return { success: true, messageId: data?.id };
-  } catch (error) {
-    const message =
-      error instanceof Error ? error.message : "Lỗi không xác định khi gửi email";
-    console.error(`[Resend] Gửi email thất bại đến ${to}:`, message);
-    return { success: false, error: message };
-  }
+  return postResend({
+    from: getFromAddress(),
+    to: [to],
+    subject,
+    html: htmlBody,
+    ...(textBody ? { text: textBody } : {}),
+    ...(replyTo ? { reply_to: replyTo } : {}),
+  });
 }
 
 // ─── Send with Full Params ───────────────────────────────────
@@ -113,49 +125,33 @@ export async function sendEmail(
 export async function sendEmailWithParams(
   params: SendEmailParams
 ): Promise<SendResult> {
-  try {
-    const client = getResendClient();
+  const fromEmail = params.fromEmail || process.env.EMAIL_FROM || "noreply@doanhnghiep1nguoi.online";
+  const fromName = params.fromName || process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người";
 
-    const fromEmail = params.fromEmail || process.env.EMAIL_FROM || "noreply@doanhnghiep1nguoi.online";
-    const fromName = params.fromName || process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người";
-    const fromAddress = `${encodeDisplayName(fromName)} <${fromEmail}>`;
-
-    const { data, error } = await client.emails.send({
-      from: fromAddress,
-      to: [params.to],
-      subject: params.subject,
-      html: params.html,
-      ...(params.text ? { text: params.text } : {}),
-      ...(params.replyTo ? { replyTo: params.replyTo } : {}),
-      ...(params.headers ? { headers: params.headers } : {}),
-      ...(sanitizeTags(params.tags) ? { tags: sanitizeTags(params.tags) } : {}),
-    });
-
-    if (error) {
-      console.error(`[Resend] sendEmailWithParams thất bại đến ${params.to}:`, error.message);
-      return { success: false, error: error.message };
-    }
-
-    return { success: true, messageId: data?.id };
-  } catch (error) {
-    const message = error instanceof Error ? error.message : "Lỗi gửi email";
-    console.error(`[Resend] sendEmailWithParams thất bại đến ${params.to}:`, message);
-    return { success: false, error: message };
-  }
+  return postResend({
+    from: `${fromName} <${fromEmail}>`,
+    to: [params.to],
+    subject: params.subject,
+    html: params.html,
+    ...(params.text ? { text: params.text } : {}),
+    ...(params.replyTo ? { reply_to: params.replyTo } : {}),
+    ...(params.headers ? { headers: params.headers } : {}),
+    ...(sanitizeTags(params.tags) ? { tags: sanitizeTags(params.tags) } : {}),
+  });
 }
 
 // ─── Send Bulk Emails ────────────────────────────────────────
 
 /**
  * Gửi email hàng loạt — mỗi email có nội dung riêng.
- * Gửi tuần tự với delay để tránh vượt rate limit Resend.
+ * Gửi tuần tự với delay để tránh vượt rate limit Resend (~2 req/giây).
  *
  * @param emails - Mảng email cần gửi
- * @param delayMs - Delay giữa mỗi email (mặc định 100ms ~ 10 emails/giây)
+ * @param delayMs - Delay giữa mỗi email (mặc định 600ms ~ an toàn rate limit)
  */
 export async function sendBulkEmails(
   emails: BulkEmailEntry[],
-  delayMs: number = 100
+  delayMs: number = 600
 ): Promise<BulkSendResult> {
   const results: BulkSendResult["results"] = [];
   let sent = 0;
