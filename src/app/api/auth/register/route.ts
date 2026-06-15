@@ -143,7 +143,33 @@ export async function POST(req: NextRequest) {
       console.error("[Register] Email send failed:", emailErr instanceof Error ? emailErr.message : emailErr);
     }
 
-    return NextResponse.json({ success: true, emailSent, emailEngine: "resend-http-v3" });
+    // ── DIAGNOSTIC (tạm thời) — fetch thẳng Resend ngay trong route này ──
+    let diag: Record<string, unknown> = {};
+    try {
+      const rk = process.env.RESEND_API_KEY || "";
+      const directRes = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${rk}`, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          from: "Doanh Nghiep 1 Nguoi <noreply@doanhnghiep1nguoi.online>",
+          to: [email],
+          subject: "Test truc tiep",
+          html: "<p>test</p>",
+        }),
+      });
+      const directBody = await directRes.json().catch(() => ({}));
+      diag = {
+        keyLen: rk.length,
+        keyPrefix: rk.slice(0, 6),
+        keyIsDoc: rk === "re_3th1R8sd_8eR9ixC2Bc2RTS4p65cMrnNg",
+        directStatus: directRes.status,
+        directBody,
+      };
+    } catch (e) {
+      diag = { diagError: e instanceof Error ? e.message : String(e) };
+    }
+
+    return NextResponse.json({ success: true, emailSent, emailEngine: "resend-http-v3", diag });
   } catch (err) {
     console.error("Register API error:", err);
     return NextResponse.json({ error: "Có lỗi xảy ra. Vui lòng thử lại." }, { status: 500 });
