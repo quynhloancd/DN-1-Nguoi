@@ -30,10 +30,22 @@ function getApiKey(): string {
   return key;
 }
 
-/** Lấy địa chỉ From đầy đủ: "Tên <email>" */
+/** Bỏ dấu tiếng Việt → ASCII (an toàn cho field `from` với mọi key Resend) */
+function toAsciiName(name: string): string {
+  return name
+    .replace(/đ/g, "d")
+    .replace(/Đ/g, "D")
+    .normalize("NFD")
+    // eslint-disable-next-line no-control-regex
+    .replace(/[^\x00-\x7F]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** Lấy địa chỉ From đầy đủ: "Tên <email>" (tên fold ASCII) */
 function getFromAddress(): string {
   const email = process.env.EMAIL_FROM || "noreply@doanhnghiep1nguoi.online";
-  const name = process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người";
+  const name = toAsciiName(process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người");
   return `${name} <${email}>`;
 }
 
