@@ -143,7 +143,7 @@ export async function POST(req: NextRequest) {
       console.error("[Register] Email send failed:", emailErr instanceof Error ? emailErr.message : emailErr);
     }
 
-    return NextResponse.json({ success: true, emailSent });
+    return NextResponse.json({ success: true, emailSent, emailEngine: "resend-http-v3" });
   } catch (err) {
     console.error("Register API error:", err);
     return NextResponse.json({ error: "Có lỗi xảy ra. Vui lòng thử lại." }, { status: 500 });
