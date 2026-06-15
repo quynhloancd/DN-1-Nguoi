@@ -1,18 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
-import { SESv2Client, SendEmailCommand } from "@aws-sdk/client-sesv2";
+import { sendEmailWithParams } from "@/lib/email/ses";
 
 const BATCH_SIZE = 50;
-
-function createSESClient() {
-  return new SESv2Client({
-    region: process.env.AWS_SES_REGION || "us-east-1",
-    credentials: {
-      accessKeyId: process.env.AWS_SES_ACCESS_KEY!,
-      secretAccessKey: process.env.AWS_SES_SECRET_KEY!,
-    },
-  });
-}
 
 function renderTemplate(
   html: string,
@@ -141,7 +131,6 @@ export async function POST(
       (subscribers || []).map((s: { id: string; email: string; full_name?: string }) => [s.id, s])
     );
 
-    const sesClient = createSESClient();
     let sentCount = 0;
 
     for (const send of queuedSends) {
@@ -175,32 +164,27 @@ export async function POST(
         // Rewrite links for click tracking
         renderedHtml = rewriteLinksForTracking(renderedHtml, send.id);
 
-        // Send via SES
-        const command = new SendEmailCommand({
-          FromEmailAddress: `${campaign.from_name || process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người"} <${campaign.from_email || process.env.EMAIL_FROM || "support@doanhnghiep1nguoi.online"}>`,
-          Destination: { ToAddresses: [send.email] },
-          Content: {
-            Simple: {
-              Subject: { Data: campaign.subject, Charset: "UTF-8" },
-              Body: {
-                Html: { Data: renderedHtml, Charset: "UTF-8" },
-                Text: { Data: campaign.text_content || "", Charset: "UTF-8" },
-              },
-            },
-          },
-          ReplyToAddresses: campaign.reply_to
-            ? [campaign.reply_to]
-            : undefined,
+        // Send via Resend
+        const result = await sendEmailWithParams({
+          to: send.email,
+          subject: campaign.subject,
+          html: renderedHtml,
+          text: campaign.text_content || undefined,
+          fromName: campaign.from_name || process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người",
+          fromEmail: campaign.from_email || process.env.EMAIL_FROM || "noreply@doanhnghiep1nguoi.online",
+          replyTo: campaign.reply_to || undefined,
         });
 
-        const result = await sesClient.send(command);
+        if (!result.success) {
+          throw new Error(result.error || "Gửi email thất bại");
+        }
 
         // Update send status
         await admin
           .from("email_sends")
           .update({
             status: "sent",
-            ses_message_id: result.MessageId || null,
+            ses_message_id: result.messageId || null,
             sent_at: new Date().toISOString(),
           })
           .eq("id", send.id);

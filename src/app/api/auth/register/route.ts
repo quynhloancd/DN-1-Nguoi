@@ -132,8 +132,12 @@ export async function POST(req: NextRequest) {
         const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://doanhnghiep1nguoi.online";
         const confirmUrl = `${baseUrl}/auth/confirm?token_hash=${linkData.properties.hashed_token}&type=signup&next=/dashboard`;
         const { sendVerificationEmail } = await import("@/lib/email/transactional");
-        await sendVerificationEmail(email, full_name, confirmUrl);
-        emailSent = true;
+        const emailResult = await sendVerificationEmail(email, full_name, confirmUrl);
+        if (emailResult?.success) {
+          emailSent = true;
+        } else {
+          console.error("[Register] Verification email failed:", emailResult?.error);
+        }
       }
     } catch (emailErr) {
       console.error("[Register] Email send failed:", emailErr instanceof Error ? emailErr.message : emailErr);
