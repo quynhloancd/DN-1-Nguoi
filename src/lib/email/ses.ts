@@ -36,11 +36,23 @@ export function getResendClient(): Resend {
 
 // ─── Sender Address ──────────────────────────────────────────
 
-/** Lấy địa chỉ From đầy đủ: "Tên <email>" */
+/**
+ * Mã hoá tên hiển thị theo RFC 2047 (MIME encoded-word) nếu chứa ký tự non-ASCII.
+ * Resend từ chối field `from` nếu display name có ký tự non-ASCII chưa mã hoá
+ * (vd tiếng Việt "Doanh Nghiệp 1 Người"). ASCII thuần thì giữ nguyên.
+ */
+function encodeDisplayName(name: string): string {
+  // eslint-disable-next-line no-control-regex
+  if (/^[\x00-\x7F]*$/.test(name)) return name;
+  const b64 = Buffer.from(name, "utf-8").toString("base64");
+  return `=?UTF-8?B?${b64}?=`;
+}
+
+/** Lấy địa chỉ From đầy đủ: "Tên <email>" (tên đã mã hoá RFC 2047 nếu cần) */
 function getFromAddress(): string {
   const email = process.env.EMAIL_FROM || "noreply@doanhnghiep1nguoi.online";
   const name = process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người";
-  return `${name} <${email}>`;
+  return `${encodeDisplayName(name)} <${email}>`;
 }
 
 /** Resend tag name/value chỉ cho phép ASCII chữ/số/_/-; chuẩn hoá để không bị reject */
@@ -106,7 +118,7 @@ export async function sendEmailWithParams(
 
     const fromEmail = params.fromEmail || process.env.EMAIL_FROM || "noreply@doanhnghiep1nguoi.online";
     const fromName = params.fromName || process.env.EMAIL_FROM_NAME || "Doanh Nghiệp 1 Người";
-    const fromAddress = `${fromName} <${fromEmail}>`;
+    const fromAddress = `${encodeDisplayName(fromName)} <${fromEmail}>`;
 
     const { data, error } = await client.emails.send({
       from: fromAddress,
