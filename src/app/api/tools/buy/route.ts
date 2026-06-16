@@ -10,10 +10,12 @@ import {
 } from "@/lib/tool-access";
 
 function genOrderCode(): string {
+  // Tiền tố "DK" để SePay webhook (khớp nội dung CK theo prefix DK) tự nhận
+  // diện đơn và auto-xác nhận khi khách chuyển khoản đúng nội dung.
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
   let s = "";
-  for (const b of randomBytes(8)) s += chars[b % chars.length];
-  return `DN${s}`;
+  for (const b of randomBytes(10)) s += chars[b % chars.length];
+  return `DK${s}`;
 }
 
 /**
