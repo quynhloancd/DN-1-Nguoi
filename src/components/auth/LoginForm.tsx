@@ -9,6 +9,8 @@ import SocialLoginButtons from "@/components/auth/SocialLoginButtons";
 export default function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const justRegistered = searchParams.get("registered") === "1";
+  const prefillEmail = searchParams.get("email") || "";
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [emailNotConfirmed, setEmailNotConfirmed] = useState(false);
@@ -94,6 +96,17 @@ export default function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      {justRegistered && (
+        <div
+          role="status"
+          className="p-3 rounded-lg text-sm border"
+          style={{ background: "rgba(34,197,94,0.08)", borderColor: "rgba(34,197,94,0.25)" }}
+        >
+          <p className="text-green-500 font-medium">Đăng ký thành công! 🎉</p>
+          <p className="text-gray-600 mt-1">Đăng nhập ngay bằng email và mật khẩu vừa tạo.</p>
+        </div>
+      )}
+
       {error && (
         <div
           role="alert"
@@ -146,7 +159,7 @@ export default function LoginForm() {
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
-        <input id="email" name="email" type="email" placeholder="ban@email.com" className="input-dark w-full" required />
+        <input id="email" name="email" type="email" defaultValue={prefillEmail} placeholder="ban@email.com" className="input-dark w-full" required />
       </div>
 
       <div>

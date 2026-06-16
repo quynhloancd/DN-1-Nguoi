@@ -40,7 +40,8 @@ export default function RegisterForm() {
       });
       const data = await res.json();
       if (data.success) {
-        router.push("/register/verify?email=" + encodeURIComponent(email));
+        // Tài khoản auto-confirm → đăng nhập được ngay, không cần xác thực email.
+        router.push("/login?registered=1&email=" + encodeURIComponent(email));
       } else {
         setError(data.error || "Có lỗi xảy ra");
       }

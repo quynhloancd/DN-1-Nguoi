@@ -47,7 +47,9 @@ export async function POST(req: NextRequest) {
     const { data: created, error: createError } = await admin.auth.admin.createUser({
       email: cleanEmail,
       password,
-      email_confirm: false,
+      // Auto-confirm: user dùng được ngay sau khi đăng ký, không cần bấm link
+      // xác thực trong email (link hay bị trình duyệt/ad-block chặn).
+      email_confirm: true,
       user_metadata: { full_name: full_name.trim() },
     });
     if (createError) {
@@ -117,33 +119,37 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // Send verification email
-    let emailSent = false;
-    try {
-      const { data: linkData, error: linkError } = await admin.auth.admin.generateLink({
-        type: "signup",
-        email,
-        password,
-      });
+    // Tài khoản đã auto-confirm → đăng nhập được ngay. Làm các tác vụ sau
+    // đăng ký + gửi email chào mừng (không bắt buộc, không chặn luồng).
+    if (created?.user) {
+      const userId = created.user.id;
 
-      if (linkError) {
-        console.error("[Register] generateLink error:", linkError.message);
-      } else if (linkData) {
-        const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://doanhnghiep1nguoi.online";
-        const confirmUrl = `${baseUrl}/auth/confirm?token_hash=${linkData.properties.hashed_token}&type=signup&next=/dashboard`;
-        const { sendVerificationEmail } = await import("@/lib/email/transactional");
-        const emailResult = await sendVerificationEmail(email, full_name, confirmUrl);
-        if (emailResult?.success) {
-          emailSent = true;
-        } else {
-          console.error("[Register] Verification email failed:", emailResult?.error);
+      try {
+        const { data: freeProduct } = await admin
+          .from("products")
+          .select("id")
+          .eq("price", 0)
+          .limit(1)
+          .single();
+        if (freeProduct) {
+          await admin.from("enrollments").upsert(
+            { user_id: userId, product_id: freeProduct.id, source: "free" },
+            { onConflict: "user_id,product_id" }
+          );
         }
-      }
-    } catch (emailErr) {
-      console.error("[Register] Email send failed:", emailErr instanceof Error ? emailErr.message : emailErr);
+      } catch {}
+
+      try {
+        await admin.from("xp_events").insert({ user_id: userId, action: "register", xp_amount: 100 });
+      } catch {}
+
+      try {
+        const { sendWelcomeEmail } = await import("@/lib/email/transactional");
+        await sendWelcomeEmail(cleanEmail, full_name.trim()).catch(() => {});
+      } catch {}
     }
 
-    return NextResponse.json({ success: true, emailSent });
+    return NextResponse.json({ success: true, autoConfirmed: true });
   } catch (err) {
     console.error("Register API error:", err);
     return NextResponse.json({ error: "Có lỗi xảy ra. Vui lòng thử lại." }, { status: 500 });
