@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 type Bank = { bankName: string; bankCode: string; account: string; accountName: string };
@@ -28,6 +28,23 @@ export default function ToolBuyPanel({
   const [copied, setCopied] = useState("");
 
   const fmt = (n: number) => n.toLocaleString("vi-VN") + "đ";
+
+  // Khi đang chờ xác nhận: poll trạng thái mỗi 5s, xác nhận xong tự mở khóa.
+  useEffect(() => {
+    if (!pending) return;
+    const code = pending.order_code;
+    const id = setInterval(async () => {
+      try {
+        const res = await fetch(`/api/tools/order-status?code=${encodeURIComponent(code)}`);
+        const data = await res.json();
+        if (data?.confirmed) {
+          clearInterval(id);
+          window.location.reload();
+        }
+      } catch {}
+    }, 5000);
+    return () => clearInterval(id);
+  }, [pending]);
 
   async function handleBuy() {
     if (loading) return;
