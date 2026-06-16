@@ -9,13 +9,27 @@ import {
   getBankTransferInfo,
 } from "@/lib/tool-access";
 
-function genOrderCode(): string {
-  // Tiền tố "DK" để SePay webhook (khớp nội dung CK theo prefix DK) tự nhận
-  // diện đơn và auto-xác nhận khi khách chuyển khoản đúng nội dung.
-  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  let s = "";
-  for (const b of randomBytes(10)) s += chars[b % chars.length];
-  return `DK${s}`;
+/**
+ * Sinh mã đơn ngắn gọn dạng "DK" + số thứ tự (vd DK1, DK2, DK128).
+ * Giữ tiền tố "DK" để SePay webhook tự nhận diện và auto-xác nhận.
+ */
+async function genOrderCode(admin: Awaited<ReturnType<typeof createAdminClient>>): Promise<string> {
+  const { count } = await admin
+    .from("orders")
+    .select("id", { count: "exact", head: true });
+  let n = (count ?? 0) + 1;
+  for (let i = 0; i < 100; i++) {
+    const code = `DK${n}`;
+    const { data: exists } = await admin
+      .from("orders")
+      .select("id")
+      .eq("order_code", code)
+      .maybeSingle();
+    if (!exists) return code;
+    n++;
+  }
+  // Fallback cực hiếm khi đụng độ: thêm hậu tố ngẫu nhiên
+  return `DK${n}${randomBytes(2).toString("hex").toUpperCase()}`;
 }
 
 /**
@@ -94,7 +108,7 @@ export async function POST(req: NextRequest) {
     .eq("id", user.id)
     .single();
 
-  const orderCode = genOrderCode();
+  const orderCode = await genOrderCode(admin);
   const { data: order, error: orderErr } = await admin
     .from("orders")
     .insert({
