@@ -30,7 +30,10 @@ export async function POST(req: NextRequest) {
     const apiKeyBuf = Buffer.from(apiKey);
     const envKeyBuf = Buffer.from(envKey);
     if (apiKeyBuf.length !== envKeyBuf.length || !crypto.timingSafeEqual(apiKeyBuf, envKeyBuf)) {
-      console.error("[Sepay] Unauthorized - API key mismatch");
+      const fp = (s: string) => (s ? `${s.slice(0, 4)}..${s.slice(-3)}(len${s.length})` : "empty");
+      console.error(
+        `[Sepay] key mismatch | authHeaderPrefix="${authHeader.slice(0, 12)}" | recv=${fp(apiKey)} | env=${fp(envKey)}`
+      );
       logAudit({
         admin_id: "system",
         action: "webhook.auth_failed" as any,
