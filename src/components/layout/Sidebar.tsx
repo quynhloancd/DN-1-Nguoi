@@ -30,6 +30,7 @@ const courseSubNav = [
 const mainNav = [
   { href: "/dashboard", icon: LayoutDashboard, label: "Tổng quan" },
   { href: "/tool-ai", icon: Wrench, label: "Tool AI" },
+  { href: "/tool-cua-toi", icon: ShoppingBag, label: "Tool của tôi" },
   { href: "/combo", icon: Package, label: "Combo" },
   { href: "/sanphamso", icon: ShoppingBag, label: "Sản phẩm" },
   { href: "/courses", icon: BookOpen, label: "Khoá học đề xuất", subNav: courseSubNav },

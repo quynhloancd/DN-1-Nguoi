@@ -1,7 +1,13 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, createAdminClient } from "@/lib/supabase/server";
 import type { Metadata } from "next";
+import ToolBuyPanel from "@/components/tool-ai/ToolBuyPanel";
+import {
+  getUserToolOrder,
+  computeToolAccess,
+  getBankTransferInfo,
+} from "@/lib/tool-access";
 
 export const dynamic = "force-dynamic";
 
@@ -90,8 +96,25 @@ export default async function ToolDetailPage({
 
   if (!tool) notFound();
 
-  const hasPaymentLink = !!(tool.payment_link && tool.payment_link.trim());
-  const ctaHref = hasPaymentLink ? tool.payment_link! : "#lien-he-zalo";
+  // ── Quyền truy cập ──────────────────────────────────────────────
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  const isLoggedIn = !!user;
+  const price = tool.sale_price || tool.price;
+  let order = null;
+  if (isLoggedIn && price > 0) {
+    const admin = await createAdminClient();
+    order = await getUserToolOrder(admin, user!.id, tool.id);
+  }
+  const { hasAccess } = computeToolAccess({ isLoggedIn, price, order });
+  const pendingInfo =
+    order && order.status === "pending"
+      ? { order_code: order.order_code, amount: order.amount }
+      : null;
+  const bank = getBankTransferInfo();
+
+  const ctaHref = "#mua";
   const ytId = tool.demo_video_url ? getYouTubeId(tool.demo_video_url) : null;
   const whatLines = tool.what_you_get ? parseLines(tool.what_you_get) : [];
   const suitableLines = tool.suitable_for ? parseLines(tool.suitable_for) : [];
@@ -212,17 +235,63 @@ export default async function ToolDetailPage({
           </section>
         )}
 
-        {/* ── Prompt mẫu ─────────────────────────────────────────────────── */}
-        {tool.prompt_template && (
-          <section>
-            <h2 className="text-xl font-bold text-[#1C2A44] mb-4">
-              Prompt mẫu
-            </h2>
-            <pre className="bg-gray-100 rounded-xl p-5 text-sm text-gray-800 whitespace-pre-wrap leading-relaxed overflow-x-auto">
-              {tool.prompt_template}
-            </pre>
-          </section>
-        )}
+        {/* ── Truy cập / Mua (khóa nội dung theo quyền) ──────────────────── */}
+        <section id="mua">
+          {hasAccess ? (
+            <>
+              <h2 className="text-xl font-bold text-[#1C2A44] mb-4">
+                Nội dung tool của bạn ✅
+              </h2>
+              <div className="rounded-2xl border-2 border-green-200 bg-green-50 p-6 space-y-4">
+                {tool.tool_link && (
+                  <a
+                    href={tool.tool_link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white"
+                    style={{ background: "#16a34a" }}
+                  >
+                    → Mở tool ngay
+                  </a>
+                )}
+                {tool.guide_url && (
+                  <div>
+                    <a
+                      href={tool.guide_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline font-medium"
+                    >
+                      📘 Hướng dẫn sử dụng từng bước
+                    </a>
+                  </div>
+                )}
+                {tool.prompt_template && (
+                  <div>
+                    <p className="font-semibold text-[#1C2A44] mb-2">Prompt mẫu:</p>
+                    <pre className="bg-white rounded-xl p-5 text-sm text-gray-800 whitespace-pre-wrap leading-relaxed overflow-x-auto border border-gray-200">
+                      {tool.prompt_template}
+                    </pre>
+                  </div>
+                )}
+                {!tool.tool_link && !tool.guide_url && !tool.prompt_template && (
+                  <p className="text-gray-600">
+                    Tool đã được mở khóa. Nội dung chi tiết sẽ được gửi qua Zalo/email.
+                  </p>
+                )}
+              </div>
+            </>
+          ) : (
+            <ToolBuyPanel
+              toolId={tool.id}
+              amount={price}
+              ctaText={tool.cta_text}
+              isLoggedIn={isLoggedIn}
+              initialPending={pendingInfo}
+              bank={bank}
+            />
+          )}
+        </section>
 
         {/* ── Demo video ─────────────────────────────────────────────────── */}
         {ytId && (
@@ -307,48 +376,6 @@ export default async function ToolDetailPage({
           </div>
         </section>
       </div>
-
-      {/* ── Modal liên hệ Zalo (hiện khi không có payment_link) ────────────── */}
-      {!hasPaymentLink && (
-        <div
-          id="lien-he-zalo"
-          className="hidden target:flex fixed inset-0 z-50 items-center justify-center bg-black/60 px-4"
-        >
-          <div className="bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl relative">
-            <a
-              href="#"
-              className="absolute top-3 right-4 text-gray-400 hover:text-gray-600 text-2xl leading-none"
-              aria-label="Đóng"
-            >
-              ×
-            </a>
-            <div className="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-4">
-              <svg viewBox="0 0 40 40" fill="none" className="w-9 h-9">
-                <rect width="40" height="40" rx="20" fill="#0068FF"/>
-                <path d="M20 8C13.373 8 8 12.925 8 19c0 3.54 1.8 6.7 4.63 8.77L11.5 32l4.57-2.02C17.27 30.3 18.62 30.5 20 30.5c6.627 0 12-4.925 12-11s-5.373-11-12-11z" fill="white"/>
-              </svg>
-            </div>
-            <h3 className="text-xl font-bold text-[#1C2A44] mb-2">
-              Liên hệ để mua
-            </h3>
-            <p className="text-gray-500 text-sm mb-6">
-              Tool này chưa có link thanh toán tự động. Nhắn Zalo để được hỗ trợ mua nhanh nhất!
-            </p>
-            <a
-              href="https://zalo.me/0339033939"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block w-full py-3 rounded-xl font-bold text-white text-base transition-all"
-              style={{ background: "#0068FF" }}
-            >
-              Nhắn Zalo ngay
-            </a>
-            <p className="text-xs text-gray-400 mt-3">
-              Thường phản hồi trong vòng 5 phút
-            </p>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
