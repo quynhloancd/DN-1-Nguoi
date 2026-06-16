@@ -40,7 +40,21 @@ export default function RegisterForm() {
       });
       const data = await res.json();
       if (data.success) {
-        // Tài khoản auto-confirm → đăng nhập được ngay, không cần xác thực email.
+        // Tài khoản đã auto-confirm → đăng nhập luôn, vào thẳng hệ thống.
+        try {
+          const loginRes = await fetch("/api/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password }),
+          });
+          const loginData = await loginRes.json();
+          if (loginData.success) {
+            router.push("/dashboard");
+            router.refresh();
+            return;
+          }
+        } catch {}
+        // Fallback: nếu auto-login lỗi thì về trang đăng nhập (đã có sẵn tài khoản)
         router.push("/login?registered=1&email=" + encodeURIComponent(email));
       } else {
         setError(data.error || "Có lỗi xảy ra");
