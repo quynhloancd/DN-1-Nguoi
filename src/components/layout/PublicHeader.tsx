@@ -17,7 +17,6 @@ interface PublicHeaderProps {
 const navLinks = [
   { label: "Trang chủ", href: "/" },
   { label: "Tool AI", href: "/tool-ai" },
-  { label: "Combo", href: "/combo" },
   { label: "Khóa học đề xuất", href: "/khoa-hoc-de-xuat" },
   { label: "Blog", href: "/blog" },
   { label: "Cộng đồng", href: "https://zalo.me/g/rwbdziccjrlrzxhsbdja", external: true },

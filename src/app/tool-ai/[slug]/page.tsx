@@ -366,6 +366,8 @@ export default async function ToolDetailPage({
           >
             {tool.cta_text}
           </a>
+          {/* Link combo — ẩn tạm, chưa dùng tới */}
+          {false && (
           <div>
             <Link
               href="/combo"
@@ -374,6 +376,7 @@ export default async function ToolDetailPage({
               Xem combo tiết kiệm hơn →
             </Link>
           </div>
+          )}
         </section>
       </div>
     </div>

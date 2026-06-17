@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import {
   Users, BookOpen, ShoppingCart, FileText, Mail,
-  TrendingUp, Plus, Settings, ArrowRight, AlertCircle, DollarSign, Wrench, Package, Clock
+  TrendingUp, Plus, Settings, ArrowRight, AlertCircle, DollarSign, Wrench, Clock
 } from "lucide-react";
 import AnalyticsDashboard from "@/components/admin/analytics/AnalyticsDashboardWrapper";
 import UserAvatar from "@/components/admin/UserAvatar";
@@ -104,17 +104,6 @@ export default async function AdminPage() {
       actions: [
         { label: "Thêm tool", href: "/admin/tools/new" },
         { label: "Danh sách", href: "/admin/tools" },
-      ],
-    },
-    {
-      icon: Package,
-      title: "Combo Tool",
-      desc: "Gói nhiều tool bán kèm với giá ưu đãi",
-      count: "Combo",
-      color: "#E85D04",
-      actions: [
-        { label: "Thêm combo", href: "/admin/combos/new" },
-        { label: "Danh sách", href: "/admin/combos" },
       ],
     },
     {
@@ -371,7 +360,6 @@ export default async function AdminPage() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
             {[
               { label: "Thêm Tool AI", icon: Wrench, color: "#F97316", href: "/admin/tools/new" },
-              { label: "Thêm Combo", icon: Package, color: "#E85D04", href: "/admin/combos/new" },
               { label: "Đơn chờ xác nhận", icon: ShoppingCart, color: "#f59e0b", href: "/admin/orders?status=pending" },
               { label: "Khách hàng", icon: Users, color: "#8b5cf6", href: "/admin/users" },
               { label: "Cài đặt", icon: Settings, color: "#6b7280", href: "/settings" },

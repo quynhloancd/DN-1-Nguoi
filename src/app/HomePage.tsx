@@ -228,7 +228,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ KHỐI 5 — COMBO ĐỀ XUẤT ═══ */}
+      {/* ═══ KHỐI 5 — COMBO ĐỀ XUẤT (ẩn tạm — chưa dùng tới) ═══ */}
+      {false && (
       <section className="bg-[#1C2A44] py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-center text-white mb-10 sm:mb-14">
@@ -296,6 +297,7 @@ export default function HomePage() {
 
         </div>
       </section>
+      )}
 
       {/* ═══ KHỐI 6 — TÀI NGUYÊN MIỄN PHÍ ═══ */}
       <section className="bg-white py-16 sm:py-24 px-4 sm:px-6">

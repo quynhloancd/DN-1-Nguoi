@@ -16,7 +16,7 @@ import {
   Star, ShieldCheck, Zap, X, UserPlus, Contact, GitBranch,
   FolderOpen, TrendingUp, Target, UserCheck, Tag, ClipboardCheck,
   GraduationCap, Megaphone, Eye, Shield,
-  Video, Globe, Sparkles, ShoppingBag, Wrench, LayoutList, Package,
+  Video, Globe, Sparkles, ShoppingBag, Wrench, LayoutList,
   UserCog, Image as ImageIcon,
 } from "lucide-react";
 
@@ -31,7 +31,6 @@ const mainNav = [
   { href: "/dashboard", icon: LayoutDashboard, label: "Tổng quan" },
   { href: "/tool-ai", icon: Wrench, label: "Tool AI" },
   { href: "/tool-cua-toi", icon: ShoppingBag, label: "Tool của tôi" },
-  { href: "/combo", icon: Package, label: "Combo" },
   { href: "/sanphamso", icon: ShoppingBag, label: "Sản phẩm" },
   { href: "/courses", icon: BookOpen, label: "Khoá học đề xuất", subNav: courseSubNav },
   { href: "/resources", icon: FolderOpen, label: "Tài nguyên" },
@@ -63,7 +62,6 @@ const adminNavGroups = [
     items: [
       { href: "/admin/tools", icon: Wrench, label: "Tool AI", roles: ["admin", "manager", "editor", "instructor"] },
       { href: "/admin/categories", icon: LayoutList, label: "Danh mục Tool", roles: ["admin", "manager", "editor"] },
-      { href: "/admin/combos", icon: Package, label: "Combo Tool", roles: ["admin", "manager"] },
       { href: "/admin/orders", icon: Rocket, label: "Đơn hàng", roles: ["admin", "manager", "sale"] },
       { href: "/admin/coupons", icon: Tag, label: "Mã giảm giá", roles: ["admin", "manager"] },
     ],

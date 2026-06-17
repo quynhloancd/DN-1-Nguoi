@@ -101,7 +101,8 @@ export default function CamOnClient() {
                 </Link>
               </div>
 
-              {/* Card combo */}
+              {/* Card combo — ẩn tạm, chưa dùng tới */}
+              {false && (
               <div className="flex items-center justify-between gap-4 border border-gray-100 rounded-xl p-4 bg-gray-50">
                 <div>
                   <p className="font-bold text-sm text-[#1C2A44] leading-snug">
@@ -117,6 +118,7 @@ export default function CamOnClient() {
                   Xem combo
                 </Link>
               </div>
+              )}
             </div>
           </div>
 
