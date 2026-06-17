@@ -2,6 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import TopBar from "@/components/layout/TopBar";
+import AutoRefresh from "@/components/tool-ai/AutoRefresh";
 import { CONFIRMED_STATUSES } from "@/lib/tool-access";
 
 export const dynamic = "force-dynamic";
@@ -39,9 +40,11 @@ export default async function ToolCuaToiPage() {
   }
 
   const confirmed = (s: string) => (CONFIRMED_STATUSES as readonly string[]).includes(s);
+  const hasPending = list.some((o) => !confirmed(o.status));
 
   return (
     <div>
+      {hasPending && <AutoRefresh seconds={8} />}
       <TopBar title="Tool của tôi" subtitle="Các tool bạn đã mua hoặc đang chờ xác nhận" />
       <div className="p-6 max-w-3xl mx-auto">
         {list.length === 0 ? (

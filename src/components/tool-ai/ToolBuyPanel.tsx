@@ -102,8 +102,8 @@ export default function ToolBuyPanel({
       <div className="rounded-2xl border-2 border-orange-300 bg-orange-50 p-6">
         <p className="font-bold text-[#1C2A44] mb-1">Đơn đã được ghi nhận — chờ xác nhận thanh toán</p>
         <p className="text-sm text-gray-600 mb-4">
-          Vui lòng chuyển khoản đúng <b>số tiền</b> và <b>nội dung</b> bên dưới. Sau khi quản trị
-          viên xác nhận, tool sẽ tự mở khóa cho bạn.
+          Vui lòng chuyển khoản đúng <b>số tiền</b> và <b>nội dung</b> bên dưới. Hệ thống tự động
+          xác nhận sau khi nhận được tiền — tool sẽ <b>tự mở khóa</b> cho bạn (thường trong vài phút).
         </p>
         <div className="bg-white rounded-xl border border-gray-200 divide-y divide-gray-100 text-sm">
           <Row label="Ngân hàng" value={bank.bankName} />
@@ -127,6 +127,13 @@ export default function ToolBuyPanel({
         <p className="text-xs text-gray-500 mt-3">
           ⚠️ Ghi đúng nội dung <b>{pending.order_code}</b> để được duyệt nhanh. Cần hỗ trợ? Nhắn Zalo.
         </p>
+        <Link
+          href="/tool-cua-toi"
+          className="mt-4 w-full inline-flex items-center justify-center px-6 py-3 rounded-xl font-bold text-white"
+          style={{ background: "#F97316" }}
+        >
+          Tôi đã chuyển khoản → Xem Tool của tôi
+        </Link>
       </div>
     );
   }
