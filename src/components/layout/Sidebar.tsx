@@ -12,10 +12,10 @@ import UserAvatar from "@/components/admin/UserAvatar";
 import {
   LayoutDashboard, BookOpen, Users, MessageSquare, MessageCircle,
   FileText, Mail, BarChart3, Settings, LogOut,
-  ChevronLeft, ChevronRight, ChevronDown, Rocket, Trophy, Calendar,
+  ChevronLeft, ChevronRight, ChevronDown, Rocket,
   Star, ShieldCheck, Zap, X, UserPlus, Contact, GitBranch,
   FolderOpen, TrendingUp, Target, UserCheck, Tag, ClipboardCheck,
-  CreditCard, GraduationCap, Megaphone, Eye, Shield,
+  GraduationCap, Megaphone, Eye, Shield,
   Video, Globe, Sparkles, ShoppingBag, Wrench, LayoutList, Package,
   UserCog, Image as ImageIcon,
 } from "lucide-react";
@@ -37,9 +37,6 @@ const mainNav = [
   { href: "/resources", icon: FolderOpen, label: "Tài nguyên" },
   { href: "/community", icon: Users, label: "Cộng đồng" },
   { href: "/blog", icon: FileText, label: "Blog" },
-  { href: "/leaderboard", icon: Trophy, label: "Bảng xếp hạng" },
-  { href: "/events", icon: Calendar, label: "Sự kiện" },
-  { href: "/subscriptions", icon: CreditCard, label: "Gói đăng ký" },
   { href: "/dashboard/affiliate", icon: Zap, label: "Affiliate" },
   { href: "/consulting", icon: MessageCircle, label: "Tư vấn 1-1" },
 ];
@@ -104,8 +101,6 @@ const adminNavGroups = [
       { href: "/admin/roles", icon: UserCog, label: "Phân quyền", roles: ["admin"] },
       { href: "/crm/moderation", icon: Shield, label: "Kiểm duyệt", roles: ["admin", "manager", "support"] },
       { href: "/admin/questions", icon: MessageSquare, label: "Hỗ trợ khách hàng", roles: ["admin", "manager", "support", "editor"] },
-      { href: "/admin/quizzes", icon: ClipboardCheck, label: "Quiz", roles: ["admin", "manager", "editor"] },
-      { href: "/leaderboard", icon: Trophy, label: "Bảng xếp hạng", roles: ["admin", "manager"] },
     ],
   },
 ];

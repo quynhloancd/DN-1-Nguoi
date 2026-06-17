@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import {
   Users, BookOpen, ShoppingCart, FileText, Mail,
-  TrendingUp, Plus, Settings, ArrowRight, AlertCircle, DollarSign, Wrench, Package
+  TrendingUp, Plus, Settings, ArrowRight, AlertCircle, DollarSign, Wrench, Package, Clock
 } from "lucide-react";
 import AnalyticsDashboard from "@/components/admin/analytics/AnalyticsDashboardWrapper";
 import UserAvatar from "@/components/admin/UserAvatar";
@@ -96,58 +96,91 @@ export default async function AdminPage() {
 
   const adminCards = [
     {
-      href: "/admin/courses",
-      icon: BookOpen,
-      title: "Quản lý khoá học",
-      desc: "Thêm/sửa khoá học, chương, bài học và tài nguyên",
-      count: "Khoá học",
-      color: "#E85D04",
-      actions: ["Thêm khoá học", "Xem danh sách"],
+      icon: Wrench,
+      title: "Tool AI",
+      desc: "Sản phẩm chính — thêm/sửa tool, giá bán và nội dung mở khoá",
+      count: "Kho tool",
+      color: "#F97316",
+      actions: [
+        { label: "Thêm tool", href: "/admin/tools/new" },
+        { label: "Danh sách", href: "/admin/tools" },
+      ],
     },
     {
-      href: "/admin/users",
+      icon: Package,
+      title: "Combo Tool",
+      desc: "Gói nhiều tool bán kèm với giá ưu đãi",
+      count: "Combo",
+      color: "#E85D04",
+      actions: [
+        { label: "Thêm combo", href: "/admin/combos/new" },
+        { label: "Danh sách", href: "/admin/combos" },
+      ],
+    },
+    {
+      icon: ShoppingCart,
+      title: "Đơn hàng",
+      desc: "Xác nhận thanh toán khi khách báo đã chuyển khoản",
+      count: `${orderCount ?? 0} đơn đã thanh toán`,
+      color: "#f59e0b",
+      actions: [
+        { label: "Chờ xác nhận", href: "/admin/orders?status=pending" },
+        { label: "Tất cả đơn", href: "/admin/orders" },
+      ],
+    },
+    {
       icon: Users,
       title: "Khách hàng",
-      desc: "Xem danh sách, phân quyền và theo dõi đơn hàng / khách hàng",
+      desc: "Danh sách, phân quyền và theo dõi đơn của từng khách",
       count: `${(userCount ?? 0).toLocaleString("vi-VN")} khách hàng`,
       color: "#3b82f6",
-      actions: ["Thêm thủ công", "Xuất Excel"],
+      actions: [
+        { label: "Danh sách", href: "/admin/users" },
+        { label: "Phân quyền", href: "/admin/roles" },
+      ],
     },
     {
-      href: "/admin/orders",
-      icon: ShoppingCart,
-      title: "Quản lý đơn hàng",
-      desc: "Theo dõi thanh toán, xác nhận thủ công, xuất hoá đơn",
-      count: `${(orderCount ?? 0)} đơn đã thanh toán`,
-      color: "#f59e0b",
-      actions: ["Xem tất cả", "Xác nhận thủ công"],
+      icon: BookOpen,
+      title: "Khoá học đề xuất",
+      desc: "Link affiliate khoá học — thêm khoá, gắn link & ảnh",
+      count: "Affiliate",
+      color: "#a855f7",
+      actions: [
+        { label: "Thêm khoá học", href: "/admin/courses/new" },
+        { label: "Danh sách", href: "/admin/courses" },
+      ],
     },
     {
-      href: "/admin/blog",
       icon: FileText,
-      title: "Quản lý Blog",
-      desc: "Viết, chỉnh sửa và xuất bản bài viết blog",
+      title: "Blog",
+      desc: "Viết bài SEO kéo traffic về kho tool",
       count: `${blogCount ?? 0} bài viết`,
       color: "#8b5cf6",
-      actions: ["Viết bài mới", "Xem danh sách"],
+      actions: [
+        { label: "Viết bài", href: "/admin/blog/new" },
+        { label: "Danh sách", href: "/admin/blog" },
+      ],
     },
     {
-      href: "/email",
       icon: Mail,
-      title: "Quản lý Email",
-      desc: "Tạo template, quản lý automation và subscribers",
+      title: "Email Marketing",
+      desc: "Template, automation chào mừng và subscribers",
       count: `${(subscriberCount ?? 0).toLocaleString("vi-VN")} subscribers`,
       color: "#ec4899",
-      actions: ["Tạo campaign", "Quản lý list"],
+      actions: [
+        { label: "Mở Email", href: "/email" },
+      ],
     },
     {
-      href: "/crm",
       icon: TrendingUp,
       title: "CRM & Analytics",
-      desc: "Doanh thu, chuyển đổi, phễu bán hàng và báo cáo tổng thể",
-      count: "Xem dashboard →",
+      desc: "Doanh thu, chuyển đổi và phễu bán hàng",
+      count: "Báo cáo",
       color: "#14b8a6",
-      actions: ["Mở CRM"],
+      actions: [
+        { label: "Khách quan tâm", href: "/crm/interests" },
+        { label: "Pipeline", href: "/crm/pipeline" },
+      ],
     },
   ];
 
@@ -178,6 +211,24 @@ export default async function AdminPage() {
           </span>
         </div>
 
+        {/* Đơn chờ xác nhận — nối thẳng với luồng "khách đã chuyển khoản" */}
+        {(pendingCount ?? 0) > 0 && (
+          <Link
+            href="/admin/orders?status=pending"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-colors hover:brightness-95"
+            style={{ background: "rgba(249,115,22,0.08)", border: "1px solid rgba(249,115,22,0.25)" }}
+          >
+            <Clock size={16} className="text-[#F97316] shrink-0" />
+            <span className="text-[#F97316] font-semibold">
+              {pendingCount} đơn đang chờ xác nhận thanh toán
+            </span>
+            <span className="text-gray-500 hidden sm:inline">
+              — khách đã bấm &ldquo;Đã chuyển khoản&rdquo;, bấm để duyệt.
+            </span>
+            <ArrowRight size={14} className="text-[#F97316] ml-auto shrink-0" />
+          </Link>
+        )}
+
         {/* Real stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {quickStats.map((s) => (
@@ -198,7 +249,7 @@ export default async function AdminPage() {
         {/* Admin cards */}
         <div className="grid md:grid-cols-3 gap-4">
           {adminCards.map((card) => (
-            <div key={card.href} className="card-dark p-5 hover:bg-[#F8F9FA] transition-all">
+            <div key={card.title} className="card-dark p-5 hover:bg-[#F8F9FA] transition-all">
               <div className="flex items-start justify-between mb-3">
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center"
@@ -213,8 +264,8 @@ export default async function AdminPage() {
               <div className="flex gap-2 flex-wrap">
                 {card.actions.map((action) => (
                   <Link
-                    key={action}
-                    href={card.href}
+                    key={action.label}
+                    href={action.href}
                     className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-medium transition-colors"
                     style={{
                       background: card.color + "15",
@@ -222,10 +273,10 @@ export default async function AdminPage() {
                       border: `1px solid ${card.color}25`,
                     }}
                   >
-                    {action.startsWith("Thêm") || action.startsWith("Viết") || action.startsWith("Tạo")
+                    {action.label.startsWith("Thêm") || action.label.startsWith("Viết") || action.label.startsWith("Tạo")
                       ? <Plus size={11} />
                       : <ArrowRight size={11} />}
-                    {action}
+                    {action.label}
                   </Link>
                 ))}
               </div>
@@ -237,7 +288,15 @@ export default async function AdminPage() {
         <div className="grid md:grid-cols-2 gap-6">
           {/* Recent users */}
           <div>
-            <h2 className="font-bold text-[#1B2A4A] mb-3 text-sm">Khách hàng mới</h2>
+            <div className="flex items-center justify-between mb-3">
+              <h2 className="font-bold text-[#1B2A4A] text-sm">Khách hàng mới</h2>
+              <Link
+                href="/admin/users"
+                className="text-xs font-medium text-[#3b82f6] flex items-center gap-1 hover:underline"
+              >
+                Xem tất cả <ArrowRight size={11} />
+              </Link>
+            </div>
             <div className="card-dark divide-y divide-[#2a2a2a]">
               {(recentUsers ?? []).length === 0 && (
                 <div className="p-4 text-sm text-gray-500">Chưa có khách hàng nào.</div>
@@ -262,7 +321,15 @@ export default async function AdminPage() {
 
           {/* Recent orders */}
           <div>
-            <h2 className="font-bold text-[#1B2A4A] mb-3 text-sm">Đơn hàng gần đây</h2>
+            <div className="flex items-center justify-between mb-3">
+              <h2 className="font-bold text-[#1B2A4A] text-sm">Đơn hàng gần đây</h2>
+              <Link
+                href="/admin/orders"
+                className="text-xs font-medium text-[#f59e0b] flex items-center gap-1 hover:underline"
+              >
+                Xem tất cả <ArrowRight size={11} />
+              </Link>
+            </div>
             <div className="card-dark divide-y divide-[#2a2a2a]">
               {(recentOrders ?? []).length === 0 && (
                 <div className="p-4 text-sm text-gray-500">Chưa có đơn hàng nào.</div>
@@ -303,9 +370,9 @@ export default async function AdminPage() {
           <h2 className="font-bold text-[#1B2A4A] mb-3 text-sm">Thao tác nhanh</h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
             {[
-              { label: "Thêm Tool AI", icon: Wrench, color: "#F97316", href: "/admin/tools" },
-              { label: "Thêm Combo", icon: Package, color: "#E85D04", href: "/admin/combos" },
-              { label: "Xem đơn hàng", icon: ShoppingCart, color: "#f59e0b", href: "/admin/orders" },
+              { label: "Thêm Tool AI", icon: Wrench, color: "#F97316", href: "/admin/tools/new" },
+              { label: "Thêm Combo", icon: Package, color: "#E85D04", href: "/admin/combos/new" },
+              { label: "Đơn chờ xác nhận", icon: ShoppingCart, color: "#f59e0b", href: "/admin/orders?status=pending" },
               { label: "Khách hàng", icon: Users, color: "#8b5cf6", href: "/admin/users" },
               { label: "Cài đặt", icon: Settings, color: "#6b7280", href: "/settings" },
             ].map((item) => (
