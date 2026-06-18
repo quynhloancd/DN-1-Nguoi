@@ -100,7 +100,7 @@ export default function NewToolPage() {
 
     const payload = {
       title,
-      slug,
+      slug: generateSlug(slug) || generateSlug(title),
       category_id: categoryId || null,
       thumbnail_url: thumbnailUrl || null,
       short_description: shortDescription || null,
@@ -159,13 +159,17 @@ export default function NewToolPage() {
               />
             </div>
             <div>
-              <label className="label-form">Slug (URL)</label>
+              <label className="label-form">Slug (đường dẫn trang)</label>
               <input
                 className="input-form"
                 value={slug}
-                onChange={(e) => setSlug(e.target.value)}
+                onChange={(e) => setSlug(generateSlug(e.target.value))}
                 placeholder="tool-tao-video-thoi-trang"
               />
+              <p className="text-[11px] text-gray-500 mt-1">
+                Tự tạo từ tên — chỉ chữ thường, không dấu, không dấu cách.
+                <b className="text-red-500"> Không dán link tool vào đây</b> (dùng ô &ldquo;Link tool sau mua&rdquo;).
+              </p>
             </div>
             <div>
               <label className="label-form">Danh mục</label>
@@ -269,8 +273,11 @@ export default function NewToolPage() {
               <input className="input-form" value={demoVideoUrl} onChange={(e) => setDemoVideoUrl(e.target.value)} placeholder="https://youtube.com/..." />
             </div>
             <div>
-              <label className="label-form">Link tool sau mua</label>
-              <input className="input-form" value={toolLink} onChange={(e) => setToolLink(e.target.value)} placeholder="https://..." />
+              <label className="label-form">Link tool sau mua (khách nhận khi đã thanh toán)</label>
+              <input className="input-form" value={toolLink} onChange={(e) => setToolLink(e.target.value)} placeholder="https://labs.google/fx/... (link tool thật)" />
+              <p className="text-[11px] text-gray-500 mt-1">
+                Dán link truy cập tool (Google Flow, Drive…) ở đây. Khách chỉ thấy nút &ldquo;Mở tool&rdquo; sau khi đơn được xác nhận.
+              </p>
             </div>
             <div>
               <label className="label-form">URL hướng dẫn</label>
