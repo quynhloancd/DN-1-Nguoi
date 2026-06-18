@@ -45,10 +45,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/hero/offer-banner.jpg",
+        url: "/images/hero/og-thumbnail.jpg",
         width: 1200,
-        height: 630,
-        alt: `${siteConfig.name} - ${siteConfig.owner.name}`,
+        height: 670,
+        alt: `Thư viện công cụ AI cho ${siteConfig.name}`,
       },
     ],
   },
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.owner.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: ["/images/hero/offer-banner.jpg"],
+    images: ["/images/hero/og-thumbnail.jpg"],
   },
   icons: {
     icon: "/favicon.png",
