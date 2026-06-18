@@ -10,6 +10,7 @@ const painPoints = [
   { emoji: "💸", text: "Thuê người làm content tốn tiền mà vẫn phải sửa đi sửa lại" },
   { emoji: "🤔", text: "Muốn dùng AI nhưng không biết tool nào đáng dùng" },
   { emoji: "🛠️", text: "Có quá nhiều công cụ, nhưng thiếu quy trình đơn giản để ra kết quả" },
+  { emoji: "😴", text: "Cảm giác làm mãi mà không hết việc, từ sáng sớm đến tận tối khuya" },
 ];
 
 const features = [
