@@ -301,9 +301,9 @@ export default function HomePage() {
       )}
 
       {/* ═══ KHỐI 6 — TÀI NGUYÊN MIỄN PHÍ ═══ */}
-      <section className="bg-white py-16 sm:py-24 px-4 sm:px-6">
+      <section className="bg-[#1C2A44] py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-center text-[#1C2A44] mb-8 sm:mb-10">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-center text-white mb-8 sm:mb-10">
             Nhận bộ tài nguyên AI miễn phí
           </h2>
           <div className="relative w-full max-w-3xl mx-auto aspect-[16/6] rounded-2xl overflow-hidden shadow-sm mb-10 sm:mb-14">
@@ -321,7 +321,7 @@ export default function HomePage() {
               {freeResources.map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span className="mt-0.5 shrink-0 text-xl" style={{ color: "#F97316" }}>✓</span>
-                  <p className="text-[#1C2A44] text-base leading-relaxed">{item}</p>
+                  <p className="text-gray-200 text-base leading-relaxed">{item}</p>
                 </div>
               ))}
               <Link
@@ -340,7 +340,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══ KHỐI 7 — GIỚI THIỆU THIÊN HUỆ ═══ */}
-      <section className="bg-[#1C2A44] py-16 sm:py-24 px-4 sm:px-6">
+      <section className="bg-white py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* Ảnh */}
@@ -357,10 +357,10 @@ export default function HomePage() {
             </div>
             {/* Text */}
             <div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-5 leading-snug">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1C2A44] mb-5 leading-snug">
                 Mình là Thiên Huệ — người gom tool và quy trình để bạn dùng AI dễ hơn
               </h2>
-              <p className="text-gray-300 text-base leading-relaxed">
+              <p className="text-gray-600 text-base leading-relaxed">
                 Mình không dạy lý thuyết AI phức tạp. Mình test tool, gom prompt, đóng gói quy trình và hướng dẫn lại bằng cách dễ hiểu để người kinh doanh online một mình có thể tự làm content, ảnh, video và workflow bán hàng nhanh hơn.
               </p>
             </div>
