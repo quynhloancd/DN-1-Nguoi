@@ -48,7 +48,7 @@ export default function PublicFooter() {
   ].filter((s) => s.href);
 
   return (
-    <footer className="bg-white border-t border-gray-200 text-gray-600">
+    <footer className="bg-[#F1F5F9] border-t border-gray-200 text-gray-600">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
@@ -77,7 +77,7 @@ export default function PublicFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg flex items-center justify-center bg-gray-100 hover:bg-[#F97316] hover:text-white text-gray-500 transition-colors"
+                  className="w-9 h-9 rounded-lg flex items-center justify-center bg-white border border-gray-200 hover:bg-[#F97316] hover:border-[#F97316] hover:text-white text-gray-500 transition-colors"
                 >
                   <Icon size={17} />
                 </a>
