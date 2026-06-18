@@ -98,6 +98,17 @@ export async function POST(req: NextRequest) {
 
   const admin = await createAdminClient();
 
+  // Ensure bucket exists (idempotent) — blog images dùng chung bucket "thumbnails"
+  // với route thumbnail. Nếu chưa có sẽ tạo public bucket để tránh "Upload failed".
+  const { data: buckets } = await admin.storage.listBuckets();
+  if (!buckets?.find((b) => b.name === BUCKET)) {
+    await admin.storage.createBucket(BUCKET, {
+      public: true,
+      fileSizeLimit: 5 * 1024 * 1024, // 5MB — đủ cho cả ảnh thumbnail
+      allowedMimeTypes: ALLOWED_TYPES,
+    });
+  }
+
   // Generate unique filename with sanitized extension
   const ext = sanitizeFilename(rawExt) || "jpg";
   const randomSuffix = crypto.randomBytes(6).toString('hex');
@@ -111,7 +122,7 @@ export async function POST(req: NextRequest) {
   if (uploadError) {
     console.error("Blog image upload failed:", uploadError.message);
     return NextResponse.json(
-      { error: "Upload failed. Please try again." },
+      { error: `Upload failed: ${uploadError.message}` },
       { status: 500 }
     );
   }
