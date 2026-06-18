@@ -22,7 +22,7 @@ const ZaloIcon = (p: { size?: number }) => (
 
 /**
  * Footer cho các trang marketing công khai (qua PublicPageShell).
- * Thương hiệu Doanh Nghiệp 1 Người — nền trắng, tông navy/cam.
+ * Thương hiệu Doanh Nghiệp 1 Người — nền navy đồng bộ các khối tối.
  */
 
 const ZALO_GROUP = "https://zalo.me/g/rwbdziccjrlrzxhsbdja";
@@ -48,7 +48,7 @@ export default function PublicFooter() {
   ].filter((s) => s.href);
 
   return (
-    <footer className="bg-[#F1F5F9] border-t border-gray-200 text-gray-600">
+    <footer className="bg-[#1C2A44] text-gray-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
@@ -61,11 +61,11 @@ export default function PublicFooter() {
                 height={36}
                 className="w-9 h-9 rounded-lg object-cover"
               />
-              <span className="text-[#1B2A4A] font-bold text-base leading-tight">
+              <span className="text-white font-bold text-base leading-tight">
                 {siteConfig.name}
               </span>
             </Link>
-            <p className="text-sm text-gray-500 leading-relaxed mb-4">
+            <p className="text-sm text-gray-400 leading-relaxed mb-4">
               Kho tool AI thực chiến cho người kinh doanh online một mình — tự làm content,
               ảnh, video &amp; quy trình bán hàng, không cần thuê team, không cần biết code.
             </p>
@@ -77,7 +77,7 @@ export default function PublicFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg flex items-center justify-center bg-white border border-gray-200 hover:bg-[#F97316] hover:border-[#F97316] hover:text-white text-gray-500 transition-colors"
+                  className="w-9 h-9 rounded-lg flex items-center justify-center bg-white/10 hover:bg-[#F97316] hover:text-white text-gray-300 transition-colors"
                 >
                   <Icon size={17} />
                 </a>
@@ -87,11 +87,11 @@ export default function PublicFooter() {
 
           {/* Khám phá */}
           <div>
-            <h3 className="text-[#1B2A4A] font-semibold text-sm mb-4">Khám phá</h3>
+            <h3 className="text-white font-semibold text-sm mb-4">Khám phá</h3>
             <ul className="space-y-2.5">
               {exploreLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-gray-500 hover:text-[#F97316] transition-colors">
+                  <Link href={l.href} className="text-sm text-gray-400 hover:text-[#F97316] transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -101,7 +101,7 @@ export default function PublicFooter() {
 
           {/* Hỗ trợ */}
           <div>
-            <h3 className="text-[#1B2A4A] font-semibold text-sm mb-4">Hỗ trợ</h3>
+            <h3 className="text-white font-semibold text-sm mb-4">Hỗ trợ</h3>
             <ul className="space-y-2.5">
               {supportLinks.map((l) =>
                 l.external ? (
@@ -110,14 +110,14 @@ export default function PublicFooter() {
                       href={l.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-gray-500 hover:text-[#F97316] transition-colors"
+                      className="text-sm text-gray-400 hover:text-[#F97316] transition-colors"
                     >
                       {l.label}
                     </a>
                   </li>
                 ) : (
                   <li key={l.label}>
-                    <Link href={l.href} className="text-sm text-gray-500 hover:text-[#F97316] transition-colors">
+                    <Link href={l.href} className="text-sm text-gray-400 hover:text-[#F97316] transition-colors">
                       {l.label}
                     </Link>
                   </li>
@@ -128,8 +128,8 @@ export default function PublicFooter() {
 
           {/* CTA tài nguyên */}
           <div>
-            <h3 className="text-[#1B2A4A] font-semibold text-sm mb-4">Nhận tài nguyên miễn phí</h3>
-            <p className="text-sm text-gray-500 leading-relaxed mb-4">
+            <h3 className="text-white font-semibold text-sm mb-4">Nhận tài nguyên miễn phí</h3>
+            <p className="text-sm text-gray-400 leading-relaxed mb-4">
               Bộ tool + prompt mẫu giúp bạn bắt đầu làm content bằng AI ngay hôm nay.
             </p>
             <Link
@@ -144,14 +144,14 @@ export default function PublicFooter() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-gray-200">
+      <div className="border-t border-white/10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-gray-400">{siteConfig.footer.copyright}</p>
           <div className="flex items-center gap-5">
-            <Link href="/privacy" className="text-xs text-gray-400 hover:text-[#1B2A4A] transition-colors">
+            <Link href="/privacy" className="text-xs text-gray-400 hover:text-white transition-colors">
               Chính sách bảo mật
             </Link>
-            <Link href="/terms" className="text-xs text-gray-400 hover:text-[#1B2A4A] transition-colors">
+            <Link href="/terms" className="text-xs text-gray-400 hover:text-white transition-colors">
               Điều khoản dịch vụ
             </Link>
           </div>
