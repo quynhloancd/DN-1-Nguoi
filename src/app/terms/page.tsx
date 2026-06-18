@@ -246,7 +246,7 @@ export default function TermsPage() {
               </h2>
 
               {section.content?.map((paragraph, i) => (
-                <p key={i} className="text-gray-300 leading-relaxed mb-3">
+                <p key={i} className="text-gray-700 leading-relaxed mb-3">
                   {paragraph}
                 </p>
               ))}
@@ -256,7 +256,7 @@ export default function TermsPage() {
                   {section.list.map((item, i) => (
                     <li
                       key={i}
-                      className="flex gap-3 text-gray-300 leading-relaxed"
+                      className="flex gap-3 text-gray-700 leading-relaxed"
                     >
                       <span className="text-[#E85D04] mt-1.5 shrink-0">
                         <svg
@@ -284,7 +284,7 @@ export default function TermsPage() {
                     {sub.list.map((item, i) => (
                       <li
                         key={i}
-                        className="flex gap-3 text-gray-300 leading-relaxed"
+                        className="flex gap-3 text-gray-700 leading-relaxed"
                       >
                         <span className="text-[#E85D04] mt-1.5 shrink-0">
                           <svg
@@ -312,19 +312,19 @@ export default function TermsPage() {
               {/* Contact info for the last section */}
               {section.id === "lien-he" && (
                 <div className="rounded-xl border border-[#E5E7EB] bg-[#F8F9FA] p-5 mt-4 space-y-3">
-                  <p className="text-gray-300">
+                  <p className="text-gray-700">
                     <span className="text-gray-500">Nền tảng:</span>{" "}
                     <span className="text-[#1B2A4A] font-medium">
                       {siteConfig.name}
                     </span>
                   </p>
-                  <p className="text-gray-300">
+                  <p className="text-gray-700">
                     <span className="text-gray-500">Người đại diện:</span>{" "}
                     <span className="text-[#1B2A4A] font-medium">
                       {siteConfig.owner.name}
                     </span>
                   </p>
-                  <p className="text-gray-300">
+                  <p className="text-gray-700">
                     <span className="text-gray-500">Website:</span>{" "}
                     <Link
                       href="/"
@@ -333,7 +333,7 @@ export default function TermsPage() {
                       {siteConfig.domain}
                     </Link>
                   </p>
-                  <p className="text-gray-300">
+                  <p className="text-gray-700">
                     <span className="text-gray-500">Email hỗ trợ:</span>{" "}
                     <a
                       href={`mailto:${siteConfig.supportEmail}`}
@@ -342,7 +342,7 @@ export default function TermsPage() {
                       {siteConfig.supportEmail}
                     </a>
                   </p>
-                  <p className="text-gray-300">
+                  <p className="text-gray-700">
                     <span className="text-gray-500">Zalo:</span>{" "}
                     <a
                       href={siteConfig.socials.zalo}

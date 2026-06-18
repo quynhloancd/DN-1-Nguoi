@@ -298,13 +298,13 @@ export default function PrivacyPage() {
         <div className="max-w-4xl mx-auto space-y-10">
           {/* Introduction */}
           <div className="space-y-3">
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
               Chào mừng bạn đến với{" "}
               <span className="text-white font-medium">{siteConfig.domain}</span>{" "}
               -- kho tool AI thuộc sở hữu và vận hành bởi{" "}
               <span className="text-white font-medium">Doanh Nghiệp 1 Người</span>.
             </p>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
               Chúng tôi tôn trọng quyền riêng tư của bạn và cam kết bảo vệ thông
               tin cá nhân mà bạn cung cấp khi sử dụng dịch vụ. Chính sách bảo mật
               này được xây dựng phù hợp với{" "}
@@ -316,7 +316,7 @@ export default function PrivacyPage() {
               về bảo vệ dữ liệu cá nhân, nhằm giải thích cách chúng tôi thu thập,
               sử dụng, lưu trữ và bảo vệ dữ liệu cá nhân của bạn.
             </p>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
               Bằng việc truy cập và sử dụng kho tool AI, bạn xác nhận đã đọc, hiểu và
               đồng ý với các điều khoản trong chính sách bảo mật này.
             </p>
@@ -349,7 +349,7 @@ export default function PrivacyPage() {
               </h2>
 
               {section.content?.map((paragraph, i) => (
-                <p key={i} className="text-gray-300 leading-relaxed mb-3">
+                <p key={i} className="text-gray-700 leading-relaxed mb-3">
                   {paragraph}
                 </p>
               ))}
@@ -360,7 +360,7 @@ export default function PrivacyPage() {
                   {section.list.map((item, i) => (
                     <li
                       key={i}
-                      className="flex gap-3 text-gray-300 leading-relaxed"
+                      className="flex gap-3 text-gray-700 leading-relaxed"
                     >
                       <span className="text-[#E85D04] mt-1.5 shrink-0">
                         <svg
@@ -388,7 +388,7 @@ export default function PrivacyPage() {
                     {sub.items.map((item, ii) => (
                       <li
                         key={ii}
-                        className="flex gap-3 text-gray-300 leading-relaxed"
+                        className="flex gap-3 text-gray-700 leading-relaxed"
                       >
                         <span className="text-[#E85D04] mt-1.5 shrink-0">
                           <svg
@@ -408,7 +408,7 @@ export default function PrivacyPage() {
               ))}
 
               {section.extra?.map((paragraph, i) => (
-                <p key={i} className="text-gray-300 leading-relaxed mb-3">
+                <p key={i} className="text-gray-700 leading-relaxed mb-3">
                   {paragraph}
                 </p>
               ))}
@@ -416,25 +416,25 @@ export default function PrivacyPage() {
               {/* Contact info for the last section */}
               {section.id === "lien-he" && (
                 <div className="card-dark p-5 mt-4 space-y-3">
-                  <p className="text-gray-300">
+                  <p className="text-gray-700">
                     <span className="text-gray-500">Nền tảng:</span>{" "}
                     <span className="text-white font-medium">
                       {siteConfig.name}
                     </span>
                   </p>
-                  <p className="text-gray-300">
+                  <p className="text-gray-700">
                     <span className="text-gray-500">Người chịu trách nhiệm bảo vệ dữ liệu:</span>{" "}
                     <span className="text-white font-medium">
                       {siteConfig.owner.name}
                     </span>
                   </p>
-                  <p className="text-gray-300">
+                  <p className="text-gray-700">
                     <span className="text-gray-500">Website:</span>{" "}
                     <Link href="/" className="text-[#E85D04] hover:underline">
                       {siteConfig.domain}
                     </Link>
                   </p>
-                  <p className="text-gray-300">
+                  <p className="text-gray-700">
                     <span className="text-gray-500">Email:</span>{" "}
                     <a
                       href={`mailto:${siteConfig.supportEmail}`}
@@ -443,7 +443,7 @@ export default function PrivacyPage() {
                       {siteConfig.supportEmail}
                     </a>
                   </p>
-                  <p className="text-gray-300">
+                  <p className="text-gray-700">
                     <span className="text-gray-500">Zalo:</span>{" "}
                     <a
                       href={siteConfig.socials.zalo}

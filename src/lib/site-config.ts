@@ -47,7 +47,7 @@ export const siteConfig = {
   socials: {
     facebook: env("NEXT_PUBLIC_SOCIAL_FACEBOOK", "https://facebook.com/doanhnghiep1nguoi"),
     youtube: env("NEXT_PUBLIC_SOCIAL_YOUTUBE", "https://youtube.com/@doanhnghiep1nguoi"),
-    zalo: env("NEXT_PUBLIC_SOCIAL_ZALO", "https://zalo.me/doanhnghiep1nguoi"),
+    zalo: env("NEXT_PUBLIC_SOCIAL_ZALO", "https://zalo.me/0918985498"),
     tiktok: env("NEXT_PUBLIC_SOCIAL_TIKTOK", ""),
     instagram: env("NEXT_PUBLIC_SOCIAL_INSTAGRAM", ""),
   },
