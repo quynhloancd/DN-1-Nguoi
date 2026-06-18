@@ -96,16 +96,21 @@ export async function POST(req: NextRequest) {
         .replace(/\s+/g, "-")
         .slice(0, 80);
 
-    const postData: Record<string, unknown> = {
+    // Cột chắc chắn tồn tại theo schema gốc (supabase/schema.sql)
+    const coreData: Record<string, unknown> = {
       title: title.trim(),
       slug: finalSlug,
       excerpt: excerpt?.trim() || null,
       content: content?.trim() || body?.trim() || null,
-      body: body?.trim() || content?.trim() || null,
       category: category?.trim() || null,
       tags: tags || null,
       status: status || "draft",
       thumbnail: thumbnail || null,
+    };
+
+    // Cột mở rộng — có thể chưa có trên DB; nếu thiếu sẽ tự bỏ qua khi lưu
+    const optionalData: Record<string, unknown> = {
+      body: body?.trim() || content?.trim() || null,
       focus_keyword: focus_keyword?.trim() || null,
       author_name: author_name?.trim() || null,
       author_avatar: author_avatar?.trim() || null,
@@ -121,41 +126,37 @@ export async function POST(req: NextRequest) {
           .eq("id", id)
           .single();
         if (!existing?.published_at) {
-          postData.published_at = new Date().toISOString();
+          coreData.published_at = new Date().toISOString();
         }
       } else {
-        postData.published_at = new Date().toISOString();
+        coreData.published_at = new Date().toISOString();
       }
     }
 
-    let result;
+    // Nhận biết lỗi "cột không tồn tại" để retry với bộ cột tối thiểu
+    const isUnknownColumn = (e: { code?: string; message?: string } | null) =>
+      !!e &&
+      (e.code === "PGRST204" ||
+        /column .* does not exist|could not find the .* column/i.test(e.message || ""));
 
-    if (id) {
-      // Update existing
-      const { data, error } = await admin
-        .from("blog_posts")
-        .update(postData)
-        .eq("id", id)
-        .select()
-        .single();
-      if (error) {
-        console.error("[Blog Update] Error:", error);
-        return NextResponse.json({ error: "Có lỗi xảy ra khi cập nhật bài viết. Vui lòng thử lại." }, { status: 500 });
-      }
-      result = data;
-    } else {
-      // Create new
-      const { data, error } = await admin
-        .from("blog_posts")
-        .insert(postData)
-        .select()
-        .single();
-      if (error) {
-        console.error("[Blog Create] Error:", error);
-        return NextResponse.json({ error: "Có lỗi xảy ra khi tạo bài viết. Vui lòng thử lại." }, { status: 500 });
-      }
-      result = data;
+    const persist = (payload: Record<string, unknown>) =>
+      id
+        ? admin.from("blog_posts").update(payload).eq("id", id).select().single()
+        : admin.from("blog_posts").insert(payload).select().single();
+
+    let saveRes = await persist({ ...coreData, ...optionalData });
+    if (saveRes.error && isUnknownColumn(saveRes.error)) {
+      // DB thiếu cột mở rộng → lưu bằng cột cốt lõi để không chặn người dùng
+      saveRes = await persist(coreData);
     }
+    if (saveRes.error) {
+      console.error("[Blog Save] Error:", saveRes.error);
+      return NextResponse.json(
+        { error: `Lỗi lưu bài viết: ${saveRes.error.message}` },
+        { status: 500 }
+      );
+    }
+    const result = saveRes.data;
 
     // Only send email if explicitly requested
     if (status === "published" && sendEmail === true) {

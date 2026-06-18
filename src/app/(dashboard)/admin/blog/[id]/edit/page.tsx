@@ -420,16 +420,21 @@ export default function EditBlogPostPage() {
         {/* ── Editor Section ── */}
         <div>
           <label className="block text-xs font-medium text-gray-400 mb-2">Nội dung bài viết</label>
-          {showPreview ? (
+          {/* Preview hiển thị bên trên — KHÔNG unmount editor để tránh mất chỉnh sửa chưa lưu */}
+          {showPreview && (
             <div className="card-dark p-6" style={{ minHeight: 450 }}>
               <div className="flex items-center gap-2 mb-4 pb-3 border-b border-[#E5E7EB]">
                 <Eye size={14} className="text-blue-400" />
                 <span className="text-xs font-semibold text-blue-400">PREVIEW</span>
               </div>
-              <div className="blog-content text-gray-300 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: sanitizeHtml(htmlContent) }} />
+              <div className="blog-content text-gray-700 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: sanitizeHtml(htmlContent) }} />
             </div>
-          ) : (
-            initialHtml !== null && <NovelEditor onChange={handleEditorChange} initialHtml={initialHtml} />
+          )}
+          {/* Editor luôn mounted, chỉ ẩn bằng CSS khi xem preview */}
+          {initialHtml !== null && (
+            <div className={showPreview ? "hidden" : ""}>
+              <NovelEditor onChange={handleEditorChange} initialHtml={initialHtml} />
+            </div>
           )}
         </div>
 

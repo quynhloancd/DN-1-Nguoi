@@ -466,20 +466,23 @@ export default function NewBlogPostPage() {
             Nội dung bài viết
           </label>
 
-          {showPreview ? (
+          {/* Preview hiển thị bên trên — KHÔNG unmount editor để tránh mất nội dung */}
+          {showPreview && (
             <div className="card-dark p-6" style={{ minHeight: 450 }}>
               <div className="flex items-center gap-2 mb-4 pb-3 border-b border-[#E5E7EB]">
                 <Eye size={14} className="text-blue-400" />
                 <span className="text-xs font-semibold text-blue-400">PREVIEW</span>
               </div>
               <div
-                className="blog-content text-gray-300 text-sm leading-relaxed"
+                className="blog-content text-gray-700 text-sm leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: sanitizeHtml(htmlContent) }}
               />
             </div>
-          ) : (
-            <NovelEditor onChange={handleEditorChange} />
           )}
+          {/* Editor luôn mounted, chỉ ẩn bằng CSS khi xem preview */}
+          <div className={showPreview ? "hidden" : ""}>
+            <NovelEditor onChange={handleEditorChange} />
+          </div>
         </div>
 
         {/* ── SEO Panel (WordPress / Yoast style) ── */}
