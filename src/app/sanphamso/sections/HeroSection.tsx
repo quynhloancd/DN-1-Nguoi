@@ -49,7 +49,7 @@ export default function HeroSection({ onScrollToRegister }: HeroSectionProps) {
           }}
         >
           <Zap className="h-3.5 w-3.5" />
-          KOHADA — AI TECHNOLOGY · TRAINING · VIDEO
+          DOANH NGHIỆP 1 NGƯỜI — KHO TOOL AI THỰC CHIẾN
         </span>
 
         {/* Main Headline */}

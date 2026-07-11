@@ -15,7 +15,7 @@ const BONUSES = [
   },
   {
     tag: "BONUS #2",
-    title: "Buổi Coaching 1-1 với đội ngũ KOHADA",
+    title: "Buổi Coaching 1-1 với đội ngũ Doanh Nghiệp 1 Người",
     value: "1.000.000đ",
     description: "Giải đáp riêng cho trường hợp của bạn",
   },

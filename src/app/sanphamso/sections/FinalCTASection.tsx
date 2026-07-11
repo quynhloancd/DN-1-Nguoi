@@ -132,7 +132,7 @@ export default function FinalCTASection({
             className="mb-1 text-xs sm:text-sm"
             style={{ color: "rgba(255,255,255,0.35)" }}
           >
-            © 2026 KOHADA — AI Technology · Training · Video
+            © 2026 Doanh Nghiệp 1 Người — Thiên Huệ AI
           </p>
           <p
             className="text-xs sm:text-sm"

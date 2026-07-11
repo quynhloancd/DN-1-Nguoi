@@ -3,7 +3,7 @@
 /* ─── Data ───────────────────────────────────────────── */
 
 const ACHIEVEMENTS = [
-  "Founder KOHADA — AI Technology · Training · Video",
+  "Founder Doanh Nghiệp 1 Người — Kho Tool AI thực chiến",
   "10+ năm kinh nghiệm trong lĩnh vực Marketing, Sức khỏe & Kinh doanh online",
   "Đã đào tạo 10.000+ học viên trên khắp Việt Nam",
   "Chuyên gia xây dựng hệ thống bán hàng tự động bằng AI Agent",
