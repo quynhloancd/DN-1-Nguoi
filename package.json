@@ -19,7 +19,7 @@
     "@dnd-kit/utilities": "^3.2.2",
     "@supabase/ssr": "^0.10.3",
     "@supabase/supabase-js": "^2.105.4",
-    "@tiptap/core": "^3.23.4",
+    "@tiptap/core": "^3.30.4",
     "@tiptap/extension-image": "^3.23.4",
     "@tiptap/extension-link": "^3.23.4",
     "@tiptap/extension-placeholder": "^3.23.4",
